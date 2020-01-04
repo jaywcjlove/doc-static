@@ -96,21 +96,21 @@ jobs:
           PUBLISH_DIR: ./ant.design
         
 
-  job-koajs:
+  job-reactjs:
     needs: [job-react-native, job-koajs, job-typeorm, job-jest, job-antd]
     runs-on: ubuntu-18.04
     steps:
-      - name: Get koajs.com Static
+      - name: Get zh-hans.reactjs.org Static
         uses: actions/checkout@v2
         with:
-          repository: koajs/koajs.com
+          repository: reactjs/zh-hans.reactjs.org
           ref: gh-pages
-          path: koajs.com
+          path: zh-hans.reactjs.org
 
-      - name: Deploy koajs.com
+      - name: Deploy zh-hans.reactjs.org
         uses: peaceiris/actions-gh-pages@v2.5.0
         env:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          PUBLISH_BRANCH: koajs.com
-          PUBLISH_DIR: ./koajs.com
+          PUBLISH_BRANCH: zh-hans.reactjs.org
+          PUBLISH_DIR: ./zh-hans.reactjs.org
         
