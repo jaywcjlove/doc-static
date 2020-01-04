@@ -12,18 +12,25 @@ jobs:
         with:
           repository: jaywcjlove/react-native-doc
           ref: gh-pages
-          path: webs/react-native-doc
+          path: react-native-doc
+
+      - name: Deploy react-native-doc
+        uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: react-native
+          PUBLISH_DIR: ./react-native-doc
 
       - name: Get jest Static
         uses: actions/checkout@v2
         with:
           repository: jaywcjlove/react-native-doc
           ref: gh-pages
-          path: webs/jestjs.io
+          path: jestjs.io
 
-      - name: Build and Deploy
+      - name: Deploy jestjs.io
         uses: peaceiris/actions-gh-pages@v2.5.0
         env:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./webs
+          PUBLISH_BRANCH: jestjs.io
+          PUBLISH_DIR: ./jestjs.io
