@@ -1,0 +1,29 @@
+name: GitHub Actions Build and Deploy Document Static
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Get react-native-doc Static
+        uses: actions/checkout@v2
+        with:
+          repository: jaywcjlove/react-native-doc
+          ref: gh-pages
+          path: webs/react-native-doc
+
+      - name: Get jest Static
+        uses: actions/checkout@v2
+        with:
+          repository: jaywcjlove/react-native-doc
+          ref: gh-pages
+          path: webs/jestjs.io
+
+    - name: Build and Deploy
+      uses: peaceiris/actions-gh-pages@v2.5.0
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./webs
