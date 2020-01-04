@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-
+jobs:
   job-react-native:
     deploy-react-native:
       runs-on: ubuntu-18.04
