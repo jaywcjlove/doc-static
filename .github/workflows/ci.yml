@@ -133,3 +133,22 @@ jobs:
           PUBLISH_BRANCH: element.eleme.io
           PUBLISH_DIR: ./element.eleme.io
         
+
+  job-cnvuejs:
+    needs: [job-react-native, job-koajs, job-typeorm, job-jest, job-antd, job-reactjs, job-element]
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Get cn.vuejs.org Static
+        uses: actions/checkout@v2
+        with:
+          repository: vuejs/cn.vuejs.org
+          ref: gh-pages
+          path: cn.vuejs.org
+
+      - name: Deploy cn.vuejs.org
+        uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: cn.vuejs.org
+          PUBLISH_DIR: ./cn.vuejs.org
+        
