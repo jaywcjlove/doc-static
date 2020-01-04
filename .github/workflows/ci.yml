@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-jobs:
+job-react-native:
   deploy-react-native:
     runs-on: ubuntu-18.04
     steps:
@@ -21,7 +21,8 @@ jobs:
           PUBLISH_BRANCH: react-native
           PUBLISH_DIR: ./react-native-doc
 
-  deploy-koajs:
+  job-koajs:
+    needs: job-react-native
     runs-on: ubuntu-18.04
     steps:
       - name: Get koajs Static
@@ -38,24 +39,9 @@ jobs:
           PUBLISH_BRANCH: koajs.com
           PUBLISH_DIR: ./koajs.com
 
-  deploy-jestjs:
-    runs-on: ubuntu-18.04
-    steps:
-      - name: Get jest Static
-        uses: actions/checkout@v2
-        with:
-          repository: facebook/jest
-          ref: gh-pages
-          path: jestjs.io
 
-      - name: Deploy jestjs.io
-        uses: peaceiris/actions-gh-pages@v2.5.0
-        env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          PUBLISH_BRANCH: jestjs.io
-          PUBLISH_DIR: ./jestjs.io
-
-  deploy-typeorm:
+  job-typeorm:
+    needs: [job-react-native, job-koajs]
     runs-on: ubuntu-18.04
     steps:
       - name: Get typeorm Static
@@ -71,4 +57,23 @@ jobs:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PUBLISH_BRANCH: typeorm.github.io
           PUBLISH_DIR: ./typeorm.github.io
+        
+
+  job-jest:
+    needs: [job-react-native, job-koajs, job-typeorm]
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Get jestjs.io Static
+        uses: actions/checkout@v2
+        with:
+          repository: facebook/jest
+          ref: master
+          path: jestjs.io
+
+      - name: Deploy jestjs.io
+        uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: jestjs.io
+          PUBLISH_DIR: ./jestjs.io
         
