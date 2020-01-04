@@ -171,3 +171,22 @@ jobs:
           PUBLISH_BRANCH: sequelize.org
           PUBLISH_DIR: ./sequelize.org
         
+
+  job-expressjs:
+    needs: [job-react-native, job-koajs, job-typeorm, job-jest, job-antd, job-reactjs, job-element, job-cnvuejs, job-sequelize]
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Get expressjs.com Static
+        uses: actions/checkout@v2
+        with:
+          repository: expressjs/expressjs.com
+          ref: gh-pages
+          path: expressjs.com
+
+      - name: Deploy expressjs.com
+        uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: expressjs.com
+          PUBLISH_DIR: ./expressjs.com
+        
