@@ -76,4 +76,22 @@ jobs:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PUBLISH_BRANCH: jestjs.io
           PUBLISH_DIR: ./jestjs.io
+
+  job-antd:
+    needs: [job-react-native, job-koajs, job-typeorm, job-jest]
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Get ant.design Static
+        uses: actions/checkout@v2
+        with:
+          repository: ant-design/ant-design
+          ref: gh-pages
+          path: ant.design
+
+      - name: Deploy ant.design
+        uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: ant.design
+          PUBLISH_DIR: ./ant.design
         
