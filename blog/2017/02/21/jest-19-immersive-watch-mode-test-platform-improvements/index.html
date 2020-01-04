@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>🃏 Jest 19: Immersive Watch Mode &amp; Test Platform Improvements · Jest</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Today we are pleased to ship version 19 of the Jest testing platform. It&#x27;s the biggest Jest release we have shipped so far and we are quite excited to show you what we&#x27;ve built over the last two months:"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="🃏 Jest 19: Immersive Watch Mode &amp; Test Platform Improvements · Jest"/><meta property="og:type" content="website"/><meta property="og:url" content="https://jestjs.io/blog/2017/02/21/jest-19-immersive-watch-mode-test-platform-improvements"/><meta property="og:description" content="Today we are pleased to ship version 19 of the Jest testing platform. It&#x27;s the biggest Jest release we have shipped so far and we are quite excited to show you what we&#x27;ve built over the last two months:"/><meta property="og:image" content="https://jestjs.io/img/opengraph.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://jestjs.io/img/jest.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://jestjs.io/blog/atom.xml" title="Jest Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://jestjs.io/blog/feed.xml" title="Jest Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-44373548-17', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/jest.svg" alt="Jest"/><h2 class="headerTitleWithLogo">Jest</h2></a><a href="/en/versions"><h3>24.9</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/getting-started" target="_self">Docs</a></li><li class=""><a href="/docs/en/api" target="_self">API</a></li><li class=""><a href="/en/help" target="_self">Help</a></li><li class="siteNavGroupActive"><a href="/blog/" target="_self">Blog</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/ja">日本語</a></li><li><a href="/es-ES">Español</a></li><li><a href="/pt-BR">Português (Brasil)</a></li><li><a href="/ro">Română</a></li><li><a href="/ru">Русский</a></li><li><a href="/uk">Українська</a></li><li><a href="/zh-Hans">简体中文</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="https://github.com/facebook/jest" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Recent Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Recent Posts</h3><ul class=""><li class="navListItem"><a class="navItem" href="/blog/2019/01/25/jest-24-refreshing-polished-typescript-friendly">Jest 24: 💅 Refreshing, Polished, TypeScript-friendly</a></li><li class="navListItem"><a class="navItem" href="/blog/2018/06/27/supporting-jest-open-source">Supporting Jest Open Source</a></li><li class="navListItem"><a class="navItem" href="/blog/2018/05/29/jest-23-blazing-fast-delightful-testing">Jest 23: 🔥 Blazing Fast Delightful Testing</a></li><li class="navListItem"><a class="navItem" href="/blog/2017/12/18/jest-22">Jest 22: Refinements &amp; Custom Runners</a></li><li class="navListItem"><a class="navItem" href="/blog/2017/05/06/jest-20-delightful-testing-multi-project-runner">Jest 20: 💖 Delightful Testing &amp; 🏃🏽 Multi-Project-Runner</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2017/02/21/jest-19-immersive-watch-mode-test-platform-improvements">🃏 Jest 19: Immersive Watch Mode &amp; Test Platform Improvements</a></h1><p class="post-meta">February 21, 2017</p><div class="authorBlock"><p class="post-authorName"><a href="http://twitter.com/rogeliog" target="_blank" rel="noreferrer noopener">Rogelio Guzman</a></p><div class="authorPhoto"><a href="http://twitter.com/rogeliog" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/511230566/picture/?height=200&amp;width=200" alt="Rogelio Guzman"/></a></div></div></header><div><span><p>Today we are pleased to ship version 19 of the Jest testing platform. It's the biggest Jest release we have shipped so far and we are quite excited to show you what we've built over the last two months:</p>
+<h2><a class="anchor" aria-hidden="true" id="immersive-watch-mode"></a><a href="#immersive-watch-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Immersive Watch Mode</h2>
+<p>We <a href="https://github.com/facebook/jest/pull/2362">completely rewrote the watch mode</a> to make it instant and more extensible. As a result, the experience of using it really is immersive: tests re-run instantly after a file change and we made it easy to select the right tests.</p>
+<!--truncate-->
+<h2><a class="anchor" aria-hidden="true" id="snapshot-updates"></a><a href="#snapshot-updates" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Snapshot Updates</h2>
+<p>We made a couple of changes to the snapshot format. We don't make changes like this often and only consider them if they actually improve how snapshots work. As well as introducing a snapshot version number we accumulated a number of changes we wanted to make to the format for a while:</p>
+<ul>
+<li>We dropped the “test” prefix in snapshot names from top level <code>test</code> or <code>it</code> calls.</li>
+<li>We improved the printing of React elements to cause less changes when the last prop in an element changes.</li>
+<li>We improved the character escaping mechanism to be more bulletproof.</li>
+</ul>
+<p>Before:</p>
+<pre><code class="hljs">exports[`test snap 1`] = `
+<span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>
+    Jest \"19\"
+  <span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">Subtitle</span>
+    <span class="hljs-attr">name</span>=<span class="hljs-string">"Painless JavaScript Testing"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+`;
+</code></pre>
+<p>After (no “test” prefix, better JSX rendering, version header):</p>
+<pre><code class="hljs"><span class="hljs-comment">// Jest Snapshot v1, https://goo.gl/fbAQLP</span>
+
+exports[`snap <span class="hljs-number">1</span>`] = `
+<span class="hljs-params">&lt;header&gt;</span>
+  <span class="hljs-params">&lt;h1&gt;</span>
+    Jest <span class="hljs-string">"19"</span>
+  <span class="hljs-params">&lt;/h1&gt;</span>
+  <span class="hljs-params">&lt;Subtitle
+    name="Painless JavaScript Testing"
+  /&gt;</span>
+<span class="hljs-params">&lt;/header&gt;</span>
+`;
+</code></pre>
+<p>We decided it's a good time to introduce versioned snapshots to ensure all developers are using a compatible version of Jest. Here's how we warn you about the need to update your snapshot:</p>
+<p><img src="/img/blog/19-snapshot-version.png" alt="snapshot-version"></p>
+<p>Please make sure you revert any local changes before updating to make the transition smooth and to ensure you aren't including any unwanted changes from failing tests in your new snapshots.</p>
+<h2><a class="anchor" aria-hidden="true" id="improved-printing-of-skipped-tests"></a><a href="#improved-printing-of-skipped-tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Improved printing of skipped tests</h2>
+<p>Skipped tests are now printed as a single line instead of showing every individual one when testing in verbose mode or a single suite. Hopefully it will let you focus on currently important tests. It also occupies far less space!</p>
+<p><img src="/img/blog/19-skipped-tests.png" alt="skipped-tests"></p>
+<h2><a class="anchor" aria-hidden="true" id="new-cli-arguments"></a><a href="#new-cli-arguments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New CLI arguments</h2>
+<p>Jest 19 ships with two new coverage-related arguments which you can run from CLI:</p>
+<ul>
+<li><code>--collectCoverageFrom</code></li>
+<li><code>--coverageDirectory</code></li>
+</ul>
+<p>We now also error on invalid CLI arguments instead of ignoring them. But we've got your back with helpful error message like the one below, e.g. when you try running <code>jest --watc</code>:</p>
+<p><img src="/img/blog/19-cli-error.png" alt="cli-error"></p>
+<h2><a class="anchor" aria-hidden="true" id="expect-improvements"></a><a href="#expect-improvements" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>expect</code> Improvements</h2>
+<ul>
+<li><a href="/docs/expect.html#expectaddsnapshotserializerserializer"><code>expect.addSnapshotSerializer</code></a></li>
+<li><a href="/docs/expect.html#expectstringcontainingstring"><code>expect.stringContaining</code></a></li>
+<li><a href="/docs/jest-object.html#jestspyonobject-methodname"><code>jest.spyOn</code></a></li>
+</ul>
+<p>We're close to almost full feature parity with the <code>expect</code> npm package. <a href="https://twitter.com/mjackson">Michael Jackson</a>, the author of the package, agreed to <a href="https://github.com/facebook/jest/issues/1679">donate</a> it to the Jest project, which means that <code>jest-matchers</code> will be renamed to <code>expect</code>. Since our version of <code>expect</code> is not intended to be fully compatible, <a href="https://twitter.com/Vjeux">Christopher Chedeau</a> is working on a codemod to make the transition painless. Christopher also worked on a number of improvements to <code>jest-matchers</code> which enables it to be used outside of Jest and even <a href="https://github.com/facebook/jest/pull/2795">works inside browsers</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="eslint-plugin-jesthttpsgithubcomfacebookjesttreemasterpackageseslint-plugin-jest--our-very-own-eslint-plugin"></a><a href="#eslint-plugin-jesthttpsgithubcomfacebookjesttreemasterpackageseslint-plugin-jest--our-very-own-eslint-plugin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/facebook/jest/tree/master/packages/eslint-plugin-jest">eslint-plugin-jest</a> – our very own ESLint plugin</h2>
+<p>Thanks to <a href="https://twitter.com/jonnykim">Jonathan Kim</a> Jest finally has its own official ESLint plugin. It exposes three rules:</p>
+<ul>
+<li><a href="https://github.com/facebook/jest/blob/master/packages/eslint-plugin-jest/docs/rules/no-disabled-tests.md">no-disabled-tests</a> - this rule prevents you from accidentally committing disabled tests.</li>
+<li><a href="https://github.com/facebook/jest/blob/master/packages/eslint-plugin-jest/docs/rules/no-focused-tests.md">no-focused-tests</a> - this rule prevents you from committing focused tests which would disable all other tests in the same suite.</li>
+<li><a href="https://github.com/facebook/jest/blob/master/packages/eslint-plugin-jest/docs/rules/no-identical-title.md">no-identical-title</a> - disallows identical titles in test names.</li>
+</ul>
+<p>You can install it using <code>npm install --save-dev eslint-plugin-jest</code> or <code>yarn add --dev eslint eslint-plugin-jest</code> and it can be enabled by adding <code>{&quot;plugins&quot;: [&quot;jest&quot;]}</code> to your eslint configuration.</p>
+<h2><a class="anchor" aria-hidden="true" id="new-public-package-jest-validatehttpsgithubcomfacebookjesttreemasterpackagesjest-validate"></a><a href="#new-public-package-jest-validatehttpsgithubcomfacebookjesttreemasterpackagesjest-validate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New public package: <a href="https://github.com/facebook/jest/tree/master/packages/jest-validate">jest-validate</a></h2>
+<p>While we refactored the validation and normalization code for Jest's configuration, we were so happy with the new error messaging that we extracted it to its own module to share it with everyone. With Jest 19 we welcome <code>jest-validate</code> to our self-sustained packages family.</p>
+<p><code>jest-validate</code> is a generic configuration validation tool that helps you with warnings, errors and deprecation messages in your JavaScript tool. It's also capable of showing users friendly examples of correct configuration and it comes with a simple but powerful API. We hope it'll make a good addition to your projects!</p>
+<p><img src="/img/blog/19-validate.png" alt="validate"></p>
+<p>We're happy to announce that <code>jest-validate</code> is validating config options of <a href="https://github.com/jlongster/prettier">prettier</a> since <a href="https://github.com/jlongster/prettier/blob/master/CHANGELOG.md#0120">v0.12</a>. Feel free to add it to your project, try it, send us feedback and improve it by making pull requests on GitHub.</p>
+<h2><a class="anchor" aria-hidden="true" id="improved-asymmetric-matchers"></a><a href="#improved-asymmetric-matchers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Improved asymmetric matchers</h2>
+<p>We moved the asymmetric matchers implementation from Jasmine into Jest, which enabled us to further improve the user experience around them. As a result, asymmetric matchers are now pretty-printed nicely, we added the new <a href="https://jestjs.io/docs/expect.html#expectstringcontainingstring"><code>expect.stringContaining()</code></a> matcher and we also paired them with <a href="https://jestjs.io/docs/expect.html#tomatchobjectobject"><code>expect.toMatchObject()</code></a> so you can use the best of both:</p>
+<p><img src="/img/blog/19-asymmetric-matchers.png" alt="asymmetric-matchers"></p>
+<h2><a class="anchor" aria-hidden="true" id="better-manual-mocks"></a><a href="#better-manual-mocks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Better manual mocks</h2>
+<p>With the latest release, manual mocks now finally work with nested folders. For example <code>__mocks__/react-native/Libraries/Text/Text.js</code> will now work as expected and mock the correct module. We also fixed issues with virtual mocks and transitive dependencies and improved <code>moduleNameMapper</code> to not overwrite mocks when many patterns map to the same file.</p>
+<h2><a class="anchor" aria-hidden="true" id="breaking-changes"></a><a href="#breaking-changes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Breaking Changes</h2>
+<p>As a part of our cleanups and fixes we removed the <code>mocksPattern</code> configuration option which was never officially supported. We also renamed the <code>testPathDirs</code> configuration option to <code>roots</code> which better explains what the option can be used for. The default configuration for <code>roots</code> is <code>[&quot;&lt;rootDir&gt;&quot;]</code> and can be customized to include any number of directories. The rootDir configuration option has always been used mostly as a token for other configuration options and this rename should make configuring Jest clearer.</p>
+<h2><a class="anchor" aria-hidden="true" id="revamped-documentation"></a><a href="#revamped-documentation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Revamped documentation</h2>
+<p>As you may have already seen, <a href="https://twitter.com/hectorramos">Hector Ramos</a> and <a href="https://twitter.com/lacker">Kevin Lacker</a> gave Jest's documentation a fresh new look. We changed the way we organize the website and it now features Docs and API as separate pages:</p>
+<ul>
+<li>Under <a href="https://jestjs.io/docs/getting-started.html#content">Docs</a> you can find an introduction to Jest, including <a href="https://jestjs.io/docs/getting-started.html#content">Getting Started</a> or <a href="https://jestjs.io/docs/asynchronous.html#content">Testing Asynchronous Code</a> and handy guides like <a href="https://jestjs.io/docs/snapshot-testing.html#content">Snapshot Testing</a>, <a href="https://jestjs.io/docs/tutorial-react-native.html#content">Testing React Native App</a>, <a href="https://jestjs.io/docs/webpack.html#content">Using with webpack</a> or <a href="https://jestjs.io/docs/migration-guide.html#content">Migrating to Jest</a> and many more!</li>
+<li>The <a href="https://jestjs.io/docs/api.html">API</a> section on the other hand lists all available methods exposed by Jest: the <code>expect</code> and <code>jest</code> objects, mock functions, globals, along with configuration options from <em>package.json</em> and from the CLI.</li>
+</ul>
+<p>The homepage was completely redesigned to be more descriptive of what Jest is about: “<em>Zero configuration testing platform</em>”. We also made sure it reads better on mobile devices. And for those using RSS – we finally provide a <a href="https://jestjs.io/blog/feed.xml">feed for our blog</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="community-updates"></a><a href="#community-updates" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Community Updates</h2>
+<ul>
+<li>We really loved this talk: “<a href="https://www.youtube.com/watch?v=tvy0bSgwtTo">Introduction to Jest</a>“ by Vas Boroviak.</li>
+<li>Follow <a href="http://twitter.com/fbjest">@fbjest on Twitter</a>.</li>
+<li>The Jest Core team syncs once a week to discuss current and future issues. If you'd like to work on Jest, let us know, submit a few pull requests and join our weekly team meetings.</li>
+<li>The awesome engineers at Artsy wrote <a href="http://artsy.github.io/blog/2017/02/05/Front-end-JavaScript-at-Artsy-2017/">about Jest as part of their 2017 frontend stack</a>.</li>
+<li>Stephen Scott wrote a detailed article about <a href="https://medium.freecodecamp.com/the-right-way-to-test-react-components-548a4736ab22">testing React components</a> in which he weighs the pros and cons of different approaches.</li>
+<li><a href="https://medium.com/@kentaromiura_the_js_guy/jest-for-all-episode-1-vue-js-d616bccbe186#.r8ryxlw98">Using Jest with vue.js</a> got a lot easier after reading Cristian Carlesso's blog post.</li>
+<li><a href="https://twitter.com/cpojer/status/825004258219130880">Michele Bertoli wrote a book about React Design Patterns and Best Practices</a> which features an entire section about Jest.</li>
+<li>Improved <code>--notify</code> command that shows an operating system notification which <a href="https://github.com/facebook/jest/pull/2727">can now also re-run tests from the notification</a>. This is actually a Jest feature and we are just checking if you are still reading this blog post.</li>
+<li>Jest is now part of <a href="https://twitter.com/mxstbr/status/820326656439177217">react-boilerplate</a>.</li>
+<li>Read about the <a href="https://medium.com/@boriscoder/the-hidden-power-of-jest-matchers-f3d86d8101b0#.pn10z1pzx">hidden powers of Jest's matchers</a>.</li>
+</ul>
+<p>Finally, we are happy to announce that the <a href="https://github.com/avajs/ava">ava</a> test runner has adopted parts of the Jest platform and is now shipping with basic <a href="https://github.com/avajs/ava#snapshot-testing">snapshot support</a> and is using <a href="https://github.com/facebook/jest/tree/master/packages/pretty-format">pretty-format</a>. Consolidating test infrastructure makes it easier to learn how to test applications and enables us to share best practices. We are looking forward to see what we can learn from existing test libraries in the future.</p>
+<p>The full <a href="https://github.com/facebook/jest/blob/master/CHANGELOG.md#jest-1900">changelog can be found on GitHub</a>. Jest 19 was a true JavaScript community effort with <a href="https://github.com/facebook/jest/graphs/contributors?from=2016-12-23&amp;to=2017-02-21&amp;type=c">17 people who contributed</a> to this release. We thank each and every one of you for your help to make this project great.</p>
+<p><em>This blog post was written by <a href="https://twitter.com/rogeliog">Rogelio Guzman</a> and <a href="https://twitter.com/thymikee">Michał Pierzchała</a>.</em></p>
+</span></div></div><div class="blogSocialSection"><div class="blogSocialSectionItem"><a href="https://twitter.com/share" class="twitter-share-button" data-text="🃏 Jest 19: Immersive Watch Mode &amp; Test Platform Improvements" data-url="https://jestjs.io/blog/2017/02/21/jest-19-immersive-watch-mode-test-platform-improvements" data-related="true" data-show-count="false">Tweet</a></div></div></div><div class="blog-recent"><a class="button" href="/blog">Recent Posts</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#immersive-watch-mode">Immersive Watch Mode</a></li><li><a href="#snapshot-updates">Snapshot Updates</a></li><li><a href="#improved-printing-of-skipped-tests">Improved printing of skipped tests</a></li><li><a href="#new-cli-arguments">New CLI arguments</a></li><li><a href="#expect-improvements"><code>expect</code> Improvements</a></li><li><a href="#eslint-plugin-jesthttpsgithubcomfacebookjesttreemasterpackageseslint-plugin-jest--our-very-own-eslint-plugin"><a href="https://github.com/facebook/jest/tree/master/packages/eslint-plugin-jest">eslint-plugin-jest</a> – our very own ESLint plugin</a></li><li><a href="#new-public-package-jest-validatehttpsgithubcomfacebookjesttreemasterpackagesjest-validate">New public package: <a href="https://github.com/facebook/jest/tree/master/packages/jest-validate">jest-validate</a></a></li><li><a href="#improved-asymmetric-matchers">Improved asymmetric matchers</a></li><li><a href="#better-manual-mocks">Better manual mocks</a></li><li><a href="#breaking-changes">Breaking Changes</a></li><li><a href="#revamped-documentation">Revamped documentation</a></li><li><a href="#community-updates">Community Updates</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/jest-outline.svg" alt="Jest" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/getting-started.html">Getting Started</a><a href="/docs/en/snapshot-testing.html">Guides</a><a href="/docs/en/api.html">API Reference</a></div><div><h5>Community</h5><a href="https://stackoverflow.com/questions/tagged/jestjs" target="_blank">Stack Overflow</a><a href="https://discord.gg/MWRhKCj">Jest Chat</a><a href="https://twitter.com/fbjest" target="_blank">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/facebook/jest">GitHub</a><a class="github-button" href="https://github.com/facebook/jest" data-icon="octicon-star" data-count-href="/facebook/jest/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star facebook/jest on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Facebook Inc.</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '833906d7486e4059359fa58823c4ef56',
+                indexName: 'jest',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en","version:24.9"]}
+              });
+            </script></body></html>
