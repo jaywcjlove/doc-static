@@ -67,7 +67,7 @@ job-react-native:
         uses: actions/checkout@v2
         with:
           repository: facebook/jest
-          ref: master
+          ref: gh-pages
           path: jestjs.io
 
       - name: Deploy jestjs.io
