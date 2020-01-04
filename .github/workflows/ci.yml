@@ -21,6 +21,7 @@ jobs:
           PUBLISH_BRANCH: react-native
           PUBLISH_DIR: ./react-native-doc
 
+
       - name: Get jest Static
         uses: actions/checkout@v2
         with:
@@ -34,6 +35,7 @@ jobs:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PUBLISH_BRANCH: jestjs.io
           PUBLISH_DIR: ./jestjs.io
+
 
       - name: Get koajs Static
         uses: actions/checkout@v2
