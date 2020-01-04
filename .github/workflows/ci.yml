@@ -114,3 +114,22 @@ jobs:
           PUBLISH_BRANCH: zh-hans.reactjs.org
           PUBLISH_DIR: ./zh-hans.reactjs.org
         
+
+  job-element:
+    needs: [job-react-native, job-koajs, job-typeorm, job-jest, job-antd, job-reactjs]
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Get element.eleme.io Static
+        uses: actions/checkout@v2
+        with:
+          repository: ElemeFE/element
+          ref: gh-pages
+          path: element.eleme.io
+
+      - name: Deploy element.eleme.io
+        uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: element.eleme.io
+          PUBLISH_DIR: ./element.eleme.io
+        
