@@ -152,3 +152,22 @@ jobs:
           PUBLISH_BRANCH: cn.vuejs.org
           PUBLISH_DIR: ./cn.vuejs.org
         
+
+  job-sequelize:
+    needs: [job-react-native, job-koajs, job-typeorm, job-jest, job-antd, job-reactjs, job-element, job-cnvuejs]
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Get sequelize.org Static
+        uses: actions/checkout@v2
+        with:
+          repository: sequelize/sequelize.org
+          ref: gh-pages
+          path: sequelize.org
+
+      - name: Deploy sequelize.org
+        uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: sequelize.org
+          PUBLISH_DIR: ./sequelize.org
+        
