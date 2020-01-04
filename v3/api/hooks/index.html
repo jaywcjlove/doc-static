@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../favicon.ico">
+  
+  <title>Hooks - Sequelize | The Node.js / io.js ORM for PostgreSQL, MySQL, SQLite and MSSQL</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../css/custom.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Hooks";
+    var mkdocs_page_input_path = "api/hooks.md";
+    var mkdocs_page_url = "/api/hooks/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Sequelize | The Node.js / io.js ORM for PostgreSQL, MySQL, SQLite and MSSQL</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Documentation</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../docs/getting-started/">Getting Started</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../docs/schema/">Working with table schemas</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Models</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../docs/models-definition/">Definition</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../docs/models-usage/">Usage</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../docs/querying/">Querying</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../docs/scopes/">Scopes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../docs/instances/">Instances</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../docs/associations/">Relations / Associations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../docs/hooks/">Hooks</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../docs/transactions/">Transactions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../docs/legacy/">Working with legacy tables</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../docs/raw-queries/">Raw queries</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../docs/migrations/">Migrations</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">API</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../sequelize/">Sequelize</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../model/">Model</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../instance/">Instance</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Associations</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../associations/">Overview</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../associations/belongs-to/">BelongsTo (1:1)</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../associations/has-one/">HasOne (1:1)</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../associations/has-many/">HasMany (1:m)</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../associations/belongs-to-many/">BelongsToMany (n:m)</a>
+                </li>
+    </ul>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Hooks</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#mixin-hooks">Mixin Hooks</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#addhookhooktype-name-fn">addHook(hooktype, [name], fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#removehookhooktype-name">removeHook(hookType, name)</a></li>
+        
+            <li><a class="toctree-l4" href="#hashookhooktype">hasHook(hookType)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforevalidatename-fn">beforeValidate(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#aftervalidatename-fn">afterValidate(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#validationfailedname-fn">validationFailed(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforecreatename-fn">beforeCreate(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#aftercreatename-fn">afterCreate(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforedestroyname-fn">beforeDestroy(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#afterdestroyname-fn">afterDestroy(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforerestorename-fn">beforeRestore(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#afterrestorename-fn">afterRestore(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforeupdatename-fn">beforeUpdate(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#afterupdatename-fn">afterUpdate(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforebulkcreatename-fn">beforeBulkCreate(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#afterbulkcreatename-fn">afterBulkCreate(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforebulkdestroyname-fn">beforeBulkDestroy(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#afterbulkdestroyname-fn">afterBulkDestroy(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforebulkrestorename-fn">beforeBulkRestore(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#afterbulkrestorename-fn">afterBulkRestore(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforebulkupdatename-fn">beforeBulkUpdate(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#afterbulkupdatename-fn">afterBulkUpdate(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforefindname-fn">beforeFind(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforefindafterexpandincludeallname-fn">beforeFindAfterExpandIncludeAll(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforefindafteroptionsname-fn">beforeFindAfterOptions(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#afterfindname-fn">afterFind(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforecountname-fn">beforeCount(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforedefinename-fn">beforeDefine(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#afterdefinename-fn">afterDefine(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforeinitname-fn">beforeInit(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#afterinitname-fn">afterInit(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforeconnectname-fn">beforeConnect(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#afterconnectname-fn">afterConnect(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforesyncname-fn">beforeSync(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforeconnectname-fn_1">beforeConnect(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforesyncname-fn_1">beforeSync(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#aftersyncname-fn">afterSync(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#beforebulksyncname-fn">beforeBulkSync(name, fn)</a></li>
+        
+            <li><a class="toctree-l4" href="#afterbulksync">afterBulkSync</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../transaction/">Transaction</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../datatypes/">Datatypes</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../deferrable/">Deferrable</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../errors/">Errors</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Misc</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../changelog/">Changelog</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../imprint/">Imprint</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Sequelize | The Node.js / io.js ORM for PostgreSQL, MySQL, SQLite and MSSQL</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>API &raquo;</li>
+        
+      
+    
+    <li>Hooks</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/sequelize/sequelize/edit/master/docs/api/hooks.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><a name="hooks"></a></p>
+<h1 id="mixin-hooks">Mixin Hooks</h1>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L39">View code</a></p>
+<p>Hooks are function that are called before and after  (bulk-) creation/updating/deletion and validation. Hooks can be added to you models in three ways:</p>
+<ol>
+<li>By specifying them as options in <code>sequelize.define</code></li>
+<li>By calling <code>hook()</code> with a string and your hook handler function</li>
+<li>By calling the function with the same name as the hook you want</li>
+</ol>
+<pre><code class="js">// Method 1
+sequelize.define(name, { attributes }, {
+  hooks: {
+    beforeBulkCreate: function () {
+      // can be a single function
+    },
+    beforeValidate: [
+      function () {},
+      function() {} // Or an array of several
+    ]
+  }
+})
+
+// Method 2
+Model.hook('afterDestroy', function () {})
+
+// Method 3
+Model.afterBulkUpdate(function () {})
+</code></pre>
+
+<p><strong>See:</strong></p>
+<ul>
+<li><a href="sequelize#define">Sequelize#define</a></li>
+</ul>
+<hr />
+<p><a name="addhook"></a></p>
+<h2 id="addhookhooktype-name-fn"><code>addHook(hooktype, [name], fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L165">View code</a></p>
+<p>Add a hook to the model</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hooktype</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>[name]</td>
+<td>String</td>
+<td>Provide a name for the hook function. It can be used to remove the hook later or to order hooks based on some sort of priority system in the future.</td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>The hook function</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Aliases:</strong> hook</p>
+<hr />
+<p><a name="removehook"></a></p>
+<h2 id="removehookhooktype-name"><code>removeHook(hookType, name)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L184">View code</a></p>
+<p>Remove hook from the model</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hookType</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="hashook"></a></p>
+<h2 id="hashookhooktype"><code>hasHook(hookType)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L210">View code</a></p>
+<p>Check whether the mode has any hooks of this type</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hookType</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Aliases:</strong> hasHooks</p>
+<hr />
+<p><a name="beforevalidate"></a></p>
+<h2 id="beforevalidatename-fn"><code>beforeValidate(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L223">View code</a></p>
+<p>A hook that is run before validation</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with instance, options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="aftervalidate"></a></p>
+<h2 id="aftervalidatename-fn"><code>afterValidate(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L230">View code</a></p>
+<p>A hook that is run after validation</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with instance, options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="validationfailed"></a></p>
+<h2 id="validationfailedname-fn"><code>validationFailed(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L238">View code</a></p>
+<p>A hook that is run when validation fails</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with instance, options, error. Error is the SequelizeValidationError. If the callback throws an error, it will replace the original validation error.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="beforecreate"></a></p>
+<h2 id="beforecreatename-fn"><code>beforeCreate(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L245">View code</a></p>
+<p>A hook that is run before creating a single instance</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with attributes, options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="aftercreate"></a></p>
+<h2 id="aftercreatename-fn"><code>afterCreate(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L252">View code</a></p>
+<p>A hook that is run after creating a single instance</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with attributes, options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="beforedestroy"></a></p>
+<h2 id="beforedestroyname-fn"><code>beforeDestroy(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L261">View code</a></p>
+<p>A hook that is run before destroying a single instance</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with instance, options</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Aliases:</strong> beforeDelete</p>
+<hr />
+<p><a name="afterdestroy"></a></p>
+<h2 id="afterdestroyname-fn"><code>afterDestroy(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L270">View code</a></p>
+<p>A hook that is run after destroying a single instance</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with instance, options</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Aliases:</strong> afterDelete</p>
+<hr />
+<p><a name="beforerestore"></a></p>
+<h2 id="beforerestorename-fn"><code>beforeRestore(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L278">View code</a></p>
+<p>A hook that is run before restoring a single instance</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with instance, options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="afterrestore"></a></p>
+<h2 id="afterrestorename-fn"><code>afterRestore(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L286">View code</a></p>
+<p>A hook that is run after restoring a single instance</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with instance, options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="beforeupdate"></a></p>
+<h2 id="beforeupdatename-fn"><code>beforeUpdate(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L293">View code</a></p>
+<p>A hook that is run before updating a single instance</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with instance, options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="afterupdate"></a></p>
+<h2 id="afterupdatename-fn"><code>afterUpdate(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L300">View code</a></p>
+<p>A hook that is run after updating a single instance</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with instance, options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="beforebulkcreate"></a></p>
+<h2 id="beforebulkcreatename-fn"><code>beforeBulkCreate(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L307">View code</a></p>
+<p>A hook that is run before creating instances in bulk</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with instances, options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="afterbulkcreate"></a></p>
+<h2 id="afterbulkcreatename-fn"><code>afterBulkCreate(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L314">View code</a></p>
+<p>A hook that is run after creating instances in bulk</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with instances, options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="beforebulkdestroy"></a></p>
+<h2 id="beforebulkdestroyname-fn"><code>beforeBulkDestroy(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L323">View code</a></p>
+<p>A hook that is run before destroying instances in bulk</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with options</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Aliases:</strong> beforeBulkDelete</p>
+<hr />
+<p><a name="afterbulkdestroy"></a></p>
+<h2 id="afterbulkdestroyname-fn"><code>afterBulkDestroy(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L332">View code</a></p>
+<p>A hook that is run after destroying instances in bulk</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with options</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Aliases:</strong> afterBulkDelete</p>
+<hr />
+<p><a name="beforebulkrestore"></a></p>
+<h2 id="beforebulkrestorename-fn"><code>beforeBulkRestore(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L340">View code</a></p>
+<p>A hook that is run before restoring instances in bulk</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="afterbulkrestore"></a></p>
+<h2 id="afterbulkrestorename-fn"><code>afterBulkRestore(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L348">View code</a></p>
+<p>A hook that is run after restoring instances in bulk</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="beforebulkupdate"></a></p>
+<h2 id="beforebulkupdatename-fn"><code>beforeBulkUpdate(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L355">View code</a></p>
+<p>A hook that is run before updating instances in bulk</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="afterbulkupdate"></a></p>
+<h2 id="afterbulkupdatename-fn"><code>afterBulkUpdate(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L362">View code</a></p>
+<p>A hook that is run after updating instances in bulk</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="beforefind"></a></p>
+<h2 id="beforefindname-fn"><code>beforeFind(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L369">View code</a></p>
+<p>A hook that is run before a find (select) query</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="beforefindafterexpandincludeall"></a></p>
+<h2 id="beforefindafterexpandincludeallname-fn"><code>beforeFindAfterExpandIncludeAll(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L376">View code</a></p>
+<p>A hook that is run before a find (select) query, after any { include: {all: ...} } options are expanded</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="beforefindafteroptions"></a></p>
+<h2 id="beforefindafteroptionsname-fn"><code>beforeFindAfterOptions(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L383">View code</a></p>
+<p>A hook that is run before a find (select) query, after all option parsing is complete</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="afterfind"></a></p>
+<h2 id="afterfindname-fn"><code>afterFind(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L390">View code</a></p>
+<p>A hook that is run after a find (select) query</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with instance(s), options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="beforecount"></a></p>
+<h2 id="beforecountname-fn"><code>beforeCount(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L397">View code</a></p>
+<p>A hook that is run before a count query</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="beforedefine"></a></p>
+<h2 id="beforedefinename-fn"><code>beforeDefine(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L404">View code</a></p>
+<p>A hook that is run before a define call</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with attributes, options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="afterdefine"></a></p>
+<h2 id="afterdefinename-fn"><code>afterDefine(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L411">View code</a></p>
+<p>A hook that is run after a define call</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with factory</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="beforeinit"></a></p>
+<h2 id="beforeinitname-fn"><code>beforeInit(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L418">View code</a></p>
+<p>A hook that is run before Sequelize() call</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with config, options</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="afterinit"></a></p>
+<h2 id="afterinitname-fn"><code>afterInit(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L426">View code</a></p>
+<p>A hook that is run after Sequelize() call</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with sequelize</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="beforeconnect"></a></p>
+<h2 id="beforeconnectname-fn"><code>beforeConnect(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L434">View code</a></p>
+<p>A hook that is run before a connection is created</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with config passed to connection</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="afterconnect"></a></p>
+<h2 id="afterconnectname-fn"><code>afterConnect(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L442">View code</a></p>
+<p>A hook that is run after a connection is created</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with the connection object and thye config passed to connection</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="beforesync"></a></p>
+<h2 id="beforesyncname-fn"><code>beforeSync(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L450">View code</a></p>
+<p>A hook that is run before Model.sync call</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with options passed to Model.sync</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="beforeconnect"></a></p>
+<h2 id="beforeconnectname-fn_1"><code>beforeConnect(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L457">View code</a></p>
+<p>A hook that is run before a connection is created</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with config passed to connection</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="beforesync"></a></p>
+<h2 id="beforesyncname-fn_1"><code>beforeSync(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L464">View code</a></p>
+<p>A hook that is run before Model.sync call</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with options passed to Model.sync</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="aftersync"></a></p>
+<h2 id="aftersyncname-fn"><code>afterSync(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L471">View code</a></p>
+<p>A hook that is run after Model.sync call</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with options passed to Model.sync</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="beforebulksync"></a></p>
+<h2 id="beforebulksyncname-fn"><code>beforeBulkSync(name, fn)</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L478">View code</a></p>
+<p>A hook that is run before sequelize.sync call</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with options passed to sequelize.sync</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a name="afterbulksync"></a></p>
+<h2 id="afterbulksync"><code>afterBulkSync</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/hooks.js#L486">View code</a></p>
+<p>A hook that is run after sequelize.sync call</p>
+<p><strong>Params:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>A callback function that is called with options passed to sequelize.sync</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>This document is automatically generated based on source code comments. Please do not edit it directly, as your changes will be ignored. Please write on <a href="irc://irc.freenode.net/#sequelizejs">IRC</a>, open an issue or a create a pull request if you feel something can be improved. For help on how to write source code documentation see <a href="http://usejsdoc.org">JSDoc</a> and <a href="https://github.com/tj/dox">dox</a></em></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../transaction/" class="btn btn-neutral float-right" title="Transaction">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../associations/belongs-to-many/" class="btn btn-neutral" title="BelongsToMany (n:m)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/sequelize/sequelize/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../associations/belongs-to-many/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../transaction/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>
