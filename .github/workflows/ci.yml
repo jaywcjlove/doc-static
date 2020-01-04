@@ -4,7 +4,7 @@ on:
     branches:
       - master
 jobs:
-  build-deploy:
+  deploy-react-native:
     runs-on: ubuntu-18.04
     steps:
       - name: Get react-native-doc Static
@@ -21,7 +21,9 @@ jobs:
           PUBLISH_BRANCH: react-native
           PUBLISH_DIR: ./react-native-doc
 
-
+  deploy-jestjs:
+    runs-on: ubuntu-18.04
+    steps:
       - name: Get jest Static
         uses: actions/checkout@v2
         with:
@@ -36,7 +38,9 @@ jobs:
           PUBLISH_BRANCH: jestjs.io
           PUBLISH_DIR: ./jestjs.io
 
-
+  deploy-koajs:
+    runs-on: ubuntu-18.04
+    steps:
       - name: Get koajs Static
         uses: actions/checkout@v2
         with:
