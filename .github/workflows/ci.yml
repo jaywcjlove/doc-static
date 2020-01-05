@@ -4,25 +4,7 @@ on:
     branches:
       - master
 jobs:
-  job-react-native:
-    runs-on: ubuntu-18.04
-    steps:
-      - name: Get react-native-doc Static
-        uses: actions/checkout@v2
-        with:
-          repository: jaywcjlove/react-native-doc
-          ref: gh-pages
-          path: react-native-doc
-
-      - name: Deploy react-native-doc
-        uses: peaceiris/actions-gh-pages@v2.5.0
-        env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          PUBLISH_BRANCH: react-native
-          PUBLISH_DIR: ./react-native-doc
-
   job-koajs:
-    needs: job-react-native
     runs-on: ubuntu-18.04
     steps:
       - name: Get koajs Static
@@ -41,7 +23,7 @@ jobs:
 
 
   job-typeorm:
-    needs: [job-react-native, job-koajs]
+    needs: [job-koajs]
     runs-on: ubuntu-18.04
     steps:
       - name: Get typeorm Static
@@ -60,7 +42,7 @@ jobs:
         
 
   job-jest:
-    needs: [job-react-native, job-koajs, job-typeorm]
+    needs: [job-koajs, job-typeorm]
     runs-on: ubuntu-18.04
     steps:
       - name: Get jestjs.io Static
@@ -78,7 +60,7 @@ jobs:
           PUBLISH_DIR: ./jestjs.io
 
   job-antd:
-    needs: [job-react-native, job-koajs, job-typeorm, job-jest]
+    needs: [job-koajs, job-typeorm, job-jest]
     runs-on: ubuntu-18.04
     steps:
       - name: Get ant.design Static
@@ -97,7 +79,7 @@ jobs:
         
 
   job-reactjs:
-    needs: [job-react-native, job-koajs, job-typeorm, job-jest, job-antd]
+    needs: [job-koajs, job-typeorm, job-jest, job-antd]
     runs-on: ubuntu-18.04
     steps:
       - name: Get zh-hans.reactjs.org Static
@@ -116,7 +98,7 @@ jobs:
         
 
   job-element:
-    needs: [job-react-native, job-koajs, job-typeorm, job-jest, job-antd, job-reactjs]
+    needs: [job-koajs, job-typeorm, job-jest, job-antd, job-reactjs]
     runs-on: ubuntu-18.04
     steps:
       - name: Get element.eleme.io Static
@@ -135,7 +117,7 @@ jobs:
         
 
   job-cnvuejs:
-    needs: [job-react-native, job-koajs, job-typeorm, job-jest, job-antd, job-reactjs, job-element]
+    needs: [job-koajs, job-typeorm, job-jest, job-antd, job-reactjs, job-element]
     runs-on: ubuntu-18.04
     steps:
       - name: Get cn.vuejs.org Static
@@ -154,7 +136,7 @@ jobs:
         
 
   job-sequelize:
-    needs: [job-react-native, job-koajs, job-typeorm, job-jest, job-antd, job-reactjs, job-element, job-cnvuejs]
+    needs: [job-koajs, job-typeorm, job-jest, job-antd, job-reactjs, job-element, job-cnvuejs]
     runs-on: ubuntu-18.04
     steps:
       - name: Get sequelize.org Static
@@ -173,7 +155,7 @@ jobs:
         
 
   job-expressjs:
-    needs: [job-react-native, job-koajs, job-typeorm, job-jest, job-antd, job-reactjs, job-element, job-cnvuejs, job-sequelize]
+    needs: [job-koajs, job-typeorm, job-jest, job-antd, job-reactjs, job-element, job-cnvuejs, job-sequelize]
     runs-on: ubuntu-18.04
     steps:
       - name: Get expressjs.com Static
