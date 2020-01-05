@@ -1,4 +1,4 @@
-name: GitHub Actions Build and Deploy Document Static
+name: Get Document Static
 on:
   push:
     branches:
