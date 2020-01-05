@@ -176,7 +176,7 @@ jobs:
         
 
   job-element-react:
-    needs: [job-koajs, job-typeorm, job-jest, job-antd, job-reactjs, job-element, job-cnvuejs, job-sequelize, job-expressjs:]
+    needs: [job-koajs, job-typeorm, job-jest, job-antd, job-reactjs, job-element, job-cnvuejs, job-sequelize, job-expressjs]
     runs-on: ubuntu-18.04
     steps:
       - name: Get element.react Static
