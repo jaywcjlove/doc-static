@@ -60,6 +60,8 @@ jobs:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PUBLISH_BRANCH: jestjs.io
           PUBLISH_DIR: ./jestjs.io
+        with:
+          emptyCommits: false
 
   job-antd:
     needs: [job-koajs, job-typeorm, job-jest]
@@ -78,6 +80,8 @@ jobs:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PUBLISH_BRANCH: ant.design
           PUBLISH_DIR: ./ant.design
+        with:
+          emptyCommits: false
         
 
   job-reactjs:
@@ -97,6 +101,8 @@ jobs:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PUBLISH_BRANCH: zh-hans.reactjs.org
           PUBLISH_DIR: ./zh-hans.reactjs.org
+        with:
+          emptyCommits: false
         
 
   job-element:
@@ -116,6 +122,8 @@ jobs:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PUBLISH_BRANCH: element.eleme.io
           PUBLISH_DIR: ./element.eleme.io
+        with:
+          emptyCommits: false
         
 
   job-cnvuejs:
@@ -135,6 +143,8 @@ jobs:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PUBLISH_BRANCH: cn.vuejs.org
           PUBLISH_DIR: ./cn.vuejs.org
+        with:
+          emptyCommits: false
         
 
   job-sequelize:
@@ -154,6 +164,8 @@ jobs:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PUBLISH_BRANCH: sequelize.org
           PUBLISH_DIR: ./sequelize.org
+        with:
+          emptyCommits: false
         
 
   job-expressjs:
@@ -173,6 +185,8 @@ jobs:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PUBLISH_BRANCH: expressjs.com
           PUBLISH_DIR: ./expressjs.com
+        with:
+          emptyCommits: false
         
 
   job-element-react:
@@ -192,4 +206,6 @@ jobs:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           PUBLISH_BRANCH: element.react
           PUBLISH_DIR: ./element.react
+        with:
+          emptyCommits: false
         
