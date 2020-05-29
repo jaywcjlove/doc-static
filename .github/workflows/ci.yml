@@ -208,4 +208,24 @@ jobs:
           PUBLISH_DIR: ./element.react
         with:
           emptyCommits: false
+
+  job-deno-manual-cn:
+    needs: [job-koajs, job-typeorm, job-jest, job-antd, job-reactjs, job-element, job-cnvuejs, job-sequelize, job-expressjs, job-element-react]
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Get element.react Static
+        uses: actions/checkout@v2
+        with:
+          repository: denocn/deno-manual-cn
+          ref: gh-pages
+          path: deno-manual-cn
+
+      - name: Deploy deno-manual-cn
+        uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: deno-manual-cn
+          PUBLISH_DIR: ./deno-manual-cn
+        with:
+          emptyCommits: false
         
