@@ -216,7 +216,7 @@ jobs:
       - name: Get element.react Static
         uses: actions/checkout@v2
         with:
-          repository: denocn/deno-manual-cn
+          repository: Nugine/deno-manual-cn
           ref: gh-pages
           path: deno-manual-cn
 
