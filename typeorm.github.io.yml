@@ -1,4 +1,4 @@
-name: koajs
+name: typeorm.github.io
 on:
   push:
     branches:
@@ -16,11 +16,11 @@ jobs:
 
       - name: Get Static
         run: |
-          git clone https://github.com/koajs/koajs.com -b gh-pages --single-branch koajs.com --depth 1
+          git clone https://github.com/typeorm/typeorm.github.io -b master --single-branch typeorm.github.io --depth 1
 
-      - name: Deploy koajs.com
+      - name: Deploy typeorm.github.io
         uses: peaceiris/actions-gh-pages@v2.5.0
         env:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          PUBLISH_BRANCH: koajs.com
-          PUBLISH_DIR: ./koajs.com
+          PUBLISH_BRANCH: typeorm.github.io
+          PUBLISH_DIR: ./typeorm.github.io

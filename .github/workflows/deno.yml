@@ -1,4 +1,4 @@
-name: koajs
+name: deno-manual-cn
 on:
   push:
     branches:
@@ -16,11 +16,11 @@ jobs:
 
       - name: Get Static
         run: |
-          git clone https://github.com/koajs/koajs.com -b gh-pages --single-branch koajs.com --depth 1
+          git clone https://github.com/Nugine/deno-manual-cn -b gh-pages --single-branch deno-manual-cn --depth 1
 
-      - name: Deploy koajs.com
+      - name: Deploy deno-manual-cn
         uses: peaceiris/actions-gh-pages@v2.5.0
         env:
           ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          PUBLISH_BRANCH: koajs.com
-          PUBLISH_DIR: ./koajs.com
+          PUBLISH_BRANCH: deno-manual-cn
+          PUBLISH_DIR: ./deno-manual-cn
