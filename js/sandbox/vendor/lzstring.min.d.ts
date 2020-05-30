@@ -1,0 +1,12 @@
+export declare function compressToBase64(o: any): string;
+export declare function decompressFromBase64(r: any): string | null;
+export declare function compressToUTF16(o: any): string;
+export declare function decompressFromUTF16(o: any): string | null;
+export declare function compressToUint8Array(o: any): Uint8Array;
+export declare function decompressFromUint8Array(o: any): string | null;
+export declare function compressToEncodedURIComponent(o: any): string;
+export declare function decompressFromEncodedURIComponent(r: any): string | null;
+export declare function compress(o: any): string;
+export declare function _compress(o: any, r: any, n: any): string;
+export declare function decompress(o: any): string | null;
+export declare function _decompress(o: any, n: any, e: any): string | null;
