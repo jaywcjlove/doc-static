@@ -1,4 +1,4 @@
-name: Get Document Static
+name: Get Koa Document Static
 on:
   push:
     branches:
