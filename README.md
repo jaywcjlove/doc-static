@@ -17,4 +17,4 @@ reactjs | ![reactjs](https://github.com/jaywcjlove/doc-static/workflows/reactjs/
 sequelize.org | ![sequelize.org](https://github.com/jaywcjlove/doc-static/workflows/sequelize.org/badge.svg)
 typeorm.github.io | ![typeorm.github.io](https://github.com/jaywcjlove/doc-static/workflows/typeorm.github.io/badge.svg)
 typescriptlang.org | ![typescriptlang.org](https://github.com/jaywcjlove/doc-static/workflows/typescriptlang.org/badge.svg)
-vuejs | ![vuejs](https://github.com/jaywcjlove/doc-static/workflows/vuejs/badge.svg)
+cn.vuejs.org | ![cn.vuejs.org](https://github.com/jaywcjlove/doc-static/workflows/cn.vuejs.org/badge.svg)
