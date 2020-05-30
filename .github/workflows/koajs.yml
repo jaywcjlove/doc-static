@@ -1,0 +1,26 @@
+name: Get Document Static
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "13.x"
+          registry-url: "https://registry.npmjs.org/"
+
+      - name: Get Static
+        run: |
+          git clone https://github.com/koajs/koajs.com -b gh-pages --single-branch koajs.com --depth 1
+
+      - name: Deploy koajs.com
+        uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: koajs.com
+          PUBLISH_DIR: ./koajs.com
