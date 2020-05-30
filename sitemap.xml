@@ -139,13 +139,13 @@
 <url> <loc>https://www.typescriptlang.org/play/playground/config/new-compiler-defaults.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/playground/language/automatic-type-acquisition.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/playground/language/fixits.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.typescriptlang.org/play/playground/tooling/mobile-support.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.typescriptlang.org/play/playground/tooling/sharable-urls.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.typescriptlang.org/play/playground/tooling/typescript-versions.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/typescript/language/soundness.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/typescript/language/structural-typing.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/typescript/language/type-guards.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/typescript/language/type-widening-and-narrowing.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.typescriptlang.org/play/playground/tooling/mobile-support.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.typescriptlang.org/play/playground/tooling/sharable-urls.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.typescriptlang.org/play/playground/tooling/typescript-versions.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/typescript/language-extensions/enums.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/typescript/language-extensions/nominal-typing.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/typescript/language-extensions/types-vs-interfaces.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -237,8 +237,8 @@
 <url> <loc>https://www.typescriptlang.org/zh/play/typescript/type-primitives/built-in-utility-types.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/typescript/type-primitives/nullable-types.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/typescript/type-primitives/tuples.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.typescriptlang.org/zh/play/javascript/external-apis/typescript-with-deno.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/vo/play/javascript/javascript-essentials/hello-world.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.typescriptlang.org/zh/play/javascript/external-apis/typescript-with-deno.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/vo/play/javascript/javascript-essentials/objects-and-arrays.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/community</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/es/community</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
