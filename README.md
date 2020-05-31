@@ -4,8 +4,9 @@
 
 通过 master 分支 push 事件，或者通过 tag 打版本来触发 Actions 更新仓库。
 
-静态网站 | 状态
+静态网站 | 发布状态
 ---- | ----
+angular.cn | ![angular.cn](https://github.com/jaywcjlove/doc-static/workflows/angular.cn/badge.svg)
 ant.design | ![ant.design](https://github.com/jaywcjlove/doc-static/workflows/ant.design/badge.svg)
 deno-manual-cn | ![deno-manual-cn](https://github.com/jaywcjlove/doc-static/workflows/deno-manual-cn/badge.svg)
 element.eleme.io | ![element.eleme.io](https://github.com/jaywcjlove/doc-static/workflows/element.eleme.io/badge.svg)
