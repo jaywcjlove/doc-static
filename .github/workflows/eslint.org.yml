@@ -1,0 +1,26 @@
+name: eslint.org
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "13.x"
+          registry-url: "https://registry.npmjs.org/"
+
+      - name: Get Static
+        run: |
+          git clone https://github.com/eslint/website.git -b master --single-branch cn.eslint.org --depth 1
+
+      - name: Deploy eslint.org
+        uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: eslint.org
+          PUBLISH_DIR: ./eslint.org/_site
