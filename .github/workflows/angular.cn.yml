@@ -1,0 +1,33 @@
+name: angular.cn
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "13.x"
+          registry-url: "https://registry.npmjs.org/"
+
+      - name: Get Static
+        run: |
+          git clone https://github.com/angular/angular-cn -b master --single-branch angular.cn --depth 1
+
+      # Build v2
+      - name: Build website v2
+        run: |
+          cd angular.cn
+          npm install
+          node ./node_module/.bin/gulp build-compile --lang="(ts|js)"
+
+      - name: Deploy angular.cn
+        uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: angular.cn
+          PUBLISH_DIR: ./angular.cn/www
