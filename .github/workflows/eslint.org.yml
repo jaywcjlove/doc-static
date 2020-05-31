@@ -16,7 +16,13 @@ jobs:
 
       - name: Get Static
         run: |
-          git clone https://github.com/eslint/website.git -b master --single-branch eslint.org --depth 1
+          git clone https://github.com/eslint/website.git -b master --single-branch --depth 1 eslint.org
+
+      - name: Build website
+        run: |
+          cd eslint.org/
+          yarn install
+          yarn run build
 
       - name: Deploy eslint.org
         uses: peaceiris/actions-gh-pages@v2.5.0
