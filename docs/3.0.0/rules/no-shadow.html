@@ -1,0 +1,83 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="JavaScript, Linter, Linting, Pluggable, Configurable, Code Quality"><meta name="description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="theme-color" content="#463fd4"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="ESLint - Pluggable JavaScript linter"><meta property="og:title" content="no-shadow - Rules"><meta property="og:url" content="/docs/3.0.0/rules/no-shadow"><meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png"><meta name="twitter:site" content="@geteslint"><meta name="twitter:title" content="no-shadow - Rules"><meta name="twitter:description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="twitter:url" content="/docs/3.0.0/rules/no-shadow"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://eslint.org/assets/img/favicon.512x512.png"><title>no-shadow - Rules - ESLint - Pluggable JavaScript linter</title><link rel="preconnect" href="https://www.google-analytics.com"><link rel="canonical" href="/docs/3.0.0/rules/no-shadow"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"><link rel="stylesheet" href="/assets/styles/main.css"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/assets/img/favicon.512x512.png"><link rel="alternate" type="application/rss+xml" title="ESLint - Pluggable JavaScript linter" href="/feed.xml"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"></head><body><input type="checkbox" id="eslint-toggle-search" class="eslint-toggle-search-checkbox"><header class="navbar navbar-default navbar-demo navbar-fixed-top eslint-nav" id="top" role="banner"><div class="container"><a href="/" class="navbar-brand"><img alt="ESLint" src="/assets/img/logo.svg" itemprop="image">ESLint</a><div class="eslint-navbar-toggles"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#eslint-navbar" aria-controls="eslint-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label></div><nav id="eslint-navbar" class="collapse navbar-collapse eslint-navbar"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="/docs/user-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/user-guide/getting-started">Getting Started</a></li><li><a href="/docs/user-guide/configuring">Configuring ESLint</a></li><li><a href="/docs/user-guide/command-line-interface">Command Line Interface</a></li><li><a href="/docs/rules">Rules</a></li><li><a href="/docs/user-guide/formatters">Formatters</a></li><li><a href="/docs/user-guide/integrations">Integrations</a></li><li class="divider"></li><li><a href="/docs/user-guide/migrating-to-7.0.0">Migrating to v7.0.0</a></li><li><a href="/docs/user-guide/migrating-to-6.0.0">Migrating to v6.0.0</a></li><li><a href="/docs/user-guide/migrating-to-5.0.0">Migrating to v5.0.0</a></li><li><a href="/docs/user-guide/migrating-to-4.0.0">Migrating to v4.0.0</a></li><li><a href="/docs/user-guide/migrating-to-3.0.0">Migrating to v3.0.0</a></li><li><a href="/docs/user-guide/migrating-to-2.0.0">Migrating to v2.0.0</a></li><li><a href="/docs/user-guide/migrating-to-1.0.0">Migrating to v1.0.0</a></li><li><a href="/docs/user-guide/migrating-from-jscs">Migrating from JSCS</a></li></ul></li><li class="dropdown"><a href="/docs/developer-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/developer-guide/architecture">Architecture</a></li><li><a href="/docs/developer-guide/contributing">Contributing</a></li><li><a href="/docs/developer-guide/source-code">Get the Source Code</a></li><li><a href="/docs/developer-guide/development-environment">Set up a Development Environment</a></li><li><a href="/docs/developer-guide/unit-tests">Run the Unit Tests</a></li><li><a href="/docs/developer-guide/working-with-rules">Working with Rules</a></li><li><a href="/docs/developer-guide/working-with-plugins">Working with Plugins</a></li><li><a href="/docs/developer-guide/working-with-custom-formatters">Working with Custom Formatters</a></li><li><a href="/docs/developer-guide/working-with-custom-parsers">Working with Custom Parsers</a></li><li><a href="/docs/developer-guide/shareable-configs">Shareable Configs</a></li><li><a href="/docs/developer-guide/nodejs-api">Node.js API</a></li><li><a href="/docs/maintainer-guide">Maintainer guide</a></li></ul></li><li><a href="/blog">Blog</a></li><li><a href="/demo">Demo</a></li><li class="dropdown"><a href="/docs/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/users">Who's Using ESLint?</a></li><li><a href="/team">About the Team</a></li><li><a href="/docs/about">About ESLint</a></li></ul></li></ul><label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label><div class="navbar-form navbar-right eslint-search" role="search"><div class="input-group"><label class="sr-only" aria-label="Search" for="eslint-search-input">Search</label><div class="eslint-search-input-wrapper"><input type="text" class="form-control" id="eslint-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search the docs..."> <label for="eslint-toggle-search" class="eslint-toggle-search-close"><span class="sr-only">Close search</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></div></div></div></nav></div></header><main class="doc"><article class="container"><h1>disallow variable declarations from shadowing variables declared in the outer scope (no-shadow)</h1><p>Shadowing is the process by which a local variable shares the same name as a variable in its containing scope. For example:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> a = <span class="hljs-number">3</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">b</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> a = <span class="hljs-number">10</span>;
+}
+</code></pre><p>In this case, the variable <code>a</code> inside of <code>b()</code> is shadowing the variable <code>a</code> in the global scope. This can cause confusion while reading the code and it's impossible to access the global variable.</p><h2>Rule Details</h2><p>This rule aims to eliminate shadowed variable declarations.</p><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-shadow: "error"*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-keyword">var</span> a = <span class="hljs-number">3</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">b</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> a = <span class="hljs-number">10</span>;
+}
+
+<span class="hljs-keyword">var</span> b = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> a = <span class="hljs-number">10</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">b</span>(<span class="hljs-params">a</span>) </span>{
+    a = <span class="hljs-number">10</span>;
+}
+b(a);
+
+<span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
+    <span class="hljs-keyword">let</span> a = <span class="hljs-number">5</span>;
+}
+</code></pre><h2>Options</h2><p>This rule takes one option, an object, with properties <code>&quot;builtinGlobals&quot;</code>, <code>&quot;hoist&quot;</code> and <code>&quot;allow&quot;</code>.</p><pre class="hljs highlight-json"><code>{
+    <span class="hljs-attr">"no-shadow"</span>: [<span class="hljs-string">"error"</span>, { <span class="hljs-attr">"builtinGlobals"</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">"hoist"</span>: <span class="hljs-string">"functions"</span>, <span class="hljs-attr">"allow"</span>: [] }]
+}
+</code></pre><h3>builtinGlobals</h3><p>The <code>builtinGlobals</code> option is <code>false</code> by default. If it is <code>true</code>, the rule prevents shadowing of built-in global variables: <code>Object</code>, <code>Array</code>, <code>Number</code>, and so on.</p><p class="incorrect icon">Examples of <strong>incorrect</strong> code for the <code>{ &quot;builtinGlobals&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-shadow: ["error", { "builtinGlobals": true }]*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> <span class="hljs-built_in">Object</span> = <span class="hljs-number">0</span>;
+}
+</code></pre><h3>hoist</h3><p>The <code>hoist</code> option has three settings:</p><ul><li><code>functions</code> (by default) - reports shadowing before the outer functions are defined.</li><li><code>all</code> - reports all shadowing before the outer variables/functions are defined.</li><li><code>never</code> - never report shadowing before the outer variables/functions are defined.</li></ul><h4>hoist: functions</h4><p class="incorrect icon">Examples of <strong>incorrect</strong> code for the default <code>{ &quot;hoist&quot;: &quot;functions&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-shadow: ["error", { "hoist": "functions" }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
+    <span class="hljs-keyword">let</span> b = <span class="hljs-number">6</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">b</span>(<span class="hljs-params"></span>) </span>{}
+</code></pre><p>Although <code>let b</code> in the <code>if</code> statement is before the <em>function</em> declaration in the outer scope, it is incorrect.</p><p class="correct icon">Examples of <strong>correct</strong> code for the default <code>{ &quot;hoist&quot;: &quot;functions&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-shadow: ["error", { "hoist": "functions" }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
+    <span class="hljs-keyword">let</span> a = <span class="hljs-number">3</span>;
+}
+
+<span class="hljs-keyword">let</span> a = <span class="hljs-number">5</span>;
+</code></pre><p>Because <code>let a</code> in the <code>if</code> statement is before the <em>variable</em> declaration in the outer scope, it is correct.</p><h4>hoist: all</h4><p class="incorrect icon">Examples of <strong>incorrect</strong> code for the <code>{ &quot;hoist&quot;: &quot;all&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-shadow: ["error", { "hoist": "all" }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
+    <span class="hljs-keyword">let</span> a = <span class="hljs-number">3</span>;
+    <span class="hljs-keyword">let</span> b = <span class="hljs-number">6</span>;
+}
+
+<span class="hljs-keyword">let</span> a = <span class="hljs-number">5</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">b</span>(<span class="hljs-params"></span>) </span>{}
+</code></pre><h4>hoist: never</h4><p class="correct icon">Examples of <strong>correct</strong> code for the <code>{ &quot;hoist&quot;: &quot;never&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-shadow: ["error", { "hoist": "never" }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) {
+    <span class="hljs-keyword">let</span> a = <span class="hljs-number">3</span>;
+    <span class="hljs-keyword">let</span> b = <span class="hljs-number">6</span>;
+}
+
+<span class="hljs-keyword">let</span> a = <span class="hljs-number">5</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">b</span>(<span class="hljs-params"></span>) </span>{}
+</code></pre><p>Because <code>let a</code> and <code>let b</code> in the <code>if</code> statement are before the declarations in the outer scope, they are correct.</p><h3>allow</h3><p>The <code>allow</code> option is an array of identifier names for which shadowing is allowed. For example, <code>&quot;resolve&quot;</code>, <code>&quot;reject&quot;</code>, <code>&quot;done&quot;</code>, <code>&quot;cb&quot;</code>.</p><p class="correct icon">Examples of <strong>correct</strong> code for the <code>{ &quot;allow&quot;: [&quot;done&quot;] }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-shadow: ["error", { "allow": ["done"] }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">from</span> <span class="hljs-string">'async'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">done</span>) </span>{
+  <span class="hljs-keyword">async</span>.map([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e, done</span>) </span>{
+    done(<span class="hljs-literal">null</span>, e * <span class="hljs-number">2</span>)
+  }, done);
+}
+
+foo(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, result</span>) </span>{
+  <span class="hljs-built_in">console</span>.log({ err, result });
+});
+</code></pre><h2>Further Reading</h2><ul><li><a href="http://en.wikipedia.org/wiki/Variable_shadowing">Variable Shadowing</a></li></ul><h2>Related Rules</h2><ul><li><a href="no-shadow-restricted-names">no-shadow-restricted-names</a></li></ul><h2>Version</h2><p>This rule was introduced in ESLint 0.0.9.</p><h2>Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/no-shadow.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/no-shadow.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/website/edit/master/./docs/3.0.0/rules/no-shadow.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>

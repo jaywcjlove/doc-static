@@ -1,0 +1,200 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="JavaScript, Linter, Linting, Pluggable, Configurable, Code Quality"><meta name="description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="theme-color" content="#463fd4"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="ESLint - Pluggable JavaScript linter"><meta property="og:title" content="Documentation"><meta property="og:url" content="/docs/0.24.1/developer-guide/working-with-rules"><meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png"><meta name="twitter:site" content="@geteslint"><meta name="twitter:title" content="Documentation"><meta name="twitter:description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="twitter:url" content="/docs/0.24.1/developer-guide/working-with-rules"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://eslint.org/assets/img/favicon.512x512.png"><title>Documentation - ESLint - Pluggable JavaScript linter</title><link rel="preconnect" href="https://www.google-analytics.com"><link rel="canonical" href="/docs/0.24.1/developer-guide/working-with-rules"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"><link rel="stylesheet" href="/assets/styles/main.css"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/assets/img/favicon.512x512.png"><link rel="alternate" type="application/rss+xml" title="ESLint - Pluggable JavaScript linter" href="/feed.xml"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"></head><body><input type="checkbox" id="eslint-toggle-search" class="eslint-toggle-search-checkbox"><header class="navbar navbar-default navbar-demo navbar-fixed-top eslint-nav" id="top" role="banner"><div class="container"><a href="/" class="navbar-brand"><img alt="ESLint" src="/assets/img/logo.svg" itemprop="image">ESLint</a><div class="eslint-navbar-toggles"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#eslint-navbar" aria-controls="eslint-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label></div><nav id="eslint-navbar" class="collapse navbar-collapse eslint-navbar"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="/docs/user-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/user-guide/getting-started">Getting Started</a></li><li><a href="/docs/user-guide/configuring">Configuring ESLint</a></li><li><a href="/docs/user-guide/command-line-interface">Command Line Interface</a></li><li><a href="/docs/rules">Rules</a></li><li><a href="/docs/user-guide/formatters">Formatters</a></li><li><a href="/docs/user-guide/integrations">Integrations</a></li><li class="divider"></li><li><a href="/docs/user-guide/migrating-to-7.0.0">Migrating to v7.0.0</a></li><li><a href="/docs/user-guide/migrating-to-6.0.0">Migrating to v6.0.0</a></li><li><a href="/docs/user-guide/migrating-to-5.0.0">Migrating to v5.0.0</a></li><li><a href="/docs/user-guide/migrating-to-4.0.0">Migrating to v4.0.0</a></li><li><a href="/docs/user-guide/migrating-to-3.0.0">Migrating to v3.0.0</a></li><li><a href="/docs/user-guide/migrating-to-2.0.0">Migrating to v2.0.0</a></li><li><a href="/docs/user-guide/migrating-to-1.0.0">Migrating to v1.0.0</a></li><li><a href="/docs/user-guide/migrating-from-jscs">Migrating from JSCS</a></li></ul></li><li class="dropdown"><a href="/docs/developer-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/developer-guide/architecture">Architecture</a></li><li><a href="/docs/developer-guide/contributing">Contributing</a></li><li><a href="/docs/developer-guide/source-code">Get the Source Code</a></li><li><a href="/docs/developer-guide/development-environment">Set up a Development Environment</a></li><li><a href="/docs/developer-guide/unit-tests">Run the Unit Tests</a></li><li><a href="/docs/developer-guide/working-with-rules">Working with Rules</a></li><li><a href="/docs/developer-guide/working-with-plugins">Working with Plugins</a></li><li><a href="/docs/developer-guide/working-with-custom-formatters">Working with Custom Formatters</a></li><li><a href="/docs/developer-guide/working-with-custom-parsers">Working with Custom Parsers</a></li><li><a href="/docs/developer-guide/shareable-configs">Shareable Configs</a></li><li><a href="/docs/developer-guide/nodejs-api">Node.js API</a></li><li><a href="/docs/maintainer-guide">Maintainer guide</a></li></ul></li><li><a href="/blog">Blog</a></li><li><a href="/demo">Demo</a></li><li class="dropdown"><a href="/docs/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/users">Who's Using ESLint?</a></li><li><a href="/team">About the Team</a></li><li><a href="/docs/about">About ESLint</a></li></ul></li></ul><label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label><div class="navbar-form navbar-right eslint-search" role="search"><div class="input-group"><label class="sr-only" aria-label="Search" for="eslint-search-input">Search</label><div class="eslint-search-input-wrapper"><input type="text" class="form-control" id="eslint-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search the docs..."> <label for="eslint-toggle-search" class="eslint-toggle-search-close"><span class="sr-only">Close search</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></div></div></div></nav></div></header><main class="doc"><article class="container"><h1>Working with Rules</h1><p>Each ESLint rule has two files: a source file in the <code>lib/rules</code> directory and a test file in the <code>tests/lib/rules</code> directory. Both files should be named with the rule ID (i.e., <code>no-eval.js</code> for rule ID <code>no-eval</code>) The basic source code format for a rule is:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/**
+ * <span class="hljs-doctag">@fileoverview </span>Rule to flag use of an empty block statement
+ * <span class="hljs-doctag">@author </span>Nicholas C. Zakas
+ * <span class="hljs-doctag">@copyright </span>2014 Nicholas C. Zakas. All rights reserved.
+ */</span>
+<span class="hljs-meta">"use strict"</span>;
+
+<span class="hljs-comment">//------------------------------------------------------------------------------</span>
+<span class="hljs-comment">// Rule Definition</span>
+<span class="hljs-comment">//------------------------------------------------------------------------------</span>
+
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">context</span>) </span>{
+
+    <span class="hljs-keyword">return</span> {
+        <span class="hljs-comment">// properties go here</span>
+    };
+
+};
+
+<span class="hljs-built_in">module</span>.exports.schema = [
+    <span class="hljs-comment">// JSON Schema for rule options goes here</span>
+];
+</code></pre><p><strong>Important:</strong> Rule submissions will not be accepted unless they are in this format.</p><h2>Rule Basics</h2><p>Each rule is represented by a single object with several properties. The properties are equivalent to AST node types from <a href="https://developer.mozilla.org/en-US/docs/SpiderMonkey/Parser_API">SpiderMonkey</a>. For example, if your rule wants to know when an identifier is found in the AST, then add a method called &quot;Identifier&quot;, such as:</p><pre class="hljs highlight-js"><code><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">context</span>) </span>{
+
+    <span class="hljs-keyword">return</span> {
+
+        <span class="hljs-string">"Identifier"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">node</span>) </span>{
+            <span class="hljs-comment">// do something with node</span>
+        }
+    };
+
+};
+</code></pre><p>Each method that matches a node in the AST will be passed the corresponding node. You can then evaluate the node and it's surrounding tree to determine whether or not an issue needs reporting.</p><p>By default, the method matching a node name is called during the traversal when the node is first encountered, on the way down the AST. You can also specify to visit the node on the other side of the traversal, as it comes back up the tree, but adding <code>:exit</code> to the end of the node type, such as:</p><pre class="hljs highlight-js"><code><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">context</span>) </span>{
+
+    <span class="hljs-keyword">return</span> {
+
+        <span class="hljs-string">"Identifier:exit"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">node</span>) </span>{
+            <span class="hljs-comment">// do something with node</span>
+        }
+    };
+
+};
+</code></pre><p>In this code, <code>&quot;Identifier:exit&quot;</code> is called on the way up the AST. This capability allows you to keep track as the traversal enters and exits specific parts of the AST.</p><h2>The Context Object</h2><p>The <code>context</code> object contains additional functionality that is helpful for rules to do their jobs. As the name implies, the <code>context</code> object contains information that is relevant to the context of the rule. The <code>context</code> object has the following properties:</p><ul><li><code>ecmaFeatures</code> - the language feature flags.</li><li><code>id</code> - the rule ID.</li><li><code>options</code> - an array of rule options.</li><li><code>settings</code> - the <code>settings</code> from configuration.</li></ul><p>Additionally, the <code>context</code> object has the following methods:</p><ul><li><code>getAllComments()</code> - returns an array of all comments in the source.</li><li><code>getAncestors()</code> - returns an array of ancestor nodes based on the current traversal.</li><li><code>getComments(node)</code> - returns the leading and trailing comments arrays for the given node.</li><li><code>getFilename()</code> - returns the filename associated with the source.</li><li><code>getFirstToken(node)</code> - returns the first token representing the given node.</li><li><code>getFirstTokens(node, count)</code> - returns the first <code>count</code> tokens representing the given node.</li><li><code>getJSDocComment(node)</code> - returns the JSDoc comment for a given node or <code>null</code> if there is none.</li><li><code>getLastToken(node)</code> - returns the last token representing the given node.</li><li><code>getLastTokens(node, count)</code> - returns the last <code>count</code> tokens representing the given node.</li><li><code>getNodeByRangeIndex(index)</code> - returns the deepest node in the AST containing the given source index.</li><li><code>getScope()</code> - returns the current scope.</li><li><code>getSource(node)</code> - returns the source code for the given node. Omit <code>node</code> to get the whole source.</li><li><code>getSourceLines()</code> - returns the entire source code split into an array of string lines.</li><li><code>getTokenAfter(nodeOrToken)</code> - returns the first token after the given node or token.</li><li><code>getTokenBefore(nodeOrToken)</code> - returns the first token before the given node or token.</li><li><code>getTokenByRangeStart(index)</code> - returns the token whose range starts at the given index in the source.</li><li><code>getTokens(node)</code> - returns all tokens for the given node.</li><li><code>getTokensAfter(nodeOrToken, count)</code> - returns <code>count</code> tokens after the given node or token.</li><li><code>getTokensBefore(nodeOrToken, count)</code> - returns <code>count</code> tokens before the given node or token.</li><li><code>getTokensBetween(node1, node2)</code> - returns the tokens between two nodes.</li><li><code>markVariableAsUsed(name)</code> - marks the named variable in scope as used. This affects the <a href="../rules/no-unused-vars">no-unused-vars</a> rule.</li><li><code>report(node, message)</code> - reports an error in the code.</li></ul><h3>context.report()</h3><p>The main method you'll use is <code>context.report()</code>, which publishes a warning or error (depending on the configuration being used). This method accepts three arguments: the AST node that caused the report, a message to display, and an optional object literal which is used to interpolate. For example:</p><pre><code>context.report(node, &quot;This is unexpected!&quot;);
+</code></pre><p>or</p><pre><code>context.report(node, &quot;`` is unexpected!&quot;, { identifier: node.name });
+</code></pre><p>The node contains all of the information necessary to figure out the line and column number of the offending text as well the source text representing the node.</p><h3>context.options</h3><p>Some rules require options in order to function correctly. These options appear in configuration (<code>.eslintrc</code>, command line, or in comments). For example:</p><pre class="hljs highlight-json"><code>{
+    <span class="hljs-attr">"quotes"</span>: [<span class="hljs-number">2</span>, <span class="hljs-string">"double"</span>]
+}
+</code></pre><p>The <code>quotes</code> rule in this example has one option, <code>&quot;double&quot;</code> (the <code>2</code> is the error level). You can retrieve the options for a rule by using <code>context.options</code>, which is an array containing every configured option for the rule. In this case, <code>context.options[0]</code> would contain <code>&quot;double&quot;</code>:</p><pre class="hljs highlight-js"><code><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">context</span>) </span>{
+
+    <span class="hljs-keyword">var</span> isDouble = (context.options[<span class="hljs-number">0</span>] === <span class="hljs-string">"double"</span>);
+
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre><p>Since <code>context.options</code> is just an array, you can use it to determine how many options have been passed as well as retrieving the actual options themselves. Keep in mind that the error level is not part of <code>context.options</code>, as the error level cannot be known or modified from inside a rule.</p><p>When using options, make sure that your rule has some logic defaults in case the options are not provided.</p><h3>Options Schemas</h3><p>Rules may export a <code>schema</code> property, which is a <a href="http://json-schema.org/">JSON schema</a> format description of a rule's options which will be used by ESLint to validate configuration options and prevent invalid or unexpected inputs before they are passed to the rule in <code>context.options</code>.</p><p>There are two formats for a rule's exported <code>schema</code>. The first is a full JSON Schema object describing all possible options the rule accepts, including the rule's error level as the first argument and any optional arguments thereafter.</p><p>However, to simplify schema creation, rules may also export an array of schemas for each optional positional argument, and ESLint will automatically validate the required error level first. For example, the <code>yoda</code> rule accepts a primary mode argument, as well as an extra options object with named properties.</p><pre class="hljs highlight-js"><code><span class="hljs-comment">// "yoda": [2, "never", { "exceptRange": true }]</span>
+<span class="hljs-built_in">module</span>.exports.schema = [
+    {
+        <span class="hljs-string">"enum"</span>: [<span class="hljs-string">"always"</span>, <span class="hljs-string">"never"</span>]
+    },
+    {
+        <span class="hljs-string">"type"</span>: <span class="hljs-string">"object"</span>,
+        <span class="hljs-string">"properties"</span>: {
+            <span class="hljs-string">"exceptRange"</span>: {
+                <span class="hljs-string">"type"</span>: <span class="hljs-string">"boolean"</span>
+            }
+        },
+        <span class="hljs-string">"additionalProperties"</span>: <span class="hljs-literal">false</span>
+    }
+];
+</code></pre><p>In the preceding example, the error level is assumed to be the first argument. It is followed by the first optional argument, a string which may be either <code>&quot;always&quot;</code> or <code>&quot;never&quot;</code>. The final optional argument is an object, which may have a Boolean property named <code>exceptRange</code>.</p><h3>Getting the Source</h3><p>If your rule needs to get the actual JavaScript source to work with, then use the <code>context.getSource()</code> method. This method works as follows:</p><pre class="hljs highlight-js"><code>
+<span class="hljs-comment">// get all source</span>
+<span class="hljs-keyword">var</span> source = context.getSource();
+
+<span class="hljs-comment">// get source for just this AST node</span>
+<span class="hljs-keyword">var</span> nodeSource = context.getSource(node);
+
+<span class="hljs-comment">// get source for AST node plus previous two characters</span>
+<span class="hljs-keyword">var</span> nodeSourceWithPrev = context.getSource(node, <span class="hljs-number">2</span>);
+
+<span class="hljs-comment">// get source for AST node plus following two characters</span>
+<span class="hljs-keyword">var</span> nodeSourceWithFollowing = context.getSource(node, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>);
+</code></pre><p>In this way, you can look for patterns in the JavaScript text itself when the AST isn't providing the appropriate data (such as location of commas, semicolons, parentheses, etc.).</p><h3>Accessing comments</h3><p>If you need to access comments for a specific node you can use <code>context.getComments(node)</code>:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">// the "comments" variable has a "leading" and "trailing" property containing</span>
+<span class="hljs-comment">// its leading and trailing comments, respectively</span>
+<span class="hljs-keyword">var</span> comments = context.getComments(node);
+</code></pre><p>Keep in mind that comments are technically not a part of the AST and are only attached to it on demand, i.e. when you call <code>getComments()</code>.</p><p><strong>Note:</strong> One of the libraries adds AST node properties for comments - do not use these properties. Always use <code>context.getComments()</code> as this is the only guaranteed API for accessing comments (we will likely change how comments are handled later).</p><h2>Rule Unit Tests</h2><p>Each rule must have a set of unit tests submitted with it to be accepted. The test file is named the same as the source file but lives in <code>tests/lib/</code>. For example, if your rule source file is <code>lib/rules/foo.js</code> then your test file should be <code>tests/lib/rules/foo.js</code>.</p><p>For your rule, be sure to test:</p><ol><li>All instances that should be flagged as warnings.</li><li>At least one pattern that should <strong>not</strong> be flagged as a warning.</li></ol><p>The basic pattern for a rule unit test file is:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/**
+ * <span class="hljs-doctag">@fileoverview </span>Tests for no-with rule.
+ * <span class="hljs-doctag">@author </span>Nicholas C. Zakas
+ * <span class="hljs-doctag">@copyright </span>2014 Nicholas C. Zakas. All rights reserved.
+ */</span>
+<span class="hljs-meta">"use strict"</span>;
+
+<span class="hljs-comment">//------------------------------------------------------------------------------</span>
+<span class="hljs-comment">// Requirements</span>
+<span class="hljs-comment">//------------------------------------------------------------------------------</span>
+
+<span class="hljs-keyword">var</span> eslint = <span class="hljs-built_in">require</span>(<span class="hljs-string">"../../../lib/eslint"</span>),
+    ESLintTester = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint-tester"</span>);
+
+<span class="hljs-comment">//------------------------------------------------------------------------------</span>
+<span class="hljs-comment">// Tests</span>
+<span class="hljs-comment">//------------------------------------------------------------------------------</span>
+
+<span class="hljs-keyword">var</span> eslintTester = <span class="hljs-keyword">new</span> ESLintTester(eslint);
+eslintTester.addRuleTest(<span class="hljs-string">"lib/rules/block-scoped-var"</span>, {
+
+    <span class="hljs-comment">// Examples of code that should not trigger the rule</span>
+    <span class="hljs-attr">valid</span>: [
+        <span class="hljs-string">"function doSomething() { var build, f; if (true) { build = true; } f = build; }"</span>,
+        <span class="hljs-string">"var build; function doSomething() { var f = build; }"</span>,
+        <span class="hljs-string">"function doSomething(e) { }"</span>,
+        <span class="hljs-string">"function doSomething(e) { var f = e; }"</span>,
+        <span class="hljs-string">"function doSomething() { var f = doSomething; }"</span>,
+        <span class="hljs-string">"function foo() { } function doSomething() { var f = foo; }"</span>
+    ],
+
+    <span class="hljs-comment">// Examples of code that should trigger the rule</span>
+    <span class="hljs-attr">invalid</span>: [
+        {
+            <span class="hljs-attr">code</span>: <span class="hljs-string">"function doSomething() { var f; if (true) { var build = true; } f = build; }"</span>,
+            <span class="hljs-attr">errors</span>: [
+                { <span class="hljs-attr">message</span>: <span class="hljs-string">"build used outside of binding context."</span>, <span class="hljs-attr">type</span>: <span class="hljs-string">"Identifier"</span> }
+            ]
+        },
+        {
+            <span class="hljs-attr">code</span>: <span class="hljs-string">"function doSomething() { try { var build = 1; } catch (e) { var f = build; } }"</span>,
+            <span class="hljs-attr">errors</span>: [
+                { <span class="hljs-attr">message</span>: <span class="hljs-string">"build used outside of binding context."</span>, <span class="hljs-attr">type</span>: <span class="hljs-string">"Identifier"</span> }
+            ]
+        }
+    ]
+});
+</code></pre><p>Be sure to replace the value of <code>&quot;block-scoped-var&quot;</code> with your rule's ID. There are plenty of examples in the <code>tests/lib/rules/</code> directory.</p><h3>Valid Code</h3><p>Each valid case can be either a string or an object. The object form is used when you need to specify additional global variables or arguments for the rule. For example, the following defines <code>window</code> as a global variable for code that should not trigger the rule being tested:</p><pre class="hljs highlight-js"><code>valid: [
+    {
+        <span class="hljs-attr">code</span>: <span class="hljs-string">"window.alert()"</span>,
+        <span class="hljs-attr">globals</span>: [ <span class="hljs-string">"window"</span> ]
+    }
+]
+</code></pre><p>You can also pass arguments to the rule (if it accepts them). These arguments are equivalent to how people can configure rules in their <code>.eslintrc</code> file. For example:</p><pre class="hljs highlight-js"><code>valid: [
+    {
+        <span class="hljs-attr">code</span>: <span class="hljs-string">"var msg = 'Hello';"</span>,
+        <span class="hljs-attr">args</span>: [<span class="hljs-number">1</span>, <span class="hljs-string">"single"</span> ]
+    }
+]
+</code></pre><p>Your rule will then be passed the arguments as if they came from a configuration file.</p><h3>Invalid Code</h3><p>Each invalid case must be an object containing the code to test and at least the message that is produced by the rule. The <code>errors</code> key specifies an array of objects, each containing a message (your rule may trigger multiple messages for the same code). You should also specify the type of AST node you expect to receive back using the <code>type</code> key. The AST node should represent the actual spot in the code where there is a problem. For example:</p><pre class="hljs highlight-js"><code>invalid: [
+    {
+        <span class="hljs-attr">code</span>: <span class="hljs-string">"function doSomething() { var f; if (true) { var build = true; } f = build; }"</span>,
+        <span class="hljs-attr">errors</span>: [
+            { <span class="hljs-attr">message</span>: <span class="hljs-string">"build used outside of binding context."</span>, <span class="hljs-attr">type</span>: <span class="hljs-string">"Identifier"</span> }
+        ]
+    }
+]
+</code></pre><p>In this case, the message is specific to the variable being used and the AST node type is <code>Identifier</code>.</p><p>Similar to the valid cases, you can also specify <code>args</code> to be passed to the rule:</p><pre class="hljs highlight-js"><code>invalid: [
+    {
+        <span class="hljs-attr">code</span>: <span class="hljs-string">"function doSomething() { var f; if (true) { var build = true; } f = build; }"</span>,
+        <span class="hljs-attr">args</span>: [ <span class="hljs-number">1</span>, <span class="hljs-string">"double"</span> ],
+        <span class="hljs-attr">errors</span>: [
+            { <span class="hljs-attr">message</span>: <span class="hljs-string">"build used outside of binding context."</span>, <span class="hljs-attr">type</span>: <span class="hljs-string">"Identifier"</span> }
+        ]
+    }
+]
+</code></pre><h3>Write Many Tests</h3><p>You must have at least one valid and one invalid case for the rule tests to pass. Provide as many unit tests as possible. Your pull request will never be turned down for having too many tests submitted with it!</p><h2>Performance Testing</h2><p>To keep the linting process efficient and unobtrusive, it is useful to verify the performance impact of new rules or modifications to existing rules.</p><h3>Overall Performance</h3><p>The <code>npm run perf</code> command gives a high-level overview of ESLint running time.</p><pre class="hljs highlight-bash"><code>$ git checkout master
+Switched to branch <span class="hljs-string">'master'</span>
+
+$ npm run perf
+CPU Speed is 2200 with multiplier 7500000
+Performance Run <span class="hljs-comment">#1:  1394.689313ms</span>
+Performance Run <span class="hljs-comment">#2:  1423.295351ms</span>
+Performance Run <span class="hljs-comment">#3:  1385.09515ms</span>
+Performance Run <span class="hljs-comment">#4:  1382.406982ms</span>
+Performance Run <span class="hljs-comment">#5:  1409.68566ms</span>
+Performance budget ok:  1394.689313ms (<span class="hljs-built_in">limit</span>: 3409.090909090909ms)
+
+$ git checkout my-rule-branch
+Switched to branch <span class="hljs-string">'my-rule-branch'</span>
+
+$ npm run perf
+CPU Speed is 2200 with multiplier 7500000
+Performance Run <span class="hljs-comment">#1:  1443.736547ms</span>
+Performance Run <span class="hljs-comment">#2:  1419.193291ms</span>
+Performance Run <span class="hljs-comment">#3:  1436.018228ms</span>
+Performance Run <span class="hljs-comment">#4:  1473.605485ms</span>
+Performance Run <span class="hljs-comment">#5:  1457.455283ms</span>
+Performance budget ok:  1443.736547ms (<span class="hljs-built_in">limit</span>: 3409.090909090909ms)
+</code></pre><h3>Per-rule Performance</h3><p>ESLint has a built-in method to track performance of individual rules. Setting the <code>TIMING</code> environment variable will trigger the display, upon linting completion, of the ten longest-running rules, along with their individual running time and relative performance impact as a percentage of total rule processing time.</p><pre class="hljs highlight-bash"><code>$ TIMING=1 eslint lib
+Rule                    | Time (ms) | Relative
+:-----------------------|----------:|--------:
+no-multi-spaces         |    52.472 |     6.1%
+camelcase               |    48.684 |     5.7%
+no-irregular-whitespace |    43.847 |     5.1%
+valid-jsdoc             |    40.346 |     4.7%
+handle-callback-err     |    39.153 |     4.6%
+space-infix-ops         |    35.444 |     4.1%
+no-undefined            |    25.693 |     3.0%
+no-shadow               |    22.759 |     2.7%
+no-empty-class          |    21.976 |     2.6%
+semi                    |    19.359 |     2.3%
+</code></pre><p>To test one rule explicitly, combine the <code>--reset</code>, <code>--no-eslintrc</code>, and <code>--rule</code> options:</p><pre class="hljs highlight-bash"><code>$ TIMING=1 eslint --reset --no-eslintrc --rule <span class="hljs-string">"quotes: [2, 'double']"</span> lib
+Rule   | Time (ms) | Relative
+:------|----------:|--------:
+quotes |    18.066 |   100.0%
+</code></pre><h2>Rule Naming Conventions</h2><p>The rule naming conventions for ESLint are fairly simple:</p><ul><li>If your rule is disallowing something, prefix it with <code>no-</code> such as <code>no-eval</code> for disallowing <code>eval()</code> and <code>no-debugger</code> for disallowing <code>debugger</code>.</li><li>If your rule is enforcing the inclusion of something, use a short name without a special prefix.</li><li>Keep your rule names as short as possible, use abbreviations where appropriate, and no more than four words.</li><li>Use dashes between words.</li></ul><h2>Rule Acceptance Criteria</h2><p>Because rules are highly personal (and therefore very contentious), the following guidelines determine whether or not a rule is accepted and whether or not it is on by default:</p><ul><li>If the same rule exists in JSHint and is turned on by default, it must have the same message and be enabled by default.</li><li>If the same rule exists in JSLint but not in JSHint, it must have the same message and be disabled by default.</li><li>If the rule doesn't exist in JSHint or JSLint, then it must:<ul><li>Not be library-specific.</li><li>Demonstrate a possible issue that can be resolved by rewriting the code.</li><li>Be general enough so as to apply for a large number of developers.</li></ul></li></ul><h2>Runtime Rules</h2><p>The thing that makes ESLint different from other linters is the ability to define custom rules at runtime. This is perfect for rules that are specific to your project or company and wouldn't make sense for ESLint to ship with. With runtime rules, you don't have to wait for the next version of ESLint or be disappointed that your rule isn't general enough to apply to the larger JavaScript community, just write your rules and include them at runtime.</p><p>Runtime rules are written in the same format as all other rules. Create your rule as you would any other and then follow these steps:</p><ol><li>Place all of your runtime rules in the same directory (i.e., <code>eslint_rules</code>).</li><li>Create a <a href="../user-guide/configuring">configuration file</a> and specify your rule ID error level under the <code>rules</code> key. Your rule will not run unless it has a value of <code>1</code> or <code>2</code> in the configuration file.</li><li>Run the <a href="../user-guide/command-line-interface">command line interface</a> using the <code>--rulesdir</code> option to specify the location of your runtime rules.</li></ol></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/website/edit/master/./docs/0.24.1/developer-guide/working-with-rules.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>

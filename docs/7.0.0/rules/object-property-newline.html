@@ -1,0 +1,147 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="JavaScript, Linter, Linting, Pluggable, Configurable, Code Quality"><meta name="description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="theme-color" content="#463fd4"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="ESLint - Pluggable JavaScript linter"><meta property="og:title" content="object-property-newline - Rules"><meta property="og:url" content="/docs/7.0.0/rules/object-property-newline"><meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png"><meta name="twitter:site" content="@geteslint"><meta name="twitter:title" content="object-property-newline - Rules"><meta name="twitter:description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="twitter:url" content="/docs/7.0.0/rules/object-property-newline"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://eslint.org/assets/img/favicon.512x512.png"><title>object-property-newline - Rules - ESLint - Pluggable JavaScript linter</title><link rel="preconnect" href="https://www.google-analytics.com"><link rel="canonical" href="/docs/7.0.0/rules/object-property-newline"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"><link rel="stylesheet" href="/assets/styles/main.css"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/assets/img/favicon.512x512.png"><link rel="alternate" type="application/rss+xml" title="ESLint - Pluggable JavaScript linter" href="/feed.xml"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"></head><body><input type="checkbox" id="eslint-toggle-search" class="eslint-toggle-search-checkbox"><header class="navbar navbar-default navbar-demo navbar-fixed-top eslint-nav" id="top" role="banner"><div class="container"><a href="/" class="navbar-brand"><img alt="ESLint" src="/assets/img/logo.svg" itemprop="image">ESLint</a><div class="eslint-navbar-toggles"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#eslint-navbar" aria-controls="eslint-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label></div><nav id="eslint-navbar" class="collapse navbar-collapse eslint-navbar"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="/docs/user-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/user-guide/getting-started">Getting Started</a></li><li><a href="/docs/user-guide/configuring">Configuring ESLint</a></li><li><a href="/docs/user-guide/command-line-interface">Command Line Interface</a></li><li><a href="/docs/rules">Rules</a></li><li><a href="/docs/user-guide/formatters">Formatters</a></li><li><a href="/docs/user-guide/integrations">Integrations</a></li><li class="divider"></li><li><a href="/docs/user-guide/migrating-to-7.0.0">Migrating to v7.0.0</a></li><li><a href="/docs/user-guide/migrating-to-6.0.0">Migrating to v6.0.0</a></li><li><a href="/docs/user-guide/migrating-to-5.0.0">Migrating to v5.0.0</a></li><li><a href="/docs/user-guide/migrating-to-4.0.0">Migrating to v4.0.0</a></li><li><a href="/docs/user-guide/migrating-to-3.0.0">Migrating to v3.0.0</a></li><li><a href="/docs/user-guide/migrating-to-2.0.0">Migrating to v2.0.0</a></li><li><a href="/docs/user-guide/migrating-to-1.0.0">Migrating to v1.0.0</a></li><li><a href="/docs/user-guide/migrating-from-jscs">Migrating from JSCS</a></li></ul></li><li class="dropdown"><a href="/docs/developer-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/developer-guide/architecture">Architecture</a></li><li><a href="/docs/developer-guide/contributing">Contributing</a></li><li><a href="/docs/developer-guide/source-code">Get the Source Code</a></li><li><a href="/docs/developer-guide/development-environment">Set up a Development Environment</a></li><li><a href="/docs/developer-guide/unit-tests">Run the Unit Tests</a></li><li><a href="/docs/developer-guide/working-with-rules">Working with Rules</a></li><li><a href="/docs/developer-guide/working-with-plugins">Working with Plugins</a></li><li><a href="/docs/developer-guide/working-with-custom-formatters">Working with Custom Formatters</a></li><li><a href="/docs/developer-guide/working-with-custom-parsers">Working with Custom Parsers</a></li><li><a href="/docs/developer-guide/shareable-configs">Shareable Configs</a></li><li><a href="/docs/developer-guide/nodejs-api">Node.js API</a></li><li><a href="/docs/maintainer-guide">Maintainer guide</a></li></ul></li><li><a href="/blog">Blog</a></li><li><a href="/demo">Demo</a></li><li class="dropdown"><a href="/docs/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/users">Who's Using ESLint?</a></li><li><a href="/team">About the Team</a></li><li><a href="/docs/about">About ESLint</a></li></ul></li></ul><label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label><div class="navbar-form navbar-right eslint-search" role="search"><div class="input-group"><label class="sr-only" aria-label="Search" for="eslint-search-input">Search</label><div class="eslint-search-input-wrapper"><input type="text" class="form-control" id="eslint-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search the docs..."> <label for="eslint-toggle-search" class="eslint-toggle-search-close"><span class="sr-only">Close search</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></div></div></div></nav></div></header><main class="doc"><article class="container"><h1>enforce placing object properties on separate lines (object-property-newline)</h1><p class="fixable icon">The <code>--fix</code> option on the <a href="../user-guide/command-line-interface#fixing-problems">command line</a> can automatically fix some of the problems reported by this rule.</p><p>This rule permits you to restrict the locations of property specifications in object literals. You may prohibit any part of any property specification from appearing on the same line as any part of any other property specification. You may make this prohibition absolute, or, by invoking an object option, you may allow an exception, permitting an object literal to have all parts of all of its property specifications on a single line.</p><h2>Rule Details</h2><h3>Motivations</h3><p>This rule makes it possible to ensure, as some style guides require, that property specifications appear on separate lines for better readability. For example, you can prohibit all of these:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">const</span> newObject = {<span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: [<span class="hljs-number">2</span>, {<span class="hljs-attr">a</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">4</span>}]};
+<span class="hljs-keyword">const</span> newObject = {
+    <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">b</span>: [<span class="hljs-number">2</span>, {<span class="hljs-attr">a</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">4</span>}]
+};
+<span class="hljs-keyword">const</span> newObject = {
+    <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">b</span>: [<span class="hljs-number">2</span>, {<span class="hljs-attr">a</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">4</span>}]
+};
+<span class="hljs-keyword">const</span> newObject = {
+    <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">b</span>: [
+        <span class="hljs-number">2</span>,
+        {<span class="hljs-attr">a</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">b</span>: <span class="hljs-number">4</span>}
+    ]
+};
+
+</code></pre><p>Instead of those, you can comply with the rule by writing</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">const</span> newObject = {
+    <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">b</span>: [<span class="hljs-number">2</span>, {
+        <span class="hljs-attr">a</span>: <span class="hljs-number">3</span>,
+        <span class="hljs-attr">b</span>: <span class="hljs-number">4</span>
+    }]
+};
+</code></pre><p>or</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">const</span> newObject = {
+    <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">b</span>: [
+        <span class="hljs-number">2</span>,
+        {
+            <span class="hljs-attr">a</span>: <span class="hljs-number">3</span>,
+            <span class="hljs-attr">b</span>: <span class="hljs-number">4</span>
+        }
+    ]
+};
+</code></pre><p>Another benefit of this rule is specificity of diffs when a property is changed:</p><pre class="hljs highlight-diff"><code>// More specific
+ var obj = {
+     foo: "foo",
+<span class="hljs-deletion">-    bar: "bar",</span>
+<span class="hljs-addition">+    bar: "bazz",</span>
+     baz: "baz"
+ };
+</code></pre><pre class="hljs highlight-diff"><code>// Less specific
+<span class="hljs-deletion">-var obj = { foo: "foo", bar: "bar", baz: "baz" };</span>
+<span class="hljs-addition">+var obj = { foo: "foo", bar: "bazz", baz: "baz" };</span>
+</code></pre><h3>Optional Exception</h3><p>The rule offers one object option, <code>allowAllPropertiesOnSameLine</code> (a deprecated synonym is <code>allowMultiplePropertiesPerLine</code>). If you set it to <code>true</code>, object literals such as the first two above, with all property specifications on the same line, will be permitted, but one like</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">const</span> newObject = {
+    <span class="hljs-attr">a</span>: <span class="hljs-string">'a.m.'</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">'p.m.'</span>,
+    <span class="hljs-attr">c</span>: <span class="hljs-string">'daylight saving time'</span>
+};
+
+</code></pre><p>will be prohibited, because two properties, but not all properties, appear on the same line.</p><h3>Notations</h3><p>This rule applies equally to all property specifications, regardless of notation, including:</p><ul><li><code>a: 1</code> (ES5)</li><li><code>a</code> (ES2015 shorthand property)</li><li><code>[`prop${a}`]</code> (ES2015 computed property name)</li></ul><p>Thus, the rule (without the object option) prohibits both of these:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">const</span> newObject = {
+    <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, [
+        process.argv[<span class="hljs-number">4</span>]
+    ]: <span class="hljs-string">'01'</span>
+};
+<span class="hljs-keyword">const</span> newObject = {
+    <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>, [process.argv[<span class="hljs-number">4</span>]]: <span class="hljs-string">'01'</span>
+};
+</code></pre><p>(This behavior differs from that of the JSCS rule cited below, which does not treat the leading <code>[</code> of a computed property name as part of that property specification. The JSCS rule prohibits the second of these formats but permits the first.)</p><h3>Multiline Properties</h3><p>The rule prohibits the colocation on any line of at least 1 character of one property specification with at least 1 character of any other property specification. For example, the rule prohibits</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">const</span> newObject = {<span class="hljs-attr">a</span>: [
+    <span class="hljs-string">'Officiële website van de Europese Unie'</span>,
+    <span class="hljs-string">'Официален уебсайт на Европейския съюз'</span>
+], <span class="hljs-attr">b</span>: <span class="hljs-number">2</span>};
+</code></pre><p>because 1 character of the specification of <code>a</code> (i.e. the trailing <code>]</code> of its value) is on the same line as the specification of <code>b</code>.</p><p>The optional exception does not excuse this case, because the entire collection of property specifications spans 4 lines, not 1.</p><h3>Inter-property Delimiters</h3><p>The comma and any whitespace that delimit property specifications are not considered parts of them. Therefore, the rule permits both of these formats:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">const</span> newFunction = <span class="hljs-function"><span class="hljs-params">multiplier</span> =&gt;</span> ({
+    <span class="hljs-attr">a</span>: <span class="hljs-number">2</span> * multiplier,
+    <span class="hljs-attr">b</span>: <span class="hljs-number">4</span> * multiplier,
+    <span class="hljs-attr">c</span>: <span class="hljs-number">8</span> * multiplier
+});
+<span class="hljs-keyword">const</span> newFunction = <span class="hljs-function"><span class="hljs-params">multiplier</span> =&gt;</span> ({
+    <span class="hljs-attr">a</span>: <span class="hljs-number">2</span> * multiplier
+    , <span class="hljs-attr">b</span>: <span class="hljs-number">4</span> * multiplier
+    , <span class="hljs-attr">c</span>: <span class="hljs-number">8</span> * multiplier
+});
+</code></pre><p>(This behavior differs from that of the JSCS rule cited below, which permits the first but prohibits the second format.)</p><h3>--fix</h3><p>If this rule is invoked with the command-line <code>--fix</code> option, object literals that violate the rule are generally modified to comply with it. The modification in each case is to move a property specification to the next line whenever there is part or all of a previous property specification on the same line. For example,</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">const</span> newObject = {
+    <span class="hljs-attr">a</span>: <span class="hljs-string">'a.m.'</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">'p.m.'</span>,
+    <span class="hljs-attr">c</span>: <span class="hljs-string">'daylight saving time'</span>
+};
+</code></pre><p>is converted to</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">const</span> newObject = {
+    <span class="hljs-attr">a</span>: <span class="hljs-string">'a.m.'</span>,
+<span class="hljs-attr">b</span>: <span class="hljs-string">'p.m.'</span>,
+    <span class="hljs-attr">c</span>: <span class="hljs-string">'daylight saving time'</span>
+};
+</code></pre><p>The modification does not depend on whether the object option is set to <code>true</code>. In other words, ESLint never collects all the property specifications onto a single line, even when the object option would permit that.</p><p>ESLint does not correct a violation of this rule if a comment immediately precedes the second or subsequent property specification on a line, since ESLint cannot determine which line to put the comment onto.</p><p>As illustrated above, the <code>--fix</code> option, applied to this rule, does not comply with other rules, such as <code>indent</code>, but, if those other rules are also in effect, the option applies them, too.</p><h2>Examples</h2><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule, with no object option or with <code>allowAllPropertiesOnSameLine</code> set to <code>false</code>:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint object-property-newline: "error"*/</span>
+
+<span class="hljs-keyword">const</span> obj0 = { <span class="hljs-attr">foo</span>: <span class="hljs-string">"foo"</span>, <span class="hljs-attr">bar</span>: <span class="hljs-string">"bar"</span>, <span class="hljs-attr">baz</span>: <span class="hljs-string">"baz"</span> };
+
+<span class="hljs-keyword">const</span> obj1 = {
+    <span class="hljs-attr">foo</span>: <span class="hljs-string">"foo"</span>, <span class="hljs-attr">bar</span>: <span class="hljs-string">"bar"</span>, <span class="hljs-attr">baz</span>: <span class="hljs-string">"baz"</span>
+};
+
+<span class="hljs-keyword">const</span> obj2 = {
+    <span class="hljs-attr">foo</span>: <span class="hljs-string">"foo"</span>, <span class="hljs-attr">bar</span>: <span class="hljs-string">"bar"</span>,
+    <span class="hljs-attr">baz</span>: <span class="hljs-string">"baz"</span>
+};
+
+<span class="hljs-keyword">const</span> obj3 = {
+    [process.argv[<span class="hljs-number">3</span>] ? <span class="hljs-string">"foo"</span> : <span class="hljs-string">"bar"</span>]: <span class="hljs-number">0</span>, <span class="hljs-attr">baz</span>: [
+        <span class="hljs-number">1</span>,
+        <span class="hljs-number">2</span>,
+        <span class="hljs-number">4</span>,
+        <span class="hljs-number">8</span>
+    ]
+};
+
+<span class="hljs-keyword">const</span> a = <span class="hljs-string">"antidisestablishmentarianistically"</span>;
+<span class="hljs-keyword">const</span> b = <span class="hljs-string">"yugoslavyalılaştırabildiklerimizdenmişsiniz"</span>;
+<span class="hljs-keyword">const</span> obj4 = {a, b};
+
+<span class="hljs-keyword">const</span> domain = process.argv[<span class="hljs-number">4</span>];
+<span class="hljs-keyword">const</span> obj5 = {
+    <span class="hljs-attr">foo</span>: <span class="hljs-string">"foo"</span>, [
+    domain.includes(<span class="hljs-string">":"</span>) ? <span class="hljs-string">"complexdomain"</span> : <span class="hljs-string">"simpledomain"</span>
+]: <span class="hljs-literal">true</span>};
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule, with no object option or with <code>allowAllPropertiesOnSameLine</code> set to <code>false</code>:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint object-property-newline: "error"*/</span>
+
+<span class="hljs-keyword">const</span> obj1 = {
+    <span class="hljs-attr">foo</span>: <span class="hljs-string">"foo"</span>,
+    <span class="hljs-attr">bar</span>: <span class="hljs-string">"bar"</span>,
+    <span class="hljs-attr">baz</span>: <span class="hljs-string">"baz"</span>
+};
+
+<span class="hljs-keyword">const</span> obj2 = {
+    <span class="hljs-attr">foo</span>: <span class="hljs-string">"foo"</span>
+    , <span class="hljs-attr">bar</span>: <span class="hljs-string">"bar"</span>
+    , <span class="hljs-attr">baz</span>: <span class="hljs-string">"baz"</span>
+};
+
+<span class="hljs-keyword">const</span> user = process.argv[<span class="hljs-number">2</span>];
+<span class="hljs-keyword">const</span> obj3 = {
+    user,
+    [process.argv[<span class="hljs-number">3</span>] ? <span class="hljs-string">"foo"</span> : <span class="hljs-string">"bar"</span>]: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">baz</span>: [
+        <span class="hljs-number">1</span>,
+        <span class="hljs-number">2</span>,
+        <span class="hljs-number">4</span>,
+        <span class="hljs-number">8</span>
+    ]
+};
+</code></pre><p class="correct icon">Examples of additional <strong>correct</strong> code for this rule with the <code>{ &quot;allowAllPropertiesOnSameLine&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint object-property-newline: ["error", { "allowAllPropertiesOnSameLine": true }]*/</span>
+
+<span class="hljs-keyword">const</span> obj = { <span class="hljs-attr">foo</span>: <span class="hljs-string">"foo"</span>, <span class="hljs-attr">bar</span>: <span class="hljs-string">"bar"</span>, <span class="hljs-attr">baz</span>: <span class="hljs-string">"baz"</span> };
+
+<span class="hljs-keyword">const</span> obj2 = {
+    <span class="hljs-attr">foo</span>: <span class="hljs-string">"foo"</span>, <span class="hljs-attr">bar</span>: <span class="hljs-string">"bar"</span>, <span class="hljs-attr">baz</span>: <span class="hljs-string">"baz"</span>
+};
+<span class="hljs-keyword">const</span> user = process.argv[<span class="hljs-number">2</span>];
+<span class="hljs-keyword">const</span> obj3 = {
+    user, [process.argv[<span class="hljs-number">3</span>] ? <span class="hljs-string">"foo"</span> : <span class="hljs-string">"bar"</span>]: <span class="hljs-number">0</span>, <span class="hljs-attr">baz</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">8</span>]
+};
+</code></pre><h2>When Not To Use It</h2><p>You can turn this rule off if you want to decide, case-by-case, whether to place property specifications on separate lines.</p><h2>Compatibility</h2><ul><li><strong>JSCS</strong>: This rule provides partial compatibility with <a href="https://jscs-dev.github.io/rule/requireObjectKeysOnNewLine">requireObjectKeysOnNewLine</a>.</li></ul><h2>Related Rules</h2><ul><li><a href="brace-style">brace-style</a></li><li><a href="comma-dangle">comma-dangle</a></li><li><a href="key-spacing">key-spacing</a></li><li><a href="object-curly-spacing">object-curly-spacing</a></li></ul><h2>Version</h2><p>This rule was introduced in ESLint 2.10.0.</p><h2>Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/object-property-newline.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/object-property-newline.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/eslint/edit/master/docs/rules/object-property-newline.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>

@@ -1,0 +1,137 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="JavaScript, Linter, Linting, Pluggable, Configurable, Code Quality"><meta name="description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="theme-color" content="#463fd4"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="ESLint - Pluggable JavaScript linter"><meta property="og:title" content="no-extra-parens - Rules"><meta property="og:url" content="/docs/rules/no-extra-parens"><meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png"><meta name="twitter:site" content="@geteslint"><meta name="twitter:title" content="no-extra-parens - Rules"><meta name="twitter:description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="twitter:url" content="/docs/rules/no-extra-parens"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://eslint.org/assets/img/favicon.512x512.png"><title>no-extra-parens - Rules - ESLint - Pluggable JavaScript linter</title><link rel="preconnect" href="https://www.google-analytics.com"><link rel="canonical" href="/docs/rules/no-extra-parens"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"><link rel="stylesheet" href="/assets/styles/main.css"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/assets/img/favicon.512x512.png"><link rel="alternate" type="application/rss+xml" title="ESLint - Pluggable JavaScript linter" href="/feed.xml"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"></head><body><input type="checkbox" id="eslint-toggle-search" class="eslint-toggle-search-checkbox"><header class="navbar navbar-default navbar-demo navbar-fixed-top eslint-nav" id="top" role="banner"><div class="container"><a href="/" class="navbar-brand"><img alt="ESLint" src="/assets/img/logo.svg" itemprop="image">ESLint</a><div class="eslint-navbar-toggles"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#eslint-navbar" aria-controls="eslint-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label></div><nav id="eslint-navbar" class="collapse navbar-collapse eslint-navbar"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="/docs/user-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/user-guide/getting-started">Getting Started</a></li><li><a href="/docs/user-guide/configuring">Configuring ESLint</a></li><li><a href="/docs/user-guide/command-line-interface">Command Line Interface</a></li><li><a href="/docs/rules">Rules</a></li><li><a href="/docs/user-guide/formatters">Formatters</a></li><li><a href="/docs/user-guide/integrations">Integrations</a></li><li class="divider"></li><li><a href="/docs/user-guide/migrating-to-7.0.0">Migrating to v7.0.0</a></li><li><a href="/docs/user-guide/migrating-to-6.0.0">Migrating to v6.0.0</a></li><li><a href="/docs/user-guide/migrating-to-5.0.0">Migrating to v5.0.0</a></li><li><a href="/docs/user-guide/migrating-to-4.0.0">Migrating to v4.0.0</a></li><li><a href="/docs/user-guide/migrating-to-3.0.0">Migrating to v3.0.0</a></li><li><a href="/docs/user-guide/migrating-to-2.0.0">Migrating to v2.0.0</a></li><li><a href="/docs/user-guide/migrating-to-1.0.0">Migrating to v1.0.0</a></li><li><a href="/docs/user-guide/migrating-from-jscs">Migrating from JSCS</a></li></ul></li><li class="dropdown"><a href="/docs/developer-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/developer-guide/architecture">Architecture</a></li><li><a href="/docs/developer-guide/contributing">Contributing</a></li><li><a href="/docs/developer-guide/source-code">Get the Source Code</a></li><li><a href="/docs/developer-guide/development-environment">Set up a Development Environment</a></li><li><a href="/docs/developer-guide/unit-tests">Run the Unit Tests</a></li><li><a href="/docs/developer-guide/working-with-rules">Working with Rules</a></li><li><a href="/docs/developer-guide/working-with-plugins">Working with Plugins</a></li><li><a href="/docs/developer-guide/working-with-custom-formatters">Working with Custom Formatters</a></li><li><a href="/docs/developer-guide/working-with-custom-parsers">Working with Custom Parsers</a></li><li><a href="/docs/developer-guide/shareable-configs">Shareable Configs</a></li><li><a href="/docs/developer-guide/nodejs-api">Node.js API</a></li><li><a href="/docs/maintainer-guide">Maintainer guide</a></li></ul></li><li><a href="/blog">Blog</a></li><li><a href="/demo">Demo</a></li><li class="dropdown"><a href="/docs/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/users">Who's Using ESLint?</a></li><li><a href="/team">About the Team</a></li><li><a href="/docs/about">About ESLint</a></li></ul></li></ul><label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label><div class="navbar-form navbar-right eslint-search" role="search"><div class="input-group"><label class="sr-only" aria-label="Search" for="eslint-search-input">Search</label><div class="eslint-search-input-wrapper"><input type="text" class="form-control" id="eslint-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search the docs..."> <label for="eslint-toggle-search" class="eslint-toggle-search-close"><span class="sr-only">Close search</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></div></div></div></nav></div></header><main class="doc"><article class="container"><h1>disallow unnecessary parentheses (no-extra-parens)</h1><p class="fixable icon">The <code>--fix</code> option on the <a href="../user-guide/command-line-interface#fixing-problems">command line</a> can automatically fix some of the problems reported by this rule.</p><p>This rule restricts the use of parentheses to only where they are necessary.</p><h2>Rule Details</h2><p>This rule always ignores extra parentheses around the following:</p><ul><li>RegExp literals such as <code>(/abc/).test(var)</code> to avoid conflicts with the <a href="wrap-regex">wrap-regex</a> rule</li><li>immediately-invoked function expressions (also known as IIFEs) such as <code>var x = (function () {})();</code> and <code>((function foo() {return 1;})())</code> to avoid conflicts with the <a href="wrap-iife">wrap-iife</a> rule</li><li>arrow function arguments to avoid conflicts with the <a href="arrow-parens">arrow-parens</a> rule</li></ul><h2>Options</h2><p>This rule has a string option:</p><ul><li><code>&quot;all&quot;</code> (default) disallows unnecessary parentheses around <em>any</em> expression</li><li><code>&quot;functions&quot;</code> disallows unnecessary parentheses <em>only</em> around function expressions</li></ul><p>This rule has an object option for exceptions to the <code>&quot;all&quot;</code> option:</p><ul><li><code>&quot;conditionalAssign&quot;: false</code> allows extra parentheses around assignments in conditional test expressions</li><li><code>&quot;returnAssign&quot;: false</code> allows extra parentheses around assignments in <code>return</code> statements</li><li><code>&quot;nestedBinaryExpressions&quot;: false</code> allows extra parentheses in nested binary expressions</li><li><code>&quot;ignoreJSX&quot;: &quot;none|all|multi-line|single-line&quot;</code> allows extra parentheses around no/all/multi-line/single-line JSX components. Defaults to <code>none</code>.</li><li><code>&quot;enforceForArrowConditionals&quot;: false</code> allows extra parentheses around ternary expressions which are the body of an arrow function</li><li><code>&quot;enforceForSequenceExpressions&quot;: false</code> allows extra parentheses around sequence expressions</li><li><code>&quot;enforceForNewInMemberExpressions&quot;: false</code> allows extra parentheses around <code>new</code> expressions in member expressions</li></ul><h3>all</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the default <code>&quot;all&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/* eslint no-extra-parens: "error" */</span>
+
+a = (b * c);
+
+(a * b) + c;
+
+<span class="hljs-keyword">for</span> (a <span class="hljs-keyword">in</span> (b, c));
+
+<span class="hljs-keyword">for</span> (a <span class="hljs-keyword">in</span> (b));
+
+<span class="hljs-keyword">for</span> (a <span class="hljs-keyword">of</span> (b));
+
+<span class="hljs-keyword">typeof</span> (a);
+
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{} ? a() : b());
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the default <code>&quot;all&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/* eslint no-extra-parens: "error" */</span>
+
+(<span class="hljs-number">0</span>).toString();
+
+(<span class="hljs-built_in">Object</span>.prototype.toString.call());
+
+({}.toString.call());
+
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{}) ? a() : b();
+
+(<span class="hljs-regexp">/^a$/</span>).test(x);
+
+<span class="hljs-keyword">for</span> (a <span class="hljs-keyword">of</span> (b, c));
+
+<span class="hljs-keyword">for</span> (a <span class="hljs-keyword">of</span> b);
+
+<span class="hljs-keyword">for</span> (a <span class="hljs-keyword">in</span> b, c);
+
+<span class="hljs-keyword">for</span> (a <span class="hljs-keyword">in</span> b);
+</code></pre><h3>conditionalAssign</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>&quot;all&quot;</code> and <code>{ &quot;conditionalAssign&quot;: false }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/* eslint no-extra-parens: ["error", "all", { "conditionalAssign": false }] */</span>
+
+<span class="hljs-keyword">while</span> ((foo = bar())) {}
+
+<span class="hljs-keyword">if</span> ((foo = bar())) {}
+
+<span class="hljs-keyword">do</span>; <span class="hljs-keyword">while</span> ((foo = bar()))
+
+<span class="hljs-keyword">for</span> (;(a = b););
+</code></pre><h3>returnAssign</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>&quot;all&quot;</code> and <code>{ &quot;returnAssign&quot;: false }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/* eslint no-extra-parens: ["error", "all", { "returnAssign": false }] */</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">a</span>(<span class="hljs-params">b</span>) </span>{
+  <span class="hljs-keyword">return</span> (b = <span class="hljs-number">1</span>);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">a</span>(<span class="hljs-params">b</span>) </span>{
+  <span class="hljs-keyword">return</span> b ? (c = d) : (c = e);
+}
+
+b =&gt; (b = <span class="hljs-number">1</span>);
+
+<span class="hljs-function"><span class="hljs-params">b</span> =&gt;</span> b ? (c = d) : (c = e);
+</code></pre><h3>nestedBinaryExpressions</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>&quot;all&quot;</code> and <code>{ &quot;nestedBinaryExpressions&quot;: false }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/* eslint no-extra-parens: ["error", "all", { "nestedBinaryExpressions": false }] */</span>
+
+x = a || (b &amp;&amp; c);
+x = a + (b * c);
+x = (a * b) / c;
+</code></pre><h3>ignoreJSX</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>all</code> and <code>{ &quot;ignoreJSX&quot;: &quot;all&quot; }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/* eslint no-extra-parens: ["error", "all", { ignoreJSX: "all" }] */</span>
+<span class="hljs-keyword">const</span> Component = (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> /&gt;</span></span>)
+<span class="hljs-keyword">const</span> Component = (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+        <span class="hljs-attr">prop</span>=<span class="hljs-string">{true}</span>
+    /&gt;</span></span>
+)
+</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>all</code> and <code>{ &quot;ignoreJSX&quot;: &quot;multi-line&quot; }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/* eslint no-extra-parens: ["error", "all", { ignoreJSX: "multi-line" }] */</span>
+<span class="hljs-keyword">const</span> Component = (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> /&gt;</span></span>)
+<span class="hljs-keyword">const</span> Component = (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>)
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>all</code> and <code>{ &quot;ignoreJSX&quot;: &quot;multi-line&quot; }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/* eslint no-extra-parens: ["error", "all", { ignoreJSX: "multi-line" }] */</span>
+<span class="hljs-keyword">const</span> Component = (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+)
+<span class="hljs-keyword">const</span> Component = (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+        <span class="hljs-attr">prop</span>=<span class="hljs-string">{true}</span>
+    /&gt;</span></span>
+)
+</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>all</code> and <code>{ &quot;ignoreJSX&quot;: &quot;single-line&quot; }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/* eslint no-extra-parens: ["error", "all", { ignoreJSX: "single-line" }] */</span>
+<span class="hljs-keyword">const</span> Component = (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+)
+<span class="hljs-keyword">const</span> Component = (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+        <span class="hljs-attr">prop</span>=<span class="hljs-string">{true}</span>
+    /&gt;</span></span>
+)
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>all</code> and <code>{ &quot;ignoreJSX&quot;: &quot;single-line&quot; }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/* eslint no-extra-parens: ["error", "all", { ignoreJSX: "single-line" }] */</span>
+<span class="hljs-keyword">const</span> Component = (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> /&gt;</span></span>)
+<span class="hljs-keyword">const</span> Component = (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">p</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>)
+</code></pre><h3>enforceForArrowConditionals</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>&quot;all&quot;</code> and <code>{ &quot;enforceForArrowConditionals&quot;: false }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/* eslint no-extra-parens: ["error", "all", { "enforceForArrowConditionals": false }] */</span>
+
+<span class="hljs-keyword">const</span> b = <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> <span class="hljs-number">1</span> ? <span class="hljs-number">2</span> : <span class="hljs-number">3</span>;
+<span class="hljs-keyword">const</span> d = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> (<span class="hljs-number">1</span> ? <span class="hljs-number">2</span> : <span class="hljs-number">3</span>);
+</code></pre><h3>enforceForSequenceExpressions</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>&quot;all&quot;</code> and <code>{ &quot;enforceForSequenceExpressions&quot;: false }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/* eslint no-extra-parens: ["error", "all", { "enforceForSequenceExpressions": false }] */</span>
+
+(a, b);
+
+<span class="hljs-keyword">if</span> ((val = foo(), val &lt; <span class="hljs-number">10</span>)) {}
+
+<span class="hljs-keyword">while</span> ((val = foo(), val &lt; <span class="hljs-number">10</span>));
+</code></pre><h3>enforceForNewInMemberExpressions</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>&quot;all&quot;</code> and <code>{ &quot;enforceForNewInMemberExpressions&quot;: false }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/* eslint no-extra-parens: ["error", "all", { "enforceForNewInMemberExpressions": false }] */</span>
+
+<span class="hljs-keyword">const</span> foo = (<span class="hljs-keyword">new</span> Bar()).baz;
+
+<span class="hljs-keyword">const</span> quux = (<span class="hljs-keyword">new</span> Bar())[baz];
+
+(<span class="hljs-keyword">new</span> Bar()).doSomething();
+</code></pre><h3>functions</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>&quot;functions&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/* eslint no-extra-parens: ["error", "functions"] */</span>
+
+((<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{}))();
+
+<span class="hljs-keyword">var</span> y = (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{<span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;});
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>&quot;functions&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/* eslint no-extra-parens: ["error", "functions"] */</span>
+
+(<span class="hljs-number">0</span>).toString();
+
+(<span class="hljs-built_in">Object</span>.prototype.toString.call());
+
+({}.toString.call());
+
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{} ? a() : b());
+
+(<span class="hljs-regexp">/^a$/</span>).test(x);
+
+a = (b * c);
+
+(a * b) + c;
+
+<span class="hljs-keyword">typeof</span> (a);
+</code></pre><h2>Further Reading</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">MDN: Operator Precedence</a></li></ul><h2>Related Rules</h2><ul><li><a href="arrow-parens">arrow-parens</a></li><li><a href="no-cond-assign">no-cond-assign</a></li><li><a href="no-return-assign">no-return-assign</a></li></ul><h2>Version</h2><p>This rule was introduced in ESLint 0.1.4.</p><h2>Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/no-extra-parens.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/no-extra-parens.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/eslint/edit/master/docs/rules/no-extra-parens.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>

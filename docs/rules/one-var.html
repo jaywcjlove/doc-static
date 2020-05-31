@@ -1,0 +1,353 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="JavaScript, Linter, Linting, Pluggable, Configurable, Code Quality"><meta name="description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="theme-color" content="#463fd4"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="ESLint - Pluggable JavaScript linter"><meta property="og:title" content="one-var - Rules"><meta property="og:url" content="/docs/rules/one-var"><meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png"><meta name="twitter:site" content="@geteslint"><meta name="twitter:title" content="one-var - Rules"><meta name="twitter:description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="twitter:url" content="/docs/rules/one-var"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://eslint.org/assets/img/favicon.512x512.png"><title>one-var - Rules - ESLint - Pluggable JavaScript linter</title><link rel="preconnect" href="https://www.google-analytics.com"><link rel="canonical" href="/docs/rules/one-var"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"><link rel="stylesheet" href="/assets/styles/main.css"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/assets/img/favicon.512x512.png"><link rel="alternate" type="application/rss+xml" title="ESLint - Pluggable JavaScript linter" href="/feed.xml"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"></head><body><input type="checkbox" id="eslint-toggle-search" class="eslint-toggle-search-checkbox"><header class="navbar navbar-default navbar-demo navbar-fixed-top eslint-nav" id="top" role="banner"><div class="container"><a href="/" class="navbar-brand"><img alt="ESLint" src="/assets/img/logo.svg" itemprop="image">ESLint</a><div class="eslint-navbar-toggles"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#eslint-navbar" aria-controls="eslint-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label></div><nav id="eslint-navbar" class="collapse navbar-collapse eslint-navbar"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="/docs/user-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/user-guide/getting-started">Getting Started</a></li><li><a href="/docs/user-guide/configuring">Configuring ESLint</a></li><li><a href="/docs/user-guide/command-line-interface">Command Line Interface</a></li><li><a href="/docs/rules">Rules</a></li><li><a href="/docs/user-guide/formatters">Formatters</a></li><li><a href="/docs/user-guide/integrations">Integrations</a></li><li class="divider"></li><li><a href="/docs/user-guide/migrating-to-7.0.0">Migrating to v7.0.0</a></li><li><a href="/docs/user-guide/migrating-to-6.0.0">Migrating to v6.0.0</a></li><li><a href="/docs/user-guide/migrating-to-5.0.0">Migrating to v5.0.0</a></li><li><a href="/docs/user-guide/migrating-to-4.0.0">Migrating to v4.0.0</a></li><li><a href="/docs/user-guide/migrating-to-3.0.0">Migrating to v3.0.0</a></li><li><a href="/docs/user-guide/migrating-to-2.0.0">Migrating to v2.0.0</a></li><li><a href="/docs/user-guide/migrating-to-1.0.0">Migrating to v1.0.0</a></li><li><a href="/docs/user-guide/migrating-from-jscs">Migrating from JSCS</a></li></ul></li><li class="dropdown"><a href="/docs/developer-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/developer-guide/architecture">Architecture</a></li><li><a href="/docs/developer-guide/contributing">Contributing</a></li><li><a href="/docs/developer-guide/source-code">Get the Source Code</a></li><li><a href="/docs/developer-guide/development-environment">Set up a Development Environment</a></li><li><a href="/docs/developer-guide/unit-tests">Run the Unit Tests</a></li><li><a href="/docs/developer-guide/working-with-rules">Working with Rules</a></li><li><a href="/docs/developer-guide/working-with-plugins">Working with Plugins</a></li><li><a href="/docs/developer-guide/working-with-custom-formatters">Working with Custom Formatters</a></li><li><a href="/docs/developer-guide/working-with-custom-parsers">Working with Custom Parsers</a></li><li><a href="/docs/developer-guide/shareable-configs">Shareable Configs</a></li><li><a href="/docs/developer-guide/nodejs-api">Node.js API</a></li><li><a href="/docs/maintainer-guide">Maintainer guide</a></li></ul></li><li><a href="/blog">Blog</a></li><li><a href="/demo">Demo</a></li><li class="dropdown"><a href="/docs/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/users">Who's Using ESLint?</a></li><li><a href="/team">About the Team</a></li><li><a href="/docs/about">About ESLint</a></li></ul></li></ul><label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label><div class="navbar-form navbar-right eslint-search" role="search"><div class="input-group"><label class="sr-only" aria-label="Search" for="eslint-search-input">Search</label><div class="eslint-search-input-wrapper"><input type="text" class="form-control" id="eslint-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search the docs..."> <label for="eslint-toggle-search" class="eslint-toggle-search-close"><span class="sr-only">Close search</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></div></div></div></nav></div></header><main class="doc"><article class="container"><h1>enforce variables to be declared either together or separately in functions (one-var)</h1><p class="fixable icon">The <code>--fix</code> option on the <a href="../user-guide/command-line-interface#fixing-problems">command line</a> can automatically fix some of the problems reported by this rule.</p><p>Variables can be declared at any point in JavaScript code using <code>var</code>, <code>let</code>, or <code>const</code>. There are many styles and preferences related to the declaration of variables, and one of those is deciding on how many variable declarations should be allowed in a single function.</p><p>There are two schools of thought in this regard:</p><ol><li>There should be just one variable declaration for all variables in the function. That declaration typically appears at the top of the function.</li><li>You should use one variable declaration for each variable you want to define.</li></ol><p>For instance:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">// one variable declaration per function</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> bar, baz;
+}
+
+<span class="hljs-comment">// multiple variable declarations per function</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> bar;
+    <span class="hljs-keyword">var</span> baz;
+}
+</code></pre><p>The single-declaration school of thought is based in pre-ECMAScript 6 behaviors, where there was no such thing as block scope, only function scope. Since all <code>var</code> statements are hoisted to the top of the function anyway, some believe that declaring all variables in a single declaration at the top of the function removes confusion around scoping rules.</p><h2>Rule Details</h2><p>This rule enforces variables to be declared either together or separately per function ( for <code>var</code>) or block (for <code>let</code> and <code>const</code>) scope.</p><h2>Options</h2><p>This rule has one option, which can be a string option or an object option.</p><p>String option:</p><ul><li><code>&quot;always&quot;</code> (default) requires one variable declaration per scope</li><li><code>&quot;never&quot;</code> requires multiple variable declarations per scope</li><li><code>&quot;consecutive&quot;</code> allows multiple variable declarations per scope but requires consecutive variable declarations to be combined into a single declaration</li></ul><p>Object option:</p><ul><li><code>&quot;var&quot;: &quot;always&quot;</code> requires one <code>var</code> declaration per function</li><li><code>&quot;var&quot;: &quot;never&quot;</code> requires multiple <code>var</code> declarations per function</li><li><code>&quot;var&quot;: &quot;consecutive&quot;</code> requires consecutive <code>var</code> declarations to be a single declaration</li><li><code>&quot;let&quot;: &quot;always&quot;</code> requires one <code>let</code> declaration per block</li><li><code>&quot;let&quot;: &quot;never&quot;</code> requires multiple <code>let</code> declarations per block</li><li><code>&quot;let&quot;: &quot;consecutive&quot;</code> requires consecutive <code>let</code> declarations to be a single declaration</li><li><code>&quot;const&quot;: &quot;always&quot;</code> requires one <code>const</code> declaration per block</li><li><code>&quot;const&quot;: &quot;never&quot;</code> requires multiple <code>const</code> declarations per block</li><li><code>&quot;const&quot;: &quot;consecutive&quot;</code> requires consecutive <code>const</code> declarations to be a single declaration</li><li><code>&quot;separateRequires&quot;: true</code> enforces <code>requires</code> to be separate from declarations</li></ul><p>Alternate object option:</p><ul><li><code>&quot;initialized&quot;: &quot;always&quot;</code> requires one variable declaration for initialized variables per scope</li><li><code>&quot;initialized&quot;: &quot;never&quot;</code> requires multiple variable declarations for initialized variables per scope</li><li><code>&quot;initialized&quot;: &quot;consecutive&quot;</code> requires consecutive variable declarations for initialized variables to be a single declaration</li><li><code>&quot;uninitialized&quot;: &quot;always&quot;</code> requires one variable declaration for uninitialized variables per scope</li><li><code>&quot;uninitialized&quot;: &quot;never&quot;</code> requires multiple variable declarations for uninitialized variables per scope</li><li><code>&quot;uninitialized&quot;: &quot;consecutive&quot;</code> requires consecutive variable declarations for uninitialized variables to be a single declaration</li></ul><h3>always</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the default <code>&quot;always&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", "always"]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> bar;
+    <span class="hljs-keyword">var</span> baz;
+    <span class="hljs-keyword">let</span> qux;
+    <span class="hljs-keyword">let</span> norf;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">const</span> bar = <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">const</span> baz = <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">let</span> qux;
+    <span class="hljs-keyword">let</span> norf;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> bar;
+
+    <span class="hljs-keyword">if</span> (baz) {
+        <span class="hljs-keyword">var</span> qux = <span class="hljs-literal">true</span>;
+    }
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the default <code>&quot;always&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", "always"]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> bar,
+        baz;
+    <span class="hljs-keyword">let</span> qux,
+        norf;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">const</span> bar = <span class="hljs-literal">true</span>,
+        baz = <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">let</span> qux,
+        norf;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> bar,
+        qux;
+
+    <span class="hljs-keyword">if</span> (baz) {
+        qux = <span class="hljs-literal">true</span>;
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">let</span> bar;
+
+    <span class="hljs-keyword">if</span> (baz) {
+        <span class="hljs-keyword">let</span> qux;
+    }
+}
+</code></pre><h3>never</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>&quot;never&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", "never"]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> bar,
+        baz;
+    <span class="hljs-keyword">const</span> bar = <span class="hljs-literal">true</span>,
+        baz = <span class="hljs-literal">false</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> bar,
+        qux;
+
+    <span class="hljs-keyword">if</span> (baz) {
+        qux = <span class="hljs-literal">true</span>;
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">let</span> bar = <span class="hljs-literal">true</span>,
+        baz = <span class="hljs-literal">false</span>;
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>&quot;never&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", "never"]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> bar;
+    <span class="hljs-keyword">var</span> baz;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> bar;
+
+    <span class="hljs-keyword">if</span> (baz) {
+        <span class="hljs-keyword">var</span> qux = <span class="hljs-literal">true</span>;
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">let</span> bar;
+
+    <span class="hljs-keyword">if</span> (baz) {
+        <span class="hljs-keyword">let</span> qux = <span class="hljs-literal">true</span>;
+    }
+}
+</code></pre><h3>consecutive</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>&quot;consecutive&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", "consecutive"]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> bar;
+    <span class="hljs-keyword">var</span> baz;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">var</span> bar = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">var</span> baz = <span class="hljs-number">2</span>;
+
+    qux();
+
+    <span class="hljs-keyword">var</span> qux = <span class="hljs-number">3</span>;
+    <span class="hljs-keyword">var</span> quux;
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>&quot;consecutive&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", "consecutive"]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> bar,
+        baz;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">var</span> bar = <span class="hljs-number">1</span>,
+        baz = <span class="hljs-number">2</span>;
+
+    qux();
+
+    <span class="hljs-keyword">var</span> qux = <span class="hljs-number">3</span>,
+        quux;
+}
+</code></pre><h3>var, let, and const</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>{ var: &quot;always&quot;, let: &quot;never&quot;, const: &quot;never&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { var: "always", let: "never", const: "never" }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> bar;
+    <span class="hljs-keyword">var</span> baz;
+    <span class="hljs-keyword">let</span> qux,
+        norf;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> bar = <span class="hljs-number">1</span>,
+          baz = <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">let</span> qux,
+        norf;
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ var: &quot;always&quot;, let: &quot;never&quot;, const: &quot;never&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { var: "always", let: "never", const: "never" }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> bar,
+        baz;
+    <span class="hljs-keyword">let</span> qux;
+    <span class="hljs-keyword">let</span> norf;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> bar = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">const</span> baz = <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">let</span> qux;
+    <span class="hljs-keyword">let</span> norf;
+}
+</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>{ var: &quot;never&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { var: "never" }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> bar,
+        baz;
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ var: &quot;never&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { var: "never" }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> bar,
+        baz;
+    <span class="hljs-keyword">const</span> bar = <span class="hljs-number">1</span>; <span class="hljs-comment">// `const` and `let` declarations are ignored if they are not specified</span>
+    <span class="hljs-keyword">const</span> baz = <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">let</span> qux;
+    <span class="hljs-keyword">let</span> norf;
+}
+</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>{ separateRequires: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { separateRequires: true, var: "always" }]*/</span>
+<span class="hljs-comment">/*eslint-env node*/</span>
+
+<span class="hljs-keyword">var</span> foo = <span class="hljs-built_in">require</span>(<span class="hljs-string">"foo"</span>),
+    bar = <span class="hljs-string">"bar"</span>;
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ separateRequires: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { separateRequires: true, var: "always" }]*/</span>
+<span class="hljs-comment">/*eslint-env node*/</span>
+
+<span class="hljs-keyword">var</span> foo = <span class="hljs-built_in">require</span>(<span class="hljs-string">"foo"</span>);
+<span class="hljs-keyword">var</span> bar = <span class="hljs-string">"bar"</span>;
+</code></pre><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> foo = <span class="hljs-built_in">require</span>(<span class="hljs-string">"foo"</span>),
+    bar = <span class="hljs-built_in">require</span>(<span class="hljs-string">"bar"</span>);
+</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>{ var: &quot;never&quot;, let: &quot;consecutive&quot;, const: &quot;consecutive&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { var: "never", let: "consecutive", const: "consecutive" }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">let</span> a,
+        b;
+    <span class="hljs-keyword">let</span> c;
+
+    <span class="hljs-keyword">var</span> d,
+        e;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>,
+        b = <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">const</span> c = <span class="hljs-number">3</span>;
+
+    <span class="hljs-keyword">var</span> d,
+        e;
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ var: &quot;never&quot;, let: &quot;consecutive&quot;, const: &quot;consecutive&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { var: "never", let: "consecutive", const: "consecutive" }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">let</span> a,
+        b;
+
+    <span class="hljs-keyword">var</span> d;
+    <span class="hljs-keyword">var</span> e;
+
+    <span class="hljs-keyword">let</span> f;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>,
+          b = <span class="hljs-number">2</span>;
+
+    <span class="hljs-keyword">var</span> c;
+    <span class="hljs-keyword">var</span> d;
+
+    <span class="hljs-keyword">const</span> e = <span class="hljs-number">3</span>;
+}
+</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>{ var: &quot;consecutive&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { var: "consecutive" }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> a;
+    <span class="hljs-keyword">var</span> b;
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ var: &quot;consecutive&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { var: "consecutive" }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> a,
+        b;
+    <span class="hljs-keyword">const</span> c = <span class="hljs-number">1</span>; <span class="hljs-comment">// `const` and `let` declarations are ignored if they are not specified</span>
+    <span class="hljs-keyword">const</span> d = <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">let</span> e;
+    <span class="hljs-keyword">let</span> f;
+}
+</code></pre><h3>initialized and uninitialized</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>{ &quot;initialized&quot;: &quot;always&quot;, &quot;uninitialized&quot;: &quot;never&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { "initialized": "always", "uninitialized": "never" }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> a, b, c;
+    <span class="hljs-keyword">var</span> foo = <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">var</span> bar = <span class="hljs-literal">false</span>;
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;initialized&quot;: &quot;always&quot;, &quot;uninitialized&quot;: &quot;never&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { "initialized": "always", "uninitialized": "never" }]*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> a;
+    <span class="hljs-keyword">var</span> b;
+    <span class="hljs-keyword">var</span> c;
+    <span class="hljs-keyword">var</span> foo = <span class="hljs-literal">true</span>,
+        bar = <span class="hljs-literal">false</span>;
+}
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> z <span class="hljs-keyword">of</span> foo) {
+    doSomething(z);
+}
+
+<span class="hljs-keyword">let</span> z;
+<span class="hljs-keyword">for</span> (z <span class="hljs-keyword">of</span> foo) {
+    doSomething(z);
+}
+</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>{ &quot;initialized&quot;: &quot;never&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { "initialized": "never" }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> foo = <span class="hljs-literal">true</span>,
+        bar = <span class="hljs-literal">false</span>;
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;initialized&quot;: &quot;never&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { "initialized": "never" }]*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> foo = <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">var</span> bar = <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">var</span> a, b, c; <span class="hljs-comment">// Uninitialized variables are ignored</span>
+}
+</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>{ &quot;initialized&quot;: &quot;consecutive&quot;, &quot;uninitialized&quot;: &quot;never&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { "initialized": "consecutive", "uninitialized": "never" }]*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">var</span> b = <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">var</span> c,
+        d;
+    <span class="hljs-keyword">var</span> e = <span class="hljs-number">3</span>;
+    <span class="hljs-keyword">var</span> f = <span class="hljs-number">4</span>;
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;initialized&quot;: &quot;consecutive&quot;, &quot;uninitialized&quot;: &quot;never&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { "initialized": "consecutive", "uninitialized": "never" }]*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>,
+        b = <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">var</span> c;
+    <span class="hljs-keyword">var</span> d;
+    <span class="hljs-keyword">var</span> e = <span class="hljs-number">3</span>,
+        f = <span class="hljs-number">4</span>;
+}
+</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>{ &quot;initialized&quot;: &quot;consecutive&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { "initialized": "consecutive" }]*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">var</span> b = <span class="hljs-number">2</span>;
+
+    foo();
+
+    <span class="hljs-keyword">var</span> c = <span class="hljs-number">3</span>;
+    <span class="hljs-keyword">var</span> d = <span class="hljs-number">4</span>;
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;initialized&quot;: &quot;consecutive&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint one-var: ["error", { "initialized": "consecutive" }]*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>,
+        b = <span class="hljs-number">2</span>;
+
+    foo();
+
+    <span class="hljs-keyword">var</span> c = <span class="hljs-number">3</span>,
+        d = <span class="hljs-number">4</span>;
+}
+</code></pre><h2>Compatibility</h2><ul><li><strong>JSHint</strong>: This rule maps to the <code>onevar</code> JSHint rule, but allows <code>let</code> and <code>const</code> to be configured separately.</li><li><strong>JSCS</strong>: This rule roughly maps to <a href="https://jscs-dev.github.io/rule/disallowMultipleVarDecl">disallowMultipleVarDecl</a>.</li><li><strong>JSCS</strong>: This rule option <code>separateRequires</code> roughly maps to <a href="https://jscs-dev.github.io/rule/requireMultipleVarDecl">requireMultipleVarDecl</a>.</li></ul><h2>Version</h2><p>This rule was introduced in ESLint 0.0.9.</p><h2>Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/one-var.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/one-var.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/eslint/edit/master/docs/rules/one-var.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>

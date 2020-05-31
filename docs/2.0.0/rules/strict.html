@@ -1,0 +1,129 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="JavaScript, Linter, Linting, Pluggable, Configurable, Code Quality"><meta name="description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="theme-color" content="#463fd4"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="ESLint - Pluggable JavaScript linter"><meta property="og:title" content="Rule strict"><meta property="og:url" content="/docs/2.0.0/rules/strict"><meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png"><meta name="twitter:site" content="@geteslint"><meta name="twitter:title" content="Rule strict"><meta name="twitter:description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="twitter:url" content="/docs/2.0.0/rules/strict"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://eslint.org/assets/img/favicon.512x512.png"><title>Rule strict - ESLint - Pluggable JavaScript linter</title><link rel="preconnect" href="https://www.google-analytics.com"><link rel="canonical" href="/docs/2.0.0/rules/strict"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"><link rel="stylesheet" href="/assets/styles/main.css"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/assets/img/favicon.512x512.png"><link rel="alternate" type="application/rss+xml" title="ESLint - Pluggable JavaScript linter" href="/feed.xml"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"></head><body><input type="checkbox" id="eslint-toggle-search" class="eslint-toggle-search-checkbox"><header class="navbar navbar-default navbar-demo navbar-fixed-top eslint-nav" id="top" role="banner"><div class="container"><a href="/" class="navbar-brand"><img alt="ESLint" src="/assets/img/logo.svg" itemprop="image">ESLint</a><div class="eslint-navbar-toggles"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#eslint-navbar" aria-controls="eslint-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label></div><nav id="eslint-navbar" class="collapse navbar-collapse eslint-navbar"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="/docs/user-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/user-guide/getting-started">Getting Started</a></li><li><a href="/docs/user-guide/configuring">Configuring ESLint</a></li><li><a href="/docs/user-guide/command-line-interface">Command Line Interface</a></li><li><a href="/docs/rules">Rules</a></li><li><a href="/docs/user-guide/formatters">Formatters</a></li><li><a href="/docs/user-guide/integrations">Integrations</a></li><li class="divider"></li><li><a href="/docs/user-guide/migrating-to-7.0.0">Migrating to v7.0.0</a></li><li><a href="/docs/user-guide/migrating-to-6.0.0">Migrating to v6.0.0</a></li><li><a href="/docs/user-guide/migrating-to-5.0.0">Migrating to v5.0.0</a></li><li><a href="/docs/user-guide/migrating-to-4.0.0">Migrating to v4.0.0</a></li><li><a href="/docs/user-guide/migrating-to-3.0.0">Migrating to v3.0.0</a></li><li><a href="/docs/user-guide/migrating-to-2.0.0">Migrating to v2.0.0</a></li><li><a href="/docs/user-guide/migrating-to-1.0.0">Migrating to v1.0.0</a></li><li><a href="/docs/user-guide/migrating-from-jscs">Migrating from JSCS</a></li></ul></li><li class="dropdown"><a href="/docs/developer-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/developer-guide/architecture">Architecture</a></li><li><a href="/docs/developer-guide/contributing">Contributing</a></li><li><a href="/docs/developer-guide/source-code">Get the Source Code</a></li><li><a href="/docs/developer-guide/development-environment">Set up a Development Environment</a></li><li><a href="/docs/developer-guide/unit-tests">Run the Unit Tests</a></li><li><a href="/docs/developer-guide/working-with-rules">Working with Rules</a></li><li><a href="/docs/developer-guide/working-with-plugins">Working with Plugins</a></li><li><a href="/docs/developer-guide/working-with-custom-formatters">Working with Custom Formatters</a></li><li><a href="/docs/developer-guide/working-with-custom-parsers">Working with Custom Parsers</a></li><li><a href="/docs/developer-guide/shareable-configs">Shareable Configs</a></li><li><a href="/docs/developer-guide/nodejs-api">Node.js API</a></li><li><a href="/docs/maintainer-guide">Maintainer guide</a></li></ul></li><li><a href="/blog">Blog</a></li><li><a href="/demo">Demo</a></li><li class="dropdown"><a href="/docs/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/users">Who's Using ESLint?</a></li><li><a href="/team">About the Team</a></li><li><a href="/docs/about">About ESLint</a></li></ul></li></ul><label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label><div class="navbar-form navbar-right eslint-search" role="search"><div class="input-group"><label class="sr-only" aria-label="Search" for="eslint-search-input">Search</label><div class="eslint-search-input-wrapper"><input type="text" class="form-control" id="eslint-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search the docs..."> <label for="eslint-toggle-search" class="eslint-toggle-search-close"><span class="sr-only">Close search</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></div></div></div></nav></div></header><main class="doc"><article class="container"><h1>Strict Mode Directives (strict)</h1><p>A strict mode directive at the beginning of a script or function body enables strict mode semantics:</p><pre class="hljs highlight-js"><code><span class="hljs-meta">"use strict"</span>;
+</code></pre><p>When used globally, as in the preceding example, the entire script, including all contained functions, are strict mode code. It is also possible to specify function-level strict mode, such that strict mode applies only to the function in which the directive occurs:</p><pre class="hljs highlight-js"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-string">"use strict"</span>;
+    <span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-keyword">var</span> bar = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-string">"use strict"</span>;
+    <span class="hljs-keyword">return</span>;
+};
+</code></pre><p>Unlike scripts, ECMAScript modules are always in strict mode. Strict mode directives in ECMAScript modules have no effect.</p><h2>Rule Details</h2><p>This rule is aimed at using strict mode directives effectively, and as such, will flag any unexpected uses or omissions of strict mode directives.</p><h3>Options</h3><p>There are four options for this rule:</p><ol><li><code>&quot;never&quot;</code> - don't use <code>&quot;use strict&quot;</code> at all</li><li><code>&quot;global&quot;</code> - require <code>&quot;use strict&quot;</code> in the global scope</li><li><code>&quot;function&quot;</code> - require <code>&quot;use strict&quot;</code> in function scopes only</li><li><code>&quot;safe&quot;</code> - require <code>&quot;use strict&quot;</code> globally when inside a module wrapper and in function scopes everywhere else.</li></ol><p>All strict mode directives are flagged as unnecessary if ECMAScript modules or implied strict mode are enabled (see <a href="../user-guide/configuring#specifying-parser-options">Specifying Parser Options</a>). This behaviour does not depend on the rule options, but can be silenced by disabling this rule.</p><h3>&quot;never&quot;</h3><p>This mode forbids any occurrence of a strict mode directive.</p><p>The following patterns are considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint strict: [2, "never"]*/</span>
+
+<span class="hljs-meta">"use strict"</span>;          <span class="hljs-comment">/*error Strict mode is not permitted.*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-string">"use strict"</span>;      <span class="hljs-comment">/*error Strict mode is not permitted.*/</span>
+    <span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-keyword">var</span> bar = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-string">"use strict"</span>;      <span class="hljs-comment">/*error Strict mode is not permitted.*/</span>
+    <span class="hljs-keyword">return</span>;
+};
+
+foo();
+bar();
+</code></pre><p>The following patterns are considered valid:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint strict: [2, "never"]*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span>;
+}
+
+<span class="hljs-keyword">var</span> bar = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span>;
+};
+
+foo();
+bar();
+</code></pre><h3>&quot;global&quot;</h3><p>This mode ensures that all code is in strict mode and that there are no extraneous strict mode directives at the top level or in nested functions, which are themselves already strict by virtue of being contained in strict global code. It requires that global code contains exactly one strict mode directive. Strict mode directives inside functions are considered unnecessary. Multiple strict mode directives at any level also trigger warnings.</p><p>The following patterns are considered problems:</p><pre class="hljs highlight-"><code>/*eslint strict: [2, &quot;global&quot;]*/
+
+&quot;use strict&quot;;
+&quot;use strict&quot;;           /*error Multiple 'use strict' directives.*/
+
+function foo() {
+    &quot;use strict&quot;;       /*error Use the global form of 'use strict'.*/
+
+    return function() {
+        &quot;use strict&quot;;   /*error Use the global form of 'use strict'.*/
+        &quot;use strict&quot;;   /*error Use the global form of 'use strict'.*/
+
+        return;
+    };
+}
+
+foo();
+</code></pre><p>The following patterns are considered valid:</p><pre class="hljs highlight-"><code>/*eslint strict: [2, &quot;global&quot;]*/
+
+&quot;use strict&quot;;
+
+function foo() {
+    return function() {
+        return;
+    };
+}
+
+foo();
+</code></pre><h3>&quot;function&quot;</h3><p>This mode ensures that all function bodies are strict mode code, while global code is not. Particularly if a build step concatenates multiple scripts, a strict mode directive in global code of one script could unintentionally enable strict mode in another script that was not intended to be strict code. It forbids any occurrence of a strict mode directive in global code. It requires exactly one strict mode directive in each function declaration or expression whose parent is global code. Strict mode directives inside nested functions are considered unnecessary. Multiple strict mode directives at any level also trigger warnings.</p><p>The following patterns are considered problems:</p><pre class="hljs highlight-"><code>/*eslint strict: [2, &quot;function&quot;]*/
+
+&quot;use strict&quot;;           /*error Use the function form of 'use strict'.*/
+
+function foo() {        /*error Use the function form of 'use strict'.*/
+    // Missing strict mode directive
+
+    return function() {
+        &quot;use strict&quot;;   // Unnecessary; parent should contain a strict mode directive
+        &quot;use strict&quot;;   /*error Multiple 'use strict' directives.*/
+
+        return;
+    };
+}
+
+foo();
+</code></pre><p>The following patterns are considered valid:</p><pre class="hljs highlight-"><code>/*eslint strict: [2, &quot;function&quot;]*/
+
+function foo() {
+    &quot;use strict&quot;;
+
+    return function() {
+        return;
+    };
+}
+
+(function() {
+    &quot;use strict&quot;;
+
+    return;
+}());
+
+foo();
+</code></pre><h3>&quot;safe&quot; (default)</h3><p>Node.js and the CommonJS module system wrap modules inside a hidden function wrapper that defines each module's scope. The wrapper makes it safe to concatenate strict mode modules while maintaining their original strict mode directives. When the <code>node</code> or <code>commonjs</code> environments are enabled or <code>globalReturn</code> is enabled in <code>ecmaFeatures</code>, ESLint considers code to be inside the module wrapper, and <code>&quot;safe&quot;</code> mode corresponds to <code>&quot;global&quot;</code> mode and enforces global strict mode directives. Everywhere else, <code>&quot;safe&quot;</code> mode corresponds to <code>&quot;function&quot;</code> mode and enforces strict mode directives inside top-level functions.</p><h3>&quot;deprecated&quot; (Removed)</h3><p><strong>Replacement notice</strong>: This mode, previously enabled by turning on the rule without specifying a mode, has been removed in ESLint v1.0. <code>&quot;function&quot;</code> mode is most similar to the deprecated behavior.</p><p>This mode ensures that all functions are executed in strict mode. A strict mode directive must be present in global code or in every top-level function declaration or expression. It does not concern itself with unnecessary strict mode directives in nested functions that are already strict, nor with multiple strict mode directives at the same level.</p><p>The following patterns are considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">// "strict": 2</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+</code></pre><p>The following patterns do not cause a warning:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">// "strict": 2</span>
+
+<span class="hljs-meta">"use strict"</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-comment">// ----------------</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+
+    <span class="hljs-string">"use strict"</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-comment">// ----------------</span>
+
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-string">"use strict"</span>;
+
+    <span class="hljs-comment">// other code</span>
+}());
+</code></pre><h2>When Not To Use It</h2><p>In a codebase that has both strict and non-strict code, either turn this rule off, or <a href="https://eslint.org/docs/user-guide/configuring">selectively disable it</a> where necessary. For example, functions referencing <code>arguments.callee</code> are invalid in strict mode. A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode/Transitioning_to_strict_mode#Differences_from_non-strict_to_strict">full list of strict mode differences</a> is available on MDN.</p><h2>Version</h2><p>This rule was introduced in ESLint 0.1.0.</p><h2>Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/strict.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/strict.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/website/edit/master/./docs/2.0.0/rules/strict.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>

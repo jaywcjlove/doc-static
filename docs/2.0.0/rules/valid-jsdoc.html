@@ -1,0 +1,187 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="JavaScript, Linter, Linting, Pluggable, Configurable, Code Quality"><meta name="description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="theme-color" content="#463fd4"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="ESLint - Pluggable JavaScript linter"><meta property="og:title" content="Rule valid-jsdoc"><meta property="og:url" content="/docs/2.0.0/rules/valid-jsdoc"><meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png"><meta name="twitter:site" content="@geteslint"><meta name="twitter:title" content="Rule valid-jsdoc"><meta name="twitter:description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="twitter:url" content="/docs/2.0.0/rules/valid-jsdoc"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://eslint.org/assets/img/favicon.512x512.png"><title>Rule valid-jsdoc - ESLint - Pluggable JavaScript linter</title><link rel="preconnect" href="https://www.google-analytics.com"><link rel="canonical" href="/docs/2.0.0/rules/valid-jsdoc"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"><link rel="stylesheet" href="/assets/styles/main.css"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/assets/img/favicon.512x512.png"><link rel="alternate" type="application/rss+xml" title="ESLint - Pluggable JavaScript linter" href="/feed.xml"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"></head><body><input type="checkbox" id="eslint-toggle-search" class="eslint-toggle-search-checkbox"><header class="navbar navbar-default navbar-demo navbar-fixed-top eslint-nav" id="top" role="banner"><div class="container"><a href="/" class="navbar-brand"><img alt="ESLint" src="/assets/img/logo.svg" itemprop="image">ESLint</a><div class="eslint-navbar-toggles"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#eslint-navbar" aria-controls="eslint-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label></div><nav id="eslint-navbar" class="collapse navbar-collapse eslint-navbar"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="/docs/user-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/user-guide/getting-started">Getting Started</a></li><li><a href="/docs/user-guide/configuring">Configuring ESLint</a></li><li><a href="/docs/user-guide/command-line-interface">Command Line Interface</a></li><li><a href="/docs/rules">Rules</a></li><li><a href="/docs/user-guide/formatters">Formatters</a></li><li><a href="/docs/user-guide/integrations">Integrations</a></li><li class="divider"></li><li><a href="/docs/user-guide/migrating-to-7.0.0">Migrating to v7.0.0</a></li><li><a href="/docs/user-guide/migrating-to-6.0.0">Migrating to v6.0.0</a></li><li><a href="/docs/user-guide/migrating-to-5.0.0">Migrating to v5.0.0</a></li><li><a href="/docs/user-guide/migrating-to-4.0.0">Migrating to v4.0.0</a></li><li><a href="/docs/user-guide/migrating-to-3.0.0">Migrating to v3.0.0</a></li><li><a href="/docs/user-guide/migrating-to-2.0.0">Migrating to v2.0.0</a></li><li><a href="/docs/user-guide/migrating-to-1.0.0">Migrating to v1.0.0</a></li><li><a href="/docs/user-guide/migrating-from-jscs">Migrating from JSCS</a></li></ul></li><li class="dropdown"><a href="/docs/developer-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/developer-guide/architecture">Architecture</a></li><li><a href="/docs/developer-guide/contributing">Contributing</a></li><li><a href="/docs/developer-guide/source-code">Get the Source Code</a></li><li><a href="/docs/developer-guide/development-environment">Set up a Development Environment</a></li><li><a href="/docs/developer-guide/unit-tests">Run the Unit Tests</a></li><li><a href="/docs/developer-guide/working-with-rules">Working with Rules</a></li><li><a href="/docs/developer-guide/working-with-plugins">Working with Plugins</a></li><li><a href="/docs/developer-guide/working-with-custom-formatters">Working with Custom Formatters</a></li><li><a href="/docs/developer-guide/working-with-custom-parsers">Working with Custom Parsers</a></li><li><a href="/docs/developer-guide/shareable-configs">Shareable Configs</a></li><li><a href="/docs/developer-guide/nodejs-api">Node.js API</a></li><li><a href="/docs/maintainer-guide">Maintainer guide</a></li></ul></li><li><a href="/blog">Blog</a></li><li><a href="/demo">Demo</a></li><li class="dropdown"><a href="/docs/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/users">Who's Using ESLint?</a></li><li><a href="/team">About the Team</a></li><li><a href="/docs/about">About ESLint</a></li></ul></li></ul><label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label><div class="navbar-form navbar-right eslint-search" role="search"><div class="input-group"><label class="sr-only" aria-label="Search" for="eslint-search-input">Search</label><div class="eslint-search-input-wrapper"><input type="text" class="form-control" id="eslint-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search the docs..."> <label for="eslint-toggle-search" class="eslint-toggle-search-close"><span class="sr-only">Close search</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></div></div></div></nav></div></header><main class="doc"><article class="container"><h1>Validates JSDoc comments are syntactically correct (valid-jsdoc)</h1><p><a href="http://usejsdoc.org">JSDoc</a> is a JavaScript API documentation generator. It uses specially-formatted comments inside of code to generate API documentation automatically. For example, this is what a JSDoc comment looks like for a function:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/**
+ * Adds two numbers together.
+ * <span class="hljs-doctag">@param <span class="hljs-type">{int}</span> </span>num1 The first number.
+ * <span class="hljs-doctag">@param <span class="hljs-type">{int}</span> </span>num2 The second number.
+ * <span class="hljs-doctag">@returns <span class="hljs-type">{int}</span> </span>The sum of the two numbers.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params">num1, num2</span>) </span>{
+    <span class="hljs-keyword">return</span> num1 + num2;
+}
+</code></pre><p>The JSDoc comments have a syntax all their own, and it is easy to mistakenly mistype a comment because comments aren't often checked for correctness in editors. Further, it's very easy for the function definition to get out of sync with the comments, making the comments a source of confusion and error.</p><h2>Rule Details</h2><p>This rule aims to prevent invalid and incomplete JSDoc comments. In doing so, it will warn when:</p><ol><li>There is a JSDoc syntax error</li><li>A <code>@param</code> or <code>@returns</code> is used without a type specified</li><li>A <code>@param</code> or <code>@returns</code> is used without a description</li><li>A comment for a function is missing <code>@returns</code></li><li>A parameter has no associated <code>@param</code> in the JSDoc comment</li><li><code>@param</code>s are out of order with named arguments</li></ol><p>The following patterns are considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint valid-jsdoc: 2*/</span>
+
+<span class="hljs-comment">// missing type for @param and missing @returns</span>
+<span class="hljs-comment">/**                                 // 2 errors
+ * A description
+ * <span class="hljs-doctag">@param </span>num1 The first number.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">num1</span>) </span>{
+    <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-comment">// missing description for @param</span>
+<span class="hljs-comment">/**                                 //error Missing JSDoc parameter description for 'num1'.
+ * A description
+ * <span class="hljs-doctag">@param <span class="hljs-type">{int}</span> <span class="hljs-variable">num1</span></span>
+ * <span class="hljs-doctag">@returns <span class="hljs-type">{void}</span></span>
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">num1</span>) </span>{
+    <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-comment">// no description for @returns</span>
+<span class="hljs-comment">/**                                 //error Missing JSDoc return description.
+ * A description
+ * <span class="hljs-doctag">@returns <span class="hljs-type">{int}</span></span>
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-comment">// no type for @returns</span>
+<span class="hljs-comment">/**                                 //error JSDoc syntax error.
+ * A description
+ * <span class="hljs-doctag">@returns </span>Something awesome
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-comment">// missing @param</span>
+<span class="hljs-comment">/**                                 //error Missing JSDoc for parameter 'a'.
+ * A description
+ * <span class="hljs-doctag">@returns <span class="hljs-type">{void}</span></span>
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">a</span>) </span>{
+    <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-comment">// incorrect @param</span>
+<span class="hljs-comment">/**                                 //error Expected JSDoc for 'a' but found 'b'.
+ * A description
+ * <span class="hljs-doctag">@param <span class="hljs-type">{string}</span> </span>b Desc
+ * <span class="hljs-doctag">@returns <span class="hljs-type">{void}</span></span>
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">a</span>) </span>{
+    <span class="hljs-comment">// ...</span>
+}
+</code></pre><p>The following patterns are not considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint valid-jsdoc: 2*/</span>
+
+<span class="hljs-comment">/**
+ * Adds two numbers together.
+ * <span class="hljs-doctag">@param <span class="hljs-type">{int}</span> </span>num1 The first number.
+ * <span class="hljs-doctag">@param <span class="hljs-type">{int}</span> </span>num2 The second number.
+ * <span class="hljs-doctag">@returns <span class="hljs-type">{int}</span> </span>The sum of the two numbers.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">num1, num2</span>) </span>{
+    <span class="hljs-keyword">return</span> num1 + num2;
+}
+
+<span class="hljs-comment">/**
+ * Represents a sum.
+ * <span class="hljs-doctag">@param <span class="hljs-type">{int}</span> </span>num1 The first number.
+ * <span class="hljs-doctag">@param <span class="hljs-type">{int}</span> </span>num2 The second number.
+ * <span class="hljs-doctag">@constructor</span>
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">num1, num2</span>) </span>{ }
+
+<span class="hljs-comment">// use of @override make @param and @returns optional</span>
+<span class="hljs-comment">/**
+ * A description
+ * <span class="hljs-doctag">@override</span>
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">a</span>) </span>{
+    <span class="hljs-keyword">return</span> a;
+}
+
+<span class="hljs-comment">// @returns is not required for a constructor</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>{
+    <span class="hljs-comment">/**
+    *
+    * <span class="hljs-doctag">@param <span class="hljs-type">{int}</span> </span>num1 The first number.
+    */</span>
+    <span class="hljs-keyword">constructor</span>(num1) {
+        <span class="hljs-keyword">this</span>.num1 = num1;
+    }
+}
+</code></pre><h3>Options</h3><h4><code>prefer</code></h4><p>JSDoc offers a lot of tags with overlapping meaning. For example, both <code>@return</code> and <code>@returns</code> are acceptable for specifying the return value of a function. However, you may want to enforce a certain tag be used instead of others. You can specify your preferences regarding tag substitution by providing a mapping called <code>prefer</code> in the rule configuration. For example, to specify that <code>@returns</code> should be used instead of <code>@return</code>, you can use the following configuration:</p><pre class="hljs highlight-json"><code><span class="hljs-string">"valid-jsdoc"</span>: [<span class="hljs-number">2</span>, {
+    <span class="hljs-attr">"prefer"</span>: {
+        <span class="hljs-attr">"return"</span>: <span class="hljs-string">"returns"</span>
+    }
+}]
+</code></pre><p>With this configuration, ESLint will warn when it finds <code>@return</code> and recommend to replace it with <code>@returns</code>.</p><h4><code>requireReturn</code></h4><p>By default ESLint requires you to document every function with a <code>@return</code> tag regardless of whether there is anything returned by the function. If instead you want to enforce that only functions with a <code>return</code> statement are documented with a <code>@return</code> tag, set the <code>requireReturn</code> option to <code>false</code>. When <code>requireReturn</code> is <code>false</code>, every function documented with a <code>@return</code> tag must have a <code>return</code> statement, and every function with a <code>return</code> statement must have a <code>@return</code> tag.</p><pre class="hljs highlight-json"><code><span class="hljs-string">"valid-jsdoc"</span>: [<span class="hljs-number">2</span>, {
+    <span class="hljs-attr">"requireReturn"</span>: <span class="hljs-literal">false</span>
+}]
+</code></pre><h4><code>requireParamDescription</code></h4><p>By default ESLint requires you to specify a description for each <code>@param</code>. You can choose not to require descriptions for parameters by setting <code>requireParamDescription</code> to <code>false</code>.</p><pre class="hljs highlight-json"><code><span class="hljs-string">"valid-jsdoc"</span>: [<span class="hljs-number">2</span>, {
+    <span class="hljs-attr">"requireParamDescription"</span>: <span class="hljs-literal">false</span>
+}]
+</code></pre><h4><code>requireReturnDescription</code></h4><p>By default ESLint requires you to specify a description for each <code>@return</code>. You can choose not to require descriptions for <code>@return</code> by setting <code>requireReturnDescription</code> to <code>false</code>.</p><pre class="hljs highlight-json"><code><span class="hljs-string">"valid-jsdoc"</span>: [<span class="hljs-number">2</span>, {
+    <span class="hljs-attr">"requireReturnDescription"</span>: <span class="hljs-literal">false</span>
+}]
+</code></pre><h4><code>matchDescription</code></h4><p>Specify a regular expression to validate jsdoc comment block description against.</p><pre class="hljs highlight-json"><code><span class="hljs-string">"valid-jsdoc"</span>: [<span class="hljs-number">2</span>, {
+    <span class="hljs-attr">"matchDescription"</span>: <span class="hljs-string">"^[A-Z][A-Za-z0-9\\s]*[.]$"</span>
+}]
+</code></pre><h4><code>requireReturnType</code></h4><p>By default ESLint requires you to specify <code>type</code> for <code>@return</code> tag for every documented function.</p><pre class="hljs highlight-json"><code><span class="hljs-string">"valid-jsdoc"</span>: [<span class="hljs-number">2</span>, {
+    <span class="hljs-attr">"requireReturnType"</span>: <span class="hljs-literal">false</span>
+}]
+</code></pre><h4>preferType</h4><p>It will validate all the types from jsdoc with the options setup by the user. Inside the options, key should be what the type you want to check and the value of it should be what the expected type should be. Note that we don't check for spelling mistakes with this option. In the example below, it will expect the &quot;object&quot; to start with an uppercase and all the &quot;string&quot; type to start with a lowercase.</p><pre class="hljs highlight-json"><code><span class="hljs-string">"valid-jsdoc"</span>: [<span class="hljs-number">2</span>, {
+    <span class="hljs-attr">"preferType"</span>: {
+        <span class="hljs-attr">"String"</span>: <span class="hljs-string">"string"</span>,
+        <span class="hljs-attr">"object"</span>: <span class="hljs-string">"Object"</span>,
+        <span class="hljs-attr">"test"</span>: <span class="hljs-string">"TesT"</span>
+    }
+}]
+</code></pre><p>The following patterns are considered problems with option <code>preferType</code> setup as above:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/**
+ * Adds two numbers together.
+ * <span class="hljs-doctag">@param <span class="hljs-type">{String}</span> </span>param1 The first parameter.
+ * <span class="hljs-doctag">@returns <span class="hljs-type">{object}</span> </span>The sum of the two numbers.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">param1</span>) </span>{
+    <span class="hljs-keyword">return</span> {<span class="hljs-attr">a</span>: param1};
+}
+
+<span class="hljs-comment">/**
+ * Adds two numbers together.
+ * <span class="hljs-doctag">@param <span class="hljs-type">{Array&lt;String&gt;}</span> </span>param1 The first parameter.
+ * <span class="hljs-doctag">@param <span class="hljs-type">{{1:test}</span></span>} param2 The second parameter.
+ * <span class="hljs-doctag">@returns <span class="hljs-type">{object}</span> </span>The sum of the two numbers.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">param1, param2</span>) </span>{
+    <span class="hljs-keyword">return</span> {<span class="hljs-attr">a</span>: param1};
+}
+
+<span class="hljs-comment">/**
+ * Adds two numbers together.
+ * <span class="hljs-doctag">@param <span class="hljs-type">{String|int}</span> </span>param1 The first parameter.
+ * <span class="hljs-doctag">@returns <span class="hljs-type">{object}</span> </span>The sum of the two numbers.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">param1</span>) </span>{
+    <span class="hljs-keyword">return</span> {<span class="hljs-attr">a</span>: param1};
+}
+</code></pre><p>The following patterns are not considered problems with option <code>preferType</code> setup as above:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/**
+ * Adds two numbers together.
+ * <span class="hljs-doctag">@param <span class="hljs-type">{string}</span> </span>param1 The first parameter.
+ * <span class="hljs-doctag">@returns <span class="hljs-type">{Object}</span> </span>The sum of the two numbers.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">param1</span>) </span>{
+    <span class="hljs-keyword">return</span> {<span class="hljs-attr">a</span>: param1};
+}
+
+<span class="hljs-comment">/**
+ * Adds two numbers together.
+ * <span class="hljs-doctag">@param <span class="hljs-type">{Array&lt;string&gt;}</span> </span>param1 The first parameter.
+ * <span class="hljs-doctag">@param <span class="hljs-type">{{1:TesT}</span></span>} param2 The second parameter.
+ * <span class="hljs-doctag">@returns <span class="hljs-type">{Object}</span> </span>The sum of the two numbers.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">param1, param2</span>) </span>{
+    <span class="hljs-keyword">return</span> {<span class="hljs-attr">a</span>: param1};
+}
+
+<span class="hljs-comment">/**
+ * Adds two numbers together.
+ * <span class="hljs-doctag">@param <span class="hljs-type">{string|int}</span> </span>param1 The first parameter.
+ * <span class="hljs-doctag">@returns <span class="hljs-type">{Object}</span> </span>The sum of the two numbers.
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">param1</span>) </span>{
+    <span class="hljs-keyword">return</span> {<span class="hljs-attr">a</span>: param1};
+}
+</code></pre><h2>When Not To Use It</h2><p>If you aren't using JSDoc, then you can safely turn this rule off.</p><h2>Further Reading</h2><ul><li><a href="http://usejsdoc.org">JSDoc</a></li></ul><h2>Version</h2><p>This rule was introduced in ESLint 0.4.0.</p><h2>Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/valid-jsdoc.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/valid-jsdoc.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/website/edit/master/./docs/2.0.0/rules/valid-jsdoc.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>

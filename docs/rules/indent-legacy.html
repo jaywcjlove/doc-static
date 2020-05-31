@@ -1,0 +1,270 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="JavaScript, Linter, Linting, Pluggable, Configurable, Code Quality"><meta name="description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="theme-color" content="#463fd4"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="ESLint - Pluggable JavaScript linter"><meta property="og:title" content="indent-legacy - Rules"><meta property="og:url" content="/docs/rules/indent-legacy"><meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png"><meta name="twitter:site" content="@geteslint"><meta name="twitter:title" content="indent-legacy - Rules"><meta name="twitter:description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="twitter:url" content="/docs/rules/indent-legacy"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://eslint.org/assets/img/favicon.512x512.png"><title>indent-legacy - Rules - ESLint - Pluggable JavaScript linter</title><link rel="preconnect" href="https://www.google-analytics.com"><link rel="canonical" href="/docs/rules/indent-legacy"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"><link rel="stylesheet" href="/assets/styles/main.css"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/assets/img/favicon.512x512.png"><link rel="alternate" type="application/rss+xml" title="ESLint - Pluggable JavaScript linter" href="/feed.xml"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"></head><body><input type="checkbox" id="eslint-toggle-search" class="eslint-toggle-search-checkbox"><header class="navbar navbar-default navbar-demo navbar-fixed-top eslint-nav" id="top" role="banner"><div class="container"><a href="/" class="navbar-brand"><img alt="ESLint" src="/assets/img/logo.svg" itemprop="image">ESLint</a><div class="eslint-navbar-toggles"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#eslint-navbar" aria-controls="eslint-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label></div><nav id="eslint-navbar" class="collapse navbar-collapse eslint-navbar"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="/docs/user-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/user-guide/getting-started">Getting Started</a></li><li><a href="/docs/user-guide/configuring">Configuring ESLint</a></li><li><a href="/docs/user-guide/command-line-interface">Command Line Interface</a></li><li><a href="/docs/rules">Rules</a></li><li><a href="/docs/user-guide/formatters">Formatters</a></li><li><a href="/docs/user-guide/integrations">Integrations</a></li><li class="divider"></li><li><a href="/docs/user-guide/migrating-to-7.0.0">Migrating to v7.0.0</a></li><li><a href="/docs/user-guide/migrating-to-6.0.0">Migrating to v6.0.0</a></li><li><a href="/docs/user-guide/migrating-to-5.0.0">Migrating to v5.0.0</a></li><li><a href="/docs/user-guide/migrating-to-4.0.0">Migrating to v4.0.0</a></li><li><a href="/docs/user-guide/migrating-to-3.0.0">Migrating to v3.0.0</a></li><li><a href="/docs/user-guide/migrating-to-2.0.0">Migrating to v2.0.0</a></li><li><a href="/docs/user-guide/migrating-to-1.0.0">Migrating to v1.0.0</a></li><li><a href="/docs/user-guide/migrating-from-jscs">Migrating from JSCS</a></li></ul></li><li class="dropdown"><a href="/docs/developer-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/developer-guide/architecture">Architecture</a></li><li><a href="/docs/developer-guide/contributing">Contributing</a></li><li><a href="/docs/developer-guide/source-code">Get the Source Code</a></li><li><a href="/docs/developer-guide/development-environment">Set up a Development Environment</a></li><li><a href="/docs/developer-guide/unit-tests">Run the Unit Tests</a></li><li><a href="/docs/developer-guide/working-with-rules">Working with Rules</a></li><li><a href="/docs/developer-guide/working-with-plugins">Working with Plugins</a></li><li><a href="/docs/developer-guide/working-with-custom-formatters">Working with Custom Formatters</a></li><li><a href="/docs/developer-guide/working-with-custom-parsers">Working with Custom Parsers</a></li><li><a href="/docs/developer-guide/shareable-configs">Shareable Configs</a></li><li><a href="/docs/developer-guide/nodejs-api">Node.js API</a></li><li><a href="/docs/maintainer-guide">Maintainer guide</a></li></ul></li><li><a href="/blog">Blog</a></li><li><a href="/demo">Demo</a></li><li class="dropdown"><a href="/docs/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/users">Who's Using ESLint?</a></li><li><a href="/team">About the Team</a></li><li><a href="/docs/about">About ESLint</a></li></ul></li></ul><label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label><div class="navbar-form navbar-right eslint-search" role="search"><div class="input-group"><label class="sr-only" aria-label="Search" for="eslint-search-input">Search</label><div class="eslint-search-input-wrapper"><input type="text" class="form-control" id="eslint-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search the docs..."> <label for="eslint-toggle-search" class="eslint-toggle-search-close"><span class="sr-only">Close search</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></div></div></div></nav></div></header><main class="doc"><article class="container"><h1>enforce consistent indentation (indent-legacy)</h1><p class="fixable icon">The <code>--fix</code> option on the <a href="../user-guide/command-line-interface#fixing-problems">command line</a> can automatically fix some of the problems reported by this rule.</p><p>ESLint 4.0.0 introduced a rewrite of the <a href="/docs/rules/indent"><code>indent</code></a> rule, which now reports more errors than it did in previous versions. To ease the process of migrating to 4.0.0, the <code>indent-legacy</code> rule was introduced as a snapshot of the <code>indent</code> rule from ESLint 3.x. If your build is failing after the upgrade to 4.0.0, you can disable <code>indent</code> and enable <code>indent-legacy</code> as a quick fix. Eventually, you should switch back to the <code>indent</code> rule to get bugfixes and improvements in future versions.</p><hr><p>There are several common guidelines which require specific indentation of nested blocks and statements, like:</p><pre class="hljs highlight-js"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hello</span>(<span class="hljs-params">indentSize, type</span>) </span>{
+    <span class="hljs-keyword">if</span> (indentSize === <span class="hljs-number">4</span> &amp;&amp; type !== <span class="hljs-string">'tab'</span>) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Each next indentation will increase on 4 spaces'</span>);
+    }
+}
+</code></pre><p>These are the most common scenarios recommended in different style guides:</p><ul><li>Two spaces, not longer and no tabs: Google, npm, Node.js, Idiomatic, Felix</li><li>Tabs: jQuery</li><li>Four spaces: Crockford</li></ul><h2>Rule Details</h2><p>This rule enforces a consistent indentation style. The default style is <code>4 spaces</code>.</p><h2>Options</h2><p>This rule has a mixed option:</p><p>For example, for 2-space indentation:</p><pre class="hljs highlight-json"><code>{
+    <span class="hljs-attr">"indent"</span>: [<span class="hljs-string">"error"</span>, <span class="hljs-number">2</span>]
+}
+</code></pre><p>Or for tabbed indentation:</p><pre class="hljs highlight-json"><code>{
+    <span class="hljs-attr">"indent"</span>: [<span class="hljs-string">"error"</span>, <span class="hljs-string">"tab"</span>]
+}
+</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the default options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: "error"*/</span>
+
+<span class="hljs-keyword">if</span> (a) {
+  b=c;
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">d</span>) </span>{
+    e=f;
+  }
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the default options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: "error"*/</span>
+
+<span class="hljs-keyword">if</span> (a) {
+    b=c;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">d</span>) </span>{
+        e=f;
+    }
+}
+</code></pre><p>This rule has an object option:</p><ul><li><code>&quot;SwitchCase&quot;</code> (default: 0) enforces indentation level for <code>case</code> clauses in <code>switch</code> statements</li><li><code>&quot;VariableDeclarator&quot;</code> (default: 1) enforces indentation level for <code>var</code> declarators; can also take an object to define separate rules for <code>var</code>, <code>let</code> and <code>const</code> declarations.</li><li><code>&quot;outerIIFEBody&quot;</code> (default: 1) enforces indentation level for file-level IIFEs.</li><li><code>&quot;MemberExpression&quot;</code> (off by default) enforces indentation level for multi-line property chains (except in variable declarations and assignments)</li><li><code>&quot;FunctionDeclaration&quot;</code> takes an object to define rules for function declarations.<ul><li><code>parameters</code> (off by default) enforces indentation level for parameters in a function declaration. This can either be a number indicating indentation level, or the string <code>&quot;first&quot;</code> indicating that all parameters of the declaration must be aligned with the first parameter.</li><li><code>body</code> (default: 1) enforces indentation level for the body of a function declaration.</li></ul></li><li><code>&quot;FunctionExpression&quot;</code> takes an object to define rules for function expressions.<ul><li><code>parameters</code> (off by default) enforces indentation level for parameters in a function expression. This can either be a number indicating indentation level, or the string <code>&quot;first&quot;</code> indicating that all parameters of the expression must be aligned with the first parameter.</li><li><code>body</code> (default: 1) enforces indentation level for the body of a function expression.</li></ul></li><li><code>&quot;CallExpression&quot;</code> takes an object to define rules for function call expressions.<ul><li><code>arguments</code> (off by default) enforces indentation level for arguments in a call expression. This can either be a number indicating indentation level, or the string <code>&quot;first&quot;</code> indicating that all arguments of the expression must be aligned with the first argument.</li></ul></li><li><code>&quot;ArrayExpression&quot;</code> (default: 1) enforces indentation level for elements in arrays. It can also be set to the string <code>&quot;first&quot;</code>, indicating that all the elements in the array should be aligned with the first element.</li><li><code>&quot;ObjectExpression&quot;</code> (default: 1) enforces indentation level for properties in objects. It can be set to the string <code>&quot;first&quot;</code>, indicating that all properties in the object should be aligned with the first property.</li></ul><p>Level of indentation denotes the multiple of the indent specified. Example:</p><ul><li>Indent of 4 spaces with <code>VariableDeclarator</code> set to <code>2</code> will indent the multi-line variable declarations with 8 spaces.</li><li>Indent of 2 spaces with <code>VariableDeclarator</code> set to <code>2</code> will indent the multi-line variable declarations with 4 spaces.</li><li>Indent of 2 spaces with <code>VariableDeclarator</code> set to <code>{&quot;var&quot;: 2, &quot;let&quot;: 2, &quot;const&quot;: 3}</code> will indent the multi-line variable declarations with 4 spaces for <code>var</code> and <code>let</code>, 6 spaces for <code>const</code> statements.</li><li>Indent of tab with <code>VariableDeclarator</code> set to <code>2</code> will indent the multi-line variable declarations with 2 tabs.</li><li>Indent of 2 spaces with <code>SwitchCase</code> set to <code>0</code> will not indent <code>case</code> clauses with respect to <code>switch</code> statements.</li><li>Indent of 2 spaces with <code>SwitchCase</code> set to <code>1</code> will indent <code>case</code> clauses with 2 spaces with respect to <code>switch</code> statements.</li><li>Indent of 2 spaces with <code>SwitchCase</code> set to <code>2</code> will indent <code>case</code> clauses with 4 spaces with respect to <code>switch</code> statements.</li><li>Indent of tab with <code>SwitchCase</code> set to <code>2</code> will indent <code>case</code> clauses with 2 tabs with respect to <code>switch</code> statements.</li><li>Indent of 2 spaces with <code>MemberExpression</code> set to <code>0</code> will indent the multi-line property chains with 0 spaces.</li><li>Indent of 2 spaces with <code>MemberExpression</code> set to <code>1</code> will indent the multi-line property chains with 2 spaces.</li><li>Indent of 2 spaces with <code>MemberExpression</code> set to <code>2</code> will indent the multi-line property chains with 4 spaces.</li><li>Indent of 4 spaces with <code>MemberExpression</code> set to <code>0</code> will indent the multi-line property chains with 0 spaces.</li><li>Indent of 4 spaces with <code>MemberExpression</code> set to <code>1</code> will indent the multi-line property chains with 4 spaces.</li><li>Indent of 4 spaces with <code>MemberExpression</code> set to <code>2</code> will indent the multi-line property chains with 8 spaces.</li></ul><h3>tab</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>&quot;tab&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", "tab"]*/</span>
+
+<span class="hljs-keyword">if</span> (a) {
+     b=c;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">d</span>) </span>{
+           e=f;
+ }
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>&quot;tab&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", "tab"]*/</span>
+
+<span class="hljs-keyword">if</span> (a) {
+<span class="hljs-comment">/*tab*/</span>b=c;
+<span class="hljs-comment">/*tab*/</span><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">d</span>) </span>{
+<span class="hljs-comment">/*tab*/</span><span class="hljs-comment">/*tab*/</span>e=f;
+<span class="hljs-comment">/*tab*/</span>}
+}
+</code></pre><h3>SwitchCase</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>2, { &quot;SwitchCase&quot;: 1 }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "SwitchCase": 1 }]*/</span>
+
+<span class="hljs-keyword">switch</span>(a){
+<span class="hljs-keyword">case</span> <span class="hljs-string">"a"</span>:
+    <span class="hljs-keyword">break</span>;
+<span class="hljs-keyword">case</span> <span class="hljs-string">"b"</span>:
+    <span class="hljs-keyword">break</span>;
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>2, { &quot;SwitchCase&quot;: 1 }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "SwitchCase": 1 }]*/</span>
+
+<span class="hljs-keyword">switch</span>(a){
+  <span class="hljs-keyword">case</span> <span class="hljs-string">"a"</span>:
+    <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-string">"b"</span>:
+    <span class="hljs-keyword">break</span>;
+}
+</code></pre><h3>VariableDeclarator</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>2, { &quot;VariableDeclarator&quot;: 1 }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "VariableDeclarator": 1 }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-keyword">var</span> a,
+    b,
+    c;
+<span class="hljs-keyword">let</span> a,
+    b,
+    c;
+<span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>,
+    b = <span class="hljs-number">2</span>,
+    c = <span class="hljs-number">3</span>;
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>2, { &quot;VariableDeclarator&quot;: 1 }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "VariableDeclarator": 1 }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-keyword">var</span> a,
+  b,
+  c;
+<span class="hljs-keyword">let</span> a,
+  b,
+  c;
+<span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>,
+  b = <span class="hljs-number">2</span>,
+  c = <span class="hljs-number">3</span>;
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>2, { &quot;VariableDeclarator&quot;: 2 }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "VariableDeclarator": 2 }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-keyword">var</span> a,
+    b,
+    c;
+<span class="hljs-keyword">let</span> a,
+    b,
+    c;
+<span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>,
+    b = <span class="hljs-number">2</span>,
+    c = <span class="hljs-number">3</span>;
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>2, { &quot;VariableDeclarator&quot;: { &quot;var&quot;: 2, &quot;let&quot;: 2, &quot;const&quot;: 3 } }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "VariableDeclarator": { "var": 2, "let": 2, "const": 3 } }]*/</span>
+<span class="hljs-comment">/*eslint-env es6*/</span>
+
+<span class="hljs-keyword">var</span> a,
+    b,
+    c;
+<span class="hljs-keyword">let</span> a,
+    b,
+    c;
+<span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>,
+      b = <span class="hljs-number">2</span>,
+      c = <span class="hljs-number">3</span>;
+</code></pre><h3>outerIIFEBody</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the options <code>2, { &quot;outerIIFEBody&quot;: 0 }</code>:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "outerIIFEBody": 0 }]*/</span>
+
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">x</span>) </span>{
+    <span class="hljs-keyword">return</span> x + <span class="hljs-number">1</span>;
+  }
+
+})();
+
+
+<span class="hljs-keyword">if</span>(y) {
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'foo'</span>);
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the options <code>2, {&quot;outerIIFEBody&quot;: 0}</code>:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "outerIIFEBody": 0 }]*/</span>
+
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">x</span>) </span>{
+  <span class="hljs-keyword">return</span> x + <span class="hljs-number">1</span>;
+}
+
+})();
+
+
+<span class="hljs-keyword">if</span>(y) {
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'foo'</span>);
+}
+</code></pre><h3>MemberExpression</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>2, { &quot;MemberExpression&quot;: 1 }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "MemberExpression": 1 }]*/</span>
+
+foo
+.bar
+.baz()
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>2, { &quot;MemberExpression&quot;: 1 }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "MemberExpression": 1 }]*/</span>
+
+foo
+  .bar
+  .baz();
+
+<span class="hljs-comment">// Any indentation is permitted in variable declarations and assignments.</span>
+<span class="hljs-keyword">var</span> bip = aardvark.badger
+                  .coyote;
+</code></pre><h3>FunctionDeclaration</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>2, { &quot;FunctionDeclaration&quot;: {&quot;body&quot;: 1, &quot;parameters&quot;: 2} }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "FunctionDeclaration": {"body": 1, "parameters": 2} }]*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">bar,
+  baz,
+  qux</span>) </span>{
+    qux();
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>2, { &quot;FunctionDeclaration&quot;: {&quot;body&quot;: 1, &quot;parameters&quot;: 2} }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "FunctionDeclaration": {"body": 1, "parameters": 2} }]*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">bar,
+    baz,
+    qux</span>) </span>{
+  qux();
+}
+</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>2, { &quot;FunctionDeclaration&quot;: {&quot;parameters&quot;: &quot;first&quot;} }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, {"FunctionDeclaration": {"parameters": "first"}}]*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">bar, baz,
+  qux, boop</span>) </span>{
+  qux();
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>2, { &quot;FunctionDeclaration&quot;: {&quot;parameters&quot;: &quot;first&quot;} }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, {"FunctionDeclaration": {"parameters": "first"}}]*/</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">bar, baz,
+             qux, boop</span>) </span>{
+  qux();
+}
+</code></pre><h3>FunctionExpression</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>2, { &quot;FunctionExpression&quot;: {&quot;body&quot;: 1, &quot;parameters&quot;: 2} }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "FunctionExpression": {"body": 1, "parameters": 2} }]*/</span>
+
+<span class="hljs-keyword">var</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">bar,
+  baz,
+  qux</span>) </span>{
+    qux();
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>2, { &quot;FunctionExpression&quot;: {&quot;body&quot;: 1, &quot;parameters&quot;: 2} }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "FunctionExpression": {"body": 1, "parameters": 2} }]*/</span>
+
+<span class="hljs-keyword">var</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">bar,
+    baz,
+    qux</span>) </span>{
+  qux();
+}
+</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>2, { &quot;FunctionExpression&quot;: {&quot;parameters&quot;: &quot;first&quot;} }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, {"FunctionExpression": {"parameters": "first"}}]*/</span>
+
+<span class="hljs-keyword">var</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">bar, baz,
+  qux, boop</span>) </span>{
+  qux();
+}
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>2, { &quot;FunctionExpression&quot;: {&quot;parameters&quot;: &quot;first&quot;} }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, {"FunctionExpression": {"parameters": "first"}}]*/</span>
+
+<span class="hljs-keyword">var</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">bar, baz,
+                   qux, boop</span>) </span>{
+  qux();
+}
+</code></pre><h3>CallExpression</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>2, { &quot;CallExpression&quot;: {&quot;arguments&quot;: 1} }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "CallExpression": {"arguments": 1} }]*/</span>
+
+foo(bar,
+    baz,
+      qux
+);
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>2, { &quot;CallExpression&quot;: {&quot;arguments&quot;: 1} }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "CallExpression": {"arguments": 1} }]*/</span>
+
+foo(bar,
+  baz,
+  qux
+);
+</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>2, { &quot;CallExpression&quot;: {&quot;arguments&quot;: &quot;first&quot;} }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, {"CallExpression": {"arguments": "first"}}]*/</span>
+
+foo(bar, baz,
+  baz, boop, beep);
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>2, { &quot;CallExpression&quot;: {&quot;arguments&quot;: &quot;first&quot;} }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, {"CallExpression": {"arguments": "first"}}]*/</span>
+
+foo(bar, baz,
+    baz, boop, beep);
+</code></pre><h3>ArrayExpression</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>2, { &quot;ArrayExpression&quot;: 1 }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "ArrayExpression": 1 }]*/</span>
+
+<span class="hljs-keyword">var</span> foo = [
+    bar,
+baz,
+      qux
+];
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>2, { &quot;ArrayExpression&quot;: 1 }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "ArrayExpression": 1 }]*/</span>
+
+<span class="hljs-keyword">var</span> foo = [
+  bar,
+  baz,
+  qux
+];
+</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>2, { &quot;ArrayExpression&quot;: &quot;first&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, {"ArrayExpression": "first"}]*/</span>
+
+<span class="hljs-keyword">var</span> foo = [bar,
+  baz,
+  qux
+];
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>2, { &quot;ArrayExpression&quot;: &quot;first&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, {"ArrayExpression": "first"}]*/</span>
+
+<span class="hljs-keyword">var</span> foo = [bar,
+           baz,
+           qux
+];
+</code></pre><h3>ObjectExpression</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>2, { &quot;ObjectExpression&quot;: 1 }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "ObjectExpression": 1 }]*/</span>
+
+<span class="hljs-keyword">var</span> foo = {
+    <span class="hljs-attr">bar</span>: <span class="hljs-number">1</span>,
+<span class="hljs-attr">baz</span>: <span class="hljs-number">2</span>,
+      <span class="hljs-attr">qux</span>: <span class="hljs-number">3</span>
+};
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>2, { &quot;ObjectExpression&quot;: 1 }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, { "ObjectExpression": 1 }]*/</span>
+
+<span class="hljs-keyword">var</span> foo = {
+  <span class="hljs-attr">bar</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">baz</span>: <span class="hljs-number">2</span>,
+  <span class="hljs-attr">qux</span>: <span class="hljs-number">3</span>
+};
+</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>2, { &quot;ObjectExpression&quot;: &quot;first&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, {"ObjectExpression": "first"}]*/</span>
+
+<span class="hljs-keyword">var</span> foo = { <span class="hljs-attr">bar</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-attr">baz</span>: <span class="hljs-number">2</span> };
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>2, { &quot;ObjectExpression&quot;: &quot;first&quot; }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: ["error", 2, {"ObjectExpression": "first"}]*/</span>
+
+<span class="hljs-keyword">var</span> foo = { <span class="hljs-attr">bar</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-attr">baz</span>: <span class="hljs-number">2</span> };
+</code></pre><h2>Compatibility</h2><ul><li><strong>JSHint</strong>: <code>indent</code></li><li><strong>JSCS</strong>: <a href="https://jscs-dev.github.io/rule/validateIndentation">validateIndentation</a></li></ul><h2>Version</h2><p>This rule was introduced in ESLint 4.0.0-alpha.0.</p><h2>Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/indent-legacy.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/indent-legacy.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/eslint/edit/master/docs/rules/indent-legacy.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>

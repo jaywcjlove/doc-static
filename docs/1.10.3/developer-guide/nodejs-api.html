@@ -1,0 +1,218 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="JavaScript, Linter, Linting, Pluggable, Configurable, Code Quality"><meta name="description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="theme-color" content="#463fd4"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="ESLint - Pluggable JavaScript linter"><meta property="og:title" content="Documentation"><meta property="og:url" content="/docs/1.10.3/developer-guide/nodejs-api"><meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png"><meta name="twitter:site" content="@geteslint"><meta name="twitter:title" content="Documentation"><meta name="twitter:description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="twitter:url" content="/docs/1.10.3/developer-guide/nodejs-api"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://eslint.org/assets/img/favicon.512x512.png"><title>Documentation - ESLint - Pluggable JavaScript linter</title><link rel="preconnect" href="https://www.google-analytics.com"><link rel="canonical" href="/docs/1.10.3/developer-guide/nodejs-api"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"><link rel="stylesheet" href="/assets/styles/main.css"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/assets/img/favicon.512x512.png"><link rel="alternate" type="application/rss+xml" title="ESLint - Pluggable JavaScript linter" href="/feed.xml"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"></head><body><input type="checkbox" id="eslint-toggle-search" class="eslint-toggle-search-checkbox"><header class="navbar navbar-default navbar-demo navbar-fixed-top eslint-nav" id="top" role="banner"><div class="container"><a href="/" class="navbar-brand"><img alt="ESLint" src="/assets/img/logo.svg" itemprop="image">ESLint</a><div class="eslint-navbar-toggles"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#eslint-navbar" aria-controls="eslint-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label></div><nav id="eslint-navbar" class="collapse navbar-collapse eslint-navbar"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="/docs/user-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/user-guide/getting-started">Getting Started</a></li><li><a href="/docs/user-guide/configuring">Configuring ESLint</a></li><li><a href="/docs/user-guide/command-line-interface">Command Line Interface</a></li><li><a href="/docs/rules">Rules</a></li><li><a href="/docs/user-guide/formatters">Formatters</a></li><li><a href="/docs/user-guide/integrations">Integrations</a></li><li class="divider"></li><li><a href="/docs/user-guide/migrating-to-7.0.0">Migrating to v7.0.0</a></li><li><a href="/docs/user-guide/migrating-to-6.0.0">Migrating to v6.0.0</a></li><li><a href="/docs/user-guide/migrating-to-5.0.0">Migrating to v5.0.0</a></li><li><a href="/docs/user-guide/migrating-to-4.0.0">Migrating to v4.0.0</a></li><li><a href="/docs/user-guide/migrating-to-3.0.0">Migrating to v3.0.0</a></li><li><a href="/docs/user-guide/migrating-to-2.0.0">Migrating to v2.0.0</a></li><li><a href="/docs/user-guide/migrating-to-1.0.0">Migrating to v1.0.0</a></li><li><a href="/docs/user-guide/migrating-from-jscs">Migrating from JSCS</a></li></ul></li><li class="dropdown"><a href="/docs/developer-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/developer-guide/architecture">Architecture</a></li><li><a href="/docs/developer-guide/contributing">Contributing</a></li><li><a href="/docs/developer-guide/source-code">Get the Source Code</a></li><li><a href="/docs/developer-guide/development-environment">Set up a Development Environment</a></li><li><a href="/docs/developer-guide/unit-tests">Run the Unit Tests</a></li><li><a href="/docs/developer-guide/working-with-rules">Working with Rules</a></li><li><a href="/docs/developer-guide/working-with-plugins">Working with Plugins</a></li><li><a href="/docs/developer-guide/working-with-custom-formatters">Working with Custom Formatters</a></li><li><a href="/docs/developer-guide/working-with-custom-parsers">Working with Custom Parsers</a></li><li><a href="/docs/developer-guide/shareable-configs">Shareable Configs</a></li><li><a href="/docs/developer-guide/nodejs-api">Node.js API</a></li><li><a href="/docs/maintainer-guide">Maintainer guide</a></li></ul></li><li><a href="/blog">Blog</a></li><li><a href="/demo">Demo</a></li><li class="dropdown"><a href="/docs/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/users">Who's Using ESLint?</a></li><li><a href="/team">About the Team</a></li><li><a href="/docs/about">About ESLint</a></li></ul></li></ul><label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label><div class="navbar-form navbar-right eslint-search" role="search"><div class="input-group"><label class="sr-only" aria-label="Search" for="eslint-search-input">Search</label><div class="eslint-search-input-wrapper"><input type="text" class="form-control" id="eslint-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search the docs..."> <label for="eslint-toggle-search" class="eslint-toggle-search-close"><span class="sr-only">Close search</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></div></div></div></nav></div></header><main class="doc"><article class="container"><h1>Node.js API</h1><p>While ESLint is designed to be run on the command line, it's possible to use ESLint programmatically through the Node.js API. The purpose of the Node.js API is to allow plugin and tool authors to use the ESLint functionality directly, without going through the command line interface.</p><p><strong>Note:</strong> Use undocumented parts of the API at your own risk. Only those parts that are specifically mentioned in this document are approved for use and will remain stable and reliable. Anything left undocumented is unstable and may change or be removed at any point.</p><h2>SourceCode</h2><p>The <code>SourceCode</code> type represents the parsed source code that ESLint executes on. It's used internally in ESLint and is also available so that already-parsed code can be used. You can create a new instance of <code>SourceCode</code> by passing in the text string representing the code and an abstract syntax tree (AST) in <a href="https://github.com/estree/estree">ESTree</a> format (including location information, range information, comments, and tokens):</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> SourceCode = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).SourceCode;
+
+<span class="hljs-keyword">var</span> code = <span class="hljs-keyword">new</span> SourceCode(<span class="hljs-string">"var foo = bar;"</span>, ast);
+</code></pre><p>The <code>SourceCode</code> constructor throws an error if the AST is missing any of the required information.</p><h2>linter</h2><p>The <code>linter</code> object does the actual evaluation of the JavaScript code. It doesn't do any filesystem operations, it simply parses and reports on the code. You can retrieve <code>linter</code> like this:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> linter = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).linter;
+</code></pre><p>The most important method on <code>linter</code> is <code>verify()</code>, which initiates linting of the given text. This method accepts four arguments:</p><ul><li><code>code</code> - the source code to lint (a string or instance of <code>SourceCode</code>).</li><li><code>config</code> - a configuration object.</li><li><code>options</code> - (optional) Additional options for this run.<ul><li><code>filename</code> - (optional) the filename to associate with the source code.</li><li><code>saveState</code> - (optional) set to true to maintain the internal state of <code>linter</code> after linting (mostly used for testing purposes).</li><li><code>allowInlineConfig</code> - (optional) set to <code>false</code> to disable inline comments from changing eslint rules.</li></ul></li></ul><p>You can call <code>verify()</code> like this:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> linter = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).linter;
+
+<span class="hljs-keyword">var</span> messages = linter.verify(<span class="hljs-string">"var foo;"</span>, {
+    <span class="hljs-attr">rules</span>: {
+        <span class="hljs-attr">semi</span>: <span class="hljs-number">2</span>
+    }
+}, { <span class="hljs-attr">filename</span>: <span class="hljs-string">"foo.js"</span> });
+
+<span class="hljs-comment">// or using SourceCode</span>
+
+<span class="hljs-keyword">var</span> linter = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).linter,
+    SourceCode = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).SourceCode;
+
+<span class="hljs-keyword">var</span> code = <span class="hljs-keyword">new</span> SourceCode(<span class="hljs-string">"var foo = bar;"</span>, ast);
+
+<span class="hljs-keyword">var</span> messages = linter.verify(code, {
+    <span class="hljs-attr">rules</span>: {
+        <span class="hljs-attr">semi</span>: <span class="hljs-number">2</span>
+    }
+}, { <span class="hljs-attr">filename</span>: <span class="hljs-string">"foo.js"</span> });
+</code></pre><p>The <code>verify()</code> method returns an array of objects containing information about the linting warnings and errors. Here's an example:</p><pre class="hljs highlight-js"><code>{
+    <span class="hljs-attr">fatal</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">severity</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-attr">ruleId</span>: <span class="hljs-string">"semi"</span>,
+    <span class="hljs-attr">severity</span>: <span class="hljs-number">2</span>,
+    <span class="hljs-attr">line</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">column</span>: <span class="hljs-number">23</span>,
+    <span class="hljs-attr">message</span>: <span class="hljs-string">"Expected a semicolon."</span>,
+    <span class="hljs-attr">fix</span>: {
+        <span class="hljs-attr">range</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">15</span>],
+        <span class="hljs-attr">text</span>: <span class="hljs-string">";"</span>
+    }
+}
+</code></pre><p>The information available for each linting message is:</p><ul><li><code>column</code> - the column on which the error occurred.</li><li><code>fatal</code> - usually omitted, but will be set to true if there's a parsing error (not related to a rule).</li><li><code>line</code> - the line on which the error occurred.</li><li><code>message</code> - the message that should be output.</li><li><code>nodeType</code> - the node or token type that was reported with the problem.</li><li><code>ruleId</code> - the ID of the rule that triggered the messages (or null if <code>fatal</code> is true).</li><li><code>severity</code> - either 1 or 2, depending on your configuration.</li><li><code>source</code> - the line of code where the problem is (or empty string if it can't be found).</li><li><code>fix</code> - an object describing the fix for the problem (this property is omitted if no fix is available).</li></ul><p>You can also get an instance of the <code>SourceCode</code> object used inside of <code>linter</code> by using the <code>getSourceCode()</code> method:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> linter = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).linter;
+
+<span class="hljs-keyword">var</span> messages = linter.verify(<span class="hljs-string">"var foo = bar;"</span>, {
+    <span class="hljs-attr">rules</span>: {
+        <span class="hljs-attr">semi</span>: <span class="hljs-number">2</span>
+    }
+}, { <span class="hljs-attr">filename</span>: <span class="hljs-string">"foo.js"</span> });
+
+<span class="hljs-keyword">var</span> code = linter.getSourceCode();
+
+<span class="hljs-built_in">console</span>.log(code.text);     <span class="hljs-comment">// "var foo = bar;"</span>
+</code></pre><p>In this way, you can retrieve the text and AST used for the last run of <code>linter.verify()</code>.</p><h2>CLIEngine</h2><p>The primary Node.js API is <code>CLIEngine</code>, which is the underlying utility that runs the ESLint command line interface. This object will read the filesystem for configuration and file information but will not output any results. Instead, it allows you direct access to the important information so you can deal with the output yourself.</p><p>You can get a reference to the <code>CLIEngine</code> by doing the following:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> CLIEngine = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).CLIEngine;
+</code></pre><p>The <code>CLIEngine</code> is a constructor, and you can create a new instance by passing in the options you want to use. The available options are:</p><ul><li><code>configFile</code> - The configuration file to use (default: null). Corresponds to <code>-c</code>.</li><li><code>envs</code> - An array of environments to load (default: empty array). Corresponds to <code>--env</code>.</li><li><code>extensions</code> - An array of filename extensions that should be checked for code. The default is an array containing just <code>&quot;.js&quot;</code>. Corresponds to <code>--ext</code>.</li><li><code>globals</code> - An array of global variables to declare (default: empty array). Corresponds to <code>--global</code>.</li><li><code>fix</code> - True indicates that fixes should be applied to the text when possible.</li><li><code>ignore</code> - False disables use of <code>.eslintignore</code> (default: true). Corresponds to <code>--no-ignore</code>.</li><li><code>ignorePath</code> - The ignore file to use instead of <code>.eslintignore</code> (default: null). Corresponds to <code>--ignore-path</code>.</li><li><code>ignorePattern</code> - Glob patterns for paths to ignore. String or array of strings.</li><li><code>baseConfig</code> - Set to false to disable use of base config. Could be set to an object to override default base config as well.</li><li><code>rulePaths</code> - An array of directories to load custom rules from (default: empty array). Corresponds to <code>--rulesdir</code>.</li><li><code>rules</code> - An object of rules to use (default: null). Corresponds to <code>--rule</code>.</li><li><code>useEslintrc</code> - Set to false to disable use of <code>.eslintrc</code> files (default: true). Corresponds to <code>--no-eslintrc</code>.</li><li><code>parser</code> - Specify the parser to be used (default: <code>espree</code>). Corresponds to <code>--parser</code>.</li><li><code>cache</code> - Operate only on changed files (default: <code>false</code>). Corresponds to <code>--cache</code>.</li><li><code>cacheFile</code> - Name of the file where the cache will be stored (default: <code>.eslintcache</code>). Corresponds to <code>--cache-file</code>. Deprecated: use <code>cacheLocation</code> instead.</li><li><code>cacheLocation</code> - Name of the file or directory where the cache will be stored (default: <code>.eslintcache</code>). Correspond to <code>--cache-location</code></li></ul><p>For example:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> CLIEngine = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).CLIEngine;
+
+<span class="hljs-keyword">var</span> cli = <span class="hljs-keyword">new</span> CLIEngine({
+    <span class="hljs-attr">envs</span>: [<span class="hljs-string">"browser"</span>, <span class="hljs-string">"mocha"</span>],
+    <span class="hljs-attr">useEslintrc</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">rules</span>: {
+        <span class="hljs-attr">semi</span>: <span class="hljs-number">2</span>
+    }
+});
+</code></pre><p>In this code, a new <code>CLIEngine</code> instance is created that sets two environments, <code>&quot;browser&quot;</code> and <code>&quot;mocha&quot;</code>, disables loading of <code>.eslintrc</code> and <code>package.json</code> files, and enables the <code>semi</code> rule as an error. You can then call methods on <code>cli</code> and these options will be used to perform the correct action.</p><h3>executeOnFiles()</h3><p>If you want to lint one or more files, use the <code>executeOnFiles()</code> method. This method accepts a single argument, which is an array of files and/or directories to traverse for files. You can pass the same values as you would using the ESLint command line interface, such as <code>&quot;.&quot;</code> to search all JavaScript files in the current directory. Here's an example:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> CLIEngine = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).CLIEngine;
+
+<span class="hljs-keyword">var</span> cli = <span class="hljs-keyword">new</span> CLIEngine({
+    <span class="hljs-attr">envs</span>: [<span class="hljs-string">"browser"</span>, <span class="hljs-string">"mocha"</span>],
+    <span class="hljs-attr">useEslintrc</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">rules</span>: {
+        <span class="hljs-attr">semi</span>: <span class="hljs-number">2</span>
+    }
+});
+
+<span class="hljs-comment">// lint myfile.js and all files in lib/</span>
+<span class="hljs-keyword">var</span> report = cli.executeOnFiles([<span class="hljs-string">"myfile.js"</span>, <span class="hljs-string">"lib/"</span>]);
+</code></pre><p>The return value is an object containing the results of the linting operation. Here's an example of a report object:</p><pre class="hljs highlight-js"><code>{
+    <span class="hljs-attr">results</span>: [
+        {
+            <span class="hljs-attr">filePath</span>: <span class="hljs-string">"./myfile.js"</span>,
+            <span class="hljs-attr">output</span>: <span class="hljs-string">"foo;"</span>,
+            <span class="hljs-attr">messages</span>: [
+                {
+                    <span class="hljs-attr">fatal</span>: <span class="hljs-literal">false</span>,
+                    <span class="hljs-attr">severity</span>: <span class="hljs-number">2</span>,
+                    <span class="hljs-attr">ruleId</span>: <span class="hljs-string">"semi"</span>,
+                    <span class="hljs-attr">severity</span>: <span class="hljs-number">2</span>,
+                    <span class="hljs-attr">line</span>: <span class="hljs-number">1</span>,
+                    <span class="hljs-attr">column</span>: <span class="hljs-number">23</span>,
+                    <span class="hljs-attr">message</span>: <span class="hljs-string">"Expected a semicolon."</span>
+                }
+            ],
+            <span class="hljs-attr">errorCount</span>: <span class="hljs-number">1</span>,
+            <span class="hljs-attr">warningCount</span>: <span class="hljs-number">0</span>
+        }
+    ],
+    <span class="hljs-attr">errorCount</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">warningCount</span>: <span class="hljs-number">0</span>
+}
+</code></pre><p>The top-level report object has a <code>results</code> array containing all linting results for files that had warnings or errors (any files that did not produce a warning or error are omitted). Each file result includes the <code>filePath</code>, a <code>messages</code> array, <code>errorCount</code>, <code>warningCount</code>, and optionally <code>output</code>. The <code>messages</code> array contains the result of calling <code>linter.verify()</code> on the given file. The <code>errorCount</code> and <code>warningCount</code> give the exact number of errors and warnings respectively on the given file. The <code>output</code> property gives the source code for the file with as many fixes applied as possible, so you can use that to rewrite the files if necessary. The top-level report object also has <code>errorCount</code> and <code>warningCount</code> which give the exact number of errors and warnings respectively on all the files.</p><p>Once you get a report object, it's up to you to determine how to output the results.</p><h3>resolveFileGlobPatterns()</h3><p>You can pass filesystem-style or glob patterns to ESLint and have it function properly. In order to achieve this, ESLint must resolve non-glob patterns into glob patterns before determining which files to execute on. The <code>resolveFileGlobPatterns()</code> methods uses the current settings from <code>CLIEngine</code> to resolve non-glob patterns into glob patterns. Pass an array of patterns that might be passed to the ESLint CLI and it will return an array of glob patterns that mean the same thing. Here's an example:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> CLIEngine = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).CLIEngine;
+
+<span class="hljs-keyword">var</span> cli = <span class="hljs-keyword">new</span> CLIEngine({
+});
+
+<span class="hljs-comment">// pass an array of patterns</span>
+<span class="hljs-keyword">var</span> globPatterns = cli.resolveFileGlobPatterns([<span class="hljs-string">"."</span>]);
+<span class="hljs-built_in">console</span>.log(globPatterns[i]);       <span class="hljs-comment">// ["**/*.js"]</span>
+</code></pre><h3>getConfigForFile()</h3><p>If you want to retrieve a configuration object for a given file, use the <code>getConfigForFile()</code> method. This method accepts one argument, a file path, and returns an object represented the calculated configuration of the file. Here's an example:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> CLIEngine = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).CLIEngine;
+
+<span class="hljs-keyword">var</span> cli = <span class="hljs-keyword">new</span> CLIEngine({
+    <span class="hljs-attr">envs</span>: [<span class="hljs-string">"browser"</span>, <span class="hljs-string">"mocha"</span>],
+    <span class="hljs-attr">useEslintrc</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">rules</span>: {
+        <span class="hljs-attr">semi</span>: <span class="hljs-number">2</span>
+    }
+});
+
+<span class="hljs-keyword">var</span> config = cli.getConfigForFile(<span class="hljs-string">"myfile.js"</span>);
+</code></pre><p>Once you have the configuration information, you can pass it into the <code>linter</code> object:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> CLIEngine = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).CLIEngine,
+    linter = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).linter;
+
+<span class="hljs-keyword">var</span> cli = <span class="hljs-keyword">new</span> CLIEngine({
+    <span class="hljs-attr">envs</span>: [<span class="hljs-string">"browser"</span>, <span class="hljs-string">"mocha"</span>],
+    <span class="hljs-attr">useEslintrc</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">rules</span>: {
+        <span class="hljs-attr">semi</span>: <span class="hljs-number">2</span>
+    }
+});
+
+<span class="hljs-keyword">var</span> config = cli.getConfigForFile(<span class="hljs-string">"myfile.js"</span>);
+
+<span class="hljs-keyword">var</span> messages = linter.verify(<span class="hljs-string">'var foo;'</span>, config);
+</code></pre><h3>executeOnText()</h3><p>If you already have some text to lint, then you can use the <code>executeOnText()</code> method to lint that text. The linter will assume that the text is a file in the current working directory, and so will still obey any <code>.eslintrc</code> and <code>.eslintignore</code> files that may be present. Here's an example:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> CLIEngine = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).CLIEngine;
+
+<span class="hljs-keyword">var</span> cli = <span class="hljs-keyword">new</span> CLIEngine({
+    <span class="hljs-attr">envs</span>: [<span class="hljs-string">"browser"</span>, <span class="hljs-string">"mocha"</span>],
+    <span class="hljs-attr">useEslintrc</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">rules</span>: {
+        <span class="hljs-attr">semi</span>: <span class="hljs-number">2</span>
+    }
+});
+
+<span class="hljs-comment">// lint the supplied text and optionally set</span>
+<span class="hljs-comment">// a filename that is displayed in the report</span>
+<span class="hljs-keyword">var</span> report = cli.executeOnText(<span class="hljs-string">"var foo = 'bar';"</span>, <span class="hljs-string">"foo.js"</span>);
+</code></pre><p>The <code>report</code> returned from <code>executeOnText()</code> is in the same format as from <code>executeOnFiles()</code>, but there is only ever one result in <code>report.results</code>.</p><h3>addPlugin()</h3><p>Loads a plugin from configuration object with specified name. Name can include plugin prefix (&quot;eslint-plugin-&quot;)</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> CLIEngine = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).CLIEngine;
+<span class="hljs-keyword">var</span> cli = <span class="hljs-keyword">new</span> CLIEngine({
+    <span class="hljs-attr">ignore</span>: <span class="hljs-literal">true</span>
+});
+cli.addPlugin(<span class="hljs-string">"eslint-plugin-processor"</span>, {
+    <span class="hljs-attr">processors</span>: {
+        <span class="hljs-string">".txt"</span>: {
+            <span class="hljs-attr">preprocess</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">text</span>) </span>{
+                <span class="hljs-keyword">return</span> [text];
+            },
+            <span class="hljs-attr">postprocess</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">messages</span>) </span>{
+                <span class="hljs-keyword">return</span> messages[<span class="hljs-number">0</span>];
+            }
+        }
+    }
+});
+</code></pre><h3>isPathIgnored()</h3><p>Checks if a given path is ignored by ESLint.</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> CLIEngine = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).CLIEngine;
+
+<span class="hljs-keyword">var</span> cli = <span class="hljs-keyword">new</span> CLIEngine({
+    <span class="hljs-attr">ignore</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">ignorePath</span>: <span class="hljs-string">".customIgnoreFile"</span>
+});
+
+<span class="hljs-keyword">var</span> isIgnored = cli.isPathIgnored(<span class="hljs-string">"foo/bar.js"</span>);
+</code></pre><h3>getFormatter()</h3><p>Retrieves a formatter, which you can then use to format a report object. The argument is either the name of a built-in formatter:</p><ul><li>&quot;<a href="./user-guide/formatters#stylish">stylish</a>&quot; (the default)</li><li>&quot;<a href="./user-guide/formatters#checkstyle">checkstyle</a>&quot;</li><li>&quot;<a href="./user-guide/formatters#compact">compact</a>&quot;</li><li>&quot;<a href="./user-guide/formatters#html">html</a>&quot;</li><li>&quot;<a href="./user-guide/formatters#jslint-xml">jslint-xml</a>&quot;</li><li>&quot;<a href="./user-guide/formatters#json">json</a>&quot;</li><li>&quot;<a href="./user-guide/formatters#junit">junit</a>&quot;</li><li>&quot;<a href="./user-guide/formatters#tap">tap</a>&quot;</li><li>&quot;<a href="./user-guide/formatters#unix">unix</a>&quot;</li></ul><p>or the full path to a JavaScript file containing a custom formatter. You can also omit the argument to retrieve the default formatter.</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> CLIEngine = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).CLIEngine;
+
+<span class="hljs-keyword">var</span> cli = <span class="hljs-keyword">new</span> CLIEngine({
+    <span class="hljs-attr">envs</span>: [<span class="hljs-string">"browser"</span>, <span class="hljs-string">"mocha"</span>],
+    <span class="hljs-attr">useEslintrc</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">rules</span>: {
+        <span class="hljs-attr">semi</span>: <span class="hljs-number">2</span>
+    }
+});
+
+<span class="hljs-comment">// lint myfile.js and all files in lib/</span>
+<span class="hljs-keyword">var</span> report = cli.executeOnFiles([<span class="hljs-string">"myfile.js"</span>, <span class="hljs-string">"lib/"</span>]);
+
+<span class="hljs-comment">// get the default formatter</span>
+<span class="hljs-keyword">var</span> formatter = cli.getFormatter();
+
+<span class="hljs-comment">// Also could do...</span>
+<span class="hljs-comment">// var formatter = cli.getFormatter("compact");</span>
+<span class="hljs-comment">// var formatter = cli.getFormatter("./my/formatter.js");</span>
+
+<span class="hljs-comment">// output to console</span>
+<span class="hljs-built_in">console</span>.log(formatter(report.results));
+</code></pre><p><strong>Note:</strong> Also available as a static function on <code>CLIEngine</code>.</p><pre class="hljs highlight-js"><code><span class="hljs-comment">// get the default formatter by calling the static function</span>
+<span class="hljs-keyword">var</span> formatter = CLIEngine.getFormatter();
+</code></pre><p><strong>Important:</strong> You must pass in the <code>results</code> property of the report. Passing in <code>report</code> directly will result in an error.</p><h3>getErrorResults()</h3><p>This is a static function on <code>CLIEngine</code>. It can be used to filter out all the non error messages from the report object.</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> CLIEngine = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).CLIEngine;
+
+<span class="hljs-keyword">var</span> cli = <span class="hljs-keyword">new</span> CLIEngine({
+    <span class="hljs-attr">envs</span>: [<span class="hljs-string">"browser"</span>, <span class="hljs-string">"mocha"</span>],
+    <span class="hljs-attr">useEslintrc</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">rules</span>: {
+        <span class="hljs-attr">semi</span>: <span class="hljs-number">2</span>
+    }
+});
+
+<span class="hljs-comment">// lint myfile.js and all files in lib/</span>
+<span class="hljs-keyword">var</span> report = cli.executeOnFiles([<span class="hljs-string">"myfile.js"</span>, <span class="hljs-string">"lib/"</span>]);
+
+<span class="hljs-comment">// only get the error messages</span>
+<span class="hljs-keyword">var</span> errorReport = CLIEngine.getErrorResults(report.results)
+</code></pre><p><strong>Important:</strong> You must pass in the <code>results</code> property of the report. Passing in <code>report</code> directly will result in an error.</p><h3>outputFixes()</h3><p>This is a static function on <code>CLIEngine</code> that is used to output fixes from <code>report</code> to disk. It does by looking for files that have an <code>output</code> property in their results. Here's an example:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> CLIEngine = <span class="hljs-built_in">require</span>(<span class="hljs-string">"eslint"</span>).CLIEngine;
+
+<span class="hljs-keyword">var</span> cli = <span class="hljs-keyword">new</span> CLIEngine({
+    <span class="hljs-attr">envs</span>: [<span class="hljs-string">"browser"</span>, <span class="hljs-string">"mocha"</span>],
+    <span class="hljs-attr">useEslintrc</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">rules</span>: {
+        <span class="hljs-attr">semi</span>: <span class="hljs-number">2</span>
+    }
+});
+
+<span class="hljs-comment">// lint myfile.js and all files in lib/</span>
+<span class="hljs-keyword">var</span> report = cli.executeOnFiles([<span class="hljs-string">"myfile.js"</span>, <span class="hljs-string">"lib/"</span>]);
+
+<span class="hljs-comment">// output fixes to disk</span>
+CLIEngine.outputFixes(report);
+</code></pre><h2>Deprecated APIs</h2><ul><li><code>cli</code> - the <code>cli</code> object has been deprecated in favor of <code>CLIEngine</code>. As of v1.0.0, <code>cli</code> is no longer exported and should not be used by external tools.</li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/website/edit/master/./docs/1.10.3/developer-guide/nodejs-api.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>

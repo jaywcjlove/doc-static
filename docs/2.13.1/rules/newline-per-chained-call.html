@@ -1,0 +1,68 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="JavaScript, Linter, Linting, Pluggable, Configurable, Code Quality"><meta name="description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="theme-color" content="#463fd4"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="ESLint - Pluggable JavaScript linter"><meta property="og:title" content="Rule newline-per-chained-call"><meta property="og:url" content="/docs/2.13.1/rules/newline-per-chained-call"><meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png"><meta name="twitter:site" content="@geteslint"><meta name="twitter:title" content="Rule newline-per-chained-call"><meta name="twitter:description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="twitter:url" content="/docs/2.13.1/rules/newline-per-chained-call"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://eslint.org/assets/img/favicon.512x512.png"><title>Rule newline-per-chained-call - ESLint - Pluggable JavaScript linter</title><link rel="preconnect" href="https://www.google-analytics.com"><link rel="canonical" href="/docs/2.13.1/rules/newline-per-chained-call"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"><link rel="stylesheet" href="/assets/styles/main.css"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/assets/img/favicon.512x512.png"><link rel="alternate" type="application/rss+xml" title="ESLint - Pluggable JavaScript linter" href="/feed.xml"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"></head><body><input type="checkbox" id="eslint-toggle-search" class="eslint-toggle-search-checkbox"><header class="navbar navbar-default navbar-demo navbar-fixed-top eslint-nav" id="top" role="banner"><div class="container"><a href="/" class="navbar-brand"><img alt="ESLint" src="/assets/img/logo.svg" itemprop="image">ESLint</a><div class="eslint-navbar-toggles"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#eslint-navbar" aria-controls="eslint-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label></div><nav id="eslint-navbar" class="collapse navbar-collapse eslint-navbar"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="/docs/user-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/user-guide/getting-started">Getting Started</a></li><li><a href="/docs/user-guide/configuring">Configuring ESLint</a></li><li><a href="/docs/user-guide/command-line-interface">Command Line Interface</a></li><li><a href="/docs/rules">Rules</a></li><li><a href="/docs/user-guide/formatters">Formatters</a></li><li><a href="/docs/user-guide/integrations">Integrations</a></li><li class="divider"></li><li><a href="/docs/user-guide/migrating-to-7.0.0">Migrating to v7.0.0</a></li><li><a href="/docs/user-guide/migrating-to-6.0.0">Migrating to v6.0.0</a></li><li><a href="/docs/user-guide/migrating-to-5.0.0">Migrating to v5.0.0</a></li><li><a href="/docs/user-guide/migrating-to-4.0.0">Migrating to v4.0.0</a></li><li><a href="/docs/user-guide/migrating-to-3.0.0">Migrating to v3.0.0</a></li><li><a href="/docs/user-guide/migrating-to-2.0.0">Migrating to v2.0.0</a></li><li><a href="/docs/user-guide/migrating-to-1.0.0">Migrating to v1.0.0</a></li><li><a href="/docs/user-guide/migrating-from-jscs">Migrating from JSCS</a></li></ul></li><li class="dropdown"><a href="/docs/developer-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/developer-guide/architecture">Architecture</a></li><li><a href="/docs/developer-guide/contributing">Contributing</a></li><li><a href="/docs/developer-guide/source-code">Get the Source Code</a></li><li><a href="/docs/developer-guide/development-environment">Set up a Development Environment</a></li><li><a href="/docs/developer-guide/unit-tests">Run the Unit Tests</a></li><li><a href="/docs/developer-guide/working-with-rules">Working with Rules</a></li><li><a href="/docs/developer-guide/working-with-plugins">Working with Plugins</a></li><li><a href="/docs/developer-guide/working-with-custom-formatters">Working with Custom Formatters</a></li><li><a href="/docs/developer-guide/working-with-custom-parsers">Working with Custom Parsers</a></li><li><a href="/docs/developer-guide/shareable-configs">Shareable Configs</a></li><li><a href="/docs/developer-guide/nodejs-api">Node.js API</a></li><li><a href="/docs/maintainer-guide">Maintainer guide</a></li></ul></li><li><a href="/blog">Blog</a></li><li><a href="/demo">Demo</a></li><li class="dropdown"><a href="/docs/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/users">Who's Using ESLint?</a></li><li><a href="/team">About the Team</a></li><li><a href="/docs/about">About ESLint</a></li></ul></li></ul><label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label><div class="navbar-form navbar-right eslint-search" role="search"><div class="input-group"><label class="sr-only" aria-label="Search" for="eslint-search-input">Search</label><div class="eslint-search-input-wrapper"><input type="text" class="form-control" id="eslint-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search the docs..."> <label for="eslint-toggle-search" class="eslint-toggle-search-close"><span class="sr-only">Close search</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></div></div></div></nav></div></header><main class="doc"><article class="container"><h1>require a newline after each call in a method chain (newline-per-chained-call)</h1><p>Chained method calls on a single line without line breaks are harder to read, so some developers place a newline character after each method call in the chain to make it more readable and easy to maintain.</p><p>Let's look at the following perfectly valid (but single line) code.</p><pre class="hljs highlight-js"><code>d3.select(<span class="hljs-string">"body"</span>).selectAll(<span class="hljs-string">"p"</span>).data([<span class="hljs-number">4</span>, <span class="hljs-number">8</span>, <span class="hljs-number">15</span>, <span class="hljs-number">16</span>, <span class="hljs-number">23</span>, <span class="hljs-number">42</span> ]).enter().append(<span class="hljs-string">"p"</span>).text(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">d</span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">"I'm number "</span> + d + <span class="hljs-string">"!"</span>; });
+</code></pre><p>However, with appropriate new lines, it becomes easy to read and understand. Look at the same code written below with line breaks after each call.</p><pre class="hljs highlight-js"><code>d3
+    .select(<span class="hljs-string">"body"</span>)
+    .selectAll(<span class="hljs-string">"p"</span>)
+    .data([
+        <span class="hljs-number">4</span>,
+        <span class="hljs-number">8</span>,
+        <span class="hljs-number">15</span>,
+        <span class="hljs-number">16</span>,
+        <span class="hljs-number">23</span>,
+        <span class="hljs-number">42</span>
+    ])
+    .enter()
+    .append(<span class="hljs-string">"p"</span>)
+    .text(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">d</span>) </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"I'm number "</span> + d + <span class="hljs-string">"!"</span>;
+    });
+</code></pre><p>Another argument in favor of this style is that it improves the clarity of diffs when something in the method chain is changed:</p><p>Less clear:</p><pre class="hljs highlight-diff"><code><span class="hljs-deletion">-d3.select("body").selectAll("p").style("color", "white");</span>
+<span class="hljs-addition">+d3.select("body").selectAll("p").style("color", "blue");</span>
+</code></pre><p>More clear:</p><pre class="hljs highlight-diff"><code>d3
+    .select("body")
+    .selectAll("p")
+<span class="hljs-deletion">-    .style("color", "white");</span>
+<span class="hljs-addition">+    .style("color", "blue");</span>
+</code></pre><h2>Rule Details</h2><p>This rule requires a newline after each call in a method chain or deep member access. Computed property accesses such as <code>instance[something]</code> are excluded.</p><h2>Options</h2><p>This rule has an object option:</p><ul><li><code>&quot;ignoreChainWithDepth&quot;</code> (default: <code>2</code>) allows chains up to a specified depth.</li></ul><h3>ignoreChainWithDepth</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the default <code>{ &quot;ignoreChainWithDepth&quot;: 2 }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint newline-per-chained-call: ["error", { "ignoreChainWithDepth": 2 }]*/</span>
+
+_.chain({}).map(foo).filter(bar).value();
+
+<span class="hljs-comment">// Or</span>
+_.chain({}).map(foo).filter(bar);
+
+<span class="hljs-comment">// Or</span>
+_
+  .chain({}).map(foo)
+  .filter(bar);
+
+<span class="hljs-comment">// Or</span>
+obj.method().method2().method3();
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the default <code>{ &quot;ignoreChainWithDepth&quot;: 2 }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint newline-per-chained-call: ["error", { "ignoreChainWithDepth": 2 }]*/</span>
+
+_
+  .chain({})
+  .map(foo)
+  .filter(bar)
+  .value();
+
+<span class="hljs-comment">// Or</span>
+_
+  .chain({})
+  .map(foo)
+  .filter(bar);
+
+<span class="hljs-comment">// Or</span>
+_.chain({})
+  .map(foo)
+  .filter(bar);
+
+<span class="hljs-comment">// Or</span>
+obj
+  .prop
+  .method().prop;
+
+<span class="hljs-comment">// Or</span>
+obj
+  .prop.method()
+  .method2()
+  .method3().prop;
+</code></pre><h2>When Not To Use It</h2><p>If you have conflicting rules or when you are fine with chained calls on one line, you can safely turn this rule off.</p><h2>Version</h2><p>This rule was introduced in ESLint 2.0.0-rc.0.</p><h2>Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/newline-per-chained-call.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/newline-per-chained-call.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/website/edit/master/./docs/2.13.1/rules/newline-per-chained-call.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>

@@ -1,0 +1,166 @@
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="JavaScript, Linter, Linting, Pluggable, Configurable, Code Quality"><meta name="description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="theme-color" content="#463fd4"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="ESLint - Pluggable JavaScript linter"><meta property="og:title" content="Documentation"><meta property="og:url" content="/docs/2.13.1/user-guide/formatters/"><meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png"><meta name="twitter:site" content="@geteslint"><meta name="twitter:title" content="Documentation"><meta name="twitter:description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="twitter:url" content="/docs/2.13.1/user-guide/formatters/"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://eslint.org/assets/img/favicon.512x512.png"><title>Documentation - ESLint - Pluggable JavaScript linter</title><link rel="preconnect" href="https://www.google-analytics.com"><link rel="canonical" href="/docs/2.13.1/user-guide/formatters/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"><link rel="stylesheet" href="/assets/styles/main.css"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/assets/img/favicon.512x512.png"><link rel="alternate" type="application/rss+xml" title="ESLint - Pluggable JavaScript linter" href="/feed.xml"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"></head><body><input type="checkbox" id="eslint-toggle-search" class="eslint-toggle-search-checkbox"><header class="navbar navbar-default navbar-demo navbar-fixed-top eslint-nav" id="top" role="banner"><div class="container"><a href="/" class="navbar-brand"><img alt="ESLint" src="/assets/img/logo.svg" itemprop="image">ESLint</a><div class="eslint-navbar-toggles"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#eslint-navbar" aria-controls="eslint-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label></div><nav id="eslint-navbar" class="collapse navbar-collapse eslint-navbar"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="/docs/user-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/user-guide/getting-started">Getting Started</a></li><li><a href="/docs/user-guide/configuring">Configuring ESLint</a></li><li><a href="/docs/user-guide/command-line-interface">Command Line Interface</a></li><li><a href="/docs/rules">Rules</a></li><li><a href="/docs/user-guide/formatters">Formatters</a></li><li><a href="/docs/user-guide/integrations">Integrations</a></li><li class="divider"></li><li><a href="/docs/user-guide/migrating-to-7.0.0">Migrating to v7.0.0</a></li><li><a href="/docs/user-guide/migrating-to-6.0.0">Migrating to v6.0.0</a></li><li><a href="/docs/user-guide/migrating-to-5.0.0">Migrating to v5.0.0</a></li><li><a href="/docs/user-guide/migrating-to-4.0.0">Migrating to v4.0.0</a></li><li><a href="/docs/user-guide/migrating-to-3.0.0">Migrating to v3.0.0</a></li><li><a href="/docs/user-guide/migrating-to-2.0.0">Migrating to v2.0.0</a></li><li><a href="/docs/user-guide/migrating-to-1.0.0">Migrating to v1.0.0</a></li><li><a href="/docs/user-guide/migrating-from-jscs">Migrating from JSCS</a></li></ul></li><li class="dropdown"><a href="/docs/developer-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/developer-guide/architecture">Architecture</a></li><li><a href="/docs/developer-guide/contributing">Contributing</a></li><li><a href="/docs/developer-guide/source-code">Get the Source Code</a></li><li><a href="/docs/developer-guide/development-environment">Set up a Development Environment</a></li><li><a href="/docs/developer-guide/unit-tests">Run the Unit Tests</a></li><li><a href="/docs/developer-guide/working-with-rules">Working with Rules</a></li><li><a href="/docs/developer-guide/working-with-plugins">Working with Plugins</a></li><li><a href="/docs/developer-guide/working-with-custom-formatters">Working with Custom Formatters</a></li><li><a href="/docs/developer-guide/working-with-custom-parsers">Working with Custom Parsers</a></li><li><a href="/docs/developer-guide/shareable-configs">Shareable Configs</a></li><li><a href="/docs/developer-guide/nodejs-api">Node.js API</a></li><li><a href="/docs/maintainer-guide">Maintainer guide</a></li></ul></li><li><a href="/blog">Blog</a></li><li><a href="/demo">Demo</a></li><li class="dropdown"><a href="/docs/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/users">Who's Using ESLint?</a></li><li><a href="/team">About the Team</a></li><li><a href="/docs/about">About ESLint</a></li></ul></li></ul><label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label><div class="navbar-form navbar-right eslint-search" role="search"><div class="input-group"><label class="sr-only" aria-label="Search" for="eslint-search-input">Search</label><div class="eslint-search-input-wrapper"><input type="text" class="form-control" id="eslint-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search the docs..."> <label for="eslint-toggle-search" class="eslint-toggle-search-close"><span class="sr-only">Close search</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></div></div></div></nav></div></header><main class="doc"><article class="container"><h1>ESLint Formatters</h1><p>ESLint comes with several built-in formatters to control the appearance of the linting results, and supports third-party formatters as well.</p><p>The built-in formatter options are:</p><ul><li><a href="#checkstyle">checkstyle</a></li><li><a href="#compact">compact</a></li><li><a href="#html">html</a></li><li><a href="#jslint-xml">jslint-xml</a></li><li><a href="#json">json</a></li><li><a href="#junit">junit</a></li><li><a href="#stylish">stylish</a></li><li><a href="#table">table</a></li><li><a href="#tap">tap</a></li><li><a href="#unix">unix</a></li><li><a href="#visualstudio">visualstudio</a></li></ul><h2>Example Source</h2><p>Examples of each formatter were created from linting <code>fullOfProblems.js</code> using the <code>.eslintrc</code> configuration shown below.</p><h3><code>fullOfProblems.js</code></h3><pre class="hljs highlight-js"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addOne</span>(<span class="hljs-params">i</span>) </span>{
+    <span class="hljs-keyword">if</span> (i != <span class="hljs-literal">NaN</span>) {
+        <span class="hljs-keyword">return</span> i ++
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span>
+    }
+};
+</code></pre><h3><code>.eslintrc</code>:</h3><pre class="hljs highlight-json"><code>{
+    <span class="hljs-attr">"extends"</span>: <span class="hljs-string">"eslint:recommended"</span>,
+    <span class="hljs-attr">"rules"</span>: {
+        <span class="hljs-attr">"consistent-return"</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-attr">"indent"</span>           : [<span class="hljs-number">1</span>, <span class="hljs-number">4</span>],
+        <span class="hljs-attr">"no-else-return"</span>   : <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"semi"</span>             : [<span class="hljs-number">1</span>, <span class="hljs-string">"always"</span>],
+        <span class="hljs-attr">"space-unary-ops"</span>  : <span class="hljs-number">2</span>
+    }
+}
+</code></pre><h2>Output Examples</h2><h3>checkstyle</h3><pre class="hljs highlight-"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;checkstyle version=&quot;4.3&quot;&gt;&lt;file name=&quot;C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js&quot;&gt;&lt;error line=&quot;1&quot; column=&quot;10&quot; severity=&quot;error&quot; message=&quot;&amp;apos;addOne&amp;apos; is defined but never used (no-unused-vars)&quot; source=&quot;eslint.rules.no-unused-vars&quot; /&gt;&lt;error line=&quot;2&quot; column=&quot;9&quot; severity=&quot;error&quot; message=&quot;Use the isNaN function to compare with NaN. (use-isnan)&quot; source=&quot;eslint.rules.use-isnan&quot; /&gt;&lt;error line=&quot;3&quot; column=&quot;16&quot; severity=&quot;error&quot; message=&quot;Unexpected space before unary operator &amp;apos;++&amp;apos;. (space-unary-ops)&quot; source=&quot;eslint.rules.space-unary-ops&quot; /&gt;&lt;error line=&quot;3&quot; column=&quot;20&quot; severity=&quot;warning&quot; message=&quot;Missing semicolon. (semi)&quot; source=&quot;eslint.rules.semi&quot; /&gt;&lt;error line=&quot;4&quot; column=&quot;12&quot; severity=&quot;warning&quot; message=&quot;Unexpected &amp;apos;else&amp;apos; after &amp;apos;return&amp;apos;. (no-else-return)&quot; source=&quot;eslint.rules.no-else-return&quot; /&gt;&lt;error line=&quot;5&quot; column=&quot;7&quot; severity=&quot;warning&quot; message=&quot;Expected indentation of 8 space characters but found 6. (indent)&quot; source=&quot;eslint.rules.indent&quot; /&gt;&lt;error line=&quot;5&quot; column=&quot;7&quot; severity=&quot;error&quot; message=&quot;Expected a return value. (consistent-return)&quot; source=&quot;eslint.rules.consistent-return&quot; /&gt;&lt;error line=&quot;5&quot; column=&quot;13&quot; severity=&quot;warning&quot; message=&quot;Missing semicolon. (semi)&quot; source=&quot;eslint.rules.semi&quot; /&gt;&lt;error line=&quot;7&quot; column=&quot;2&quot; severity=&quot;error&quot; message=&quot;Unnecessary semicolon. (no-extra-semi)&quot; source=&quot;eslint.rules.no-extra-semi&quot; /&gt;&lt;/file&gt;&lt;/checkstyle&gt;
+</code></pre><h3>compact</h3><pre class="hljs highlight-"><code>C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js: line 1, col 10, Error - 'addOne' is defined but never used (no-unused-vars)
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js: line 2, col 9, Error - Use the isNaN function to compare with NaN. (use-isnan)
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js: line 3, col 16, Error - Unexpected space before unary operator '++'. (space-unary-ops)
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js: line 3, col 20, Warning - Missing semicolon. (semi)
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js: line 4, col 12, Warning - Unexpected 'else' after 'return'. (no-else-return)
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js: line 5, col 7, Warning - Expected indentation of 8 space characters but found 6. (indent)
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js: line 5, col 7, Error - Expected a return value. (consistent-return)
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js: line 5, col 13, Warning - Missing semicolon. (semi)
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js: line 7, col 2, Error - Unnecessary semicolon. (no-extra-semi)
+
+9 problems
+</code></pre><h3>html</h3><iframe src="html-formatter-example.html" width="100%" height="460px"></iframe><h3>jslint-xml</h3><pre class="hljs highlight-"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;jslint&gt;&lt;file name=&quot;C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js&quot;&gt;&lt;issue line=&quot;1&quot; char=&quot;10&quot; evidence=&quot;function addOne(i) {&quot; reason=&quot;&amp;#39;addOne&amp;#39; is defined but never used (no-unused-vars)&quot; /&gt;&lt;issue line=&quot;2&quot; char=&quot;9&quot; evidence=&quot;    if (i != NaN) {&quot; reason=&quot;Use the isNaN function to compare with NaN. (use-isnan)&quot; /&gt;&lt;issue line=&quot;3&quot; char=&quot;16&quot; evidence=&quot;        return i ++&quot; reason=&quot;Unexpected space before unary operator &amp;#39;++&amp;#39;. (space-unary-ops)&quot; /&gt;&lt;issue line=&quot;3&quot; char=&quot;20&quot; evidence=&quot;        return i ++&quot; reason=&quot;Missing semicolon. (semi)&quot; /&gt;&lt;issue line=&quot;4&quot; char=&quot;12&quot; evidence=&quot;    } else {&quot; reason=&quot;Unexpected &amp;#39;else&amp;#39; after &amp;#39;return&amp;#39;. (no-else-return)&quot; /&gt;&lt;issue line=&quot;5&quot; char=&quot;7&quot; evidence=&quot;      return&quot; reason=&quot;Expected indentation of 8 space characters but found 6. (indent)&quot; /&gt;&lt;issue line=&quot;5&quot; char=&quot;7&quot; evidence=&quot;      return&quot; reason=&quot;Expected a return value. (consistent-return)&quot; /&gt;&lt;issue line=&quot;5&quot; char=&quot;13&quot; evidence=&quot;      return&quot; reason=&quot;Missing semicolon. (semi)&quot; /&gt;&lt;issue line=&quot;7&quot; char=&quot;2&quot; evidence=&quot;};&quot; reason=&quot;Unnecessary semicolon. (no-extra-semi)&quot; /&gt;&lt;/file&gt;&lt;/jslint&gt;
+</code></pre><h3>json</h3><pre class="hljs highlight-"><code>[{&quot;filePath&quot;:&quot;C:\\Users\\Nicholas\\projects\\personal\\eslint\\fullOfProblems.js&quot;,&quot;messages&quot;:[{&quot;ruleId&quot;:&quot;no-unused-vars&quot;,&quot;severity&quot;:2,&quot;message&quot;:&quot;'addOne' is defined but never used&quot;,&quot;line&quot;:1,&quot;column&quot;:10,&quot;nodeType&quot;:&quot;Identifier&quot;,&quot;source&quot;:&quot;function addOne(i) {&quot;},{&quot;ruleId&quot;:&quot;use-isnan&quot;,&quot;severity&quot;:2,&quot;message&quot;:&quot;Use the isNaN function to compare with NaN.&quot;,&quot;line&quot;:2,&quot;column&quot;:9,&quot;nodeType&quot;:&quot;BinaryExpression&quot;,&quot;source&quot;:&quot;    if (i != NaN) {&quot;},{&quot;ruleId&quot;:&quot;space-unary-ops&quot;,&quot;severity&quot;:2,&quot;message&quot;:&quot;Unexpected space before unary operator '++'.&quot;,&quot;line&quot;:3,&quot;column&quot;:16,&quot;nodeType&quot;:&quot;UpdateExpression&quot;,&quot;source&quot;:&quot;        return i ++&quot;,&quot;fix&quot;:{&quot;range&quot;:[57,58],&quot;text&quot;:&quot;&quot;}},{&quot;ruleId&quot;:&quot;semi&quot;,&quot;severity&quot;:1,&quot;message&quot;:&quot;Missing semicolon.&quot;,&quot;line&quot;:3,&quot;column&quot;:20,&quot;nodeType&quot;:&quot;ReturnStatement&quot;,&quot;source&quot;:&quot;        return i ++&quot;,&quot;fix&quot;:{&quot;range&quot;:[60,60],&quot;text&quot;:&quot;;&quot;}},{&quot;ruleId&quot;:&quot;no-else-return&quot;,&quot;severity&quot;:1,&quot;message&quot;:&quot;Unexpected 'else' after 'return'.&quot;,&quot;line&quot;:4,&quot;column&quot;:12,&quot;nodeType&quot;:&quot;BlockStatement&quot;,&quot;source&quot;:&quot;    } else {&quot;},{&quot;ruleId&quot;:&quot;indent&quot;,&quot;severity&quot;:1,&quot;message&quot;:&quot;Expected indentation of 8 space characters but found 6.&quot;,&quot;line&quot;:5,&quot;column&quot;:7,&quot;nodeType&quot;:&quot;ReturnStatement&quot;,&quot;source&quot;:&quot;      return&quot;,&quot;fix&quot;:{&quot;range&quot;:[80,80],&quot;text&quot;:&quot;  &quot;}},{&quot;ruleId&quot;:&quot;consistent-return&quot;,&quot;severity&quot;:2,&quot;message&quot;:&quot;Expected a return value.&quot;,&quot;line&quot;:5,&quot;column&quot;:7,&quot;nodeType&quot;:&quot;ReturnStatement&quot;,&quot;source&quot;:&quot;      return&quot;},{&quot;ruleId&quot;:&quot;semi&quot;,&quot;severity&quot;:1,&quot;message&quot;:&quot;Missing semicolon.&quot;,&quot;line&quot;:5,&quot;column&quot;:13,&quot;nodeType&quot;:&quot;ReturnStatement&quot;,&quot;source&quot;:&quot;      return&quot;,&quot;fix&quot;:{&quot;range&quot;:[86,86],&quot;text&quot;:&quot;;&quot;}},{&quot;ruleId&quot;:&quot;no-extra-semi&quot;,&quot;severity&quot;:2,&quot;message&quot;:&quot;Unnecessary semicolon.&quot;,&quot;line&quot;:7,&quot;column&quot;:2,&quot;nodeType&quot;:&quot;EmptyStatement&quot;,&quot;source&quot;:&quot;};&quot;,&quot;fix&quot;:{&quot;range&quot;:[94,95],&quot;text&quot;:&quot;&quot;}}],&quot;errorCount&quot;:5,&quot;warningCount&quot;:4}]
+</code></pre><h3>junit</h3><pre class="hljs highlight-"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;testsuites&gt;
+&lt;testsuite package=&quot;org.eslint&quot; time=&quot;0&quot; tests=&quot;9&quot; errors=&quot;9&quot; name=&quot;C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js&quot;&gt;
+&lt;testcase time=&quot;0&quot; name=&quot;org.eslint.no-unused-vars&quot;&gt;&lt;failure message=&quot;&amp;#39;addOne&amp;#39; is defined but never used&quot;&gt;&lt;![CDATA[line 1, col 10, Error - &amp;#39;addOne&amp;#39; is defined but never used (no-unused-vars)]]&gt;&lt;/failure&gt;&lt;/testcase&gt;
+&lt;testcase time=&quot;0&quot; name=&quot;org.eslint.use-isnan&quot;&gt;&lt;failure message=&quot;Use the isNaN function to compare with NaN.&quot;&gt;&lt;![CDATA[line 2, col 9, Error - Use the isNaN function to compare with NaN. (use-isnan)]]&gt;&lt;/failure&gt;&lt;/testcase&gt;
+&lt;testcase time=&quot;0&quot; name=&quot;org.eslint.space-unary-ops&quot;&gt;&lt;failure message=&quot;Unexpected space before unary operator &amp;#39;++&amp;#39;.&quot;&gt;&lt;![CDATA[line 3, col 16, Error - Unexpected space before unary operator &amp;#39;++&amp;#39;. (space-unary-ops)]]&gt;&lt;/failure&gt;&lt;/testcase&gt;
+&lt;testcase time=&quot;0&quot; name=&quot;org.eslint.semi&quot;&gt;&lt;failure message=&quot;Missing semicolon.&quot;&gt;&lt;![CDATA[line 3, col 20, Warning - Missing semicolon. (semi)]]&gt;&lt;/failure&gt;&lt;/testcase&gt;
+&lt;testcase time=&quot;0&quot; name=&quot;org.eslint.no-else-return&quot;&gt;&lt;failure message=&quot;Unexpected &amp;#39;else&amp;#39; after &amp;#39;return&amp;#39;.&quot;&gt;&lt;![CDATA[line 4, col 12, Warning - Unexpected &amp;#39;else&amp;#39; after &amp;#39;return&amp;#39;. (no-else-return)]]&gt;&lt;/failure&gt;&lt;/testcase&gt;
+&lt;testcase time=&quot;0&quot; name=&quot;org.eslint.indent&quot;&gt;&lt;failure message=&quot;Expected indentation of 8 space characters but found 6.&quot;&gt;&lt;![CDATA[line 5, col 7, Warning - Expected indentation of 8 space characters but found 6. (indent)]]&gt;&lt;/failure&gt;&lt;/testcase&gt;
+&lt;testcase time=&quot;0&quot; name=&quot;org.eslint.consistent-return&quot;&gt;&lt;failure message=&quot;Expected a return value.&quot;&gt;&lt;![CDATA[line 5, col 7, Error - Expected a return value. (consistent-return)]]&gt;&lt;/failure&gt;&lt;/testcase&gt;
+&lt;testcase time=&quot;0&quot; name=&quot;org.eslint.semi&quot;&gt;&lt;failure message=&quot;Missing semicolon.&quot;&gt;&lt;![CDATA[line 5, col 13, Warning - Missing semicolon. (semi)]]&gt;&lt;/failure&gt;&lt;/testcase&gt;
+&lt;testcase time=&quot;0&quot; name=&quot;org.eslint.no-extra-semi&quot;&gt;&lt;failure message=&quot;Unnecessary semicolon.&quot;&gt;&lt;![CDATA[line 7, col 2, Error - Unnecessary semicolon. (no-extra-semi)]]&gt;&lt;/failure&gt;&lt;/testcase&gt;
+&lt;/testsuite&gt;
+&lt;/testsuites&gt;
+
+</code></pre><h3>stylish</h3><pre class="hljs highlight-"><code>
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js
+  1:10  error    'addOne' is defined but never used                      no-unused-vars
+  2:9   error    Use the isNaN function to compare with NaN              use-isnan
+  3:16  error    Unexpected space before unary operator '++'             space-unary-ops
+  3:20  warning  Missing semicolon                                       semi
+  4:12  warning  Unexpected 'else' after 'return'                        no-else-return
+  5:7   warning  Expected indentation of 8 space characters but found 6  indent
+  5:7   error    Expected a return value                                 consistent-return
+  5:13  warning  Missing semicolon                                       semi
+  7:2   error    Unnecessary semicolon                                   no-extra-semi
+
+✖ 9 problems (5 errors, 4 warnings)
+
+</code></pre><h3>table</h3><pre class="hljs highlight-"><code>
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js
+
+║ Line     │ Column   │ Type     │ Message                                                │ Rule ID              ║
+╟──────────┼──────────┼──────────┼────────────────────────────────────────────────────────┼──────────────────────╢
+║ 1        │ 10       │ error    │ 'addOne' is defined but never used                     │ no-unused-vars       ║
+║ 2        │ 9        │ error    │ Use the isNaN function to compare with NaN.            │ use-isnan            ║
+║ 3        │ 16       │ error    │ Unexpected space before unary operator '++'.           │ space-unary-ops      ║
+║ 3        │ 20       │ warning  │ Missing semicolon.                                     │ semi                 ║
+║ 4        │ 12       │ warning  │ Unexpected 'else' after 'return'.                      │ no-else-return       ║
+║ 5        │ 7        │ warning  │ Expected indentation of 8 space characters but         │ indent               ║
+║          │          │          │ found 6.                                               │                      ║
+║ 5        │ 7        │ error    │ Expected a return value.                               │ consistent-return    ║
+║ 5        │ 13       │ warning  │ Missing semicolon.                                     │ semi                 ║
+║ 7        │ 2        │ error    │ Unnecessary semicolon.                                 │ no-extra-semi        ║
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║ 5 Errors                                                                                                       ║
+╟────────────────────────────────────────────────────────────────────────────────────────────────────────────────╢
+║ 4 Warnings                                                                                                     ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+</code></pre><h3>tap</h3><pre class="hljs highlight-"><code>TAP version 13
+1..1
+not ok 1 - C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js
+  ---
+  message: '''addOne'' is defined but never used'
+  severity: error
+  data:
+    line: 1
+    column: 10
+    ruleId: no-unused-vars
+  messages:
+    - message: Use the isNaN function to compare with NaN.
+      severity: error
+      data:
+        line: 2
+        column: 9
+        ruleId: use-isnan
+    - message: Unexpected space before unary operator '++'.
+      severity: error
+      data:
+        line: 3
+        column: 16
+        ruleId: space-unary-ops
+    - message: Missing semicolon.
+      severity: warning
+      data:
+        line: 3
+        column: 20
+        ruleId: semi
+    - message: Unexpected 'else' after 'return'.
+      severity: warning
+      data:
+        line: 4
+        column: 12
+        ruleId: no-else-return
+    - message: Expected indentation of 8 space characters but found 6.
+      severity: warning
+      data:
+        line: 5
+        column: 7
+        ruleId: indent
+    - message: Expected a return value.
+      severity: error
+      data:
+        line: 5
+        column: 7
+        ruleId: consistent-return
+    - message: Missing semicolon.
+      severity: warning
+      data:
+        line: 5
+        column: 13
+        ruleId: semi
+    - message: Unnecessary semicolon.
+      severity: error
+      data:
+        line: 7
+        column: 2
+        ruleId: no-extra-semi
+  ...
+
+</code></pre><h3>unix</h3><pre class="hljs highlight-"><code>C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js:1:10: 'addOne' is defined but never used [Error/no-unused-vars]
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js:2:9: Use the isNaN function to compare with NaN. [Error/use-isnan]
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js:3:16: Unexpected space before unary operator '++'. [Error/space-unary-ops]
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js:3:20: Missing semicolon. [Warning/semi]
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js:4:12: Unexpected 'else' after 'return'. [Warning/no-else-return]
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js:5:7: Expected indentation of 8 space characters but found 6. [Warning/indent]
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js:5:7: Expected a return value. [Error/consistent-return]
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js:5:13: Missing semicolon. [Warning/semi]
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js:7:2: Unnecessary semicolon. [Error/no-extra-semi]
+
+9 problems
+</code></pre><h3>visualstudio</h3><pre class="hljs highlight-"><code>C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js(1,10): error no-unused-vars : 'addOne' is defined but never used
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js(2,9): error use-isnan : Use the isNaN function to compare with NaN.
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js(3,16): error space-unary-ops : Unexpected space before unary operator '++'.
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js(3,20): warning semi : Missing semicolon.
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js(4,12): warning no-else-return : Unexpected 'else' after 'return'.
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js(5,7): warning indent : Expected indentation of 8 space characters but found 6.
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js(5,7): error consistent-return : Expected a return value.
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js(5,13): warning semi : Missing semicolon.
+C:\Users\Nicholas\projects\personal\eslint\fullOfProblems.js(7,2): error no-extra-semi : Unnecessary semicolon.
+
+9 problems
+</code></pre></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/website/edit/master/./docs/2.13.1/user-guide/formatters/index.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>
