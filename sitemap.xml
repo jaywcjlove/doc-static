@@ -237,9 +237,9 @@
 <url> <loc>https://www.typescriptlang.org/zh/play/typescript/type-primitives/built-in-utility-types.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/typescript/type-primitives/nullable-types.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/typescript/type-primitives/tuples.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.typescriptlang.org/zh/play/javascript/external-apis/typescript-with-deno.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/vo/play/javascript/javascript-essentials/objects-and-arrays.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/vo/play/javascript/javascript-essentials/hello-world.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.typescriptlang.org/zh/play/javascript/external-apis/typescript-with-deno.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/community</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/es/community</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/ja/community</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
