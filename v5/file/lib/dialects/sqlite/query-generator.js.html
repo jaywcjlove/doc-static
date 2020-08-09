@@ -81,6 +81,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/associations/belongs-to.js~BelongsTo.html">BelongsTo</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/associations/has-many.js~HasMany.html">HasMany</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/associations/has-one.js~HasOne.html">HasOne</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#dialects-sqlite">dialects/sqlite</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-describeTable">describeTable</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#errors">errors</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/errors/association-error.js~AssociationError.html">AssociationError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/errors/base-error.js~BaseError.html">BaseError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/errors/bulk-record-error.js~BulkRecordError.html">BulkRecordError</a></span></span></li>
@@ -157,7 +158,11 @@ class SQLiteQueryGenerator extends MySqlQueryGenerator {
 
           if (needsMultiplePrimaryKeys) {
             primaryKeys.push(attr);
-            dataTypeString = dataType.replace(&apos;PRIMARY KEY&apos;, &apos;NOT NULL&apos;);
+            if (dataType.includes(&apos;NOT NULL&apos;)) {
+              dataTypeString = dataType.replace(&apos; PRIMARY KEY&apos;, &apos;&apos;);
+            } else {
+              dataTypeString = dataType.replace(&apos;PRIMARY KEY&apos;, &apos;NOT NULL&apos;);
+            }
           }
         }
         attrArray.push(`${this.quoteIdentifier(attr)} ${dataTypeString}`);
@@ -543,7 +548,8 @@ class SQLiteQueryGenerator extends MySqlQueryGenerator {
     ).join(&apos;, &apos;);
     const attributeNamesExport = Object.keys(attributes).map(attr =&gt; this.quoteIdentifier(attr)).join(&apos;, &apos;);
 
-    return `${this.createTableQuery(backupTableName, attributes).replace(&apos;CREATE TABLE&apos;, &apos;CREATE TEMPORARY TABLE&apos;)
+    // Temporary tables don&apos;t support foreign keys, so creating a temporary table will not allow foreign keys to be preserved
+    return `${this.createTableQuery(backupTableName, attributes)
     }INSERT INTO ${quotedBackupTableName} SELECT ${attributeNamesImport} FROM ${quotedTableName};`
       + `DROP TABLE ${quotedTableName};${
         this.createTableQuery(tableName, attributes)

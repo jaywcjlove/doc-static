@@ -2292,7 +2292,7 @@
               "trailingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Iterate over Models in an order suitable for e.g. creating tables.\n   * Will take foreign key constraints into account so that dependencies are visited before dependents.\n   *\n   * @param {Function} iterator method to execute on each model\n   * @param {Object} [options] iterator options\n   * @private\n   ",
+                  "value": "*\n   * Iterate over Models in an order suitable for e.g. creating tables.\n   * Will take foreign key constraints into account so that dependencies are visited before dependents.\n   *\n   * @param {Function} iterator method to execute on each model\n   * @param {object} [options] iterator options\n   * @private\n   ",
                   "start": 721,
                   "end": 1037,
                   "loc": {
@@ -5652,7 +5652,7 @@
               "leadingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * Iterate over Models in an order suitable for e.g. creating tables.\n   * Will take foreign key constraints into account so that dependencies are visited before dependents.\n   *\n   * @param {Function} iterator method to execute on each model\n   * @param {Object} [options] iterator options\n   * @private\n   ",
+                  "value": "*\n   * Iterate over Models in an order suitable for e.g. creating tables.\n   * Will take foreign key constraints into account so that dependencies are visited before dependents.\n   *\n   * @param {Function} iterator method to execute on each model\n   * @param {object} [options] iterator options\n   * @private\n   ",
                   "start": 721,
                   "end": 1037,
                   "loc": {
@@ -6073,7 +6073,7 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n   * Iterate over Models in an order suitable for e.g. creating tables.\n   * Will take foreign key constraints into account so that dependencies are visited before dependents.\n   *\n   * @param {Function} iterator method to execute on each model\n   * @param {Object} [options] iterator options\n   * @private\n   ",
+      "value": "*\n   * Iterate over Models in an order suitable for e.g. creating tables.\n   * Will take foreign key constraints into account so that dependencies are visited before dependents.\n   *\n   * @param {Function} iterator method to execute on each model\n   * @param {object} [options] iterator options\n   * @private\n   ",
       "start": 721,
       "end": 1037,
       "loc": {
@@ -10416,7 +10416,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Iterate over Models in an order suitable for e.g. creating tables.\n   * Will take foreign key constraints into account so that dependencies are visited before dependents.\n   *\n   * @param {Function} iterator method to execute on each model\n   * @param {Object} [options] iterator options\n   * @private\n   ",
+      "value": "*\n   * Iterate over Models in an order suitable for e.g. creating tables.\n   * Will take foreign key constraints into account so that dependencies are visited before dependents.\n   *\n   * @param {Function} iterator method to execute on each model\n   * @param {object} [options] iterator options\n   * @private\n   ",
       "start": 721,
       "end": 1037,
       "loc": {

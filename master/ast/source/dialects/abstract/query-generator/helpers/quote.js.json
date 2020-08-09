@@ -312,7 +312,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n *\n * @param {string}  dialect         Dialect name\n * @param {string}  identifier      Identifier to quote\n * @param {Object}  [options]\n * @param {boolean} [options.force=false]\n * @param {boolean} [options.quoteIdentifiers=true]\n *\n * @returns {string}\n * @private\n ",
+            "value": "*\n *\n * @param {string}  dialect         Dialect name\n * @param {string}  identifier      Identifier to quote\n * @param {object}  [options]\n * @param {boolean} [options.force=false]\n * @param {boolean} [options.quoteIdentifiers=true]\n *\n * @returns {string}\n * @private\n ",
             "start": 1380,
             "end": 1655,
             "loc": {
@@ -2585,7 +2585,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n *\n * @param {string}  dialect         Dialect name\n * @param {string}  identifier      Identifier to quote\n * @param {Object}  [options]\n * @param {boolean} [options.force=false]\n * @param {boolean} [options.quoteIdentifiers=true]\n *\n * @returns {string}\n * @private\n ",
+            "value": "*\n *\n * @param {string}  dialect         Dialect name\n * @param {string}  identifier      Identifier to quote\n * @param {object}  [options]\n * @param {boolean} [options.force=false]\n * @param {boolean} [options.quoteIdentifiers=true]\n *\n * @returns {string}\n * @private\n ",
             "start": 1380,
             "end": 1655,
             "loc": {
@@ -3167,7 +3167,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n *\n * @param {string}  dialect         Dialect name\n * @param {string}  identifier      Identifier to quote\n * @param {Object}  [options]\n * @param {boolean} [options.force=false]\n * @param {boolean} [options.quoteIdentifiers=true]\n *\n * @returns {string}\n * @private\n ",
+      "value": "*\n *\n * @param {string}  dialect         Dialect name\n * @param {string}  identifier      Identifier to quote\n * @param {object}  [options]\n * @param {boolean} [options.force=false]\n * @param {boolean} [options.quoteIdentifiers=true]\n *\n * @returns {string}\n * @private\n ",
       "start": 1380,
       "end": 1655,
       "loc": {
@@ -3839,7 +3839,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n *\n * @param {string}  dialect         Dialect name\n * @param {string}  identifier      Identifier to quote\n * @param {Object}  [options]\n * @param {boolean} [options.force=false]\n * @param {boolean} [options.quoteIdentifiers=true]\n *\n * @returns {string}\n * @private\n ",
+      "value": "*\n *\n * @param {string}  dialect         Dialect name\n * @param {string}  identifier      Identifier to quote\n * @param {object}  [options]\n * @param {boolean} [options.force=false]\n * @param {boolean} [options.quoteIdentifiers=true]\n *\n * @returns {string}\n * @private\n ",
       "start": 1380,
       "end": 1655,
       "loc": {

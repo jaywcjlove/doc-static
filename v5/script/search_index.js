@@ -450,6 +450,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "sequelize/lib/dialects/sqlite/query-interface.js~describetable",
+    "function/index.html#static-function-describeTable",
+    "<span>describeTable</span> <span class=\"search-result-import-path\">sequelize/lib/dialects/sqlite/query-interface.js</span>",
+    "function"
+  ],
+  [
     "lib/.external-ecmascript.js~array",
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
     "lib/.external-ecmascript.js~Array",

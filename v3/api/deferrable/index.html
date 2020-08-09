@@ -7,15 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  <link rel="canonical" href="http://docs.sequelizejs.com/api/deferrable/">
   <link rel="shortcut icon" href="../../favicon.ico">
   
   <title>Deferrable - Sequelize | The Node.js / io.js ORM for PostgreSQL, MySQL, SQLite and MSSQL</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-  <link href="../../css/custom.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/custom.css" rel="stylesheet" />
   
   <script>
     // Current page data
@@ -26,7 +27,7 @@
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
   <script src="../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -37,6 +38,7 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href="../.." class="icon icon-home"> Sequelize | The Node.js / io.js ORM for PostgreSQL, MySQL, SQLite and MSSQL</a>
         <div role="search">
@@ -47,183 +49,87 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../..">Home</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Documentation</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../docs/getting-started/">Getting Started</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Documentation</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../docs/getting-started/">Getting Started</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../docs/schema/">Working with table schemas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Models</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../docs/models-definition/">Definition</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../../docs/schema/">Working with table schemas</a>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">Models</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../docs/models-definition/">Definition</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../docs/models-usage/">Usage</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../docs/models-usage/">Usage</a>
                 </li>
     </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../docs/querying/">Querying</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../docs/scopes/">Scopes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../docs/instances/">Instances</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../docs/associations/">Relations / Associations</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../docs/hooks/">Hooks</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../docs/transactions/">Transactions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../docs/legacy/">Working with legacy tables</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../docs/raw-queries/">Raw queries</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../docs/migrations/">Migrations</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../sequelize/">Sequelize</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../model/">Model</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../instance/">Instance</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Associations</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../associations/">Overview</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../../docs/querying/">Querying</a>
+                <li class="toctree-l2"><a class="reference internal" href="../associations/belongs-to/">BelongsTo (1:1)</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../../docs/scopes/">Scopes</a>
+                <li class="toctree-l2"><a class="reference internal" href="../associations/has-one/">HasOne (1:1)</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../../docs/instances/">Instances</a>
+                <li class="toctree-l2"><a class="reference internal" href="../associations/has-many/">HasMany (1:m)</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../../docs/associations/">Relations / Associations</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../docs/hooks/">Hooks</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../docs/transactions/">Transactions</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../docs/legacy/">Working with legacy tables</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../docs/raw-queries/">Raw queries</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../docs/migrations/">Migrations</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">API</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../sequelize/">Sequelize</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../model/">Model</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../instance/">Instance</a>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">Associations</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../associations/">Overview</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../associations/belongs-to/">BelongsTo (1:1)</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../associations/has-one/">HasOne (1:1)</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../associations/has-many/">HasMany (1:m)</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../associations/belongs-to-many/">BelongsToMany (n:m)</a>
+                <li class="toctree-l2"><a class="reference internal" href="../associations/belongs-to-many/">BelongsToMany (n:m)</a>
                 </li>
     </ul>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../hooks/">Hooks</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../transaction/">Transaction</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../datatypes/">Datatypes</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">Deferrable</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#deferrable-object">Deferrable() -&gt; object</a></li>
-    
-
-    <li class="toctree-l3"><a href="#initially_deferred">INITIALLY_DEFERRED()</a></li>
-    
-
-    <li class="toctree-l3"><a href="#initially_immediate">INITIALLY_IMMEDIATE()</a></li>
-    
-
-    <li class="toctree-l3"><a href="#not">NOT()</a></li>
-    
-
-    <li class="toctree-l3"><a href="#set_deferredconstraints">SET_DEFERRED(constraints)</a></li>
-    
-
-    <li class="toctree-l3"><a href="#set_immediateconstraints">SET_IMMEDIATE(constraints)</a></li>
-    
-
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../hooks/">Hooks</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../transaction/">Transaction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../datatypes/">Datatypes</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Deferrable</a>
+    <ul class="current">
     </ul>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../errors/">Errors</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Misc</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../changelog/">Changelog</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../imprint/">Imprint</a>
-                </li>
-    </ul>
-	    </li>
-          
-        </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../errors/">Errors</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Misc</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../changelog/">Changelog</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../imprint/">Imprint</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -255,6 +161,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -262,7 +169,7 @@
               
                 <p><a name="deferrable"></a></p>
 <h2 id="deferrable-object"><code>Deferrable()</code> -&gt; <code>object</code></h2>
-<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/deferrable.js#L39">View code</a></p>
+<p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/deferrable.js#L39">View code</a></p>
 <p>A collection of properties related to deferrable constraints. It can be used to
 make foreign key constraints deferrable and to set the constraints within a
 transaction. This is only supported in PostgreSQL.</p>
@@ -291,24 +198,24 @@ to be checked at the very end of the transaction.</p>
 <hr />
 <p><a name="initially_deferred"></a></p>
 <h2 id="initially_deferred"><code>INITIALLY_DEFERRED()</code></h2>
-<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/deferrable.js#L59">View code</a></p>
+<p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/deferrable.js#L59">View code</a></p>
 <p>A property that will defer constraints checks to the end of transactions.</p>
 <hr />
 <p><a name="initially_immediate"></a></p>
 <h2 id="initially_immediate"><code>INITIALLY_IMMEDIATE()</code></h2>
-<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/deferrable.js#L76">View code</a></p>
+<p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/deferrable.js#L76">View code</a></p>
 <p>A property that will trigger the constraint checks immediately</p>
 <hr />
 <p><a name="not"></a></p>
 <h2 id="not"><code>NOT()</code></h2>
-<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/deferrable.js#L95">View code</a></p>
+<p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/deferrable.js#L95">View code</a></p>
 <p>A property that will set the constraints to not deferred. This is
 the default in PostgreSQL and it make it impossible to dynamically
 defer the constraints within a transaction.</p>
 <hr />
 <p><a name="set_deferred"></a></p>
 <h2 id="set_deferredconstraints"><code>SET_DEFERRED(constraints)</code></h2>
-<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/deferrable.js#L114">View code</a></p>
+<p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/deferrable.js#L114">View code</a></p>
 <p>A property that will trigger an additional query at the beginning of a
 transaction which sets the constraints to deferred.</p>
 <p><strong>Params:</strong></p>
@@ -331,7 +238,7 @@ transaction which sets the constraints to deferred.</p>
 <hr />
 <p><a name="set_immediate"></a></p>
 <h2 id="set_immediateconstraints"><code>SET_IMMEDIATE(constraints)</code></h2>
-<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/deferrable.js#L135">View code</a></p>
+<p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/deferrable.js#L135">View code</a></p>
 <p>A property that will trigger an additional query at the beginning of a
 transaction which sets the constraints to immediately.</p>
 <p><strong>Params:</strong></p>
@@ -375,7 +282,7 @@ transaction which sets the constraints to immediately.</p>
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -385,7 +292,7 @@ transaction which sets the constraints to immediately.</p>
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
           <a href="https://github.com/sequelize/sequelize/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
@@ -402,6 +309,11 @@ transaction which sets the constraints to immediately.</p>
     <script src="../../js/theme.js" defer></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js" defer></script>
       <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>

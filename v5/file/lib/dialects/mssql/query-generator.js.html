@@ -81,6 +81,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/associations/belongs-to.js~BelongsTo.html">BelongsTo</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/associations/has-many.js~HasMany.html">HasMany</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/associations/has-one.js~HasOne.html">HasOne</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#dialects-sqlite">dialects/sqlite</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-describeTable">describeTable</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#errors">errors</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/errors/association-error.js~AssociationError.html">AssociationError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/errors/base-error.js~BaseError.html">BaseError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/errors/bulk-record-error.js~BulkRecordError.html">BulkRecordError</a></span></span></li>
@@ -306,12 +307,12 @@ class MSSQLQueryGenerator extends AbstractQueryGenerator {
       &apos;INNER JOIN&apos;,
       &apos;INFORMATION_SCHEMA.COLUMNS c ON t.TABLE_NAME = c.TABLE_NAME AND t.TABLE_SCHEMA = c.TABLE_SCHEMA&apos;,
       &apos;LEFT JOIN (SELECT tc.table_schema, tc.table_name, &apos;,
-      &apos;cu.column_name, tc.constraint_type &apos;,
-      &apos;FROM information_schema.TABLE_CONSTRAINTS tc &apos;,
-      &apos;JOIN information_schema.KEY_COLUMN_USAGE  cu &apos;,
+      &apos;cu.column_name, tc.CONSTRAINT_TYPE &apos;,
+      &apos;FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS tc &apos;,
+      &apos;JOIN INFORMATION_SCHEMA.KEY_COLUMN_USAGE  cu &apos;,
       &apos;ON tc.table_schema=cu.table_schema and tc.table_name=cu.table_name &apos;,
       &apos;and tc.constraint_name=cu.constraint_name &apos;,
-      &apos;and tc.constraint_type=\&apos;PRIMARY KEY\&apos;) pk &apos;,
+      &apos;and tc.CONSTRAINT_TYPE=\&apos;PRIMARY KEY\&apos;) pk &apos;,
       &apos;ON pk.table_schema=c.table_schema &apos;,
       &apos;AND pk.table_name=c.table_name &apos;,
       &apos;AND pk.column_name=c.column_name &apos;,

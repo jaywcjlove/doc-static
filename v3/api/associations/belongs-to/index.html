@@ -7,15 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  <link rel="canonical" href="http://docs.sequelizejs.com/api/associations/belongs-to/">
   <link rel="shortcut icon" href="../../../favicon.ico">
   
   <title>BelongsTo (1:1) - Sequelize | The Node.js / io.js ORM for PostgreSQL, MySQL, SQLite and MSSQL</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-  <link href="../../../css/custom.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../../css/custom.css" rel="stylesheet" />
   
   <script>
     // Current page data
@@ -26,7 +27,7 @@
   
   <script src="../../../js/jquery-2.1.1.min.js" defer></script>
   <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -37,6 +38,7 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href="../../.." class="icon icon-home"> Sequelize | The Node.js / io.js ORM for PostgreSQL, MySQL, SQLite and MSSQL</a>
         <div role="search">
@@ -47,178 +49,93 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../../..">Home</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Documentation</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../../docs/getting-started/">Getting Started</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Documentation</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../docs/getting-started/">Getting Started</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../docs/schema/">Working with table schemas</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Models</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../docs/models-definition/">Definition</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../../../docs/schema/">Working with table schemas</a>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">Models</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../../docs/models-definition/">Definition</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../../docs/models-usage/">Usage</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../../docs/models-usage/">Usage</a>
                 </li>
     </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../docs/querying/">Querying</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../docs/scopes/">Scopes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../docs/instances/">Instances</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../docs/associations/">Relations / Associations</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../docs/hooks/">Hooks</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../docs/transactions/">Transactions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../docs/legacy/">Working with legacy tables</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../docs/raw-queries/">Raw queries</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../docs/migrations/">Migrations</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../../sequelize/">Sequelize</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../model/">Model</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../instance/">Instance</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Associations</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../">Overview</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../../../docs/querying/">Querying</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../../docs/scopes/">Scopes</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../../docs/instances/">Instances</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../../docs/associations/">Relations / Associations</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../../docs/hooks/">Hooks</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../../docs/transactions/">Transactions</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../../docs/legacy/">Working with legacy tables</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../../docs/raw-queries/">Raw queries</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../../docs/migrations/">Migrations</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">API</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../sequelize/">Sequelize</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../model/">Model</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../instance/">Instance</a>
-                </li>
-                <li class=" current">
-                    
-    <span class="caption-text">Associations</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../">Overview</a>
-                </li>
-                <li class="toctree-l3 current">
-                    
-    <a class="current" href="./">BelongsTo (1:1)</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l4"><a href="#mixin-belongsto">Mixin BelongsTo</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l5" href="#getassociationoptions-promiseltinstancegt">getAssociation([options]) -&gt; Promise.&lt;Instance&gt;</a></li>
-        
-            <li><a class="toctree-l5" href="#setassociationnewassociation-options-promise">setAssociation([newAssociation], [options]) -&gt; Promise</a></li>
-        
-            <li><a class="toctree-l5" href="#createassociationvalues-options-promise">createAssociation([values], [options]) -&gt; Promise</a></li>
-        
-        </ul>
-    
-
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">BelongsTo (1:1)</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#getassociationoptions-promiseinstance">getAssociation([options]) -&gt; Promise.&lt;Instance&gt;</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#setassociationnewassociation-options-promise">setAssociation([newAssociation], [options]) -&gt; Promise</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#createassociationvalues-options-promise">createAssociation([values], [options]) -&gt; Promise</a>
+    </li>
     </ul>
                 </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../has-one/">HasOne (1:1)</a>
+                <li class="toctree-l2"><a class="reference internal" href="../has-one/">HasOne (1:1)</a>
                 </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../has-many/">HasMany (1:m)</a>
+                <li class="toctree-l2"><a class="reference internal" href="../has-many/">HasMany (1:m)</a>
                 </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../belongs-to-many/">BelongsToMany (n:m)</a>
+                <li class="toctree-l2"><a class="reference internal" href="../belongs-to-many/">BelongsToMany (n:m)</a>
                 </li>
     </ul>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../hooks/">Hooks</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../transaction/">Transaction</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../datatypes/">Datatypes</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../deferrable/">Deferrable</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../errors/">Errors</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Misc</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../../changelog/">Changelog</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../../imprint/">Imprint</a>
-                </li>
-    </ul>
-	    </li>
-          
-        </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../hooks/">Hooks</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../transaction/">Transaction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../datatypes/">Datatypes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../deferrable/">Deferrable</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../errors/">Errors</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Misc</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../changelog/">Changelog</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../imprint/">Imprint</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -254,6 +171,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -261,13 +179,13 @@
               
                 <p><a name="belongsto"></a></p>
 <h1 id="mixin-belongsto">Mixin BelongsTo</h1>
-<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/associations/belongs-to.js#L17">View code</a></p>
+<p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/associations/belongs-to.js#L17">View code</a></p>
 <p>One-to-one association</p>
 <p>In the API reference below, replace <code>Assocation</code> with the actual name of your association, e.g. for <code>User.belongsTo(Project)</code> the getter will be <code>user.getProject()</code>.</p>
 <hr />
 <p><a name="getassociation"></a></p>
-<h2 id="getassociationoptions-promiseltinstancegt"><code>getAssociation([options])</code> -&gt; <code>Promise.&lt;Instance&gt;</code></h2>
-<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/associations/belongs-to.js#L84">View code</a></p>
+<h2 id="getassociationoptions-promiseinstance"><code>getAssociation([options])</code> -&gt; <code>Promise.&lt;Instance&gt;</code></h2>
+<p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/associations/belongs-to.js#L83">View code</a></p>
 <p>Get the associated instance.</p>
 <p><strong>Params:</strong></p>
 <table>
@@ -299,7 +217,7 @@
 <hr />
 <p><a name="setassociation"></a></p>
 <h2 id="setassociationnewassociation-options-promise"><code>setAssociation([newAssociation], [options])</code> -&gt; <code>Promise</code></h2>
-<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/associations/belongs-to.js#L94">View code</a></p>
+<p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/associations/belongs-to.js#L93">View code</a></p>
 <p>Set the associated model.</p>
 <p><strong>Params:</strong></p>
 <table>
@@ -314,7 +232,7 @@
 <tr>
 <td>[newAssociation]</td>
 <td>Instance &#124; String &#124; Number</td>
-<td>An persisted instance or the primary key of an instance to associate with this. Pass <code>null</code> or <code>undefined</code> to remove the association.</td>
+<td>An instance or the primary key of an instance to associate with this. Pass <code>null</code> or <code>undefined</code> to remove the association.</td>
 </tr>
 <tr>
 <td>[options]</td>
@@ -331,7 +249,7 @@
 <hr />
 <p><a name="createassociation"></a></p>
 <h2 id="createassociationvalues-options-promise"><code>createAssociation([values], [options])</code> -&gt; <code>Promise</code></h2>
-<p><a href="https://github.com/sequelize/sequelize/blob/0ed8f92f81b76d414db70e8695886c3330ca4059/lib/associations/belongs-to.js#L103">View code</a></p>
+<p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/associations/belongs-to.js#L102">View code</a></p>
 <p>Create a new instance of the associated model and associate it with this.</p>
 <p><strong>Params:</strong></p>
 <table>
@@ -379,7 +297,7 @@
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -389,7 +307,7 @@
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
           <a href="https://github.com/sequelize/sequelize/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
@@ -406,6 +324,11 @@
     <script src="../../../js/theme.js" defer></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js" defer></script>
       <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>

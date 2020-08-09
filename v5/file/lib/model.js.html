@@ -81,6 +81,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/associations/belongs-to.js~BelongsTo.html">BelongsTo</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/associations/has-many.js~HasMany.html">HasMany</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/associations/has-one.js~HasOne.html">HasOne</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#dialects-sqlite">dialects/sqlite</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-describeTable">describeTable</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#errors">errors</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/errors/association-error.js~AssociationError.html">AssociationError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/errors/base-error.js~BaseError.html">BaseError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/errors/bulk-record-error.js~BulkRecordError.html">BulkRecordError</a></span></span></li>
@@ -661,7 +662,7 @@ class Model {
           include.subQuery = false;
         } else {
           include.subQueryFilter = false;
-          include.subQuery = include.subQuery || include.hasParentRequired &amp;&amp; include.hasRequired;
+          include.subQuery = include.subQuery || include.hasParentRequired &amp;&amp; include.hasRequired &amp;&amp; !include.separate;
         }
       }
 
@@ -724,7 +725,9 @@ class Model {
 
     // pseudo include just needed the attribute logic, return
     if (include._pseudo) {
-      include.attributes = Object.keys(include.model.tableAttributes);
+      if (!include.attributes) {
+        include.attributes = Object.keys(include.model.tableAttributes);
+      }
       return Utils.mapFinderOptions(include, include.model);
     }
 
@@ -2144,7 +2147,9 @@ class Model {
       if (options.include) {
         col = `${this.name}.${options.col || this.primaryKeyField}`;
       }
-
+      if (options.distinct &amp;&amp; col === &apos;*&apos;) {
+        col = this.primaryKeyField;
+      }
       options.plain = !options.group;
       options.dataType = new DataTypes.INTEGER();
       options.includeIgnoreAttributes = false;
@@ -2816,7 +2821,7 @@ class Model {
             // Get primary keys for postgres to enable updateOnDuplicate
             options.upsertKeys = _.chain(model.primaryKeys).values().map(&apos;field&apos;).value();
             if (Object.keys(model.uniqueKeys).length &gt; 0) {
-              options.upsertKeys = _.chain(model.uniqueKeys).values().filter(c =&gt; c.fields.length === 1).map(&apos;column&apos;).value();
+              options.upsertKeys = _.chain(model.uniqueKeys).values().filter(c =&gt; c.fields.length === 1).map(c =&gt; c.fields[0]).value();
             }
           }
 

@@ -381,7 +381,7 @@
                   "trailingComments": [
                     {
                       "type": "CommentBlock",
-                      "value": "*\n   * Removes unsupported SQLite options, i.e., UNSIGNED and ZEROFILL, for the integer data types.\n   *\n   * @param {Object} dataType The base integer data type.\n   * @private\n   ",
+                      "value": "*\n   * Removes unsupported SQLite options, i.e., UNSIGNED and ZEROFILL, for the integer data types.\n   *\n   * @param {object} dataType The base integer data type.\n   * @private\n   ",
                       "start": 147,
                       "end": 331,
                       "loc": {
@@ -1047,7 +1047,7 @@
                   "leadingComments": [
                     {
                       "type": "CommentBlock",
-                      "value": "*\n   * Removes unsupported SQLite options, i.e., UNSIGNED and ZEROFILL, for the integer data types.\n   *\n   * @param {Object} dataType The base integer data type.\n   * @private\n   ",
+                      "value": "*\n   * Removes unsupported SQLite options, i.e., UNSIGNED and ZEROFILL, for the integer data types.\n   *\n   * @param {object} dataType The base integer data type.\n   * @private\n   ",
                       "start": 147,
                       "end": 331,
                       "loc": {
@@ -13072,7 +13072,7 @@
   "comments": [
     {
       "type": "CommentBlock",
-      "value": "*\n   * Removes unsupported SQLite options, i.e., UNSIGNED and ZEROFILL, for the integer data types.\n   *\n   * @param {Object} dataType The base integer data type.\n   * @private\n   ",
+      "value": "*\n   * Removes unsupported SQLite options, i.e., UNSIGNED and ZEROFILL, for the integer data types.\n   *\n   * @param {object} dataType The base integer data type.\n   * @private\n   ",
       "start": 147,
       "end": 331,
       "loc": {
@@ -13791,7 +13791,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Removes unsupported SQLite options, i.e., UNSIGNED and ZEROFILL, for the integer data types.\n   *\n   * @param {Object} dataType The base integer data type.\n   * @private\n   ",
+      "value": "*\n   * Removes unsupported SQLite options, i.e., UNSIGNED and ZEROFILL, for the integer data types.\n   *\n   * @param {object} dataType The base integer data type.\n   * @private\n   ",
       "start": 147,
       "end": 331,
       "loc": {

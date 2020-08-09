@@ -12,6 +12,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "sequelize/lib/errors/aggregate-error.js~aggregateerror",
+    "class/lib/errors/aggregate-error.js~AggregateError.html",
+    "<span>AggregateError</span> <span class=\"search-result-import-path\">sequelize/lib/errors/aggregate-error.js</span>",
+    "class"
+  ],
+  [
     "sequelize/lib/associations/base.js~association",
     "class/lib/associations/base.js~Association.html",
     "<span>Association</span> <span class=\"search-result-import-path\">sequelize/lib/associations/base.js</span>",
@@ -21,6 +27,12 @@ window.esdocSearchIndex = [
     "sequelize/lib/errors/association-error.js~associationerror",
     "class/lib/errors/association-error.js~AssociationError.html",
     "<span>AssociationError</span> <span class=\"search-result-import-path\">sequelize/lib/errors/association-error.js</span>",
+    "class"
+  ],
+  [
+    "sequelize/lib/dialects/mssql/async-queue.js~asyncqueueerror",
+    "class/lib/dialects/mssql/async-queue.js~AsyncQueueError.html",
+    "<span>AsyncQueueError</span> <span class=\"search-result-import-path\">sequelize/lib/dialects/mssql/async-queue.js</span>",
     "class"
   ],
   [
@@ -282,9 +294,21 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "sequelize/lib/dialects/mssql/query-interface.js~mssqlqueryinterface",
+    "class/lib/dialects/mssql/query-interface.js~MSSqlQueryInterface.html",
+    "<span>MSSqlQueryInterface</span> <span class=\"search-result-import-path\">sequelize/lib/dialects/mssql/query-interface.js</span>",
+    "class"
+  ],
+  [
     "sequelize/lib/model.js~model",
     "class/lib/model.js~Model.html",
     "<span>Model</span> <span class=\"search-result-import-path\">sequelize/lib/model.js</span>",
+    "class"
+  ],
+  [
+    "sequelize/lib/dialects/mysql/query-interface.js~mysqlqueryinterface",
+    "class/lib/dialects/mysql/query-interface.js~MySQLQueryInterface.html",
+    "<span>MySQLQueryInterface</span> <span class=\"search-result-import-path\">sequelize/lib/dialects/mysql/query-interface.js</span>",
     "class"
   ],
   [
@@ -312,15 +336,21 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "sequelize/lib/dialects/postgres/query-interface.js~postgresqueryinterface",
+    "class/lib/dialects/postgres/query-interface.js~PostgresQueryInterface.html",
+    "<span>PostgresQueryInterface</span> <span class=\"search-result-import-path\">sequelize/lib/dialects/postgres/query-interface.js</span>",
+    "class"
+  ],
+  [
     "sequelize/lib/errors/query-error.js~queryerror",
     "class/lib/errors/query-error.js~QueryError.html",
     "<span>QueryError</span> <span class=\"search-result-import-path\">sequelize/lib/errors/query-error.js</span>",
     "class"
   ],
   [
-    "sequelize/lib/query-interface.js~queryinterface",
-    "class/lib/query-interface.js~QueryInterface.html",
-    "<span>QueryInterface</span> <span class=\"search-result-import-path\">sequelize/lib/query-interface.js</span>",
+    "sequelize/lib/dialects/abstract/query-interface.js~queryinterface",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html",
+    "<span>QueryInterface</span> <span class=\"search-result-import-path\">sequelize/lib/dialects/abstract/query-interface.js</span>",
     "class"
   ],
   [
@@ -345,6 +375,12 @@ window.esdocSearchIndex = [
     "sequelize/lib/data-types.js~smallint",
     "class/lib/data-types.js~SMALLINT.html",
     "<span>SMALLINT</span> <span class=\"search-result-import-path\">sequelize/lib/data-types.js</span>",
+    "class"
+  ],
+  [
+    "sequelize/lib/dialects/sqlite/query-interface.js~sqlitequeryinterface",
+    "class/lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface.html",
+    "<span>SQLiteQueryInterface</span> <span class=\"search-result-import-path\">sequelize/lib/dialects/sqlite/query-interface.js</span>",
     "class"
   ],
   [
@@ -1062,6 +1098,180 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "lib/dialects/abstract/query-interface.js",
+    "file/lib/dialects/abstract/query-interface.js.html",
+    "lib/dialects/abstract/query-interface.js",
+    "file"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#addcolumn",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-addColumn",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#addColumn",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#addconstraint",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-addConstraint",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#addConstraint",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#addindex",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-addIndex",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#addIndex",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#bulkdelete",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-bulkDelete",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#bulkDelete",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#bulkinsert",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-bulkInsert",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#bulkInsert",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#bulkupdate",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-bulkUpdate",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#bulkUpdate",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#changecolumn",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-changeColumn",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#changeColumn",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#createdatabase",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-createDatabase",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#createDatabase",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#createfunction",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-createFunction",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#createFunction",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#createschema",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-createSchema",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#createSchema",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#createtable",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-createTable",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#createTable",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#describetable",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-describeTable",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#describeTable",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#dropallschemas",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-dropAllSchemas",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#dropAllSchemas",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#dropalltables",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-dropAllTables",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#dropAllTables",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#dropdatabase",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-dropDatabase",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#dropDatabase",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#dropfunction",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-dropFunction",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#dropFunction",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#dropschema",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-dropSchema",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#dropSchema",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#droptable",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-dropTable",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#dropTable",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#getforeignkeyreferencesfortable",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-getForeignKeyReferencesForTable",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#getForeignKeyReferencesForTable",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#getforeignkeysfortables",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-getForeignKeysForTables",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#getForeignKeysForTables",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#removecolumn",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-removeColumn",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#removeColumn",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#removeconstraint",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-removeConstraint",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#removeConstraint",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#removeindex",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-removeIndex",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#removeIndex",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#renamecolumn",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-renameColumn",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#renameColumn",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#renamefunction",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-renameFunction",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#renameFunction",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#renametable",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-renameTable",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#renameTable",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#showallschemas",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-showAllSchemas",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#showAllSchemas",
+    "method"
+  ],
+  [
+    "lib/dialects/abstract/query-interface.js~queryinterface#upsert",
+    "class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-upsert",
+    "lib/dialects/abstract/query-interface.js~QueryInterface#upsert",
+    "method"
+  ],
+  [
     "lib/dialects/abstract/query.js",
     "file/lib/dialects/abstract/query.js.html",
     "lib/dialects/abstract/query.js",
@@ -1098,6 +1308,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "lib/dialects/mssql/async-queue.js",
+    "file/lib/dialects/mssql/async-queue.js.html",
+    "lib/dialects/mssql/async-queue.js",
+    "file"
+  ],
+  [
     "lib/dialects/mssql/connection-manager.js",
     "file/lib/dialects/mssql/connection-manager.js.html",
     "lib/dialects/mssql/connection-manager.js",
@@ -1128,15 +1344,21 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "lib/dialects/mssql/query-interface.js~mssqlqueryinterface#removecolumn",
+    "class/lib/dialects/mssql/query-interface.js~MSSqlQueryInterface.html#instance-method-removeColumn",
+    "lib/dialects/mssql/query-interface.js~MSSqlQueryInterface#removeColumn",
+    "method"
+  ],
+  [
+    "lib/dialects/mssql/query-interface.js~mssqlqueryinterface#upsert",
+    "class/lib/dialects/mssql/query-interface.js~MSSqlQueryInterface.html#instance-method-upsert",
+    "lib/dialects/mssql/query-interface.js~MSSqlQueryInterface#upsert",
+    "method"
+  ],
+  [
     "lib/dialects/mssql/query.js",
     "file/lib/dialects/mssql/query.js.html",
     "lib/dialects/mssql/query.js",
-    "file"
-  ],
-  [
-    "lib/dialects/mssql/resource-lock.js",
-    "file/lib/dialects/mssql/resource-lock.js.html",
-    "lib/dialects/mssql/resource-lock.js",
     "file"
   ],
   [
@@ -1168,6 +1390,24 @@ window.esdocSearchIndex = [
     "file/lib/dialects/mysql/query-interface.js.html",
     "lib/dialects/mysql/query-interface.js",
     "file"
+  ],
+  [
+    "lib/dialects/mysql/query-interface.js~mysqlqueryinterface#removecolumn",
+    "class/lib/dialects/mysql/query-interface.js~MySQLQueryInterface.html#instance-method-removeColumn",
+    "lib/dialects/mysql/query-interface.js~MySQLQueryInterface#removeColumn",
+    "method"
+  ],
+  [
+    "lib/dialects/mysql/query-interface.js~mysqlqueryinterface#removeconstraint",
+    "class/lib/dialects/mysql/query-interface.js~MySQLQueryInterface.html#instance-method-removeConstraint",
+    "lib/dialects/mysql/query-interface.js~MySQLQueryInterface#removeConstraint",
+    "method"
+  ],
+  [
+    "lib/dialects/mysql/query-interface.js~mysqlqueryinterface#upsert",
+    "class/lib/dialects/mysql/query-interface.js~MySQLQueryInterface.html#instance-method-upsert",
+    "lib/dialects/mysql/query-interface.js~MySQLQueryInterface#upsert",
+    "method"
   ],
   [
     "lib/dialects/mysql/query.js",
@@ -1218,6 +1458,36 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "lib/dialects/postgres/query-interface.js~postgresqueryinterface#dropallenums",
+    "class/lib/dialects/postgres/query-interface.js~PostgresQueryInterface.html#instance-method-dropAllEnums",
+    "lib/dialects/postgres/query-interface.js~PostgresQueryInterface#dropAllEnums",
+    "method"
+  ],
+  [
+    "lib/dialects/postgres/query-interface.js~postgresqueryinterface#dropenum",
+    "class/lib/dialects/postgres/query-interface.js~PostgresQueryInterface.html#instance-method-dropEnum",
+    "lib/dialects/postgres/query-interface.js~PostgresQueryInterface#dropEnum",
+    "method"
+  ],
+  [
+    "lib/dialects/postgres/query-interface.js~postgresqueryinterface#droptable",
+    "class/lib/dialects/postgres/query-interface.js~PostgresQueryInterface.html#instance-method-dropTable",
+    "lib/dialects/postgres/query-interface.js~PostgresQueryInterface#dropTable",
+    "method"
+  ],
+  [
+    "lib/dialects/postgres/query-interface.js~postgresqueryinterface#getforeignkeyreferencesfortable",
+    "class/lib/dialects/postgres/query-interface.js~PostgresQueryInterface.html#instance-method-getForeignKeyReferencesForTable",
+    "lib/dialects/postgres/query-interface.js~PostgresQueryInterface#getForeignKeyReferencesForTable",
+    "method"
+  ],
+  [
+    "lib/dialects/postgres/query-interface.js~postgresqueryinterface#pglistenums",
+    "class/lib/dialects/postgres/query-interface.js~PostgresQueryInterface.html#instance-method-pgListEnums",
+    "lib/dialects/postgres/query-interface.js~PostgresQueryInterface#pgListEnums",
+    "method"
+  ],
+  [
     "lib/dialects/postgres/query.js",
     "file/lib/dialects/postgres/query.js.html",
     "lib/dialects/postgres/query.js",
@@ -1260,9 +1530,63 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "lib/dialects/sqlite/query-interface.js~sqlitequeryinterface#addconstraint",
+    "class/lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface.html#instance-method-addConstraint",
+    "lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface#addConstraint",
+    "method"
+  ],
+  [
+    "lib/dialects/sqlite/query-interface.js~sqlitequeryinterface#changecolumn",
+    "class/lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface.html#instance-method-changeColumn",
+    "lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface#changeColumn",
+    "method"
+  ],
+  [
+    "lib/dialects/sqlite/query-interface.js~sqlitequeryinterface#describetable",
+    "class/lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface.html#instance-method-describeTable",
+    "lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface#describeTable",
+    "method"
+  ],
+  [
+    "lib/dialects/sqlite/query-interface.js~sqlitequeryinterface#dropalltables",
+    "class/lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface.html#instance-method-dropAllTables",
+    "lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface#dropAllTables",
+    "method"
+  ],
+  [
+    "lib/dialects/sqlite/query-interface.js~sqlitequeryinterface#getforeignkeyreferencesfortable",
+    "class/lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface.html#instance-method-getForeignKeyReferencesForTable",
+    "lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface#getForeignKeyReferencesForTable",
+    "method"
+  ],
+  [
+    "lib/dialects/sqlite/query-interface.js~sqlitequeryinterface#removecolumn",
+    "class/lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface.html#instance-method-removeColumn",
+    "lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface#removeColumn",
+    "method"
+  ],
+  [
+    "lib/dialects/sqlite/query-interface.js~sqlitequeryinterface#removeconstraint",
+    "class/lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface.html#instance-method-removeConstraint",
+    "lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface#removeConstraint",
+    "method"
+  ],
+  [
+    "lib/dialects/sqlite/query-interface.js~sqlitequeryinterface#renamecolumn",
+    "class/lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface.html#instance-method-renameColumn",
+    "lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface#renameColumn",
+    "method"
+  ],
+  [
     "lib/dialects/sqlite/query.js",
     "file/lib/dialects/sqlite/query.js.html",
     "lib/dialects/sqlite/query.js",
+    "file"
+  ],
+  [
+    "lib/errors/aggregate-error.js",
+    "file/lib/errors/aggregate-error.js.html",
+    "lib/errors/aggregate-error.js",
     "file"
   ],
   [
@@ -1914,180 +2238,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "lib/promise.js",
-    "file/lib/promise.js.html",
-    "lib/promise.js",
-    "file"
-  ],
-  [
-    "lib/query-interface.js",
-    "file/lib/query-interface.js.html",
-    "lib/query-interface.js",
-    "file"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#addcolumn",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-addColumn",
-    "lib/query-interface.js~QueryInterface#addColumn",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#addconstraint",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-addConstraint",
-    "lib/query-interface.js~QueryInterface#addConstraint",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#addindex",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-addIndex",
-    "lib/query-interface.js~QueryInterface#addIndex",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#bulkdelete",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-bulkDelete",
-    "lib/query-interface.js~QueryInterface#bulkDelete",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#bulkinsert",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-bulkInsert",
-    "lib/query-interface.js~QueryInterface#bulkInsert",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#bulkupdate",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-bulkUpdate",
-    "lib/query-interface.js~QueryInterface#bulkUpdate",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#changecolumn",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-changeColumn",
-    "lib/query-interface.js~QueryInterface#changeColumn",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#createdatabase",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-createDatabase",
-    "lib/query-interface.js~QueryInterface#createDatabase",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#createfunction",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-createFunction",
-    "lib/query-interface.js~QueryInterface#createFunction",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#createschema",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-createSchema",
-    "lib/query-interface.js~QueryInterface#createSchema",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#createtable",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-createTable",
-    "lib/query-interface.js~QueryInterface#createTable",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#describetable",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-describeTable",
-    "lib/query-interface.js~QueryInterface#describeTable",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#dropallschemas",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-dropAllSchemas",
-    "lib/query-interface.js~QueryInterface#dropAllSchemas",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#dropalltables",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-dropAllTables",
-    "lib/query-interface.js~QueryInterface#dropAllTables",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#dropdatabase",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-dropDatabase",
-    "lib/query-interface.js~QueryInterface#dropDatabase",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#dropfunction",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-dropFunction",
-    "lib/query-interface.js~QueryInterface#dropFunction",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#dropschema",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-dropSchema",
-    "lib/query-interface.js~QueryInterface#dropSchema",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#droptable",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-dropTable",
-    "lib/query-interface.js~QueryInterface#dropTable",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#getforeignkeyreferencesfortable",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-getForeignKeyReferencesForTable",
-    "lib/query-interface.js~QueryInterface#getForeignKeyReferencesForTable",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#removecolumn",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-removeColumn",
-    "lib/query-interface.js~QueryInterface#removeColumn",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#removeconstraint",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-removeConstraint",
-    "lib/query-interface.js~QueryInterface#removeConstraint",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#removeindex",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-removeIndex",
-    "lib/query-interface.js~QueryInterface#removeIndex",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#renamecolumn",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-renameColumn",
-    "lib/query-interface.js~QueryInterface#renameColumn",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#renamefunction",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-renameFunction",
-    "lib/query-interface.js~QueryInterface#renameFunction",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#renametable",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-renameTable",
-    "lib/query-interface.js~QueryInterface#renameTable",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#showallschemas",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-showAllSchemas",
-    "lib/query-interface.js~QueryInterface#showAllSchemas",
-    "method"
-  ],
-  [
-    "lib/query-interface.js~queryinterface#upsert",
-    "class/lib/query-interface.js~QueryInterface.html#instance-method-upsert",
-    "lib/query-interface.js~QueryInterface#upsert",
-    "method"
-  ],
-  [
     "lib/query-types.js",
     "file/lib/query-types.js.html",
     "lib/query-types.js",
@@ -2169,12 +2319,6 @@ window.esdocSearchIndex = [
     "lib/sequelize.js~sequelize#getqueryinterface",
     "class/lib/sequelize.js~Sequelize.html#instance-method-getQueryInterface",
     "lib/sequelize.js~Sequelize#getQueryInterface",
-    "method"
-  ],
-  [
-    "lib/sequelize.js~sequelize#import",
-    "class/lib/sequelize.js~Sequelize.html#instance-method-import",
-    "lib/sequelize.js~Sequelize#import",
     "method"
   ],
   [
@@ -2364,15 +2508,21 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "lib/utils/classtoinvokable.js",
-    "file/lib/utils/classToInvokable.js.html",
-    "lib/utils/classToInvokable.js",
+    "lib/utils/class-to-invokable.js",
+    "file/lib/utils/class-to-invokable.js.html",
+    "lib/utils/class-to-invokable.js",
     "file"
   ],
   [
     "lib/utils/deprecations.js",
     "file/lib/utils/deprecations.js.html",
     "lib/utils/deprecations.js",
+    "file"
+  ],
+  [
+    "lib/utils/join-sql-fragments.js",
+    "file/lib/utils/join-sql-fragments.js.html",
+    "lib/utils/join-sql-fragments.js",
     "file"
   ],
   [

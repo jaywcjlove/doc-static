@@ -7,15 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  <link rel="canonical" href="http://docs.sequelizejs.com/docs/models-usage/">
   <link rel="shortcut icon" href="../../favicon.ico">
   
   <title>Usage - Sequelize | The Node.js / io.js ORM for PostgreSQL, MySQL, SQLite and MSSQL</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-  <link href="../../css/custom.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../../css/custom.css" rel="stylesheet" />
   
   <script>
     // Current page data
@@ -26,7 +27,7 @@
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
   <script src="../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
@@ -37,6 +38,7 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href="../.." class="icon icon-home"> Sequelize | The Node.js / io.js ORM for PostgreSQL, MySQL, SQLite and MSSQL</a>
         <div role="search">
@@ -47,209 +49,109 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../..">Home</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Documentation</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../getting-started/">Getting Started</a>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Documentation</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../getting-started/">Getting Started</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../schema/">Working with table schemas</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Models</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../models-definition/">Definition</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../schema/">Working with table schemas</a>
-                </li>
-                <li class=" current">
-                    
-    <span class="caption-text">Models</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../models-definition/">Definition</a>
-                </li>
-                <li class="toctree-l3 current">
-                    
-    <a class="current" href="./">Usage</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l4"><a href="#data-retrieval-finders">Data retrieval / Finders</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l5" href="#find-search-for-one-specific-element-in-the-database">find - Search for one specific element in the database</a></li>
-        
-            <li><a class="toctree-l5" href="#findorcreate-search-for-a-specific-element-or-create-it-if-not-available">findOrCreate - Search for a specific element or create it if not available</a></li>
-        
-            <li><a class="toctree-l5" href="#findandcountall-search-for-multiple-elements-in-the-database-returns-both-data-and-total-count">findAndCountAll - Search for multiple elements in the database, returns both data and total count</a></li>
-        
-            <li><a class="toctree-l5" href="#findall-search-for-multiple-elements-in-the-database">findAll - Search for multiple elements in the database</a></li>
-        
-            <li><a class="toctree-l5" href="#complex-filtering-or-not-queries">Complex filtering / OR / NOT queries</a></li>
-        
-            <li><a class="toctree-l5" href="#manipulating-the-dataset-with-limit-offset-order-and-group">Manipulating the dataset with limit, offset, order and group</a></li>
-        
-            <li><a class="toctree-l5" href="#raw-queries">Raw queries</a></li>
-        
-            <li><a class="toctree-l5" href="#count-count-the-occurrences-of-elements-in-the-database">count - Count the occurrences of elements in the database</a></li>
-        
-            <li><a class="toctree-l5" href="#max-get-the-greatest-value-of-a-specific-attribute-within-a-specific-table">max - Get the greatest value of a specific attribute within a specific table</a></li>
-        
-            <li><a class="toctree-l5" href="#min-get-the-least-value-of-a-specific-attribute-within-a-specific-table">min - Get the least value of a specific attribute within a specific table</a></li>
-        
-            <li><a class="toctree-l5" href="#sum-sum-the-value-of-specific-attributes">sum - Sum the value of specific attributes</a></li>
-        
-        </ul>
-    
-
-    <li class="toctree-l4"><a href="#eager-loading">Eager loading</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l5" href="#including-everything">Including everything</a></li>
-        
-            <li><a class="toctree-l5" href="#including-soft-deleted-records">Including soft deleted records</a></li>
-        
-            <li><a class="toctree-l5" href="#ordering-eager-loaded-associations">Ordering Eager Loaded Associations</a></li>
-        
-            <li><a class="toctree-l5" href="#nested-eager-loading">Nested eager loading</a></li>
-        
-        </ul>
-    
-
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Usage</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#find-search-for-one-specific-element-in-the-database">find - Search for one specific element in the database</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#findorcreate-search-for-a-specific-element-or-create-it-if-not-available">findOrCreate - Search for a specific element or create it if not available</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#findandcountall-search-for-multiple-elements-in-the-database-returns-both-data-and-total-count">findAndCountAll - Search for multiple elements in the database, returns both data and total count</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#findall-search-for-multiple-elements-in-the-database">findAll - Search for multiple elements in the database</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#complex-filtering-or-not-queries">Complex filtering / OR / NOT queries</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#manipulating-the-dataset-with-limit-offset-order-and-group">Manipulating the dataset with limit, offset, order and group</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#raw-queries">Raw queries</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#count-count-the-occurrences-of-elements-in-the-database">count - Count the occurrences of elements in the database</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#max-get-the-greatest-value-of-a-specific-attribute-within-a-specific-table">max - Get the greatest value of a specific attribute within a specific table</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#min-get-the-least-value-of-a-specific-attribute-within-a-specific-table">min - Get the least value of a specific attribute within a specific table</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sum-sum-the-value-of-specific-attributes">sum - Sum the value of specific attributes</a>
+    </li>
     </ul>
                 </li>
     </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../querying/">Querying</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../scopes/">Scopes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../instances/">Instances</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../associations/">Relations / Associations</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../hooks/">Hooks</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../transactions/">Transactions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../legacy/">Working with legacy tables</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../raw-queries/">Raw queries</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../migrations/">Migrations</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api/sequelize/">Sequelize</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api/model/">Model</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api/instance/">Instance</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Associations</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../api/associations/">Overview</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../querying/">Querying</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../api/associations/belongs-to/">BelongsTo (1:1)</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../scopes/">Scopes</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../api/associations/has-one/">HasOne (1:1)</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../instances/">Instances</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../api/associations/has-many/">HasMany (1:m)</a>
                 </li>
-                <li class="">
-                    
-    <a class="" href="../associations/">Relations / Associations</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../hooks/">Hooks</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../transactions/">Transactions</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../legacy/">Working with legacy tables</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../raw-queries/">Raw queries</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../migrations/">Migrations</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">API</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../api/sequelize/">Sequelize</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../api/model/">Model</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../api/instance/">Instance</a>
-                </li>
-                <li class="">
-                    
-    <span class="caption-text">Associations</span>
-    <ul class="subnav">
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../api/associations/">Overview</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../api/associations/belongs-to/">BelongsTo (1:1)</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../api/associations/has-one/">HasOne (1:1)</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../api/associations/has-many/">HasMany (1:m)</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../../api/associations/belongs-to-many/">BelongsToMany (n:m)</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../api/associations/belongs-to-many/">BelongsToMany (n:m)</a>
                 </li>
     </ul>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../api/hooks/">Hooks</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../api/transaction/">Transaction</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../api/datatypes/">Datatypes</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../api/deferrable/">Deferrable</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../api/errors/">Errors</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Misc</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../changelog/">Changelog</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../../imprint/">Imprint</a>
-                </li>
-    </ul>
-	    </li>
-          
-        </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api/hooks/">Hooks</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api/transaction/">Transaction</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api/datatypes/">Datatypes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api/deferrable/">Deferrable</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../api/errors/">Errors</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Misc</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../changelog/">Changelog</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../imprint/">Imprint</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -285,6 +187,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -891,7 +794,7 @@ Company.findAll({
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
         </div>
@@ -901,7 +804,7 @@ Company.findAll({
 
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
           <a href="https://github.com/sequelize/sequelize/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
@@ -918,6 +821,11 @@ Company.findAll({
     <script src="../../js/theme.js" defer></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js" defer></script>
       <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>

@@ -19947,7 +19947,7 @@
     "longname": "lib/dialects/sqlite/query.js~Query#parseConstraintsFromSql",
     "access": null,
     "description": null,
-    "lineNumber": 303,
+    "lineNumber": 311,
     "undocument": true,
     "unknown": [
       {
@@ -19980,7 +19980,7 @@
     "longname": "lib/dialects/sqlite/query.js~Query#applyParsers",
     "access": null,
     "description": null,
-    "lineNumber": 353,
+    "lineNumber": 361,
     "undocument": true,
     "unknown": [
       {
@@ -20019,7 +20019,7 @@
     "longname": "lib/dialects/sqlite/query.js~Query#formatError",
     "access": null,
     "description": null,
-    "lineNumber": 368,
+    "lineNumber": 376,
     "undocument": true,
     "unknown": [
       {
@@ -20052,7 +20052,7 @@
     "longname": "lib/dialects/sqlite/query.js~Query#handleShowIndexesQuery",
     "access": null,
     "description": null,
-    "lineNumber": 427,
+    "lineNumber": 435,
     "undocument": true,
     "unknown": [
       {
@@ -20085,7 +20085,7 @@
     "longname": "lib/dialects/sqlite/query.js~Query#getDatabaseMethod",
     "access": null,
     "description": null,
-    "lineNumber": 449,
+    "lineNumber": 457,
     "undocument": true,
     "unknown": [
       {

@@ -6,7 +6,7 @@
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<link rel="stylesheet" href="./inject/css/0-style.css"><link rel="stylesheet" href="./inject/css/0-theme.css"><meta name="description" content="An easy-to-use multi SQL dialect ORM for Node.js"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Sequelize"><meta property="twitter:description" content="An easy-to-use multi SQL dialect ORM for Node.js"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><link rel="stylesheet" href="./inject/css/0-theme.css"><meta name="description" content="An easy-to-use multi SQL dialect ORM for Node.js"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Sequelize"><meta property="twitter:description" content="An easy-to-use multi SQL dialect ORM for Node.js"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -28,7 +28,7 @@
       </a>
     </header>
 
-<nav class="navigation" data-ice="nav"><div>
+<nav class="navigation" data-ice="nav"><button id="navigationHamburger" class="hamburger" type="button"><span class="line"></span><span class="line"></span><span class="line"></span></button><div>
   <ul>
     
   
@@ -67,7 +67,6 @@
 
 
 <li data-ice="doc" style="margin-top: 15px;"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/model.js~Model.html">Model</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/query-interface.js~QueryInterface.html">QueryInterface</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/sequelize.js~Sequelize.html">Sequelize</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/transaction.js~Transaction.html">Transaction</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-DataTypes">DataTypes</a></span></span></li>
@@ -81,7 +80,14 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/associations/belongs-to.js~BelongsTo.html">BelongsTo</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/associations/has-many.js~HasMany.html">HasMany</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/associations/has-one.js~HasOne.html">HasOne</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#errors">errors</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/errors/association-error.js~AssociationError.html">AssociationError</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#dialects-abstract">dialects/abstract</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/dialects/abstract/query-interface.js~QueryInterface.html">QueryInterface</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#dialects-mssql">dialects/mssql</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/dialects/mssql/async-queue.js~AsyncQueueError.html">AsyncQueueError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/dialects/mssql/query-interface.js~MSSqlQueryInterface.html">MSSqlQueryInterface</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#dialects-mysql">dialects/mysql</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/dialects/mysql/query-interface.js~MySQLQueryInterface.html">MySQLQueryInterface</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#dialects-postgres">dialects/postgres</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/dialects/postgres/query-interface.js~PostgresQueryInterface.html">PostgresQueryInterface</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#dialects-sqlite">dialects/sqlite</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/dialects/sqlite/query-interface.js~SQLiteQueryInterface.html">SQLiteQueryInterface</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#errors">errors</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/errors/aggregate-error.js~AggregateError.html">AggregateError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/errors/association-error.js~AssociationError.html">AssociationError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/errors/base-error.js~BaseError.html">BaseError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/errors/bulk-record-error.js~BulkRecordError.html">BulkRecordError</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/errors/connection-error.js~ConnectionError.html">ConnectionError</a></span></span></li>
@@ -117,7 +123,7 @@
   
   
   
-  <span data-ice="source">| <span><a href="file/lib/data-types.js.html#lineNumber52">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/lib/data-types.js.html#lineNumber53">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -208,7 +214,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/data-types.js.html#lineNumber57">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/data-types.js.html#lineNumber58">source</a></span></span>
     </span>
   </h3>
 
@@ -283,4 +289,30 @@
 <script src="script/patch-for-local.js"></script>
 
 
-</body></html>
+<script>'use strict';
+
+(() => {
+  function toggleNavigationBar() {
+    const navigationElements = document.getElementsByClassName('navigation');
+    for (let i = 0; i < navigationElements.length; ++i) {
+      const navigationElement = navigationElements[i];
+      navigationElement.classList.toggle('open');
+    }
+  }
+
+  // Hamburger button - toggles the navigation bar
+  const hamburger = document.getElementById('navigationHamburger');
+  hamburger.addEventListener('click', () => {
+    toggleNavigationBar();
+  });
+
+  // Each link in the navigation bar - closes the navigation bar
+  const navigationLinks = document.querySelectorAll('.navigation a');
+  for (let i = 0; i < navigationLinks.length; ++i) {
+    const linkElement = navigationLinks[i];
+    linkElement.addEventListener('click', () => {
+      toggleNavigationBar();
+    });
+  }
+})();
+</script></body></html>
