@@ -1,130 +1,130 @@
-<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="JavaScript, Linter, Linting, Pluggable, Configurable, Code Quality"><meta name="description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="theme-color" content="#463fd4"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="ESLint - Pluggable JavaScript linter"><meta property="og:title" content="lines-around-comment - Rules"><meta property="og:url" content="/docs/3.0.0/rules/lines-around-comment"><meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png"><meta name="twitter:site" content="@geteslint"><meta name="twitter:title" content="lines-around-comment - Rules"><meta name="twitter:description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="twitter:url" content="/docs/3.0.0/rules/lines-around-comment"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://eslint.org/assets/img/favicon.512x512.png"><title>lines-around-comment - Rules - ESLint - Pluggable JavaScript linter</title><link rel="preconnect" href="https://www.google-analytics.com"><link rel="canonical" href="/docs/3.0.0/rules/lines-around-comment"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"><link rel="stylesheet" href="/assets/styles/main.css"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/assets/img/favicon.512x512.png"><link rel="alternate" type="application/rss+xml" title="ESLint - Pluggable JavaScript linter" href="/feed.xml"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"></head><body><input type="checkbox" id="eslint-toggle-search" class="eslint-toggle-search-checkbox"><header class="navbar navbar-default navbar-demo navbar-fixed-top eslint-nav" id="top" role="banner"><div class="container"><a href="/" class="navbar-brand"><img alt="ESLint" src="/assets/img/logo.svg" itemprop="image">ESLint</a><div class="eslint-navbar-toggles"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#eslint-navbar" aria-controls="eslint-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label></div><nav id="eslint-navbar" class="collapse navbar-collapse eslint-navbar"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="/docs/user-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/user-guide/getting-started">Getting Started</a></li><li><a href="/docs/user-guide/configuring">Configuring ESLint</a></li><li><a href="/docs/user-guide/command-line-interface">Command Line Interface</a></li><li><a href="/docs/rules">Rules</a></li><li><a href="/docs/user-guide/formatters">Formatters</a></li><li><a href="/docs/user-guide/integrations">Integrations</a></li><li class="divider"></li><li><a href="/docs/user-guide/migrating-to-7.0.0">Migrating to v7.0.0</a></li><li><a href="/docs/user-guide/migrating-to-6.0.0">Migrating to v6.0.0</a></li><li><a href="/docs/user-guide/migrating-to-5.0.0">Migrating to v5.0.0</a></li><li><a href="/docs/user-guide/migrating-to-4.0.0">Migrating to v4.0.0</a></li><li><a href="/docs/user-guide/migrating-to-3.0.0">Migrating to v3.0.0</a></li><li><a href="/docs/user-guide/migrating-to-2.0.0">Migrating to v2.0.0</a></li><li><a href="/docs/user-guide/migrating-to-1.0.0">Migrating to v1.0.0</a></li><li><a href="/docs/user-guide/migrating-from-jscs">Migrating from JSCS</a></li></ul></li><li class="dropdown"><a href="/docs/developer-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/developer-guide/architecture">Architecture</a></li><li><a href="/docs/developer-guide/contributing">Contributing</a></li><li><a href="/docs/developer-guide/source-code">Get the Source Code</a></li><li><a href="/docs/developer-guide/development-environment">Set up a Development Environment</a></li><li><a href="/docs/developer-guide/unit-tests">Run the Unit Tests</a></li><li><a href="/docs/developer-guide/working-with-rules">Working with Rules</a></li><li><a href="/docs/developer-guide/working-with-plugins">Working with Plugins</a></li><li><a href="/docs/developer-guide/working-with-custom-formatters">Working with Custom Formatters</a></li><li><a href="/docs/developer-guide/working-with-custom-parsers">Working with Custom Parsers</a></li><li><a href="/docs/developer-guide/shareable-configs">Shareable Configs</a></li><li><a href="/docs/developer-guide/nodejs-api">Node.js API</a></li><li><a href="/docs/maintainer-guide">Maintainer guide</a></li></ul></li><li><a href="/blog">Blog</a></li><li><a href="/demo">Demo</a></li><li class="dropdown"><a href="/docs/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/users">Who's Using ESLint?</a></li><li><a href="/team">About the Team</a></li><li><a href="/docs/about">About ESLint</a></li></ul></li></ul><label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label><div class="navbar-form navbar-right eslint-search" role="search"><div class="input-group"><label class="sr-only" aria-label="Search" for="eslint-search-input">Search</label><div class="eslint-search-input-wrapper"><input type="text" class="form-control" id="eslint-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search the docs..."> <label for="eslint-toggle-search" class="eslint-toggle-search-close"><span class="sr-only">Close search</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></div></div></div></nav></div></header><main class="doc"><article class="container"><h1>require empty lines around comments (lines-around-comment)</h1><p class="fixable icon">The <code>--fix</code> option on the <a href="../user-guide/command-line-interface#fix">command line</a> can automatically fix some of the problems reported by this rule.</p><p>Many style guides require empty lines before or after comments. The primary goal of these rules is to make the comments easier to read and improve readability of the code.</p><h2>Rule Details</h2><p>This rule requires empty lines before and/or after comments. It can be enabled separately for both block (<code>/*</code>) and line (<code>//</code>) comments. This rule does not apply to comments that appear on the same line as code and does not require empty lines at the beginning or end of a file.</p><h2>Options</h2><p>This rule has an object option:</p><ul><li><code>&quot;beforeBlockComment&quot;: true</code> (default) requires an empty line before block comments</li><li><code>&quot;afterBlockComment&quot;: true</code> requires an empty line after block comments</li><li><code>&quot;beforeLineComment&quot;: true</code> requires an empty line before line comments</li><li><code>&quot;afterLineComment&quot;: true</code> requires an empty line after line comments</li><li><code>&quot;allowBlockStart&quot;: true</code> allows comments to appear at the start of block statements</li><li><code>&quot;allowBlockEnd&quot;: true</code> allows comments to appear at the end of block statements</li><li><code>&quot;allowObjectStart&quot;: true</code> allows comments to appear at the start of object literals</li><li><code>&quot;allowObjectEnd&quot;: true</code> allows comments to appear at the end of object literals</li><li><code>&quot;allowArrayStart&quot;: true</code> allows comments to appear at the start of array literals</li><li><code>&quot;allowArrayEnd&quot;: true</code> allows comments to appear at the end of array literals</li><li><code>&quot;applyDefaultIgnorePatterns&quot;</code> enables or disables the default comment patterns to be ignored by the rule</li><li><code>&quot;ignorePattern&quot;</code> custom patterns to be ignored by the rule</li></ul><h3>beforeBlockComment</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the default <code>{ &quot;beforeBlockComment&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "beforeBlockComment": true }]*/</span>
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="JavaScript, Linter, Linting, Pluggable, Configurable, Code Quality"><meta name="description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="theme-color" content="#463fd4"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="ESLint - Pluggable JavaScript linter"><meta property="og:title" content="lines-around-comment - Rules"><meta property="og:url" content="/docs/3.0.0/rules/lines-around-comment"><meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png"><meta name="twitter:site" content="@geteslint"><meta name="twitter:title" content="lines-around-comment - Rules"><meta name="twitter:description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="twitter:url" content="/docs/3.0.0/rules/lines-around-comment"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://eslint.org/assets/img/favicon.512x512.png"><title>lines-around-comment - Rules - ESLint - Pluggable JavaScript linter</title><link rel="preconnect" href="https://www.google-analytics.com"><link rel="canonical" href="/docs/3.0.0/rules/lines-around-comment"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"><link rel="stylesheet" href="/assets/styles/main.css"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/assets/img/favicon.512x512.png"><link rel="alternate" type="application/rss+xml" title="ESLint - Pluggable JavaScript linter" href="/feed.xml"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"></head><body class="banner-displayed"><input type="checkbox" id="eslint-toggle-search" class="eslint-toggle-search-checkbox"><header class="navbar navbar-default navbar-demo navbar-fixed-top eslint-nav" id="top" role="banner"><div class="eslint-banner" style="color: #ffffff; background-color: #150b29"><p><a href="https://code2040-2020.funraise.org/" style="color: #a486df">Donate to Code2040</a></p></div><div class="container"><a href="/" class="navbar-brand"><img alt="ESLint" src="/assets/img/logo.svg" itemprop="image">ESLint</a><div class="eslint-navbar-toggles"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#eslint-navbar" aria-controls="eslint-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label></div><nav id="eslint-navbar" class="collapse navbar-collapse eslint-navbar"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="/docs/user-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/user-guide/getting-started">Getting Started</a></li><li><a href="/docs/user-guide/configuring">Configuring ESLint</a></li><li><a href="/docs/user-guide/command-line-interface">Command Line Interface</a></li><li><a href="/docs/rules">Rules</a></li><li><a href="/docs/user-guide/formatters">Formatters</a></li><li><a href="/docs/user-guide/integrations">Integrations</a></li><li class="divider"></li><li><a href="/docs/user-guide/migrating-to-7.0.0">Migrating to v7.0.0</a></li><li><a href="/docs/user-guide/migrating-to-6.0.0">Migrating to v6.0.0</a></li><li><a href="/docs/user-guide/migrating-to-5.0.0">Migrating to v5.0.0</a></li><li><a href="/docs/user-guide/migrating-to-4.0.0">Migrating to v4.0.0</a></li><li><a href="/docs/user-guide/migrating-to-3.0.0">Migrating to v3.0.0</a></li><li><a href="/docs/user-guide/migrating-to-2.0.0">Migrating to v2.0.0</a></li><li><a href="/docs/user-guide/migrating-to-1.0.0">Migrating to v1.0.0</a></li><li><a href="/docs/user-guide/migrating-from-jscs">Migrating from JSCS</a></li></ul></li><li class="dropdown"><a href="/docs/developer-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/developer-guide/architecture">Architecture</a></li><li><a href="/docs/developer-guide/contributing">Contributing</a></li><li><a href="/docs/developer-guide/source-code">Get the Source Code</a></li><li><a href="/docs/developer-guide/development-environment">Set up a Development Environment</a></li><li><a href="/docs/developer-guide/unit-tests">Run the Unit Tests</a></li><li><a href="/docs/developer-guide/working-with-rules">Working with Rules</a></li><li><a href="/docs/developer-guide/working-with-plugins">Working with Plugins</a></li><li><a href="/docs/developer-guide/working-with-custom-formatters">Working with Custom Formatters</a></li><li><a href="/docs/developer-guide/working-with-custom-parsers">Working with Custom Parsers</a></li><li><a href="/docs/developer-guide/shareable-configs">Shareable Configs</a></li><li><a href="/docs/developer-guide/nodejs-api">Node.js API</a></li><li><a href="/docs/maintainer-guide">Maintainer guide</a></li></ul></li><li><a href="/blog">Blog</a></li><li><a href="/demo">Demo</a></li><li class="dropdown"><a href="/docs/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/users">Who's Using ESLint?</a></li><li><a href="/team">About the Team</a></li><li><a href="/docs/about">About ESLint</a></li></ul></li></ul><label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label><div class="navbar-form navbar-right eslint-search" role="search"><div class="input-group"><label class="sr-only" aria-label="Search" for="eslint-search-input">Search</label><div class="eslint-search-input-wrapper"><input type="text" class="form-control" id="eslint-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search the docs..."> <label for="eslint-toggle-search" class="eslint-toggle-search-close"><span class="sr-only">Close search</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></div></div></div></nav></div></header><main class="doc"><article class="container"><h1 id="require-empty-lines-around-comments-lines-around-comment-2">require empty lines around comments (lines-around-comment)</h1><p class="fixable icon">The <code>--fix</code> option on the <a href="../user-guide/command-line-interface#fix">command line</a> can automatically fix some of the problems reported by this rule.</p><p>Many style guides require empty lines before or after comments. The primary goal of these rules is to make the comments easier to read and improve readability of the code.</p><h2 id="rule-details-1354">Rule Details</h2><p>This rule requires empty lines before and/or after comments. It can be enabled separately for both block (<code>/*</code>) and line (<code>//</code>) comments. This rule does not apply to comments that appear on the same line as code and does not require empty lines at the beginning or end of a file.</p><h2 id="options-582">Options</h2><p>This rule has an object option:</p><ul><li><code>&quot;beforeBlockComment&quot;: true</code> (default) requires an empty line before block comments</li><li><code>&quot;afterBlockComment&quot;: true</code> requires an empty line after block comments</li><li><code>&quot;beforeLineComment&quot;: true</code> requires an empty line before line comments</li><li><code>&quot;afterLineComment&quot;: true</code> requires an empty line after line comments</li><li><code>&quot;allowBlockStart&quot;: true</code> allows comments to appear at the start of block statements</li><li><code>&quot;allowBlockEnd&quot;: true</code> allows comments to appear at the end of block statements</li><li><code>&quot;allowObjectStart&quot;: true</code> allows comments to appear at the start of object literals</li><li><code>&quot;allowObjectEnd&quot;: true</code> allows comments to appear at the end of object literals</li><li><code>&quot;allowArrayStart&quot;: true</code> allows comments to appear at the start of array literals</li><li><code>&quot;allowArrayEnd&quot;: true</code> allows comments to appear at the end of array literals</li><li><code>&quot;applyDefaultIgnorePatterns&quot;</code> enables or disables the default comment patterns to be ignored by the rule</li><li><code>&quot;ignorePattern&quot;</code> custom patterns to be ignored by the rule</li></ul><h3 id="beforeblockcomment-2">beforeBlockComment</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the default <code>{ &quot;beforeBlockComment&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;beforeBlockComment&quot;: true }]*/</span>
 
-<span class="hljs-keyword">var</span> night = <span class="hljs-string">"long"</span>;
+<span class="hljs-keyword">var</span> night = <span class="hljs-string">&quot;long&quot;</span>;
 <span class="hljs-comment">/* what a great and wonderful day */</span>
-<span class="hljs-keyword">var</span> day = <span class="hljs-string">"great"</span>
-</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the default <code>{ &quot;beforeBlockComment&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "beforeBlockComment": true }]*/</span>
+<span class="hljs-keyword">var</span> day = <span class="hljs-string">&quot;great&quot;</span>
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the default <code>{ &quot;beforeBlockComment&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;beforeBlockComment&quot;: true }]*/</span>
 
-<span class="hljs-keyword">var</span> night = <span class="hljs-string">"long"</span>;
-
-<span class="hljs-comment">/* what a great and wonderful day */</span>
-<span class="hljs-keyword">var</span> day = <span class="hljs-string">"great"</span>
-</code></pre><h3>afterBlockComment</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>{ &quot;afterBlockComment&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "afterBlockComment": true }]*/</span>
-
-<span class="hljs-keyword">var</span> night = <span class="hljs-string">"long"</span>;
+<span class="hljs-keyword">var</span> night = <span class="hljs-string">&quot;long&quot;</span>;
 
 <span class="hljs-comment">/* what a great and wonderful day */</span>
-<span class="hljs-keyword">var</span> day = <span class="hljs-string">"great"</span>
-</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;afterBlockComment&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "afterBlockComment": true }]*/</span>
+<span class="hljs-keyword">var</span> day = <span class="hljs-string">&quot;great&quot;</span>
+</code></pre><h3 id="afterblockcomment-2">afterBlockComment</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>{ &quot;afterBlockComment&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;afterBlockComment&quot;: true }]*/</span>
 
-<span class="hljs-keyword">var</span> night = <span class="hljs-string">"long"</span>;
+<span class="hljs-keyword">var</span> night = <span class="hljs-string">&quot;long&quot;</span>;
+
+<span class="hljs-comment">/* what a great and wonderful day */</span>
+<span class="hljs-keyword">var</span> day = <span class="hljs-string">&quot;great&quot;</span>
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;afterBlockComment&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;afterBlockComment&quot;: true }]*/</span>
+
+<span class="hljs-keyword">var</span> night = <span class="hljs-string">&quot;long&quot;</span>;
 
 <span class="hljs-comment">/* what a great and wonderful day */</span>
 
-<span class="hljs-keyword">var</span> day = <span class="hljs-string">"great"</span>
-</code></pre><h3>beforeLineComment</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>{ &quot;beforeLineComment&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "beforeLineComment": true }]*/</span>
+<span class="hljs-keyword">var</span> day = <span class="hljs-string">&quot;great&quot;</span>
+</code></pre><h3 id="beforelinecomment-2">beforeLineComment</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>{ &quot;beforeLineComment&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;beforeLineComment&quot;: true }]*/</span>
 
-<span class="hljs-keyword">var</span> night = <span class="hljs-string">"long"</span>;
+<span class="hljs-keyword">var</span> night = <span class="hljs-string">&quot;long&quot;</span>;
 <span class="hljs-comment">// what a great and wonderful day</span>
-<span class="hljs-keyword">var</span> day = <span class="hljs-string">"great"</span>
-</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;beforeLineComment&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "beforeLineComment": true }]*/</span>
+<span class="hljs-keyword">var</span> day = <span class="hljs-string">&quot;great&quot;</span>
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;beforeLineComment&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;beforeLineComment&quot;: true }]*/</span>
 
-<span class="hljs-keyword">var</span> night = <span class="hljs-string">"long"</span>;
+<span class="hljs-keyword">var</span> night = <span class="hljs-string">&quot;long&quot;</span>;
 
 <span class="hljs-comment">// what a great and wonderful day</span>
-<span class="hljs-keyword">var</span> day = <span class="hljs-string">"great"</span>
-</code></pre><h3>afterLineComment</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>{ &quot;afterLineComment&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "afterLineComment": true }]*/</span>
+<span class="hljs-keyword">var</span> day = <span class="hljs-string">&quot;great&quot;</span>
+</code></pre><h3 id="afterlinecomment-2">afterLineComment</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>{ &quot;afterLineComment&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;afterLineComment&quot;: true }]*/</span>
 
-<span class="hljs-keyword">var</span> night = <span class="hljs-string">"long"</span>;
+<span class="hljs-keyword">var</span> night = <span class="hljs-string">&quot;long&quot;</span>;
 <span class="hljs-comment">// what a great and wonderful day</span>
-<span class="hljs-keyword">var</span> day = <span class="hljs-string">"great"</span>
-</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;afterLineComment&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "afterLineComment": true }]*/</span>
+<span class="hljs-keyword">var</span> day = <span class="hljs-string">&quot;great&quot;</span>
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;afterLineComment&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;afterLineComment&quot;: true }]*/</span>
 
-<span class="hljs-keyword">var</span> night = <span class="hljs-string">"long"</span>;
+<span class="hljs-keyword">var</span> night = <span class="hljs-string">&quot;long&quot;</span>;
 <span class="hljs-comment">// what a great and wonderful day</span>
 
-<span class="hljs-keyword">var</span> day = <span class="hljs-string">"great"</span>
-</code></pre><h3>allowBlockStart</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;beforeLineComment&quot;: true, &quot;allowBlockStart&quot;: true }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "beforeLineComment": true, "allowBlockStart": true }]*/</span>
+<span class="hljs-keyword">var</span> day = <span class="hljs-string">&quot;great&quot;</span>
+</code></pre><h3 id="allowblockstart-2">allowBlockStart</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;beforeLineComment&quot;: true, &quot;allowBlockStart&quot;: true }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;beforeLineComment&quot;: true, &quot;allowBlockStart&quot;: true }]*/</span>
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>{
     <span class="hljs-comment">// what a great and wonderful day</span>
-    <span class="hljs-keyword">var</span> day = <span class="hljs-string">"great"</span>
+    <span class="hljs-keyword">var</span> day = <span class="hljs-string">&quot;great&quot;</span>
     <span class="hljs-keyword">return</span> day;
 }
-</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;beforeBlockComment&quot;: true, &quot;allowBlockStart&quot;: true }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "beforeBlockComment": true, "allowBlockStart": true }]*/</span>
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;beforeBlockComment&quot;: true, &quot;allowBlockStart&quot;: true }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;beforeBlockComment&quot;: true, &quot;allowBlockStart&quot;: true }]*/</span>
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>{
     <span class="hljs-comment">/* what a great and wonderful day */</span>
-    <span class="hljs-keyword">var</span> day = <span class="hljs-string">"great"</span>
+    <span class="hljs-keyword">var</span> day = <span class="hljs-string">&quot;great&quot;</span>
     <span class="hljs-keyword">return</span> day;
 }
-</code></pre><h3>allowBlockEnd</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;afterLineComment&quot;: true, &quot;allowBlockEnd&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "afterLineComment": true, "allowBlockEnd": true }]*/</span>
+</code></pre><h3 id="allowblockend-2">allowBlockEnd</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;afterLineComment&quot;: true, &quot;allowBlockEnd&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;afterLineComment&quot;: true, &quot;allowBlockEnd&quot;: true }]*/</span>
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>{
-    <span class="hljs-keyword">var</span> day = <span class="hljs-string">"great"</span>
+    <span class="hljs-keyword">var</span> day = <span class="hljs-string">&quot;great&quot;</span>
     <span class="hljs-keyword">return</span> day;
     <span class="hljs-comment">// what a great and wonderful day</span>
 }
-</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;afterBlockComment&quot;: true, &quot;allowBlockEnd&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "afterBlockComment": true, "allowBlockEnd": true }]*/</span>
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;afterBlockComment&quot;: true, &quot;allowBlockEnd&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;afterBlockComment&quot;: true, &quot;allowBlockEnd&quot;: true }]*/</span>
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)</span>{
-    <span class="hljs-keyword">var</span> day = <span class="hljs-string">"great"</span>
+    <span class="hljs-keyword">var</span> day = <span class="hljs-string">&quot;great&quot;</span>
     <span class="hljs-keyword">return</span> day;
 
     <span class="hljs-comment">/* what a great and wonderful day */</span>
 }
-</code></pre><h3>allowObjectStart</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;beforeLineComment&quot;: true, &quot;allowObjectStart&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "beforeLineComment": true, "allowObjectStart": true }]*/</span>
+</code></pre><h3 id="allowobjectstart-2">allowObjectStart</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;beforeLineComment&quot;: true, &quot;allowObjectStart&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;beforeLineComment&quot;: true, &quot;allowObjectStart&quot;: true }]*/</span>
 
 <span class="hljs-keyword">var</span> foo = {
     <span class="hljs-comment">// what a great and wonderful day</span>
-    <span class="hljs-attr">day</span>: <span class="hljs-string">"great"</span>
+    <span class="hljs-attr">day</span>: <span class="hljs-string">&quot;great&quot;</span>
 };
 
 <span class="hljs-keyword">const</span> {
     <span class="hljs-comment">// what a great and wonderful day</span>
     <span class="hljs-attr">foo</span>: someDay
-} = {<span class="hljs-attr">foo</span>: <span class="hljs-string">"great"</span>};
+} = {<span class="hljs-attr">foo</span>: <span class="hljs-string">&quot;great&quot;</span>};
 
 <span class="hljs-keyword">const</span> {
     <span class="hljs-comment">// what a great and wonderful day</span>
     day
-} = {<span class="hljs-attr">day</span>: <span class="hljs-string">"great"</span>};
-</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;beforeBlockComment&quot;: true, &quot;allowObjectStart&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "beforeBlockComment": true, "allowObjectStart": true }]*/</span>
+} = {<span class="hljs-attr">day</span>: <span class="hljs-string">&quot;great&quot;</span>};
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;beforeBlockComment&quot;: true, &quot;allowObjectStart&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;beforeBlockComment&quot;: true, &quot;allowObjectStart&quot;: true }]*/</span>
 
 <span class="hljs-keyword">var</span> foo = {
     <span class="hljs-comment">/* what a great and wonderful day */</span>
-    <span class="hljs-attr">day</span>: <span class="hljs-string">"great"</span>
+    <span class="hljs-attr">day</span>: <span class="hljs-string">&quot;great&quot;</span>
 };
 
 <span class="hljs-keyword">const</span> {
     <span class="hljs-comment">/* what a great and wonderful day */</span>
     <span class="hljs-attr">foo</span>: someDay
-} = {<span class="hljs-attr">foo</span>: <span class="hljs-string">"great"</span>};
+} = {<span class="hljs-attr">foo</span>: <span class="hljs-string">&quot;great&quot;</span>};
 
 <span class="hljs-keyword">const</span> {
     <span class="hljs-comment">/* what a great and wonderful day */</span>
     day
-} = {<span class="hljs-attr">day</span>: <span class="hljs-string">"great"</span>};
-</code></pre><h3>allowObjectEnd</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;afterLineComment&quot;: true, &quot;allowObjectEnd&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "afterLineComment": true, "allowObjectEnd": true }]*/</span>
+} = {<span class="hljs-attr">day</span>: <span class="hljs-string">&quot;great&quot;</span>};
+</code></pre><h3 id="allowobjectend-2">allowObjectEnd</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;afterLineComment&quot;: true, &quot;allowObjectEnd&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;afterLineComment&quot;: true, &quot;allowObjectEnd&quot;: true }]*/</span>
 
 <span class="hljs-keyword">var</span> foo = {
-    <span class="hljs-attr">day</span>: <span class="hljs-string">"great"</span>
+    <span class="hljs-attr">day</span>: <span class="hljs-string">&quot;great&quot;</span>
     <span class="hljs-comment">// what a great and wonderful day</span>
 };
 
 <span class="hljs-keyword">const</span> {
     <span class="hljs-attr">foo</span>: someDay
     <span class="hljs-comment">// what a great and wonderful day</span>
-} = {<span class="hljs-attr">foo</span>: <span class="hljs-string">"great"</span>};
+} = {<span class="hljs-attr">foo</span>: <span class="hljs-string">&quot;great&quot;</span>};
 
 <span class="hljs-keyword">const</span> {
     day
     <span class="hljs-comment">// what a great and wonderful day</span>
-} = {<span class="hljs-attr">day</span>: <span class="hljs-string">"great"</span>};
-</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;afterBlockComment&quot;: true, &quot;allowObjectEnd&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "afterBlockComment": true, "allowObjectEnd": true }]*/</span>
+} = {<span class="hljs-attr">day</span>: <span class="hljs-string">&quot;great&quot;</span>};
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;afterBlockComment&quot;: true, &quot;allowObjectEnd&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;afterBlockComment&quot;: true, &quot;allowObjectEnd&quot;: true }]*/</span>
 
 <span class="hljs-keyword">var</span> foo = {
-    <span class="hljs-attr">day</span>: <span class="hljs-string">"great"</span>
+    <span class="hljs-attr">day</span>: <span class="hljs-string">&quot;great&quot;</span>
 
     <span class="hljs-comment">/* what a great and wonderful day */</span>
 };
@@ -133,54 +133,54 @@
     <span class="hljs-attr">foo</span>: someDay
 
     <span class="hljs-comment">/* what a great and wonderful day */</span>
-} = {<span class="hljs-attr">foo</span>: <span class="hljs-string">"great"</span>};
+} = {<span class="hljs-attr">foo</span>: <span class="hljs-string">&quot;great&quot;</span>};
 
 <span class="hljs-keyword">const</span> {
     day
 
     <span class="hljs-comment">/* what a great and wonderful day */</span>
-} = {<span class="hljs-attr">day</span>: <span class="hljs-string">"great"</span>};
-</code></pre><h3>allowArrayStart</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;beforeLineComment&quot;: true, &quot;allowArrayStart&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "beforeLineComment": true, "allowArrayStart": true }]*/</span>
+} = {<span class="hljs-attr">day</span>: <span class="hljs-string">&quot;great&quot;</span>};
+</code></pre><h3 id="allowarraystart-2">allowArrayStart</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;beforeLineComment&quot;: true, &quot;allowArrayStart&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;beforeLineComment&quot;: true, &quot;allowArrayStart&quot;: true }]*/</span>
 
 <span class="hljs-keyword">var</span> day = [
     <span class="hljs-comment">// what a great and wonderful day</span>
-    <span class="hljs-string">"great"</span>,
-    <span class="hljs-string">"wonderful"</span>
+    <span class="hljs-string">&quot;great&quot;</span>,
+    <span class="hljs-string">&quot;wonderful&quot;</span>
 ];
 
 <span class="hljs-keyword">const</span> [
     <span class="hljs-comment">// what a great and wonderful day</span>
     someDay
-] = [<span class="hljs-string">"great"</span>, <span class="hljs-string">"not great"</span>];
-</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;beforeBlockComment&quot;: true, &quot;allowArrayStart&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "beforeBlockComment": true, "allowArrayStart": true }]*/</span>
+] = [<span class="hljs-string">&quot;great&quot;</span>, <span class="hljs-string">&quot;not great&quot;</span>];
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;beforeBlockComment&quot;: true, &quot;allowArrayStart&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;beforeBlockComment&quot;: true, &quot;allowArrayStart&quot;: true }]*/</span>
 
 <span class="hljs-keyword">var</span> day = [
     <span class="hljs-comment">/* what a great and wonderful day */</span>
-    <span class="hljs-string">"great"</span>,
-    <span class="hljs-string">"wonderful"</span>
+    <span class="hljs-string">&quot;great&quot;</span>,
+    <span class="hljs-string">&quot;wonderful&quot;</span>
 ];
 
 <span class="hljs-keyword">const</span> [
     <span class="hljs-comment">/* what a great and wonderful day */</span>
     someDay
-] = [<span class="hljs-string">"great"</span>, <span class="hljs-string">"not great"</span>];
-</code></pre><h3>allowArrayEnd</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;afterLineComment&quot;: true, &quot;allowArrayEnd&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "afterLineComment": true, "allowArrayEnd": true }]*/</span>
+] = [<span class="hljs-string">&quot;great&quot;</span>, <span class="hljs-string">&quot;not great&quot;</span>];
+</code></pre><h3 id="allowarrayend-2">allowArrayEnd</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;afterLineComment&quot;: true, &quot;allowArrayEnd&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;afterLineComment&quot;: true, &quot;allowArrayEnd&quot;: true }]*/</span>
 
 <span class="hljs-keyword">var</span> day = [
-    <span class="hljs-string">"great"</span>,
-    <span class="hljs-string">"wonderful"</span>
+    <span class="hljs-string">&quot;great&quot;</span>,
+    <span class="hljs-string">&quot;wonderful&quot;</span>
     <span class="hljs-comment">// what a great and wonderful day</span>
 ];
 
 <span class="hljs-keyword">const</span> [
     someDay
     <span class="hljs-comment">// what a great and wonderful day</span>
-] = [<span class="hljs-string">"great"</span>, <span class="hljs-string">"not great"</span>];
-</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;afterBlockComment&quot;: true, &quot;allowArrayEnd&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "afterBlockComment": true, "allowArrayEnd": true }]*/</span>
+] = [<span class="hljs-string">&quot;great&quot;</span>, <span class="hljs-string">&quot;not great&quot;</span>];
+</code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;afterBlockComment&quot;: true, &quot;allowArrayEnd&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;afterBlockComment&quot;: true, &quot;allowArrayEnd&quot;: true }]*/</span>
 
 <span class="hljs-keyword">var</span> day = [
-    <span class="hljs-string">"great"</span>,
-    <span class="hljs-string">"wonderful"</span>
+    <span class="hljs-string">&quot;great&quot;</span>,
+    <span class="hljs-string">&quot;wonderful&quot;</span>
 
     <span class="hljs-comment">/* what a great and wonderful day */</span>
 ];
@@ -189,29 +189,29 @@
     someDay
 
     <span class="hljs-comment">/* what a great and wonderful day */</span>
-] = [<span class="hljs-string">"great"</span>, <span class="hljs-string">"not great"</span>];
-</code></pre><h3>ignorePattern</h3><p>By default this rule ignores comments starting with the following words: <code>eslint</code>, <code>jshint</code>, <code>jslint</code>, <code>istanbul</code>, <code>global</code>, <code>exported</code>, <code>jscs</code>. An alternative regular expression can be provided.</p><p class="correct icon">Examples of <strong>correct</strong> code for the <code>ignorePattern</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error"]*/</span>
+] = [<span class="hljs-string">&quot;great&quot;</span>, <span class="hljs-string">&quot;not great&quot;</span>];
+</code></pre><h3 id="ignorepattern-7">ignorePattern</h3><p>By default this rule ignores comments starting with the following words: <code>eslint</code>, <code>jshint</code>, <code>jslint</code>, <code>istanbul</code>, <code>global</code>, <code>exported</code>, <code>jscs</code>. An alternative regular expression can be provided.</p><p class="correct icon">Examples of <strong>correct</strong> code for the <code>ignorePattern</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;]*/</span>
 
 foo();
 <span class="hljs-comment">/* eslint mentioned in this comment */</span>,
 bar();
 
 
-<span class="hljs-comment">/*eslint lines-around-comment: ["error", { "ignorePattern": "pragma" }] */</span>
+<span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;ignorePattern&quot;: &quot;pragma&quot; }] */</span>
 
 foo();
 <span class="hljs-comment">/* a valid comment using pragma in it */</span>
-</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for the <code>ignorePattern</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "ignorePattern": "pragma" }] */</span>
+</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for the <code>ignorePattern</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;ignorePattern&quot;: &quot;pragma&quot; }] */</span>
 
 <span class="hljs-number">1</span> + <span class="hljs-number">1</span>;
 <span class="hljs-comment">/* something else */</span>
-</code></pre><h3>applyDefaultIgnorePatterns</h3><p>Default ignore patterns are applied even when <code>ignorePattern</code> is provided. If you want to omit default patterns, set this option to <code>false</code>.</p><p class="correct icon">Examples of <strong>correct</strong> code for the <code>{ &quot;applyDefaultIgnorePatterns&quot;: false }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "ignorePattern": "pragma", applyDefaultIgnorePatterns: false }] */</span>
+</code></pre><h3 id="applydefaultignorepatterns-3">applyDefaultIgnorePatterns</h3><p>Default ignore patterns are applied even when <code>ignorePattern</code> is provided. If you want to omit default patterns, set this option to <code>false</code>.</p><p class="correct icon">Examples of <strong>correct</strong> code for the <code>{ &quot;applyDefaultIgnorePatterns&quot;: false }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;ignorePattern&quot;: &quot;pragma&quot;, applyDefaultIgnorePatterns: false }] */</span>
 
 foo();
 <span class="hljs-comment">/* a valid comment using pragma in it */</span>
-</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for the <code>{ &quot;applyDefaultIgnorePatterns&quot;: false }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: ["error", { "applyDefaultIgnorePatterns": false }] */</span>
+</code></pre><p class="incorrect icon">Examples of <strong>incorrect</strong> code for the <code>{ &quot;applyDefaultIgnorePatterns&quot;: false }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint lines-around-comment: [&quot;error&quot;, { &quot;applyDefaultIgnorePatterns&quot;: false }] */</span>
 
 foo();
 <span class="hljs-comment">/* eslint mentioned in comment */</span>
 
-</code></pre><h2>When Not To Use It</h2><p>Many people enjoy a terser code style and don't mind comments bumping up against code. If you fall into that category this rule is not for you.</p><h2>Related Rules</h2><ul><li><a href="space-before-blocks">space-before-blocks</a></li><li><a href="spaced-comment">spaced-comment</a></li></ul><h2>Version</h2><p>This rule was introduced in ESLint 0.22.0.</p><h2>Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/lines-around-comment.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/lines-around-comment.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/website/edit/master/./docs/3.0.0/rules/lines-around-comment.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>
+</code></pre><h2 id="when-not-to-use-it-814">When Not To Use It</h2><p>Many people enjoy a terser code style and don't mind comments bumping up against code. If you fall into that category this rule is not for you.</p><h2 id="related-rules-426">Related Rules</h2><ul><li><a href="space-before-blocks">space-before-blocks</a></li><li><a href="spaced-comment">spaced-comment</a></li></ul><h2 id="version-1361">Version</h2><p>This rule was introduced in ESLint 0.22.0.</p><h2 id="resources-1361">Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/lines-around-comment.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/lines-around-comment.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/website/edit/master/./docs/3.0.0/rules/lines-around-comment.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>

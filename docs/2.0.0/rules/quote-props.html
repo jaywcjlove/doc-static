@@ -1,52 +1,52 @@
-<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="JavaScript, Linter, Linting, Pluggable, Configurable, Code Quality"><meta name="description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="theme-color" content="#463fd4"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="ESLint - Pluggable JavaScript linter"><meta property="og:title" content="Rule quote-props"><meta property="og:url" content="/docs/2.0.0/rules/quote-props"><meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png"><meta name="twitter:site" content="@geteslint"><meta name="twitter:title" content="Rule quote-props"><meta name="twitter:description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="twitter:url" content="/docs/2.0.0/rules/quote-props"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://eslint.org/assets/img/favicon.512x512.png"><title>Rule quote-props - ESLint - Pluggable JavaScript linter</title><link rel="preconnect" href="https://www.google-analytics.com"><link rel="canonical" href="/docs/2.0.0/rules/quote-props"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"><link rel="stylesheet" href="/assets/styles/main.css"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/assets/img/favicon.512x512.png"><link rel="alternate" type="application/rss+xml" title="ESLint - Pluggable JavaScript linter" href="/feed.xml"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"></head><body><input type="checkbox" id="eslint-toggle-search" class="eslint-toggle-search-checkbox"><header class="navbar navbar-default navbar-demo navbar-fixed-top eslint-nav" id="top" role="banner"><div class="container"><a href="/" class="navbar-brand"><img alt="ESLint" src="/assets/img/logo.svg" itemprop="image">ESLint</a><div class="eslint-navbar-toggles"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#eslint-navbar" aria-controls="eslint-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label></div><nav id="eslint-navbar" class="collapse navbar-collapse eslint-navbar"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="/docs/user-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/user-guide/getting-started">Getting Started</a></li><li><a href="/docs/user-guide/configuring">Configuring ESLint</a></li><li><a href="/docs/user-guide/command-line-interface">Command Line Interface</a></li><li><a href="/docs/rules">Rules</a></li><li><a href="/docs/user-guide/formatters">Formatters</a></li><li><a href="/docs/user-guide/integrations">Integrations</a></li><li class="divider"></li><li><a href="/docs/user-guide/migrating-to-7.0.0">Migrating to v7.0.0</a></li><li><a href="/docs/user-guide/migrating-to-6.0.0">Migrating to v6.0.0</a></li><li><a href="/docs/user-guide/migrating-to-5.0.0">Migrating to v5.0.0</a></li><li><a href="/docs/user-guide/migrating-to-4.0.0">Migrating to v4.0.0</a></li><li><a href="/docs/user-guide/migrating-to-3.0.0">Migrating to v3.0.0</a></li><li><a href="/docs/user-guide/migrating-to-2.0.0">Migrating to v2.0.0</a></li><li><a href="/docs/user-guide/migrating-to-1.0.0">Migrating to v1.0.0</a></li><li><a href="/docs/user-guide/migrating-from-jscs">Migrating from JSCS</a></li></ul></li><li class="dropdown"><a href="/docs/developer-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/developer-guide/architecture">Architecture</a></li><li><a href="/docs/developer-guide/contributing">Contributing</a></li><li><a href="/docs/developer-guide/source-code">Get the Source Code</a></li><li><a href="/docs/developer-guide/development-environment">Set up a Development Environment</a></li><li><a href="/docs/developer-guide/unit-tests">Run the Unit Tests</a></li><li><a href="/docs/developer-guide/working-with-rules">Working with Rules</a></li><li><a href="/docs/developer-guide/working-with-plugins">Working with Plugins</a></li><li><a href="/docs/developer-guide/working-with-custom-formatters">Working with Custom Formatters</a></li><li><a href="/docs/developer-guide/working-with-custom-parsers">Working with Custom Parsers</a></li><li><a href="/docs/developer-guide/shareable-configs">Shareable Configs</a></li><li><a href="/docs/developer-guide/nodejs-api">Node.js API</a></li><li><a href="/docs/maintainer-guide">Maintainer guide</a></li></ul></li><li><a href="/blog">Blog</a></li><li><a href="/demo">Demo</a></li><li class="dropdown"><a href="/docs/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/users">Who's Using ESLint?</a></li><li><a href="/team">About the Team</a></li><li><a href="/docs/about">About ESLint</a></li></ul></li></ul><label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label><div class="navbar-form navbar-right eslint-search" role="search"><div class="input-group"><label class="sr-only" aria-label="Search" for="eslint-search-input">Search</label><div class="eslint-search-input-wrapper"><input type="text" class="form-control" id="eslint-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search the docs..."> <label for="eslint-toggle-search" class="eslint-toggle-search-close"><span class="sr-only">Close search</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></div></div></div></nav></div></header><main class="doc"><article class="container"><h1>Quoting Style for Property Names (quote-props)</h1><p>Object literal property names can be defined in two ways: using literals or using strings. For example, these two objects are equivalent:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> object1 = {
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="JavaScript, Linter, Linting, Pluggable, Configurable, Code Quality"><meta name="description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="theme-color" content="#463fd4"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="ESLint - Pluggable JavaScript linter"><meta property="og:title" content="Rule quote-props"><meta property="og:url" content="/docs/2.0.0/rules/quote-props"><meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png"><meta name="twitter:site" content="@geteslint"><meta name="twitter:title" content="Rule quote-props"><meta name="twitter:description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="twitter:url" content="/docs/2.0.0/rules/quote-props"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://eslint.org/assets/img/favicon.512x512.png"><title>Rule quote-props - ESLint - Pluggable JavaScript linter</title><link rel="preconnect" href="https://www.google-analytics.com"><link rel="canonical" href="/docs/2.0.0/rules/quote-props"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"><link rel="stylesheet" href="/assets/styles/main.css"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/assets/img/favicon.512x512.png"><link rel="alternate" type="application/rss+xml" title="ESLint - Pluggable JavaScript linter" href="/feed.xml"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"></head><body class="banner-displayed"><input type="checkbox" id="eslint-toggle-search" class="eslint-toggle-search-checkbox"><header class="navbar navbar-default navbar-demo navbar-fixed-top eslint-nav" id="top" role="banner"><div class="eslint-banner" style="color: #ffffff; background-color: #150b29"><p><a href="https://code2040-2020.funraise.org/" style="color: #a486df">Donate to Code2040</a></p></div><div class="container"><a href="/" class="navbar-brand"><img alt="ESLint" src="/assets/img/logo.svg" itemprop="image">ESLint</a><div class="eslint-navbar-toggles"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#eslint-navbar" aria-controls="eslint-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label></div><nav id="eslint-navbar" class="collapse navbar-collapse eslint-navbar"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="/docs/user-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/user-guide/getting-started">Getting Started</a></li><li><a href="/docs/user-guide/configuring">Configuring ESLint</a></li><li><a href="/docs/user-guide/command-line-interface">Command Line Interface</a></li><li><a href="/docs/rules">Rules</a></li><li><a href="/docs/user-guide/formatters">Formatters</a></li><li><a href="/docs/user-guide/integrations">Integrations</a></li><li class="divider"></li><li><a href="/docs/user-guide/migrating-to-7.0.0">Migrating to v7.0.0</a></li><li><a href="/docs/user-guide/migrating-to-6.0.0">Migrating to v6.0.0</a></li><li><a href="/docs/user-guide/migrating-to-5.0.0">Migrating to v5.0.0</a></li><li><a href="/docs/user-guide/migrating-to-4.0.0">Migrating to v4.0.0</a></li><li><a href="/docs/user-guide/migrating-to-3.0.0">Migrating to v3.0.0</a></li><li><a href="/docs/user-guide/migrating-to-2.0.0">Migrating to v2.0.0</a></li><li><a href="/docs/user-guide/migrating-to-1.0.0">Migrating to v1.0.0</a></li><li><a href="/docs/user-guide/migrating-from-jscs">Migrating from JSCS</a></li></ul></li><li class="dropdown"><a href="/docs/developer-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/developer-guide/architecture">Architecture</a></li><li><a href="/docs/developer-guide/contributing">Contributing</a></li><li><a href="/docs/developer-guide/source-code">Get the Source Code</a></li><li><a href="/docs/developer-guide/development-environment">Set up a Development Environment</a></li><li><a href="/docs/developer-guide/unit-tests">Run the Unit Tests</a></li><li><a href="/docs/developer-guide/working-with-rules">Working with Rules</a></li><li><a href="/docs/developer-guide/working-with-plugins">Working with Plugins</a></li><li><a href="/docs/developer-guide/working-with-custom-formatters">Working with Custom Formatters</a></li><li><a href="/docs/developer-guide/working-with-custom-parsers">Working with Custom Parsers</a></li><li><a href="/docs/developer-guide/shareable-configs">Shareable Configs</a></li><li><a href="/docs/developer-guide/nodejs-api">Node.js API</a></li><li><a href="/docs/maintainer-guide">Maintainer guide</a></li></ul></li><li><a href="/blog">Blog</a></li><li><a href="/demo">Demo</a></li><li class="dropdown"><a href="/docs/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/users">Who's Using ESLint?</a></li><li><a href="/team">About the Team</a></li><li><a href="/docs/about">About ESLint</a></li></ul></li></ul><label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label><div class="navbar-form navbar-right eslint-search" role="search"><div class="input-group"><label class="sr-only" aria-label="Search" for="eslint-search-input">Search</label><div class="eslint-search-input-wrapper"><input type="text" class="form-control" id="eslint-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search the docs..."> <label for="eslint-toggle-search" class="eslint-toggle-search-close"><span class="sr-only">Close search</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></div></div></div></nav></div></header><main class="doc"><article class="container"><h1 id="quoting-style-for-property-names-quote-props-3">Quoting Style for Property Names (quote-props)</h1><p>Object literal property names can be defined in two ways: using literals or using strings. For example, these two objects are equivalent:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> object1 = {
     <span class="hljs-attr">property</span>: <span class="hljs-literal">true</span>
 };
 
 <span class="hljs-keyword">var</span> object2 = {
-    <span class="hljs-string">"property"</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-string">&quot;property&quot;</span>: <span class="hljs-literal">true</span>
 };
 </code></pre><p>In many cases, it doesn't matter if you choose to use an identifier instead of a string or vice-versa. Even so, you might decide to enforce a consistent style in your code.</p><p>There are, however, some occasions when you must use quotes:</p><ol><li>If you are using an ECMAScript 3 JavaScript engine (such as IE8) and you want to use a keyword (such as <code>if</code>) as a property name. This restriction was removed in ECMAScript 5.</li><li>You want to use a non-identifier character in your property name, such as having a property with a space like <code>&quot;one two&quot;</code>.</li></ol><p>Another example where quotes do matter is when using numeric literals as property keys:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> object = {
     <span class="hljs-number">1e2</span>: <span class="hljs-number">1</span>,
     <span class="hljs-number">100</span>: <span class="hljs-number">2</span>
 };
-</code></pre><p>This may look alright at first sight, but this code in fact throws a syntax error in ECMAScript 5 strict mode. This happens because <code>1e2</code> and <code>100</code> are coerced into strings before getting used as the property name. Both <code>String(1e2)</code> and <code>String(100)</code> happen to be equal to <code>&quot;100&quot;</code>, which causes the &quot;Duplicate data property in object literal not allowed in strict mode&quot; error. Issues like that can be tricky to debug, so some prefer to require quotes around all property names.</p><h2>Rule Details</h2><p>This rule aims to enforce use of quotes in property names and as such will flag any properties that don't use quotes (default behavior).</p><h3>Options</h3><p>There are four behaviors for this rule: <code>&quot;always&quot;</code> (default), <code>&quot;as-needed&quot;</code>, <code>&quot;consistent&quot;</code> and <code>&quot;consistent-as-needed&quot;</code>. You can define these options in your configuration as:</p><pre class="hljs highlight-json"><code>{
-    <span class="hljs-attr">"quote-props"</span>: [<span class="hljs-number">2</span>, <span class="hljs-string">"as-needed"</span>]
+</code></pre><p>This may look alright at first sight, but this code in fact throws a syntax error in ECMAScript 5 strict mode. This happens because <code>1e2</code> and <code>100</code> are coerced into strings before getting used as the property name. Both <code>String(1e2)</code> and <code>String(100)</code> happen to be equal to <code>&quot;100&quot;</code>, which causes the &quot;Duplicate data property in object literal not allowed in strict mode&quot; error. Issues like that can be tricky to debug, so some prefer to require quotes around all property names.</p><h2 id="rule-details-1038">Rule Details</h2><p>This rule aims to enforce use of quotes in property names and as such will flag any properties that don't use quotes (default behavior).</p><h3 id="options-408">Options</h3><p>There are four behaviors for this rule: <code>&quot;always&quot;</code> (default), <code>&quot;as-needed&quot;</code>, <code>&quot;consistent&quot;</code> and <code>&quot;consistent-as-needed&quot;</code>. You can define these options in your configuration as:</p><pre class="hljs highlight-json"><code>{
+    <span class="hljs-attr">&quot;quote-props&quot;</span>: [<span class="hljs-number">2</span>, <span class="hljs-string">&quot;as-needed&quot;</span>]
 }
-</code></pre><h4>&quot;always&quot;</h4><p>When configured with <code>&quot;always&quot;</code> as the first option (the default), quoting for all properties will be enforced. Some believe that ensuring property names in object literals are always wrapped in quotes is generally a good idea, since <a href="https://mathiasbynens.be/notes/javascript-properties">depending on the property name you may need to quote them anyway</a>. Consider this example:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> object = {
-    <span class="hljs-attr">foo</span>: <span class="hljs-string">"bar"</span>,
+</code></pre><h4 id="always-79">&quot;always&quot;</h4><p>When configured with <code>&quot;always&quot;</code> as the first option (the default), quoting for all properties will be enforced. Some believe that ensuring property names in object literals are always wrapped in quotes is generally a good idea, since <a href="https://mathiasbynens.be/notes/javascript-properties">depending on the property name you may need to quote them anyway</a>. Consider this example:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> object = {
+    <span class="hljs-attr">foo</span>: <span class="hljs-string">&quot;bar&quot;</span>,
     <span class="hljs-attr">baz</span>: <span class="hljs-number">42</span>,
-    <span class="hljs-string">"qux-lorem"</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-string">&quot;qux-lorem&quot;</span>: <span class="hljs-literal">true</span>
 };
 </code></pre><p>Here, the properties <code>foo</code> and <code>baz</code> are not wrapped in quotes, but <code>qux-lorem</code> is, because it doesn’t work without the quotes. This is rather inconsistent. Instead, you may prefer to quote names of all properties:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> object = {
-    <span class="hljs-string">"foo"</span>: <span class="hljs-string">"bar"</span>,
-    <span class="hljs-string">"baz"</span>: <span class="hljs-number">42</span>,
-    <span class="hljs-string">"qux-lorem"</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-string">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>,
+    <span class="hljs-string">&quot;baz&quot;</span>: <span class="hljs-number">42</span>,
+    <span class="hljs-string">&quot;qux-lorem&quot;</span>: <span class="hljs-literal">true</span>
 };
 </code></pre><p>or, if you prefer single quotes:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> object = {
-    <span class="hljs-string">'foo'</span>: <span class="hljs-string">'bar'</span>,
-    <span class="hljs-string">'baz'</span>: <span class="hljs-number">42</span>,
-    <span class="hljs-string">'qux-lorem'</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-string">&#x27;foo&#x27;</span>: <span class="hljs-string">&#x27;bar&#x27;</span>,
+    <span class="hljs-string">&#x27;baz&#x27;</span>: <span class="hljs-number">42</span>,
+    <span class="hljs-string">&#x27;qux-lorem&#x27;</span>: <span class="hljs-literal">true</span>
 };
-</code></pre><p>When configured with <code>&quot;always&quot;</code> as the first option (the default), quoting for all properties will be enforced. The following patterns are considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, "always"]*/</span>
+</code></pre><p>When configured with <code>&quot;always&quot;</code> as the first option (the default), quoting for all properties will be enforced. The following patterns are considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, &quot;always&quot;]*/</span>
 
 <span class="hljs-keyword">var</span> object = {
-    <span class="hljs-attr">foo</span>: <span class="hljs-string">"bar"</span>,         <span class="hljs-comment">/*error Unquoted property 'foo' found.*/</span>
-    <span class="hljs-attr">baz</span>: <span class="hljs-number">42</span>,            <span class="hljs-comment">/*error Unquoted property 'baz' found.*/</span>
-    <span class="hljs-string">"qux-lorem"</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-attr">foo</span>: <span class="hljs-string">&quot;bar&quot;</span>,         <span class="hljs-comment">/*error Unquoted property &#x27;foo&#x27; found.*/</span>
+    <span class="hljs-attr">baz</span>: <span class="hljs-number">42</span>,            <span class="hljs-comment">/*error Unquoted property &#x27;baz&#x27; found.*/</span>
+    <span class="hljs-string">&quot;qux-lorem&quot;</span>: <span class="hljs-literal">true</span>
 };
-</code></pre><p>The following patterns are not considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, "always"]*/</span>
+</code></pre><p>The following patterns are not considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, &quot;always&quot;]*/</span>
 <span class="hljs-comment">/*eslint-env es6*/</span>
 
 <span class="hljs-keyword">var</span> object1 = {
-    <span class="hljs-string">"foo"</span>: <span class="hljs-string">"bar"</span>,
-    <span class="hljs-string">"baz"</span>: <span class="hljs-number">42</span>,
-    <span class="hljs-string">"qux-lorem"</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-string">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>,
+    <span class="hljs-string">&quot;baz&quot;</span>: <span class="hljs-number">42</span>,
+    <span class="hljs-string">&quot;qux-lorem&quot;</span>: <span class="hljs-literal">true</span>
 };
 
 <span class="hljs-keyword">var</span> object2 = {
-    <span class="hljs-string">'foo'</span>: <span class="hljs-string">'bar'</span>,
-    <span class="hljs-string">'baz'</span>: <span class="hljs-number">42</span>,
-    <span class="hljs-string">'qux-lorem'</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-string">&#x27;foo&#x27;</span>: <span class="hljs-string">&#x27;bar&#x27;</span>,
+    <span class="hljs-string">&#x27;baz&#x27;</span>: <span class="hljs-number">42</span>,
+    <span class="hljs-string">&#x27;qux-lorem&#x27;</span>: <span class="hljs-literal">true</span>
 };
 
 <span class="hljs-keyword">var</span> object3 = {
@@ -54,29 +54,29 @@
         <span class="hljs-keyword">return</span>;
     }
 };
-</code></pre><h4>&quot;as-needed&quot;</h4><p>When configured with <code>&quot;as-needed&quot;</code> as the first option, quotes will be enforced when they are strictly required, and unnecessary quotes will cause warnings. The following patterns are considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, "as-needed"]*/</span>
+</code></pre><h4 id="as-needed-11">&quot;as-needed&quot;</h4><p>When configured with <code>&quot;as-needed&quot;</code> as the first option, quotes will be enforced when they are strictly required, and unnecessary quotes will cause warnings. The following patterns are considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, &quot;as-needed&quot;]*/</span>
 
 <span class="hljs-keyword">var</span> object = {
-    <span class="hljs-string">"a"</span>: <span class="hljs-number">0</span>,    <span class="hljs-comment">/*error Unnecessarily quoted property 'a' found.*/</span>
-    <span class="hljs-string">"0"</span>: <span class="hljs-number">0</span>,    <span class="hljs-comment">/*error Unnecessarily quoted property '0' found.*/</span>
-    <span class="hljs-string">"true"</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">/*error Unnecessarily quoted property 'true' found.*/</span>
-    <span class="hljs-string">"null"</span>: <span class="hljs-number">0</span>  <span class="hljs-comment">/*error Unnecessarily quoted property 'null' found.*/</span>
+    <span class="hljs-string">&quot;a&quot;</span>: <span class="hljs-number">0</span>,    <span class="hljs-comment">/*error Unnecessarily quoted property &#x27;a&#x27; found.*/</span>
+    <span class="hljs-string">&quot;0&quot;</span>: <span class="hljs-number">0</span>,    <span class="hljs-comment">/*error Unnecessarily quoted property &#x27;0&#x27; found.*/</span>
+    <span class="hljs-string">&quot;true&quot;</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">/*error Unnecessarily quoted property &#x27;true&#x27; found.*/</span>
+    <span class="hljs-string">&quot;null&quot;</span>: <span class="hljs-number">0</span>  <span class="hljs-comment">/*error Unnecessarily quoted property &#x27;null&#x27; found.*/</span>
 };
-</code></pre><p>The following patterns are not considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, "as-needed"]*/</span>
+</code></pre><p>The following patterns are not considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, &quot;as-needed&quot;]*/</span>
 <span class="hljs-comment">/*eslint-env es6*/</span>
 
 <span class="hljs-keyword">var</span> object1 = {
-    <span class="hljs-string">"a-b"</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">"0x0"</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">"1e2"</span>: <span class="hljs-number">0</span>
+    <span class="hljs-string">&quot;a-b&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">&quot;0x0&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-string">&quot;1e2&quot;</span>: <span class="hljs-number">0</span>
 };
 
 <span class="hljs-keyword">var</span> object2 = {
-    <span class="hljs-attr">foo</span>: <span class="hljs-string">'bar'</span>,
+    <span class="hljs-attr">foo</span>: <span class="hljs-string">&#x27;bar&#x27;</span>,
     <span class="hljs-attr">baz</span>: <span class="hljs-number">42</span>,
     <span class="hljs-attr">true</span>: <span class="hljs-number">0</span>,
     <span class="hljs-number">0</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-string">'qux-lorem'</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-string">&#x27;qux-lorem&#x27;</span>: <span class="hljs-literal">true</span>
 };
 
 <span class="hljs-keyword">var</span> object3 = {
@@ -85,94 +85,94 @@
     }
 };
 </code></pre><p>When the <code>&quot;as-needed&quot;</code> mode is selected, an additional <code>keywords</code> option can be provided. This flag indicates whether language keywords should be quoted as properties. By default it is set to <code>false</code>.</p><pre class="hljs highlight-json"><code>{
-    <span class="hljs-attr">"quote-props"</span>: [<span class="hljs-number">2</span>, <span class="hljs-string">"as-needed"</span>, { <span class="hljs-attr">"keywords"</span>: <span class="hljs-literal">true</span> }]
+    <span class="hljs-attr">&quot;quote-props&quot;</span>: [<span class="hljs-number">2</span>, <span class="hljs-string">&quot;as-needed&quot;</span>, { <span class="hljs-attr">&quot;keywords&quot;</span>: <span class="hljs-literal">true</span> }]
 }
-</code></pre><p>When <code>keywords</code> is set to <code>true</code>, the following patterns become problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, "as-needed", { "keywords": true }]*/</span>
+</code></pre><p>When <code>keywords</code> is set to <code>true</code>, the following patterns become problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, &quot;as-needed&quot;, { &quot;keywords&quot;: true }]*/</span>
 
 <span class="hljs-keyword">var</span> x = {
-    <span class="hljs-attr">while</span>: <span class="hljs-number">1</span>,       <span class="hljs-comment">/*error Unquoted reserved word 'while' used as key.*/</span>
-    <span class="hljs-attr">volatile</span>: <span class="hljs-string">"foo"</span> <span class="hljs-comment">/*error Unquoted reserved word 'volatile' used as key.*/</span>
+    <span class="hljs-attr">while</span>: <span class="hljs-number">1</span>,       <span class="hljs-comment">/*error Unquoted reserved word &#x27;while&#x27; used as key.*/</span>
+    <span class="hljs-attr">volatile</span>: <span class="hljs-string">&quot;foo&quot;</span> <span class="hljs-comment">/*error Unquoted reserved word &#x27;volatile&#x27; used as key.*/</span>
 };
 </code></pre><p>Another modifier for this rule is the <code>unnecessary</code> option which defaults to <code>true</code>. Setting this to <code>false</code> will prevent the rule from complaining about unnecessarily quoted properties. This comes in handy when you <em>only</em> care about quoting keywords.</p><pre class="hljs highlight-json"><code>{
-    <span class="hljs-attr">"quote-props"</span>: [<span class="hljs-number">2</span>, <span class="hljs-string">"as-needed"</span>, { <span class="hljs-attr">"keywords"</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">"unnecessary"</span>: <span class="hljs-literal">false</span> }]
+    <span class="hljs-attr">&quot;quote-props&quot;</span>: [<span class="hljs-number">2</span>, <span class="hljs-string">&quot;as-needed&quot;</span>, { <span class="hljs-attr">&quot;keywords&quot;</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">&quot;unnecessary&quot;</span>: <span class="hljs-literal">false</span> }]
 }
-</code></pre><p>When <code>unnecessary</code> is set to <code>false</code>, the following patterns <em>stop</em> being problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, "as-needed", { "keywords": true, "unnecessary": false }]*/</span>
+</code></pre><p>When <code>unnecessary</code> is set to <code>false</code>, the following patterns <em>stop</em> being problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, &quot;as-needed&quot;, { &quot;keywords&quot;: true, &quot;unnecessary&quot;: false }]*/</span>
 
 <span class="hljs-keyword">var</span> x = {
-    <span class="hljs-string">"while"</span>: <span class="hljs-number">1</span>,
-    <span class="hljs-string">"foo"</span>: <span class="hljs-string">"bar"</span>  <span class="hljs-comment">// Would normally have caused a warning</span>
+    <span class="hljs-string">&quot;while&quot;</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-string">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>  <span class="hljs-comment">// Would normally have caused a warning</span>
 };
 </code></pre><p>A <code>numbers</code> flag, with default value <code>false</code>, can also be used as a modifier for the <code>&quot;as-needed&quot;</code> mode. When it is set to <code>true</code>, numeric literals should always be quoted.</p><pre class="hljs highlight-json"><code>{
-    <span class="hljs-attr">"quote-props"</span>: [<span class="hljs-number">2</span>, <span class="hljs-string">"as-needed"</span>, {<span class="hljs-attr">"numbers"</span>: <span class="hljs-literal">true</span>}]
+    <span class="hljs-attr">&quot;quote-props&quot;</span>: [<span class="hljs-number">2</span>, <span class="hljs-string">&quot;as-needed&quot;</span>, {<span class="hljs-attr">&quot;numbers&quot;</span>: <span class="hljs-literal">true</span>}]
 }
-</code></pre><p>When <code>numbers</code> is set to <code>true</code>, the following patterns become problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, "as-needed", { "numbers": true }]*/</span>
+</code></pre><p>When <code>numbers</code> is set to <code>true</code>, the following patterns become problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, &quot;as-needed&quot;, { &quot;numbers&quot;: true }]*/</span>
 
 <span class="hljs-keyword">var</span> x = {
-    <span class="hljs-number">100</span>: <span class="hljs-number">1</span> <span class="hljs-comment">/*error Unquoted number literal '100' used as key.*/</span>
+    <span class="hljs-number">100</span>: <span class="hljs-number">1</span> <span class="hljs-comment">/*error Unquoted number literal &#x27;100&#x27; used as key.*/</span>
 }
 </code></pre><p>and the following patterns <em>stop</em> being problems:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> x = {
-    <span class="hljs-string">"100"</span>: <span class="hljs-number">1</span>
+    <span class="hljs-string">&quot;100&quot;</span>: <span class="hljs-number">1</span>
 }
-</code></pre><h4>&quot;consistent&quot;</h4><p>When configured with <code>&quot;consistent&quot;</code>, the patterns below are considered problems. Basically <code>&quot;consistent&quot;</code> means all or no properties are expected to be quoted, in other words quoting style can't be mixed within an object. Please note the latter situation (no quotation at all) isn't always possible as some property names require quoting.</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, "consistent"]*/</span>
+</code></pre><h4 id="consistent-9">&quot;consistent&quot;</h4><p>When configured with <code>&quot;consistent&quot;</code>, the patterns below are considered problems. Basically <code>&quot;consistent&quot;</code> means all or no properties are expected to be quoted, in other words quoting style can't be mixed within an object. Please note the latter situation (no quotation at all) isn't always possible as some property names require quoting.</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, &quot;consistent&quot;]*/</span>
 
-<span class="hljs-keyword">var</span> object1 = {        <span class="hljs-comment">/*error Inconsistently quoted property 'baz' found.*/</span> <span class="hljs-comment">/*error Inconsistently quoted property 'qux-lorem' found.*/</span>
-    <span class="hljs-attr">foo</span>: <span class="hljs-string">"bar"</span>,
-    <span class="hljs-string">"baz"</span>: <span class="hljs-number">42</span>,
-    <span class="hljs-string">"qux-lorem"</span>: <span class="hljs-literal">true</span>
+<span class="hljs-keyword">var</span> object1 = {        <span class="hljs-comment">/*error Inconsistently quoted property &#x27;baz&#x27; found.*/</span> <span class="hljs-comment">/*error Inconsistently quoted property &#x27;qux-lorem&#x27; found.*/</span>
+    <span class="hljs-attr">foo</span>: <span class="hljs-string">&quot;bar&quot;</span>,
+    <span class="hljs-string">&quot;baz&quot;</span>: <span class="hljs-number">42</span>,
+    <span class="hljs-string">&quot;qux-lorem&quot;</span>: <span class="hljs-literal">true</span>
 };
 
-<span class="hljs-keyword">var</span> object2 = {        <span class="hljs-comment">/*error Inconsistently quoted property 'baz' found.*/</span>
-    <span class="hljs-string">'foo'</span>: <span class="hljs-string">'bar'</span>,
+<span class="hljs-keyword">var</span> object2 = {        <span class="hljs-comment">/*error Inconsistently quoted property &#x27;baz&#x27; found.*/</span>
+    <span class="hljs-string">&#x27;foo&#x27;</span>: <span class="hljs-string">&#x27;bar&#x27;</span>,
     <span class="hljs-attr">baz</span>: <span class="hljs-number">42</span>
 };
-</code></pre><p>The following patterns are not considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, "consistent"]*/</span>
+</code></pre><p>The following patterns are not considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, &quot;consistent&quot;]*/</span>
 
 <span class="hljs-keyword">var</span> object1 = {
-    <span class="hljs-string">"foo"</span>: <span class="hljs-string">"bar"</span>,
-    <span class="hljs-string">"baz"</span>: <span class="hljs-number">42</span>,
-    <span class="hljs-string">"qux-lorem"</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-string">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>,
+    <span class="hljs-string">&quot;baz&quot;</span>: <span class="hljs-number">42</span>,
+    <span class="hljs-string">&quot;qux-lorem&quot;</span>: <span class="hljs-literal">true</span>
 };
 
 <span class="hljs-keyword">var</span> object2 = {
-    <span class="hljs-string">'foo'</span>: <span class="hljs-string">'bar'</span>,
-    <span class="hljs-string">'baz'</span>: <span class="hljs-number">42</span>
+    <span class="hljs-string">&#x27;foo&#x27;</span>: <span class="hljs-string">&#x27;bar&#x27;</span>,
+    <span class="hljs-string">&#x27;baz&#x27;</span>: <span class="hljs-number">42</span>
 };
 
 <span class="hljs-keyword">var</span> object3 = {
-    <span class="hljs-attr">foo</span>: <span class="hljs-string">'bar'</span>,
+    <span class="hljs-attr">foo</span>: <span class="hljs-string">&#x27;bar&#x27;</span>,
     <span class="hljs-attr">baz</span>: <span class="hljs-number">42</span>
 };
-</code></pre><h4>&quot;consistent-as-needed&quot;</h4><p>When configured with <code>&quot;consistent-as-needed&quot;</code>, the behavior is similar to <code>&quot;consistent&quot;</code> with one difference. Namely, properties' quoting should be consistent (as in <code>&quot;consistent&quot;</code>) but whenever all quotes are redundant a warning is raised. In other words if at least one property name has to be quoted (like <code>qux-lorem</code>) then all property names must be quoted, otherwise no properties can be quoted. The following patterns are considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, "consistent-as-needed"]*/</span>
+</code></pre><h4 id="consistent-as-needed-2">&quot;consistent-as-needed&quot;</h4><p>When configured with <code>&quot;consistent-as-needed&quot;</code>, the behavior is similar to <code>&quot;consistent&quot;</code> with one difference. Namely, properties' quoting should be consistent (as in <code>&quot;consistent&quot;</code>) but whenever all quotes are redundant a warning is raised. In other words if at least one property name has to be quoted (like <code>qux-lorem</code>) then all property names must be quoted, otherwise no properties can be quoted. The following patterns are considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, &quot;consistent-as-needed&quot;]*/</span>
 
-<span class="hljs-keyword">var</span> object1 = {         <span class="hljs-comment">/*error Inconsistently quoted property 'baz' found.*/</span> <span class="hljs-comment">/*error Inconsistently quoted property 'qux-lorem' found.*/</span>
-    <span class="hljs-attr">foo</span>: <span class="hljs-string">"bar"</span>,
-    <span class="hljs-string">"baz"</span>: <span class="hljs-number">42</span>,
-    <span class="hljs-string">"qux-lorem"</span>: <span class="hljs-literal">true</span>
+<span class="hljs-keyword">var</span> object1 = {         <span class="hljs-comment">/*error Inconsistently quoted property &#x27;baz&#x27; found.*/</span> <span class="hljs-comment">/*error Inconsistently quoted property &#x27;qux-lorem&#x27; found.*/</span>
+    <span class="hljs-attr">foo</span>: <span class="hljs-string">&quot;bar&quot;</span>,
+    <span class="hljs-string">&quot;baz&quot;</span>: <span class="hljs-number">42</span>,
+    <span class="hljs-string">&quot;qux-lorem&quot;</span>: <span class="hljs-literal">true</span>
 };
 
-<span class="hljs-keyword">var</span> object2 = {         <span class="hljs-comment">/*error Properties shouldn't be quoted as all quotes are redundant.*/</span>
-    <span class="hljs-string">'foo'</span>: <span class="hljs-string">'bar'</span>,
-    <span class="hljs-string">'baz'</span>: <span class="hljs-number">42</span>
+<span class="hljs-keyword">var</span> object2 = {         <span class="hljs-comment">/*error Properties shouldn&#x27;t be quoted as all quotes are redundant.*/</span>
+    <span class="hljs-string">&#x27;foo&#x27;</span>: <span class="hljs-string">&#x27;bar&#x27;</span>,
+    <span class="hljs-string">&#x27;baz&#x27;</span>: <span class="hljs-number">42</span>
 };
-</code></pre><p>The following patterns are not considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, "consistent-as-needed"]*/</span>
+</code></pre><p>The following patterns are not considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, &quot;consistent-as-needed&quot;]*/</span>
 
 <span class="hljs-keyword">var</span> object1 = {
-    <span class="hljs-string">"foo"</span>: <span class="hljs-string">"bar"</span>,
-    <span class="hljs-string">"baz"</span>: <span class="hljs-number">42</span>,
-    <span class="hljs-string">"qux-lorem"</span>: <span class="hljs-literal">true</span>
+    <span class="hljs-string">&quot;foo&quot;</span>: <span class="hljs-string">&quot;bar&quot;</span>,
+    <span class="hljs-string">&quot;baz&quot;</span>: <span class="hljs-number">42</span>,
+    <span class="hljs-string">&quot;qux-lorem&quot;</span>: <span class="hljs-literal">true</span>
 };
 
 <span class="hljs-keyword">var</span> object2 = {
-    <span class="hljs-attr">foo</span>: <span class="hljs-string">'bar'</span>,
+    <span class="hljs-attr">foo</span>: <span class="hljs-string">&#x27;bar&#x27;</span>,
     <span class="hljs-attr">baz</span>: <span class="hljs-number">42</span>
 };
 </code></pre><p>When the <code>&quot;consistent-as-needed&quot;</code> mode is selected, an additional <code>keywords</code> option can be provided. This flag indicates whether language keywords can be used unquoted as properties. By default it is set to <code>false</code>.</p><pre class="hljs highlight-json"><code>{
-    <span class="hljs-attr">"quote-props"</span>: [<span class="hljs-number">2</span>, <span class="hljs-string">"consistent-as-needed"</span>, { <span class="hljs-attr">"keywords"</span>: <span class="hljs-literal">true</span> }]
+    <span class="hljs-attr">&quot;quote-props&quot;</span>: [<span class="hljs-number">2</span>, <span class="hljs-string">&quot;consistent-as-needed&quot;</span>, { <span class="hljs-attr">&quot;keywords&quot;</span>: <span class="hljs-literal">true</span> }]
 }
-</code></pre><p>When <code>keywords</code> is set to <code>true</code>, the following patterns are considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, "consistent-as-needed", { "keywords": true }]*/</span>
+</code></pre><p>When <code>keywords</code> is set to <code>true</code>, the following patterns are considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint quote-props: [2, &quot;consistent-as-needed&quot;, { &quot;keywords&quot;: true }]*/</span>
 
-<span class="hljs-keyword">var</span> x = {           <span class="hljs-comment">/*error Properties should be quoted as 'while' is a reserved word.*/</span> <span class="hljs-comment">/*error Properties should be quoted as 'volatile' is a reserved word.*/</span>
+<span class="hljs-keyword">var</span> x = {           <span class="hljs-comment">/*error Properties should be quoted as &#x27;while&#x27; is a reserved word.*/</span> <span class="hljs-comment">/*error Properties should be quoted as &#x27;volatile&#x27; is a reserved word.*/</span>
     <span class="hljs-attr">while</span>: <span class="hljs-number">1</span>,
-    <span class="hljs-attr">volatile</span>: <span class="hljs-string">"foo"</span>
+    <span class="hljs-attr">volatile</span>: <span class="hljs-string">&quot;foo&quot;</span>
 };
-</code></pre><h2>When Not To Use It</h2><p>If you don't care if property names are consistently wrapped in quotes or not, and you don't target legacy ES3 environments, turn this rule off.</p><h2>Further Reading</h2><ul><li><a href="http://kangax.github.io/compat-table/es5/#Reserved_words_as_property_names">Reserved words as property names</a></li><li><a href="https://mathiasbynens.be/notes/javascript-properties">Unquoted property names / object keys in JavaScript</a></li></ul><h2>Version</h2><p>This rule was introduced in ESLint 0.0.6.</p><h2>Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/quote-props.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/quote-props.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/website/edit/master/./docs/2.0.0/rules/quote-props.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>
+</code></pre><h2 id="when-not-to-use-it-612">When Not To Use It</h2><p>If you don't care if property names are consistently wrapped in quotes or not, and you don't target legacy ES3 environments, turn this rule off.</p><h2 id="further-reading-311">Further Reading</h2><ul><li><a href="http://kangax.github.io/compat-table/es5/#Reserved_words_as_property_names">Reserved words as property names</a></li><li><a href="https://mathiasbynens.be/notes/javascript-properties">Unquoted property names / object keys in JavaScript</a></li></ul><h2 id="version-1046">Version</h2><p>This rule was introduced in ESLint 0.0.6.</p><h2 id="resources-1046">Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/quote-props.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/quote-props.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/website/edit/master/./docs/2.0.0/rules/quote-props.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>

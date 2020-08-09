@@ -1,42 +1,42 @@
-<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="JavaScript, Linter, Linting, Pluggable, Configurable, Code Quality"><meta name="description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="theme-color" content="#463fd4"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="ESLint - Pluggable JavaScript linter"><meta property="og:title" content="Documentation"><meta property="og:url" content="/docs/1.10.3/developer-guide/working-with-custom-formatters"><meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png"><meta name="twitter:site" content="@geteslint"><meta name="twitter:title" content="Documentation"><meta name="twitter:description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="twitter:url" content="/docs/1.10.3/developer-guide/working-with-custom-formatters"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://eslint.org/assets/img/favicon.512x512.png"><title>Documentation - ESLint - Pluggable JavaScript linter</title><link rel="preconnect" href="https://www.google-analytics.com"><link rel="canonical" href="/docs/1.10.3/developer-guide/working-with-custom-formatters"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"><link rel="stylesheet" href="/assets/styles/main.css"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/assets/img/favicon.512x512.png"><link rel="alternate" type="application/rss+xml" title="ESLint - Pluggable JavaScript linter" href="/feed.xml"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"></head><body><input type="checkbox" id="eslint-toggle-search" class="eslint-toggle-search-checkbox"><header class="navbar navbar-default navbar-demo navbar-fixed-top eslint-nav" id="top" role="banner"><div class="container"><a href="/" class="navbar-brand"><img alt="ESLint" src="/assets/img/logo.svg" itemprop="image">ESLint</a><div class="eslint-navbar-toggles"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#eslint-navbar" aria-controls="eslint-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label></div><nav id="eslint-navbar" class="collapse navbar-collapse eslint-navbar"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="/docs/user-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/user-guide/getting-started">Getting Started</a></li><li><a href="/docs/user-guide/configuring">Configuring ESLint</a></li><li><a href="/docs/user-guide/command-line-interface">Command Line Interface</a></li><li><a href="/docs/rules">Rules</a></li><li><a href="/docs/user-guide/formatters">Formatters</a></li><li><a href="/docs/user-guide/integrations">Integrations</a></li><li class="divider"></li><li><a href="/docs/user-guide/migrating-to-7.0.0">Migrating to v7.0.0</a></li><li><a href="/docs/user-guide/migrating-to-6.0.0">Migrating to v6.0.0</a></li><li><a href="/docs/user-guide/migrating-to-5.0.0">Migrating to v5.0.0</a></li><li><a href="/docs/user-guide/migrating-to-4.0.0">Migrating to v4.0.0</a></li><li><a href="/docs/user-guide/migrating-to-3.0.0">Migrating to v3.0.0</a></li><li><a href="/docs/user-guide/migrating-to-2.0.0">Migrating to v2.0.0</a></li><li><a href="/docs/user-guide/migrating-to-1.0.0">Migrating to v1.0.0</a></li><li><a href="/docs/user-guide/migrating-from-jscs">Migrating from JSCS</a></li></ul></li><li class="dropdown"><a href="/docs/developer-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/developer-guide/architecture">Architecture</a></li><li><a href="/docs/developer-guide/contributing">Contributing</a></li><li><a href="/docs/developer-guide/source-code">Get the Source Code</a></li><li><a href="/docs/developer-guide/development-environment">Set up a Development Environment</a></li><li><a href="/docs/developer-guide/unit-tests">Run the Unit Tests</a></li><li><a href="/docs/developer-guide/working-with-rules">Working with Rules</a></li><li><a href="/docs/developer-guide/working-with-plugins">Working with Plugins</a></li><li><a href="/docs/developer-guide/working-with-custom-formatters">Working with Custom Formatters</a></li><li><a href="/docs/developer-guide/working-with-custom-parsers">Working with Custom Parsers</a></li><li><a href="/docs/developer-guide/shareable-configs">Shareable Configs</a></li><li><a href="/docs/developer-guide/nodejs-api">Node.js API</a></li><li><a href="/docs/maintainer-guide">Maintainer guide</a></li></ul></li><li><a href="/blog">Blog</a></li><li><a href="/demo">Demo</a></li><li class="dropdown"><a href="/docs/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/users">Who's Using ESLint?</a></li><li><a href="/team">About the Team</a></li><li><a href="/docs/about">About ESLint</a></li></ul></li></ul><label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label><div class="navbar-form navbar-right eslint-search" role="search"><div class="input-group"><label class="sr-only" aria-label="Search" for="eslint-search-input">Search</label><div class="eslint-search-input-wrapper"><input type="text" class="form-control" id="eslint-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search the docs..."> <label for="eslint-toggle-search" class="eslint-toggle-search-close"><span class="sr-only">Close search</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></div></div></div></nav></div></header><main class="doc"><article class="container"><h1>Working with custom formatters</h1><p>Writing an <a href="https://github.com/eslint/eslint">eslint</a> custom formatter is simple. All is neeeded is a module that exports a function that will receive the results from the execution of <a href="https://github.com/eslint/eslint">eslint</a>.</p><p>The simplest formatter will be something like:</p><pre class="hljs highlight-javascript"><code><span class="hljs-comment">//my-awesome-formatter.js</span>
+<!doctype html><html lang="en" class="no-js"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="JavaScript, Linter, Linting, Pluggable, Configurable, Code Quality"><meta name="description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="theme-color" content="#463fd4"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="ESLint - Pluggable JavaScript linter"><meta property="og:title" content="Documentation"><meta property="og:url" content="/docs/1.10.3/developer-guide/working-with-custom-formatters"><meta property="og:image" content="https://eslint.org/assets/img/favicon.512x512.png"><meta name="twitter:site" content="@geteslint"><meta name="twitter:title" content="Documentation"><meta name="twitter:description" content="A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease."><meta name="twitter:url" content="/docs/1.10.3/developer-guide/working-with-custom-formatters"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://eslint.org/assets/img/favicon.512x512.png"><title>Documentation - ESLint - Pluggable JavaScript linter</title><link rel="preconnect" href="https://www.google-analytics.com"><link rel="canonical" href="/docs/1.10.3/developer-guide/working-with-custom-formatters"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600"><link rel="stylesheet" href="/assets/styles/main.css"><link rel="manifest" href="/manifest.json"><link rel="icon" href="/assets/img/favicon.512x512.png"><link rel="alternate" type="application/rss+xml" title="ESLint - Pluggable JavaScript linter" href="/feed.xml"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css"></head><body class="banner-displayed"><input type="checkbox" id="eslint-toggle-search" class="eslint-toggle-search-checkbox"><header class="navbar navbar-default navbar-demo navbar-fixed-top eslint-nav" id="top" role="banner"><div class="eslint-banner" style="color: #ffffff; background-color: #150b29"><p><a href="https://code2040-2020.funraise.org/" style="color: #a486df">Donate to Code2040</a></p></div><div class="container"><a href="/" class="navbar-brand"><img alt="ESLint" src="/assets/img/logo.svg" itemprop="image">ESLint</a><div class="eslint-navbar-toggles"><button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#eslint-navbar" aria-controls="eslint-navbar" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label></div><nav id="eslint-navbar" class="collapse navbar-collapse eslint-navbar"><ul class="nav navbar-nav navbar-right"><li class="dropdown"><a href="/docs/user-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/user-guide/getting-started">Getting Started</a></li><li><a href="/docs/user-guide/configuring">Configuring ESLint</a></li><li><a href="/docs/user-guide/command-line-interface">Command Line Interface</a></li><li><a href="/docs/rules">Rules</a></li><li><a href="/docs/user-guide/formatters">Formatters</a></li><li><a href="/docs/user-guide/integrations">Integrations</a></li><li class="divider"></li><li><a href="/docs/user-guide/migrating-to-7.0.0">Migrating to v7.0.0</a></li><li><a href="/docs/user-guide/migrating-to-6.0.0">Migrating to v6.0.0</a></li><li><a href="/docs/user-guide/migrating-to-5.0.0">Migrating to v5.0.0</a></li><li><a href="/docs/user-guide/migrating-to-4.0.0">Migrating to v4.0.0</a></li><li><a href="/docs/user-guide/migrating-to-3.0.0">Migrating to v3.0.0</a></li><li><a href="/docs/user-guide/migrating-to-2.0.0">Migrating to v2.0.0</a></li><li><a href="/docs/user-guide/migrating-to-1.0.0">Migrating to v1.0.0</a></li><li><a href="/docs/user-guide/migrating-from-jscs">Migrating from JSCS</a></li></ul></li><li class="dropdown"><a href="/docs/developer-guide" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Developer guide<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/docs/developer-guide/architecture">Architecture</a></li><li><a href="/docs/developer-guide/contributing">Contributing</a></li><li><a href="/docs/developer-guide/source-code">Get the Source Code</a></li><li><a href="/docs/developer-guide/development-environment">Set up a Development Environment</a></li><li><a href="/docs/developer-guide/unit-tests">Run the Unit Tests</a></li><li><a href="/docs/developer-guide/working-with-rules">Working with Rules</a></li><li><a href="/docs/developer-guide/working-with-plugins">Working with Plugins</a></li><li><a href="/docs/developer-guide/working-with-custom-formatters">Working with Custom Formatters</a></li><li><a href="/docs/developer-guide/working-with-custom-parsers">Working with Custom Parsers</a></li><li><a href="/docs/developer-guide/shareable-configs">Shareable Configs</a></li><li><a href="/docs/developer-guide/nodejs-api">Node.js API</a></li><li><a href="/docs/maintainer-guide">Maintainer guide</a></li></ul></li><li><a href="/blog">Blog</a></li><li><a href="/demo">Demo</a></li><li class="dropdown"><a href="/docs/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li><a href="/users">Who's Using ESLint?</a></li><li><a href="/team">About the Team</a></li><li><a href="/docs/about">About ESLint</a></li></ul></li></ul><label for="eslint-toggle-search" class="navbar-toggle eslint-toggle-search-open"><span class="sr-only">Open search</span> <span class="glyphicon glyphicon-search" aria-hidden="true"></span></label><div class="navbar-form navbar-right eslint-search" role="search"><div class="input-group"><label class="sr-only" aria-label="Search" for="eslint-search-input">Search</label><div class="eslint-search-input-wrapper"><input type="text" class="form-control" id="eslint-search-input" accesskey="s" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search the docs..."> <label for="eslint-toggle-search" class="eslint-toggle-search-close"><span class="sr-only">Close search</span> <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></label></div></div></div></nav></div></header><main class="doc"><article class="container"><h1 id="working-with-custom-formatters-2">Working with custom formatters</h1><p>Writing an <a href="https://github.com/eslint/eslint">eslint</a> custom formatter is simple. All is neeeded is a module that exports a function that will receive the results from the execution of <a href="https://github.com/eslint/eslint">eslint</a>.</p><p>The simplest formatter will be something like:</p><pre class="hljs highlight-javascript"><code><span class="hljs-comment">//my-awesome-formatter.js</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">results</span>) </span>{
     <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(results, <span class="hljs-literal">null</span>, <span class="hljs-number">2</span>));
 }
-</code></pre><p>And to run <code>eslint</code> with this custom formatter:</p><pre class="hljs highlight-bash"><code>eslint -f <span class="hljs-string">'./my-awesome-formatter.js'</span> src/
+</code></pre><p>And to run <code>eslint</code> with this custom formatter:</p><pre class="hljs highlight-bash"><code>eslint -f <span class="hljs-string">&#x27;./my-awesome-formatter.js&#x27;</span> src/
 </code></pre><p>The output of the previous command will be something like this</p><pre class="hljs highlight-javascript"><code>[
     {
-        <span class="hljs-string">"filePath"</span>: <span class="hljs-string">"path/to/file.js"</span>,
-        <span class="hljs-string">"messages"</span>: [
+        <span class="hljs-string">&quot;filePath&quot;</span>: <span class="hljs-string">&quot;path/to/file.js&quot;</span>,
+        <span class="hljs-string">&quot;messages&quot;</span>: [
             {
-                <span class="hljs-string">"ruleId"</span>: <span class="hljs-string">"curly"</span>,
-                <span class="hljs-string">"severity"</span>: <span class="hljs-number">2</span>,
-                <span class="hljs-string">"message"</span>: <span class="hljs-string">"Expected { after 'if' condition."</span>,
-                <span class="hljs-string">"line"</span>: <span class="hljs-number">41</span>,
-                <span class="hljs-string">"column"</span>: <span class="hljs-number">2</span>,
-                <span class="hljs-string">"nodeType"</span>: <span class="hljs-string">"IfStatement"</span>,
-                <span class="hljs-string">"source"</span>: <span class="hljs-string">"  if ( err ) console.log( 'failed tests: ' + err );"</span>
+                <span class="hljs-string">&quot;ruleId&quot;</span>: <span class="hljs-string">&quot;curly&quot;</span>,
+                <span class="hljs-string">&quot;severity&quot;</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-string">&quot;message&quot;</span>: <span class="hljs-string">&quot;Expected { after &#x27;if&#x27; condition.&quot;</span>,
+                <span class="hljs-string">&quot;line&quot;</span>: <span class="hljs-number">41</span>,
+                <span class="hljs-string">&quot;column&quot;</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-string">&quot;nodeType&quot;</span>: <span class="hljs-string">&quot;IfStatement&quot;</span>,
+                <span class="hljs-string">&quot;source&quot;</span>: <span class="hljs-string">&quot;  if ( err ) console.log( &#x27;failed tests: &#x27; + err );&quot;</span>
             },
             {
-                <span class="hljs-string">"ruleId"</span>: <span class="hljs-string">"no-process-exit"</span>,
-                <span class="hljs-string">"severity"</span>: <span class="hljs-number">2</span>,
-                <span class="hljs-string">"message"</span>: <span class="hljs-string">"Don't use process.exit(); throw an error instead."</span>,
-                <span class="hljs-string">"line"</span>: <span class="hljs-number">42</span>,
-                <span class="hljs-string">"column"</span>: <span class="hljs-number">2</span>,
-                <span class="hljs-string">"nodeType"</span>: <span class="hljs-string">"CallExpression"</span>,
-                <span class="hljs-string">"source"</span>: <span class="hljs-string">"  process.exit( exitCode );"</span>
+                <span class="hljs-string">&quot;ruleId&quot;</span>: <span class="hljs-string">&quot;no-process-exit&quot;</span>,
+                <span class="hljs-string">&quot;severity&quot;</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-string">&quot;message&quot;</span>: <span class="hljs-string">&quot;Don&#x27;t use process.exit(); throw an error instead.&quot;</span>,
+                <span class="hljs-string">&quot;line&quot;</span>: <span class="hljs-number">42</span>,
+                <span class="hljs-string">&quot;column&quot;</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-string">&quot;nodeType&quot;</span>: <span class="hljs-string">&quot;CallExpression&quot;</span>,
+                <span class="hljs-string">&quot;source&quot;</span>: <span class="hljs-string">&quot;  process.exit( exitCode );&quot;</span>
             }
         ],
-        <span class="hljs-string">"errorCount"</span>: <span class="hljs-number">2</span>,
-        <span class="hljs-string">"warningCount"</span>: <span class="hljs-number">0</span>
+        <span class="hljs-string">&quot;errorCount&quot;</span>: <span class="hljs-number">2</span>,
+        <span class="hljs-string">&quot;warningCount&quot;</span>: <span class="hljs-number">0</span>
     },
     {
-        <span class="hljs-string">"filePath"</span>: <span class="hljs-string">"Gruntfile.js"</span>,
-        <span class="hljs-string">"messages"</span>: [],
-        <span class="hljs-string">"errorCount"</span>: <span class="hljs-number">0</span>,
-        <span class="hljs-string">"warningCount"</span>: <span class="hljs-number">0</span>
+        <span class="hljs-string">&quot;filePath&quot;</span>: <span class="hljs-string">&quot;Gruntfile.js&quot;</span>,
+        <span class="hljs-string">&quot;messages&quot;</span>: [],
+        <span class="hljs-string">&quot;errorCount&quot;</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-string">&quot;warningCount&quot;</span>: <span class="hljs-number">0</span>
     }
 ]
-</code></pre><p>As you can see the argument passed to the custom formatter function is just a list of results objects.</p><h2>Description of the results</h2><h3>the result object</h3><p>You will receive a result object from each file <code>eslint</code> validates, each one of them containing the list of messages for <code>errors</code> and/or <code>warnings</code>.</p><p>The following are the fields of the result object:</p><ul><li><strong>filePath</strong>: The path to the file relative to the current working directory (the path from which eslint was executed).</li><li><strong>messages</strong>: An array of message objects. See below for more info about messages</li><li><strong>errorCount</strong>: The number of errors for the given file</li><li><strong>warningCount</strong>: the number of warnings for the give file</li></ul><h3>The message object</h3><ul><li><strong>ruleId</strong>: the id of the rule that produced the error or warning.</li><li><strong>severity</strong>: the severity of the failure, <code>1</code> for warnings and <code>2</code> for errors.</li><li><strong>message</strong>: the human readable description of the error.</li><li><strong>line</strong>: the line where where the issue is located.</li><li><strong>column</strong>: the colum where the issue is located.</li><li><strong>nodeType</strong>: the type of the node in the <a href="https://github.com/estree/estree/blob/master/spec">AST</a></li><li><strong>source</strong>: a extract of the code the line where the failure happened.</li></ul><h2>Examples</h2><h3>Summary formatter</h3><p>A formatter that only cares about the total count of errors and warnings will look like this:</p><pre class="hljs highlight-javascript"><code><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> results </span>) </span>{
+</code></pre><p>As you can see the argument passed to the custom formatter function is just a list of results objects.</p><h2 id="description-of-the-results-1">Description of the results</h2><h3 id="the-result-object-2">the result object</h3><p>You will receive a result object from each file <code>eslint</code> validates, each one of them containing the list of messages for <code>errors</code> and/or <code>warnings</code>.</p><p>The following are the fields of the result object:</p><ul><li><strong>filePath</strong>: The path to the file relative to the current working directory (the path from which eslint was executed).</li><li><strong>messages</strong>: An array of message objects. See below for more info about messages</li><li><strong>errorCount</strong>: The number of errors for the given file</li><li><strong>warningCount</strong>: the number of warnings for the give file</li></ul><h3 id="the-message-object-2">The message object</h3><ul><li><strong>ruleId</strong>: the id of the rule that produced the error or warning.</li><li><strong>severity</strong>: the severity of the failure, <code>1</code> for warnings and <code>2</code> for errors.</li><li><strong>message</strong>: the human readable description of the error.</li><li><strong>line</strong>: the line where where the issue is located.</li><li><strong>column</strong>: the colum where the issue is located.</li><li><strong>nodeType</strong>: the type of the node in the <a href="https://github.com/estree/estree/blob/master/spec">AST</a></li><li><strong>source</strong>: a extract of the code the line where the failure happened.</li></ul><h2 id="examples-33">Examples</h2><h3 id="summary-formatter-2">Summary formatter</h3><p>A formatter that only cares about the total count of errors and warnings will look like this:</p><pre class="hljs highlight-javascript"><code><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> results </span>) </span>{
     <span class="hljs-keyword">var</span> results = results || [ ];
 
     <span class="hljs-comment">// accumulate the errors and warnings</span>
@@ -47,12 +47,12 @@
     }, { <span class="hljs-attr">errors</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">warnings</span>: <span class="hljs-number">0</span> } );
 
     <span class="hljs-keyword">if</span> ( summary.errors &gt; <span class="hljs-number">0</span> || summary.warnings &gt; <span class="hljs-number">0</span> ) {
-        <span class="hljs-built_in">console</span>.log( <span class="hljs-string">'Errors: '</span> + summary.errors + <span class="hljs-string">', Warnings: '</span> + summary.warnings + <span class="hljs-string">'\n'</span> );
+        <span class="hljs-built_in">console</span>.log( <span class="hljs-string">&#x27;Errors: &#x27;</span> + summary.errors + <span class="hljs-string">&#x27;, Warnings: &#x27;</span> + summary.warnings + <span class="hljs-string">&#x27;\n&#x27;</span> );
     }
 };
-</code></pre><p>Running <code>eslint</code> with the previous custom formatter,</p><pre class="hljs highlight-bash"><code>eslint -f <span class="hljs-string">'./my-awesome-formatter.js'</span> src/
+</code></pre><p>Running <code>eslint</code> with the previous custom formatter,</p><pre class="hljs highlight-bash"><code>eslint -f <span class="hljs-string">&#x27;./my-awesome-formatter.js&#x27;</span> src/
 </code></pre><p>Will produce the following output:</p><pre class="hljs highlight-bash"><code>Errors: 2, Warnings: 4
-</code></pre><h3>Detailed formatter</h3><p>A more complex report will look something like this:</p><pre class="hljs highlight-javascript"><code><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> results </span>) </span>{
+</code></pre><h3 id="detailed-formatter-2">Detailed formatter</h3><p>A more complex report will look something like this:</p><pre class="hljs highlight-javascript"><code><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> results </span>) </span>{
     <span class="hljs-keyword">var</span> results = results || [ ];
 
     <span class="hljs-keyword">var</span> summary = results.reduce( <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> seq, current </span>) </span>{
@@ -68,11 +68,11 @@
             };
 
             <span class="hljs-keyword">if</span> ( msg.severity === <span class="hljs-number">1</span> ) {
-                logMessage.type = <span class="hljs-string">'warning'</span>;
+                logMessage.type = <span class="hljs-string">&#x27;warning&#x27;</span>;
                 seq.warnings.push( logMessage );
             }
             <span class="hljs-keyword">if</span> ( msg.severity === <span class="hljs-number">2</span> ) {
-                logMessage.type = <span class="hljs-string">'error'</span>;
+                logMessage.type = <span class="hljs-string">&#x27;error&#x27;</span>;
                 seq.errors.push( logMessage );
             }
         } );
@@ -84,13 +84,13 @@
 
     <span class="hljs-keyword">if</span> ( summary.errors.length &gt; <span class="hljs-number">0</span> || summary.warnings.length &gt; <span class="hljs-number">0</span> ) {
         <span class="hljs-keyword">var</span> lines = summary.errors.concat( summary.warnings ).map( <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> msg </span>) </span>{
-            <span class="hljs-keyword">return</span> <span class="hljs-string">'\n'</span> + msg.type + <span class="hljs-string">' '</span> + msg.ruleId + <span class="hljs-string">'\n  '</span> + msg.filePath + <span class="hljs-string">':'</span> + msg.line + <span class="hljs-string">':'</span> + msg.column;
-        } ).join( <span class="hljs-string">'\n'</span> );
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;\n&#x27;</span> + msg.type + <span class="hljs-string">&#x27; &#x27;</span> + msg.ruleId + <span class="hljs-string">&#x27;\n  &#x27;</span> + msg.filePath + <span class="hljs-string">&#x27;:&#x27;</span> + msg.line + <span class="hljs-string">&#x27;:&#x27;</span> + msg.column;
+        } ).join( <span class="hljs-string">&#x27;\n&#x27;</span> );
 
-        <span class="hljs-keyword">return</span> lines + <span class="hljs-string">'\n'</span>;
+        <span class="hljs-keyword">return</span> lines + <span class="hljs-string">&#x27;\n&#x27;</span>;
     }
 };
-</code></pre><p>So running <code>eslint</code> with this custom formatter:</p><pre class="hljs highlight-bash"><code>eslint -f <span class="hljs-string">'./my-awesome-formatter.js'</span> src/
+</code></pre><p>So running <code>eslint</code> with this custom formatter:</p><pre class="hljs highlight-bash"><code>eslint -f <span class="hljs-string">&#x27;./my-awesome-formatter.js&#x27;</span> src/
 </code></pre><p>The output will be</p><pre class="hljs highlight-bash"><code>error space-infix-ops
   src/configs/bundler.js:6:8
 error semi
@@ -103,8 +103,8 @@ warning no-shadow
   src/configs/bundler.js:65:32
 warning no-unused-vars
   src/configs/clean.js:3:6
-</code></pre><h2>Passing arguments to formatters:</h2><h3>Using environment variables:</h3><p>Let's say we want to show only the messages that are actual errors and discard the warnings.</p><pre class="hljs highlight-javascript"><code><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> results </span>) </span>{
-    <span class="hljs-keyword">var</span> skipWarnings = process.env.AF_SKIP_WARNINGS === <span class="hljs-string">'true'</span>; <span class="hljs-comment">//af stands for awesome-formatter</span>
+</code></pre><h2 id="passing-arguments-to-formatters-2">Passing arguments to formatters:</h2><h3 id="using-environment-variables-2">Using environment variables:</h3><p>Let's say we want to show only the messages that are actual errors and discard the warnings.</p><pre class="hljs highlight-javascript"><code><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> results </span>) </span>{
+    <span class="hljs-keyword">var</span> skipWarnings = process.env.AF_SKIP_WARNINGS === <span class="hljs-string">&#x27;true&#x27;</span>; <span class="hljs-comment">//af stands for awesome-formatter</span>
 
     <span class="hljs-keyword">var</span> results = results || [ ];
     <span class="hljs-keyword">var</span> summary = results.reduce( <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> seq, current </span>) </span>{
@@ -119,11 +119,11 @@ warning no-unused-vars
             };
 
             <span class="hljs-keyword">if</span> ( msg.severity === <span class="hljs-number">1</span> ) {
-                logMessage.type = <span class="hljs-string">'warning'</span>;
+                logMessage.type = <span class="hljs-string">&#x27;warning&#x27;</span>;
                 seq.warnings.push( logMessage );
             }
             <span class="hljs-keyword">if</span> ( msg.severity === <span class="hljs-number">2</span> ) {
-                logMessage.type = <span class="hljs-string">'error'</span>;
+                logMessage.type = <span class="hljs-string">&#x27;error&#x27;</span>;
                 seq.errors.push( logMessage );
             }
         } );
@@ -137,45 +137,45 @@ warning no-unused-vars
         <span class="hljs-keyword">var</span> warnings = !skipWarnings ? summary.warnings : [ ]; <span class="hljs-comment">// skip the warnings in that case</span>
 
         <span class="hljs-keyword">var</span> lines = summary.errors.concat( warnings ).map( <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> msg </span>) </span>{
-            <span class="hljs-keyword">return</span> <span class="hljs-string">'\n'</span> + msg.type + <span class="hljs-string">' '</span> + msg.ruleId + <span class="hljs-string">'\n  '</span> + msg.filePath + <span class="hljs-string">':'</span> + msg.line + <span class="hljs-string">':'</span> + msg.column;
-        } ).join( <span class="hljs-string">'\n'</span> );
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;\n&#x27;</span> + msg.type + <span class="hljs-string">&#x27; &#x27;</span> + msg.ruleId + <span class="hljs-string">&#x27;\n  &#x27;</span> + msg.filePath + <span class="hljs-string">&#x27;:&#x27;</span> + msg.line + <span class="hljs-string">&#x27;:&#x27;</span> + msg.column;
+        } ).join( <span class="hljs-string">&#x27;\n&#x27;</span> );
 
-        <span class="hljs-keyword">return</span> lines + <span class="hljs-string">'\n'</span>;
+        <span class="hljs-keyword">return</span> lines + <span class="hljs-string">&#x27;\n&#x27;</span>;
     }
 };
-</code></pre><p>So running <code>eslint</code> with this custom formatter:</p><pre class="hljs highlight-bash"><code>AF_SKIP_WARNINGS=<span class="hljs-literal">true</span> eslint -f <span class="hljs-string">'./my-awesome-formatter.js'</span> src/
+</code></pre><p>So running <code>eslint</code> with this custom formatter:</p><pre class="hljs highlight-bash"><code>AF_SKIP_WARNINGS=<span class="hljs-literal">true</span> eslint -f <span class="hljs-string">&#x27;./my-awesome-formatter.js&#x27;</span> src/
 </code></pre><p>The output will not print the warnings</p><pre class="hljs highlight-bash"><code>error space-infix-ops
   src/configs/bundler.js:6:8
 
 error semi
   src/configs/bundler.js:6:10
-</code></pre><h3>Using a JSON formatter first</h3><p>It is a bit more complicated, but using a simple formatter we can get the raw output to stdout</p><pre class="hljs highlight-javascript"><code><span class="hljs-comment">// json.js</span>
+</code></pre><h3 id="using-a-json-formatter-first-1">Using a JSON formatter first</h3><p>It is a bit more complicated, but using a simple formatter we can get the raw output to stdout</p><pre class="hljs highlight-javascript"><code><span class="hljs-comment">// json.js</span>
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> results </span>) </span>{
     <span class="hljs-built_in">console</span>.log( <span class="hljs-built_in">JSON</span>.stringify( results ) );
 }
-</code></pre><p>And then the formatter can read from stdin</p><pre class="hljs highlight-bash"><code>eslint -f <span class="hljs-string">'./json.js'</span> | ./my-awesome-formatter-cli.js --skip-warnings
+</code></pre><p>And then the formatter can read from stdin</p><pre class="hljs highlight-bash"><code>eslint -f <span class="hljs-string">&#x27;./json.js&#x27;</span> | ./my-awesome-formatter-cli.js --skip-warnings
 </code></pre><p>And the the content of <strong>my-awesome-formatter-cli.js</strong> would be something like:</p><pre class="hljs highlight-javascript"><code><span class="hljs-meta">#!/usr/bin/env node</span>
 <span class="hljs-keyword">var</span> stdin = process.stdin;
 <span class="hljs-keyword">var</span> stdout = process.stdout;
 <span class="hljs-keyword">var</span> strChunks = [ ];
 
 stdin.resume();
-stdin.setEncoding( <span class="hljs-string">'utf8'</span> );
+stdin.setEncoding( <span class="hljs-string">&#x27;utf8&#x27;</span> );
 
-stdin.on( <span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> chunk </span>) </span>{
+stdin.on( <span class="hljs-string">&#x27;data&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> chunk </span>) </span>{
     strChunks.push( chunk );
 } );
 
-stdin.on( <span class="hljs-string">'end'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+stdin.on( <span class="hljs-string">&#x27;end&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">var</span> inputJSON = strChunks.join();
     <span class="hljs-keyword">var</span> eslintResults = <span class="hljs-built_in">JSON</span>.parse( inputJSON );
-    <span class="hljs-keyword">var</span> skipWarnings = process.argv.indexOf( <span class="hljs-string">'--skip-warnings'</span> ) &gt; <span class="hljs-number">-1</span>;
+    <span class="hljs-keyword">var</span> skipWarnings = process.argv.indexOf( <span class="hljs-string">&#x27;--skip-warnings&#x27;</span> ) &gt; <span class="hljs-number">-1</span>;
 
-    <span class="hljs-keyword">var</span> result = <span class="hljs-built_in">require</span>( <span class="hljs-string">'./my-awesome-formatter'</span> )( eslintResults, {
+    <span class="hljs-keyword">var</span> result = <span class="hljs-built_in">require</span>( <span class="hljs-string">&#x27;./my-awesome-formatter&#x27;</span> )( eslintResults, {
         <span class="hljs-attr">skipWarnings</span>: skipWarnings
     } );
 
     stdout.write( result );
 } );
-</code></pre><h2>Final words</h2><p>More complex formatters could be written by grouping differently the errors and warnings and/or grouping the data by the ruleIds.</p><p>When printing the files a recommended format will be something like this:</p><pre class="hljs highlight-bash"><code>file:line:colum
+</code></pre><h2 id="final-words-1">Final words</h2><p>More complex formatters could be written by grouping differently the errors and warnings and/or grouping the data by the ruleIds.</p><p>When printing the files a recommended format will be something like this:</p><pre class="hljs highlight-bash"><code>file:line:colum
 </code></pre><p>Since that allows modern fancy terminals (like <a href="https://www.iterm2.com/">iTerm2</a> or <a href="http://guake-project.org/">Guake</a>) to make them link to files that open in your favorite text editor.</p></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/website/edit/master/./docs/1.10.3/developer-guide/working-with-custom-formatters.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>
