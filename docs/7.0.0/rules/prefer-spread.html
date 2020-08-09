@@ -4,7 +4,7 @@
 
 <span class="hljs-keyword">var</span> args = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
 <span class="hljs-built_in">Math</span>.max(...args);
-</code></pre><h2 id="rule-details-2666">Rule Details</h2><p>This rule is aimed to flag usage of <code>Function.prototype.apply()</code> in situations where spread syntax could be used instead.</p><h2 id="examples-155">Examples</h2><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint prefer-spread: &quot;error&quot;*/</span>
+</code></pre><h2 id="rule-details-2666">Rule Details</h2><p>This rule is aimed to flag usage of <code>Function.prototype.apply()</code> in situations where spread syntax could be used instead.</p><h2 id="examples-154">Examples</h2><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint prefer-spread: &quot;error&quot;*/</span>
 
 foo.apply(<span class="hljs-literal">undefined</span>, args);
 foo.apply(<span class="hljs-literal">null</span>, args);
