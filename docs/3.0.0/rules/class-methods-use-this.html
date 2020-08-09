@@ -29,7 +29,7 @@ a.sayHi(); <span class="hljs-comment">// =&gt; &quot;hi&quot;</span>
 }
 
 A.sayHi(); <span class="hljs-comment">// =&gt; &quot;hi&quot;</span>
-</code></pre><p>Also note in the above examples that the code calling the function on an <em>instance</em> of the class (<code>let a = new A(); a.sayHi();</code>) changes to calling it on the <em>class</em> itself (<code>A.sayHi();</code>).</p><h2 id="rule-details-1318">Rule Details</h2><p>This rule is aimed to flag class methods that do not use <code>this</code>.</p><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint class-methods-use-this: &quot;error&quot;*/</span>
+</code></pre><p>Also note in the above examples that the code calling the function on an <em>instance</em> of the class (<code>let a = new A(); a.sayHi();</code>) changes to calling it on the <em>class</em> itself (<code>A.sayHi();</code>).</p><h2 id="rule-details-1317">Rule Details</h2><p>This rule is aimed to flag class methods that do not use <code>this</code>.</p><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint class-methods-use-this: &quot;error&quot;*/</span>
 <span class="hljs-comment">/*eslint-env es6*/</span>
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
@@ -56,7 +56,7 @@ A.sayHi(); <span class="hljs-comment">// =&gt; &quot;hi&quot;</span>
         <span class="hljs-comment">// OK. static methods aren&#x27;t expected to use this.</span>
     }
 }
-</code></pre><h2 id="options-552">Options</h2><h3 id="exceptions-57">Exceptions</h3><pre class="hljs highlight-"><code>&quot;class-methods-use-this&quot;: [&lt;enabled&gt;, { &quot;exceptMethods&quot;: [&lt;...exceptions&gt;] }]
+</code></pre><h2 id="options-551">Options</h2><h3 id="exceptions-57">Exceptions</h3><pre class="hljs highlight-"><code>&quot;class-methods-use-this&quot;: [&lt;enabled&gt;, { &quot;exceptMethods&quot;: [&lt;...exceptions&gt;] }]
 </code></pre><p>The <code>exceptMethods</code> option allows you to pass an array of method names for which you would like to ignore warnings.</p><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule when used without exceptMethods:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint class-methods-use-this: &quot;error&quot;*/</span>
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
@@ -69,4 +69,4 @@ A.sayHi(); <span class="hljs-comment">// =&gt; &quot;hi&quot;</span>
     foo() {
     }
 }
-</code></pre><h2 id="version-1325">Version</h2><p>This rule was introduced in ESLint 3.4.0.</p><h2 id="resources-1325">Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/class-methods-use-this.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/class-methods-use-this.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/website/edit/master/./docs/3.0.0/rules/class-methods-use-this.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>
+</code></pre><h2 id="version-1324">Version</h2><p>This rule was introduced in ESLint 3.4.0.</p><h2 id="resources-1324">Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/class-methods-use-this.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/class-methods-use-this.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/website/edit/master/./docs/3.0.0/rules/class-methods-use-this.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>
