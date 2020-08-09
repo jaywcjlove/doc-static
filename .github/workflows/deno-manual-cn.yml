@@ -19,8 +19,8 @@ jobs:
           git clone https://github.com/Nugine/deno-manual-cn -b gh-pages --single-branch deno-manual-cn --depth 1
 
       - name: Deploy deno-manual-cn
-        uses: peaceiris/actions-gh-pages@v2.5.0
-        env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          PUBLISH_BRANCH: deno-manual-cn
-          PUBLISH_DIR: ./deno-manual-cn
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_branch: deno-manual-cn
+          publish_dir: ./deno-manual-cn
