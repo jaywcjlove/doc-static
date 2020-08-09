@@ -68,7 +68,7 @@
     , <span class="hljs-attr">b</span>: <span class="hljs-number">4</span> * multiplier
     , <span class="hljs-attr">c</span>: <span class="hljs-number">8</span> * multiplier
 });
-</code></pre><p>(This behavior differs from that of the JSCS rule cited below, which permits the first but prohibits the second format.)</p><h3 id="-fix-15">--fix</h3><p>If this rule is invoked with the command-line <code>--fix</code> option, object literals that violate the rule are generally modified to comply with it. The modification in each case is to move a property specification to the next line whenever there is part or all of a previous property specification on the same line. For example,</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">const</span> newObject = {
+</code></pre><p>(This behavior differs from that of the JSCS rule cited below, which permits the first but prohibits the second format.)</p><h3 id="-fix-13">--fix</h3><p>If this rule is invoked with the command-line <code>--fix</code> option, object literals that violate the rule are generally modified to comply with it. The modification in each case is to move a property specification to the next line whenever there is part or all of a previous property specification on the same line. For example,</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">const</span> newObject = {
     <span class="hljs-attr">a</span>: <span class="hljs-string">&#x27;a.m.&#x27;</span>, <span class="hljs-attr">b</span>: <span class="hljs-string">&#x27;p.m.&#x27;</span>,
     <span class="hljs-attr">c</span>: <span class="hljs-string">&#x27;daylight saving time&#x27;</span>
 };
