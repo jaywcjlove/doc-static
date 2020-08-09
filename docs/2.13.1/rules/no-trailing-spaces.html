@@ -9,7 +9,7 @@
 <span class="hljs-keyword">var</span> foo = <span class="hljs-number">0</span>;
 
 <span class="hljs-keyword">var</span> baz = <span class="hljs-number">5</span>;
-</code></pre><h2 id="options-501">Options</h2><p>There is one option for this rule, <code>skipBlankLines</code>. When set to true, the rule will not flag any lines that are made up purely of whitespace. In short, if a line is zero-length after being trimmed of whitespace, then the rule will not flag that line when <code>skipBlankLines</code> is enabled.</p><p>You can enable this option in your config like this:</p><pre class="hljs highlight-json"><code>{
+</code></pre><h2 id="options-503">Options</h2><p>There is one option for this rule, <code>skipBlankLines</code>. When set to true, the rule will not flag any lines that are made up purely of whitespace. In short, if a line is zero-length after being trimmed of whitespace, then the rule will not flag that line when <code>skipBlankLines</code> is enabled.</p><p>You can enable this option in your config like this:</p><pre class="hljs highlight-json"><code>{
     <span class="hljs-attr">&quot;no-trailing-spaces&quot;</span>: [<span class="hljs-string">&quot;error&quot;</span>, { <span class="hljs-attr">&quot;skipBlankLines&quot;</span>: <span class="hljs-literal">true</span> }]
 }
 </code></pre><p>With this option enabled, The following patterns are not considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-trailing-spaces: [&quot;error&quot;, { &quot;skipBlankLines&quot;: true }]*/</span>

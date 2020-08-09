@@ -38,7 +38,7 @@ foo(<span class="hljs-string">&quot;var a = 0&quot;</span>);
     <span class="hljs-built_in">eval</span>() {
     }
 }
-</code></pre><h2 id="options-478">Options</h2><p>This rule has an option to allow indirect calls to <code>eval</code>. Indirect calls to <code>eval</code> are less dangerous than direct calls to <code>eval</code> because they cannot dynamically change the scope. Because of this, they also will not negatively impact performance to the degree of direct <code>eval</code>.</p><pre class="hljs highlight-js"><code>{
+</code></pre><h2 id="options-479">Options</h2><p>This rule has an option to allow indirect calls to <code>eval</code>. Indirect calls to <code>eval</code> are less dangerous than direct calls to <code>eval</code> because they cannot dynamically change the scope. Because of this, they also will not negatively impact performance to the degree of direct <code>eval</code>.</p><pre class="hljs highlight-js"><code>{
     <span class="hljs-string">&quot;no-eval&quot;</span>: [<span class="hljs-string">&quot;error&quot;</span>, {<span class="hljs-string">&quot;allowIndirect&quot;</span>: <span class="hljs-literal">true</span>}] <span class="hljs-comment">// default is false</span>
 }
 </code></pre><p>With this option the following patterns are considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-eval: &quot;error&quot;*/</span>

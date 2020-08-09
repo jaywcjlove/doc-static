@@ -11,7 +11,7 @@ b = <span class="hljs-number">10</span>;
 <span class="hljs-comment">/*eslint no-undef: &quot;error&quot;*/</span>
 
 b = <span class="hljs-number">10</span>;
-</code></pre><p>By default, variables declared in <code>/*global */</code> are read-only, therefore assignment is incorrect.</p><h2 id="options-502">Options</h2><ul><li><code>typeof</code> set to true will warn for variables used inside typeof check (Default false).</li></ul><h3 id="typeof-3">typeof</h3><p class="correct icon">Examples of <strong>correct</strong> code for the default <code>{ &quot;typeof&quot;: false }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-undef: &quot;error&quot;*/</span>
+</code></pre><p>By default, variables declared in <code>/*global */</code> are read-only, therefore assignment is incorrect.</p><h2 id="options-504">Options</h2><ul><li><code>typeof</code> set to true will warn for variables used inside typeof check (Default false).</li></ul><h3 id="typeof-3">typeof</h3><p class="correct icon">Examples of <strong>correct</strong> code for the default <code>{ &quot;typeof&quot;: false }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-undef: &quot;error&quot;*/</span>
 
 <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> UndefinedIdentifier === <span class="hljs-string">&quot;undefined&quot;</span>) {
     <span class="hljs-comment">// do something ...</span>
@@ -23,7 +23,7 @@ b = <span class="hljs-number">10</span>;
 <span class="hljs-comment">/*eslint no-undef: [&quot;error&quot;, { &quot;typeof&quot;: true }] */</span>
 
 <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> a === <span class="hljs-string">&quot;string&quot;</span>){}
-</code></pre><h2 id="environments-6">Environments</h2><p>For convenience, ESLint provides shortcuts that pre-define global variables exposed by popular libraries and runtime environments. This rule supports these environments, as listed in <a href="https://eslint.org/docs/user-guide/configuring#specifying-environments">Specifying Environments</a>. A few examples are given below.</p><h3 id="browser-5">browser</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with <code>browser</code> environment:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-undef: &quot;error&quot;*/</span>
+</code></pre><h2 id="environments-7">Environments</h2><p>For convenience, ESLint provides shortcuts that pre-define global variables exposed by popular libraries and runtime environments. This rule supports these environments, as listed in <a href="https://eslint.org/docs/user-guide/configuring#specifying-environments">Specifying Environments</a>. A few examples are given below.</p><h3 id="browser-5">browser</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with <code>browser</code> environment:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-undef: &quot;error&quot;*/</span>
 <span class="hljs-comment">/*eslint-env browser*/</span>
 
 <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
