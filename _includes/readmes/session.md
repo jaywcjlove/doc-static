@@ -101,10 +101,11 @@ Specifies the `boolean` or `string` to be the value for the `SameSite` `Set-Cook
   - `true` will set the `SameSite` attribute to `Strict` for strict same site enforcement.
   - `false` will not set the `SameSite` attribute.
   - `'lax'` will set the `SameSite` attribute to `Lax` for lax same site enforcement.
+  - `'none'` will set the `SameSite` attribute to `None` for an explicit cross-site cookie.
   - `'strict'` will set the `SameSite` attribute to `Strict` for strict same site enforcement.
 
-More information about the different enforcement levels can be found in the specification
-https://tools.ietf.org/html/draft-west-first-party-cookies-07#section-4.1.1
+More information about the different enforcement levels can be found in
+[the specification][rfc-6265bis-03-4.1.2.7].
 
 **Note** This is an attribute that has not yet been fully standardized, and may change in
 the future. This also means many clients may ignore this attribute until they understand it.
@@ -227,15 +228,24 @@ likely need `resave: true`.
 
 ##### rolling
 
-Force a session identifier cookie to be set on every response. The expiration
+Force the session identifier cookie to be set on every response. The expiration
 is reset to the original [`maxAge`](#cookiemaxage), resetting the expiration
 countdown.
 
 The default value is `false`.
 
+With this enabled, the session identifier cookie will expire in
+[`maxAge`](#cookiemaxage) since the last response was sent instead of in
+[`maxAge`](#cookiemaxage) since the session was last modified by the server.
+
+This is typically used in conjuction with short, non-session-length
+[`maxAge`](#cookiemaxage) values to provide a quick timeout of the session data
+with reduced potential of it occurring during on going server interactions.
+
 **Note** When this option is set to `true` but the `saveUninitialized` option is
 set to `false`, the cookie will not be set on a response with an uninitialized
-session.
+session. This option only modifies the behavior when an existing session was
+loaded for the request.
 
 ##### saveUninitialized
 
@@ -262,7 +272,22 @@ it to be saved. *This has been fixed in PassportJS 0.3.0*
 This is the secret used to sign the session ID cookie. This can be either a string
 for a single secret, or an array of multiple secrets. If an array of secrets is
 provided, only the first element will be used to sign the session ID cookie, while
-all the elements will be considered when verifying the signature in requests.
+all the elements will be considered when verifying the signature in requests. The
+secret itself should be not easily parsed by a human and would best be a random set
+of characters. A best practice may include:
+
+  - The use of environment variables to store the secret, ensuring the secret itself
+    does not exist in your repository.
+  - Periodic updates of the secret, while ensuring the previous secret is in the
+    array.
+
+Using a secret that cannot be guessed will reduce the ability to hijack a session to
+only guessing the session ID (as determined by the `genid` option).
+
+Changing the secret value will invalidate all existing sessions. In order to rotate
+the secret without invalidating sessions, provide an array of secrets, with the new
+secret as first element of the array, and including previous secrets as the later
+elements.
 
 ##### store
 
@@ -546,6 +571,11 @@ and other multi-core embedded devices).
 [connect-dynamodb-url]: https://www.npmjs.com/package/connect-dynamodb
 [connect-dynamodb-image]: https://badgen.net/github/stars/ca98am79/connect-dynamodb?label=%E2%98%85
 
+[![★][@google-cloud/connect-firestore-image] @google-cloud/connect-firestore][@google-cloud/connect-firestore-url] A [Google Cloud Firestore](https://cloud.google.com/firestore/docs/overview)-based session store.
+
+[@google-cloud/connect-firestore-url]: https://www.npmjs.com/package/@google-cloud/connect-firestore
+[@google-cloud/connect-firestore-image]: https://badgen.net/github/stars/googleapis/nodejs-firestore-session?label=%E2%98%85
+
 [![★][connect-hazelcast-image] connect-hazelcast][connect-hazelcast-url] Hazelcast session store for Connect and Express.
 
 [connect-hazelcast-url]: https://www.npmjs.com/package/connect-hazelcast
@@ -587,11 +617,6 @@ and other multi-core embedded devices).
 [connect-mongodb-session-url]: https://www.npmjs.com/package/connect-mongodb-session
 [connect-mongodb-session-image]: https://badgen.net/github/stars/mongodb-js/connect-mongodb-session?label=%E2%98%85
 
-[![★][connect-mssql-image] connect-mssql][connect-mssql-url] A SQL Server-based session store.
-
-[connect-mssql-url]: https://www.npmjs.com/package/connect-mssql
-[connect-mssql-image]: https://badgen.net/github/stars/patriksimek/connect-mssql?label=%E2%98%85
-
 [![★][connect-pg-simple-image] connect-pg-simple][connect-pg-simple-url] A PostgreSQL-based session store.
 
 [connect-pg-simple-url]: https://www.npmjs.com/package/connect-pg-simple
@@ -624,15 +649,15 @@ and other multi-core embedded devices).
 [connect-sqlite3-url]: https://www.npmjs.com/package/connect-sqlite3
 [connect-sqlite3-image]: https://badgen.net/github/stars/rawberg/connect-sqlite3?label=%E2%98%85
 
+[![★][connect-typeorm-image] connect-typeorm][connect-typeorm-url] A [TypeORM](https://github.com/typeorm/typeorm)-based session store.
+
+[connect-typeorm-url]: https://www.npmjs.com/package/connect-typeorm
+[connect-typeorm-image]: https://badgen.net/github/stars/makepost/connect-typeorm?label=%E2%98%85
+
 [![★][couchdb-expression-image] couchdb-expression][couchdb-expression-url] A [CouchDB](https://couchdb.apache.org/)-based session store.
 
 [couchdb-expression-url]: https://www.npmjs.com/package/couchdb-expression
 [couchdb-expression-image]: https://badgen.net/github/stars/tkshnwesper/couchdb-expression?label=%E2%98%85
-
-[![★][documentdb-session-image] documentdb-session][documentdb-session-url] A session store for Microsoft Azure's [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/) NoSQL database service.
-
-[documentdb-session-url]: https://www.npmjs.com/package/documentdb-session
-[documentdb-session-image]: https://badgen.net/github/stars/dwhieb/documentdb-session?label=%E2%98%85
 
 [![★][dynamodb-store-image] dynamodb-store][dynamodb-store-url] A DynamoDB-based session store.
 
@@ -678,6 +703,11 @@ a [variety of storage types](https://www.npmjs.com/package/cache-manager#store-e
 [express-session-level-url]: https://www.npmjs.com/package/express-session-level
 [express-session-level-image]: https://badgen.net/github/stars/tgohn/express-session-level?label=%E2%98%85
 
+[![★][express-session-rsdb-image] express-session-rsdb][express-session-rsdb-url] Session store based on Rocket-Store: A very simple, super fast and yet powerfull, flat file database.
+
+[express-session-rsdb-url]: https://www.npmjs.com/package/express-session-rsdb
+[express-session-rsdb-image]: https://badgen.net/github/stars/paragi/express-session-rsdb?label=%E2%98%85
+
 [![★][express-sessions-image] express-sessions][express-sessions-url] A session store supporting both MongoDB and Redis.
 
 [express-sessions-url]: https://www.npmjs.com/package/express-sessions
@@ -704,6 +734,11 @@ based session store. Supports all backends supported by Fortune (MongoDB, Redis,
 [level-session-store-url]: https://www.npmjs.com/package/level-session-store
 [level-session-store-image]: https://badgen.net/github/stars/toddself/level-session-store?label=%E2%98%85
 
+[![★][lowdb-session-store-image] lowdb-session-store][lowdb-session-store-url] A [lowdb](https://www.npmjs.com/package/lowdb)-based session store.
+
+[lowdb-session-store-url]: https://www.npmjs.com/package/lowdb-session-store
+[lowdb-session-store-image]: https://badgen.net/github/stars/fhellwig/lowdb-session-store?label=%E2%98%85
+
 [![★][medea-session-store-image] medea-session-store][medea-session-store-url] A Medea-based session store.
 
 [medea-session-store-url]: https://www.npmjs.com/package/medea-session-store
@@ -723,6 +758,11 @@ based session store. Supports all backends supported by Fortune (MongoDB, Redis,
 
 [nedb-session-store-url]: https://www.npmjs.com/package/nedb-session-store
 [nedb-session-store-image]: https://badgen.net/github/stars/JamesMGreene/nedb-session-store?label=%E2%98%85
+
+[![★][@quixo3/prisma-session-store-image] @quixo3/prisma-session-store][@quixo3/prisma-session-store-url] A session store for the [Prisma Framework](https://www.prisma.io).
+
+[@quixo3/prisma-session-store-url]: https://www.npmjs.com/package/@quixo3/prisma-session-store
+[@quixo3/prisma-session-store-image]: https://badgen.net/github/stars/kleydon/prisma-session-store?label=%E2%98%85
 
 [![★][restsession-image] restsession][restsession-url] Store sessions utilizing a RESTful API
 
@@ -799,10 +839,29 @@ app.get('/bar', function (req, res, next) {
 })
 ```
 
+## Debugging
+
+This module uses the [debug](https://www.npmjs.com/package/debug) module
+internally to log information about session operations.
+
+To see all the internal logs, set the `DEBUG` environment variable to
+`express-session` when launching your app (`npm start`, in this example):
+
+```sh
+$ DEBUG=express-session npm start
+```
+
+On Windows, use the corresponding command;
+
+```sh
+> set DEBUG=express-session & npm start
+```
+
 ## License
 
 [MIT](LICENSE)
 
+[rfc-6265bis-03-4.1.2.7]: https://tools.ietf.org/html/draft-ietf-httpbis-rfc6265bis-03#section-4.1.2.7
 [coveralls-image]: https://badgen.net/coveralls/c/github/expressjs/session/master
 [coveralls-url]: https://coveralls.io/r/expressjs/session?branch=master
 [node-url]: https://nodejs.org/en/download

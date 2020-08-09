@@ -18,6 +18,8 @@
             </li>
             <li><a href="#app.mountpath">app.mountpath</a>
             </li>
+            <li><a href="#app.router">app.router</a>
+            </li>
             <li><em>Events</em>
             </li>
             <li><a href="#app.onmount">mount</a>
@@ -77,6 +79,8 @@
             <li><a href="#req.cookies">req.cookies</a>
             </li>
             <li><a href="#req.fresh">req.fresh</a>
+            </li>
+            <li><a href="#req.host">req.host</a>
             </li>
             <li><a href="#req.hostname">req.hostname</a>
             </li>

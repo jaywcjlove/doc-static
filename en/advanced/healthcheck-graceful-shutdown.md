@@ -10,7 +10,17 @@ redirect_from: "/advanced/healthcheck-graceful-shutdown.html"
 
 ## Graceful shutdown
 
-When you deploy a new version of your application, you must replace the previous version. The [process manager](pm.html) you're using will first send a SIGTERM signal to the application to notify it that it will be killed. Once the application gets this signal, it will stop accepting new requests, finish all the ongoing requests, and clean up the resources it used,  including database connections and file locks.
+When you deploy a new version of your application, you must replace the previous version. The [process manager](pm.html) you're using will first send a SIGTERM signal to the application to notify it that it will be killed. Once the application gets this signal, it should stop accepting new requests, finish all the ongoing requests, clean up the resources it used,  including database connections and file locks then exit.
+
+### Example Graceful Shutdown
+```js
+process.on('SIGTERM', () => {
+  debug('SIGTERM signal received: closing HTTP server')
+  server.close(() => {
+    debug('HTTP server closed')
+  })
+})
+```
 
 ## Health checks
 
@@ -105,3 +115,42 @@ app.listen(3000, () => {
 ```
 
 [Lightship documentation](https://github.com/gajus/lightship) provides examples of the corresponding [Kubernetes configuration](https://github.com/gajus/lightship#lightship-usage-kubernetes-container-probe-configuration) and a complete example of integration with [Express.js](https://github.com/gajus/lightship#using-with-expressjs).
+
+### http-terminator
+
+[http-terminator](https://github.com/gajus/http-terminator) implements logic for gracefully terminating an express.js server.
+
+Terminating a HTTP server in Node.js requires keeping track of all open connections and signaling them that the server is shutting down. http-terminator implements the logic for tracking all connections and their termination upon a timeout. http-terminator also ensures graceful communication of the server intention to shutdown to any clients that are currently receiving response from this server.
+
+Install http-terminator as follows:
+
+```sh
+npm install http-terminator
+
+```
+
+Basic template that illustrates using http-terminator:
+
+```js
+const express = require('express')
+const { createHttpTerminator } = require('http-terminator')
+
+const app = express()
+
+const server = app.listen(3000)
+
+const httpTerminator = createHttpTerminator({ server })
+
+app.get('/', (req, res) => {
+  res.send('ok')
+})
+
+// A server will terminate after invoking `httpTerminator.terminate()`.
+// Note: Timeout is used for illustration of delayed termination purposes only.
+setTimeout(() => {
+  httpTerminator.terminate()
+}, 1000)
+
+```
+
+[http-terminator documentation](https://github.com/gajus/http-terminator) provides API documentation and comparison to other existing third-party solutions.

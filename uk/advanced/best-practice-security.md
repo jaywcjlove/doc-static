@@ -16,7 +16,7 @@ Development and production environments are usually set up differently and have 
 This article discusses some security best practices for Express applications deployed to production.
 
 **NOTE**: If you believe you have discovered a security vulnerability in Express, please see
-[Security Policies and Procedures](https://github.com/strongloop/express/blob/master/Security.md).
+[Security Policies and Procedures](https://github.com/expressjs/express/blob/master/Security.md).
 
 ## Don't use deprecated or vulnerable versions of Express
 
@@ -40,7 +40,6 @@ Helmet is actually just a collection of nine smaller middleware functions that s
 
 * [csp](https://github.com/helmetjs/csp) sets the `Content-Security-Policy` header to help prevent cross-site scripting attacks and other cross-site injections.
 * [hidePoweredBy](https://github.com/helmetjs/hide-powered-by) removes the `X-Powered-By` header.
-* [hpkp](https://github.com/helmetjs/hpkp) Adds [Public Key Pinning](https://developer.mozilla.org/en-US/docs/Web/Security/Public_Key_Pinning) headers to prevent man-in-the-middle attacks with forged certificates.
 * [hsts](https://github.com/helmetjs/hsts) sets `Strict-Transport-Security` header that enforces secure (HTTP over SSL/TLS) connections to the server.
 * [ieNoOpen](https://github.com/helmetjs/ienoopen) sets `X-Download-Options` for IE8+.
 * [noCache](https://github.com/helmetjs/nocache) sets `Cache-Control` and Pragma headers to disable client-side caching.

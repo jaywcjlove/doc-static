@@ -63,7 +63,7 @@ In general, there are two reasons for logging from your app: For debugging and f
 
 #### For debugging
 
-If you're logging for purposes of debugging, then instead of using `console.log()`, use a special debugging module like [debug](https://www.npmjs.com/package/debug). This module enables you to use the DEBUG environment variable to control what debug messages are sent to `console.err()`, if any. To keep your app purely asynchronous, you'd still want to pipe `console.err()` to another program. But then, you're not really going to debug in production, are you?
+If you're logging for purposes of debugging, then instead of using `console.log()`, use a special debugging module like [debug](https://www.npmjs.com/package/debug). This module enables you to use the DEBUG environment variable to control what debug messages are sent to `console.error()`, if any. To keep your app purely asynchronous, you'd still want to pipe `console.error()` to another program. But then, you're not really going to debug in production, are you?
 
 #### For app activity
 
@@ -153,8 +153,8 @@ However, there are two caveats:
 const wrap = fn => (...args) => fn(...args).catch(args[2])
 
 app.get('/', wrap(async (req, res, next) => {
-  let company = await getCompanyById(req.query.id)
-  let stream = getLogoStreamById(company.id)
+  const company = await getCompanyById(req.query.id)
+  const stream = getLogoStreamById(company.id)
   stream.on('error', next).pipe(res)
 }))
 ```
@@ -263,16 +263,16 @@ There are two ways to use init systems with your Express app:
 
 Systemd is a Linux system and service manager. Most major Linux distributions have adopted systemd as their default init system.
 
-A systemd service configuration file is called a _unit file_, with a filename ending in .service. Here's an example unit file to manage a Node app directly (replace the bold text with values for your system and app):
+A systemd service configuration file is called a _unit file_, with a filename ending in `.service`. Here's an example unit file to manage a Node app directly.  Replace the values enclosed in `<angle brackets>` for your system and app:
 
 ```sh
 [Unit]
-Description=Awesome Express App
+Description=<Awesome Express App>
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/node /projects/myapp/index.js
-WorkingDirectory=/projects/myapp
+ExecStart=/usr/local/bin/node </projects/myapp/index.js>
+WorkingDirectory=</projects/myapp>
 
 User=nobody
 Group=nogroup

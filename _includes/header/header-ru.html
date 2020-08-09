@@ -1,4 +1,8 @@
 <header>
+  <div id="blm-banner">
+    Black Lives Matter. <br>
+    <a id="blm-donate"  href="https://support.eji.org/give/153413/#!/donation/checkout">Support the Equal Justice Initiative</a>.
+  </div>
   <div id="mobile-menu">
       <div id="nav-button" class="fa fa-bars fa-2x button"></div>
   </div>
@@ -7,7 +11,7 @@
   <div id="navbar">
       <input id="q" placeholder="🔎 search">
       <ul id="navmenu">
-          <li><a href="/{{ page.lang }}/" id="home-menu"{% if page.menu == 'home' %} class="active"{% endif %}>Начальная страница</a></li>
+          <li><a href="/{{ page.lang }}/" id="home-menu"{% if page.menu == 'home' %} class="active"{% endif %}>Главная</a></li>
           <li>
               <ul id="getting-started-menu" class="menu">
                   <li><a href="/{{ page.lang }}/starter/installing.html"{% if page.menu == 'starter' %} class="active"{% endif %}>Начало работы</a>
@@ -76,7 +80,7 @@
           </li>
           <li>
               <ul id="application-menu" class="menu">
-                  <li><a href="/{{ page.lang }}/4x/api.html"{% if page.menu == 'api' %} class="active"{% endif %}>Справочник по API</a>
+                  <li><a href="/{{ page.lang }}/4x/api.html"{% if page.menu == 'api' %} class="active"{% endif %}>API</a>
                       <ul>
                           <li><a href="/{{ page.lang }}/4x/api.html">4.x</a>
                           </li>
@@ -117,7 +121,7 @@
                           </li>
                           <li><a href="/{{ page.lang }}/resources/community.html">Сообщество</a>
                           </li>
-                          <li><a href="/{{ page.lang }}/resources/books-blogs.html">Книги и блоги</a>
+                          <li><a href="/{{ page.lang }}/resources/learning.html">Дополнительное обучение</a>
                           </li>
                       </ul>
                   </li>

@@ -21,7 +21,7 @@ Adding the capability to connect databases to Express apps is just a matter of l
 * [Redis](#redis)
 * [SQL Server](#sql-server)
 * [SQLite](#sqlite)
-* [ElasticSearch](#elasticsearch)
+* [Elasticsearch](#elasticsearch)
 
 <div class="doc-box doc-notice" markdown="1">
 These database drivers are among many that are available.  For other options,
@@ -377,9 +377,14 @@ var Connection = require('tedious').Connection
 var Request = require('tedious').Request
 
 var config = {
-  userName: 'your_username', // update me
-  password: 'your_password', // update me
-  server: 'localhost'
+  server: 'localhost',
+  authentication: {
+    type: 'default',
+    options: {
+      userName: 'your_username', // update me
+      password: 'your_password' // update me
+    }
+  }
 }
 
 var connection = new Connection(config)
@@ -450,7 +455,7 @@ db.serialize(function () {
 db.close()
 ```
 
-## ElasticSearch
+## Elasticsearch
 
 **Module**: [elasticsearch](https://github.com/elastic/elasticsearch-js)
 

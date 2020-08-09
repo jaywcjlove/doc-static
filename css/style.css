@@ -66,7 +66,7 @@ strong, th {
 }
 
 #home-content {
-  margin: 120px 0 2% 5%;
+  margin: 183px 0 2% 5%;
   max-width: 900px;
   padding-right: 9%;
   display: flex;
@@ -137,7 +137,7 @@ strong, th {
 }
 
 .content {
-  margin: 90px 3% 7%;
+  margin: 153px 3% 7%;
   max-width: 1090px;
   padding-left: 225px;
 }
@@ -204,8 +204,8 @@ a {
 }
 
 #api-doc *:target, #page-doc *:target {
- margin-top: -60px;
- padding-top: 60px;
+ margin-top: -120px;
+ padding-top: 120px;
  z-index: -1;
 }
 
@@ -231,6 +231,7 @@ a {
 }
 
 #logo .express {
+  margin-top: 63px;
   display: block;
   font: 25px "Helvetica Neue", "Open Sans", sans-serif;
   font-weight: 100;
@@ -301,7 +302,7 @@ header {
   left: 0;
   background: #eee;
   width: 100%;
-  height: 55px;
+  height: 120px;
   z-index: 100;
   border-bottom: 1px solid #ddd;
 }
@@ -561,7 +562,7 @@ html[xmlns] .clearfix {
 }
 
 #i18n-notice-box {
-  margin-top: 100px;
+  margin-top: 150px;
   position: relative;
 }
 
@@ -673,7 +674,6 @@ footer {
 #navbar {
   padding-left: 5%;
   max-width: 1000px;
-  height: 100%;
   position: relative;
   display: flex;
   justify-content: flex-end;
@@ -745,7 +745,7 @@ footer {
   position: fixed;
   margin: 0;
   padding: 0 10px 0 0;
-  top: 90px;
+  top: 153px;
   left: 30px;
   height: 500px;
   text-align: left;
@@ -892,7 +892,7 @@ h2 a {
   }
 
   #home-content {
-    margin: 100px 0 0 5%;
+    margin: 150px 0 0 5%;
     padding-right: 5%;
   }
 
@@ -926,6 +926,7 @@ h2 a {
   }
 
   #logo .express {
+    margin-top: 0px;
     font-weight: bold;
   }
 
@@ -1149,7 +1150,7 @@ h2 a {
 
 .callout {position: relative;}
 
-#mw-fig { padding: 0; border: 0; width: 960px; margin-bottom: 20px;}
+#mw-fig { border-collapse: separate; padding: 0; border: 0; width: 960px; margin-bottom: 20px;}
 #mw-fig-imgcell {margin: 0; padding: 0px; border: 0; width: 410px;}
 #mw-fig-img {margin: 0px; padding: 0px; width: 410px; height: 308px;}
 .mw-fig-callouts {margin: 0; padding: 0 0 0 5px; border: 0; width: 550px;}
@@ -1191,4 +1192,18 @@ h2 a {
 
 #mw-list ul li {
  margin-left: -20px;
+}
+
+#blm-banner {
+  text-align: center;
+  background: #010101; 
+  color: #f1f1f1;
+  padding: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+#blm-donate {
+  color: #5E80F7;
+  text-decoration: none;
 }

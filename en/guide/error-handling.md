@@ -42,9 +42,27 @@ app.get('/', function (req, res, next) {
 })
 ```
 
-If you pass anything to the `next()` function (except the string `'route'`), Express regards the current request as being an error and will skip any remaining non-error handling routing and middleware functions.
+Starting with Express 5, route handlers and middleware that return a Promise
+will call `next(value)` automatically when they reject or throw an error.
+For example:
 
-If the callback in a sequence provides no data, only errors, you can simplify this code as follows:
+```js
+app.get('/user/:id', async function (req, res, next) {
+  var user = await getUserById(req.params.id)
+  res.send(user)
+})
+```
+
+If `getUserById` throws an error or rejects, `next` will be called with either
+the thrown error or the rejected value. If no rejected value is provided, `next`
+will be called with a default Error object provided by the Express router.
+
+If you pass anything to the `next()` function (except the string `'route'`),
+Express regards the current request as being an error and will skip any
+remaining non-error handling routing and middleware functions.
+
+If the callback in a sequence provides no data, only errors, you can simplify
+this code as follows:
 
 ```js
 app.get('/', [
@@ -138,6 +156,16 @@ in the production environment.
 <div class="doc-box doc-info" markdown="1">
 Set the environment variable `NODE_ENV` to `production`, to run the app in production mode.
 </div>
+
+When an error is written, the following information is added to the
+response:
+
+* The `res.statusCode` is set from `err.status` (or `err.statusCode`). If
+  this value is outside the 4xx or 5xx range, it will be set to 500.
+* The `res.statusMessage` is set according to the status code.
+* The body will be the HTML of the status code message when in production
+  environment, otherwise will be `err.stack`.
+* Any headers specified in an `err.headers` object.
 
 If you call `next()` with an error after you have started writing the
 response (for example, if you encounter an error while streaming the

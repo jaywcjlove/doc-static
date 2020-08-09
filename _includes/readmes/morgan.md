@@ -9,6 +9,16 @@ HTTP request logger middleware for node.js
 
 > Named after [Dexter](http://en.wikipedia.org/wiki/Dexter_Morgan), a show you should not watch until completion.
 
+## Installation
+
+This is a [Node.js](https://nodejs.org/en/) module available through the
+[npm registry](https://www.npmjs.com/). Installation is done using the
+[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
+
+```sh
+$ npm install morgan
+```
+
 ## API
 
 <!-- eslint-disable no-unused-vars -->
@@ -111,8 +121,9 @@ Standard Apache common log output.
 ##### dev
 
 Concise output colored by response status for development use. The `:status`
-token will be colored red for server error codes, yellow for client error
-codes, cyan for redirection codes, and uncolored for all other codes.
+token will be colored green for success codes, red for server error codes,
+yellow for client error codes, cyan for redirection codes, and uncolored
+for information codes.
 
 ```
 :method :url :status :response-time ms - :res[content-length]
@@ -211,6 +222,14 @@ If the request/response cycle completes before a response was sent to the
 client (for example, the TCP socket closed prematurely by a client aborting
 the request), then the status will be empty (displayed as `"-"` in the log).
 
+##### :total-time[digits]
+
+The time between the request coming into `morgan` and when the response
+has finished being written out to the connection, in milliseconds.
+
+The `digits` argument is a number that specifies the number of digits to
+include on the number, defaulting to `3`, which provides microsecond precision.
+
 ##### :url
 
 The URL of the request. This will use `req.originalUrl` if exists, otherwise `req.url`.
@@ -239,7 +258,7 @@ advanced uses, this compile function is directly available.
 
 ### express/connect
 
-Simple app that will log all request in the Apache combined format to STDOUT
+Sample app that will log all request in the Apache combined format to STDOUT
 
 ```js
 var express = require('express')
@@ -256,7 +275,7 @@ app.get('/', function (req, res) {
 
 ### vanilla http server
 
-Simple app that will log all request in the Apache combined format to STDOUT
+Sample app that will log all request in the Apache combined format to STDOUT
 
 ```js
 var finalhandler = require('finalhandler')
@@ -282,7 +301,7 @@ http.createServer(function (req, res) {
 
 #### single file
 
-Simple app that will log all requests in the Apache combined format to the file
+Sample app that will log all requests in the Apache combined format to the file
 `access.log`.
 
 ```js
@@ -306,7 +325,7 @@ app.get('/', function (req, res) {
 
 #### log file rotation
 
-Simple app that will log all requests in the Apache combined format to one log
+Sample app that will log all requests in the Apache combined format to one log
 file per day in the `log/` directory using the
 [rotating-file-stream module](https://www.npmjs.com/package/rotating-file-stream).
 
@@ -314,12 +333,12 @@ file per day in the `log/` directory using the
 var express = require('express')
 var morgan = require('morgan')
 var path = require('path')
-var rfs = require('rotating-file-stream')
+var rfs = require('rotating-file-stream') // version 2.x
 
 var app = express()
 
 // create a rotating write stream
-var accessLogStream = rfs('access.log', {
+var accessLogStream = rfs.createStream('access.log', {
   interval: '1d', // rotate daily
   path: path.join(__dirname, 'log')
 })

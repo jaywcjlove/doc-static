@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Knihy a blogy o Express
+title: Dodatočné vzdelávanie
 menu: resources
 lang: sk
 ---
@@ -9,7 +9,7 @@ lang: sk
  License: MIT
 -->
 
-# Knihy a blogy
+# Dodatočné vzdelávanie
 
 <div class="doc-box doc-warn">Upozornenie: Príspevky komunity nepodliehajúce schvalovaniu.</div>
 
@@ -37,16 +37,15 @@ texxtoor, September 2015. In deutscher Sprache / in German language
 
 ### Pridajte vašu knihu!
 
-[Upravte Markdown súbor](https://github.com/strongloop/expressjs.com/blob/gh-pages/resources/books-blogs.md) a pridajte odkaz na knihu, zašlite pull request (potrebné prihlásenie pomocou GitHub konta). Dodržiavajte formát zavedený v horeuvedenom zozname.
+[Upravte Markdown súbor](https://github.com/expressjs/expressjs.com/blob/gh-pages/resources/learning.md) a pridajte odkaz na knihu, zašlite pull request (potrebné prihlásenie pomocou GitHub konta). Dodržiavajte formát zavedený v horeuvedenom zozname.
 
 ## Blogy
 
 - [StrongLoop Blog: Express category](http://strongloop.com/strongblog/category/express/)
 - [Hage Yaapa's Blog: Express category](http://www.hacksparrow.com/category/express-js)
 - [Codeforgeek Blog: Express category](http://codeforgeek.com/code/nodejs/express/)
-- [Node-tricks Blog: Express category](http://node-tricks.com/category/express/)
 - [Baboon Blog: Express category](http://www.baboon.ir/tutorials/expressjs/) (Persian language)
 
 ### Pridajte váš blog!
 
-[Upravte Markdown súbor](https://github.com/strongloop/expressjs.com/blob/gh-pages/{{ page.lang }}/resources/books-blogs.md) a pridajte odkaz na váš blog, zašlite pull request (potrebné prihlásenie pomocou GitHub konta). Dodržiavajte formát zavedený v horeuvedenom zozname.
+[Upravte Markdown súbor](https://github.com/expressjs/expressjs.com/blob/gh-pages/{{ page.lang }}/resources/learning.md) a pridajte odkaz na váš blog, zašlite pull request (potrebné prihlásenie pomocou GitHub konta). Dodržiavajte formát zavedený v horeuvedenom zozname.
