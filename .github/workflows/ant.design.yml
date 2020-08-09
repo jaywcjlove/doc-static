@@ -19,8 +19,8 @@ jobs:
           git clone https://github.com/ant-design/ant-design -b gh-pages --single-branch ant.design --depth 1
 
       - name: Deploy ant.design
-        uses: peaceiris/actions-gh-pages@v2.5.0
-        env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          PUBLISH_BRANCH: ant.design
-          PUBLISH_DIR: ./ant.design
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_branch: ant.design
+          publish_dir: ./ant.design
