@@ -29,8 +29,8 @@ jobs:
           cp -r site ../code
 
       - name: Deploy typescriptlang.org
-        uses: peaceiris/actions-gh-pages@v2.5.0
-        env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          PUBLISH_BRANCH: typescriptlang.org
-          PUBLISH_DIR: ./typescriptlang.org/code
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_branch: typescriptlang.org
+          publish_dir: ./typescriptlang.org/code
