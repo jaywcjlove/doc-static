@@ -103,7 +103,7 @@
         <span class="hljs-built_in">this</span>.num1 = num1;
     }
 }
-</code></pre><h3 id="options-421">Options</h3><h4 id="prefer-4"><code>prefer</code></h4><p>JSDoc offers a lot of tags with overlapping meaning. For example, both <code>@return</code> and <code>@returns</code> are acceptable for specifying the return value of a function. However, you may want to enforce a certain tag be used instead of others. You can specify your preferences regarding tag substitution by providing a mapping called <code>prefer</code> in the rule configuration. For example, to specify that <code>@returns</code> should be used instead of <code>@return</code>, you can use the following configuration:</p><pre class="hljs highlight-json"><code><span class="hljs-string">&quot;valid-jsdoc&quot;</span>: [<span class="hljs-number">2</span>, {
+</code></pre><h3 id="options-420">Options</h3><h4 id="prefer-4"><code>prefer</code></h4><p>JSDoc offers a lot of tags with overlapping meaning. For example, both <code>@return</code> and <code>@returns</code> are acceptable for specifying the return value of a function. However, you may want to enforce a certain tag be used instead of others. You can specify your preferences regarding tag substitution by providing a mapping called <code>prefer</code> in the rule configuration. For example, to specify that <code>@returns</code> should be used instead of <code>@return</code>, you can use the following configuration:</p><pre class="hljs highlight-json"><code><span class="hljs-string">&quot;valid-jsdoc&quot;</span>: [<span class="hljs-number">2</span>, {
     <span class="hljs-attr">&quot;prefer&quot;</span>: {
         <span class="hljs-attr">&quot;return&quot;</span>: <span class="hljs-string">&quot;returns&quot;</span>
     }

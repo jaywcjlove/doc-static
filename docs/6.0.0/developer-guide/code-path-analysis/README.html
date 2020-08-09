@@ -1,8 +1,8 @@
-<h1 id="code-path-analysis-details-13">Code Path Analysis Details</h1><p>ESLint's rules can use code paths. The code path is execution routes of programs. It forks/joins at such as <code>if</code> statements.</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">if</span> (a &amp;&amp; b) {
+<h1 id="code-path-analysis-details-12">Code Path Analysis Details</h1><p>ESLint's rules can use code paths. The code path is execution routes of programs. It forks/joins at such as <code>if</code> statements.</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">if</span> (a &amp;&amp; b) {
     foo();
 }
 bar();
-</code></pre><p><img src="./helo.svg" alt="Code Path Example"></p><h2 id="objects-13">Objects</h2><p>Program is expressed with several code paths. A code path is expressed with objects of two kinds: <code>CodePath</code> and <code>CodePathSegment</code>.</p><h3 id="codepath-13"><code>CodePath</code></h3><p><code>CodePath</code> expresses whole of one code path. This object exists for each function and the global. This has references of both the initial segment and the final segments of a code path.</p><p><code>CodePath</code> has the following properties:</p><ul><li><code>id</code> (<code>string</code>) - A unique string. Respective rules can use <code>id</code> to save additional information for each code path.</li><li><code>initialSegment</code> (<code>CodePathSegment</code>) - The initial segment of this code path.</li><li><code>finalSegments</code> (<code>CodePathSegment[]</code>) - The final segments which includes both returned and thrown.</li><li><code>returnedSegments</code> (<code>CodePathSegment[]</code>) - The final segments which includes only returned.</li><li><code>thrownSegments</code> (<code>CodePathSegment[]</code>) - The final segments which includes only thrown.</li><li><code>currentSegments</code> (<code>CodePathSegment[]</code>) - Segments of the current position.</li><li><code>upper</code> (<code>CodePath|null</code>) - The code path of the upper function/global scope.</li><li><code>childCodePaths</code> (<code>CodePath[]</code>) - Code paths of functions this code path contains.</li></ul><h3 id="codepathsegment-13"><code>CodePathSegment</code></h3><p><code>CodePathSegment</code> is a part of a code path. A code path is expressed with plural <code>CodePathSegment</code> objects, it's similar to doubly linked list. Difference from doubly linked list is what there are forking and merging (the next/prev are plural).</p><p><code>CodePathSegment</code> has the following properties:</p><ul><li><code>id</code> (<code>string</code>) - A unique string. Respective rules can use <code>id</code> to save additional information for each segment.</li><li><code>nextSegments</code> (<code>CodePathSegment[]</code>) - The next segments. If forking, there are two or more. If final, there is nothing.</li><li><code>prevSegments</code> (<code>CodePathSegment[]</code>) - The previous segments. If merging, there are two or more. If initial, there is nothing.</li><li><code>reachable</code> (<code>boolean</code>) - A flag which shows whether or not it's reachable. This becomes <code>false</code> when preceded by <code>return</code>, <code>throw</code>, <code>break</code>, or <code>continue</code>.</li></ul><h2 id="events-13">Events</h2><p>There are five events related to code paths, and you can define event handlers in rules.</p><pre class="hljs highlight-js"><code><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">context</span>) </span>{
+</code></pre><p><img src="./helo.svg" alt="Code Path Example"></p><h2 id="objects-12">Objects</h2><p>Program is expressed with several code paths. A code path is expressed with objects of two kinds: <code>CodePath</code> and <code>CodePathSegment</code>.</p><h3 id="codepath-12"><code>CodePath</code></h3><p><code>CodePath</code> expresses whole of one code path. This object exists for each function and the global. This has references of both the initial segment and the final segments of a code path.</p><p><code>CodePath</code> has the following properties:</p><ul><li><code>id</code> (<code>string</code>) - A unique string. Respective rules can use <code>id</code> to save additional information for each code path.</li><li><code>initialSegment</code> (<code>CodePathSegment</code>) - The initial segment of this code path.</li><li><code>finalSegments</code> (<code>CodePathSegment[]</code>) - The final segments which includes both returned and thrown.</li><li><code>returnedSegments</code> (<code>CodePathSegment[]</code>) - The final segments which includes only returned.</li><li><code>thrownSegments</code> (<code>CodePathSegment[]</code>) - The final segments which includes only thrown.</li><li><code>currentSegments</code> (<code>CodePathSegment[]</code>) - Segments of the current position.</li><li><code>upper</code> (<code>CodePath|null</code>) - The code path of the upper function/global scope.</li><li><code>childCodePaths</code> (<code>CodePath[]</code>) - Code paths of functions this code path contains.</li></ul><h3 id="codepathsegment-12"><code>CodePathSegment</code></h3><p><code>CodePathSegment</code> is a part of a code path. A code path is expressed with plural <code>CodePathSegment</code> objects, it's similar to doubly linked list. Difference from doubly linked list is what there are forking and merging (the next/prev are plural).</p><p><code>CodePathSegment</code> has the following properties:</p><ul><li><code>id</code> (<code>string</code>) - A unique string. Respective rules can use <code>id</code> to save additional information for each segment.</li><li><code>nextSegments</code> (<code>CodePathSegment[]</code>) - The next segments. If forking, there are two or more. If final, there is nothing.</li><li><code>prevSegments</code> (<code>CodePathSegment[]</code>) - The previous segments. If merging, there are two or more. If initial, there is nothing.</li><li><code>reachable</code> (<code>boolean</code>) - A flag which shows whether or not it's reachable. This becomes <code>false</code> when preceded by <code>return</code>, <code>throw</code>, <code>break</code>, or <code>continue</code>.</li></ul><h2 id="events-12">Events</h2><p>There are five events related to code paths, and you can define event handlers in rules.</p><pre class="hljs highlight-js"><code><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">context</span>) </span>{
     <span class="hljs-keyword">return</span> {
         <span class="hljs-comment">/**
          * This is called at the start of analyzing a code path.
@@ -70,7 +70,7 @@ bar();
         }
     };
 };
-</code></pre><h3 id="about-oncodepathsegmentloop-13">About <code>onCodePathSegmentLoop</code></h3><p>This event is always fired when the next segment has existed already. That timing is the end of loops mainly.</p><p>For Example 1:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">while</span> (a) {
+</code></pre><h3 id="about-oncodepathsegmentloop-12">About <code>onCodePathSegmentLoop</code></h3><p>This event is always fired when the next segment has existed already. That timing is the end of loops mainly.</p><p>For Example 1:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">while</span> (a) {
     a = foo();
 }
 bar();
@@ -78,7 +78,7 @@ bar();
     foo(i);
 }
 bar();
-</code></pre><ol><li><p><code>for</code> statements are more complex. First, the analysis advances to <code>ForStatement.update</code>. The <code>update</code> segment is hovered at first.</p><p><img src="./loop-event-example-for-1.svg" alt="Loop Event's Example 1"></p></li><li><p>Second, it advances to <code>ForStatement.body</code>. Of course the <code>body</code> segment is preceded by the <code>test</code> segment. It keeps the <code>update</code> segment hovering.</p><p><img src="./loop-event-example-for-2.svg" alt="Loop Event's Example 2"></p></li><li><p>Third, it creates the looping path from <code>body</code> segment to <code>update</code> segment. At this time, the next segment has existed already, so the <code>onCodePathSegmentStart</code> event is not fired. It fires <code>onCodePathSegmentLoop</code> instead.</p><p><img src="./loop-event-example-for-3.svg" alt="Loop Event's Example 3"></p></li><li><p>Fourth, also it creates the looping path from <code>update</code> segment to <code>test</code> segment. At this time, the next segment has existed already, so the <code>onCodePathSegmentStart</code> event is not fired. It fires <code>onCodePathSegmentLoop</code> instead.</p><p><img src="./loop-event-example-for-4.svg" alt="Loop Event's Example 4"></p></li><li><p>Last, it advances to the end.</p><p><img src="./loop-event-example-for-5.svg" alt="Loop Event's Example 5"></p></li></ol><h2 id="usage-examples-13">Usage Examples</h2><h3 id="to-check-whether-or-not-this-is-reachable-13">To check whether or not this is reachable</h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> last = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;lodash&quot;</span>).last;
+</code></pre><ol><li><p><code>for</code> statements are more complex. First, the analysis advances to <code>ForStatement.update</code>. The <code>update</code> segment is hovered at first.</p><p><img src="./loop-event-example-for-1.svg" alt="Loop Event's Example 1"></p></li><li><p>Second, it advances to <code>ForStatement.body</code>. Of course the <code>body</code> segment is preceded by the <code>test</code> segment. It keeps the <code>update</code> segment hovering.</p><p><img src="./loop-event-example-for-2.svg" alt="Loop Event's Example 2"></p></li><li><p>Third, it creates the looping path from <code>body</code> segment to <code>update</code> segment. At this time, the next segment has existed already, so the <code>onCodePathSegmentStart</code> event is not fired. It fires <code>onCodePathSegmentLoop</code> instead.</p><p><img src="./loop-event-example-for-3.svg" alt="Loop Event's Example 3"></p></li><li><p>Fourth, also it creates the looping path from <code>update</code> segment to <code>test</code> segment. At this time, the next segment has existed already, so the <code>onCodePathSegmentStart</code> event is not fired. It fires <code>onCodePathSegmentLoop</code> instead.</p><p><img src="./loop-event-example-for-4.svg" alt="Loop Event's Example 4"></p></li><li><p>Last, it advances to the end.</p><p><img src="./loop-event-example-for-5.svg" alt="Loop Event's Example 5"></p></li></ol><h2 id="usage-examples-12">Usage Examples</h2><h3 id="to-check-whether-or-not-this-is-reachable-12">To check whether or not this is reachable</h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> last = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;lodash&quot;</span>).last;
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isReachable</span>(<span class="hljs-params">segment</span>) </span>{
     <span class="hljs-keyword">return</span> segment.reachable;
@@ -107,7 +107,7 @@ bar();
         }
     };
 };
-</code></pre><p>See Also: <a href="https://github.com/eslint/eslint/blob/master/lib/rules/no-unreachable.js">no-unreachable</a>, <a href="https://github.com/eslint/eslint/blob/master/lib/rules/no-fallthrough.js">no-fallthrough</a>, <a href="https://github.com/eslint/eslint/blob/master/lib/rules/consistent-return.js">consistent-return</a></p><h3 id="to-check-state-of-a-code-path-13">To check state of a code path</h3><p>This example is checking whether or not the parameter <code>cb</code> is called in every path. Instances of <code>CodePath</code> and <code>CodePathSegment</code> are shared to every rule. So a rule must not modify those instances. Please use a map of information instead.</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> last = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;lodash&quot;</span>).last;
+</code></pre><p>See Also: <a href="https://github.com/eslint/eslint/blob/master/lib/rules/no-unreachable.js">no-unreachable</a>, <a href="https://github.com/eslint/eslint/blob/master/lib/rules/no-fallthrough.js">no-fallthrough</a>, <a href="https://github.com/eslint/eslint/blob/master/lib/rules/consistent-return.js">consistent-return</a></p><h3 id="to-check-state-of-a-code-path-12">To check state of a code path</h3><p>This example is checking whether or not the parameter <code>cb</code> is called in every path. Instances of <code>CodePath</code> and <code>CodePathSegment</code> are shared to every rule. So a rule must not modify those instances. Please use a map of information instead.</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> last = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;lodash&quot;</span>).last;
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hasCb</span>(<span class="hljs-params">node, context</span>) </span>{
     <span class="hljs-keyword">if</span> (node.type.indexOf(<span class="hljs-string">&quot;Function&quot;</span>) !== <span class="hljs-number">-1</span>) {
@@ -190,20 +190,20 @@ bar();
         }
     };
 };
-</code></pre><p>See Also: <a href="https://github.com/eslint/eslint/blob/master/lib/rules/constructor-super.js">constructor-super</a>, <a href="https://github.com/eslint/eslint/blob/master/lib/rules/no-this-before-super.js">no-this-before-super</a></p><h2 id="code-path-examples-13">Code Path Examples</h2><h3 id="hello-world-13">Hello World</h3><pre class="hljs highlight-js"><code><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Hello world!&quot;</span>);
-</code></pre><p><img src="./example-hello-world.svg" alt="Hello World"></p><h3 id="ifstatement-13"><code>IfStatement</code></h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">if</span> (a) {
+</code></pre><p>See Also: <a href="https://github.com/eslint/eslint/blob/master/lib/rules/constructor-super.js">constructor-super</a>, <a href="https://github.com/eslint/eslint/blob/master/lib/rules/no-this-before-super.js">no-this-before-super</a></p><h2 id="code-path-examples-12">Code Path Examples</h2><h3 id="hello-world-12">Hello World</h3><pre class="hljs highlight-js"><code><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;Hello world!&quot;</span>);
+</code></pre><p><img src="./example-hello-world.svg" alt="Hello World"></p><h3 id="ifstatement-12"><code>IfStatement</code></h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">if</span> (a) {
     foo();
 } <span class="hljs-keyword">else</span> {
     bar();
 }
-</code></pre><p><img src="./example-ifstatement.svg" alt=""></p><h3 id="ifstatement-chain-13"><code>IfStatement</code> (chain)</h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">if</span> (a) {
+</code></pre><p><img src="./example-ifstatement.svg" alt=""></p><h3 id="ifstatement-chain-12"><code>IfStatement</code> (chain)</h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">if</span> (a) {
     foo();
 } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (b) {
     bar();
 } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (c) {
     hoge();
 }
-</code></pre><p><img src="./example-ifstatement-chain.svg" alt=" (chain)"></p><h3 id="switchstatement-13"><code>SwitchStatement</code></h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">switch</span> (a) {
+</code></pre><p><img src="./example-ifstatement-chain.svg" alt=" (chain)"></p><h3 id="switchstatement-12"><code>SwitchStatement</code></h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">switch</span> (a) {
     <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:
         foo();
         <span class="hljs-keyword">break</span>;
@@ -217,7 +217,7 @@ bar();
         hoge();
         <span class="hljs-keyword">break</span>;
 }
-</code></pre><p><img src="./example-switchstatement.svg" alt=""></p><h3 id="switchstatement-has-default-13"><code>SwitchStatement</code> (has <code>default</code>)</h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">switch</span> (a) {
+</code></pre><p><img src="./example-switchstatement.svg" alt=""></p><h3 id="switchstatement-has-default-12"><code>SwitchStatement</code> (has <code>default</code>)</h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">switch</span> (a) {
     <span class="hljs-keyword">case</span> <span class="hljs-number">0</span>:
         foo();
         <span class="hljs-keyword">break</span>;
@@ -235,7 +235,7 @@ bar();
         fuga();
         <span class="hljs-keyword">break</span>;
 }
-</code></pre><p><img src="./example-switchstatement-has-default.svg" alt=" (has )"></p><h3 id="trystatement-try-catch-13"><code>TryStatement</code> (try-catch)</h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">try</span> {
+</code></pre><p><img src="./example-switchstatement-has-default.svg" alt=" (has )"></p><h3 id="trystatement-try-catch-12"><code>TryStatement</code> (try-catch)</h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">try</span> {
     foo();
     <span class="hljs-keyword">if</span> (a) {
         <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>();
@@ -245,14 +245,14 @@ bar();
     hoge(err);
 }
 last();
-</code></pre><p>It creates the paths from <code>try</code> block to <code>catch</code> block at:</p><ul><li><code>throw</code> statements.</li><li>The first throwable node (e.g. a function call) in the <code>try</code> block.</li><li>The end of the <code>try</code> block.</li></ul><p><img src="./example-trystatement-try-catch.svg" alt=" (try-catch)"></p><h3 id="trystatement-try-finally-13"><code>TryStatement</code> (try-finally)</h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">try</span> {
+</code></pre><p>It creates the paths from <code>try</code> block to <code>catch</code> block at:</p><ul><li><code>throw</code> statements.</li><li>The first throwable node (e.g. a function call) in the <code>try</code> block.</li><li>The end of the <code>try</code> block.</li></ul><p><img src="./example-trystatement-try-catch.svg" alt=" (try-catch)"></p><h3 id="trystatement-try-finally-12"><code>TryStatement</code> (try-finally)</h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">try</span> {
     foo();
     bar();
 } <span class="hljs-keyword">finally</span> {
     fuga();
 }
 last();
-</code></pre><p>If there is not <code>catch</code> block, <code>finally</code> block has two current segments. At this time, <code>CodePath.currentSegments.length</code> is <code>2</code>. One is the normal path, and another is the leaving path (<code>throw</code> or <code>return</code>).</p><p><img src="./example-trystatement-try-finally.svg" alt=" (try-finally)"></p><h3 id="trystatement-try-catch-finally-13"><code>TryStatement</code> (try-catch-finally)</h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">try</span> {
+</code></pre><p>If there is not <code>catch</code> block, <code>finally</code> block has two current segments. At this time, <code>CodePath.currentSegments.length</code> is <code>2</code>. One is the normal path, and another is the leaving path (<code>throw</code> or <code>return</code>).</p><p><img src="./example-trystatement-try-finally.svg" alt=" (try-finally)"></p><h3 id="trystatement-try-catch-finally-12"><code>TryStatement</code> (try-catch-finally)</h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">try</span> {
     foo();
     bar();
 } <span class="hljs-keyword">catch</span> (err) {
@@ -261,32 +261,32 @@ last();
     fuga();
 }
 last();
-</code></pre><p><img src="./example-trystatement-try-catch-finally.svg" alt=" (try-catch-finally)"></p><h3 id="whilestatement-13"><code>WhileStatement</code></h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">while</span> (a) {
+</code></pre><p><img src="./example-trystatement-try-catch-finally.svg" alt=" (try-catch-finally)"></p><h3 id="whilestatement-12"><code>WhileStatement</code></h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">while</span> (a) {
     foo();
     <span class="hljs-keyword">if</span> (b) {
         <span class="hljs-keyword">continue</span>;
     }
     bar();
 }
-</code></pre><p><img src="./example-whilestatement.svg" alt=""></p><h3 id="dowhilestatement-13"><code>DoWhileStatement</code></h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">do</span> {
+</code></pre><p><img src="./example-whilestatement.svg" alt=""></p><h3 id="dowhilestatement-12"><code>DoWhileStatement</code></h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">do</span> {
     foo();
     bar();
 } <span class="hljs-keyword">while</span> (a);
-</code></pre><p><img src="./example-dowhilestatement.svg" alt=""></p><h3 id="forstatement-13"><code>ForStatement</code></h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; ++i) {
+</code></pre><p><img src="./example-dowhilestatement.svg" alt=""></p><h3 id="forstatement-12"><code>ForStatement</code></h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; ++i) {
     foo();
     <span class="hljs-keyword">if</span> (b) {
         <span class="hljs-keyword">break</span>;
     }
     bar();
 }
-</code></pre><p><img src="./example-forstatement.svg" alt=""></p><h3 id="forstatement-for-ever-13"><code>ForStatement</code> (for ever)</h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">for</span> (;;) {
+</code></pre><p><img src="./example-forstatement.svg" alt=""></p><h3 id="forstatement-for-ever-12"><code>ForStatement</code> (for ever)</h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">for</span> (;;) {
     foo();
 }
 bar();
-</code></pre><p><img src="./example-forstatement-for-ever.svg" alt=" (for ever)"></p><h3 id="forinstatement-13"><code>ForInStatement</code></h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> obj) {
+</code></pre><p><img src="./example-forstatement-for-ever.svg" alt=" (for ever)"></p><h3 id="forinstatement-12"><code>ForInStatement</code></h3><pre class="hljs highlight-js"><code><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> obj) {
     foo(key);
 }
-</code></pre><p><img src="./example-forinstatement.svg" alt=""></p><h3 id="when-there-is-a-function-13">When there is a function</h3><pre class="hljs highlight-js"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">a</span>) </span>{
+</code></pre><p><img src="./example-forinstatement.svg" alt=""></p><h3 id="when-there-is-a-function-12">When there is a function</h3><pre class="hljs highlight-js"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">a</span>) </span>{
     <span class="hljs-keyword">if</span> (a) {
         <span class="hljs-keyword">return</span>;
     }
