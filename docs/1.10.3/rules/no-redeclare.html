@@ -7,7 +7,7 @@
 <span class="hljs-keyword">var</span> a = <span class="hljs-number">3</span>;
 <span class="hljs-comment">// ...</span>
 a = <span class="hljs-number">10</span>;
-</code></pre><h3 id="options-310">Options</h3><p>This rule takes one option, an object, with a property <code>&quot;builtinGlobals&quot;</code>.</p><pre class="hljs highlight-json"><code>{
+</code></pre><h3 id="options-309">Options</h3><p>This rule takes one option, an object, with a property <code>&quot;builtinGlobals&quot;</code>.</p><pre class="hljs highlight-json"><code>{
     <span class="hljs-attr">&quot;no-redeclare&quot;</span>: [<span class="hljs-number">2</span>, {<span class="hljs-attr">&quot;builtinGlobals&quot;</span>: <span class="hljs-literal">true</span>}]
 }
 </code></pre><h4 id="builtinglobals-4">builtinGlobals</h4><p><code>false</code> by default. If this is <code>true</code>, this rule checks with built-in global variables such as <code>Object</code>, <code>Array</code>, <code>Number</code>, ...</p><p>When <code>{&quot;builtinGlobals&quot;: true}</code>, the following patterns are considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-redeclare: [2, { &quot;builtinGlobals&quot;: true }]*/</span>
