@@ -19,8 +19,8 @@ jobs:
           git clone https://github.com/reactjs/zh-hans.reactjs.org -b gh-pages --single-branch reactjs --depth 1
 
       - name: Deploy reactjs
-        uses: peaceiris/actions-gh-pages@v2.5.0
-        env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          PUBLISH_BRANCH: reactjs
-          PUBLISH_DIR: ./reactjs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_branch: reactjs
+          publish_dir: ./reactjs
