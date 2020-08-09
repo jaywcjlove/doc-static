@@ -37,10 +37,11 @@ export declare const createUtils: (sb: any, react: typeof React) => {
         }) => HTMLInputElement;
         createTabBar: () => HTMLDivElement;
         createTabButton: (text: string) => HTMLButtonElement;
+        declareRestartRequired: (i?: ((key: string) => string) | undefined) => void;
     };
     /** Flashes a HTML Element */
     flashHTMLElement: (element: HTMLElement) => void;
-    /** A general "restart your browser" message  */
-    declareRestartRequired: (i: (key: string) => string) => void;
+    /** Add a little red button in the top corner of a plugin tab with a number */
+    setNotifications: (pluginID: string, amount: number) => void;
 };
 export declare type PluginUtils = ReturnType<typeof createUtils>;

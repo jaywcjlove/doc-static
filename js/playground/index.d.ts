@@ -55,5 +55,40 @@ export declare const setupPlayground: (sandbox: Sandbox, monaco: Monaco, config:
     getCurrentPlugin: () => PlaygroundPlugin;
     tabs: HTMLButtonElement[];
     setDidUpdateTab: (func: (newPlugin: PlaygroundPlugin, previousPlugin: PlaygroundPlugin) => void) => void;
+    createUtils: (sb: any, react: typeof React) => {
+        el: (str: string, elementType: string, container: Element) => HTMLElement;
+        requireURL: (path: string) => string;
+        react: typeof React;
+        createDesignSystem: (container: Element) => {
+            clear: () => void;
+            code: (code: string) => HTMLElement;
+            title: (title: string) => HTMLElement;
+            subtitle: (subtitle: string) => HTMLElement;
+            p: (subtitle: string) => HTMLElement;
+            showEmptyScreen: (message: string) => HTMLDivElement;
+            listDiags: (model: import("monaco-editor").editor.ITextModel, diags: import("typescript").DiagnosticRelatedInformation[]) => HTMLUListElement;
+            localStorageOption: (setting: import("./ds/createDesignSystem").LocalStorageOption) => HTMLLIElement;
+            showOptionList: (options: import("./ds/createDesignSystem").LocalStorageOption[], style: import("./ds/createDesignSystem").OptionsListConfig) => void;
+            createTextInput: (config: {
+                id: string;
+                placeholder: string;
+                onChanged?: ((text: string, input: HTMLInputElement) => void) | undefined;
+                onEnter: (text: string, input: HTMLInputElement) => void;
+                value?: string | undefined;
+                keepValueAcrossReloads?: true | undefined;
+                isEnabled?: ((input: HTMLInputElement) => boolean) | undefined;
+            }) => HTMLFormElement;
+            createASTTree: (node: import("typescript").Node) => HTMLDivElement;
+            button: (settings: {
+                label: string;
+                onclick?: ((ev: MouseEvent) => void) | undefined;
+            }) => HTMLInputElement;
+            createTabBar: () => HTMLDivElement;
+            createTabButton: (text: string) => HTMLButtonElement;
+            declareRestartRequired: (i?: ((key: string) => string) | undefined) => void;
+        };
+        flashHTMLElement: (element: HTMLElement) => void;
+        setNotifications: (pluginID: string, amount: number) => void;
+    };
 };
 export declare type Playground = ReturnType<typeof setupPlayground>;
