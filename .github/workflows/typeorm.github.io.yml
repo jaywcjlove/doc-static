@@ -19,8 +19,8 @@ jobs:
           git clone https://github.com/typeorm/typeorm.github.io -b master --single-branch typeorm.github.io --depth 1
 
       - name: Deploy typeorm.github.io
-        uses: peaceiris/actions-gh-pages@v2.5.0
-        env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          PUBLISH_BRANCH: typeorm.github.io
-          PUBLISH_DIR: ./typeorm.github.io
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_branch: typeorm.github.io
+          publish_dir: ./typeorm.github.io
