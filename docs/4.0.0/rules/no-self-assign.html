@@ -19,7 +19,7 @@ foo = bar;
 
 <span class="hljs-comment">// The default values have an effect.</span>
 [foo = <span class="hljs-number">1</span>] = [foo];
-</code></pre><h2 id="options-775">Options</h2><p>This rule has the option to check properties as well.</p><pre class="hljs highlight-json"><code>{
+</code></pre><h2 id="options-776">Options</h2><p>This rule has the option to check properties as well.</p><pre class="hljs highlight-json"><code>{
     <span class="hljs-attr">&quot;no-self-assign&quot;</span>: [<span class="hljs-string">&quot;error&quot;</span>, {<span class="hljs-attr">&quot;props&quot;</span>: <span class="hljs-literal">false</span>}]
 }
 </code></pre><ul><li><code>props</code> - if this is <code>true</code>, <code>no-self-assign</code> rule warns self-assignments of properties. Default is <code>false</code>.</li></ul><h3 id="props-6">props</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for the <code>{ &quot;props&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-self-assign: [error, {props: true}]*/</span>
