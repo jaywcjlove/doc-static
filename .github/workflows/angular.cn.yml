@@ -16,7 +16,6 @@ jobs:
 
       - name: Get Static
         run: |
-          rm -rf ./angular.cn
           git clone https://github.com/ng-docs/preview.angular.cn.git -b master --single-branch angular.cn --depth 1
 
       - name: Deploy angular.cn
