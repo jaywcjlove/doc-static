@@ -37,9 +37,9 @@
 <url> <loc>https://www.typescriptlang.org/docs/handbook/decorators.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/docs/handbook/iterators-and-generators.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/docs/handbook/jsx.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.typescriptlang.org/docs/handbook/mixins.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/docs/handbook/module-resolution.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/docs/handbook/modules.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.typescriptlang.org/docs/handbook/mixins.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/docs/handbook/namespaces-and-modules.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/docs/handbook/namespaces.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/docs/handbook/symbols.html</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -209,9 +209,6 @@
 <url> <loc>https://www.typescriptlang.org/ja/play/typescript/type-primitives/built-in-utility-types.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/ja/play/typescript/type-primitives/nullable-types.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/ja/play/typescript/type-primitives/tuples.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.typescriptlang.org/ja/play/3-7/syntax-and-messaging/flattened-error-reporting.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.typescriptlang.org/ja/play/3-7/fixits/infer-from-usage-changes.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.typescriptlang.org/ja/play/3-7/fixits/const-to-let.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/pt/play/javascript/javascript-essentials/code-flow.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/pt/play/javascript/javascript-essentials/functions.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/pt/play/javascript/javascript-essentials/hello-world.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -266,6 +263,9 @@
 <url> <loc>https://www.typescriptlang.org/zh/play/typescript/type-primitives/built-in-utility-types.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/typescript/type-primitives/nullable-types.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/typescript/type-primitives/tuples.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.typescriptlang.org/ja/play/3-7/fixits/infer-from-usage-changes.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.typescriptlang.org/ja/play/3-7/syntax-and-messaging/flattened-error-reporting.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.typescriptlang.org/ja/play/3-7/fixits/const-to-let.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/community</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/es/community</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/ja/community</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
