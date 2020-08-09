@@ -25,8 +25,8 @@ jobs:
           yarn run build
 
       - name: Deploy eslint.org
-        uses: peaceiris/actions-gh-pages@v2.5.0
-        env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          PUBLISH_BRANCH: eslint.org
-          PUBLISH_DIR: ./eslint.org/_site
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_branch: eslint.org
+          publish_dir: ./eslint.org/_site
