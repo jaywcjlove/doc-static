@@ -39,7 +39,7 @@ foo = (doSomething(), val);
 <span class="hljs-keyword">while</span> ((val = foo(), val &lt; <span class="hljs-number">42</span>));
 
 <span class="hljs-keyword">with</span> ((doSomething(), val)) {}
-</code></pre><h2 id="when-not-to-use-it-1421">When Not To Use It</h2><p>Disable this rule if sequence expressions with the comma operator are acceptable. Another case is where you might want to report all usages of the comma operator, even if they are wrapped in parentheses or in a for loop. You can achieve this using rule <code>no-restricted-syntax</code>:</p><pre class="hljs highlight-js"><code>{
+</code></pre><h2 id="when-not-to-use-it-1422">When Not To Use It</h2><p>Disable this rule if sequence expressions with the comma operator are acceptable. Another case is where you might want to report all usages of the comma operator, even if they are wrapped in parentheses or in a for loop. You can achieve this using rule <code>no-restricted-syntax</code>:</p><pre class="hljs highlight-js"><code>{
     <span class="hljs-string">&quot;rules&quot;</span>: {
         <span class="hljs-string">&quot;no-restricted-syntax&quot;</span>: [<span class="hljs-string">&quot;error&quot;</span>, <span class="hljs-string">&quot;SequenceExpression&quot;</span>]
     }
