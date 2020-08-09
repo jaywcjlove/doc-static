@@ -19,8 +19,8 @@ jobs:
           git clone https://github.com/sequelize/sequelize.org -b gh-pages --single-branch sequelize.org --depth 1
 
       - name: Deploy sequelize.org
-        uses: peaceiris/actions-gh-pages@v2.5.0
-        env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          PUBLISH_BRANCH: sequelize.org
-          PUBLISH_DIR: ./sequelize.org
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_branch: sequelize.org
+          publish_dir: ./sequelize.org
