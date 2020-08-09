@@ -131,7 +131,6 @@
 <url> <loc>https://www.typescriptlang.org/play/javascript/external-apis/typescript-with-webgl.js</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/javascript/functions-with-javascript/function-chaining.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/javascript/functions-with-javascript/generic-functions.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.typescriptlang.org/play/javascript/functions-with-javascript/typing-functions.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/javascript/helping-with-javascript/errors.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/javascript/helping-with-javascript/quick-fixes.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/javascript/javascript-essentials/code-flow.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -226,6 +225,7 @@
 <url> <loc>https://www.typescriptlang.org/zh/play/javascript/functions-with-javascript/typing-functions.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/javascript/helping-with-javascript/errors.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/javascript/helping-with-javascript/quick-fixes.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.typescriptlang.org/play/javascript/functions-with-javascript/typing-functions.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/javascript/javascript-essentials/code-flow.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/javascript/javascript-essentials/functions.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/javascript/javascript-essentials/hello-world.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
