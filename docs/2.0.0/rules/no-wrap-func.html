@@ -5,7 +5,7 @@
 <span class="hljs-keyword">var</span> bar = (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-comment">// not an IIFE</span>
 });
-</code></pre><h2 id="rule-details-1022">Rule Details</h2><p>This rule will raise a warning when it encounters a function expression wrapped in parentheses with no following invoking parentheses.</p><p>The following patterns are considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> a = (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{<span class="hljs-comment">/*...*/</span>});
+</code></pre><h2 id="rule-details-1023">Rule Details</h2><p>This rule will raise a warning when it encounters a function expression wrapped in parentheses with no following invoking parentheses.</p><p>The following patterns are considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> a = (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{<span class="hljs-comment">/*...*/</span>});
 </code></pre><p>The following patterns are not considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> a = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{<span class="hljs-comment">/*...*/</span>};
 
 (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{<span class="hljs-comment">/*...*/</span>})();

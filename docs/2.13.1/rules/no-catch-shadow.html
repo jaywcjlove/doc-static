@@ -7,7 +7,7 @@
 }
 
 <span class="hljs-built_in">console</span>.log(err)    <span class="hljs-comment">// err is &#x27;problem&#x27;, not &#x27;x&#x27;</span>
-</code></pre><h2 id="rule-details-1130">Rule Details</h2><p>This rule is aimed at preventing unexpected behavior in your program that may arise from a bug in IE 8 and earlier, in which the catch clause parameter can leak into outer scopes. This rule will warn whenever it encounters a catch clause parameter that has the same name as a variable in an outer scope.</p><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-catch-shadow: &quot;error&quot;*/</span>
+</code></pre><h2 id="rule-details-1131">Rule Details</h2><p>This rule is aimed at preventing unexpected behavior in your program that may arise from a bug in IE 8 and earlier, in which the catch clause parameter can leak into outer scopes. This rule will warn whenever it encounters a catch clause parameter that has the same name as a variable in an outer scope.</p><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-catch-shadow: &quot;error&quot;*/</span>
 
 <span class="hljs-keyword">var</span> err = <span class="hljs-string">&quot;x&quot;</span>;
 
