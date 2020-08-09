@@ -513,7 +513,7 @@ body.docs #nav {
   border-bottom: 3px solid transparent;
   position: absolute;
   top: 50%;
-  margin-top: -4px;
+  transform: translateY(-50%);
   left: 8px;
 }
 #nav .nav-dropdown .nav-link.new::before {
@@ -1504,56 +1504,6 @@ ul.demo li {
   border-bottom: 5px solid transparent;
   border-left: 8px solid #fff;
 }
-.ad-pagetop {
-  background: #f8f8f8;
-  padding: 8px 16px;
-  border-radius: 4px;
-  color: $accent;
-  clear: both;
-  position: relative;
-}
-.ad-pagetop a {
-  display: block;
-}
-.ad-pagetop span {
-  color: #1c90f3;
-  display: inline-block;
-}
-.ad-pagetop span.name {
-  color: #1c90f3;
-  font-size: 1.1em;
-}
-.ad-pagetop span.description {
-  margin-left: 0.8em;
-  font-size: 0.9em;
-  color: #666;
-  font-weight: normal;
-}
-.ad-pagetop span.action {
-  font-size: 0.75em;
-  color: #888;
-  border: 1px solid #888;
-  border-radius: 3px;
-  padding: 2px 6px;
-  margin-left: 1em;
-}
-.ad-pagetop:after {
-  content: "广告";
-  font-size: 10px;
-  position: absolute;
-  top: 50%;
-  color: #aaa;
-  padding: 3px 6px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  margin-top: -9px;
-  right: 10px;
-}
-@media screen and (max-width: 560px) {
-  .ad-pagetop {
-    display: none;
-  }
-}
 .vue-mastery {
   background-color: #e7ecf3;
   padding: 1em 1.25em;
@@ -1663,6 +1613,56 @@ ul.demo li {
   .themes-grid .item-preview {
     justify-content: center;
     width: 380px;
+  }
+}
+.ad-pagetop {
+  background: #f8f8f8;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: $accent;
+  clear: both;
+  position: relative;
+}
+.ad-pagetop a {
+  display: block;
+}
+.ad-pagetop span {
+  color: #1c90f3;
+  display: inline-block;
+}
+.ad-pagetop span.name {
+  color: #1c90f3;
+  font-size: 1.1em;
+}
+.ad-pagetop span.description {
+  margin-left: 0.8em;
+  font-size: 0.9em;
+  color: #666;
+  font-weight: normal;
+}
+.ad-pagetop span.action {
+  font-size: 0.75em;
+  color: #888;
+  border: 1px solid #888;
+  border-radius: 3px;
+  padding: 2px 6px;
+  margin-left: 1em;
+}
+.ad-pagetop:after {
+  content: "广告";
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  color: #aaa;
+  padding: 3px 6px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-top: -9px;
+  right: 10px;
+}
+@media screen and (max-width: 560px) {
+  .ad-pagetop {
+    display: none;
   }
 }
 #header {

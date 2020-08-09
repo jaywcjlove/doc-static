@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head><meta name="generator" content="Hexo 3.8.0">
+  <head><meta name="generator" content="Hexo 3.9.0">
     <title>创建一个基于 CMS 的博客 — Vue.js</title>
     <meta charset="utf-8">
     <meta name="description" content="Vue.js - The Progressive JavaScript Framework">
@@ -54,10 +54,10 @@
     <!-- <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin> -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin> -->
 
-    <!-- <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'> -->
-    <!-- <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'> -->
+    <!-- <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono" rel="stylesheet"> -->
+    <!-- <link href="//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js" rel="stylesheet"> -->
 
-    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- main page styles -->
     <link rel="stylesheet" href="/css/page.css">
@@ -88,7 +88,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <div id="header">
+    <header id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
@@ -188,22 +188,22 @@
 <li class="nav-dropdown-container language">
   <a class="nav-link">多语言</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
-    <li><a href="https://jp.vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link" target="_blank" rel="noopener">日本語</a></li>
-    <li><a href="https://ru.vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link" target="_blank" rel="noopener">Русский</a></li>
-    <li><a href="https://kr.vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link" target="_blank" rel="noopener">한국어</a></li>
-    <li><a href="https://br.vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
-    <li><a href="https://fr.vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link" target="_blank" rel="noopener">Français</a></li>
-    <li><a href="https://vi.vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
-    <li><a href="https://es.vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link" target="_blank" rel="noopener">español</a></li>
-    <li><a href="https://docs.vuejs.id/v2/cookbook/serverless-blog.html" class="nav-link" target="_blank" rel="noopener">Bahasa Indonesia</a></li>
+    <li><a href="https://vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link">English</a></li>
+    <li><a href="https://jp.vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link">한국어</a></li>
+    <li><a href="https://br.vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/cookbook/serverless-blog.html" class="nav-link">Español</a></li>
+    <li><a href="https://docs.vuejs.id/v2/cookbook/serverless-blog.html" class="nav-link">Bahasa Indonesia</a></li>
   </ul>
 </li>
 
 <li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link contribute">参与翻译</a></li>
 
   </ul>
-</div>
+</header>
 
     
       <div id="main" class="fix-sidebar">
@@ -219,12 +219,12 @@
     <span>特别赞助商</span>
     <div>
     <a href="http://www.dcloud.io/?hmsr=vuejsorg&hmpl=&hmcu=&hmkw=&hmci=" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/dcloud.gif" alt="">
+      <img src="/images/dcloud.gif" alt>
     </a>
     </div>
     <div>
-    <a href="https://youzan.github.io/vant?source=vuejsorg" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vant.png" alt="">
+    <a href="https://coding.imooc.com/?c=vuejs&mc_marking=7cf403c3c89d6fccf944791e71e7a959&mc_channel=vuezwsq" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/imooc-sponsor2.png" alt>
     </a>
     </div>
   </div>
@@ -241,11 +241,14 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -274,7 +277,7 @@
     
     
     <li>
-      <a href="/v2/cookbook/adding-instance-properties.html" class="sidebar-link">添加实例属性</a>
+      <a href="/v2/cookbook/adding-instance-properties.html" class="sidebar-link">添加实例 property</a>
     </li>
   
     
@@ -367,11 +370,14 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -390,12 +396,9 @@
       
 <div id="ad">
   <span style="float: right;">广告</span>
-  <a href="https://time.geekbang.org/column/intro/216?code=mM%2FdqOPks0VQ7EkYGPNisoEpHDsb0ViHBXYa%2Fyg02k8%3D&utm_term=SPoster" target="_blank" rel="sponsored noopener">
-    <img src="/images/geekbang-ad.jpg">
+  <a href="https://coding.imooc.com/?c=vuejs&mc_marking=2243e4b1af42da32ee6e9f088e646c7c&mc_channel=vuezwsq" target="_blank" rel="nofollow">
+    <img src="/images/imooc-ad3.png" alt="Vue.js实战项目开发教程">
   </a>
-  <!-- <a href="https://ke.qq.com/course/392130?saleToken=992600&from=pclink" target="_blank" rel="sponsored noopener">
-    <img src="/images/tencent-ad.png">
-  </a> -->
   <!-- <script
     async
     type="text/javascript"
@@ -412,9 +415,9 @@
   
 
   <div class="ad-pagetop">
-  <a href="http://www.tp-shop.cn/index.php?http_referer=vuejs" target="_blank" rel="noopener noreferrer">
-    <span class="name">TPshop</span>
-    <span class="description">中国免费商城系统 - 搜豹商城系统 - 免费50小时Vue视频教程</span>
+  <a href="http://www.vueshop.com.cn/index.php?http_referer=vuejs" target="_blank" rel="noopener noreferrer">
+    <span class="name">VUEshop</span>
+    <span class="description">中国免费商城系统 - 搜豹商城系统 - 免费50小时 Vue 视频教程</span>
     <span class="action">立即查看 &gt;</span>
   </a>
 </div>
@@ -427,14 +430,14 @@
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在你的命令行中运行：</p>
 <pre><code class="hljs bash">npm install buttercms --save</code></pre>
 <p>Butter 也可以通过 CDN 加载：</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.buttercms.com/buttercms-1.1.0.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.buttercms.com/buttercms-1.1.0.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 <h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><p>设置你的 API token：</p>
 <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> butter = <span class="hljs-built_in">require</span>(<span class="hljs-string">'buttercms'</span>)(<span class="hljs-string">'your_api_token'</span>);</code></pre>
 <p>使用 ES6：</p>
 <pre><code class="hljs javascript"><span class="hljs-keyword">import</span> Butter <span class="hljs-keyword">from</span> <span class="hljs-string">'buttercms'</span>;
 <span class="hljs-keyword">const</span> butter = Butter(<span class="hljs-string">'your_api_token'</span>);</code></pre>
-<p>使用 CDN:</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.buttercms.com/buttercms-1.1.0.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<p>使用 CDN：</p>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.buttercms.com/buttercms-1.1.0.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
   <span class="hljs-keyword">var</span> butter = Butter(<span class="hljs-string">'your_api_token'</span>);
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
@@ -647,7 +650,7 @@ created() &#123;
   <span class="hljs-keyword">this</span>.getPostsByCategory()
 &#125;</code></pre>
 <h2 id="替代方案"><a href="#替代方案" class="headerlink" title="替代方案"></a>替代方案</h2><p>有一个替代方案，尤其在你只喜欢写 Markdown 时适用，就是使用诸如 <a href="https://nuxtent-module.netlify.com/guide/writing/#async-components" target="_blank" rel="noopener">Nuxtent</a> 的工具。Nuxtent 允许你在 Markdown 文件内部使用 <code>Vue Component</code>。它类似一个静态站点工具 (例如 Jekyll)，让你在 Markdown 文件中撰写你的博文。Nuxtent 将 Vue.js 和 Markdown 很好地整合起来，让你完全生活在 Vue.js 的世界里。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>差不多就是这些了！现在你已经在自己的应用中拥有了一个可以正常工作的 CMS 博客。我们希望这份教程可以帮助你，使你的 Vue.js 开发体验更有乐趣 :)</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>差不多就是这些了！现在你已经在自己的应用中拥有了一个可以正常工作的 CMS 博客。我们希望这份教程可以帮助你，使你的 Vue.js 开发体验更有乐趣 🙂</p>
 
   
   

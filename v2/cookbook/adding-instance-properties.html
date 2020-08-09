@@ -3,8 +3,8 @@
 
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head><meta name="generator" content="Hexo 3.8.0">
-    <title>添加实例属性 — Vue.js</title>
+  <head><meta name="generator" content="Hexo 3.9.0">
+    <title>添加实例 property — Vue.js</title>
     <meta charset="utf-8">
     <meta name="description" content="Vue.js - The Progressive JavaScript Framework">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,12 +19,12 @@
     <link rel="alternate" hreflang="es" href="https://es.vuejs.org/v2/cookbook/adding-instance-properties.html">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="添加实例属性 — Vue.js">
+    <meta property="og:title" content="添加实例 property — Vue.js">
     <meta property="og:description" content="Vue.js - The Progressive JavaScript Framework">
     <meta property="og:image" content="https://cn.vuejs.org//images/logo.png">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="添加实例属性 — Vue.js">
+    <meta name="twitter:title" content="添加实例 property — Vue.js">
     <meta name="twitter:description" content="Vue.js - The Progressive JavaScript Framework">
     <meta name="twitter:image" content="https://cn.vuejs.org/images/logo.png">
 
@@ -54,10 +54,10 @@
     <!-- <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin> -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com" rel="preconnect" crossorigin> -->
 
-    <!-- <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono' rel='stylesheet' type='text/css'> -->
-    <!-- <link href='//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js' rel='stylesheet' type='text/css'> -->
+    <!-- <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono" rel="stylesheet"> -->
+    <!-- <link href="//fonts.googleapis.com/css?family=Dosis:500&text=Vue.js" rel="stylesheet"> -->
 
-    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- main page styles -->
     <link rel="stylesheet" href="/css/page.css">
@@ -88,7 +88,7 @@
       <a class="menu-button"></a>
       <a class="logo" href="/"></a>
     </div>
-    <div id="header">
+    <header id="header">
   <a id="logo" href="/">
     <img src="/images/logo.png" alt="vue logo">
     <span>Vue.js</span>
@@ -188,22 +188,22 @@
 <li class="nav-dropdown-container language">
   <a class="nav-link">多语言</a><span class="arrow"></span>
   <ul class="nav-dropdown">
-    <li><a href="https://vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank" rel="noopener">English</a></li>
-    <li><a href="https://jp.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank" rel="noopener">日本語</a></li>
-    <li><a href="https://ru.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank" rel="noopener">Русский</a></li>
-    <li><a href="https://kr.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank" rel="noopener">한국어</a></li>
-    <li><a href="https://br.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank" rel="noopener">Português</a></li>
-    <li><a href="https://fr.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank" rel="noopener">Français</a></li>
-    <li><a href="https://vi.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank" rel="noopener">Tiếng Việt</a></li>
-    <li><a href="https://es.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank" rel="noopener">español</a></li>
-    <li><a href="https://docs.vuejs.id/v2/cookbook/adding-instance-properties.html" class="nav-link" target="_blank" rel="noopener">Bahasa Indonesia</a></li>
+    <li><a href="https://vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link">English</a></li>
+    <li><a href="https://jp.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link">日本語</a></li>
+    <li><a href="https://ru.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link">Русский</a></li>
+    <li><a href="https://kr.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link">한국어</a></li>
+    <li><a href="https://br.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link">Português</a></li>
+    <li><a href="https://fr.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link">Français</a></li>
+    <li><a href="https://vi.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link">Tiếng Việt</a></li>
+    <li><a href="https://es.vuejs.org/v2/cookbook/adding-instance-properties.html" class="nav-link">Español</a></li>
+    <li><a href="https://docs.vuejs.id/v2/cookbook/adding-instance-properties.html" class="nav-link">Bahasa Indonesia</a></li>
   </ul>
 </li>
 
 <li><a href="https://github.com/vuejs/cn.vuejs.org/" target="_blank" class="nav-link contribute">参与翻译</a></li>
 
   </ul>
-</div>
+</header>
 
     
       <div id="main" class="fix-sidebar">
@@ -219,12 +219,12 @@
     <span>特别赞助商</span>
     <div>
     <a href="http://www.dcloud.io/?hmsr=vuejsorg&hmpl=&hmcu=&hmkw=&hmci=" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/dcloud.gif" alt="">
+      <img src="/images/dcloud.gif" alt>
     </a>
     </div>
     <div>
-    <a href="https://youzan.github.io/vant?source=vuejsorg" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/vant.png" alt="">
+    <a href="https://coding.imooc.com/?c=vuejs&mc_marking=7cf403c3c89d6fccf944791e71e7a959&mc_channel=vuezwsq" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/imooc-sponsor2.png" alt>
     </a>
     </div>
   </div>
@@ -241,11 +241,14 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -274,7 +277,7 @@
     
     
     <li>
-      <a href="/v2/cookbook/adding-instance-properties.html" class="sidebar-link current">添加实例属性</a>
+      <a href="/v2/cookbook/adding-instance-properties.html" class="sidebar-link current">添加实例 property</a>
     </li>
   
     
@@ -367,11 +370,14 @@
     <a href="https://vehikl.com/" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/vehikl.png" alt="Vehikl">
     </a>
-    <a href="https://www.nativescript.org/vue?utm_source=vue-js-org&utm_medium=website&utm_campaign=nativescript-awareness" target="_blank" rel="sponsored noopener" class="logo">
-      <img src="/images/nativescript.png" alt="NativeScript">
-    </a>
     <a href="https://retool.com/?utm_source=sponsor&utm_campaign=vue" target="_blank" rel="sponsored noopener" class="logo">
       <img src="/images/retool.png" alt="Retool">
+    </a>
+    <a href="https://passionatepeople.io/" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/passionate_people.png" alt="Passionate People">
+    </a>
+    <a href="https://www.storyblok.com" target="_blank" rel="sponsored noopener" class="logo">
+      <img src="/images/storyblok.png" alt="Storyblok">
     </a>
     </div>
   </div>
@@ -390,12 +396,9 @@
       
 <div id="ad">
   <span style="float: right;">广告</span>
-  <a href="https://time.geekbang.org/column/intro/216?code=mM%2FdqOPks0VQ7EkYGPNisoEpHDsb0ViHBXYa%2Fyg02k8%3D&utm_term=SPoster" target="_blank" rel="sponsored noopener">
-    <img src="/images/geekbang-ad.jpg">
+  <a href="https://coding.imooc.com/?c=vuejs&mc_marking=2243e4b1af42da32ee6e9f088e646c7c&mc_channel=vuezwsq" target="_blank" rel="nofollow">
+    <img src="/images/imooc-ad3.png" alt="Vue.js实战项目开发教程">
   </a>
-  <!-- <a href="https://ke.qq.com/course/392130?saleToken=992600&from=pclink" target="_blank" rel="sponsored noopener">
-    <img src="/images/tencent-ad.png">
-  </a> -->
   <!-- <script
     async
     type="text/javascript"
@@ -408,13 +411,13 @@
     
   
   
-    <h1>添加实例属性</h1>
+    <h1>添加实例 property</h1>
   
 
   <div class="ad-pagetop">
-  <a href="http://www.tp-shop.cn/index.php?http_referer=vuejs" target="_blank" rel="noopener noreferrer">
-    <span class="name">TPshop</span>
-    <span class="description">中国免费商城系统 - 搜豹商城系统 - 免费50小时Vue视频教程</span>
+  <a href="http://www.vueshop.com.cn/index.php?http_referer=vuejs" target="_blank" rel="noopener noreferrer">
+    <span class="name">VUEshop</span>
+    <span class="description">中国免费商城系统 - 搜豹商城系统 - 免费50小时 Vue 视频教程</span>
     <span class="action">立即查看 &gt;</span>
   </a>
 </div>
@@ -430,11 +433,11 @@
   &#125;
 &#125;)</code></pre>
 <p>则控制台会打印出 <code>My App</code>。就这么简单！</p>
-<h2 id="为实例属性设置作用域的重要性"><a href="#为实例属性设置作用域的重要性" class="headerlink" title="为实例属性设置作用域的重要性"></a>为实例属性设置作用域的重要性</h2><p>你可能会好奇：</p>
+<h2 id="为实例-property-设置作用域的重要性"><a href="#为实例-property-设置作用域的重要性" class="headerlink" title="为实例 property 设置作用域的重要性"></a>为实例 property 设置作用域的重要性</h2><p>你可能会好奇：</p>
 <blockquote>
 <p>“为什么 <code>appName</code> 要以 <code>$</code> 开头？这很重要吗？它会怎样？”</p>
 </blockquote>
-<p>这里没有什么魔法。<code>$</code> 是在 Vue 所有实例中都可用的属性的一个简单约定。这样做会避免和已被定义的数据、方法、计算属性产生冲突。</p>
+<p>这里没有什么魔法。<code>$</code> 是在 Vue 所有实例中都可用的 property 的一个简单约定。这样做会避免和已被定义的数据、方法、计算属性产生冲突。</p>
 <blockquote>
 <p>“你指的冲突是什么意思？”</p>
 </blockquote>
@@ -443,8 +446,8 @@
 <p>那么你希望下面的代码输出什么呢？</p>
 <pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
   <span class="hljs-attr">data</span>: &#123;
-    <span class="hljs-comment">// 啊哦，`appName` *也*是一个我们定义的实例属性名！😯</span>
-    appName: <span class="hljs-string">'The name of some other app'</span>
+    <span class="hljs-comment">// 啊哦，`appName` *也*是一个我们定义的实例 property 名！😯</span>
+    <span class="hljs-attr">appName</span>: <span class="hljs-string">'The name of some other app'</span>
   &#125;,
   <span class="hljs-attr">beforeCreate</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
     <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.appName)
@@ -453,10 +456,10 @@
     <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.appName)
   &#125;
 &#125;)</code></pre>
-<p>日志中会先出现 <code>&quot;My App&quot;</code>，然后出现 <code>&quot;The name of some other app&quot;</code>，因为 <code>this.appName</code> 在实例被创建之后被 <code>data</code> <a href="https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/objects-classes/ch5.md" target="_blank" rel="noopener">覆写了</a>。我们通过 <code>$</code> 为实例属性设置作用域来避免这种事情发生。你还可以根据你的喜好使用自己的约定，诸如 <code>$_appName</code> 或 <code>ΩappName</code>，来避免和插件或未来的插件相冲突。</p>
+<p>日志中会先出现 <code>&quot;My App&quot;</code>，然后出现 <code>&quot;The name of some other app&quot;</code>，因为 <code>this.appName</code> 在实例被创建之后被 <code>data</code> <a href="https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/objects-classes/ch5.md" target="_blank" rel="noopener">覆写了</a>。我们通过 <code>$</code> 为实例 property 设置作用域来避免这种事情发生。你还可以根据你的喜好使用自己的约定，诸如 <code>$_appName</code> 或 <code>ΩappName</code>，来避免和插件或未来的插件相冲突。</p>
 <h2 id="真实的示例：通过-axios-替换-Vue-Resource"><a href="#真实的示例：通过-axios-替换-Vue-Resource" class="headerlink" title="真实的示例：通过 axios 替换 Vue Resource"></a>真实的示例：通过 axios 替换 Vue Resource</h2><p>比如你打算替换已经废弃的 <a href="https://medium.com/the-vue-point/retiring-vue-resource-871a82880af4" target="_blank" rel="noopener">Vue Resource</a> 库。你实在是很喜欢通过 <code>this.$http</code> 来访问请求方法，希望换成 axios 以后还能继续这样用。</p>
 <p>你需要做的事情是把 axios 引入你的项目：</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.2/axios.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
 <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
@@ -508,7 +511,7 @@
 &#125;</code></pre>
 <p>会抛出一个错误：</p>
 <pre><code class="hljs log">Uncaught TypeError: Cannot read property &apos;split&apos; of undefined</code></pre>
-<h2 id="何时避免使用这个模式"><a href="#何时避免使用这个模式" class="headerlink" title="何时避免使用这个模式"></a>何时避免使用这个模式</h2><p>只要你对原型属性的作用域保持警惕，那么使用这个模式就是安全的——保证了这一点，就不太会出 bug。</p>
+<h2 id="何时避免使用这个模式"><a href="#何时避免使用这个模式" class="headerlink" title="何时避免使用这个模式"></a>何时避免使用这个模式</h2><p>只要你对原型 property 的作用域保持警惕，那么使用这个模式就是安全的——保证了这一点，就不太会出 bug。</p>
 <p>然而，有的时候它会让其他开发者感到混乱。例如他们可能看到了 <code>this.$http</code>，然后会想“哦，我从来没见过这个 Vue 的功能”，然后他们来到另外一个项目又发现 <code>this.$http</code> 是未被定义的。或者你打算去搜索如何使用它，但是搜不到结果，因为他们并没有发现这是一个 axios 的别名。</p>
 <p><strong>这种便利是以显性表达为代价的。</strong>当我们查阅一个组件的时候，要注意交代清楚 <code>$http</code> 是从哪来的：Vue 自身、一个插件、还是一个辅助库？</p>
 <p>那么有别的替代方案吗？</p>
@@ -520,7 +523,7 @@
   <span class="hljs-attr">helpers</span>: &#123;
     <span class="hljs-comment">// 这是我们之前见到过的 `$reverseText` 方法</span>
     <span class="hljs-comment">// 的一个纯函数版本</span>
-    reverseText: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">text</span>) </span>&#123;
+    <span class="hljs-attr">reverseText</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">text</span>) </span>&#123;
       <span class="hljs-keyword">return</span> text
         .split(<span class="hljs-string">''</span>)
         .reverse()
@@ -528,10 +531,10 @@
     &#125;
   &#125;
 &#125;)</code></pre>
-<p class="tip">如果你在好奇 <code>Object.freeze</code>，它做的事情是阻止这个对象在未来被修改。这实质上是将它的属性都设为了常量，避免在未来出现状态的 bug。</p>
+<p class="tip">如果你在好奇 <code>Object.freeze</code>，它做的事情是阻止这个对象在未来被修改。这实质上是将它的 property 都设为了常量，避免在未来出现状态的 bug。</p>
 
-<p>现在这些被共享的属性的来源就更加明显了：在应用中的某个地方有一个被定义好的 <code>App</code> 对象。你只需在项目中搜索就可以找到它。</p>
-<p>这样做的另一个好处是 <code>App</code> 可以在你代码的<em>任何地方</em>使用，不管它是否是 Vue 相关的。包括向实例选项直接附加一些值而不必进入一个函数去访问 <code>this</code> 上的属性来得到这些值：</p>
+<p>现在这些被共享的 property 的来源就更加明显了：在应用中的某个地方有一个被定义好的 <code>App</code> 对象。你只需在项目中搜索就可以找到它。</p>
+<p>这样做的另一个好处是 <code>App</code> 可以在你代码的<em>任何地方</em>使用，不管它是否是 Vue 相关的。包括向实例选项直接附加一些值而不必进入一个函数去访问 <code>this</code> 上的 property 来得到这些值：</p>
 <pre><code class="hljs js"><span class="hljs-keyword">new</span> Vue(&#123;
   <span class="hljs-attr">data</span>: &#123;
     <span class="hljs-attr">appVersion</span>: App.version
