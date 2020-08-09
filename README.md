@@ -7,7 +7,7 @@
 静态网站 | 发布状态
 ---- | ----
 angular.cn | ![angular.cn](https://github.com/jaywcjlove/doc-static/workflows/angular.cn/badge.svg)
-ant.design | ![ant.design](https://github.com/jaywcjlove/doc-static/workflows/ant.design/badge.svg)
+[ant.design](https://ant.design) | ![ant.design](https://github.com/jaywcjlove/doc-static/workflows/ant.design/badge.svg)
 deno-manual-cn | ![deno-manual-cn](https://github.com/jaywcjlove/doc-static/workflows/deno-manual-cn/badge.svg)
 element.eleme.io | ![element.eleme.io](https://github.com/jaywcjlove/doc-static/workflows/element.eleme.io/badge.svg)
 element-react | ![element-react](https://github.com/jaywcjlove/doc-static/workflows/element-react/badge.svg)
