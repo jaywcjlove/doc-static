@@ -4,14 +4,32 @@
         <title>Jest Blog</title>
         <link>https://jestjs.io/blog</link>
         <description>The best place to stay up-to-date with the latest Jest news and events.</description>
-        <lastBuildDate>Fri, 25 Jan 2019 06:00:00 GMT</lastBuildDate>
-        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <lastBuildDate>Tue, 05 May 2020 06:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
             <title>Jest Blog</title>
             <url>https://jestjs.io/img/jest.svg</url>
             <link>https://jestjs.io/blog</link>
         </image>
+        <item>
+            <title><![CDATA[Jest 26: Tick Tock]]></title>
+            <link>https://jestjs.io/blog/2020/05/05/jest-26.html</link>
+            <guid>https://jestjs.io/blog/2020/05/05/jest-26.html</guid>
+            <pubDate>Tue, 05 May 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>When we started rebuilding Jest five years ago our goal was to provide a batteries-included zero-configuration test runner that is approachable for beginners, extensible for almost all testing use cases and scalable to large projects. One of the instrumental releases was <a href="https://jestjs.io/blog/2016/09/01/jest-15">Jest 15</a> which tied everything together and provided good defaults that allowed people to run Jest often without any setup. However, this approach has a big downside as Jest installs a lot of dependencies into your projects that you may not need.</p>
+<p>We are now beginning to address this shortcoming and are working on reducing Jest’s install size while keeping it approachable and extensible. We have made the following <strong>breaking changes</strong> in Jest 26:</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Jest 25: 🚀 Laying foundations for the future]]></title>
+            <link>https://jestjs.io/blog/2020/01/21/jest-25.html</link>
+            <guid>https://jestjs.io/blog/2020/01/21/jest-25.html</guid>
+            <pubDate>Tue, 21 Jan 2020 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Jest 25 is laying the groundwork for many major changes in the future. As such, we kept breaking changes to a minimum, but internal architecture changes may require attention during the upgrade. The main changes are an upgrade of JSDOM from v11 to v15, 10-15% faster test runs, a new diff view for outdated snapshots and dropped Node 6 support.</p>
+<p>There has been more than 200 commits since Jest 24.9 by more than 80 different contributors, so as always, take a look at the <a href="https://github.com/facebook/jest/blob/master/CHANGELOG.md">changelog</a> for a full list of changes.</p>
+]]></description>
+        </item>
         <item>
             <title><![CDATA[Jest 24: 💅 Refreshing, Polished, TypeScript-friendly]]></title>
             <link>https://jestjs.io/blog/2019/01/25/jest-24-refreshing-polished-typescript-friendly.html</link>
