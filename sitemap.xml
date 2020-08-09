@@ -132,7 +132,6 @@
 <url> <loc>https://www.typescriptlang.org/play/javascript/functions-with-javascript/function-chaining.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/javascript/functions-with-javascript/generic-functions.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/javascript/functions-with-javascript/typing-functions.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.typescriptlang.org/play/javascript/helping-with-javascript/errors.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/javascript/helping-with-javascript/quick-fixes.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/javascript/javascript-essentials/code-flow.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/javascript/javascript-essentials/functions.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -160,6 +159,7 @@
 <url> <loc>https://www.typescriptlang.org/play/typescript/language-extensions/enums.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/typescript/language-extensions/nominal-typing.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/typescript/language-extensions/types-vs-interfaces.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.typescriptlang.org/play/javascript/helping-with-javascript/errors.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/typescript/meta-types/conditional-types.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/typescript/meta-types/discriminate-types.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/play/typescript/meta-types/indexed-types.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -234,12 +234,12 @@
 <url> <loc>https://www.typescriptlang.org/zh/play/javascript/modern-javascript/immutability.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/javascript/modern-javascript/import-export.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/javascript/modern-javascript/jsdoc-support.js</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.typescriptlang.org/zh/play/playground/config/javascript-playgrounds.js</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.typescriptlang.org/zh/play/playground/config/new-compiler-defaults.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/javascript/working-with-classes/classes-101.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/javascript/working-with-classes/generic-classes.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/javascript/working-with-classes/mixins.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/javascript/working-with-classes/this.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.typescriptlang.org/zh/play/playground/config/javascript-playgrounds.js</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.typescriptlang.org/zh/play/playground/config/new-compiler-defaults.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/playground/language/automatic-type-acquisition.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/playground/language/fixits.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.typescriptlang.org/zh/play/playground/tooling/mobile-support.ts</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
