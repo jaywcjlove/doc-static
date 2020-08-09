@@ -11,7 +11,7 @@
  x &amp;= y    | x = x &amp; y
  x ^= y    | x = x ^ y
  x |= y    | x = x | y
-</code></pre><h2 id="rule-details-2352">Rule Details</h2><p>This rule requires or disallows assignment operator shorthand where possible.</p><h2 id="options-1102">Options</h2><p>This rule has a single string option:</p><ul><li><code>&quot;always&quot;</code> (default) requires assignment operator shorthand where possible</li><li><code>&quot;never&quot;</code> disallows assignment operator shorthand</li></ul><h3 id="always-245">always</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the default <code>&quot;always&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint operator-assignment: [&quot;error&quot;, &quot;always&quot;]*/</span>
+</code></pre><h2 id="rule-details-2352">Rule Details</h2><p>This rule requires or disallows assignment operator shorthand where possible.</p><h2 id="options-1102">Options</h2><p>This rule has a single string option:</p><ul><li><code>&quot;always&quot;</code> (default) requires assignment operator shorthand where possible</li><li><code>&quot;never&quot;</code> disallows assignment operator shorthand</li></ul><h3 id="always-244">always</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the default <code>&quot;always&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint operator-assignment: [&quot;error&quot;, &quot;always&quot;]*/</span>
 
 x = x + y;
 x = y * x;
@@ -26,7 +26,7 @@ x = (x * y) * z;
 x[<span class="hljs-number">0</span>] /= y;
 x[foo()] = x[foo()] % <span class="hljs-number">2</span>;
 x = y + x; <span class="hljs-comment">// `+` is not always commutative (e.g. x = &quot;abc&quot;)</span>
-</code></pre><h3 id="never-197">never</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>&quot;never&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint operator-assignment: [&quot;error&quot;, &quot;never&quot;]*/</span>
+</code></pre><h3 id="never-196">never</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>&quot;never&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint operator-assignment: [&quot;error&quot;, &quot;never&quot;]*/</span>
 
 x *= y;
 x ^= (y + z) / foo();
