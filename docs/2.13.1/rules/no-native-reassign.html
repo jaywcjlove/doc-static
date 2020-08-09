@@ -2,7 +2,7 @@
 </code></pre><h2 id="rule-details-1188">Rule Details</h2><p>The native objects reported by this rule are the <code>builtin</code> variables from <a href="https://github.com/sindresorhus/globals/">globals</a>.</p><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-native-reassign: &quot;error&quot;*/</span>
 
 <span class="hljs-built_in">String</span> = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();
-</code></pre><h2 id="options-491">Options</h2><p>This rule accepts an <code>exceptions</code> option, which can be used to specify a list of builtins for which reassignments will be allowed:</p><pre class="hljs highlight-json"><code>{
+</code></pre><h2 id="options-492">Options</h2><p>This rule accepts an <code>exceptions</code> option, which can be used to specify a list of builtins for which reassignments will be allowed:</p><pre class="hljs highlight-json"><code>{
     <span class="hljs-attr">&quot;rules&quot;</span>: {
         <span class="hljs-attr">&quot;no-native-reassign&quot;</span>: [<span class="hljs-string">&quot;error&quot;</span>, {<span class="hljs-attr">&quot;exceptions&quot;</span>: [<span class="hljs-string">&quot;Object&quot;</span>]}]
     }
