@@ -44,7 +44,7 @@
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/318fe103dbf2548eee293ff456ef0b829dbe3db3&quot;&gt;&lt;code&gt;318fe10&lt;/code&gt;&lt;/a&gt; Fix: Do not output &lt;code&gt;undefined&lt;/code&gt; as line and column when it&apos;s unavailable (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13519&quot;&gt;#13519&lt;/a&gt;) (haya14busa)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/16b10fe8ba3c78939d5ada4a25caf2f0c9e6a058&quot;&gt;&lt;code&gt;16b10fe&lt;/code&gt;&lt;/a&gt; Fix: Update the chatroom link to go directly to help channel (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13536&quot;&gt;#13536&lt;/a&gt;) (Nicholas C. Zakas)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;documentation-188&quot;&gt;Documentation&lt;/h2&gt;
+&lt;h2 id=&quot;documentation-189&quot;&gt;Documentation&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/6fb4edde3b7a7ae2faf8ac956a7342fbf80865fc&quot;&gt;&lt;code&gt;6fb4edd&lt;/code&gt;&lt;/a&gt; Docs: fix broken links in developer guide (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13518&quot;&gt;#13518&lt;/a&gt;) (Sam Chen)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/6c4aea44fd78e1eecea5fe3c37e1921e3b1e98a6&quot;&gt;&lt;code&gt;6c4aea4&lt;/code&gt;&lt;/a&gt; Docs: add ECMAScript 2020 to README (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13510&quot;&gt;#13510&lt;/a&gt;) (Milos Djermanovic)&lt;/li&gt;
@@ -89,7 +89,7 @@
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/095194c0fc0eb02aa69fde6b4280696e0e4de214&quot;&gt;&lt;code&gt;095194c&lt;/code&gt;&lt;/a&gt; Fix: add end location to reports in &lt;a href=&quot;/docs/rules/object-curly-newline&quot;&gt;object-curly-newline&lt;/a&gt; (refs &lt;a href=&quot;https://github.com/eslint/eslint/issues/12334&quot;&gt;#12334&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13460&quot;&gt;#13460&lt;/a&gt;) (Milos Djermanovic)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/10251bbaeba80ac15244f385fc42cf2f2a30e5d2&quot;&gt;&lt;code&gt;10251bb&lt;/code&gt;&lt;/a&gt; Fix: add end location to reports in &lt;a href=&quot;/docs/rules/keyword-spacing&quot;&gt;keyword-spacing&lt;/a&gt; (refs &lt;a href=&quot;https://github.com/eslint/eslint/issues/12334&quot;&gt;#12334&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13461&quot;&gt;#13461&lt;/a&gt;) (Milos Djermanovic)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;documentation-187&quot;&gt;Documentation&lt;/h2&gt;
+&lt;h2 id=&quot;documentation-188&quot;&gt;Documentation&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/885a1455691265db88dc0befe9b48a69d69e8b9c&quot;&gt;&lt;code&gt;885a145&lt;/code&gt;&lt;/a&gt; Docs: clarify behavior if &lt;code&gt;meta.fixable&lt;/code&gt; is omitted (refs &lt;a href=&quot;https://github.com/eslint/eslint/issues/13349&quot;&gt;#13349&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13493&quot;&gt;#13493&lt;/a&gt;) (Milos Djermanovic)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/1a01b420eaab0de03dab5cc190a9f2a860c21a84&quot;&gt;&lt;code&gt;1a01b42&lt;/code&gt;&lt;/a&gt; Docs: Update technology sponsors in README (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13478&quot;&gt;#13478&lt;/a&gt;) (Nicholas C. Zakas)&lt;/li&gt;
@@ -97,7 +97,7 @@
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/61097fe5cc275d414a0c8e19b31c6060cb5568b7&quot;&gt;&lt;code&gt;61097fe&lt;/code&gt;&lt;/a&gt; Docs: Update int rule level to string (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13483&quot;&gt;#13483&lt;/a&gt;) (Brandon Mills)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/e951457b7aaa1b12b135588d36e3f4db4d7b8463&quot;&gt;&lt;code&gt;e951457&lt;/code&gt;&lt;/a&gt; Docs: fix wording in configuring.md (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13469&quot;&gt;#13469&lt;/a&gt;) (Piper)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;dependency-upgrades-73&quot;&gt;Dependency Upgrades&lt;/h2&gt;
+&lt;h2 id=&quot;dependency-upgrades-74&quot;&gt;Dependency Upgrades&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/6ed9e8e4ff038c0259b0e7fe7ab7f4fd4ec55801&quot;&gt;&lt;code&gt;6ed9e8e&lt;/code&gt;&lt;/a&gt; Upgrade: lodash@4.17.19 (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13499&quot;&gt;#13499&lt;/a&gt;) (Yohan Siguret)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/748734fdd497fbf61f3a616ff4a09169135b9396&quot;&gt;&lt;code&gt;748734f&lt;/code&gt;&lt;/a&gt; Upgrade: Updated puppeteer version to v4.0.0 (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13444&quot;&gt;#13444&lt;/a&gt;) (odidev)&lt;/li&gt;
@@ -142,7 +142,7 @@
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/3f51930eea7cddc921a9ee3cb0328c7b649c0f83&quot;&gt;&lt;code&gt;3f51930&lt;/code&gt;&lt;/a&gt; Fix: false positive new with member in &lt;a href=&quot;/docs/rules/no-extra-parens&quot;&gt;no-extra-parens&lt;/a&gt; (fixes &lt;a href=&quot;https://github.com/eslint/eslint/issues/12740&quot;&gt;#12740&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13375&quot;&gt;#13375&lt;/a&gt;) (YeonJuan)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/825a5b98d3d84f6eb72b75f7d8519de763cc8898&quot;&gt;&lt;code&gt;825a5b9&lt;/code&gt;&lt;/a&gt; Fix: Clarify documentation on implicit ignore behavior (fixes &lt;a href=&quot;https://github.com/eslint/eslint/issues/12348&quot;&gt;#12348&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/12600&quot;&gt;#12600&lt;/a&gt;) (Scott Hardin)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;documentation-186&quot;&gt;Documentation&lt;/h2&gt;
+&lt;h2 id=&quot;documentation-187&quot;&gt;Documentation&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/f21bad2680406a2671b877f8dba47f4475d0cc64&quot;&gt;&lt;code&gt;f21bad2&lt;/code&gt;&lt;/a&gt; Docs: fix description for &lt;code&gt;never&lt;/code&gt; in &lt;a href=&quot;/docs/rules/multiline-ternary&quot;&gt;multiline-ternary&lt;/a&gt; (fixes &lt;a href=&quot;https://github.com/eslint/eslint/issues/13368&quot;&gt;#13368&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13452&quot;&gt;#13452&lt;/a&gt;) (Milos Djermanovic)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/0a463dbf7cc5a77d442879c9117204d4d38db972&quot;&gt;&lt;code&gt;0a463db&lt;/code&gt;&lt;/a&gt; Docs: fix &lt;a href=&quot;/docs/rules/no-multiple-empty-lines&quot;&gt;no-multiple-empty-lines&lt;/a&gt; examples (fixes &lt;a href=&quot;https://github.com/eslint/eslint/issues/13432&quot;&gt;#13432&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13433&quot;&gt;#13433&lt;/a&gt;) (Milos Djermanovic)&lt;/li&gt;
@@ -204,7 +204,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/7fb45cf13e9908d489bd6d5fba3b7243c01508b9&quot;&gt;&lt;code&gt;7fb45cf&lt;/code&gt;&lt;/a&gt; Fix: clone config before validating (fixes &lt;a href=&quot;https://github.com/eslint/eslint/issues/12592&quot;&gt;#12592&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13034&quot;&gt;#13034&lt;/a&gt;) (Anix)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;documentation-185&quot;&gt;Documentation&lt;/h2&gt;
+&lt;h2 id=&quot;documentation-186&quot;&gt;Documentation&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/9d0186e55bee769ea6aa08dc5a62682f58316412&quot;&gt;&lt;code&gt;9d0186e&lt;/code&gt;&lt;/a&gt; Docs: Fix changelog versions (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13410&quot;&gt;#13410&lt;/a&gt;) (Tony Brix)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/1ee3c42ceeee56b650bcc4206ed783b795f65643&quot;&gt;&lt;code&gt;1ee3c42&lt;/code&gt;&lt;/a&gt; Docs: On maxEOF with &lt;a href=&quot;/docs/rules/eol-last&quot;&gt;eol-last&lt;/a&gt; (fixes &lt;a href=&quot;https://github.com/eslint/eslint/issues/12742&quot;&gt;#12742&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13374&quot;&gt;#13374&lt;/a&gt;) (Arthur Dias)&lt;/li&gt;
@@ -251,7 +251,7 @@
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/e49732eb41bff6347ca7718c3c5ca1d13f1cd2d3&quot;&gt;&lt;code&gt;e49732e&lt;/code&gt;&lt;/a&gt; Fix: Ignore import expressions in &lt;a href=&quot;/docs/rules/no-unused-expressions&quot;&gt;no-unused-expressions&lt;/a&gt; rule (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13387&quot;&gt;#13387&lt;/a&gt;) (Veniamin Krol)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/426088c966dc79dc338b33100f3adf827b147d69&quot;&gt;&lt;code&gt;426088c&lt;/code&gt;&lt;/a&gt; Fix: &lt;a href=&quot;/docs/rules/no-unused-vars&quot;&gt;no-unused-vars&lt;/a&gt; updated location to last reference (fixes &lt;a href=&quot;https://github.com/eslint/eslint/issues/13181&quot;&gt;#13181&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13354&quot;&gt;#13354&lt;/a&gt;) (Anix)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;documentation-184&quot;&gt;Documentation&lt;/h2&gt;
+&lt;h2 id=&quot;documentation-185&quot;&gt;Documentation&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/21b15832e326f96d349c063cd7e85e72c3abb670&quot;&gt;&lt;code&gt;21b1583&lt;/code&gt;&lt;/a&gt; Docs: fixed broken hash link for working-with-rules.md (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13386&quot;&gt;#13386&lt;/a&gt;) (Yosuke Ota)&lt;/li&gt;
 &lt;/ul&gt;
@@ -297,7 +297,7 @@
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/68c8ee3ab70187972aef4c4e866bcf29da70a207&quot;&gt;&lt;code&gt;68c8ee3&lt;/code&gt;&lt;/a&gt; Fix: Stop path analyzer on unknown nodes (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13305&quot;&gt;#13305&lt;/a&gt;) (Ilya Volodin)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/2c778fb6e31b7943bb27a47a6e15dcbfd8336f39&quot;&gt;&lt;code&gt;2c778fb&lt;/code&gt;&lt;/a&gt; Fix: remove custom plugins from replacedBy metadata (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13274&quot;&gt;#13274&lt;/a&gt;) (Kai Cataldo)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;documentation-183&quot;&gt;Documentation&lt;/h2&gt;
+&lt;h2 id=&quot;documentation-184&quot;&gt;Documentation&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/611c676dfd671013d81810724f184e2a9c5ad5d7&quot;&gt;&lt;code&gt;611c676&lt;/code&gt;&lt;/a&gt; Docs: Update new rules policies (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13343&quot;&gt;#13343&lt;/a&gt;) (Nicholas C. Zakas)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/08913798b4ec420b261b8fbc470504f9f248c840&quot;&gt;&lt;code&gt;0891379&lt;/code&gt;&lt;/a&gt; Docs: Document the &amp;quot;correct&amp;quot; way to build an array with values (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13246&quot;&gt;#13246&lt;/a&gt;) (Ed S)&lt;/li&gt;
@@ -491,7 +491,7 @@
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/00ddfffe6b4b4244e4680b0f92f2c6697fad136f&quot;&gt;&lt;code&gt;00ddfff&lt;/code&gt;&lt;/a&gt; Fix: Windows path parsing for JUnit (fixes &lt;a href=&quot;https://github.com/eslint/eslint/issues/12507&quot;&gt;#12507&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/12509&quot;&gt;#12509&lt;/a&gt;) (Michael Wall)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/1aff21bb54da44cef0b6e378a34a74265863b930&quot;&gt;&lt;code&gt;1aff21b&lt;/code&gt;&lt;/a&gt; Fix: &lt;a href=&quot;/docs/rules/no-mixed-spaces-and-tabs&quot;&gt;no-mixed-spaces-and-tabs&lt;/a&gt; reports multiline strings (&lt;a href=&quot;https://github.com/eslint/eslint/issues/12566&quot;&gt;#12566&lt;/a&gt;) (Milos Djermanovic)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;documentation-182&quot;&gt;Documentation&lt;/h2&gt;
+&lt;h2 id=&quot;documentation-183&quot;&gt;Documentation&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/b5c8d7389bb2c5d4eae850b866832d099187818b&quot;&gt;&lt;code&gt;b5c8d73&lt;/code&gt;&lt;/a&gt; Docs: update 7.0.0 migration guide for consistency (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13267&quot;&gt;#13267&lt;/a&gt;) (Kai Cataldo)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/356fdb46aa118ba3d81cee93e8c058a7c98acaf9&quot;&gt;&lt;code&gt;356fdb4&lt;/code&gt;&lt;/a&gt; Docs: add migration guide (&lt;a href=&quot;https://github.com/eslint/eslint/issues/12692&quot;&gt;#12692&lt;/a&gt;) (Toru Nagashima)&lt;/li&gt;
@@ -527,7 +527,7 @@
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/098b67d04a4b4dc8ef4faa6434c6ef5abbde3ed3&quot;&gt;&lt;code&gt;098b67d&lt;/code&gt;&lt;/a&gt; Docs: fix minor typo in &lt;a href=&quot;/docs/rules/brace-style&quot;&gt;brace-style&lt;/a&gt;.md (&lt;a href=&quot;https://github.com/eslint/eslint/issues/12749&quot;&gt;#12749&lt;/a&gt;) (Marko Kaznovac)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/b23ad0d789a909baf8d7c41a35bc53df932eaf30&quot;&gt;&lt;code&gt;b23ad0d&lt;/code&gt;&lt;/a&gt; Docs: change a broken link in working-with-rules.md (&lt;a href=&quot;https://github.com/eslint/eslint/issues/12732&quot;&gt;#12732&lt;/a&gt;) (Damien Cassou)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;dependency-upgrades-72&quot;&gt;Dependency Upgrades&lt;/h2&gt;
+&lt;h2 id=&quot;dependency-upgrades-73&quot;&gt;Dependency Upgrades&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/b98d8bda4630fe8278c5aa2b6650630770568fe5&quot;&gt;&lt;code&gt;b98d8bd&lt;/code&gt;&lt;/a&gt; Upgrade: eslint-release@2.0.0 (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13271&quot;&gt;#13271&lt;/a&gt;) (Kai Cataldo)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/3eeae565bfb0834a31e5d3a253a17bbf4027cf88&quot;&gt;&lt;code&gt;3eeae56&lt;/code&gt;&lt;/a&gt; Upgrade: some (dev) deps (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13155&quot;&gt;#13155&lt;/a&gt;) (薛定谔的猫)&lt;/li&gt;

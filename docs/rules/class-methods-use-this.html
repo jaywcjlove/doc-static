@@ -56,7 +56,7 @@ A.sayHi(); <span class="hljs-comment">// =&gt; &quot;hi&quot;</span>
         <span class="hljs-comment">// OK. static methods aren&#x27;t expected to use this.</span>
     }
 }
-</code></pre><h2 id="options-12">Options</h2><h3 id="exceptions">Exceptions</h3><pre class="hljs highlight-"><code>&quot;class-methods-use-this&quot;: [&lt;enabled&gt;, { &quot;exceptMethods&quot;: [&lt;...exceptions&gt;] }]
+</code></pre><h2 id="options-13">Options</h2><h3 id="exceptions">Exceptions</h3><pre class="hljs highlight-"><code>&quot;class-methods-use-this&quot;: [&lt;enabled&gt;, { &quot;exceptMethods&quot;: [&lt;...exceptions&gt;] }]
 </code></pre><p>The <code>exceptMethods</code> option allows you to pass an array of method names for which you would like to ignore warnings. For example, you might have a spec from an external library that requires you to overwrite a method as a regular function (and not as a static method) and does not use <code>this</code> inside the function body. In this case, you can add that method to ignore in the warnings.</p><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule when used without exceptMethods:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint class-methods-use-this: &quot;error&quot;*/</span>
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
