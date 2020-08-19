@@ -17,7 +17,7 @@ jobs:
       - name: Get Static
         run: |
           git clone https://github.com/reactjs/zh-hans.reactjs.org -b gh-pages --single-branch reactjs --depth 1
-          ls -al
+          ls -al ./reactjs
 
       - name: Deploy reactjs
         uses: peaceiris/actions-gh-pages@v3
