@@ -33,7 +33,7 @@ a().b = a().b;
 <span class="hljs-comment">// Known limitation: this does not support computed properties except single literal or single identifier.</span>
 obj[a + b] = obj[a + b];
 obj[<span class="hljs-string">&quot;a&quot;</span> + <span class="hljs-string">&quot;b&quot;</span>] = obj[<span class="hljs-string">&quot;a&quot;</span> + <span class="hljs-string">&quot;b&quot;</span>];
-</code></pre><h2 id="options-927">Options</h2><p>This rule has the option to check properties as well.</p><pre class="hljs highlight-json"><code>{
+</code></pre><h2 id="options-928">Options</h2><p>This rule has the option to check properties as well.</p><pre class="hljs highlight-json"><code>{
     <span class="hljs-attr">&quot;no-self-assign&quot;</span>: [<span class="hljs-string">&quot;error&quot;</span>, {<span class="hljs-attr">&quot;props&quot;</span>: <span class="hljs-literal">true</span>}]
 }
 </code></pre><ul><li><code>props</code> - if this is <code>true</code>, <code>no-self-assign</code> rule warns self-assignments of properties. Default is <code>true</code>.</li></ul><h3 id="props-8">props</h3><p class="correct icon">Examples of <strong>correct</strong> code with the <code>{ &quot;props&quot;: false }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-self-assign: [&quot;error&quot;, {&quot;props&quot;: true}]*/</span>
