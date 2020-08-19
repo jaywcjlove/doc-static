@@ -33,7 +33,7 @@ bar(<span class="hljs-function">() =&gt;</span> {
 
 <span class="hljs-comment">// Allow empty functions.</span>
 <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">noop</span>(<span class="hljs-params"></span>) </span>{}
-</code></pre><h2 id="when-not-to-use-it-1475">When Not To Use It</h2><p>Asynchronous functions are designed to work with promises such that throwing an error will cause a promise's rejection handler (such as <code>catch()</code>) to be called. For example:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fail</span>(<span class="hljs-params"></span>) </span>{
+</code></pre><h2 id="when-not-to-use-it-1476">When Not To Use It</h2><p>Asynchronous functions are designed to work with promises such that throwing an error will cause a promise's rejection handler (such as <code>catch()</code>) to be called. For example:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fail</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;Failure!&quot;</span>);
 }
 

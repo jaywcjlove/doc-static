@@ -5,7 +5,7 @@
         <span class="hljs-keyword">return</span> z;
     }
 }
-</code></pre><h2 id="rule-details-1942">Rule Details</h2><p>This rule is aimed at highlighting an unnecessary block of code following an <code>if</code> containing a return statement. As such, it will warn when it encounters an <code>else</code> following a chain of <code>if</code>s, all of them containing a <code>return</code> statement.</p><h2 id="options-899">Options</h2><p>This rule has an object option:</p><pre class="hljs highlight-json"><code>{
+</code></pre><h2 id="rule-details-1942">Rule Details</h2><p>This rule is aimed at highlighting an unnecessary block of code following an <code>if</code> containing a return statement. As such, it will warn when it encounters an <code>else</code> following a chain of <code>if</code>s, all of them containing a <code>return</code> statement.</p><h2 id="options-898">Options</h2><p>This rule has an object option:</p><pre class="hljs highlight-json"><code>{
     <span class="hljs-attr">&quot;no-else-return&quot;</span>: [<span class="hljs-string">&quot;error&quot;</span>, { <span class="hljs-attr">&quot;allowElseIf&quot;</span>: <span class="hljs-literal">true</span> }],
     <span class="hljs-comment">// or</span>
     <span class="hljs-attr">&quot;no-else-return&quot;</span>: [<span class="hljs-string">&quot;error&quot;</span>, { <span class="hljs-attr">&quot;allowElseIf&quot;</span>: <span class="hljs-literal">false</span> }]
