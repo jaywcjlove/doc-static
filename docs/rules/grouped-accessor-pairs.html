@@ -17,7 +17,7 @@
         <span class="hljs-built_in">this</span>.val = value;
     }
 };
-</code></pre><p>While it is allowed to define the pair for a getter or a setter anywhere in an object or class definition, it's considered a best practice to group accessor functions for the same property.</p><p>In other words, if a property has a getter and a setter, the setter should be defined right after the getter, or vice versa.</p><h2 id="rule-details-43">Rule Details</h2><p>This rule requires grouped definitions of accessor functions for the same property in object literals, class declarations and class expressions.</p><p>Optionally, this rule can also enforce consistent order (<code>getBeforeSet</code> or <code>setBeforeGet</code>).</p><p>This rule does not enforce the existence of the pair for a getter or a setter. See <a href="accessor-pairs">accessor-pairs</a> if you also want to enforce getter/setter pairs.</p><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint grouped-accessor-pairs: &quot;error&quot;*/</span>
+</code></pre><p>While it is allowed to define the pair for a getter or a setter anywhere in an object or class definition, it's considered a best practice to group accessor functions for the same property.</p><p>In other words, if a property has a getter and a setter, the setter should be defined right after the getter, or vice versa.</p><h2 id="rule-details">Rule Details</h2><p>This rule requires grouped definitions of accessor functions for the same property in object literals, class declarations and class expressions.</p><p>Optionally, this rule can also enforce consistent order (<code>getBeforeSet</code> or <code>setBeforeGet</code>).</p><p>This rule does not enforce the existence of the pair for a getter or a setter. See <a href="accessor-pairs">accessor-pairs</a> if you also want to enforce getter/setter pairs.</p><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint grouped-accessor-pairs: &quot;error&quot;*/</span>
 
 <span class="hljs-keyword">var</span> foo = {
     <span class="hljs-keyword">get</span> <span class="hljs-title">a</span>() {
@@ -43,7 +43,7 @@
     <span class="hljs-keyword">set</span> <span class="hljs-title">a</span>(<span class="hljs-params">value</span>) {
         <span class="hljs-built_in">this</span>.val = value;
     }
-    b(){}
+    <span class="hljs-function"><span class="hljs-title">b</span>(<span class="hljs-params"></span>)</span>{}
     <span class="hljs-keyword">get</span> <span class="hljs-title">a</span>() {
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.val;
     }
@@ -53,7 +53,7 @@
     <span class="hljs-keyword">static</span> <span class="hljs-keyword">get</span> <span class="hljs-title">a</span>() {
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.val;
     }
-    b(){}
+    <span class="hljs-function"><span class="hljs-title">b</span>(<span class="hljs-params"></span>)</span>{}
     <span class="hljs-keyword">static</span> <span class="hljs-keyword">set</span> <span class="hljs-title">a</span>(<span class="hljs-params">value</span>) {
         <span class="hljs-built_in">this</span>.val = value;
     }
@@ -87,7 +87,7 @@
     <span class="hljs-keyword">get</span> <span class="hljs-title">a</span>() {
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.val;
     }
-    b(){}
+    <span class="hljs-function"><span class="hljs-title">b</span>(<span class="hljs-params"></span>)</span>{}
 }
 
 <span class="hljs-keyword">const</span> Bar = <span class="hljs-class"><span class="hljs-keyword">class</span> </span>{
@@ -97,9 +97,9 @@
     <span class="hljs-keyword">static</span> <span class="hljs-keyword">set</span> <span class="hljs-title">a</span>(<span class="hljs-params">value</span>) {
         <span class="hljs-built_in">this</span>.val = value;
     }
-    b(){}
+    <span class="hljs-function"><span class="hljs-title">b</span>(<span class="hljs-params"></span>)</span>{}
 }
-</code></pre><h2 id="options-35">Options</h2><p>This rule has a string option:</p><ul><li><code>&quot;anyOrder&quot;</code> (default) does not enforce order.</li><li><code>&quot;getBeforeSet&quot;</code> if a property has both getter and setter, requires the getter to be defined before the setter.</li><li><code>&quot;setBeforeGet&quot;</code> if a property has both getter and setter, requires the setter to be defined before the getter.</li></ul><h3 id="getbeforeset">getBeforeSet</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>&quot;getBeforeSet&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint grouped-accessor-pairs: [&quot;error&quot;, &quot;getBeforeSet&quot;]*/</span>
+</code></pre><h2 id="options">Options</h2><p>This rule has a string option:</p><ul><li><code>&quot;anyOrder&quot;</code> (default) does not enforce order.</li><li><code>&quot;getBeforeSet&quot;</code> if a property has both getter and setter, requires the getter to be defined before the setter.</li><li><code>&quot;setBeforeGet&quot;</code> if a property has both getter and setter, requires the setter to be defined before the getter.</li></ul><h3 id="getbeforeset">getBeforeSet</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>&quot;getBeforeSet&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint grouped-accessor-pairs: [&quot;error&quot;, &quot;getBeforeSet&quot;]*/</span>
 
 <span class="hljs-keyword">var</span> foo = {
     <span class="hljs-keyword">set</span> <span class="hljs-title">a</span>(<span class="hljs-params">value</span>) {
@@ -211,7 +211,7 @@
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.val;
     }
 }
-</code></pre><h2 id="known-limitations-3">Known Limitations</h2><p>Due to the limits of static analysis, this rule does not account for possible side effects and in certain cases might require or miss to require grouping or order for getters/setters that have a computed key, like in the following example:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint grouped-accessor-pairs: &quot;error&quot;*/</span>
+</code></pre><h2 id="known-limitations">Known Limitations</h2><p>Due to the limits of static analysis, this rule does not account for possible side effects and in certain cases might require or miss to require grouping or order for getters/setters that have a computed key, like in the following example:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint grouped-accessor-pairs: &quot;error&quot;*/</span>
 
 <span class="hljs-keyword">var</span> a = <span class="hljs-number">1</span>;
 
@@ -236,4 +236,4 @@
         <span class="hljs-built_in">this</span>.val = value;
     }
 };
-</code></pre><p>Also, this rule does not report any warnings for properties that have duplicate getters or setters.</p><p>See <a href="no-dupe-keys">no-dupe-keys</a> if you also want to disallow duplicate keys in object literals.</p><p>See <a href="no-dupe-class-members">no-dupe-class-members</a> if you also want to disallow duplicate names in class definitions.</p><h2 id="further-reading-17">Further Reading</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set">Object Setters</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get">Object Getters</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">Classes</a></li></ul><h2 id="related-rules-13">Related Rules</h2><ul><li><a href="accessor-pairs">accessor-pairs</a></li><li><a href="no-dupe-keys">no-dupe-keys</a></li><li><a href="no-dupe-class-members">no-dupe-class-members</a></li></ul><h2 id="version-43">Version</h2><p>This rule was introduced in ESLint 6.7.0.</p><h2 id="resources-43">Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/grouped-accessor-pairs.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/grouped-accessor-pairs.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/eslint/edit/master/docs/rules/grouped-accessor-pairs.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>
+</code></pre><p>Also, this rule does not report any warnings for properties that have duplicate getters or setters.</p><p>See <a href="no-dupe-keys">no-dupe-keys</a> if you also want to disallow duplicate keys in object literals.</p><p>See <a href="no-dupe-class-members">no-dupe-class-members</a> if you also want to disallow duplicate names in class definitions.</p><h2 id="further-reading">Further Reading</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set">Object Setters</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get">Object Getters</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">Classes</a></li></ul><h2 id="related-rules">Related Rules</h2><ul><li><a href="accessor-pairs">accessor-pairs</a></li><li><a href="no-dupe-keys">no-dupe-keys</a></li><li><a href="no-dupe-class-members">no-dupe-class-members</a></li></ul><h2 id="version">Version</h2><p>This rule was introduced in ESLint 6.7.0.</p><h2 id="resources">Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/grouped-accessor-pairs.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/grouped-accessor-pairs.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline" style="text-align: center;"><li><a href="https://groups.google.com/group/eslint"><i class="fab fa-google fa-2x"></i> <span style="display:block;position:relative">Group</span></a></li><li><a href="https://github.com/eslint/eslint"><i class="fab fa-github fa-2x"></i> <span style="display:block;position:relative">Github</span></a></li><li><a href="https://twitter.com/geteslint"><i class="fab fa-twitter fa-2x"></i> <span style="display:block;position:relative">Twitter</span></a></li><li><a href="/chat"><i class="fab fa-discord fa-2x"></i> <span style="display:block;position:relative">Discord</span></a></li><br><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">www.openjsf.org</a></li><li><a href="https://github.com/eslint/eslint/edit/master/docs/rules/grouped-accessor-pairs.md">Edit this page</a></li></ul></footer></div><script src="/assets/js/main.js"></script><script src="https://kit.fontawesome.com/6ebce1c175.js" crossorigin="anonymous"></script></body></html>

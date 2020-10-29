@@ -2,7 +2,7 @@
 (<span class="hljs-function">() =&gt;</span> {
     <span class="hljs-keyword">try</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>; <span class="hljs-comment">// 1 is returned but suspended until finally block ends</span>
-    } <span class="hljs-keyword">catch</span>(err) {
+    } <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">err</span>)</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
     } <span class="hljs-keyword">finally</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>; <span class="hljs-comment">// 3 is returned before 1, which we did not expect</span>
@@ -24,7 +24,7 @@
 (<span class="hljs-function">() =&gt;</span> {
     <span class="hljs-keyword">try</span> {
         <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;Try&quot;</span>)
-    } <span class="hljs-keyword">catch</span>(err) {
+    } <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">err</span>)</span> {
         <span class="hljs-keyword">throw</span> err; <span class="hljs-comment">// The error thrown from try block is caught and rethrown</span>
     } <span class="hljs-keyword">finally</span> {
         <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;Finally&quot;</span>); <span class="hljs-comment">// Finally(...) is thrown, which we did not expect</span>
@@ -43,11 +43,11 @@
 })();
 
 <span class="hljs-comment">// &gt; 1</span>
-</code></pre><h2 id="rule-details-209">Rule Details</h2><p>This rule disallows <code>return</code>, <code>throw</code>, <code>break</code>, and <code>continue</code> statements inside <code>finally</code> blocks. It allows indirect usages, such as in <code>function</code> or <code>class</code> definitions.</p><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-unsafe-finally: &quot;error&quot;*/</span>
+</code></pre><h2 id="rule-details">Rule Details</h2><p>This rule disallows <code>return</code>, <code>throw</code>, <code>break</code>, and <code>continue</code> statements inside <code>finally</code> blocks. It allows indirect usages, such as in <code>function</code> or <code>class</code> definitions.</p><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-unsafe-finally: &quot;error&quot;*/</span>
 <span class="hljs-keyword">let</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">try</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
-    } <span class="hljs-keyword">catch</span>(err) {
+    } <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">err</span>)</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
     } <span class="hljs-keyword">finally</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>;
@@ -57,7 +57,7 @@
 <span class="hljs-keyword">let</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">try</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
-    } <span class="hljs-keyword">catch</span>(err) {
+    } <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">err</span>)</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
     } <span class="hljs-keyword">finally</span> {
         <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>;
@@ -67,7 +67,7 @@
 <span class="hljs-keyword">let</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">try</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
-    } <span class="hljs-keyword">catch</span>(err) {
+    } <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">err</span>)</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
     } <span class="hljs-keyword">finally</span> {
         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;hola!&quot;</span>);
@@ -77,7 +77,7 @@
 <span class="hljs-keyword">let</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">try</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
-    } <span class="hljs-keyword">catch</span>(err) {
+    } <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">err</span>)</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
     } <span class="hljs-keyword">finally</span> {
         <span class="hljs-keyword">let</span> a = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
@@ -89,10 +89,10 @@
 <span class="hljs-keyword">let</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a</span>) </span>{
     <span class="hljs-keyword">try</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
-    } <span class="hljs-keyword">catch</span>(err) {
+    } <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">err</span>)</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
     } <span class="hljs-keyword">finally</span> {
-        <span class="hljs-keyword">switch</span>(a) {
+        <span class="hljs-function"><span class="hljs-title">switch</span>(<span class="hljs-params">a</span>)</span> {
             <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: {
                 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;hola!&quot;</span>)
                 <span class="hljs-keyword">break</span>;
@@ -100,4 +100,4 @@
         }
     }
 };
-</code></pre><h2 id="when-not-to-use-it-124">When Not To Use It</h2><p>If you want to allow control flow operations in <code>finally</code> blocks, you can turn this rule off.</p><h2 id="version-209">Version</h2><p>This rule was introduced in ESLint 2.9.0.</p><h2 id="resources-209">Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/no-unsafe-finally.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/no-unsafe-finally.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/eslint/edit/master/docs/rules/no-unsafe-finally.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>
+</code></pre><h2 id="when-not-to-use-it">When Not To Use It</h2><p>If you want to allow control flow operations in <code>finally</code> blocks, you can turn this rule off.</p><h2 id="version">Version</h2><p>This rule was introduced in ESLint 2.9.0.</p><h2 id="resources">Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/no-unsafe-finally.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/no-unsafe-finally.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline" style="text-align: center;"><li><a href="https://groups.google.com/group/eslint"><i class="fab fa-google fa-2x"></i> <span style="display:block;position:relative">Group</span></a></li><li><a href="https://github.com/eslint/eslint"><i class="fab fa-github fa-2x"></i> <span style="display:block;position:relative">Github</span></a></li><li><a href="https://twitter.com/geteslint"><i class="fab fa-twitter fa-2x"></i> <span style="display:block;position:relative">Twitter</span></a></li><li><a href="/chat"><i class="fab fa-discord fa-2x"></i> <span style="display:block;position:relative">Discord</span></a></li><br><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">www.openjsf.org</a></li><li><a href="https://github.com/eslint/eslint/edit/master/docs/rules/no-unsafe-finally.md">Edit this page</a></li></ul></footer></div><script src="/assets/js/main.js"></script><script src="https://kit.fontawesome.com/6ebce1c175.js" crossorigin="anonymous"></script></body></html>

@@ -3,7 +3,7 @@
 } <span class="hljs-keyword">else</span> {
     <span class="hljs-comment">// ...</span>
 }
-</code></pre><p>Of course, you could also have a style guide that disallows spaces around keywords.</p><p>However, if you want to enforce the style of spacing between the <code>function</code> keyword and the following opening parenthesis, please refer to <a href="space-before-function-paren">space-before-function-paren</a>.</p><h2 id="rule-details-55">Rule Details</h2><p>This rule enforces consistent spacing around keywords and keyword-like tokens: <code>as</code> (in module declarations), <code>async</code> (of async functions), <code>await</code> (of await expressions), <code>break</code>, <code>case</code>, <code>catch</code>, <code>class</code>, <code>const</code>, <code>continue</code>, <code>debugger</code>, <code>default</code>, <code>delete</code>, <code>do</code>, <code>else</code>, <code>export</code>, <code>extends</code>, <code>finally</code>, <code>for</code>, <code>from</code> (in module declarations), <code>function</code>, <code>get</code> (of getters), <code>if</code>, <code>import</code>, <code>in</code>, <code>instanceof</code>, <code>let</code>, <code>new</code>, <code>of</code> (in for-of statements), <code>return</code>, <code>set</code> (of setters), <code>static</code>, <code>super</code>, <code>switch</code>, <code>this</code>, <code>throw</code>, <code>try</code>, <code>typeof</code>, <code>var</code>, <code>void</code>, <code>while</code>, <code>with</code>, and <code>yield</code>. This rule is designed carefully not to conflict with other spacing rules: it does not apply to spacing where other rules report problems.</p><h2 id="options-46">Options</h2><p>This rule has an object option:</p><ul><li><code>&quot;before&quot;: true</code> (default) requires at least one space before keywords</li><li><code>&quot;before&quot;: false</code> disallows spaces before keywords</li><li><code>&quot;after&quot;: true</code> (default) requires at least one space after keywords</li><li><code>&quot;after&quot;: false</code> disallows spaces after keywords</li><li><code>&quot;overrides&quot;</code> allows overriding spacing style for specified keywords</li></ul><h3 id="before-2">before</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the default <code>{ &quot;before&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint keyword-spacing: [&quot;error&quot;, { &quot;before&quot;: true }]*/</span>
+</code></pre><p>Of course, you could also have a style guide that disallows spaces around keywords.</p><p>However, if you want to enforce the style of spacing between the <code>function</code> keyword and the following opening parenthesis, please refer to <a href="space-before-function-paren">space-before-function-paren</a>.</p><h2 id="rule-details">Rule Details</h2><p>This rule enforces consistent spacing around keywords and keyword-like tokens: <code>as</code> (in module declarations), <code>async</code> (of async functions), <code>await</code> (of await expressions), <code>break</code>, <code>case</code>, <code>catch</code>, <code>class</code>, <code>const</code>, <code>continue</code>, <code>debugger</code>, <code>default</code>, <code>delete</code>, <code>do</code>, <code>else</code>, <code>export</code>, <code>extends</code>, <code>finally</code>, <code>for</code>, <code>from</code> (in module declarations), <code>function</code>, <code>get</code> (of getters), <code>if</code>, <code>import</code>, <code>in</code>, <code>instanceof</code>, <code>let</code>, <code>new</code>, <code>of</code> (in for-of statements), <code>return</code>, <code>set</code> (of setters), <code>static</code>, <code>super</code>, <code>switch</code>, <code>this</code>, <code>throw</code>, <code>try</code>, <code>typeof</code>, <code>var</code>, <code>void</code>, <code>while</code>, <code>with</code>, and <code>yield</code>. This rule is designed carefully not to conflict with other spacing rules: it does not apply to spacing where other rules report problems.</p><h2 id="options">Options</h2><p>This rule has an object option:</p><ul><li><code>&quot;before&quot;: true</code> (default) requires at least one space before keywords</li><li><code>&quot;before&quot;: false</code> disallows spaces before keywords</li><li><code>&quot;after&quot;: true</code> (default) requires at least one space after keywords</li><li><code>&quot;after&quot;: false</code> disallows spaces after keywords</li><li><code>&quot;overrides&quot;</code> allows overriding spacing style for specified keywords</li></ul><h3 id="before">before</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the default <code>{ &quot;before&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint keyword-spacing: [&quot;error&quot;, { &quot;before&quot;: true }]*/</span>
 
 <span class="hljs-keyword">if</span> (foo) {
     <span class="hljs-comment">//...</span>
@@ -80,11 +80,11 @@ obj[<span class="hljs-built_in">this</span>.foo] = <span class="hljs-number">0</
 }<span class="hljs-keyword">else</span> {
     <span class="hljs-comment">//...</span>
 }
-</code></pre><h3 id="after-2">after</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the default <code>{ &quot;after&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint keyword-spacing: [&quot;error&quot;, { &quot;after&quot;: true }]*/</span>
+</code></pre><h3 id="after">after</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the default <code>{ &quot;after&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint keyword-spacing: [&quot;error&quot;, { &quot;after&quot;: true }]*/</span>
 
-<span class="hljs-keyword">if</span>(foo) {
+<span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">foo</span>)</span> {
     <span class="hljs-comment">//...</span>
-} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(bar) {
+} <span class="hljs-keyword">else</span> <span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">bar</span>)</span> {
     <span class="hljs-comment">//...</span>
 } <span class="hljs-keyword">else</span>{
     <span class="hljs-comment">//...</span>
@@ -121,7 +121,7 @@ obj[<span class="hljs-built_in">this</span>.foo] = <span class="hljs-number">0</
 
 <span class="hljs-comment">// Avoid conflict with `func-call-spacing`</span>
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
-    <span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {
         <span class="hljs-built_in">super</span>();
     }
 }
@@ -162,9 +162,9 @@ obj[<span class="hljs-built_in">this</span>.foo] = <span class="hljs-number">0</
 }
 </code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;after&quot;: false }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint keyword-spacing: [&quot;error&quot;, { &quot;after&quot;: false }]*/</span>
 
-<span class="hljs-keyword">if</span>(foo) {
+<span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">foo</span>)</span> {
     <span class="hljs-comment">//...</span>
-} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(bar) {
+} <span class="hljs-keyword">else</span> <span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">bar</span>)</span> {
     <span class="hljs-comment">//...</span>
 } <span class="hljs-keyword">else</span>{
     <span class="hljs-comment">//...</span>
@@ -175,9 +175,9 @@ obj[<span class="hljs-built_in">this</span>.foo] = <span class="hljs-number">0</
   &quot;while&quot;: { &quot;after&quot;: false }
 } }]*/</span>
 
-<span class="hljs-keyword">if</span>(foo) {
+<span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">foo</span>)</span> {
     <span class="hljs-comment">//...</span>
-} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(bar) {
+} <span class="hljs-keyword">else</span> <span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">bar</span>)</span> {
     <span class="hljs-comment">//...</span>
 } <span class="hljs-keyword">else</span> {
     <span class="hljs-comment">//...</span>
@@ -185,7 +185,7 @@ obj[<span class="hljs-built_in">this</span>.foo] = <span class="hljs-number">0</
 
 <span class="hljs-keyword">for</span>(;;);
 
-<span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>) {
+<span class="hljs-function"><span class="hljs-title">while</span>(<span class="hljs-params"><span class="hljs-literal">true</span></span>)</span> {
   <span class="hljs-comment">//...</span>
 }
-</code></pre><h2 id="when-not-to-use-it-39">When Not To Use It</h2><p>If you don't want to enforce consistency on keyword spacing, then it's safe to disable this rule.</p><h2 id="version-56">Version</h2><p>This rule was introduced in ESLint 2.0.0-beta.1.</p><h2 id="resources-56">Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/keyword-spacing.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/keyword-spacing.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/eslint/edit/master/docs/rules/keyword-spacing.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>
+</code></pre><h2 id="when-not-to-use-it">When Not To Use It</h2><p>If you don't want to enforce consistency on keyword spacing, then it's safe to disable this rule.</p><h2 id="version">Version</h2><p>This rule was introduced in ESLint 2.0.0-beta.1.</p><h2 id="resources">Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/keyword-spacing.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/keyword-spacing.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline" style="text-align: center;"><li><a href="https://groups.google.com/group/eslint"><i class="fab fa-google fa-2x"></i> <span style="display:block;position:relative">Group</span></a></li><li><a href="https://github.com/eslint/eslint"><i class="fab fa-github fa-2x"></i> <span style="display:block;position:relative">Github</span></a></li><li><a href="https://twitter.com/geteslint"><i class="fab fa-twitter fa-2x"></i> <span style="display:block;position:relative">Twitter</span></a></li><li><a href="/chat"><i class="fab fa-discord fa-2x"></i> <span style="display:block;position:relative">Discord</span></a></li><br><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">www.openjsf.org</a></li><li><a href="https://github.com/eslint/eslint/edit/master/docs/rules/keyword-spacing.md">Edit this page</a></li></ul></footer></div><script src="/assets/js/main.js"></script><script src="https://kit.fontawesome.com/6ebce1c175.js" crossorigin="anonymous"></script></body></html>

@@ -8,9 +8,9 @@ bar();
          * This is called at the start of analyzing a code path.
          * In this time, the code path object has only the initial segment.
          *
-         * @param {CodePath} codePath - The new code path.
-         * @param {ASTNode} node - The current node.
-         * @returns {void}
+         * <span class="hljs-doctag">@param <span class="hljs-type">{CodePath}</span> <span class="hljs-variable">codePath</span></span> - The new code path.
+         * <span class="hljs-doctag">@param <span class="hljs-type">{ASTNode}</span> <span class="hljs-variable">node</span></span> - The current node.
+         * <span class="hljs-doctag">@returns <span class="hljs-type">{void}</span></span>
          */</span>
         <span class="hljs-string">&quot;onCodePathStart&quot;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">codePath, node</span>) </span>{
             <span class="hljs-comment">// do something with codePath</span>
@@ -20,9 +20,9 @@ bar();
          * This is called at the end of analyzing a code path.
          * In this time, the code path object is complete.
          *
-         * @param {CodePath} codePath - The completed code path.
-         * @param {ASTNode} node - The current node.
-         * @returns {void}
+         * <span class="hljs-doctag">@param <span class="hljs-type">{CodePath}</span> <span class="hljs-variable">codePath</span></span> - The completed code path.
+         * <span class="hljs-doctag">@param <span class="hljs-type">{ASTNode}</span> <span class="hljs-variable">node</span></span> - The current node.
+         * <span class="hljs-doctag">@returns <span class="hljs-type">{void}</span></span>
          */</span>
         <span class="hljs-string">&quot;onCodePathEnd&quot;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">codePath, node</span>) </span>{
             <span class="hljs-comment">// do something with codePath</span>
@@ -34,9 +34,9 @@ bar();
          * In this time, the segment has the previous segments and has been
          * judged reachable or not.
          *
-         * @param {CodePathSegment} segment - The new code path segment.
-         * @param {ASTNode} node - The current node.
-         * @returns {void}
+         * <span class="hljs-doctag">@param <span class="hljs-type">{CodePathSegment}</span> <span class="hljs-variable">segment</span></span> - The new code path segment.
+         * <span class="hljs-doctag">@param <span class="hljs-type">{ASTNode}</span> <span class="hljs-variable">node</span></span> - The current node.
+         * <span class="hljs-doctag">@returns <span class="hljs-type">{void}</span></span>
          */</span>
         <span class="hljs-string">&quot;onCodePathSegmentStart&quot;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">segment, node</span>) </span>{
             <span class="hljs-comment">// do something with segment</span>
@@ -46,9 +46,9 @@ bar();
          * This is called when a code path segment was leaved.
          * In this time, the segment does not have the next segments yet.
          *
-         * @param {CodePathSegment} segment - The leaved code path segment.
-         * @param {ASTNode} node - The current node.
-         * @returns {void}
+         * <span class="hljs-doctag">@param <span class="hljs-type">{CodePathSegment}</span> <span class="hljs-variable">segment</span></span> - The leaved code path segment.
+         * <span class="hljs-doctag">@param <span class="hljs-type">{ASTNode}</span> <span class="hljs-variable">node</span></span> - The current node.
+         * <span class="hljs-doctag">@returns <span class="hljs-type">{void}</span></span>
          */</span>
         <span class="hljs-string">&quot;onCodePathSegmentEnd&quot;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">segment, node</span>) </span>{
             <span class="hljs-comment">// do something with segment</span>
@@ -60,10 +60,10 @@ bar();
          * but when looped, a segment is added as a new previous segment into a
          * existing segment.
          *
-         * @param {CodePathSegment} fromSegment - A code path segment of source.
-         * @param {CodePathSegment} toSegment - A code path segment of destination.
-         * @param {ASTNode} node - The current node.
-         * @returns {void}
+         * <span class="hljs-doctag">@param <span class="hljs-type">{CodePathSegment}</span> <span class="hljs-variable">fromSegment</span></span> - A code path segment of source.
+         * <span class="hljs-doctag">@param <span class="hljs-type">{CodePathSegment}</span> <span class="hljs-variable">toSegment</span></span> - A code path segment of destination.
+         * <span class="hljs-doctag">@param <span class="hljs-type">{ASTNode}</span> <span class="hljs-variable">node</span></span> - The current node.
+         * <span class="hljs-doctag">@returns <span class="hljs-type">{void}</span></span>
          */</span>
         <span class="hljs-string">&quot;onCodePathSegmentLoop&quot;</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">fromSegment, toSegment, node</span>) </span>{
             <span class="hljs-comment">// do something with segment</span>
@@ -110,7 +110,7 @@ bar();
 </code></pre><p>See Also: <a href="https://github.com/eslint/eslint/blob/master/lib/rules/no-unreachable.js">no-unreachable</a>, <a href="https://github.com/eslint/eslint/blob/master/lib/rules/no-fallthrough.js">no-fallthrough</a>, <a href="https://github.com/eslint/eslint/blob/master/lib/rules/consistent-return.js">consistent-return</a></p><h3 id="to-check-state-of-a-code-path">To check state of a code path</h3><p>This example is checking whether or not the parameter <code>cb</code> is called in every path. Instances of <code>CodePath</code> and <code>CodePathSegment</code> are shared to every rule. So a rule must not modify those instances. Please use a map of information instead.</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">var</span> last = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;lodash&quot;</span>).last;
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hasCb</span>(<span class="hljs-params">node, context</span>) </span>{
-    <span class="hljs-keyword">if</span> (node.type.indexOf(<span class="hljs-string">&quot;Function&quot;</span>) !== <span class="hljs-number">-1</span>) {
+    <span class="hljs-keyword">if</span> (node.type.indexOf(<span class="hljs-string">&quot;Function&quot;</span>) !== -<span class="hljs-number">1</span>) {
         <span class="hljs-keyword">return</span> context.getDeclaredVariables(node).some(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">v</span>) </span>{
             <span class="hljs-keyword">return</span> v.type === <span class="hljs-string">&quot;Parameter&quot;</span> &amp;&amp; v.name === <span class="hljs-string">&quot;cb&quot;</span>;
         });
@@ -294,4 +294,4 @@ bar();
 }
 
 foo(<span class="hljs-literal">false</span>);
-</code></pre><p>It creates two code paths.</p><ul><li><p>The global's</p><p><img src="./code-path-analysis/example-when-there-is-a-function-g.svg" alt="When there is a function"></p></li><li><p>The function's</p><p><img src="./code-path-analysis/example-when-there-is-a-function-f.svg" alt="When there is a function"></p></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/eslint/edit/master/docs/developer-guide/code-path-analysis.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>
+</code></pre><p>It creates two code paths.</p><ul><li><p>The global's</p><p><img src="./code-path-analysis/example-when-there-is-a-function-g.svg" alt="When there is a function"></p></li><li><p>The function's</p><p><img src="./code-path-analysis/example-when-there-is-a-function-f.svg" alt="When there is a function"></p></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline" style="text-align: center;"><li><a href="https://groups.google.com/group/eslint"><i class="fab fa-google fa-2x"></i> <span style="display:block;position:relative">Group</span></a></li><li><a href="https://github.com/eslint/eslint"><i class="fab fa-github fa-2x"></i> <span style="display:block;position:relative">Github</span></a></li><li><a href="https://twitter.com/geteslint"><i class="fab fa-twitter fa-2x"></i> <span style="display:block;position:relative">Twitter</span></a></li><li><a href="/chat"><i class="fab fa-discord fa-2x"></i> <span style="display:block;position:relative">Discord</span></a></li><br><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">www.openjsf.org</a></li><li><a href="https://github.com/eslint/eslint/edit/master/docs/developer-guide/code-path-analysis.md">Edit this page</a></li></ul></footer></div><script src="/assets/js/main.js"></script><script src="https://kit.fontawesome.com/6ebce1c175.js" crossorigin="anonymous"></script></body></html>

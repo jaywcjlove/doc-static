@@ -17,7 +17,7 @@
 {
   baz();
 }
-</code></pre><p>While no style is considered better than the other, most developers agree that having a consistent style throughout a project is important for its long-term maintainability.</p><h2 id="rule-details-10">Rule Details</h2><p>This rule enforces consistent brace style for blocks.</p><h2 id="options-8">Options</h2><p>This rule has a string option:</p><ul><li><code>&quot;1tbs&quot;</code> (default) enforces one true brace style</li><li><code>&quot;stroustrup&quot;</code> enforces Stroustrup style</li><li><code>&quot;allman&quot;</code> enforces Allman style</li></ul><p>This rule has an object option for an exception:</p><ul><li><code>&quot;allowSingleLine&quot;: true</code> (default <code>false</code>) allows the opening and closing braces for a block to be on the <em>same</em> line</li></ul><h3 id="1tbs">1tbs</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the default <code>&quot;1tbs&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint brace-style: &quot;error&quot;*/</span>
+</code></pre><p>While no style is considered better than the other, most developers agree that having a consistent style throughout a project is important for its long-term maintainability.</p><h2 id="rule-details">Rule Details</h2><p>This rule enforces consistent brace style for blocks.</p><h2 id="options">Options</h2><p>This rule has a string option:</p><ul><li><code>&quot;1tbs&quot;</code> (default) enforces one true brace style</li><li><code>&quot;stroustrup&quot;</code> enforces Stroustrup style</li><li><code>&quot;allman&quot;</code> enforces Allman style</li></ul><p>This rule has an object option for an exception:</p><ul><li><code>&quot;allowSingleLine&quot;: true</code> (default <code>false</code>) allows the opening and closing braces for a block to be on the <em>same</em> line</li></ul><h3 id="1tbs">1tbs</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the default <code>&quot;1tbs&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint brace-style: &quot;error&quot;*/</span>
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)
 </span>{
@@ -32,7 +32,7 @@
 <span class="hljs-keyword">try</span>
 {
   somethingRisky();
-} <span class="hljs-keyword">catch</span>(e)
+} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span>
 {
   handleError();
 }
@@ -61,7 +61,7 @@
 
 <span class="hljs-keyword">try</span> {
   somethingRisky();
-} <span class="hljs-keyword">catch</span>(e) {
+} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span> {
   handleError();
 }
 
@@ -76,7 +76,7 @@
 
 <span class="hljs-keyword">if</span> (foo) { bar(); } <span class="hljs-keyword">else</span> { baz(); }
 
-<span class="hljs-keyword">try</span> { somethingRisky(); } <span class="hljs-keyword">catch</span>(e) { handleError(); }
+<span class="hljs-keyword">try</span> { somethingRisky(); } <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span> { handleError(); }
 
 <span class="hljs-keyword">if</span> (foo) { baz(); } <span class="hljs-keyword">else</span> {
   boom();
@@ -95,7 +95,7 @@
   boom();
 }
 
-<span class="hljs-keyword">try</span> { somethingRisky(); } <span class="hljs-keyword">catch</span>(e) {
+<span class="hljs-keyword">try</span> { somethingRisky(); } <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span> {
   handleError();
 }
 </code></pre><h3 id="stroustrup">stroustrup</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>&quot;stroustrup&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint brace-style: [&quot;error&quot;, &quot;stroustrup&quot;]*/</span>
@@ -113,7 +113,7 @@
 <span class="hljs-keyword">try</span>
 {
   somethingRisky();
-} <span class="hljs-keyword">catch</span>(e)
+} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span>
 {
   handleError();
 }
@@ -143,7 +143,7 @@
 <span class="hljs-keyword">try</span> {
   somethingRisky();
 }
-<span class="hljs-keyword">catch</span>(e) {
+<span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span> {
   handleError();
 }
 
@@ -160,7 +160,7 @@
 <span class="hljs-keyword">else</span> { baz(); }
 
 <span class="hljs-keyword">try</span> { somethingRisky(); }
-<span class="hljs-keyword">catch</span>(e) { handleError(); }
+<span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span> { handleError(); }
 </code></pre><h3 id="allman">allman</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>&quot;allman&quot;</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint brace-style: [&quot;error&quot;, &quot;allman&quot;]*/</span>
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>) </span>{
@@ -174,7 +174,7 @@
 <span class="hljs-keyword">try</span>
 {
   somethingRisky();
-} <span class="hljs-keyword">catch</span>(e)
+} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span>
 {
   handleError();
 }
@@ -209,7 +209,7 @@
 {
   somethingRisky();
 }
-<span class="hljs-keyword">catch</span>(e)
+<span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span>
 {
   handleError();
 }
@@ -227,5 +227,5 @@
 <span class="hljs-keyword">else</span> { baz(); }
 
 <span class="hljs-keyword">try</span> { somethingRisky(); }
-<span class="hljs-keyword">catch</span>(e) { handleError(); }
-</code></pre><h2 id="when-not-to-use-it-6">When Not To Use It</h2><p>If you don't want to enforce a particular brace style, don't enable this rule.</p><h2 id="further-reading-5">Further Reading</h2><ul><li><a href="https://en.wikipedia.org/wiki/Indent_style">Indent style</a></li></ul><h2 id="version-10">Version</h2><p>This rule was introduced in ESLint 0.0.7.</p><h2 id="resources-10">Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/brace-style.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/brace-style.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/eslint/edit/master/docs/rules/brace-style.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>
+<span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span> { handleError(); }
+</code></pre><h2 id="when-not-to-use-it">When Not To Use It</h2><p>If you don't want to enforce a particular brace style, don't enable this rule.</p><h2 id="further-reading">Further Reading</h2><ul><li><a href="https://en.wikipedia.org/wiki/Indent_style">Indent style</a></li></ul><h2 id="version">Version</h2><p>This rule was introduced in ESLint 0.0.7.</p><h2 id="resources">Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/brace-style.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/brace-style.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline" style="text-align: center;"><li><a href="https://groups.google.com/group/eslint"><i class="fab fa-google fa-2x"></i> <span style="display:block;position:relative">Group</span></a></li><li><a href="https://github.com/eslint/eslint"><i class="fab fa-github fa-2x"></i> <span style="display:block;position:relative">Github</span></a></li><li><a href="https://twitter.com/geteslint"><i class="fab fa-twitter fa-2x"></i> <span style="display:block;position:relative">Twitter</span></a></li><li><a href="/chat"><i class="fab fa-discord fa-2x"></i> <span style="display:block;position:relative">Discord</span></a></li><br><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">www.openjsf.org</a></li><li><a href="https://github.com/eslint/eslint/edit/master/docs/rules/brace-style.md">Edit this page</a></li></ul></footer></div><script src="/assets/js/main.js"></script><script src="https://kit.fontawesome.com/6ebce1c175.js" crossorigin="anonymous"></script></body></html>

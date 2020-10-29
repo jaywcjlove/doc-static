@@ -45,8 +45,8 @@
     }
 };
 </code></pre><p><strong>The <code>preprocess</code> method</strong> takes the file contents and filename as arguments, and returns an array of code blocks to lint. The code blocks will be linted separately but still be registered to the filename.</p><p>A code block has two properties <code>text</code> and <code>filename</code>; the <code>text</code> property is the content of the block and the <code>filename</code> property is the name of the block. Name of the block can be anything, but should include the file extension, that would tell the linter how to process the current block. The linter will check <a href="../user-guide/command-line-interface#--ext"><code>--ext</code> CLI option</a> to see if the current block should be linted, and resolve <code>overrides</code> configs to check how to process the current block.</p><p>It's up to the plugin to decide if it needs to return just one part, or multiple pieces. For example in the case of processing <code>.html</code> files, you might want to return just one item in the array by combining all scripts, but for <code>.md</code> file where each JavaScript block might be independent, you can return multiple items.</p><p><strong>The <code>postprocess</code> method</strong> takes a two-dimensional array of arrays of lint messages and the filename. Each item in the input array corresponds to the part that was returned from the <code>preprocess</code> method. The <code>postprocess</code> method must adjust the locations of all errors to correspond to locations in the original, unprocessed code, and aggregate them into a single flat array and return it.</p><p>Reported problems have the following location information:</p><pre class="hljs highlight-typescript"><code>{
-    line: <span class="hljs-built_in">number</span>,
-    column: <span class="hljs-built_in">number</span>,
+    <span class="hljs-attr">line</span>: <span class="hljs-built_in">number</span>,
+    <span class="hljs-attr">column</span>: <span class="hljs-built_in">number</span>,
 
     endLine?: <span class="hljs-built_in">number</span>,
     endColumn?: <span class="hljs-built_in">number</span>
@@ -65,8 +65,8 @@
         <span class="hljs-comment">// This processor will be applied to `*.md` files automatically.</span>
         <span class="hljs-comment">// Also, people can use this processor as &quot;plugin-id/.md&quot; explicitly.</span>
         <span class="hljs-string">&quot;.md&quot;</span>: {
-            preprocess(text, filename) { <span class="hljs-comment">/* ... */</span> },
-            postprocess(messageLists, filename) { <span class="hljs-comment">/* ... */</span> }
+            <span class="hljs-function"><span class="hljs-title">preprocess</span>(<span class="hljs-params">text, filename</span>)</span> { <span class="hljs-comment">/* ... */</span> },
+            <span class="hljs-function"><span class="hljs-title">postprocess</span>(<span class="hljs-params">messageLists, filename</span>)</span> { <span class="hljs-comment">/* ... */</span> }
         }
     }
 }
@@ -88,7 +88,7 @@
             <span class="hljs-attr">env</span>: [<span class="hljs-string">&quot;node&quot;</span>],
             <span class="hljs-attr">rules</span>: {
                 <span class="hljs-string">&quot;myPlugin/my-rule&quot;</span>: <span class="hljs-string">&quot;off&quot;</span>,
-                <span class="hljs-string">&quot;eslint-plugin-myPlugin/another-rule&quot;</span>: <span class="hljs-string">&quot;off&quot;</span>
+                <span class="hljs-string">&quot;eslint-plugin-myPlugin/another-rule&quot;</span>: <span class="hljs-string">&quot;off&quot;</span>,
                 <span class="hljs-string">&quot;eslint-plugin-myPlugin/yet-another-rule&quot;</span>: <span class="hljs-string">&quot;error&quot;</span>
             }
         }
@@ -103,4 +103,4 @@
         <span class="hljs-attr">&quot;eslint&quot;</span>: <span class="hljs-string">&quot;&gt;=0.8.0&quot;</span>
     }
 }
-</code></pre><h3 id="testing">Testing</h3><p>ESLint provides the <a href="/docs/developer-guide/nodejs-api#ruletester"><code>RuleTester</code></a> utility to make it easy to test the rules of your plugin.</p><h2 id="share-plugins">Share Plugins</h2><p>In order to make your plugin available to the community you have to publish it on npm.</p><p>Recommended keywords:</p><ul><li><code>eslint</code></li><li><code>eslintplugin</code></li></ul><p>Add these keywords into your <code>package.json</code> file to make it easy for others to find.</p><h2 id="further-reading-1">Further Reading</h2><ul><li><a href="https://docs.npmjs.com/misc/developers">npm Developer Guide</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/eslint/edit/master/docs/developer-guide/working-with-plugins.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>
+</code></pre><h3 id="testing">Testing</h3><p>ESLint provides the <a href="/docs/developer-guide/nodejs-api#ruletester"><code>RuleTester</code></a> utility to make it easy to test the rules of your plugin.</p><h2 id="share-plugins">Share Plugins</h2><p>In order to make your plugin available to the community you have to publish it on npm.</p><p>Recommended keywords:</p><ul><li><code>eslint</code></li><li><code>eslintplugin</code></li></ul><p>Add these keywords into your <code>package.json</code> file to make it easy for others to find.</p><h2 id="further-reading">Further Reading</h2><ul><li><a href="https://docs.npmjs.com/misc/developers">npm Developer Guide</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline" style="text-align: center;"><li><a href="https://groups.google.com/group/eslint"><i class="fab fa-google fa-2x"></i> <span style="display:block;position:relative">Group</span></a></li><li><a href="https://github.com/eslint/eslint"><i class="fab fa-github fa-2x"></i> <span style="display:block;position:relative">Github</span></a></li><li><a href="https://twitter.com/geteslint"><i class="fab fa-twitter fa-2x"></i> <span style="display:block;position:relative">Twitter</span></a></li><li><a href="/chat"><i class="fab fa-discord fa-2x"></i> <span style="display:block;position:relative">Discord</span></a></li><br><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">www.openjsf.org</a></li><li><a href="https://github.com/eslint/eslint/edit/master/docs/developer-guide/working-with-plugins.md">Edit this page</a></li></ul></footer></div><script src="/assets/js/main.js"></script><script src="https://kit.fontawesome.com/6ebce1c175.js" crossorigin="anonymous"></script></body></html>

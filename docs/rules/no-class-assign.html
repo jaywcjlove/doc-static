@@ -2,7 +2,7 @@
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{ }
 A = <span class="hljs-number">0</span>;
-</code></pre><p>But the modification is a mistake in most cases.</p><h2 id="rule-details-87">Rule Details</h2><p>This rule is aimed to flag modifying variables of class declarations.</p><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-class-assign: &quot;error&quot;*/</span>
+</code></pre><p>But the modification is a mistake in most cases.</p><h2 id="rule-details">Rule Details</h2><p>This rule is aimed to flag modifying variables of class declarations.</p><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-class-assign: &quot;error&quot;*/</span>
 <span class="hljs-comment">/*eslint-env es6*/</span>
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{ }
@@ -16,7 +16,7 @@ A = <span class="hljs-number">0</span>;
 <span class="hljs-comment">/*eslint-env es6*/</span>
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
-    b() {
+    <span class="hljs-function"><span class="hljs-title">b</span>(<span class="hljs-params"></span>)</span> {
         A = <span class="hljs-number">0</span>;
     }
 }
@@ -24,7 +24,7 @@ A = <span class="hljs-number">0</span>;
 <span class="hljs-comment">/*eslint-env es6*/</span>
 
 <span class="hljs-keyword">let</span> A = <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
-    b() {
+    <span class="hljs-function"><span class="hljs-title">b</span>(<span class="hljs-params"></span>)</span> {
         A = <span class="hljs-number">0</span>;
         <span class="hljs-comment">// `let A` is shadowed by the class name.</span>
     }
@@ -38,7 +38,7 @@ A = <span class="hljs-number">0</span>; <span class="hljs-comment">// A is a var
 <span class="hljs-comment">/*eslint-env es6*/</span>
 
 <span class="hljs-keyword">let</span> A = <span class="hljs-class"><span class="hljs-keyword">class</span> </span>{
-    b() {
+    <span class="hljs-function"><span class="hljs-title">b</span>(<span class="hljs-params"></span>)</span> {
         A = <span class="hljs-number">0</span>; <span class="hljs-comment">// A is a variable.</span>
     }
 }
@@ -46,8 +46,8 @@ A = <span class="hljs-number">0</span>; <span class="hljs-comment">// A is a var
 <span class="hljs-comment">/*eslint-env es6*/</span>
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
-    b(A) {
+    <span class="hljs-function"><span class="hljs-title">b</span>(<span class="hljs-params">A</span>)</span> {
         A = <span class="hljs-number">0</span>; <span class="hljs-comment">// A is a parameter.</span>
     }
 }
-</code></pre><h2 id="when-not-to-use-it-59">When Not To Use It</h2><p>If you don't want to be notified about modifying variables of class declarations, you can safely disable this rule.</p><h2 id="version-88">Version</h2><p>This rule was introduced in ESLint 1.0.0-rc-1.</p><h2 id="resources-88">Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/no-class-assign.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/no-class-assign.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline"><li><a href="https://github.com/eslint/eslint/edit/master/docs/rules/no-class-assign.md">Edit this page</a></li><li><a href="https://groups.google.com/group/eslint">Mailing List</a></li><li><a href="https://github.com/eslint/eslint">GitHub</a></li><li><a href="https://twitter.com/geteslint">Twitter</a></li><li><a href="/chat">Chat Room</a></li><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">https://openjsf.org/</a></li></ul></footer></div><script src="/assets/js/main.js"></script></body></html>
+</code></pre><h2 id="when-not-to-use-it">When Not To Use It</h2><p>If you don't want to be notified about modifying variables of class declarations, you can safely disable this rule.</p><h2 id="version">Version</h2><p>This rule was introduced in ESLint 1.0.0-rc-1.</p><h2 id="resources">Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/no-class-assign.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/no-class-assign.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline" style="text-align: center;"><li><a href="https://groups.google.com/group/eslint"><i class="fab fa-google fa-2x"></i> <span style="display:block;position:relative">Group</span></a></li><li><a href="https://github.com/eslint/eslint"><i class="fab fa-github fa-2x"></i> <span style="display:block;position:relative">Github</span></a></li><li><a href="https://twitter.com/geteslint"><i class="fab fa-twitter fa-2x"></i> <span style="display:block;position:relative">Twitter</span></a></li><li><a href="/chat"><i class="fab fa-discord fa-2x"></i> <span style="display:block;position:relative">Discord</span></a></li><br><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">www.openjsf.org</a></li><li><a href="https://github.com/eslint/eslint/edit/master/docs/rules/no-class-assign.md">Edit this page</a></li></ul></footer></div><script src="/assets/js/main.js"></script><script src="https://kit.fontawesome.com/6ebce1c175.js" crossorigin="anonymous"></script></body></html>
