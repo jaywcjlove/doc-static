@@ -85,7 +85,7 @@ export declare const createTypeScriptSandbox: (partialConfig: Partial<Playground
         domID: string;
     };
     /** A list of TypeScript versions you can use with the TypeScript sandbox */
-    supportedVersions: readonly ["3.9.2", "3.8.3", "3.8.2", "3.7.5", "3.6.3", "3.5.1", "3.3.3", "3.1.6", "3.0.1", "2.8.1", "2.7.2", "2.4.1"];
+    supportedVersions: readonly ["4.1.0-beta", "4.0.5", "3.9.7", "3.8.3", "3.7.5", "3.6.3", "3.5.1", "3.3.3", "3.1.6", "3.0.1", "2.8.1", "2.7.2", "2.4.1"];
     /** The monaco editor instance */
     editor: import("monaco-editor").editor.IStandaloneCodeEditor;
     /** Either "typescript" or "javascript" depending on your config */
@@ -132,6 +132,7 @@ export declare const createTypeScriptSandbox: (partialConfig: Partial<Playground
             compilerHost: import("typescript").CompilerHost;
             updateFile: (sourceFile: import("typescript").SourceFile) => boolean;
         };
+        fsMap: Map<string, string>;
     }>;
     /** Uses the above call setupTSVFS, but only returns the program */
     createTSProgram: () => Promise<import("typescript").Program>;

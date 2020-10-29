@@ -43,11 +43,12 @@ export declare const setupPlayground: (sandbox: Sandbox, monaco: Monaco, config:
     exporter: {
         openProjectInStackBlitz: () => void;
         openProjectInCodeSandbox: () => void;
-        reportIssue: () => Promise<void>;
-        copyAsMarkdownIssue: () => Promise<void>;
-        copyForChat: () => void;
-        copyForChatWithPreview: () => void;
+        reportIssue: () => Promise<boolean>;
+        copyAsMarkdownIssue: () => Promise<boolean>;
+        copyForChat: () => boolean;
+        copyForChatWithPreview: () => boolean;
         openInTSAST: () => void;
+        exportAsTweet: () => void;
     };
     ui: import("./createUI").UI;
     registerPlugin: (plugin: PlaygroundPlugin) => void;

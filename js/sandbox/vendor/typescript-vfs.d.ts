@@ -66,7 +66,7 @@ export declare function createSystem(files: Map<string, string>): System;
  * a set of virtual files which are prioritised over the FS versions, then a path to the root of your
  * project (basically the folder your node_modules lives)
  */
-export declare function createFSBackedSystem(files: Map<string, string>, projectRoot: string): System;
+export declare function createFSBackedSystem(files: Map<string, string>, _projectRoot: string, ts: TS): System;
 /**
  * Creates an in-memory CompilerHost -which is essentially an extra wrapper to System
  * which works with TypeScript objects - returns both a compiler host, and a way to add new SourceFile

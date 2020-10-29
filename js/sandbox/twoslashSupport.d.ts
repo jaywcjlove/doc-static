@@ -1,4 +1,4 @@
-declare type TS = typeof import('typescript');
+declare type TS = typeof import("typescript");
 /**
  * This is a port of the twoslash bit which grabs compiler options
  * from the source code
