@@ -266,6 +266,7 @@
           教程
           
             <select class="version-select">
+              <option value="v3">3.x-beta</option>
               <option value="SELF" selected>2.x</option>
               <option value="v1">1.0</option>
               <option value="012">0.12</option>
@@ -698,7 +699,7 @@
       
     
     <li>
-      <a href="/v2/guide/unit-testing.html" class="sidebar-link">单元测试</a>
+      <a href="/v2/guide/testing.html" class="sidebar-link">测试</a>
     </li>
   
     
@@ -967,7 +968,7 @@
   <!-- <script
     async
     type="text/javascript"
-    src="//cdn.carbonads.com/carbon.js?serve=CKYIK2QU&placement=vuejsorg"
+    src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg"
     id="_carbonads_js">
   </script> -->
 </div>
@@ -991,7 +992,7 @@
   
     <h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p>Vue <strong>不支持</strong> IE8 及以下版本，因为 Vue 使用了 IE8 无法模拟的 ECMAScript 5 特性。但它支持所有<a href="https://caniuse.com/#feat=es5" target="_blank" rel="noopener">兼容 ECMAScript 5 的浏览器</a>。</p>
 <h3 id="语义化版本控制"><a href="#语义化版本控制" class="headerlink" title="语义化版本控制"></a>语义化版本控制</h3><p>Vue 在其所有项目中公布的功能和行为都遵循<a href="https://semver.org/lang/zh-CN/" target="_blank" rel="noopener">语义化版本控制</a>。对于未公布的或内部暴露的行为，其变更会描述在<a href="https://github.com/vuejs/vue/releases" target="_blank" rel="noopener">发布说明</a>中。</p>
-<h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><p>最新稳定版本：2.6.11</p>
+<h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><p>最新稳定版本：2.6.12</p>
 <p>每个版本的更新日志见 <a href="https://github.com/vuejs/vue/releases" target="_blank" rel="noopener">GitHub</a>。</p>
 <h2 id="Vue-Devtools"><a href="#Vue-Devtools" class="headerlink" title="Vue Devtools"></a>Vue Devtools</h2><p>在使用 Vue 时，我们推荐在你的浏览器上安装 <a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">Vue Devtools</a>。它允许你在一个更友好的界面中审查和调试 Vue 应用。</p>
 <h2 id="直接用-lt-script-gt-引入"><a href="#直接用-lt-script-gt-引入" class="headerlink" title="直接用 &lt;script&gt; 引入"></a>直接用 <code>&lt;script&gt;</code> 引入</h2><div class="vueschool" style><a href="https://learning.dcloud.io/#/?vid=1" target="_blank" rel="sponsored noopener" title="Vue.js 教程 - 安装与部署">观看本节视频讲解</a></div>
@@ -1004,13 +1005,13 @@
 <h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3><p>对于制作原型或学习，你可以这样使用最新版本：</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 <p>对于生产环境，我们推荐链接到一个明确的版本号和构建文件，以避免新版本造成的不可预期的破坏：</p>
-<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2.6.11"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/vue@2.6.12"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 <p>如果你使用原生 ES Modules，这里也有一个兼容 ES Module 的构建文件：</p>
 <pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"module"</span>&gt;</span><span class="javascript">
-  <span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.js'</span>
+  <span class="hljs-keyword">import</span> Vue <span class="hljs-keyword">from</span> <span class="hljs-string">'https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.esm.browser.js'</span>
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 <p>你可以在 <a href="https://cdn.jsdelivr.net/npm/vue/" target="_blank" rel="noopener">cdn.jsdelivr.net/npm/vue</a> 浏览 NPM 包的源代码。</p>
-<p>Vue 也可以在 <a href="https://unpkg.com/vue@2.6.11/dist/vue.js" target="_blank" rel="noopener">unpkg</a> 和 <a href="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js" target="_blank" rel="noopener">cdnjs</a> 上获取 (cdnjs 的版本更新可能略滞后)。</p>
+<p>Vue 也可以在 <a href="https://unpkg.com/vue@2.6.12/dist/vue.js" target="_blank" rel="noopener">unpkg</a> 和 <a href="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.js" target="_blank" rel="noopener">cdnjs</a> 上获取 (cdnjs 的版本更新可能略滞后)。</p>
 <p>请确认了解<a href="#对不同构建版本的解释">不同构建版本</a>并在你发布的站点中使用<strong>生产环境版本</strong>，把 <code>vue.js</code> 换成 <code>vue.min.js</code>。这是一个更小的构建，可以带来比开发环境下更快的速度体验。</p>
 <h2 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h2><p>在用 Vue 构建大型应用时推荐使用 NPM 安装<sup><a href="#footnote-1">[1]</a></sup>。NPM 能很好地和诸如 <a href="https://webpack.js.org/" target="_blank" rel="noopener">webpack</a> 或 <a href="http://browserify.org/" target="_blank" rel="noopener">Browserify</a> 模块打包器配合使用。同时 Vue 也提供配套工具来开发<a href="single-file-components.html">单文件组件</a>。</p>
 <pre><code class="hljs bash"><span class="hljs-comment"># 最新稳定版</span>

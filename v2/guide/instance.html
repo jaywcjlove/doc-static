@@ -266,6 +266,7 @@
           教程
           
             <select class="version-select">
+              <option value="v3">3.x-beta</option>
               <option value="SELF" selected>2.x</option>
               <option value="v1">1.0</option>
               <option value="012">0.12</option>
@@ -698,7 +699,7 @@
       
     
     <li>
-      <a href="/v2/guide/unit-testing.html" class="sidebar-link">单元测试</a>
+      <a href="/v2/guide/testing.html" class="sidebar-link">测试</a>
     </li>
   
     
@@ -967,7 +968,7 @@
   <!-- <script
     async
     type="text/javascript"
-    src="//cdn.carbonads.com/carbon.js?serve=CKYIK2QU&placement=vuejsorg"
+    src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg"
     id="_carbonads_js">
   </script> -->
 </div>
@@ -1001,10 +1002,10 @@
 <pre><code class="hljs undefined">根实例
 └─ TodoList
    ├─ TodoItem
-   │  ├─ DeleteTodoButton
-   │  └─ EditTodoButton
+   │  ├─ TodoButtonDelete
+   │  └─ TodoButtonEdit
    └─ TodoListFooter
-      ├─ ClearTodosButton
+      ├─ TodosButtonClear
       └─ TodoListStatistics</code></pre>
 <p>我们会在稍后的<a href="components.html">组件系统</a>章节具体展开。不过现在，你只需要明白所有的 Vue 组件都是 Vue 实例，并且接受相同的选项对象 (一些根实例特有的选项除外)。</p>
 <h2 id="数据与方法"><a href="#数据与方法" class="headerlink" title="数据与方法"></a>数据与方法</h2><div class="vueschool"><a href="https://learning.dcloud.io/#/?vid=3" target="_blank" rel="sponsored noopener" title="Vue.js 教程 - 数据与方法">观看本节视频讲解</a></div>

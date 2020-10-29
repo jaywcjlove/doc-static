@@ -266,6 +266,7 @@
           API
           
             <select class="version-select">
+              <option value="v3">3.x-beta</option>
               <option value="SELF" selected>2.x</option>
               <option value="v1">1.0</option>
               <option value="012">0.12</option>
@@ -325,7 +326,7 @@
   <!-- <script
     async
     type="text/javascript"
-    src="//cdn.carbonads.com/carbon.js?serve=CKYIK2QU&placement=vuejsorg"
+    src="//cdn.carbonads.com/carbon.js?serve=CEBDT27Y&placement=vuejsorg"
     id="_carbonads_js">
   </script> -->
 </div>
@@ -1533,8 +1534,11 @@ vm.a = <span class="hljs-number">2</span> <span class="hljs-comment">// =&gt; ne
 </li>
 <li><p><strong>只读</strong></p>
 </li>
+<li><p><strong>响应性</strong>：否</p>
+</li>
 <li><p><strong>详细</strong>：</p>
 <p>用来访问被<a href="../guide/components.html#通过插槽分发内容">插槽分发</a>的内容。每个<a href="../guide/components-slots.html#具名插槽">具名插槽</a>有其相应的 property (例如：<code>v-slot:foo</code> 中的内容将会在 <code>vm.$slots.foo</code> 中被找到)。<code>default</code> property 包括了所有没有被包含在具名插槽中的节点，或 <code>v-slot:default</code> 的内容。</p>
+<p>请注意插槽<strong>不是</strong>响应性的。如果你需要一个组件可以在被传入的数据发生变化时重渲染，我们建议改变策略，依赖诸如 <code>props</code> 或 <code>data</code> 等响应性实例选项。</p>
 <p><strong>注意：</strong><code>v-slot:foo</code> 在 2.6 以上的版本才支持。对于之前的版本，你可以使用<a href="../guide/components-slots.html#废弃了的语法">废弃了的语法</a>。</p>
 <p>在使用<a href="../guide/render-function.html">渲染函数</a>书写一个组件时，访问 <code>vm.$slots</code> 最有帮助。</p>
 </li>
@@ -2415,7 +2419,7 @@ vm.$emit(<span class="hljs-string">'test'</span>, <span class="hljs-string">'hi'
 </li>
 </ul>
 <h2 id="特殊-attribute"><a href="#特殊-attribute" class="headerlink" title="特殊 attribute"></a>特殊 attribute</h2><h3 id="key"><a href="#key" class="headerlink" title="key"></a>key</h3><ul>
-<li><p><strong>预期</strong>：<code>number | string</code></p>
+<li><p><strong>预期</strong>：<code>number | string | boolean (2.4.2 新增) | symbol (2.5.12 新增)</code></p>
 <p><code>key</code> 的特殊 attribute 主要用在 Vue 的虚拟 DOM 算法，在新旧 nodes 对比时辨识 VNodes。如果不使用 key，Vue 会使用一种最大限度减少动态元素并且尽可能的尝试就地修改/复用相同类型元素的算法。而使用 key 时，它会基于 key 的变化重新排列元素顺序，并且会移除 key 不存在的元素。</p>
 <p>有相同父元素的子元素必须有<strong>独特的 key</strong>。重复的 key 会造成渲染错误。</p>
 <p>最常见的用例是结合 <code>v-for</code>：</p>
