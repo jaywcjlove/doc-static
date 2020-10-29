@@ -216,13 +216,12 @@
 instantiate the Instance class directly, instead you access it using the finder and creation methods on the model.</p>
 <p>Instance instances operate with the concept of a <code>dataValues</code> property, which stores the actual values represented by the instance.
 By default, the values from dataValues can also be accessed directly from the Instance, that is:</p>
-<pre><code class="js">instance.field
+<pre><code class="language-js">instance.field
 // is the same as
 instance.get('field')
 // is the same as
 instance.getDataValue('field')
 </code></pre>
-
 <p>However, if getters and/or setters are defined for <code>field</code> they will be invoked, instead of returning the value from <code>dataValues</code>.
 Accessing properties directly or using <code>get</code> is preferred for regular use, <code>getDataValue</code> should only be used for custom getters.</p>
 <p><strong>See:</strong></p>
@@ -674,16 +673,14 @@ exact values passed to it, making it more atomic and safer.</p>
 <h2 id="incrementfields-options-promisethis"><code>increment(fields, [options])</code> -&gt; <code>Promise.&lt;this&gt;</code></h2>
 <p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/instance.js#L934">View code</a></p>
 <p>Increment the value of one or more columns. This is done in the database, which means it does not use the values currently stored on the Instance. The increment is done using a</p>
-<pre><code class="sql">SET column = column + X
+<pre><code class="language-sql">SET column = column + X
 </code></pre>
-
 <p>query. To get the correct value after an increment into the Instance you should do a reload.</p>
-<pre><code class="js">instance.increment('number') // increment number by 1
+<pre><code class="language-js">instance.increment('number') // increment number by 1
 instance.increment(['number', 'count'], { by: 2 }) // increment number and count by 2
 instance.increment({ answer: 42, tries: 1}, { by: 2 }) // increment answer by 42, and tries by 1.
                                                        // `by` is ignored, since each column has its own value
 </code></pre>
-
 <p><strong>See:</strong></p>
 <ul>
 <li><a href="instance#reload">Instance#reload</a></li>
@@ -735,16 +732,14 @@ instance.increment({ answer: 42, tries: 1}, { by: 2 }) // increment answer by 42
 <h2 id="decrementfields-options-promise"><code>decrement(fields, [options])</code> -&gt; <code>Promise</code></h2>
 <p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/instance.js#L997">View code</a></p>
 <p>Decrement the value of one or more columns. This is done in the database, which means it does not use the values currently stored on the Instance. The decrement is done using a</p>
-<pre><code class="sql">SET column = column - X
+<pre><code class="language-sql">SET column = column - X
 </code></pre>
-
 <p>query. To get the correct value after an decrement into the Instance you should do a reload.</p>
-<pre><code class="js">instance.decrement('number') // decrement number by 1
+<pre><code class="language-js">instance.decrement('number') // decrement number by 1
 instance.decrement(['number', 'count'], { by: 2 }) // decrement number and count by 2
 instance.decrement({ answer: 42, tries: 1}, { by: 2 }) // decrement answer by 42, and tries by 1.
                                                        // `by` is ignored, since each column has its own value
 </code></pre>
-
 <p><strong>See:</strong></p>
 <ul>
 <li><a href="instance#reload">Instance#reload</a></li>

@@ -177,23 +177,21 @@
 <h2 id="setting-up-a-project">Setting up a project</h2>
 <p>Now that your computer is prepared and your coffee sits next to your keyboard,
 we can finally get started. First things first: create a directory and initialize it with NPM!</p>
-<pre><code class="bash">$ mkdir my-project
+<pre><code class="language-bash">$ mkdir my-project
 $ cd my-project
 $ npm init
 </code></pre>
-
 <p>NPM will ask you a couple of questions. Answer them or just hit the return key until it's satisfied.
 Once done, you can install Sequelize and the connector for your database of choice.</p>
-<pre><code class="bash">$ npm install --save sequelize
+<pre><code class="language-bash">$ npm install --save sequelize
 $ npm install --save pg       # for postgres
 $ npm install --save mysql    # for mysql
 $ npm install --save sqlite3  # for sqlite
 $ npm install --save mariasql # for mariasql
 </code></pre>
-
 <h2 id="connecting-to-the-database">Connecting to the database</h2>
 <p>Open the created directory in your favorite text editor and add a new file called <code>app.js</code> with the following content:</p>
-<pre><code class="js">var Sequelize = require('sequelize')
+<pre><code class="language-js">var Sequelize = require('sequelize')
   , sequelize = new Sequelize('database_name', 'username', 'password', {
       dialect: &quot;mysql&quot;, // or 'sqlite', 'postgres', 'mariadb', 'mssql'
       port:    3306 // or 5432 (for postgres)
@@ -208,7 +206,6 @@ sequelize
     console.log('Unable to connect to the database:', err);
   });
 </code></pre>
-
 <h2 id="managing-the-schema-of-your-database">Managing the schema of your database</h2>
 <p>Sequelize supports two types of schema management. You can either define so-called migrations, which are programmatically changing your database's structure, or you can let Sequelize create the tables for you.</p>
 <p>While the first possibility of using <code>migrations</code> takes more time to setup, it's most likely the way to go if you want to deploy your application on many different server environments. This is because migrations are consistently changing your database according to the current state of the schema.</p>
@@ -216,16 +213,15 @@ sequelize
 <p>As this article is for beginners, we will skip migrations for now and take a closer look at the automated way.</p>
 <h3 id="defining-a-model">Defining a model</h3>
 <p>In order to let Sequelize create schemas in the database, you need to describe what kind of data you want to store. This can be done with <code>sequelize.define</code>:</p>
-<pre><code class="js">var User = sequelize.define('user', {
+<pre><code class="language-js">var User = sequelize.define('user', {
   username: Sequelize.STRING,
   password: Sequelize.STRING
 });
 </code></pre>
-
 <p>This will define a user model that has a username and password. Furthermore, Sequelize will automatically add the columns <code>id</code>, <code>createdAt</code> and <code>updatedAt</code>. <code>createdAt</code> and <code>updatedAt</code> are controlled by Sequelize - when you <code>create</code> a model through Sequelize, <code>createdAt</code> will be set, and whenever you call <code>updateAttributes</code> / <code>save</code> on a model, <code>updatedAt</code> will be set.</p>
 <h3 id="synchronizing-the-schema">Synchronizing the schema</h3>
 <p>As we want to store data in the database, we need to create a representation of the model:</p>
-<pre><code class="js">sequelize
+<pre><code class="language-js">sequelize
   .sync({ force: true })
   .then(function(err) {
     console.log('It worked!');
@@ -233,7 +229,6 @@ sequelize
     console.log('An error occurred while creating the table:', err);
   });
 </code></pre>
-
 <p>Once executed, the database will contain a table <code>Users</code> (note the plural) with the columns:</p>
 <ul>
 <li>id - INT(11)</li>
@@ -245,7 +240,7 @@ sequelize
 <p>Please note, that <code>{ force: true }</code> will drop the <code>Users</code> table and re-create it.</p>
 <h3 id="configuration">Configuration</h3>
 <p>You might not need the timestamps or you might not want the plural of the model's name as table name, right? Luckily there are configuration possibilities for that:</p>
-<pre><code class="js">var User = sequelize.define('user', {
+<pre><code class="language-js">var User = sequelize.define('user', {
   username: Sequelize.STRING,
   password: Sequelize.STRING
 }, {
@@ -253,9 +248,8 @@ sequelize
   timestamps: false           // this will deactivate the timestamp columns
 })
 </code></pre>
-
 <p>And just in case you want to customize the timestamp field names, you can do it like this:</p>
-<pre><code class="js">var User = sequelize.define('user', {
+<pre><code class="language-js">var User = sequelize.define('user', {
   username: Sequelize.STRING,
   password: Sequelize.STRING
 }, {
@@ -263,19 +257,17 @@ sequelize
   createdAt: 'date_of_creation'
 })
 </code></pre>
-
 <p>Furthermore you can introduce a <code>deletedAt</code> timestamp so models are not actually deleted when you call <code>destroy</code>. Adding a <code>deletedAt</code> timestamp is called making the model 'paranoid':</p>
-<pre><code class="js">var User = sequelize.define('user', {
+<pre><code class="language-js">var User = sequelize.define('user', {
   username: Sequelize.STRING,
   password: Sequelize.STRING
 }, {
   paranoid: true
 });
 </code></pre>
-
 <h2 id="creating-and-persisting-instances">Creating and persisting instances</h2>
 <p>Sequelize allows the creation of instances in two ways. You can either <code>build</code> an object and <code>save</code> it afterwards. Or you can directly <code>create</code> an instance in the database:</p>
-<pre><code class="js">var user = User.build({
+<pre><code class="language-js">var user = User.build({
   username: 'john-doe',
   password: generatePasswordHash('i-am-so-great')
 })
@@ -284,19 +276,17 @@ user.save().then(function() {
   /* ... */
 })
 </code></pre>
-
 <p>This persists the instance in a two step way. If you want to do everything at once, use the following approach:</p>
-<pre><code class="js">User.create({
+<pre><code class="language-js">User.create({
   username: 'john-doe',
   password: generatePasswordHash('i-am-so-great')
 }).then(function(user) {
   /* ... */
 })
 </code></pre>
-
 <h2 id="reading-data-from-the-database">Reading data from the database</h2>
 <p>Every defined model has finder methods, with which you can read the database. Searching for a single item can be done with <code>Model.find</code>. Retrieval of multiple items needs the use of <code>Model.findAll</code>.</p>
-<pre><code class="js">User
+<pre><code class="language-js">User
   .find({ where: { username: 'john-doe' } })
   .then(function(err, johnDoe) {
     if (!johnDoe) {
@@ -307,7 +297,6 @@ user.save().then(function() {
     }
   });
 </code></pre>
-
 <p>Please note that, if no user with the name "john-doe" has been found, there won't be any errors. This is intended, as there are no internal or authentication errors.</p>
 <h2 id="defining-associations">Defining associations</h2>
 <p>A very common use case is the definition of associations between two or even more models. Once declared, Sequelize will know how to query the database to get or set associated data. Furthermore it will be able to automatically create the respective foreign key columns for you.</p>
@@ -315,7 +304,7 @@ user.save().then(function() {
 <h3 id="one-to-one">One to one</h3>
 <p>An association between one source and one target is called "one to one" or 1:1 association. It consists of a source that <strong>has one</strong> target and a target that <strong>belongs to</strong> a source.</p>
 <p>Sequelize expects a foreign key in the target's schema. That means that there has to be an attribute respectively a column in the target's table.</p>
-<pre><code class="js">var Source = sequelize.define('source', {})
+<pre><code class="language-js">var Source = sequelize.define('source', {})
   , Target = sequelize.define('target', {})
 
 Source.hasOne(Target)
@@ -328,11 +317,10 @@ sequelize
     // instances of Target will have a column SourceId!
   });
 </code></pre>
-
 <h3 id="one-to-many">One to many</h3>
 <p>An association between one source and many target is called "one to many" or 1:N association. It consists of a source that <strong>has many</strong> targets and some targets which <strong>belong to</strong> a source.</p>
 <p>Sequelize expects a foreign key in the target's schema. That means that there has to be an attribute respectively a column in the target's table.</p>
-<pre><code class="js">var Source = sequelize.define('source', {})
+<pre><code class="language-js">var Source = sequelize.define('source', {})
   , Target = sequelize.define('target', {})
 
 Source.hasMany(Target)
@@ -345,11 +333,10 @@ sequelize
     // instances of Target will have a column SourceId!
   })
 </code></pre>
-
 <h3 id="many-to-many">Many to many</h3>
 <p>An association between many sources and many targets is called "many to many" or N:M association. It consists of sources which <strong>have many</strong> targets and some targets which <strong>have many</strong> sources.</p>
 <p>Sequelize expects a junction table which contains a foreign key to the source table and a foreign key to the target table. A row in the table connects a source with a target.</p>
-<pre><code class="js">var Source = sequelize.define('source', {})
+<pre><code class="language-js">var Source = sequelize.define('source', {})
   , Target = sequelize.define('target', {})
 
 Source.hasMany(Target)
@@ -362,10 +349,9 @@ sequelize
     // Sequelize will create a table SourcesTargets.
   })
 </code></pre>
-
 <h3 id="gettingsetting-associations">Getting/Setting associations</h3>
 <p>Defining associations is nice, but won't give you any advantage if you cannot read or set associations. Of course Sequelize will add respective functions to your models. Depending on the type of association you will find different methods:</p>
-<pre><code class="js">var Source = sequelize.define('source', {})
+<pre><code class="language-js">var Source = sequelize.define('source', {})
   , Target = sequelize.define('target', {});
 
 Source.hasOne(Target);
@@ -394,19 +380,17 @@ sequelize.Promise.all([
   */
 });
 </code></pre>
-
 <h3 id="clearing-associations">Clearing associations</h3>
 <p>Assuming we already defined the models (as in the previous code example) and synced the schema with the database, we can clear the associations like this:</p>
-<pre><code class="js">source.setTarget(null).then(function() {
+<pre><code class="language-js">source.setTarget(null).then(function() {
   return source.getTarget();
 }).then(function(target) {
   console.log(target);
 });
 </code></pre>
-
 <h3 id="adding-removing-associations">Adding / removing associations</h3>
 <p>For 1:N and N:M associations it makes sense to not only set the associations, but also to add or remove associations. Furthermore checking for an association can be handy.</p>
-<pre><code class="js">var Source = sequelize.define('source', {})
+<pre><code class="language-js">var Source = sequelize.define('source', {})
   , Target = sequelize.define('target', {});
 
 Source.hasMany(Target);
@@ -449,10 +433,9 @@ return sequelize.Promise.all([
   console.log(hasTarget) // true
 });
 </code></pre>
-
 <h2 id="a-combined-example">A combined example</h2>
 <p>Now that you know the basics of Sequelize, you might want to see everything in a single program:</p>
-<pre><code class="js">var Sequelize = require('sequelize')
+<pre><code class="language-js">var Sequelize = require('sequelize')
   , sequelize = new Sequelize('database_name', 'username', 'password')
   , User      = sequelize.define('user', {
                   username: Sequelize.STRING,
@@ -467,7 +450,6 @@ sequelize.sync({ force: true }).then(function() {
   console.log(user2.get()); // Get returns a JSON representation of the user
 });
 </code></pre>
-
 <h2 id="whats-next">What's next?</h2>
 <p>As there are some more advanced features in Sequelize which are a bit inappropriate for this article, you can check the following resources for further advice:</p>
 <ul>

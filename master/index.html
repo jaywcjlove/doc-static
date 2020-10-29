@@ -734,7 +734,7 @@ console.log(&quot;All models were synchronized successfully.&quot;);</code>
 console.log(&quot;User table dropped!&quot;);</code>
 </code></pre><p>To drop all tables:</p><pre><code class="lang-js"><code class="source-code prettyprint">await sequelize.drop();
 console.log(&quot;All tables dropped!&quot;);</code>
-</code></pre><h3>Database safety check</h3><p>As shown above, the <code>sync</code> and <code>drop</code> operations are destructive. Sequelize acceps a <code>match</code> option as an additional safety check, which receives a RegExp:</p><pre><code class="lang-js"><code class="source-code prettyprint">// This will run .sync() only if database name ends with &apos;_test&apos;
+</code></pre><h3>Database safety check</h3><p>As shown above, the <code>sync</code> and <code>drop</code> operations are destructive. Sequelize accepts a <code>match</code> option as an additional safety check, which receives a RegExp:</p><pre><code class="lang-js"><code class="source-code prettyprint">// This will run .sync() only if database name ends with &apos;_test&apos;
 sequelize.sync({ force: true, match: /_test$/ });</code>
 </code></pre><h3>Synchronization in production</h3><p>As shown above, <code>sync({ force: true })</code> and <code>sync({ alter: true })</code> can be destructive operations. Therefore, they are not recommended for production-level software. Instead, synchronization should be done with the advanced concept of <a href="./manual/migrations.html">Migrations</a>, with the help of the <a href="https://github.com/sequelize/cli">Sequelize CLI</a>.</p><h2>Timestamps</h2><p>By default, Sequelize automatically adds the fields <code>createdAt</code> and <code>updatedAt</code> to every model, using the data type <code>DataTypes.DATE</code>. Those fields are automatically managed as well - whenever you use Sequelize to create or update something, those fields will be set correctly. The <code>createdAt</code> field will contain the timestamp representing the moment of creation, and the <code>updatedAt</code> will contain the timestamp of the latest update.</p><p><strong>Note:</strong> This is done in the Sequelize level (i.e. not done with <em>SQL triggers</em>). This means that direct SQL queries (for example queries performed without Sequelize by any other means) will not cause these fields to be updated automatically.</p><p>This behavior can be disabled for a model with the <code>timestamps: false</code> option:</p><pre><code class="lang-js"><code class="source-code prettyprint">sequelize.define(&apos;User&apos;, {
   // ... (attributes)
@@ -1014,7 +1014,7 @@ console.log(&quot;All users:&quot;, JSON.stringify(users, null, 2));</code>
 </code></pre><p>You can use <a href="./manual/../class/lib/sequelize.js~Sequelize.html#static-method-fn"><code>sequelize.fn</code></a> to do aggregations:</p><pre><code class="lang-js"><code class="source-code prettyprint">Model.findAll({
   attributes: [
     &apos;foo&apos;,
-    [sequelize.fn(&apos;COUNT&apos;, sequelize.col(&apos;hats&apos;)), &apos;n_hats&apos;]
+    [sequelize.fn(&apos;COUNT&apos;, sequelize.col(&apos;hats&apos;)), &apos;n_hats&apos;],
     &apos;bar&apos;
   ]
 });</code>
@@ -3954,7 +3954,7 @@ await t.commit();</code>
     </div>
 <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
-        <div data-ice="card"><h1>Hooks</h1><p>Hooks (also known as lifecycle events), are functions which are called before and after calls in sequelize are executed. For example, if you want to always set a value on a model before saving it, you can add a <code>beforeUpdate</code> hook.</p><p><strong>Note:</strong> <em>You can&apos;t use hooks with instances. Hooks are used with models.</em></p><h2>Available hooks</h2><p>Sequelize provides a lot of hooks. The full list can be found in directly in the <a href="https://github.com/sequelize/sequelize/blob/master/lib/hooks.js#L7">source code - lib/hooks.js</a>.</p><h2>Hooks firing order</h2><p>The diagram below shows the firing order for the most common hooks.</p><p><em><strong>Note:</strong> this list is not exhaustive.</em></p><pre><code class="lang-text"><code class="source-code prettyprint">(1)
+        <div data-ice="card"><h1>Hooks</h1><p>Hooks (also known as lifecycle events), are functions which are called before and after calls in sequelize are executed. For example, if you want to always set a value on a model before saving it, you can add a <code>beforeUpdate</code> hook.</p><p><strong>Note:</strong> <em>You can&apos;t use hooks with instances. Hooks are used with models.</em></p><h2>Available hooks</h2><p>Sequelize provides a lot of hooks. The full list can be found in directly in the <a href="https://github.com/sequelize/sequelize/blob/v6/lib/hooks.js#L7">source code - lib/hooks.js</a>.</p><h2>Hooks firing order</h2><p>The diagram below shows the firing order for the most common hooks.</p><p><em><strong>Note:</strong> this list is not exhaustive.</em></p><pre><code class="lang-text"><code class="source-code prettyprint">(1)
   beforeBulkCreate(instances, options)
   beforeBulkDestroy(options)
   beforeBulkUpdate(options)

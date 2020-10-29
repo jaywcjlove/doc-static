@@ -428,7 +428,7 @@ or an object with <code>tableName</code>, <code>schema</code> and <code>delimite
 <h2 id="scopeoptions-model"><code>scope(options*)</code> -&gt; <code>Model</code></h2>
 <p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/model.js#L1160">View code</a></p>
 <p>Apply a scope created in <code>define</code> to the model. First let's look at how to create scopes:</p>
-<pre><code class="js">var Model = sequelize.define('model', attributes, {
+<pre><code class="language-js">var Model = sequelize.define('model', attributes, {
   defaultScope: {
     where: {
       username: 'dan'
@@ -456,17 +456,14 @@ or an object with <code>tableName</code>, <code>schema</code> and <code>delimite
   }
 })
 </code></pre>
-
 <p>Now, since you defined a default scope, every time you do Model.find, the default scope is appended to your query. Here's a couple of examples:</p>
-<pre><code class="js">Model.findAll() // WHERE username = 'dan'
+<pre><code class="language-js">Model.findAll() // WHERE username = 'dan'
 Model.findAll({ where: { age: { gt: 12 } } }) // WHERE age &gt; 12 AND username = 'dan'
 </code></pre>
-
 <p>To invoke scope functions you can do:</p>
-<pre><code class="js">Model.scope({ method: ['complexFunction' 'dan@sequelize.com', 42]}).findAll()
+<pre><code class="language-js">Model.scope({ method: ['complexFunction' 'dan@sequelize.com', 42]}).findAll()
 // WHERE email like 'dan@sequelize.com%' AND access_level &gt;= 42
 </code></pre>
-
 <p><strong>Params:</strong></p>
 <table>
 <thead>
@@ -491,19 +488,17 @@ Model.findAll({ where: { age: { gt: 12 } } }) // WHERE age &gt; 12 AND username 
 <p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/model.js#L1327">View code</a></p>
 <p>Search for multiple instances.</p>
 <p><strong>Simple search using AND and =</strong></p>
-<pre><code class="js">Model.findAll({
+<pre><code class="language-js">Model.findAll({
   where: {
     attr1: 42,
     attr2: 'cake'
   }
 })
 </code></pre>
-
-<pre><code class="sql">WHERE attr1 = 42 AND attr2 = 'cake'
+<pre><code class="language-sql">WHERE attr1 = 42 AND attr2 = 'cake'
 </code></pre>
-
 <p><strong>Using greater than, less than etc.</strong></p>
-<pre><code class="js">
+<pre><code class="language-js">
 Model.findAll({
   where: {
     attr1: {
@@ -521,13 +516,11 @@ Model.findAll({
   }
 })
 </code></pre>
-
-<pre><code class="sql">WHERE attr1 &gt; 50 AND attr2 &lt;= 45 AND attr3 IN (1,2,3) AND attr4 != 5
+<pre><code class="language-sql">WHERE attr1 &gt; 50 AND attr2 &lt;= 45 AND attr3 IN (1,2,3) AND attr4 != 5
 </code></pre>
-
 <p>Possible options are: <code>$ne, $in, $not, $notIn, $gte, $gt, $lte, $lt, $like, $ilike/$iLike, $notLike, $notILike, '..'/$between, '!..'/$notBetween, '&amp;&amp;'/$overlap, '@&gt;'/$contains, '&lt;@'/$contained</code></p>
 <p><strong>Queries using OR</strong></p>
-<pre><code class="js">Model.findAll({
+<pre><code class="language-js">Model.findAll({
   where: {
     name: 'a project',
     $or: [
@@ -542,10 +535,8 @@ Model.findAll({
   }
 });
 </code></pre>
-
-<pre><code class="sql">WHERE `Model`.`name` = 'a project' AND (`Model`.`id` IN (1, 2, 3) OR (`Model`.`id` &gt; 10 AND `Model`.`id` &lt; 100));
+<pre><code class="language-sql">WHERE `Model`.`name` = 'a project' AND (`Model`.`id` IN (1, 2, 3) OR (`Model`.`id` &gt; 10 AND `Model`.`id` &lt; 100));
 </code></pre>
-
 <p>The success listener is called with an array of instances if the query succeeds.</p>
 <p><strong>See:</strong></p>
 <ul>
@@ -934,7 +925,7 @@ Model.findAll({
 <h2 id="findandcountfindoptions-promiseobject"><code>findAndCount([findOptions])</code> -&gt; <code>Promise.&lt;Object&gt;</code></h2>
 <p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/model.js#L1638">View code</a></p>
 <p>Find all the rows matching your query, within a specified offset / limit, and get the total number of rows matching your query. This is very useful for paging</p>
-<pre><code class="js">Model.findAndCountAll({
+<pre><code class="language-js">Model.findAndCountAll({
   where: ...,
   limit: 12,
   offset: 12
@@ -942,18 +933,16 @@ Model.findAll({
   ...
 })
 </code></pre>
-
 <p>In the above example, <code>result.rows</code> will contain rows 13 through 24, while <code>result.count</code> will return the total number of rows that matched your query.</p>
 <p>When you add includes, only those which are required (either because they have a where clause, or because <code>required</code> is explicitly set to true on the include) will be added to the count part.</p>
 <p>Suppose you want to find all users who have a profile attached:</p>
-<pre><code class="js">User.findAndCountAll({
+<pre><code class="language-js">User.findAndCountAll({
   include: [
      { model: Profile, required: true}
   ],
   limit 3
 });
 </code></pre>
-
 <p>Because the include for <code>Profile</code> has <code>required</code> set it will result in an inner join, and only the users who have a profile will be counted. If we remove <code>required</code> from the include, both users with and without profiles will be counted</p>
 <p><strong>See:</strong></p>
 <ul>

@@ -199,11 +199,10 @@
   afterBulkDestroy(options, fn)
   afterBulkUpdate(options, fn)
 </code></pre>
-
 <h2 id="declaring-hooks">Declaring Hooks</h2>
 <p>Arguments to hooks are passed by reference. This means, that you can change the values, and this will be reflected in the insert / update statement. A hook may contain async actions - in this case the hook function should return a promise.</p>
 <p>There are currently three ways to programmatically add hooks:</p>
-<pre><code class="js">// Method 1 via the .define() method
+<pre><code class="language-js">// Method 1 via the .define() method
 var User = sequelize.define('user', {
   username: DataTypes.STRING,
   mood: {
@@ -241,10 +240,9 @@ User.afterValidate('myHookAfter', function(user, options, fn) {
   user.username = 'Toni'
 })
 </code></pre>
-
 <h2 id="removing-hooks">Removing hooks</h2>
 <p>Only a hook with name param can be removed.</p>
-<pre><code class="js">var Book = sequelize.define('book', {
+<pre><code class="language-js">var Book = sequelize.define('book', {
   title: DataTypes.STRING
 })
 
@@ -254,11 +252,10 @@ Book.addHook('afterCreate', 'notifyUsers', function(book, options) {
 
 Book.removeHook('afterCreate', 'notifyUsers')
 </code></pre>
-
 <h2 id="global-universal-hooks">Global / universal hooks</h2>
 <p>Global hooks are hooks which are run for all models. They can define behaviours that you want for all your models, and are especially useful for plugins. They can be defined in two ways, which have slightly different semantics:</p>
 <h3 id="sequelizeoptionsdefine-default-hook">Sequelize.options.define (default hook)</h3>
-<pre><code class="js">var sequelize = new Sequelize(..., {
+<pre><code class="language-js">var sequelize = new Sequelize(..., {
     define: {
         hooks: {
             beforeCreate: function () {
@@ -268,9 +265,8 @@ Book.removeHook('afterCreate', 'notifyUsers')
     }
 });
 </code></pre>
-
 <p>This adds a default hook to all models, which is run if the model does not define its own <code>beforeCreate</code> hook:</p>
-<pre><code class="js">var User = sequelize.define('user');
+<pre><code class="language-js">var User = sequelize.define('user');
 var Project = sequelize.define('project', {}, {
     hooks: {
         beforeCreate: function () {
@@ -282,15 +278,13 @@ var Project = sequelize.define('project', {}, {
 User.create() // Runs the global hook
 Project.create() // Runs its own hook (because the global hook is overwritten)
 </code></pre>
-
 <h3 id="sequelizeaddhook-permanent-hook">Sequelize.addHook (permanent hook)</h3>
-<pre><code class="js">sequelize.addHook('beforeCreate', function () {
+<pre><code class="language-js">sequelize.addHook('beforeCreate', function () {
     // Do stuff
 });
 </code></pre>
-
 <p>This hooks is always run before create, regardless of whether the model specifies its own <code>beforeCreate</code> hook:</p>
-<pre><code class="js">var User = sequelize.define('user');
+<pre><code class="language-js">var User = sequelize.define('user');
 var Project = sequelize.define('project', {}, {
     hooks: {
         beforeCreate: function () {
@@ -302,7 +296,6 @@ var Project = sequelize.define('project', {}, {
 User.create() // Runs the global hook
 Project.create() // Runs its own hook, followed by the global hook
 </code></pre>
-
 <p>Local hooks are always run before global hooks.</p>
 <h3 id="instance-hooks">Instance hooks</h3>
 <p>The following hooks will emit whenever you're editing a single object</p>
@@ -311,43 +304,37 @@ afterValidate or validationFailed
 beforeCreate / beforeUpdate  / beforeDestroy
 afterCreate / afterUpdate / afterDestroy
 </code></pre>
-
-<pre><code class="js">// ...define ...
+<pre><code class="language-js">// ...define ...
 User.beforeCreate(function(user) {
   if (user.accessLevel &gt; 10 &amp;&amp; user.username !== &quot;Boss&quot;) {
     throw new Error(&quot;You can't grant this user an access level above 10!&quot;)
   }
 })
 </code></pre>
-
 <p>This example will return an error:</p>
-<pre><code class="js">User.create({username: 'Not a Boss', accessLevel: 20}).catch(function(err) {
+<pre><code class="language-js">User.create({username: 'Not a Boss', accessLevel: 20}).catch(function(err) {
   console.log(err) // You can't grant this user an access level above 10!
 })
 </code></pre>
-
 <p>The following example would return successful:</p>
-<pre><code class="js">User.create({username: 'Boss', accessLevel: 20}).then(function(user) {
+<pre><code class="language-js">User.create({username: 'Boss', accessLevel: 20}).then(function(user) {
   console.log(user) // user object with username as Boss and accessLevel of 20
 })
 </code></pre>
-
 <h3 id="model-hooks">Model hooks</h3>
 <p>Sometimes you'll be editing more than one record at a time by utilizing the <code>bulkCreate, update, destroy</code> methods on the model. The following will emit whenever you're using one of those methods.</p>
 <pre><code>beforeBulkCreate / beforeBulkUpdate / beforeBulkDestroy
 afterBulkCreate / afterBulkUpdate / afterBulkDestroy
 </code></pre>
-
 <p>If you want to emit hooks for each individual record, along with the bulk hooks you can pass <code>individualHooks: true</code> to the call.</p>
-<pre><code class="js">Model.destroy({ where: {accessLevel: 0}, individualHooks: true})
+<pre><code class="language-js">Model.destroy({ where: {accessLevel: 0}, individualHooks: true})
 // Will select all records that are about to be deleted and emit before- + after- Destroy on each instance
 
 Model.update({username: 'Toni'}, { where: {accessLevel: 0}, individualHooks: true})
 // Will select all records that are about to be updated and emit before- + after- Update on each instance
 </code></pre>
-
 <p>Some model hooks have two or three parameters sent to each hook depending on it's type.</p>
-<pre><code class="js">Model.beforeBulkCreate(function(records, fields) {
+<pre><code class="language-js">Model.beforeBulkCreate(function(records, fields) {
   // records = the first argument sent to .bulkCreate
   // fields = the second argument sent to .bulkCreate
 })
@@ -370,7 +357,6 @@ Model.beforeBulkDestroy(function(whereClause) {
 
 Model.destroy({ where: {username: 'Tom'}} /*whereClause argument*/)
 </code></pre>
-
 <p>If you use <code>Model.bulkCreate(...)</code> with the <code>updatesOnDuplicate</code> option, changes made in the hook to fields that aren't given in the <code>updatesOnDuplicate</code> array will not be persisted to the database. However it is possible to change the updatesOnDuplicate option inside the hook if this is what you want.</p>
 <pre><code>// Bulk updating existing users with updatesOnDuplicate option
 Users.bulkCreate([{ id: 1, isMemeber: true}, 
@@ -389,14 +375,13 @@ User.beforeBulkCreate(function (users, options) {
   options.updatesOnDuplicate.push('memberSince')
 })
 </code></pre>
-
 <h2 id="associations">Associations</h2>
 <p>For the most part hooks will work the same for instances when being associated except a few things</p>
 <ol>
 <li>When using add/set functions the beforeUpdate/afterUpdate hooks will run.</li>
 <li>The only way to call beforeDestroy/afterDestroy hooks are on associations with <code>onDelete: 'cascade'</code> and the option <code>hooks: true</code>. For instance:</li>
 </ol>
-<pre><code class="js">var Projects = sequelize.define('projects', {
+<pre><code class="language-js">var Projects = sequelize.define('projects', {
   title: DataTypes.STRING
 })
 
@@ -407,17 +392,15 @@ var Tasks = sequelize.define('tasks', {
 Projects.hasMany(Tasks, { onDelete: 'cascade', hooks: true })
 Tasks.belongsTo(Projects)
 </code></pre>
-
 <p>This code will run beforeDestroy/afterDestroy on the Tasks table. Sequelize, by default, will try to optimize your queries as much as possible. When calling cascade on delete, Sequelize will simply execute a</p>
-<pre><code class="sql">DELETE FROM `table` WHERE associatedIdentifier = associatedIdentifier.primaryKey
+<pre><code class="language-sql">DELETE FROM `table` WHERE associatedIdentifier = associatedIdentifier.primaryKey
 </code></pre>
-
 <p>However, adding <code>hooks: true</code> explicitly tells Sequelize that optimization is not of your concern and will perform a <code>SELECT</code> on the associated objects and destroy each instance one by one in order to be able to call the hooks with the right parameters.</p>
 <p>If your association is of type <code>n:m</code>, you may be interested in firing hooks on the through model when using the <code>remove</code> call. Internally, sequelize is using <code>Model.destroy</code> resulting in calling the <code>bulkDestroy</code> instead of the <code>before/afterDestroy</code> hooks on each through instance.</p>
 <p>This can be simply solved by passing <code>{individualHooks: true}</code> to the <code>remove</code> call, resulting on each hook to be called on each removed through instance object.</p>
 <h2 id="a-note-about-transactions">A Note About Transactions</h2>
 <p>Note that many model operations in Sequelize allow you to specify a transaction in the options parameter of the method. If a transaction <em>is</em> specified in the original call, it will be present in the options parameter passed to the hook function. For example, consider the following snippet:</p>
-<pre><code class="js">// Here we use the promise-style of async hooks rather than
+<pre><code class="language-js">// Here we use the promise-style of async hooks rather than
 // the callback.
 User.hook('afterCreate', function(user, options) {
   // 'transaction' will be available in options.transaction
@@ -443,7 +426,6 @@ sequelize.transaction(function(t) {
   });
 });
 </code></pre>
-
 <p>If we had not included the transaction option in our call to <code>User.update</code> in the preceding code, no change would have occurred, since our newly created user does not exist in the database until the pending transaction has been committed.</p>
 <h3 id="internal-transactions">Internal Transactions</h3>
 <p>It is very important to recognize that sequelize may make use of transactions internally for certain operations such as <code>Model.findOrCreate</code>. If your hook functions execute read or write operations that rely on the object's presence in the database, or modify the object's stored values like the example in the preceding section, you should always specify <code>{ transaction: options.transaction }</code>.</p>

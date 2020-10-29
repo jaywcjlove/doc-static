@@ -196,7 +196,7 @@
 <p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/associations/belongs-to-many.js#L41">View code</a></p>
 <p>Many-to-many association with a join table.</p>
 <p>When the join table has additional attributes, these can be passed in the options object:</p>
-<pre><code class="js">UserProject = sequelize.define('user_project', {
+<pre><code class="language-js">UserProject = sequelize.define('user_project', {
   role: Sequelize.STRING
 });
 User.belongsToMany(Project, { through: UserProject });
@@ -205,13 +205,11 @@ Project.belongsToMany(User, { through: UserProject });
 
 user.addProject(project, { role: 'manager', transaction: t });
 </code></pre>
-
 <p>All methods allow you to pass either a persisted instance, its primary key, or a mixture:</p>
-<pre><code class="js">Project.create({ id: 11 }).then(function (project) {
+<pre><code class="language-js">Project.create({ id: 11 }).then(function (project) {
   user.addProjects([project, 12]);
 });
 </code></pre>
-
 <p>In the API reference below, replace <code>Assocation(s)</code> with the actual name of your association, e.g. for <code>User.belongsToMany(Project)</code> the getter will be <code>user.getProjects()</code>.</p>
 <hr />
 <p><a name="getassociations"></a></p>

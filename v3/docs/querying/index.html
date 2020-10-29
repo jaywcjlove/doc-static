@@ -169,35 +169,29 @@
               
                 <h2 id="attributes">Attributes</h2>
 <p>To select only some attributes, you can use the <code>attributes</code> option. Most often, you pass an array:</p>
-<pre><code class="js">Model.findAll({
+<pre><code class="language-js">Model.findAll({
   attributes: ['foo', 'bar']
 });
 </code></pre>
-
-<pre><code class="sql">SELECT foo, bar ...
+<pre><code class="language-sql">SELECT foo, bar ...
 </code></pre>
-
 <p>Attributes can be renamed using a nested array:</p>
-<pre><code class="js">Model.findAll({
+<pre><code class="language-js">Model.findAll({
   attributes: ['foo', ['bar', 'baz']]
 });
 </code></pre>
-
-<pre><code class="sql">SELECT foo, bar AS baz ...
+<pre><code class="language-sql">SELECT foo, bar AS baz ...
 </code></pre>
-
 <p>You can use <code>sequelize.fn</code> to do aggregations:</p>
-<pre><code class="js">Model.findAll({
+<pre><code class="language-js">Model.findAll({
   attributes: [[sequelize.fn('COUNT', sequelize.col('hats')), 'no_hats']]
 });
 </code></pre>
-
-<pre><code class="sql">SELECT COUNT(hats) AS no_hats ...
+<pre><code class="language-sql">SELECT COUNT(hats) AS no_hats ...
 </code></pre>
-
 <p>When using aggregation function, you must give it an alias to be able to access it from the model. In the example above you can get the number of hats with <code>instance.get('no_hats')</code>.</p>
 <p>Sometimes it may be tiresome to list all the attributes of the model if you only want to add an aggregation:</p>
-<pre><code class="js">// This is a tiresome way of getting the number of hats...
+<pre><code class="language-js">// This is a tiresome way of getting the number of hats...
 Model.findAll({
   attributes: ['id', 'foo', 'bar', 'baz', 'quz', [sequelize.fn('COUNT', sequelize.col('hats')), 'no_hats']]
 });
@@ -207,25 +201,21 @@ Model.findAll({
   attributes: { include: [[sequelize.fn('COUNT', sequelize.col('hats')), 'no_hats']] }
 });
 </code></pre>
-
-<pre><code class="sql">SELECT id, foo, bar, baz, quz, COUNT(hats) AS no_hats ...
+<pre><code class="language-sql">SELECT id, foo, bar, baz, quz, COUNT(hats) AS no_hats ...
 </code></pre>
-
 <p>Similarly, its also possible to remove a selected few attributes:</p>
-<pre><code class="js">Model.findAll({
+<pre><code class="language-js">Model.findAll({
   attributes: { exclude: ['baz'] }
 });
 </code></pre>
-
-<pre><code class="sql">SELECT id, foo, bar, quz ...
+<pre><code class="language-sql">SELECT id, foo, bar, quz ...
 </code></pre>
-
 <h2 id="where">Where</h2>
 <p>Whether you are querying with findAll/find or doing bulk updates/destroys you can pass a <code>where</code> object to filter the query.</p>
 <p><code>where</code> generally takes an object from attribute:value pairs, where value can be primitives for equality matches or keyed objects for other operators.</p>
 <p>It's also possible to generate complex AND/OR conditions by nesting sets of <code>$or</code> and <code>$and</code>.</p>
 <h3 id="basics">Basics</h3>
-<pre><code class="js">Post.findAll({
+<pre><code class="language-js">Post.findAll({
   where: {
     authorId: 2
   }
@@ -263,9 +253,8 @@ Post.findAll({
 });
 // SELECT * FROM post WHERE char_length(status) = 6;
 </code></pre>
-
 <h3 id="operators">Operators</h3>
-<pre><code class="js">$and: {a: 5}           // AND (a = 5)
+<pre><code class="language-js">$and: {a: 5}           // AND (a = 5)
 $or: [{a: 5}, {a: 6}]  // (a = 5 OR a = 6)
 $gt: 6,                // &gt; 6
 $gte: 6,               // &gt;= 6
@@ -290,9 +279,8 @@ $any: [2,3]            // ANY ARRAY[2, 3]::INTEGER (PG only)
 
 $col: 'user.organization_id' // = &quot;user&quot;.&quot;organization_id&quot;, with dialect specific column identifiers, PG in this example
 </code></pre>
-
 <h3 id="combinations">Combinations</h3>
-<pre><code class="js">{
+<pre><code class="language-js">{
   rank: {
     $or: {
       $lt: 1000,
@@ -326,11 +314,10 @@ $col: 'user.organization_id' // = &quot;user&quot;.&quot;organization_id&quot;, 
 }
 // title LIKE 'Boat%' OR description LIKE '%boat%'
 </code></pre>
-
 <h3 id="jsonb">JSONB</h3>
 <p>JSONB can be queried in three different ways.</p>
 <h4 id="nested-object">Nested object</h4>
-<pre><code class="js">{
+<pre><code class="language-js">{
   meta: {
     video: {
       url: {
@@ -340,17 +327,15 @@ $col: 'user.organization_id' // = &quot;user&quot;.&quot;organization_id&quot;, 
   }
 }
 </code></pre>
-
 <h4 id="nested-key">Nested key</h4>
-<pre><code class="js">{
+<pre><code class="language-js">{
   &quot;meta.audio.length&quot;: {
     $gt: 20
   }
 }
 </code></pre>
-
 <h4 id="containment">Containment</h4>
-<pre><code class="js">{
+<pre><code class="language-js">{
   &quot;meta&quot;: {
     $contains: {
       site: {
@@ -360,9 +345,8 @@ $col: 'user.organization_id' // = &quot;user&quot;.&quot;organization_id&quot;, 
   }
 }
 </code></pre>
-
 <h3 id="relations-associations">Relations / Associations</h3>
-<pre><code class="js">// Find all projects with a least one task where task.state === project.task
+<pre><code class="language-js">// Find all projects with a least one task where task.state === project.task
 Project.findAll({
     include: [{
         model: Task,
@@ -370,9 +354,8 @@ Project.findAll({
     }]
 })
 </code></pre>
-
 <h2 id="pagination-limiting">Pagination / Limiting</h2>
-<pre><code class="js">// Fetch 10 instances/rows
+<pre><code class="language-js">// Fetch 10 instances/rows
 Project.findAll({ limit: 10 })
 
 // Skip 8 instances/rows
@@ -381,10 +364,9 @@ Project.findAll({ offset: 8 })
 // Skip 5 instances and fetch the 5 after that
 Project.findAll({ offset: 5, limit: 5 })
 </code></pre>
-
 <h2 id="ordering">Ordering</h2>
 <p><code>order</code> takes an array of items to order the query by. Generally you will want to use a tuple/array of either attribute, direction or just direction to ensure proper escaping.</p>
-<pre><code class="js">something.findOne({
+<pre><code class="language-js">something.findOne({
   order: [
     // Will escape username and validate DESC against a list of valid direction parameters
     ['username', 'DESC'],

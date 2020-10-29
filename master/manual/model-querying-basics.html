@@ -607,7 +607,7 @@ console.log(&quot;All users:&quot;, JSON.stringify(users, null, 2));</code>
 <pre><code class="lang-js"><code class="source-code prettyprint">Model.findAll({
   attributes: [
     &apos;foo&apos;,
-    [sequelize.fn(&apos;COUNT&apos;, sequelize.col(&apos;hats&apos;)), &apos;n_hats&apos;]
+    [sequelize.fn(&apos;COUNT&apos;, sequelize.col(&apos;hats&apos;)), &apos;n_hats&apos;],
     &apos;bar&apos;
   ]
 });</code>

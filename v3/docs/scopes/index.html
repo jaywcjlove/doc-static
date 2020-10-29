@@ -170,7 +170,7 @@
                 <h1 id="definition">Definition</h1>
 <p>Scoping allows you to define commonly used queries that you can easily use later. Scopes can include all the same attributes as regular finders, <code>where</code>, <code>include</code>, <code>limit</code> etc.</p>
 <p>Scopes are defined in the model definition and can be finder objects, or functions returning finder objects - except for the default scope, which can only be an object:</p>
-<pre><code class="js">var Project = sequelize.define('project', {
+<pre><code class="language-js">var Project = sequelize.define('project', {
   // Attributes
 }, {
   defaultScope: {
@@ -208,22 +208,18 @@
   }
 });
 </code></pre>
-
 <p>You can also add scopes after a model has been defined by calling <code>addScope</code>. This is especially useful for scopes with includes, where the model in the include might not be defined at the time the other model is being defined.</p>
 <p>The default scope is always applied. This means, that with the model definition above, <code>Project.findAll()</code> will create the following query:</p>
-<pre><code class="sql">SELECT * FROM projects WHERE active = true
+<pre><code class="language-sql">SELECT * FROM projects WHERE active = true
 </code></pre>
-
 <p>The default scope can be removed by calling <code>.unscoped()</code>, <code>.scope(null)</code>, or by invoking another scope:</p>
-<pre><code class="js">Project.scope('deleted').findAll(); // Removes the default scope
+<pre><code class="language-js">Project.scope('deleted').findAll(); // Removes the default scope
 </code></pre>
-
-<pre><code class="sql">SELECT * FROM projects WHERE deleted = true
+<pre><code class="language-sql">SELECT * FROM projects WHERE deleted = true
 </code></pre>
-
 <h1 id="usage">Usage</h1>
 <p>Scopes are applied by calling <code>.scope</code> on the model definition, passing the name of one or more scopes. <code>.scope</code> returns a fully functional model instance with all the regular methods: <code>.findAll</code>, <code>.update</code>, <code>.count</code>, <code>.destroy</code> etc. You can save this model instance and reuse it later:</p>
-<pre><code class="js">var DeletedProjects = Project.scope('deleted');
+<pre><code class="language-js">var DeletedProjects = Project.scope('deleted');
 
 DeletedProjects.findAll();
 // some time passes
@@ -231,36 +227,29 @@ DeletedProjects.findAll();
 // let's look for deleted projects again!
 DeletedProjects.findAll();
 </code></pre>
-
 <p>Scopes apply to <code>.find</code>, <code>.findAll</code>, <code>.count</code>, <code>.update</code> and <code>.destroy</code>.</p>
 <p>Scopes which are functions can be invoked in two ways. If the scope does not take any arguments it can be invoked as normally. If the scope takes arguments, pass an object:</p>
-<pre><code class="js">Project.scope('random', { method: ['accessLevel', 19]}).findAll();
+<pre><code class="language-js">Project.scope('random', { method: ['accessLevel', 19]}).findAll();
 </code></pre>
-
-<pre><code class="sql">SELECT * FROM projects WHERE someNumber = 42 AND accessLevel &gt;= 19
+<pre><code class="language-sql">SELECT * FROM projects WHERE someNumber = 42 AND accessLevel &gt;= 19
 </code></pre>
-
 <h2 id="merging">Merging</h2>
 <p>Several scopes can be applied simultaneously by passing an array of scopes to <code>.scope</code>, or by passing the scopes as consecutive arguments.</p>
-<pre><code class="js">// These two are equivalent
+<pre><code class="language-js">// These two are equivalent
 Project.scope('deleted', 'activeUsers').findAll();
 Project.scope(['deleted', 'activeUsers']).findAll();
 </code></pre>
-
-<pre><code class="sql">SELECT * FROM projects
+<pre><code class="language-sql">SELECT * FROM projects
 INNER JOIN users ON projects.userId = users.id
 AND users.active = true
 </code></pre>
-
 <p>If you want to apply another scope alongside the default scope, pass the key <code>defaultScope</code> to <code>.scope</code>:</p>
-<pre><code class="js">Project.scope('defaultScope', 'deleted').findAll();
+<pre><code class="language-js">Project.scope('defaultScope', 'deleted').findAll();
 </code></pre>
-
-<pre><code class="sql">SELECT * FROM projects WHERE active = true AND deleted = true
+<pre><code class="language-sql">SELECT * FROM projects WHERE active = true AND deleted = true
 </code></pre>
-
 <p>When invoking several scopes, keys from subsequent scopes will overwrite previous ones (similar to <a href="https://lodash.com/docs#assign">_.assign</a>). Consider two scopes:</p>
-<pre><code class="js">{
+<pre><code class="language-js">{
   scope1: {
     where: {
       firstName: 'bob',
@@ -280,23 +269,19 @@ AND users.active = true
   }
 }
 </code></pre>
-
 <p>Calling <code>.scope('scope1', 'scope2')</code> will yield the following query</p>
-<pre><code class="sql">WHERE firstName = 'bob' AND age &gt; 30 LIMIT 10
+<pre><code class="language-sql">WHERE firstName = 'bob' AND age &gt; 30 LIMIT 10
 </code></pre>
-
 <p>Note how <code>limit</code> and <code>age</code> are overwritten by <code>scope2</code>, while <code>firstName</code> is preserved. <code>limit</code>, <code>offset</code>, <code>order</code>, <code>paranoid</code>, <code>lock</code> and <code>raw</code> are overwritten, while <code>where</code> and <code>include</code> are shallowly merged. This means that identical keys in the where objects, and subsequent includes of the same model will both overwrite each other.</p>
 <p>The same merge logic applies when passing a find object directly to findAll on a scoped model:</p>
-<pre><code class="js">Project.scope('deleted').findAll({
+<pre><code class="language-js">Project.scope('deleted').findAll({
   where: {
     firstName: 'john'
   }
 })
 </code></pre>
-
-<pre><code class="sql">WHERE deleted = true AND firstName = 'john'
+<pre><code class="language-sql">WHERE deleted = true AND firstName = 'john'
 </code></pre>
-
 <p>Here the <code>deleted</code> scope is merged with the finder. If we were to pass <code>where: { firstName: 'john', deleted: false }</code> to the finder, the <code>deleted</code> scope would be overwritten.</p>
 <h1 id="associations">Associations</h1>
 <p>Sequelize has two different but related scope concepts in relation to associations. The difference is subtle but important:</p>
@@ -306,22 +291,20 @@ AND users.active = true
 </ul>
 <p>As an example, consider the models Post and Comment. Comment is associated to several other models (Image, Video etc.) and the association between Comment and other models is polymorphic, which means that Comment stores a <code>commentable</code> column, in addition to the foreign key <code>commentable_id</code>.</p>
 <p>The polymorphic association can be implemented with an <em>association scope</em> :</p>
-<pre><code class="js">this.Post.hasMany(this.Comment, {
+<pre><code class="language-js">this.Post.hasMany(this.Comment, {
   foreignKey: 'commentable_id',
   scope: {
     commentable: 'post'
   }
 });
 </code></pre>
-
 <p>When calling <code>post.getComments()</code>, this will automatically add <code>WHERE commentable = 'post'</code>. Similarly, when adding new comments to a post, <code>commentable</code> will automagically be set to <code>'post'</code>. The association scope is meant to live in the background without the programmer having to worry about it - it cannot be disabled. For a more complete polymorphic example, see <a href="associations/#scopes">Association scopes</a></p>
 <p>Consider then, that Post has a default scope which only shows active posts: <code>where: { active: true }</code>. This scope lives on the associated model (Post), and not on the association like the <code>commentable</code> scope did. Just like the default scope is applied when calling <code>Post.findAll()</code>, it is also applied when calling <code>User.getPosts()</code> - this will only return the active posts for that user.</p>
 <p>To disable the default scope, pass <code>scope: null</code> to the getter: <code>User.getPosts({ scope: null })</code>. Similarly, if you want to apply other scopes, pass an array like you would to <code>.scope</code>:</p>
-<pre><code class="js">User.getPosts({ scope: ['scope1', 'scope2']});
+<pre><code class="language-js">User.getPosts({ scope: ['scope1', 'scope2']});
 </code></pre>
-
 <p>If you want to create a shortcut method to a scope on an associated model, you can pass the scoped model to the association. Consider a shortcut to get all deleted posts for a user:</p>
-<pre><code class="js">var Post = sequelize.define('post', attributes, {
+<pre><code class="language-js">var Post = sequelize.define('post', attributes, {
   defaultScope: {
     where: {
       active: true
@@ -340,8 +323,7 @@ User.hasMany(Post); // regular getPosts association
 User.hasMany(Post.scope('deleted'), { as: 'deletedPosts' });
 
 </code></pre>
-
-<pre><code class="js">User.getPosts(); // WHERE active = true
+<pre><code class="language-js">User.getPosts(); // WHERE active = true
 User.getDeletedPosts(); // WHERE deleted = true
 </code></pre>
               

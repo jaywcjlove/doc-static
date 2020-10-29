@@ -169,33 +169,30 @@
               
                 <p>As there are often use cases in which it is just easier to execute raw / already prepared SQL queries, you can utilize the function <code>sequelize.query</code>.</p>
 <p>By default the function will return two arguments - a results array, and an object containing metadata (affected rows etc.). Note that since this is a raw query, the metadata (property names etc.) is dialect specific. Some dialects return the metadata "within" the results object (as properties on an array). However, two arguments will always be returned, but for MSSQL and MySQL it will be two references to the same object.</p>
-<pre><code class="js">sequelize.query(&quot;UPDATE users SET y = 42 WHERE x = 12&quot;).spread(function(results, metadata) {
+<pre><code class="language-js">sequelize.query(&quot;UPDATE users SET y = 42 WHERE x = 12&quot;).spread(function(results, metadata) {
   // Results will be an empty array and metadata will contain the number of affected rows.
 })
 </code></pre>
-
 <p>In cases where you don't need to access the metadata you can pass in a query type to tell sequelize how to format the results. For example, for a simple select query you could do:</p>
-<pre><code class="js">sequelize.query(&quot;SELECT * FROM `users`&quot;, { type: sequelize.QueryTypes.SELECT})
+<pre><code class="language-js">sequelize.query(&quot;SELECT * FROM `users`&quot;, { type: sequelize.QueryTypes.SELECT})
   .then(function(users) {
     // We don't need spread here, since only the results will be returned for select queries
   })
 </code></pre>
-
 <p>Several other query types are available. <a href="https://github.com/sequelize/sequelize/blob/master/lib/query-types.js">Peek into the source for details</a></p>
 <p>A second option is the model. If you pass a model the returned data will be instances of that model.</p>
-<pre><code class="js">// Callee is the model definition. This allows you to easily map a query to a predefined model
+<pre><code class="language-js">// Callee is the model definition. This allows you to easily map a query to a predefined model
 sequelize.query('SELECT * FROM projects', { model: Projects }).then(function(projects){
   // Each record will now be a instance of Project
 })
 </code></pre>
-
 <h1 id="replacements">Replacements</h1>
 <p>Replacements in a query can be done in two different ways, either using named parameters (starting with <code>:</code>), or unnamed, represented by a <code>?</code>. Replacements are passed in the options object.</p>
 <ul>
 <li>If an array is passed, <code>?</code> will be replaced in the order that they appear in the array</li>
 <li>If an object is passed, <code>:key</code> will be replaced with the keys from that object. If the object contains keys not found in the query or vice versa, an exception will be thrown.</li>
 </ul>
-<pre><code class="js">sequelize.query('SELECT * FROM projects WHERE status = ?',
+<pre><code class="language-js">sequelize.query('SELECT * FROM projects WHERE status = ?',
   { replacements: ['active'], type: sequelize.QueryTypes.SELECT }
 ).then(function(projects) {
   console.log(projects)
@@ -207,7 +204,6 @@ sequelize.query('SELECT * FROM projects WHERE status = :status ',
   console.log(projects)
 })
 </code></pre>
-
 <h1 id="bind-parameter">Bind Parameter</h1>
 <p>Bind parameters are like replacements. Except replacements are escaped and inserted into the query by sequelize before the query is sent to the database, while bind parameters are sent to the database outside the SQL query text. A query can have either bind parameters or replacements.</p>
 <p>Only SQLite and PostgreSQL support bind parameters. Other dialects will insert them into the SQL query in the same way it is done for replacements. Bind parameters are referred to by either $1, $2, ... (numeric) or $key (alpha-numeric). This is independent of the dialect.</p>
@@ -218,7 +214,7 @@ sequelize.query('SELECT * FROM projects WHERE status = :status ',
 </ul>
 <p>The array or object must contain all bound values or Sequelize will throw an exception. This applies even to cases in which the database may ignore the bound parameter.</p>
 <p>The database may add further restrictions to this. Bind parameters cannot be SQL keywords, nor table or column names. They are also ignored in quoted text or data. In PostgreSQL it may also be needed to typecast them, if the type cannot be inferred from the context <code>$1::varchar</code>.</p>
-<pre><code class="js">sequelize.query('SELECT *, &quot;text with literal $$1 and literal $$status&quot; as t FROM projects WHERE status = $1',
+<pre><code class="language-js">sequelize.query('SELECT *, &quot;text with literal $$1 and literal $$status&quot; as t FROM projects WHERE status = $1',
   { bind: ['active'], type: sequelize.QueryTypes.SELECT }
 ).then(function(projects) {
   console.log(projects)

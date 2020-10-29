@@ -180,7 +180,7 @@
 <h1 id="managed-transaction-auto-callback">Managed transaction (auto-callback)</h1>
 <p>Managed transactions handle committing or rolling back the transaction automagically. You start a managed transaction by passing a callback to <code>sequelize.transaction</code>.</p>
 <p>Notice how the callback passed to <code>transaction</code> returns a promise chain, and does not explicitly call <code>t.commit()</code> nor <code>t.rollback()</code>. If all promises in the returned chain are resolved successfully the transaction is committed. If one or several of the promises are rejected, the transaction is rolled back.</p>
-<pre><code class="js">return sequelize.transaction(function (t) {
+<pre><code class="language-js">return sequelize.transaction(function (t) {
 
   // chain all your queries here. make sure you return them.
   return User.create({
@@ -201,10 +201,9 @@
   // err is whatever rejected the promise chain returned to the transaction callback
 });
 </code></pre>
-
 <h3 id="throw-errors-to-rollback">Throw errors to rollback</h3>
 <p>When using the managed transaction you should <em>never</em> commit or rollback the transaction manually. If all queries are successful, but you still want to rollback the transaction (for example because of a validation failure) you should throw an error to break and reject the chain:</p>
-<pre><code class="js">return sequelize.transaction(function (t) {
+<pre><code class="language-js">return sequelize.transaction(function (t) {
   return User.create({
     firstName: 'Abraham',
     lastName: 'Lincoln'
@@ -214,23 +213,20 @@
   });
 });
 </code></pre>
-
 <h3 id="automatically-pass-transactions-to-all-queries">Automatically pass transactions to all queries</h3>
 <p>In the examples above, the transaction is still manually passed, by passing <code>{ transaction: t }</code> as the second argument. To automatically pass the transaction to all queries you must install the <a href="https://github.com/othiym23/node-continuation-local-storage">continuation local storage</a> (CLS) module and instantiate a namespace in your own code:</p>
-<pre><code class="js">var cls = require('continuation-local-storage'),
+<pre><code class="language-js">var cls = require('continuation-local-storage'),
     namespace = cls.createNamespace('my-very-own-namespace');
 </code></pre>
-
 <p>To enable CLS you must tell sequelize which namespace to use by setting it as a property on the sequelize constructor:</p>
-<pre><code class="js">var Sequelize = require('sequelize');
+<pre><code class="language-js">var Sequelize = require('sequelize');
 Sequelize.cls = namespace;
 
 new Sequelize(....);
 </code></pre>
-
 <p>Notice, that the <code>cls</code> property must be set on the <em>constructor</em>, not on an instance of sequelize. This means that all instances will share the same namespace, and that CLS is all-or-nothing - you cannot enable it only for some instances.</p>
 <p>CLS works like a thread-local storage for callbacks. What this means in practice is, that different callback chains can access local variables by using the CLS namespace. When CLS is enabled sequelize will set the <code>transaction</code> property on the namespace when a new transaction is created. Since variables set within a callback chain are private to that chain several concurrent transactions can exist at the same time:</p>
-<pre><code class="js">sequelize.transaction(function (t1) {
+<pre><code class="language-js">sequelize.transaction(function (t1) {
   namespace.get('transaction') === t1; // true
 });
 
@@ -238,18 +234,16 @@ sequelize.transaction(function (t2) {
   namespace.get('transaction') === t2; // true
 });
 </code></pre>
-
 <p>In most case you won't need to access <code>namespace.get('transaction')</code> directly, since all queries will automatically look for a transaction on the namespace:</p>
-<pre><code class="js">sequelize.transaction(function (t1) {
+<pre><code class="language-js">sequelize.transaction(function (t1) {
   // With CLS enabled, the user will be created inside the transaction
   return User.create({ name: 'Alice' });
 });
 </code></pre>
-
 <h1 id="concurrentpartial-transactions">Concurrent/Partial transactions</h1>
 <p>You can have concurrent transactions within a sequence of queries or have some of them excluded from any transactions. Use the <code>{transaction: }</code> option to control which transaction a query belong to:</p>
 <h3 id="without-cls-enabled">Without CLS enabled</h3>
-<pre><code class="js">sequelize.transaction(function (t1) {
+<pre><code class="language-js">sequelize.transaction(function (t1) {
   return sequelize.transaction(function (t2) {
     // With CLS enable, queries here will by default use t2
     // Pass in the `transaction` option to define/alter the transaction they belong to.
@@ -261,17 +255,15 @@ sequelize.transaction(function (t2) {
   });
 });
 </code></pre>
-
 <h1 id="isolation-levels">Isolation levels</h1>
 <p>The possible isolations levels to use when starting a transaction:</p>
-<pre><code class="js">Sequelize.Transaction.ISOLATION_LEVELS.READ_UNCOMMITTED // &quot;READ UNCOMMITTED&quot;
+<pre><code class="language-js">Sequelize.Transaction.ISOLATION_LEVELS.READ_UNCOMMITTED // &quot;READ UNCOMMITTED&quot;
 Sequelize.Transaction.ISOLATION_LEVELS.READ_COMMITTED // &quot;READ COMMITTED&quot;
 Sequelize.Transaction.ISOLATION_LEVELS.REPEATABLE_READ  // &quot;REPEATABLE READ&quot;
 Sequelize.Transaction.ISOLATION_LEVELS.SERIALIZABLE // &quot;SERIALIZABLE&quot;
 </code></pre>
-
 <p>By default, sequelize uses "REPEATABLE READ". If you want to use a different isolation level, pass in the desired level as the first argument:</p>
-<pre><code class="js">return sequelize.transaction({
+<pre><code class="language-js">return sequelize.transaction({
   isolationLevel: Sequelize.Transaction.ISOLATION_LEVELS.SERIALIZABLE
   }, function (t) {
 
@@ -279,10 +271,9 @@ Sequelize.Transaction.ISOLATION_LEVELS.SERIALIZABLE // &quot;SERIALIZABLE&quot;
 
   });
 </code></pre>
-
 <h1 id="unmanaged-transaction-then-callback">Unmanaged transaction (then-callback)</h1>
 <p>Unmanaged transactions force you to manually rollback or commit the transaction. If you don't do that, the transaction will hang until it times out. To start an unmanaged transaction, call <code>sequelize.transaction()</code> without a callback (you can still pass an options object) and call <code>then</code> on the returned promise. Notice that <code>commit()</code> and <code>rollback()</code> returns a promise.</p>
-<pre><code class="js">return sequelize.transaction().then(function (t) {
+<pre><code class="language-js">return sequelize.transaction().then(function (t) {
   return User.create({
     firstName: 'Homer',
     lastName: 'Simpson'
@@ -298,24 +289,21 @@ Sequelize.Transaction.ISOLATION_LEVELS.SERIALIZABLE // &quot;SERIALIZABLE&quot;
   });
 });
 </code></pre>
-
 <h1 id="options">Options</h1>
 <p>The <code>transaction</code> method can be called with an options object as the first argument, that
 allows the configuration of the transaction.</p>
-<pre><code class="js">return sequelize.transaction({ /* options */ });
+<pre><code class="language-js">return sequelize.transaction({ /* options */ });
 </code></pre>
-
 <p>The following options (with it's default values) are available:</p>
-<pre><code class="js">{
+<pre><code class="language-js">{
   autocommit: true,
   isolationLevel: 'REPEATABLE_READ',
   deferrable: 'NOT DEFERRABLE' // implicit default of postgres
 }
 </code></pre>
-
 <p>The <code>isolationLevel</code> can either be set globally when initializing the Sequelize instance or
 locally for every transaction:</p>
-<pre><code class="js">// globally
+<pre><code class="language-js">// globally
 new Sequelize('db', 'user', 'pw', {
   isolationLevel: Sequelize.Transaction.ISOLATION_LEVELS.SERIALIZABLE
 });
@@ -325,11 +313,10 @@ sequelize.transaction({
   isolationLevel: Sequelize.Transaction.ISOLATION_LEVELS.SERIALIZABLE
 });
 </code></pre>
-
 <p>The <code>deferrable</code> option triggers an additional query after the transaction start
 that optionally set the constraint checks to be deferred or immediate. Please note
 that this is only supported in PostgreSQL.</p>
-<pre><code class="js">sequelize.transaction({
+<pre><code class="language-js">sequelize.transaction({
   // to defer all constraints:
   deferrable: Sequelize.Deferrable.SET_DEFERRED,
 
@@ -340,7 +327,6 @@ that this is only supported in PostgreSQL.</p>
   deferrable: Sequelize.Deferrable.SET_IMMEDIATE
 })
 </code></pre>
-
 <h1 id="usage-with-other-sequelize-methods">Usage with other sequelize methods</h1>
 <p>The <code>transaction</code> option goes with most other options, which are usually the first argument of a method.
 For methods that take values, like <code>.create</code>, <code>.update()</code>, <code>.updateAttributes()</code> etc. <code>transaction</code> should be passed to the option in the second argument.

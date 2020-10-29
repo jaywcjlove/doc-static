@@ -169,26 +169,24 @@
               
                 <p>While out of the box Sequelize will seem a bit opinionated it's trivial to both legacy and forward proof your application by defining (otherwise generated) table and field names.</p>
 <h2 id="tables">Tables</h2>
-<pre><code class="js">sequelize.define('user', {
+<pre><code class="language-js">sequelize.define('user', {
 
 }, {
   tableName: 'users'
 });
 </code></pre>
-
 <h2 id="fields">Fields</h2>
-<pre><code class="js">sequelize.define('modelName', {
+<pre><code class="language-js">sequelize.define('modelName', {
   userId: {
     type: Sequelize.INTEGER,
     field: 'user_id'
   }
 });
 </code></pre>
-
 <h2 id="primary-keys">Primary keys</h2>
 <p>Sequelize will assume your table has a <code>id</code> primary key property by default.</p>
 <p>To define your own primary key:</p>
-<pre><code class="js">sequelize.define('collection', {
+<pre><code class="language-js">sequelize.define('collection', {
   uid: {
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -203,10 +201,9 @@ sequelize.define('collection', {
   }
 });
 </code></pre>
-
 <p>And if your model has no primary key at all you can use <code>Model.removeAttribute('id');</code></p>
 <h2 id="foreign-keys">Foreign keys</h2>
-<pre><code class="js">// 1:1
+<pre><code class="language-js">// 1:1
 Organization.belongsTo(User, {foreignKey: 'owner_id'});
 User.hasOne(Organization, {foreignKey: 'owner_id'});
 

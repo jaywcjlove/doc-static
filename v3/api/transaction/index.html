@@ -232,15 +232,14 @@
 Default to <code>DEFERRED</code> but you can override the default type by passing <code>options.transactionType</code> in <code>new Sequelize</code>.
 Sqlite only.</p>
 <p>The possible types to use when starting a transaction:</p>
-<pre><code class="js">{
+<pre><code class="language-js">{
   DEFERRED: &quot;DEFERRED&quot;,
   IMMEDIATE: &quot;IMMEDIATE&quot;,
   EXCLUSIVE: &quot;EXCLUSIVE&quot;
 }
 </code></pre>
-
 <p>Pass in the desired level as the first argument:</p>
-<pre><code class="js">return sequelize.transaction({
+<pre><code class="language-js">return sequelize.transaction({
   type: Sequelize.Transaction.EXCLUSIVE
 }, function (t) {
 
@@ -252,7 +251,6 @@ Sqlite only.</p>
   // do something with the err.
 });
 </code></pre>
-
 <hr />
 <p><a name="isolation_levels"></a></p>
 <h2 id="isolation_levels"><code>ISOLATION_LEVELS</code></h2>
@@ -260,16 +258,15 @@ Sqlite only.</p>
 <p>Isolations levels can be set per-transaction by passing <code>options.isolationLevel</code> to <code>sequelize.transaction</code>.
 Default to <code>REPEATABLE_READ</code> but you can override the default isolation level by passing <code>options.isolationLevel</code> in <code>new Sequelize</code>.</p>
 <p>The possible isolations levels to use when starting a transaction:</p>
-<pre><code class="js">{
+<pre><code class="language-js">{
   READ_UNCOMMITTED: &quot;READ UNCOMMITTED&quot;,
   READ_COMMITTED: &quot;READ COMMITTED&quot;,
   REPEATABLE_READ: &quot;REPEATABLE READ&quot;,
   SERIALIZABLE: &quot;SERIALIZABLE&quot;
 }
 </code></pre>
-
 <p>Pass in the desired level as the first argument:</p>
-<pre><code class="js">return sequelize.transaction({
+<pre><code class="language-js">return sequelize.transaction({
   isolationLevel: Sequelize.Transaction.SERIALIZABLE
 }, function (t) {
 
@@ -281,30 +278,27 @@ Default to <code>REPEATABLE_READ</code> but you can override the default isolati
   // do something with the err.
 });
 </code></pre>
-
 <hr />
 <p><a name="lock"></a></p>
 <h2 id="lock"><code>LOCK</code></h2>
 <p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/transaction.js#L160">View code</a></p>
 <p>Possible options for row locking. Used in conjunction with <code>find</code> calls:</p>
-<pre><code class="js">t1 // is a transaction
+<pre><code class="language-js">t1 // is a transaction
 t1.LOCK.UPDATE,
 t1.LOCK.SHARE,
 t1.LOCK.KEY_SHARE, // Postgres 9.3+ only
 t1.LOCK.NO_KEY_UPDATE // Postgres 9.3+ only
 </code></pre>
-
 <p>Usage:</p>
-<pre><code class="js">t1 // is a transaction
+<pre><code class="language-js">t1 // is a transaction
 Model.findAll({
   where: ...,
   transaction: t1,
   lock: t1.LOCK...
 });
 </code></pre>
-
 <p>Postgres also supports specific locks while eager loading by using OF:</p>
-<pre><code class="js">UserModel.findAll({
+<pre><code class="language-js">UserModel.findAll({
   where: ...,
   include: [TaskModel, ...],
   transaction: t1,
@@ -314,7 +308,6 @@ Model.findAll({
   }
 });
 </code></pre>
-
 <p>UserModel will be locked but TaskModel won't!</p>
 <hr />
 <p><a name="commit"></a></p>

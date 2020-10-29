@@ -170,29 +170,26 @@
                 <p>Sequelize <code>2.0.0</code> introduces a new CLI which is based on <a href="http://gulpjs.com/">gulp</a> and combines <a href="https://github.com/sequelize/cli">sequelize-cli</a> and <a href="https://github.com/sequelize/gulp-sequelize">gulp-sequelize</a>. The CLI ships support for migrations and project bootstrapping. With migrations you can transfer your existing database into another state and vice versa: Those state transitions are saved in migration files, which describe the way how to get to the new state and how to revert the changes in order to get back to the old state.</p>
 <h2 id="the-cli">The CLI</h2>
 <p>In order to use the CLI you need to install the respective package:</p>
-<pre><code class="bash">$ npm install --save sequelize-cli
+<pre><code class="language-bash">$ npm install --save sequelize-cli
 </code></pre>
-
 <p>As with any npm package, you can use the global flag (<code>-g</code>) to install the CLI globally. If you have installed the CLI without the global flag, use <code>node_modules/.bin/sequelize [command]</code> instead of <code>sequelize [command]</code>.</p>
 <p>The CLI currently supports the following commands:</p>
-<pre><code class="bash">$ sequelize db:migrate        # Run pending migrations.
+<pre><code class="language-bash">$ sequelize db:migrate        # Run pending migrations.
 $ sequelize db:migrate:undo   # Revert the last migration run.
 $ sequelize help              # Display this help text.
 $ sequelize init              # Initializes the project.
 $ sequelize migration:create  # Generates a new migration file.
 $ sequelize version           # Prints the version number.
 </code></pre>
-
 <p>Further and more detailed information about the available commands
 can be obtained via the help command:</p>
-<pre><code class="bash">$ sequelize help:init
+<pre><code class="language-bash">$ sequelize help:init
 $ sequelize help:db:migrate
 $ sequelize help:db:migrate:undo
 # etc
 </code></pre>
-
 <p>The latter one for example will print out the following output:</p>
-<pre><code class="bash">Sequelize [CLI: v0.0.2, ORM: v1.7.5]
+<pre><code class="language-bash">Sequelize [CLI: v0.0.2, ORM: v1.7.5]
 
 COMMANDS
     sequelize db:migrate:undo -- Revert the last migration run.
@@ -206,10 +203,9 @@ OPTIONS
     --coffee        Enables coffee script support. Default: false
     --config        The path to the config file. Default: config/config.json
 </code></pre>
-
 <h2 id="skeleton">Skeleton</h2>
 <p>The following skeleton shows a typical migration file. All migrations are expected to be located in a folder called <code>migrations</code> at the very top of the project. The sequelize binary can generate a migration skeleton. See the above section for more details.</p>
-<pre><code class="js">module.exports = {
+<pre><code class="language-js">module.exports = {
   up: function(queryInterface, Sequelize) {
     // logic for transforming into the new state
   },
@@ -219,21 +215,19 @@ OPTIONS
   }
 }
 </code></pre>
-
 <p>The passed <code>queryInterface</code> object can be used to modify the database. The <code>Sequelize</code> object stores the available data types such as <code>STRING</code> or <code>INTEGER</code>. Function <code>up</code> or <code>down</code> should return a <code>Promise</code>. Here is some code:</p>
-<pre><code class="js">module.exports = {
+<pre><code class="language-js">module.exports = {
   up: function(queryInterface, Sequelize) {
     return queryInterface.dropAllTables();
   }
 }
 </code></pre>
-
 <p>The available methods of the queryInterface object are the following.</p>
 <h2 id="functions">Functions</h2>
 <p>Using the <code>queryInterface</code> object describe before, you will have access to most of already introduced functions. Furthermore there are some other methods, which are designed to actually change the database schema.</p>
 <h3 id="createtabletablename-attributes-options">createTable(tableName, attributes, options)</h3>
 <p>This method allows creation of new tables. It is allowed to pass simple or complex attribute definitions. You can define the encoding of the table and the table's engine via options</p>
-<pre><code class="js">queryInterface.createTable(
+<pre><code class="language-js">queryInterface.createTable(
   'nameOfTheNewTable',
   {
     id: {
@@ -271,30 +265,25 @@ OPTIONS
   }
 )
 </code></pre>
-
 <h3 id="droptabletablename-options">dropTable(tableName, options)</h3>
 <p>This method allows deletion of an existing table.</p>
-<pre><code class="js">queryInterface.dropTable('nameOfTheExistingTable')
+<pre><code class="language-js">queryInterface.dropTable('nameOfTheExistingTable')
 </code></pre>
-
 <h3 id="dropalltablesoptions">dropAllTables(options)</h3>
 <p>This method allows deletion of all existing tables in the database.</p>
-<pre><code class="js">queryInterface.dropAllTables()
+<pre><code class="language-js">queryInterface.dropAllTables()
 </code></pre>
-
 <h3 id="renametablebefore-after-options">renameTable(before, after, options)</h3>
 <p>This method allows renaming of an existing table.</p>
-<pre><code class="js">queryInterface.renameTable('Person', 'User')
+<pre><code class="language-js">queryInterface.renameTable('Person', 'User')
 </code></pre>
-
 <h3 id="showalltablesoptions">showAllTables(options)</h3>
 <p>This method returns the name of all existing tables in the database.</p>
-<pre><code class="js">queryInterface.showAllTables().then(function(tableNames) {})
+<pre><code class="language-js">queryInterface.showAllTables().then(function(tableNames) {})
 </code></pre>
-
 <h3 id="describetabletablename-options">describeTable(tableName, options)</h3>
 <p>This method returns an array of hashes containing information about all attributes in the table.</p>
-<pre><code class="js">queryInterface.describeTable('Person').then(function(attributes) {
+<pre><code class="language-js">queryInterface.describeTable('Person').then(function(attributes) {
   /*
     attributes will be something like:
  
@@ -313,10 +302,9 @@ OPTIONS
   */
 })
 </code></pre>
-
 <h3 id="addcolumntablename-attributename-datatypeoroptions-options">addColumn(tableName, attributeName, dataTypeOrOptions, options)</h3>
 <p>This method allows adding columns to an existing table. The data type can be simple or complex.</p>
-<pre><code class="js">queryInterface.addColumn(
+<pre><code class="language-js">queryInterface.addColumn(
   'nameOfAnExistingTable',
   'nameOfTheNewAttribute',
   Sequelize.STRING
@@ -333,15 +321,13 @@ queryInterface.addColumn(
   }
 )
 </code></pre>
-
 <h3 id="removecolumntablename-attributename-options">removeColumn(tableName, attributeName, options)</h3>
 <p>This method allows deletion of a specific column of an existing table.</p>
-<pre><code class="js">queryInterface.removeColumn('Person', 'signature')
+<pre><code class="language-js">queryInterface.removeColumn('Person', 'signature')
 </code></pre>
-
 <h3 id="changecolumntablename-attributename-datatypeoroptions-options">changeColumn(tableName, attributeName, dataTypeOrOptions, options)</h3>
 <p>This method changes the meta data of an attribute. It is possible to change the default value, allowance of null or the data type. Please make sure, that you are completely describing the new data type.</p>
-<pre><code class="js">queryInterface.changeColumn(
+<pre><code class="language-js">queryInterface.changeColumn(
   'nameOfAnExistingTable',
   'nameOfAnExistingAttribute',
   {
@@ -351,15 +337,13 @@ queryInterface.addColumn(
   }
 )
 </code></pre>
-
 <h3 id="renamecolumntablename-attrnamebefore-attrnameafter-options">renameColumn(tableName, attrNameBefore, attrNameAfter, options)</h3>
 <p>This methods allows renaming attributes.</p>
-<pre><code class="js">queryInterface.renameColumn('Person', 'signature', 'sig')
+<pre><code class="language-js">queryInterface.renameColumn('Person', 'signature', 'sig')
 </code></pre>
-
 <h3 id="addindextablename-attributes-options">addIndex(tableName, attributes, options)</h3>
 <p>This methods creates indexes for specific attributes of a table. The index name will be automatically generated if it is not passed via in the options (see below).</p>
-<pre><code class="js">// This example will create the index person_firstname_lastname
+<pre><code class="language-js">// This example will create the index person_firstname_lastname
 queryInterface.addIndex('Person', ['firstname', 'lastname'])
 
 // This example will create a unique index with the name SuperDuperIndex using the optional 'options' field.
@@ -378,16 +362,14 @@ queryInterface.addIndex(
   }
 )
 </code></pre>
-
 <h3 id="removeindextablename-indexnameorattributes-options">removeIndex(tableName, indexNameOrAttributes, options)</h3>
 <p>This method deletes an existing index of a table.</p>
-<pre><code class="js">queryInterface.removeIndex('Person', 'SuperDuperIndex')
+<pre><code class="language-js">queryInterface.removeIndex('Person', 'SuperDuperIndex')
  
 // or
  
 queryInterface.removeIndex('Person', ['firstname', 'lastname'])
 </code></pre>
-
 <h2 id="programmatic-use">Programmatic use</h2>
 <p>Sequelize has a <a href="https://github.com/sequelize/umzug">sister library</a> for programmatically handling execution and logging of migration tasks.</p>
               

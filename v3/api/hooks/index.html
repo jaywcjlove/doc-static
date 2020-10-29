@@ -242,7 +242,7 @@
 <li>By calling <code>hook()</code> with a string and your hook handler function</li>
 <li>By calling the function with the same name as the hook you want</li>
 </ol>
-<pre><code class="js">// Method 1
+<pre><code class="language-js">// Method 1
 sequelize.define(name, { attributes }, {
   hooks: {
     beforeBulkCreate: function () {
@@ -261,7 +261,6 @@ Model.hook('afterDestroy', function () {})
 // Method 3
 Model.afterBulkUpdate(function () {})
 </code></pre>
-
 <p><strong>See:</strong></p>
 <ul>
 <li><a href="sequelize#define">Sequelize#define</a></li>

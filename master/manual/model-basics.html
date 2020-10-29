@@ -669,7 +669,7 @@ console.log(&quot;User table dropped!&quot;);</code>
 <pre><code class="lang-js"><code class="source-code prettyprint">await sequelize.drop();
 console.log(&quot;All tables dropped!&quot;);</code>
 </code></pre>
-<h3 id="database-safety-check">Database safety check</h3><p>As shown above, the <code>sync</code> and <code>drop</code> operations are destructive. Sequelize acceps a <code>match</code> option as an additional safety check, which receives a RegExp:</p>
+<h3 id="database-safety-check">Database safety check</h3><p>As shown above, the <code>sync</code> and <code>drop</code> operations are destructive. Sequelize accepts a <code>match</code> option as an additional safety check, which receives a RegExp:</p>
 <pre><code class="lang-js"><code class="source-code prettyprint">// This will run .sync() only if database name ends with &apos;_test&apos;
 sequelize.sync({ force: true, match: /_test$/ });</code>
 </code></pre>

@@ -225,11 +225,10 @@
 <h1 id="class-datatypes">Class DataTypes</h1>
 <p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/data-types.js#L57">View code</a></p>
 <p>A convenience class holding commonly used data types. The datatypes are used when defining a new model using <code>Sequelize.define</code>, like this:</p>
-<pre><code class="js">sequelize.define('model', {
+<pre><code class="language-js">sequelize.define('model', {
   column: DataTypes.INTEGER
 })
 </code></pre>
-
 <p>When defining a model you can just as easily pass a string as type, but often using the types defined here is beneficial. For example, using <code>DataTypes.BLOB</code>, mean
 that that column will be returned as an instance of <code>Buffer</code> when being fetched by sequelize.</p>
 <p>Some data types have special properties that can be accessed in order to change the data type.
@@ -238,7 +237,7 @@ The order you access the properties in do not matter, so <code>DataTypes.INTEGER
 <p>To provide a length for the data type, you can invoke it like a function: <code>INTEGER(2)</code></p>
 <p>Three of the values provided here (<code>NOW</code>, <code>UUIDV1</code> and <code>UUIDV4</code>) are special default values, that should not be used to define types. Instead they are used as shorthands for
 defining default values. For example, to get a uuid field with a default value generated following v1 of the UUID standard:</p>
-<pre><code class="js">sequelize.define('model', {
+<pre><code class="language-js">sequelize.define('model', {
   uuid: {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV1,
@@ -246,11 +245,10 @@ defining default values. For example, to get a uuid field with a default value g
   }
 })
 </code></pre>
-
 <p>There may be times when you want to generate your own UUID conforming to some other algorithm. This is accomplised
 using the defaultValue property as well, but instead of specifying one of the supplied UUID types, you return a value
 from a function.</p>
-<pre><code class="js">sequelize.define('model', {
+<pre><code class="language-js">sequelize.define('model', {
   uuid: {
     type: DataTypes.UUID,
     defaultValue: function() {
@@ -260,7 +258,6 @@ from a function.</p>
   }
 })
 </code></pre>
-
 <hr />
 <p><a name="string"></a></p>
 <h2 id="string"><code>STRING()</code></h2>
@@ -388,7 +385,7 @@ See {@link http://www.postgresql.org/docs/9.4/static/rangetypes.html|Postgres do
 <p><a href="https://github.com/sequelize/sequelize/blob/3e5b8772ef75169685fc96024366bca9958fee63/lib/data-types.js#L746">View code</a></p>
 <p>A virtual value that is not stored in the DB. This could for example be useful if you want to provide a default value in your model that is returned to the user but not stored in the DB.</p>
 <p>You could also use it to validate a value before permuting and storing it. Checking password length before hashing it for example:</p>
-<pre><code class="js">sequelize.define('user', {
+<pre><code class="language-js">sequelize.define('user', {
   password_hash: DataTypes.STRING,
   password: {
     type: DataTypes.VIRTUAL,
@@ -406,12 +403,11 @@ See {@link http://www.postgresql.org/docs/9.4/static/rangetypes.html|Postgres do
   }
 })
 </code></pre>
-
 <p>In the above code the password is stored plainly in the password field so it can be validated, but is never stored in the DB.</p>
 <p>VIRTUAL also takes a return type and dependency fields as arguments
 If a virtual attribute is present in <code>attributes</code> it will automatically pull in the extra fields as well.
 Return type is mostly useful for setups that rely on types like GraphQL.</p>
-<pre><code class="js">{
+<pre><code class="language-js">{
   active: {
     type: new DataTypes.VIRTUAL(DataTypes.BOOLEAN, ['createdAt']),
     get: function() {
@@ -420,7 +416,6 @@ Return type is mostly useful for setups that rely on types like GraphQL.</p>
   }
 }
 </code></pre>
-
 <p><strong>Aliases:</strong> NONE</p>
 <hr />
 <p><a name="enum"></a></p>
@@ -443,7 +438,7 @@ In MySQL, allowable Geometry types are 'POINT', 'LINESTRING', 'POLYGON'.</p>
 In PostGIS, the GeoJSON is parsed using the PostGIS function <code>ST_GeomFromGeoJSON</code>.<br />
 In MySQL it is parsed using the function <code>GeomFromText</code>.<br />
 Therefore, one can just follow the <a href="http://geojson.org/geojson-spec.html">GeoJSON spec</a> for handling geometry objects.  See the following examples:</p>
-<pre><code class="js">// Create a new point:
+<pre><code class="language-js">// Create a new point:
 var point = { type: 'Point', coordinates: [39.807222,-76.984722]};
 
 User.create({username: 'username', geometry: point }).then(function(newUser) {
@@ -478,7 +473,6 @@ User.create({username: 'username', geometry: point }).then(function(newUser) {
 ...
 });
 </code></pre>
-
 <hr />
 <p><a name="geography"></a></p>
 <h2 id="geography"><code>GEOGRAPHY()</code></h2>
