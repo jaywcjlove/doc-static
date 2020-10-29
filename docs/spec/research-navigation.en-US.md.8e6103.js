@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[289],{3350:function(e,t){e.exports={content:["article",["p","\u8BBE\u8BA1\u6A21\u5F0F - \u63A2\u7D22 - \u5168\u5C40\u89C4\u5219 - \u5BFC\u822A"]],meta:{category:"Design Patterns (Research)",type:"Global Rules",order:1,title:"Navigation",skip:!0,filename:"docs/spec/research-navigation.en-US.md"},toc:["ul"]}}}]);

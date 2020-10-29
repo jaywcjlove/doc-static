@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[280],{3329:function(a,b){a.exports={content:["article"],meta:{category:"Design Patterns (Research)",type:"Template Document",order:3,title:"List Page",skip:!0,filename:"docs/spec/research-list.en-US.md"},toc:["ul"]}}}]);
