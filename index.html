@@ -349,10 +349,28 @@
   <div id="special">
     <h3>特别赞助</h3>
     <a href="http://www.dcloud.io/?hmsr=vuejsorg&hmpl=&hmcu=&hmkw=&hmci=" target="_blank" rel="noopener sponsored">
-      <img src="/images/dcloud.gif" style="width:200px">
+      <img id="s-dcloud" alt="dcloud" style="width:200px">
+      <script>
+      (function(){
+        var el = document.getElementById("s-dcloud");
+        var adImg = null;
+        var altImg = "/images/dcloud2.png";
+        var img = "/images/dcloud1.png";
+        el.src = adImg || (altImg && Math.random() >= 0.5 ? altImg : img);
+      })()
+      </script>
     </a>
     <a href="https://coding.imooc.com/?c=vuejs&mc_marking=7cf403c3c89d6fccf944791e71e7a959&mc_channel=vuezwsq" target="_blank" rel="noopener sponsored">
-      <img src="/images/imooc-sponsor.png" style="width:200px">
+      <img id="s-imooc" alt="imooc" style="width:200px">
+      <script>
+      (function(){
+        var el = document.getElementById("s-imooc");
+        var adImg = "/images/imooc-sponsor2.png";
+        var altImg = null;
+        var img = "/images/imooc-sponsor.png";
+        el.src = adImg || (altImg && Math.random() >= 0.5 ? altImg : img);
+      })()
+      </script>
     </a>
   </div>
 
@@ -384,7 +402,7 @@
       <!--
 <h3>中国区特别赞助商</h3>
 <a href="http://www.dcloud.io/?hmsr=vuejsorg&hmpl=&hmcu=&hmkw=&hmci=" target="_blank" style="width: 160px;">
-  <img src="/images/dcloud.gif" style="width: 160px;">
+  <img src="/images/dcloud1.png" style="width: 160px;">
 </a>
 <a href="https://coding.imooc.com/?c=vuejs&mc_marking=7cf403c3c89d6fccf944791e71e7a959&mc_channel=vuezwsq" target="_blank" style="width: 160px;">
   <img src="/images/imooc-sponsor.png" style="width: 160px;">
