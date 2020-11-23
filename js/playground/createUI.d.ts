@@ -1,8 +1,9 @@
+/// <reference types="react" />
 export interface UI {
     /** Show a text modal, with some buttons */
     showModal: (message: string, postFocalElement: HTMLElement, subtitle?: string, buttons?: {
         [text: string]: string;
-    }) => void;
+    }, event?: React.MouseEvent) => void;
     /** A quick flash of some text */
     flashInfo: (message: string) => void;
     /** Creates a modal container which you can put your own DOM elements inside */
