@@ -7,7 +7,7 @@
 
 <span class="hljs-keyword">var</span> <span class="hljs-literal">undefined</span>;         <span class="hljs-comment">/*error Shadowing of global property &quot;undefined&quot;.*/</span>
 
-<span class="hljs-keyword">try</span> {} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params"><span class="hljs-built_in">eval</span></span>)</span>{}   <span class="hljs-comment">/*error Shadowing of global property &quot;eval&quot;.*/</span>
+<span class="hljs-keyword">try</span> {} <span class="hljs-keyword">catch</span>(<span class="hljs-built_in">eval</span>){}   <span class="hljs-comment">/*error Shadowing of global property &quot;eval&quot;.*/</span>
 </code></pre><p>The following patterns are not considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-shadow-restricted-names: 2*/</span>
 
 <span class="hljs-keyword">var</span> <span class="hljs-built_in">Object</span>;

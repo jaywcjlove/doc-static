@@ -10,7 +10,7 @@
     b();
 }
 
-<span class="hljs-keyword">try</span> {} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">a</span>)</span>{} <span class="hljs-comment">/*error Missing space before opening brace.*/</span>
+<span class="hljs-keyword">try</span> {} <span class="hljs-keyword">catch</span>(a){} <span class="hljs-comment">/*error Missing space before opening brace.*/</span>
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span></span>{          <span class="hljs-comment">/*error Missing space before opening brace.*/</span>
   <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span>{}   <span class="hljs-comment">/*error Missing space before opening brace.*/</span>
@@ -34,7 +34,7 @@
     b();
 }
 
-<span class="hljs-keyword">try</span> {} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">a</span>)</span> {}
+<span class="hljs-keyword">try</span> {} <span class="hljs-keyword">catch</span>(a) {}
 </code></pre><h3 id="never">&quot;never&quot;</h3><p>The following patterns are considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint space-before-blocks: [2, &quot;never&quot;]*/</span>
 
 <span class="hljs-keyword">if</span> (a) {           <span class="hljs-comment">/*error Unexpected space before opening brace.*/</span>
@@ -47,7 +47,7 @@
     b();
 }
 
-<span class="hljs-keyword">try</span> {} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">a</span>)</span> {} <span class="hljs-comment">/*error Unexpected space before opening brace.*/</span>
+<span class="hljs-keyword">try</span> {} <span class="hljs-keyword">catch</span>(a) {} <span class="hljs-comment">/*error Unexpected space before opening brace.*/</span>
 </code></pre><p>The following patterns are not considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint space-before-blocks: [2, &quot;never&quot;]*/</span>
 
 <span class="hljs-keyword">if</span> (a){
@@ -60,7 +60,7 @@
     b();
 }
 
-<span class="hljs-keyword">try</span>{} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">a</span>)</span>{}
+<span class="hljs-keyword">try</span>{} <span class="hljs-keyword">catch</span>(a){}
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span></span>{
   <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span>{}
@@ -70,7 +70,7 @@
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">a</span>(<span class="hljs-params"></span>) </span>{}    <span class="hljs-comment">/*error Unexpected space before opening brace.*/</span>
 
-<span class="hljs-keyword">try</span> {} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">a</span>)</span>{}  <span class="hljs-comment">/*error Missing space before opening brace.*/</span>
+<span class="hljs-keyword">try</span> {} <span class="hljs-keyword">catch</span>(a){}  <span class="hljs-comment">/*error Missing space before opening brace.*/</span>
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span></span>{
   <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span> {} <span class="hljs-comment">/*error Unexpected space before opening brace.*/</span>
@@ -94,7 +94,7 @@ describe(<span class="hljs-function"><span class="hljs-keyword">function</span>(
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">a</span>(<span class="hljs-params"></span>)</span>{}      <span class="hljs-comment">/*error Missing space before opening brace.*/</span>
 
-<span class="hljs-keyword">try</span> {} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">a</span>)</span> {}  <span class="hljs-comment">/*error Unexpected space before opening brace.*/</span>
+<span class="hljs-keyword">try</span> {} <span class="hljs-keyword">catch</span>(a) {}  <span class="hljs-comment">/*error Unexpected space before opening brace.*/</span>
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Foo</span> </span>{         <span class="hljs-comment">/*error Unexpected space before opening brace.*/</span>
   <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params"></span>)</span>{}   <span class="hljs-comment">/*error Missing space before opening brace.*/</span>

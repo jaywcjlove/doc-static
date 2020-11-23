@@ -18,7 +18,7 @@
 <span class="hljs-keyword">if</span> (DEBUG) { <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;debug&#x27;</span>); }
 
 <span class="hljs-comment">// a require() in a switch statement is also flagged</span>
-<span class="hljs-function"><span class="hljs-title">switch</span>(<span class="hljs-params">x</span>)</span> { <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;1&#x27;</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;1&#x27;</span>); <span class="hljs-keyword">break</span>; }
+<span class="hljs-keyword">switch</span>(x) { <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;1&#x27;</span>: <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;1&#x27;</span>); <span class="hljs-keyword">break</span>; }
 
 <span class="hljs-comment">// you may not require() inside an arrow function body</span>
 <span class="hljs-keyword">var</span> getModule = <span class="hljs-function">(<span class="hljs-params">name</span>) =&gt;</span> <span class="hljs-built_in">require</span>(name);
@@ -29,7 +29,7 @@
 <span class="hljs-comment">// you may not require() inside of a try/catch block</span>
 <span class="hljs-keyword">try</span> {
     <span class="hljs-built_in">require</span>(unsafeModule);
-} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span> {
+} <span class="hljs-keyword">catch</span>(e) {
     <span class="hljs-built_in">console</span>.log(e);
 }
 </code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint global-require: &quot;error&quot;*/</span>

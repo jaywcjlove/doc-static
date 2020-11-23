@@ -43,7 +43,7 @@
 }
 </code></pre><h3 id="switchcase">SwitchCase</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>2, { &quot;SwitchCase&quot;: 1 }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: [&quot;error&quot;, 2, { &quot;SwitchCase&quot;: 1 }]*/</span>
 
-<span class="hljs-function"><span class="hljs-title">switch</span>(<span class="hljs-params">a</span>)</span>{
+<span class="hljs-keyword">switch</span>(a){
 <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;a&quot;</span>:
     <span class="hljs-keyword">break</span>;
 <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;b&quot;</span>:
@@ -51,7 +51,7 @@
 }
 </code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>2, { &quot;SwitchCase&quot;: 1 }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: [&quot;error&quot;, 2, { &quot;SwitchCase&quot;: 1 }]*/</span>
 
-<span class="hljs-function"><span class="hljs-title">switch</span>(<span class="hljs-params">a</span>)</span>{
+<span class="hljs-keyword">switch</span>(a){
   <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;a&quot;</span>:
     <span class="hljs-keyword">break</span>;
   <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;b&quot;</span>:
@@ -116,7 +116,7 @@
 })();
 
 
-<span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">y</span>)</span> {
+<span class="hljs-keyword">if</span>(y) {
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;foo&#x27;</span>);
 }
 </code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the options <code>2, {&quot;outerIIFEBody&quot;: 0}</code>:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: [&quot;error&quot;, 2, { &quot;outerIIFEBody&quot;: 0 }]*/</span>
@@ -130,7 +130,7 @@
 })();
 
 
-<span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">y</span>)</span> {
+<span class="hljs-keyword">if</span>(y) {
    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;foo&#x27;</span>);
 }
 </code></pre><h3 id="memberexpression">MemberExpression</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the <code>2, { &quot;MemberExpression&quot;: 1 }</code> options:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint indent: [&quot;error&quot;, 2, { &quot;MemberExpression&quot;: 1 }]*/</span>

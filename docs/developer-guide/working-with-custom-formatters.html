@@ -93,7 +93,7 @@
                 <span class="hljs-keyword">var</span> logMessage = {
                     <span class="hljs-attr">filePath</span>: current.filePath,
                     <span class="hljs-attr">ruleId</span>: msg.ruleId,
-                    <span class="hljs-attr">ruleUrl</span>: data.rulesMeta[msg.ruleId].url,
+                    <span class="hljs-attr">ruleUrl</span>: data.rulesMeta[msg.ruleId].docs.url,
                     <span class="hljs-attr">message</span>: msg.message,
                     <span class="hljs-attr">line</span>: msg.line,
                     <span class="hljs-attr">column</span>: msg.column
@@ -124,7 +124,7 @@
                     <span class="hljs-string">&quot;\n&quot;</span> +
                     msg.type +
                     <span class="hljs-string">&quot; &quot;</span> +
-                    msg.ruleId + (msg.ruleUrl ? <span class="hljs-string">&quot; (&quot;</span> + msg.ruleUrl + <span class="hljs-string">&quot;)&quot;</span> : <span class="hljs-string">&quot;&quot;</span>
+                    msg.ruleId + (msg.ruleUrl ? <span class="hljs-string">&quot; (&quot;</span> + msg.ruleUrl + <span class="hljs-string">&quot;)&quot;</span> : <span class="hljs-string">&quot;&quot;</span>) +
                     <span class="hljs-string">&quot;\n  &quot;</span> +
                     msg.filePath +
                     <span class="hljs-string">&quot;:&quot;</span> +

@@ -23,11 +23,11 @@ b = <span class="hljs-number">10</span>;
 }
 </code></pre><h4 id="typeof"><code>typeof</code></h4><p>You can use this option if you want to prevent <code>typeof</code> check on a variable which has not been declared.</p><p>The following patterns are considered problems with option <code>typeof</code> set:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/* eslint no-undef: [2, { typeof: true }] */</span>
 
-<span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params"><span class="hljs-keyword">typeof</span> a === <span class="hljs-string">&quot;string&quot;</span></span>)</span>{}      <span class="hljs-comment">/* error &#x27;a&#x27; is not defined. */</span>
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> a === <span class="hljs-string">&quot;string&quot;</span>){}      <span class="hljs-comment">/* error &#x27;a&#x27; is not defined. */</span>
 </code></pre><p>The following patterns are not considered problems with option <code>typeof</code> set:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/* eslint no-undef: [2, { typeof: true }] */</span>
 <span class="hljs-comment">/*global a*/</span>
 
-<span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params"><span class="hljs-keyword">typeof</span> a === <span class="hljs-string">&quot;string&quot;</span></span>)</span>{}
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> a === <span class="hljs-string">&quot;string&quot;</span>){}
 </code></pre><h2 id="environments">Environments</h2><p>For convenience, ESLint provides shortcuts that pre-define global variables exposed by popular libraries and runtime environments. This rule supports these environments, as listed in <a href="https://eslint.org/docs/user-guide/configuring#specifying-environments">Specifying Environments</a>. A few examples are given below.</p><h3 id="browser"><code>browser</code></h3><p>Defines common browser globals.</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint-env browser*/</span>
 
 <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{

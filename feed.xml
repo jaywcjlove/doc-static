@@ -7,6 +7,71 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>ESLint v7.14.0 released</title>
+        <description>&lt;h1 id=&quot;eslint-v7140-released&quot;&gt;ESLint v7.14.0 released&lt;/h1&gt;
+&lt;p&gt;We just pushed ESLint v7.14.0, which is a minor release upgrade of ESLint. This release adds some new features and fixes several bugs found in the previous release.&lt;/p&gt;
+&lt;h2 id=&quot;highlights&quot;&gt;Highlights&lt;/h2&gt;
+&lt;p&gt;The &lt;a href=&quot;/docs/rules/no-nonoctal-decimal-escape&quot;&gt;no-nonoctal-decimal-escape&lt;/a&gt; rule has been added. This rule disallows the use of legacy escape sequences &lt;code&gt;\8&lt;/code&gt; and &lt;code&gt;\9&lt;/code&gt; in string literals.&lt;/p&gt;
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/98c00c41d2aecb3a990393d430694f4ce6b47de5&quot;&gt;&lt;code&gt;98c00c4&lt;/code&gt;&lt;/a&gt; New: Add &lt;a href=&quot;/docs/rules/no-nonoctal-decimal-escape&quot;&gt;no-nonoctal-decimal-escape&lt;/a&gt; rule (fixes &lt;a href=&quot;https://github.com/eslint/eslint/issues/13765&quot;&gt;#13765&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13845&quot;&gt;#13845&lt;/a&gt;) (Milos Djermanovic)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/5f0907399a9666dec78c74384c8969c01483c30e&quot;&gt;&lt;code&gt;5f09073&lt;/code&gt;&lt;/a&gt; Update: fix &apos;skip&apos; options in &lt;a href=&quot;/docs/rules/no-irregular-whitespace&quot;&gt;no-irregular-whitespace&lt;/a&gt; (fixes &lt;a href=&quot;https://github.com/eslint/eslint/issues/13852&quot;&gt;#13852&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13853&quot;&gt;#13853&lt;/a&gt;) (Milos Djermanovic)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;bug-fixes&quot;&gt;Bug Fixes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/2004b7ecd3db0d4e7376cc3344246f7b9ada5801&quot;&gt;&lt;code&gt;2004b7e&lt;/code&gt;&lt;/a&gt; Fix: enable debug logs for @eslint/eslintrc (fixes &lt;a href=&quot;https://github.com/eslint/eslint/issues/13850&quot;&gt;#13850&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13861&quot;&gt;#13861&lt;/a&gt;) (Milos Djermanovic)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/d2239a1fdec452e24ede04e990d16d42516fa538&quot;&gt;&lt;code&gt;d2239a1&lt;/code&gt;&lt;/a&gt; Fix: &lt;a href=&quot;/docs/rules/no-useless-constructor&quot;&gt;no-useless-constructor&lt;/a&gt; crash on bodyless constructor (fixes &lt;a href=&quot;https://github.com/eslint/eslint/issues/13830&quot;&gt;#13830&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13842&quot;&gt;#13842&lt;/a&gt;) (Ari Perkkiö)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;documentation&quot;&gt;Documentation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/1861b4086f1018f43ab19744d866d5da986c500d&quot;&gt;&lt;code&gt;1861b40&lt;/code&gt;&lt;/a&gt; Docs: correct the &lt;a href=&quot;/docs/rules/function-call-argument-newline&quot;&gt;function-call-argument-newline&lt;/a&gt; &apos;default&apos; descriptions (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13866&quot;&gt;#13866&lt;/a&gt;) (Trevin Hofmann)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/eda0aa18498dd85eb618873e8e0f4ac97032cfca&quot;&gt;&lt;code&gt;eda0aa1&lt;/code&gt;&lt;/a&gt; Docs: &lt;a href=&quot;/docs/rules/no-restricted-imports&quot;&gt;no-restricted-imports&lt;/a&gt; is only for static imports (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13863&quot;&gt;#13863&lt;/a&gt;) (Robat Williams)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/042ae44682a8a6c5037d920689124e2304056dd8&quot;&gt;&lt;code&gt;042ae44&lt;/code&gt;&lt;/a&gt; Docs: Fix JS syntax and doc URL in working-with-custom-formatters.md (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13828&quot;&gt;#13828&lt;/a&gt;) (Raphael LANG)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;chores&quot;&gt;Chores&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/95d2fe6057498fc1cc2193d28c8c2d1593224b33&quot;&gt;&lt;code&gt;95d2fe6&lt;/code&gt;&lt;/a&gt; Chore: remove eslint comment from &lt;a href=&quot;/docs/rules/no-octal-escape&quot;&gt;no-octal-escape&lt;/a&gt; tests (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13846&quot;&gt;#13846&lt;/a&gt;) (Milos Djermanovic)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/038dc73c99ae68eae2035ef303f3a947053c8f05&quot;&gt;&lt;code&gt;038dc73&lt;/code&gt;&lt;/a&gt; Chore: Test on Node.js 15 (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13844&quot;&gt;#13844&lt;/a&gt;) (Brandon Mills)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>2020-11-20</pubDate>
+        <link>/blog/2020/11/eslint-v7.14.0-released</link>
+        <guid isPermaLink="true">/blog/2020/11/eslint-v7.14.0-released</guid>
+      </item>
+    
+      <item>
+        <title>ESLint v7.13.0 released</title>
+        <description>&lt;h1 id=&quot;eslint-v7130-released&quot;&gt;ESLint v7.13.0 released&lt;/h1&gt;
+&lt;p&gt;We just pushed ESLint v7.13.0, which is a minor release upgrade of ESLint. This release adds some new features and fixes several bugs found in the previous release.&lt;/p&gt;
+&lt;h2 id=&quot;highlights&quot;&gt;Highlights&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://eslint.org/docs/developer-guide/working-with-rules#per-rule-performance&quot;&gt;Per-rule performance&lt;/a&gt; metrics can now show more than ten rules. Set the &lt;code&gt;TIMING&lt;/code&gt; environment variable to the desired list size or &lt;code&gt;all&lt;/code&gt; to display all rules.&lt;/p&gt;
+&lt;pre class=&quot;hljs highlight-bash&quot;&gt;&lt;code&gt;$ TIMING=50 eslint lib
+
+$ TIMING=100 eslint lib
+
+$ TIMING=all eslint lib
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/254e00fea8745ff5a8bcc8cb874fcfd02996d81b&quot;&gt;&lt;code&gt;254e00f&lt;/code&gt;&lt;/a&gt; New: Configurable List Size For Per-Rule Performance Metrics (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13812&quot;&gt;#13812&lt;/a&gt;) (Bryan Mishkin)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;documentation&quot;&gt;Documentation&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/6c3c710ade7cd8654990f1adb55b58f038eab92d&quot;&gt;&lt;code&gt;6c3c710&lt;/code&gt;&lt;/a&gt; Docs: fix broken url in docs (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13815&quot;&gt;#13815&lt;/a&gt;) (SaintMalik)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/fb6fcbfe0a8c41b92f0a33ab90f159037bd195e2&quot;&gt;&lt;code&gt;fb6fcbf&lt;/code&gt;&lt;/a&gt; Docs: Fix reference to Code of Conduct (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13797&quot;&gt;#13797&lt;/a&gt;) (Tobias Nießen)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        
+        <pubDate>2020-11-06</pubDate>
+        <link>/blog/2020/11/eslint-v7.13.0-released</link>
+        <guid isPermaLink="true">/blog/2020/11/eslint-v7.13.0-released</guid>
+      </item>
+    
+      <item>
         <title>ESLint v7.12.1 released</title>
         <description>&lt;h1 id=&quot;eslint-v7121-released&quot;&gt;ESLint v7.12.1 released&lt;/h1&gt;
 &lt;p&gt;We just pushed ESLint v7.12.1, which is a patch release upgrade of ESLint. This release fixes several bugs found in the previous release.&lt;/p&gt;
@@ -241,83 +306,6 @@
         <pubDate>2020-09-01</pubDate>
         <link>/blog/2020/09/eslint-v7.8.1-released</link>
         <guid isPermaLink="true">/blog/2020/09/eslint-v7.8.1-released</guid>
-      </item>
-    
-      <item>
-        <title>ESLint v7.8.0 released</title>
-        <description>&lt;h1 id=&quot;eslint-v780-released&quot;&gt;ESLint v7.8.0 released&lt;/h1&gt;
-&lt;p&gt;We just pushed ESLint v7.8.0, which is a minor release upgrade of ESLint. This release adds some new features and fixes several bugs found in the previous release.&lt;/p&gt;
-&lt;h2 id=&quot;highlights&quot;&gt;Highlights&lt;/h2&gt;
-&lt;p&gt;Support for &lt;a href=&quot;https://github.com/tc39/proposal-logical-assignment&quot;&gt;logical assignment operators&lt;/a&gt; and &lt;a href=&quot;https://github.com/tc39/proposal-numeric-separator&quot;&gt;numeric separators&lt;/a&gt; has landed in ESLint! To enable linting this syntax, please set &lt;code&gt;ecmaVersion&lt;/code&gt; to &lt;code&gt;2021&lt;/code&gt;:&lt;/p&gt;
-&lt;pre class=&quot;hljs highlight-json&quot;&gt;&lt;code&gt;{
-    &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;parserOptions&amp;quot;&lt;/span&gt;: {
-        &lt;span class=&quot;hljs-attr&quot;&gt;&amp;quot;ecmaVersion&amp;quot;&lt;/span&gt;: &lt;span class=&quot;hljs-number&quot;&gt;2021&lt;/span&gt;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;enhancements&quot;&gt;Enhancements&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/58abd9311900a8af5a3c0963daaf64675bdd8383&quot;&gt;&lt;code&gt;58abd93&lt;/code&gt;&lt;/a&gt; Update: support logical assignments in code path analysis (refs &lt;a href=&quot;https://github.com/eslint/eslint/issues/13569&quot;&gt;#13569&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13612&quot;&gt;#13612&lt;/a&gt;) (Milos Djermanovic)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/db7488e6326fd1b7ea04c5062beb1c5f75fc15ed&quot;&gt;&lt;code&gt;db7488e&lt;/code&gt;&lt;/a&gt; Update: support logical assignments in core rules (refs &lt;a href=&quot;https://github.com/eslint/eslint/issues/13569&quot;&gt;#13569&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13618&quot;&gt;#13618&lt;/a&gt;) (Milos Djermanovic)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/88a9ade7643bb166efbab45cee15f3269496f4be&quot;&gt;&lt;code&gt;88a9ade&lt;/code&gt;&lt;/a&gt; Update: add es2021 environment (refs &lt;a href=&quot;https://github.com/eslint/eslint/issues/13602&quot;&gt;#13602&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13603&quot;&gt;#13603&lt;/a&gt;) (Milos Djermanovic)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/0003dc0f966f2b47555595586f84eb3163cb0179&quot;&gt;&lt;code&gt;0003dc0&lt;/code&gt;&lt;/a&gt; Update: support numeric separators (refs &lt;a href=&quot;https://github.com/eslint/eslint/issues/13568&quot;&gt;#13568&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13581&quot;&gt;#13581&lt;/a&gt;) (Milos Djermanovic)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/96b11a0717bf32b94ec768611574372320fb774b&quot;&gt;&lt;code&gt;96b11a0&lt;/code&gt;&lt;/a&gt; Update: Add exceptionPatterns to &lt;a href=&quot;/docs/rules/id-length&quot;&gt;id-length&lt;/a&gt; rule (fixes &lt;a href=&quot;https://github.com/eslint/eslint/issues/13094&quot;&gt;#13094&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13576&quot;&gt;#13576&lt;/a&gt;) (sodam)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/3439fea5c0ed330d01d874b0c9df51dd51ae792c&quot;&gt;&lt;code&gt;3439fea&lt;/code&gt;&lt;/a&gt; Update: support numeric-separator in &lt;a href=&quot;/docs/rules/no-loss-of-precision&quot;&gt;no-loss-of-precision&lt;/a&gt; (refs &lt;a href=&quot;https://github.com/eslint/eslint/issues/13568&quot;&gt;#13568&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13574&quot;&gt;#13574&lt;/a&gt;) (Anix)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/ed64767859d776145d68145419a61f5379b4dd63&quot;&gt;&lt;code&gt;ed64767&lt;/code&gt;&lt;/a&gt; Update: add comment to message in &lt;a href=&quot;/docs/rules/no-warning-comments&quot;&gt;no-warning-comments&lt;/a&gt; (fixes &lt;a href=&quot;https://github.com/eslint/eslint/issues/12327&quot;&gt;#12327&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13522&quot;&gt;#13522&lt;/a&gt;) (Anix)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/66442a9faf9872db4a40f56dde28c48f4d02fc7b&quot;&gt;&lt;code&gt;66442a9&lt;/code&gt;&lt;/a&gt; Update: Add &lt;a href=&quot;/docs/rules/no-magic-numbers&quot;&gt;no-magic-numbers&lt;/a&gt; &apos;ignoreDefaultValues&apos; option (&lt;a href=&quot;https://github.com/eslint/eslint/issues/12611&quot;&gt;#12611&lt;/a&gt;) (Dieter Luypaert)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;documentation&quot;&gt;Documentation&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/372921924778f2e525535985e17c97b988546210&quot;&gt;&lt;code&gt;3729219&lt;/code&gt;&lt;/a&gt; Docs: Update Step 1 of Development Environment documentation (klkhan)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/483bf7f3cc40e0d866798d6ca9ee1c19aa77ddd2&quot;&gt;&lt;code&gt;483bf7f&lt;/code&gt;&lt;/a&gt; Docs: fix examples in &lt;a href=&quot;/docs/rules/object-curly-newline&quot;&gt;object-curly-newline&lt;/a&gt; (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13605&quot;&gt;#13605&lt;/a&gt;) (Soobin Bak)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/1c35d57b0a5f374cc55f1727a7561bcab1962e83&quot;&gt;&lt;code&gt;1c35d57&lt;/code&gt;&lt;/a&gt; Docs: Remove stale Keybase 2FA instructions (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13622&quot;&gt;#13622&lt;/a&gt;) (Brandon Mills)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/4111d21a046b73892e2c84f92815a21ef4db63e1&quot;&gt;&lt;code&gt;4111d21&lt;/code&gt;&lt;/a&gt; Docs: Fix typo and missing article before noun in docs (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13611&quot;&gt;#13611&lt;/a&gt;) (Patrice Sandhu)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/b487164d01dd0bf66fdf2df0e374ce1c3bdb0339&quot;&gt;&lt;code&gt;b487164&lt;/code&gt;&lt;/a&gt; Docs: add exponentiation operators to &lt;a href=&quot;/docs/rules/operator-assignment&quot;&gt;operator-assignment&lt;/a&gt; documentation (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13577&quot;&gt;#13577&lt;/a&gt;) (Milos Djermanovic)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;dependency-upgrades&quot;&gt;Dependency Upgrades&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/091e52ae1ca408f3e668f394c14d214c9ce806e6&quot;&gt;&lt;code&gt;091e52a&lt;/code&gt;&lt;/a&gt; Upgrade: espree@7.3.0 (refs &lt;a href=&quot;https://github.com/eslint/eslint/issues/13568&quot;&gt;#13568&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13609&quot;&gt;#13609&lt;/a&gt;) (Kai Cataldo)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;chores&quot;&gt;Chores&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/a32032430a0779a4e3b2d137d4d0682844084b82&quot;&gt;&lt;code&gt;a320324&lt;/code&gt;&lt;/a&gt; Chore: Test formatted integers in &lt;a href=&quot;/docs/rules/no-dupe-keys&quot;&gt;no-dupe-keys&lt;/a&gt; (refs &lt;a href=&quot;https://github.com/eslint/eslint/issues/13568&quot;&gt;#13568&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13626&quot;&gt;#13626&lt;/a&gt;) (Brandon Mills)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/82669fa66670a00988db5b1d10fe8f3bf30be84e&quot;&gt;&lt;code&gt;82669fa&lt;/code&gt;&lt;/a&gt; Chore: Extract some functionality to eslintrc (refs &lt;a href=&quot;https://github.com/eslint/eslint/issues/13481&quot;&gt;#13481&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13613&quot;&gt;#13613&lt;/a&gt;) (Nicholas C. Zakas)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/bdb65ec2e672c9815bee356b61d1cd60a1072152&quot;&gt;&lt;code&gt;bdb65ec&lt;/code&gt;&lt;/a&gt; Chore: add 3rd party parsers in BUG_REPORT template (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13606&quot;&gt;#13606&lt;/a&gt;) (YeonJuan)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/f954476fb6b0664679c73babd5e8a0647572b81f&quot;&gt;&lt;code&gt;f954476&lt;/code&gt;&lt;/a&gt; Chore: add common 3rd party parsers to issue template (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13596&quot;&gt;#13596&lt;/a&gt;) (Kai Cataldo)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/eslint/eslint/commit/2bee6d256ae0516c9a9003bb3fdca24ff93253b5&quot;&gt;&lt;code&gt;2bee6d2&lt;/code&gt;&lt;/a&gt; Chore: Mark config-related files (refs &lt;a href=&quot;https://github.com/eslint/eslint/issues/13481&quot;&gt;#13481&lt;/a&gt;) (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13597&quot;&gt;#13597&lt;/a&gt;) (Nicholas C. Zakas)&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        
-        <pubDate>2020-08-31</pubDate>
-        <link>/blog/2020/08/eslint-v7.8.0-released</link>
-        <guid isPermaLink="true">/blog/2020/08/eslint-v7.8.0-released</guid>
-      </item>
-    
-      <item>
-        <title>Announcing ESLint&apos;s public roadmap</title>
-        <description>&lt;h1 id=&quot;announcing-eslints-public-roadmap&quot;&gt;Announcing ESLint&apos;s public roadmap&lt;/h1&gt;
-&lt;p&gt;When ESLint &lt;a href=&quot;https://eslint.org/blog/2019/02/funding-eslint-future&quot;&gt;first started accepting donations&lt;/a&gt;, we listed several ways that the project intended to spend the money donated:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Paying team members for maintenance and development.&lt;/strong&gt; We hired our first part-time maintainer, &lt;a href=&quot;https://github.com/kaicataldo&quot;&gt;Kai Cataldo&lt;/a&gt;, and started paying TSC members on a per-hour basis up to $1,000 each month (the maximum we can afford at the moment).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Rewarding contributions from the community.&lt;/strong&gt; We have given spot bonuses to people who have made significant contributions to ESLint.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Improve documentation.&lt;/strong&gt; We are participating in the &lt;a href=&quot;https://eslint.org/blog/2020/08/eslint-google-season-of-docs-project-writer&quot;&gt;2020 Google Season of Docs&lt;/a&gt; to improve our documentation.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Better communication and support.&lt;/strong&gt; Paying team members has allowed us to participate in the monthly TC39 tooling meeting and allowed us to pay contributors to help answer questions both in GitHub and in Discord.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Developing a Roadmap.&lt;/strong&gt; Today, we are announcing our first public roadmap!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;That last bullet point, developing a roadmap, is something we&apos;ve been working hard to figure out for several months. Paying contributors has helped give us insights into how much development time we have each month and what we can reasonably expect in the future. Our roadmap is published as a &lt;a href=&quot;https://github.com/orgs/eslint/projects/1&quot;&gt;GitHub project&lt;/a&gt; so you can check to see the status of everything we&apos;re working on. Here&apos;s an overview:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;New configuration system.&lt;/strong&gt; We&apos;ve been designing a new configuration system for the past year that is simpler and will hopefully both speed up ESLint as well as make creating plugins and shareable configs easier. (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13481&quot;&gt;issue&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Google Season of Docs participation.&lt;/strong&gt; The Season of Docs program takes several months to complete and will focus on overhauling the configuration documentation. (&lt;a href=&quot;https://github.com/eslint/eslint/issues/13130&quot;&gt;issue&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Support switching repo branches from &lt;code&gt;master&lt;/code&gt; to &lt;code&gt;main&lt;/code&gt;.&lt;/strong&gt; In the long term, we will be switching the primary branch in each repo and need to update our tooling to support it. (&lt;a href=&quot;https://github.com/eslint/eslint-release/issues/42&quot;&gt;issue&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Lint files in parallel.&lt;/strong&gt; A long-time desire of the community, we are working towards finally allowing you to lint multiple files in parallel to speed up your linting process. (&lt;a href=&quot;https://github.com/eslint/eslint/issues/3565&quot;&gt;issue&lt;/a&gt;)&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Items on the roadmap are large in scale and will take a significant amount of time to complete. Each item is something the team is committed to delivering within the next year, and as such, has a TSC member assigned to complete it. New items may be added any time the TSC decides to accept a feature and we have at least one TSC member committed to implementing it.&lt;/p&gt;
-&lt;p&gt;We hope that this public roadmap will help us explain more about how our resources are allocated on an ongoing basis and just how your donations are contributing to the maintenance and development of ESLint.&lt;/p&gt;
-</description>
-        
-        <pubDate>2020-08-28</pubDate>
-        <link>/blog/2020/08/eslint-public-roadmap</link>
-        <guid isPermaLink="true">/blog/2020/08/eslint-public-roadmap</guid>
       </item>
     
   </channel>

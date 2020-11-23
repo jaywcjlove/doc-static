@@ -6,7 +6,7 @@
 </code></pre><p>Of course, you could also have a style guide that disallows spaces around keywords.</p><p><strong>Fixable:</strong> This rule is automatically fixable using the <code>--fix</code> flag on the command line.</p><h2 id="rule-details">Rule Details</h2><p>This rule will enforce consistency of spacing around keywords and keyword-like tokens: <code>as</code> (in module declarations), <code>break</code>, <code>case</code>, <code>catch</code>, <code>class</code>, <code>const</code>, <code>continue</code>, <code>debugger</code>, <code>default</code>, <code>delete</code>, <code>do</code>, <code>else</code>, <code>export</code>, <code>extends</code>, <code>finally</code>, <code>for</code>, <code>from</code> (in module declarations), <code>function</code>, <code>get</code> (of getters), <code>if</code>, <code>import</code>, <code>in</code>, <code>instanceof</code>, <code>let</code>, <code>new</code>, <code>of</code> (in for-of statements), <code>return</code>, <code>set</code> (of setters), <code>static</code>, <code>super</code>, <code>switch</code>, <code>this</code>, <code>throw</code>, <code>try</code>, <code>typeof</code>, <code>var</code>, <code>void</code>, <code>while</code>, <code>with</code>, and <code>yield</code>.</p><p>The following patterns are considered problems:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint keyword-spacing: 2*/</span>
 <span class="hljs-comment">/*eslint-env es6*/</span>
 
-<span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">foo</span>)</span>{              <span class="hljs-comment">/*error Expected space(s) after &quot;if&quot;.*/</span>
+<span class="hljs-keyword">if</span>(foo){              <span class="hljs-comment">/*error Expected space(s) after &quot;if&quot;.*/</span>
     <span class="hljs-comment">//...</span>
 }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (bar) {      <span class="hljs-comment">/*error Expected space(s) before &quot;else&quot;.*/</span>
     <span class="hljs-comment">//...</span>
@@ -16,7 +16,7 @@
 
 <span class="hljs-keyword">try</span>{                  <span class="hljs-comment">/*error Expected space(s) after &quot;try&quot;.*/</span>
     <span class="hljs-comment">//...</span>
-}<span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span> {           <span class="hljs-comment">/*error Expected space(s) before &quot;catch&quot;.*/</span>
+}<span class="hljs-keyword">catch</span>(e) {           <span class="hljs-comment">/*error Expected space(s) before &quot;catch&quot;.*/</span>
                       <span class="hljs-comment">/*error Expected space(s) after &quot;catch&quot;.*/</span>
     <span class="hljs-comment">//...</span>
 }
@@ -166,7 +166,7 @@ obj[<span class="hljs-built_in">this</span>.foo] = <span class="hljs-number">0</
 
 <span class="hljs-keyword">if</span> (foo){              <span class="hljs-comment">/*error Unexpected space(s) after &quot;if&quot;.*/</span>
     <span class="hljs-comment">//...</span>
-} <span class="hljs-keyword">else</span> <span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">bar</span>)</span> {       <span class="hljs-comment">/*error Unexpected space(s) before &quot;else&quot;.*/</span>
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(bar) {       <span class="hljs-comment">/*error Unexpected space(s) before &quot;else&quot;.*/</span>
     <span class="hljs-comment">//...</span>
 }<span class="hljs-keyword">else</span> {                <span class="hljs-comment">/*error Unexpected space(s) after &quot;else&quot;.*/</span>
     <span class="hljs-comment">//...</span>
@@ -179,7 +179,7 @@ obj[<span class="hljs-built_in">this</span>.foo] = <span class="hljs-number">0</
     <span class="hljs-comment">//...</span>
 }
 
-<span class="hljs-function"><span class="hljs-title">switch</span>(<span class="hljs-params">a</span>)</span> {
+<span class="hljs-keyword">switch</span>(a) {
     <span class="hljs-keyword">case</span> +<span class="hljs-number">1</span>:           <span class="hljs-comment">/*error Unexpected space(s) after &quot;case&quot;.*/</span>
         <span class="hljs-keyword">break</span>;
 }
@@ -211,9 +211,9 @@ obj[<span class="hljs-built_in">this</span>.foo] = <span class="hljs-number">0</
 </code></pre><p>The following patterns are considered not problems when configured <code>{&quot;before&quot;: false, &quot;after&quot;: false}</code>:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint keyword-spacing: [2, {before: false, after: false}]*/</span>
 <span class="hljs-comment">/*eslint-env es6*/</span>
 
-<span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">foo</span>)</span> {
+<span class="hljs-keyword">if</span>(foo) {
     <span class="hljs-comment">//...</span>
-}<span class="hljs-keyword">else</span> <span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">bar</span>)</span> {
+}<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(bar) {
     <span class="hljs-comment">//...</span>
 }<span class="hljs-keyword">else</span>{
     <span class="hljs-comment">//...</span>
@@ -221,11 +221,11 @@ obj[<span class="hljs-built_in">this</span>.foo] = <span class="hljs-number">0</
 
 <span class="hljs-keyword">try</span>{
     <span class="hljs-comment">//...</span>
-}<span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span> {
+}<span class="hljs-keyword">catch</span>(e) {
     <span class="hljs-comment">//...</span>
 }
 
-<span class="hljs-function"><span class="hljs-title">switch</span>(<span class="hljs-params">a</span>)</span> {
+<span class="hljs-keyword">switch</span>(a) {
     <span class="hljs-keyword">case</span>+<span class="hljs-number">1</span>:
         <span class="hljs-keyword">break</span>;
 }
@@ -234,7 +234,7 @@ obj[<span class="hljs-built_in">this</span>.foo] = <span class="hljs-number">0</
     <span class="hljs-keyword">return</span>[<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>];
 }
 
-<span class="hljs-function"><span class="hljs-title">for</span>(<span class="hljs-params"><span class="hljs-keyword">let</span>[a, b]<span class="hljs-keyword">of</span>[foo, bar, baz]</span>)</span> {
+<span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span>[a, b]<span class="hljs-keyword">of</span>[foo, bar, baz]) {
     <span class="hljs-comment">//...</span>
 }
 

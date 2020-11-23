@@ -82,9 +82,9 @@ obj[<span class="hljs-built_in">this</span>.foo] = <span class="hljs-number">0</
 }
 </code></pre><h3 id="after">after</h3><p class="incorrect icon">Examples of <strong>incorrect</strong> code for this rule with the default <code>{ &quot;after&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint keyword-spacing: [&quot;error&quot;, { &quot;after&quot;: true }]*/</span>
 
-<span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">foo</span>)</span> {
+<span class="hljs-keyword">if</span>(foo) {
     <span class="hljs-comment">//...</span>
-} <span class="hljs-keyword">else</span> <span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">bar</span>)</span> {
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(bar) {
     <span class="hljs-comment">//...</span>
 } <span class="hljs-keyword">else</span>{
     <span class="hljs-comment">//...</span>
@@ -162,9 +162,9 @@ obj[<span class="hljs-built_in">this</span>.foo] = <span class="hljs-number">0</
 }
 </code></pre><p class="correct icon">Examples of <strong>correct</strong> code for this rule with the <code>{ &quot;after&quot;: false }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint keyword-spacing: [&quot;error&quot;, { &quot;after&quot;: false }]*/</span>
 
-<span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">foo</span>)</span> {
+<span class="hljs-keyword">if</span>(foo) {
     <span class="hljs-comment">//...</span>
-} <span class="hljs-keyword">else</span> <span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">bar</span>)</span> {
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(bar) {
     <span class="hljs-comment">//...</span>
 } <span class="hljs-keyword">else</span>{
     <span class="hljs-comment">//...</span>
@@ -175,9 +175,9 @@ obj[<span class="hljs-built_in">this</span>.foo] = <span class="hljs-number">0</
   &quot;while&quot;: { &quot;after&quot;: false }
 } }]*/</span>
 
-<span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">foo</span>)</span> {
+<span class="hljs-keyword">if</span>(foo) {
     <span class="hljs-comment">//...</span>
-} <span class="hljs-keyword">else</span> <span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params">bar</span>)</span> {
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(bar) {
     <span class="hljs-comment">//...</span>
 } <span class="hljs-keyword">else</span> {
     <span class="hljs-comment">//...</span>
@@ -185,7 +185,7 @@ obj[<span class="hljs-built_in">this</span>.foo] = <span class="hljs-number">0</
 
 <span class="hljs-keyword">for</span>(;;);
 
-<span class="hljs-function"><span class="hljs-title">while</span>(<span class="hljs-params"><span class="hljs-literal">true</span></span>)</span> {
+<span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>) {
   <span class="hljs-comment">//...</span>
 }
 </code></pre><h2 id="when-not-to-use-it">When Not To Use It</h2><p>If you don't want to enforce consistency on keyword spacing, then it's safe to disable this rule.</p><h2 id="version">Version</h2><p>This rule was introduced in ESLint 2.0.0-beta.1.</p><h2 id="resources">Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/keyword-spacing.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/keyword-spacing.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline" style="text-align: center;"><li><a href="https://groups.google.com/group/eslint"><i class="fab fa-google fa-2x"></i> <span style="display:block;position:relative">Group</span></a></li><li><a href="https://github.com/eslint/eslint"><i class="fab fa-github fa-2x"></i> <span style="display:block;position:relative">Github</span></a></li><li><a href="https://twitter.com/geteslint"><i class="fab fa-twitter fa-2x"></i> <span style="display:block;position:relative">Twitter</span></a></li><li><a href="/chat"><i class="fab fa-discord fa-2x"></i> <span style="display:block;position:relative">Discord</span></a></li><br><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">www.openjsf.org</a></li><li><a href="https://github.com/eslint/website/edit/master/./docs/4.0.0/rules/keyword-spacing.md">Edit this page</a></li></ul></footer></div><script src="/assets/js/main.js"></script><script src="https://kit.fontawesome.com/6ebce1c175.js" crossorigin="anonymous"></script></body></html>

@@ -14,7 +14,7 @@
     b();
 }
 
-<span class="hljs-keyword">try</span> {} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">a</span>)</span>{}
+<span class="hljs-keyword">try</span> {} <span class="hljs-keyword">catch</span>(a){}
 </code></pre><p>The following patterns are not considered warnings when configured <code>&quot;always&quot;</code>:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">if</span> (a) {
     b();
 }
@@ -25,7 +25,7 @@
     b();
 }
 
-<span class="hljs-keyword">try</span> {} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">a</span>)</span> {}
+<span class="hljs-keyword">try</span> {} <span class="hljs-keyword">catch</span>(a) {}
 </code></pre><p>The following patterns are considered warnings when configured <code>&quot;never&quot;</code>:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">if</span> (a) {
     b();
 }
@@ -36,7 +36,7 @@
     b();
 }
 
-<span class="hljs-keyword">try</span> {} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">a</span>)</span> {}
+<span class="hljs-keyword">try</span> {} <span class="hljs-keyword">catch</span>(a) {}
 </code></pre><p>The following patterns are not considered warnings when configured <code>&quot;never&quot;</code>:</p><pre class="hljs highlight-js"><code><span class="hljs-keyword">if</span> (a){
     b();
 }
@@ -47,5 +47,5 @@
     b();
 }
 
-<span class="hljs-keyword">try</span>{} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">a</span>)</span>{}
+<span class="hljs-keyword">try</span>{} <span class="hljs-keyword">catch</span>(a){}
 </code></pre><h2 id="when-not-to-use-it">When Not To Use It</h2><p>You can turn this rule off if you are not concerned with the consistency of spacing before blocks or if you are using the <code>space-after-keywords</code> rule set to <code>&quot;never&quot;</code>.</p><h2 id="related-rules">Related Rules</h2><ul><li><a href="space-after-keywords">space-after-keywords</a></li><li><a href="brace-style">brace-style</a></li></ul><h2 id="version">Version</h2><p>This rule was introduced in ESLint 0.9.0.</p><h2 id="resources">Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/space-before-blocks.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/space-before-blocks.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline" style="text-align: center;"><li><a href="https://groups.google.com/group/eslint"><i class="fab fa-google fa-2x"></i> <span style="display:block;position:relative">Group</span></a></li><li><a href="https://github.com/eslint/eslint"><i class="fab fa-github fa-2x"></i> <span style="display:block;position:relative">Github</span></a></li><li><a href="https://twitter.com/geteslint"><i class="fab fa-twitter fa-2x"></i> <span style="display:block;position:relative">Twitter</span></a></li><li><a href="/chat"><i class="fab fa-discord fa-2x"></i> <span style="display:block;position:relative">Discord</span></a></li><br><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">www.openjsf.org</a></li><li><a href="https://github.com/eslint/website/edit/master/./docs/1.0.0/rules/space-before-blocks.md">Edit this page</a></li></ul></footer></div><script src="/assets/js/main.js"></script><script src="https://kit.fontawesome.com/6ebce1c175.js" crossorigin="anonymous"></script></body></html>

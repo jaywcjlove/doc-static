@@ -18,11 +18,11 @@ b = <span class="hljs-number">10</span>;
 }
 </code></pre><p>You can use this option if you want to prevent <code>typeof</code> check on a variable which has not been declared.</p><p class="incorrect icon">Examples of <strong>incorrect</strong> code for the <code>{ &quot;typeof&quot;: true }</code> option:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-undef: [&quot;error&quot;, { &quot;typeof&quot;: true }] */</span>
 
-<span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params"><span class="hljs-keyword">typeof</span> a === <span class="hljs-string">&quot;string&quot;</span></span>)</span>{}
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> a === <span class="hljs-string">&quot;string&quot;</span>){}
 </code></pre><p class="correct icon">Examples of <strong>correct</strong> code for the <code>{ &quot;typeof&quot;: true }</code> option with <code>global</code> declaration:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*global a*/</span>
 <span class="hljs-comment">/*eslint no-undef: [&quot;error&quot;, { &quot;typeof&quot;: true }] */</span>
 
-<span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-params"><span class="hljs-keyword">typeof</span> a === <span class="hljs-string">&quot;string&quot;</span></span>)</span>{}
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> a === <span class="hljs-string">&quot;string&quot;</span>){}
 </code></pre><h2 id="environments">Environments</h2><p>For convenience, ESLint provides shortcuts that pre-define global variables exposed by popular libraries and runtime environments. This rule supports these environments, as listed in <a href="../user-guide/configuring">Specifying Environments</a>. A few examples are given below.</p><h3 id="browser">browser</h3><p class="correct icon">Examples of <strong>correct</strong> code for this rule with <code>browser</code> environment:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint no-undef: &quot;error&quot;*/</span>
 <span class="hljs-comment">/*eslint-env browser*/</span>
 

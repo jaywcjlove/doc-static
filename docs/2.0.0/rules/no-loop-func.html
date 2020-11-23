@@ -17,7 +17,7 @@
     (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> i; })();     <span class="hljs-comment">/*error Don&#x27;t make functions within a loop*/</span>
 }
 
-<span class="hljs-function"><span class="hljs-title">while</span>(<span class="hljs-params">i</span>)</span> {
+<span class="hljs-keyword">while</span>(i) {
     <span class="hljs-keyword">var</span> a = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> i; }; <span class="hljs-comment">/*error Don&#x27;t make functions within a loop*/</span>
     a();
 }

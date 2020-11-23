@@ -16,7 +16,7 @@
 
 <span class="hljs-keyword">try</span> {} <span class="hljs-keyword">finally</span> {}
 
-<span class="hljs-keyword">try</span> {} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span> {}
+<span class="hljs-keyword">try</span> {} <span class="hljs-keyword">catch</span>(e) {}
 </code></pre><p>The following patterns are not considered errors when configured <code>&quot;never&quot;</code>:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint space-before-keywords: [&quot;error&quot;, &quot;never&quot;]*/</span>
 
 <span class="hljs-keyword">if</span> (foo) {
@@ -27,7 +27,7 @@
 
 <span class="hljs-keyword">try</span> {}<span class="hljs-keyword">finally</span> {}
 
-<span class="hljs-keyword">try</span>{}<span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span> {}
+<span class="hljs-keyword">try</span>{}<span class="hljs-keyword">catch</span>(e) {}
 </code></pre><p>The following patterns are considered errors when configured <code>&quot;always&quot;</code>:</p><pre class="hljs highlight-js"><code><span class="hljs-comment">/*eslint space-before-keywords: [&quot;error&quot;, &quot;always&quot;]*/</span>
 <span class="hljs-comment">/*eslint-env es6*/</span>
 

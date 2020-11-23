@@ -23,7 +23,7 @@
 <span class="hljs-keyword">try</span>
 {
   somethingRisky();
-} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span>
+} <span class="hljs-keyword">catch</span>(e)
 {
   handleError();
 }
@@ -50,7 +50,7 @@
 
 <span class="hljs-keyword">try</span> {
   somethingRisky();
-} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span> {
+} <span class="hljs-keyword">catch</span>(e) {
   handleError();
 }
 
@@ -63,7 +63,7 @@
 
 <span class="hljs-keyword">if</span> (foo) { bar(); } <span class="hljs-keyword">else</span> { baz(); }
 
-<span class="hljs-keyword">try</span> { somethingRisky(); } <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span> { handleError(); }
+<span class="hljs-keyword">try</span> { somethingRisky(); } <span class="hljs-keyword">catch</span>(e) { handleError(); }
 </code></pre><h4 id="stroustrup">&quot;stroustrup&quot;</h4><p>This enforces Stroustrup style. While using this setting, the following patterns are considered warnings:</p><pre class="hljs highlight-js"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params"></span>)
 </span>{
   <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
@@ -77,7 +77,7 @@
 <span class="hljs-keyword">try</span>
 {
   somethingRisky();
-} <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span>
+} <span class="hljs-keyword">catch</span>(e)
 {
   handleError();
 }
@@ -105,7 +105,7 @@
 <span class="hljs-keyword">try</span> {
   somethingRisky();
 }
-<span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span> {
+<span class="hljs-keyword">catch</span>(e) {
   handleError();
 }
 
@@ -120,5 +120,5 @@
 <span class="hljs-keyword">else</span> { baz(); }
 
 <span class="hljs-keyword">try</span> { somethingRisky(); }
-<span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">e</span>)</span> { handleError(); }
+<span class="hljs-keyword">catch</span>(e) { handleError(); }
 </code></pre><h2 id="when-not-to-use-it">When Not To Use It</h2><p>If your project will not be using the one true brace style, turn this rule off.</p><h2 id="further-reading">Further Reading</h2><ul><li><a href="http://en.wikipedia.org/wiki/Indent_style">Indent style</a></li></ul><h2 id="version">Version</h2><p>This rule was introduced in ESLint 0.0.7.</p><h2 id="resources">Resources</h2><ul><li><a href="https://github.com/eslint/eslint/tree/master/lib/rules/brace-style.js">Rule source</a></li><li><a href="https://github.com/eslint/eslint/tree/master/docs/rules/brace-style.md">Documentation source</a></li></ul></article></main><hr><div class="container"><footer><ul class="list-inline" style="text-align: center;"><li><a href="https://groups.google.com/group/eslint"><i class="fab fa-google fa-2x"></i> <span style="display:block;position:relative">Group</span></a></li><li><a href="https://github.com/eslint/eslint"><i class="fab fa-github fa-2x"></i> <span style="display:block;position:relative">Github</span></a></li><li><a href="https://twitter.com/geteslint"><i class="fab fa-twitter fa-2x"></i> <span style="display:block;position:relative">Twitter</span></a></li><li><a href="/chat"><i class="fab fa-discord fa-2x"></i> <span style="display:block;position:relative">Discord</span></a></li><br><li>Copyright OpenJS Foundation and other contributors, <a href="https://openjsf.org/">www.openjsf.org</a></li><li><a href="https://github.com/eslint/website/edit/master/./docs/1.0.0/rules/brace-style.md">Edit this page</a></li></ul></footer></div><script src="/assets/js/main.js"></script><script src="https://kit.fontawesome.com/6ebce1c175.js" crossorigin="anonymous"></script></body></html>

@@ -2,7 +2,7 @@
 (<span class="hljs-function">() =&gt;</span> {
     <span class="hljs-keyword">try</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>; <span class="hljs-comment">// 1 is returned but suspended until finally block ends</span>
-    } <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">err</span>)</span> {
+    } <span class="hljs-keyword">catch</span>(err) {
         <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
     } <span class="hljs-keyword">finally</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>; <span class="hljs-comment">// 3 is returned before 1, which we did not expect</span>
@@ -24,7 +24,7 @@
 (<span class="hljs-function">() =&gt;</span> {
     <span class="hljs-keyword">try</span> {
         <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;Try&quot;</span>)
-    } <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">err</span>)</span> {
+    } <span class="hljs-keyword">catch</span>(err) {
         <span class="hljs-keyword">throw</span> err; <span class="hljs-comment">// The error thrown from try block is catched and rethrown</span>
     } <span class="hljs-keyword">finally</span> {
         <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;Finally&quot;</span>); <span class="hljs-comment">// Finally(...) is thrown, which we did not expect</span>
@@ -47,7 +47,7 @@
 <span class="hljs-keyword">let</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">try</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
-    } <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">err</span>)</span> {
+    } <span class="hljs-keyword">catch</span>(err) {
         <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
     } <span class="hljs-keyword">finally</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>;
@@ -57,7 +57,7 @@
 <span class="hljs-keyword">let</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">try</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
-    } <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">err</span>)</span> {
+    } <span class="hljs-keyword">catch</span>(err) {
         <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
     } <span class="hljs-keyword">finally</span> {
         <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>;
@@ -67,7 +67,7 @@
 <span class="hljs-keyword">let</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">try</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
-    } <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">err</span>)</span> {
+    } <span class="hljs-keyword">catch</span>(err) {
         <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
     } <span class="hljs-keyword">finally</span> {
         <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;hola!&quot;</span>);
@@ -77,7 +77,7 @@
 <span class="hljs-keyword">let</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">try</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
-    } <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">err</span>)</span> {
+    } <span class="hljs-keyword">catch</span>(err) {
         <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
     } <span class="hljs-keyword">finally</span> {
         <span class="hljs-keyword">let</span> a = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
@@ -89,10 +89,10 @@
 <span class="hljs-keyword">let</span> foo = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a</span>) </span>{
     <span class="hljs-keyword">try</span> {
         <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
-    } <span class="hljs-function"><span class="hljs-title">catch</span>(<span class="hljs-params">err</span>)</span> {
+    } <span class="hljs-keyword">catch</span>(err) {
         <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
     } <span class="hljs-keyword">finally</span> {
-        <span class="hljs-function"><span class="hljs-title">switch</span>(<span class="hljs-params">a</span>)</span> {
+        <span class="hljs-keyword">switch</span>(a) {
             <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: {
                 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;hola!&quot;</span>)
                 <span class="hljs-keyword">break</span>;
