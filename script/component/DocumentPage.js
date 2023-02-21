@@ -1,7 +1,7 @@
 const DocumentPage = {
     template: `
 <div class="document">
-    <markdown-reader :file="readUrl" :fragment="fragment"></markdown-reader>
+    <markdown-reader :file="readUrl" :hash="hash"></markdown-reader>
     
     <div class="contribute small">
         {{$t("contribute")}} <a :href="editUrl">{{$t("edit")}}</a>
@@ -9,9 +9,11 @@ const DocumentPage = {
 </div>
 `,
     data: function() {
+        const route = normalizeRoute(this.$route);
+
         return {
-            document: this.$route.params.document,
-            fragment: this.$route.params.fragment,
+            document: route.document,
+            hash: route.hash,
             locale: $cookies.get("locale") || "en",
             readLink: "https://raw.githubusercontent.com/typeorm/typeorm/master/",
             editLink: "https://github.com/typeorm/typeorm/edit/master/"
@@ -19,20 +21,38 @@ const DocumentPage = {
     },
     watch: {
         '$route': function(to, from) {
-            this.document = to.params.document;
-            this.fragment = to.params.fragment;
+            const route = normalizeRoute(to);
+
+            this.document = route.document;
+            this.hash = route.hash;
             this.updateTitle();
         }
     },
-    create: function() {
+    mounted() {
         this.updateTitle();
     },
     methods: {
-        updateTitle: function() {
-            const link = this.$t("links").find(link => link.url === this.document);
-            if (link) {
-                window.document.title = link.name + " | TypeORM";
+        getCurrentDocumentName(links = Links) {
+            for (const link of links) {
+                if (link.url === this.document)
+                    return link.name;
+                else if (link.links instanceof Array) {
+                    const res = this.getCurrentDocumentName(link.links);
+                    if (res != null)
+                        return res;
+                }
             }
+
+            return null;
+        },
+        updateTitle: function() {
+            const documentName = this.getCurrentDocumentName();
+            if (!this.document)
+                document.title = this.$t("title");
+            else if (documentName)
+                window.document.title = documentName + " | TypeORM";
+            else
+                document.title = this.$t("title");
         }
     },
     components: {
@@ -59,3 +79,26 @@ const DocumentPage = {
         }
     }
 };
+
+// Treat https://typeorm.io/?route=%2Fentities%23what-is-entity as https://typeorm.io/entities#what-is-entity
+// This is used for Algolia DocSearch crawler indexing as a workaround
+// for the site being a single page app while utilizing a 404 page for that
+function normalizeRoute(route) {
+    let document = route.params.document;
+    let hash = route.hash;
+
+    if (route.query != null && route.query["route"] != null) {
+        const url = new URL(window.location.origin + route.query["route"]);
+        document = url.pathname.split("/")[1];
+
+        if (document == null)
+            document = route.params.document;
+        else
+            hash = url.hash;
+    }
+
+    return {
+        document,
+        hash,
+    };
+}
