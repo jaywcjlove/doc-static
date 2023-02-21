@@ -1,5 +1,5 @@
 <html lang="en"><head></head><body>
-        <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/app.component.html" target="_self"><input type="hidden" name="files[src/app/heroes/hero.ts]" value="export interface Hero {
+        <form id="mainForm" method="post" action="https://stackblitz.com/run?file=src/app/app.component.html" target="_self"><input type="hidden" name="project[files][src/app/heroes/hero.ts]" value="export interface Hero {
   id: number;
   name: string;
 }
@@ -8,8 +8,8 @@
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/heroes/heroes.service.ts]" value="import { Injectable } from '@angular/core';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/heroes/heroes.service.ts]" value="import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 
@@ -23,7 +23,7 @@ import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
+    Authorization: 'my-auth-token'
   })
 };
 
@@ -39,7 +39,7 @@ export class HeroesService {
   }
 
   /** GET heroes from the server */
-  getHeroes (): Observable<Hero[]> {
+  getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)
       .pipe(
         catchError(this.handleError('getHeroes', []))
@@ -63,7 +63,7 @@ export class HeroesService {
   //////// Save methods //////////
 
   /** POST: add a new hero to the database */
-  addHero (hero: Hero): Observable<Hero> {
+  addHero(hero: Hero): Observable<Hero> {
     return this.http.post<Hero>(this.heroesUrl, hero, httpOptions)
       .pipe(
         catchError(this.handleError('addHero', hero))
@@ -71,7 +71,7 @@ export class HeroesService {
   }
 
   /** DELETE: delete the hero from the server */
-  deleteHero (id: number): Observable<{}> {
+  deleteHero(id: number): Observable<unknown> {
     const url = `${this.heroesUrl}/${id}`; // DELETE api/heroes/42
     return this.http.delete(url, httpOptions)
       .pipe(
@@ -80,7 +80,7 @@ export class HeroesService {
   }
 
   /** PUT: update the hero on the server. Returns the updated hero upon success. */
-  updateHero (hero: Hero): Observable<Hero> {
+  updateHero(hero: Hero): Observable<Hero> {
     httpOptions.headers =
       httpOptions.headers.set('Authorization', 'my-new-auth-token');
 
@@ -95,8 +95,8 @@ export class HeroesService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/heroes/heroes.service.spec.ts]" value="import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/heroes/heroes.service.spec.ts]" value="import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 // Other imports
 import { TestBed } from '@angular/core/testing';
@@ -151,10 +151,10 @@ describe('HeroesService', () => {
 
     it('should return expected heroes (called once)', () => {
 
-      heroService.getHeroes().subscribe(
-        heroes => expect(heroes).toEqual(expectedHeroes, 'should return expected heroes'),
-        fail
-      );
+      heroService.getHeroes().subscribe({
+        next: heroes => expect(heroes).toEqual(expectedHeroes, 'should return expected heroes'),
+        error: fail,
+      });
 
       // HeroService should have made one request to GET heroes from expected URL
       const req = httpTestingController.expectOne(heroService.heroesUrl);
@@ -166,10 +166,10 @@ describe('HeroesService', () => {
 
     it('should be OK returning no heroes', () => {
 
-      heroService.getHeroes().subscribe(
-        heroes => expect(heroes.length).toEqual(0, 'should have empty heroes array'),
-        fail
-      );
+      heroService.getHeroes().subscribe({
+        next: heroes => expect(heroes.length).toEqual(0, 'should have empty heroes array'),
+        error: fail,
+      });
 
       const req = httpTestingController.expectOne(heroService.heroesUrl);
       req.flush([]); // Respond with no heroes
@@ -178,10 +178,10 @@ describe('HeroesService', () => {
     // This service reports the error but finds a way to let the app keep going.
     it('should turn 404 into an empty heroes result', () => {
 
-      heroService.getHeroes().subscribe(
-        heroes => expect(heroes.length).toEqual(0, 'should return empty heroes array'),
-        fail
-      );
+      heroService.getHeroes().subscribe({
+        next: heroes => expect(heroes.length).toEqual(0, 'should return empty heroes array'),
+        error: fail,
+      });
 
       const req = httpTestingController.expectOne(heroService.heroesUrl);
 
@@ -194,10 +194,10 @@ describe('HeroesService', () => {
 
       heroService.getHeroes().subscribe();
       heroService.getHeroes().subscribe();
-      heroService.getHeroes().subscribe(
-        heroes => expect(heroes).toEqual(expectedHeroes, 'should return expected heroes'),
-        fail
-      );
+      heroService.getHeroes().subscribe({
+        next: heroes => expect(heroes).toEqual(expectedHeroes, 'should return expected heroes'),
+        error: fail,
+      });
 
       const requests = httpTestingController.match(heroService.heroesUrl);
       expect(requests.length).toEqual(3, 'calls to getHeroes()');
@@ -217,10 +217,10 @@ describe('HeroesService', () => {
 
       const updateHero: Hero = { id: 1, name: 'A' };
 
-      heroService.updateHero(updateHero).subscribe(
-        data => expect(data).toEqual(updateHero, 'should return the hero'),
-        fail
-      );
+      heroService.updateHero(updateHero).subscribe({
+        next: data => expect(data).toEqual(updateHero, 'should return the hero'),
+        error: fail,
+      });
 
       // HeroService should have made one request to PUT hero
       const req = httpTestingController.expectOne(heroService.heroesUrl);
@@ -237,10 +237,10 @@ describe('HeroesService', () => {
     it('should turn 404 error into return of the update hero', () => {
       const updateHero: Hero = { id: 1, name: 'A' };
 
-      heroService.updateHero(updateHero).subscribe(
-        data => expect(data).toEqual(updateHero, 'should return the update hero'),
-        fail
-      );
+      heroService.updateHero(updateHero).subscribe({
+        next: data => expect(data).toEqual(updateHero, 'should return the update hero'),
+        error: fail,
+      });
 
       const req = httpTestingController.expectOne(heroService.heroesUrl);
 
@@ -257,8 +257,8 @@ describe('HeroesService', () => {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/http-error-handler.service.ts]" value="import { Injectable } from '@angular/core';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/http-error-handler.service.ts]" value="import { Injectable } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
@@ -275,17 +275,19 @@ export class HttpErrorHandler {
   constructor(private messageService: MessageService) { }
 
   /** Create curried handleError function that already knows the service name */
-  createHandleError = (serviceName = '') => <T>
-    (operation = 'operation', result = {} as T) => this.handleError(serviceName, operation, result);
+  createHandleError = (serviceName = '') =>
+    <T>(operation = 'operation', result = {} as T) =>
+      this.handleError(serviceName, operation, result);
 
   /**
    * Returns a function that handles Http operation failures.
    * This error handler lets the app continue to run as if no error occurred.
+   *
    * @param serviceName = name of the data service that attempted the operation
    * @param operation - name of the operation that failed
    * @param result - optional value to return as the observable result
    */
-  handleError<T> (serviceName = '', operation = 'operation', result = {} as T) {
+  handleError<T>(serviceName = '', operation = 'operation', result = {} as T) {
 
     return (error: HttpErrorResponse): Observable<T> => {
       // TODO: send the error to remote logging infrastructure
@@ -309,8 +311,8 @@ export class HttpErrorHandler {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/message.service.ts]" value="import { Injectable } from '@angular/core';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/message.service.ts]" value="import { Injectable } from '@angular/core';
 
 @Injectable()
 export class MessageService {
@@ -329,17 +331,157 @@ export class MessageService {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/testing/global-jasmine.ts]" value="import jasmineRequire from 'jasmine-core/lib/jasmine-core/jasmine.js';
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/styles.css]" value="/* Global Styles */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  color: #264D73;
+  font-size: 2.5rem;
+}
+h2, h3 {
+  color: #444;
+  font-weight: lighter;
+}
+h3 {
+  font-size: 1.3rem;
+}
+body {
+  padding: .5rem;
+  max-width: 1000px;
+  margin: auto;
+}
+@media (min-width: 600px) {
+  body {
+    padding: 2rem;
+  }
+}
+body, input[text] {
+  color: #333;
+  font-family: Cambria, Georgia, serif;
+}
+a {
+  cursor: pointer;
+}
+button {
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: black;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
 
-window['jasmineRequire'] = jasmineRequire;
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #e8e8e8;
+  color: #3d3d3d;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  color: white;
+  background-color:  #42545C;
+}
+nav a.active {
+  background-color: black;
+  color: white;
+}
+hr {
+  margin: 1.5rem 0;
+}
+input[type=&quot;text&quot;] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: .5rem;
+}
 
 
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/testing/http-client.spec.ts]" value="// Http testing module and mocking controller
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/test.css]" value="@import &quot;~jasmine-core/lib/jasmine-core/jasmine.css&quot;
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/main.ts]" value="import 'jasmine-core/lib/jasmine-core/jasmine-html.js';
+import 'jasmine-core/lib/jasmine-core/boot.js';
+
+declare const jasmine: any;
+
+import './polyfills';
+
+import 'zone.js/testing';
+
+import { getTestBed } from '@angular/core/testing';
+import {
+  BrowserDynamicTestingModule,
+  platformBrowserDynamicTesting
+} from '@angular/platform-browser-dynamic/testing';
+
+// Import spec files individually for Stackblitz
+import './app/heroes/heroes.service.spec.ts';
+import './testing/http-client.spec.ts';
+
+//
+bootstrap();
+
+//
+function bootstrap() {
+  if ((window as any).jasmineRef) {
+    location.reload();
+    return;
+  } else {
+    window.onload?.({} as Event);
+    (window as any).jasmineRef = jasmine.getEnv();
+  }
+
+  // First, initialize the Angular testing environment.
+  getTestBed().initTestEnvironment(
+    BrowserDynamicTestingModule,
+    platformBrowserDynamicTesting()
+  );
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/index.html]" value="<!--
+  Intentionally empty placeholder for Stackblitz.
+  Do not need index.html in zip-download either as you should run tests with `npm test`
+ -->
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/testing/http-client.spec.ts]" value="// Http testing module and mocking controller
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 // Other imports
@@ -403,7 +545,7 @@ describe('HttpClient testing', () => {
 
     // Make an HTTP GET request with specific header
     httpClient.get<Data>(testUrl, {
-        headers: new HttpHeaders({'Authorization': 'my-auth-token'})
+        headers: new HttpHeaders({Authorization: 'my-auth-token'})
       })
       .subscribe(data =>
         expect(data).toEqual(testData)
@@ -412,26 +554,26 @@ describe('HttpClient testing', () => {
       // Find request with a predicate function.
     // Expect one request with an authorization header
     const req = httpTestingController.expectOne(
-      req => req.headers.has('Authorization')
+      request => request.headers.has('Authorization')
     );
     req.flush(testData);
   });
 
   it('can test multiple requests', () => {
-    let testData: Data[] = [
+    const testData: Data[] = [
       { name: 'bob' }, { name: 'carol' },
       { name: 'ted' }, { name: 'alice' }
     ];
 
     // Make three requests in a row
     httpClient.get<Data[]>(testUrl)
-      .subscribe(d => expect(d.length).toEqual(0, 'should have no data'));
+      .subscribe(d => expect(d.length).withContext('should have no data').toEqual(0));
 
     httpClient.get<Data[]>(testUrl)
-      .subscribe(d => expect(d).toEqual([testData[0]], 'should be one element array'));
+      .subscribe(d => expect(d).withContext('should be one element array').toEqual([testData[0]]));
 
     httpClient.get<Data[]>(testUrl)
-      .subscribe(d => expect(d).toEqual(testData, 'should be expected data'));
+      .subscribe(d => expect(d).withContext('should be expected data').toEqual(testData));
 
     // get all pending requests that match the given URL
     const requests = httpTestingController.match(testUrl);
@@ -446,13 +588,13 @@ describe('HttpClient testing', () => {
   it('can test for 404 error', () => {
     const emsg = 'deliberate 404 error';
 
-    httpClient.get<Data[]>(testUrl).subscribe(
-      data => fail('should have failed with the 404 error'),
-      (error: HttpErrorResponse) => {
-        expect(error.status).toEqual(404, 'status');
-        expect(error.error).toEqual(emsg, 'message');
-      }
-    );
+    httpClient.get<Data[]>(testUrl).subscribe({
+      next: () => fail('should have failed with the 404 error'),
+      error: (error: HttpErrorResponse) => {
+        expect(error.status).withContext('status').toEqual(404);
+        expect(error.error).withContext('message').toEqual(emsg);
+      },
+    });
 
     const req = httpTestingController.expectOne(testUrl);
 
@@ -460,28 +602,20 @@ describe('HttpClient testing', () => {
     req.flush(emsg, { status: 404, statusText: 'Not Found' });
   });
 
-  it('can test for network error', () => {
-    const emsg = 'simulated network error';
+  it('can test for network error', done => {
+    // Create mock ProgressEvent with type `error`, raised when something goes wrong
+    // at network level. e.g. Connection timeout, DNS error, offline, etc.
+    const mockError = new ProgressEvent('error');
 
-    httpClient.get<Data[]>(testUrl).subscribe(
-      data => fail('should have failed with the network error'),
-      (error: HttpErrorResponse) => {
-        expect(error.error.message).toEqual(emsg, 'message');
-      }
-    );
+    httpClient.get<Data[]>(testUrl).subscribe({
+      next: () => fail('should have failed with the network error'),
+      error: (error: HttpErrorResponse) => {
+        expect(error.error).toBe(mockError);
+        done();
+      },
+    });
 
     const req = httpTestingController.expectOne(testUrl);
-
-    // Create mock ErrorEvent, raised when something goes wrong at the network level.
-    // Connection timeout, DNS error, offline, etc
-    const mockError = new ErrorEvent('Network error', {
-      message: emsg,
-      // The rest of this is optional and not used.
-      // Just showing that you could provide this too.
-      filename: 'HeroService.ts',
-      lineno: 42,
-      colno: 21
-    });
 
     // Respond with mock error
     req.error(mockError);
@@ -514,179 +648,14 @@ describe('HttpClient testing', () => {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
-}
-h2, h3 {
-  color: #444;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
-}
-body {
-  margin: 2em;
-}
-body, input[text], button {
-  color: #333;
-  font-family: Cambria, Georgia;
-}
-a {
-  cursor: pointer;
-  cursor: hand;
-}
-button {
-  font-family: Arial;
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  cursor: hand;
-}
-button:hover {
-  background-color: #cfd8dc;
-}
-button:disabled {
-  background-color: #eee;
-  color: #aaa;
-  cursor: auto;
-}
-
-/* Navigation link styles */
-nav a {
-  padding: 5px 10px;
-  text-decoration: none;
-  margin-right: 10px;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #eee;
-  border-radius: 4px;
-}
-nav a:visited, a:link {
-  color: #607D8B;
-}
-nav a:hover {
-  color: #039be5;
-  background-color: #CFD8DC;
-}
-nav a.active {
-  color: #039be5;
-}
-
-/* everywhere else */
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/test.css]" value="@import &quot;~jasmine-core/lib/jasmine-core/jasmine.css&quot;
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/main.ts]" value="import './testing/global-jasmine';
-import 'jasmine-core/lib/jasmine-core/jasmine-html.js';
-import 'jasmine-core/lib/jasmine-core/boot.js';
-
-declare var jasmine;
-
-import './polyfills';
-
-import 'zone.js/dist/zone-testing';
-
-import { getTestBed } from '@angular/core/testing';
-import {
-  BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting
-} from '@angular/platform-browser-dynamic/testing';
-
-// Import spec files individually for Stackblitz
-import './app/heroes/heroes.service.spec.ts';
-import './testing/http-client.spec.ts';
-
-//
-bootstrap();
-
-//
-function bootstrap () {
-  if (window['jasmineRef']) {
-    location.reload();
-    return;
-  } else {
-    window.onload(undefined);
-    window['jasmineRef'] = jasmine.getEnv();
-  }
-
-  // First, initialize the Angular testing environment.
-  getTestBed().initTestEnvironment(
-    BrowserDynamicTestingModule,
-    platformBrowserDynamicTesting()
-  );
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/index.html]" value="<!--
-  Intentionally empty placeholder for Stackblitz.
-  Do not need index.html in zip-download either as you should run tests with `npm test`
- -->
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
-  production: true
-};
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
-export const environment = {
-  production: false
-};
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[angular.json]" value="{
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][angular.json]" value="{
   &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
   &quot;version&quot;: 1,
   &quot;newProjectRoot&quot;: &quot;projects&quot;,
   &quot;projects&quot;: {
     &quot;angular.io-example&quot;: {
       &quot;projectType&quot;: &quot;application&quot;,
-      &quot;schematics&quot;: {},
       &quot;root&quot;: &quot;&quot;,
       &quot;sourceRoot&quot;: &quot;src&quot;,
       &quot;prefix&quot;: &quot;app&quot;,
@@ -697,7 +666,7 @@ can be found in the LICENSE file at http://angular.io/license
             &quot;outputPath&quot;: &quot;dist&quot;,
             &quot;index&quot;: &quot;src/index.html&quot;,
             &quot;main&quot;: &quot;src/main.ts&quot;,
-            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;polyfills&quot;: [&quot;zone.js&quot;],
             &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
             &quot;assets&quot;: [
               &quot;src/favicon.ico&quot;,
@@ -711,46 +680,42 @@ can be found in the LICENSE file at http://angular.io/license
           },
           &quot;configurations&quot;: {
             &quot;production&quot;: {
-              &quot;fileReplacements&quot;: [
-                {
-                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
-                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
-                }
-              ],
-              &quot;optimization&quot;: true,
-              &quot;outputHashing&quot;: &quot;all&quot;,
-              &quot;sourceMap&quot;: false,
-              &quot;extractCss&quot;: true,
-              &quot;namedChunks&quot;: false,
-              &quot;aot&quot;: true,
-              &quot;extractLicenses&quot;: true,
-              &quot;vendorChunk&quot;: false,
-              &quot;buildOptimizer&quot;: true,
               &quot;budgets&quot;: [
                 {
                   &quot;type&quot;: &quot;initial&quot;,
-                  &quot;maximumWarning&quot;: &quot;2mb&quot;,
-                  &quot;maximumError&quot;: &quot;5mb&quot;
+                  &quot;maximumWarning&quot;: &quot;500kb&quot;,
+                  &quot;maximumError&quot;: &quot;1mb&quot;
                 },
                 {
                   &quot;type&quot;: &quot;anyComponentStyle&quot;,
-                  &quot;maximumWarning&quot;: &quot;6kb&quot;,
-                  &quot;maximumError&quot;: &quot;10kb&quot;
+                  &quot;maximumWarning&quot;: &quot;2kb&quot;,
+                  &quot;maximumError&quot;: &quot;4kb&quot;
                 }
-              ]
+              ],
+              &quot;outputHashing&quot;: &quot;all&quot;
+            },
+            &quot;development&quot;: {
+              &quot;buildOptimizer&quot;: false,
+              &quot;optimization&quot;: false,
+              &quot;vendorChunk&quot;: true,
+              &quot;extractLicenses&quot;: false,
+              &quot;sourceMap&quot;: true,
+              &quot;namedChunks&quot;: true
             }
-          }
+          },
+          &quot;defaultConfiguration&quot;: &quot;production&quot;
         },
         &quot;serve&quot;: {
           &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
-          &quot;options&quot;: {
-            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
-          },
           &quot;configurations&quot;: {
             &quot;production&quot;: {
               &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
+            },
+            &quot;development&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:development&quot;
             }
-          }
+          },
+          &quot;defaultConfiguration&quot;: &quot;development&quot;
         },
         &quot;extract-i18n&quot;: {
           &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
@@ -761,10 +726,8 @@ can be found in the LICENSE file at http://angular.io/license
         &quot;test&quot;: {
           &quot;builder&quot;: &quot;@angular-devkit/build-angular:karma&quot;,
           &quot;options&quot;: {
-            &quot;main&quot;: &quot;src/test.ts&quot;,
-            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
+            &quot;polyfills&quot;: [&quot;zone.js&quot;, &quot;zone.js/testing&quot;],
             &quot;tsConfig&quot;: &quot;tsconfig.spec.json&quot;,
-            &quot;karmaConfig&quot;: &quot;karma.conf.js&quot;,
             &quot;assets&quot;: [
               &quot;src/favicon.ico&quot;,
               &quot;src/assets&quot;
@@ -773,19 +736,6 @@ can be found in the LICENSE file at http://angular.io/license
               &quot;src/styles.css&quot;
             ],
             &quot;scripts&quot;: []
-          }
-        },
-        &quot;lint&quot;: {
-          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
-          &quot;options&quot;: {
-            &quot;tsConfig&quot;: [
-              &quot;tsconfig.app.json&quot;,
-              &quot;tsconfig.spec.json&quot;,
-              &quot;e2e/tsconfig.json&quot;
-            ],
-            &quot;exclude&quot;: [
-              &quot;**/node_modules/**&quot;
-            ]
           }
         },
         &quot;e2e&quot;: {
@@ -802,80 +752,135 @@ can be found in the LICENSE file at http://angular.io/license
         }
       }
     }
-  },
-  &quot;defaultProject&quot;: &quot;angular.io-example&quot;
+  }
 }
-"><input type="hidden" name="files[src/polyfills.ts]" value="/**
- * This file includes polyfills needed by Angular and is loaded before the app.
- * You can add your own extra polyfills to this file.
- *
- * This file is divided into 2 sections:
- *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
- *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
- *      file.
- *
- * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
- * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
- * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
- *
- * Learn more in https://angular.io/guide/browser-support
- */
-
-/***************************************************************************************************
- * BROWSER POLYFILLS
- */
-
-/** IE10 and IE11 requires the following for NgClass support on SVG elements */
-// import 'classlist.js';  // Run `npm install --save classlist.js`.
-
-/**
- * Web Animations `@angular/platform-browser/animations`
- * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
- * Standard animation support in Angular DOES NOT require any polyfills (as of Angular 6.0).
- */
-// import 'web-animations-js';  // Run `npm install --save web-animations-js`.
-
-/**
- * By default, zone.js will patch all possible macroTask and DomEvents
- * user can disable parts of macroTask/DomEvents patch by setting following flags
- * because those flags need to be set before `zone.js` being loaded, and webpack
- * will put import in the top of bundle, so user need to create a separate file
- * in this directory (for example: zone-flags.ts), and put the following flags
- * into that file, and then add the following code before importing zone.js.
- * import './zone-flags';
- *
- * The flags allowed in zone-flags.ts are listed here.
- *
- * The following flags will work for all browsers.
- *
- * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
- * requestAnimationFrame
- * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
- * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
- * specified eventNames
- *
- *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
- *  with the following flag, it will bypass `zone.js` patch for IE/Edge
- *
- *  (window as any).__Zone_enable_cross_context_check = true;
- *
- */
-
-/***************************************************************************************************
- * Zone JS is required by default for Angular itself.
- */
-import 'zone.js/dist/zone'; // Included with Angular CLI.
-
-/***************************************************************************************************
- * APPLICATION IMPORTS
- */
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="http"><input type="hidden" name="tags[3]" value="testing"><input type="hidden" name="description" value="Angular Example - Http Guide Testing"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~9.1.4&quot;,&quot;@angular/common&quot;:&quot;~9.1.4&quot;,&quot;@angular/compiler&quot;:&quot;~9.1.4&quot;,&quot;@angular/core&quot;:&quot;~9.1.4&quot;,&quot;@angular/forms&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~9.1.4&quot;,&quot;@angular/router&quot;:&quot;~9.1.4&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.5.4&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.5.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
+"><input type="hidden" name="project[files][package.json]" value="{
+  &quot;name&quot;: &quot;angular.io-example&quot;,
+  &quot;version&quot;: &quot;0.0.0&quot;,
+  &quot;description&quot;: &quot;Example project from an angular.io guide.&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;scripts&quot;: {
+    &quot;ng&quot;: &quot;ng&quot;,
+    &quot;start&quot;: &quot;ng serve&quot;,
+    &quot;build&quot;: &quot;ng build&quot;,
+    &quot;watch&quot;: &quot;ng build --watch --configuration development&quot;,
+    &quot;test&quot;: &quot;ng test&quot;,
+    &quot;e2e&quot;: &quot;ng e2e&quot;
+  },
+  &quot;private&quot;: true,
+  &quot;dependencies&quot;: {
+    &quot;@angular/animations&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/common&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/compiler&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/core&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/forms&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/platform-browser&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/platform-browser-dynamic&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/router&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;angular-in-memory-web-api&quot;: &quot;~0.14.0&quot;,
+    &quot;rxjs&quot;: &quot;~7.5.0&quot;,
+    &quot;tslib&quot;: &quot;^2.3.0&quot;,
+    &quot;zone.js&quot;: &quot;~0.11.4&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@angular-devkit/build-angular&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/cli&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/compiler-cli&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@types/jasmine&quot;: &quot;~4.3.0&quot;,
+    &quot;@types/node&quot;: &quot;^16.11.35&quot;,
+    &quot;copyfiles&quot;: &quot;^2.4.1&quot;,
+    &quot;jasmine-core&quot;: &quot;~4.4.0&quot;,
+    &quot;jasmine-marbles&quot;: &quot;~0.9.2&quot;,
+    &quot;jasmine-spec-reporter&quot;: &quot;~7.0.0&quot;,
+    &quot;karma&quot;: &quot;~6.4.0&quot;,
+    &quot;karma-chrome-launcher&quot;: &quot;~3.1.0&quot;,
+    &quot;karma-coverage&quot;: &quot;~2.2.0&quot;,
+    &quot;karma-jasmine&quot;: &quot;~5.1.0&quot;,
+    &quot;karma-jasmine-html-reporter&quot;: &quot;~2.0.0&quot;,
+    &quot;protractor&quot;: &quot;~7.0.0&quot;,
+    &quot;ts-node&quot;: &quot;~10.9.0&quot;,
+    &quot;typescript&quot;: &quot;~4.8.0&quot;
+  }
+}
+"><input type="hidden" name="project[files][tsconfig.app.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  &quot;extends&quot;: &quot;./tsconfig.json&quot;,
+  &quot;compilerOptions&quot;: {
+    &quot;outDir&quot;: &quot;../out-tsc/app&quot;,
+    &quot;types&quot;: []
+  },
+  &quot;files&quot;: [
+    &quot;src/main.ts&quot;
+  ],
+  &quot;include&quot;: [
+    &quot;src/**/*.d.ts&quot;
+  ],
+  &quot;exclude&quot;: [
+    &quot;src/test.ts&quot;,
+    &quot;src/**/*.spec.ts&quot;,
+    &quot;src/**/*-specs.ts&quot;,
+    &quot;src/**/*.avoid.ts&quot;,
+    &quot;src/**/*.0.ts&quot;,
+    &quot;src/**/*.1.ts&quot;,
+    &quot;src/**/*.1b.ts&quot;,
+    &quot;src/**/*.2.ts&quot;,
+    &quot;src/**/*.3.ts&quot;,
+    &quot;src/**/*.4.ts&quot;,
+    &quot;src/**/*.5.ts&quot;,
+    &quot;src/**/*.6.ts&quot;,
+    &quot;src/**/*.7.ts&quot;,
+    &quot;src/**/testing&quot;
+  ]
+}
+"><input type="hidden" name="project[files][tsconfig.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  &quot;compileOnSave&quot;: false,
+  &quot;compilerOptions&quot;: {
+    &quot;baseUrl&quot;: &quot;./&quot;,
+    &quot;outDir&quot;: &quot;./dist/out-tsc&quot;,
+    &quot;forceConsistentCasingInFileNames&quot;: true,
+    &quot;strict&quot;: true,
+    &quot;noImplicitOverride&quot;: true,
+    &quot;noPropertyAccessFromIndexSignature&quot;: true,
+    &quot;noImplicitReturns&quot;: true,
+    &quot;noFallthroughCasesInSwitch&quot;: true,
+    &quot;sourceMap&quot;: true,
+    &quot;declaration&quot;: false,
+    &quot;downlevelIteration&quot;: true,
+    &quot;experimentalDecorators&quot;: true,
+    &quot;moduleResolution&quot;: &quot;node&quot;,
+    &quot;importHelpers&quot;: true,
+    &quot;useDefineForClassFields&quot;: false,
+    &quot;target&quot;: &quot;ES2022&quot;,
+    &quot;module&quot;: &quot;ES2022&quot;,
+    &quot;lib&quot;: [
+      &quot;ES2022&quot;,
+      &quot;dom&quot;
+    ]
+  },
+  &quot;angularCompilerOptions&quot;: {
+    &quot;enableI18nLegacyMessageIdFormat&quot;: false,
+    &quot;strictInjectionParameters&quot;: true,
+    &quot;strictInputAccessModifiers&quot;: true,
+    &quot;strictTemplates&quot;: true
+  }
+}
+"><input type="hidden" name="project[files][tsconfig.spec.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  &quot;extends&quot;: &quot;./tsconfig.json&quot;,
+  &quot;compilerOptions&quot;: {
+    &quot;outDir&quot;: &quot;./out-tsc/spec&quot;,
+    &quot;types&quot;: [
+      &quot;jasmine&quot;
+    ]
+  },
+  &quot;include&quot;: [
+    &quot;src/**/*.spec.ts&quot;,
+    &quot;src/**/*.d.ts&quot;,
+    &quot;src/testing&quot;
+  ]
+}
+"><input type="hidden" name="project[tags][0]" value="angular"><input type="hidden" name="project[tags][1]" value="example"><input type="hidden" name="project[tags][2]" value="http"><input type="hidden" name="project[tags][3]" value="testing"><input type="hidden" name="project[description]" value="Angular Example - Http Guide Testing"><input type="hidden" name="project[template]" value="node"><input type="hidden" name="project[files][.stackblitzrc]" value="{&quot;installDependencies&quot;:true,&quot;startCommand&quot;:&quot;turbo start&quot;,&quot;env&quot;:{&quot;ENABLE_CJS_IMPORTS&quot;:true}}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;

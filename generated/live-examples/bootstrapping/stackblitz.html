@@ -1,5 +1,354 @@
 <html lang="en"><head></head><body>
-        <form id="mainForm" method="post" action="https://run.stackblitz.com/api/angular/v1?file=src/app/app.component.ts" target="_self"><input type="hidden" name="files[src/app/app.component.ts]" value="import { Component } from '@angular/core';
+        <form id="mainForm" method="post" action="https://stackblitz.com/run?file=src/app/app.component.ts" target="_self"><input type="hidden" name="project[files][angular.json]" value="{
+  &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
+  &quot;version&quot;: 1,
+  &quot;newProjectRoot&quot;: &quot;projects&quot;,
+  &quot;projects&quot;: {
+    &quot;angular.io-example&quot;: {
+      &quot;projectType&quot;: &quot;application&quot;,
+      &quot;root&quot;: &quot;&quot;,
+      &quot;sourceRoot&quot;: &quot;src&quot;,
+      &quot;prefix&quot;: &quot;app&quot;,
+      &quot;architect&quot;: {
+        &quot;build&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:browser&quot;,
+          &quot;options&quot;: {
+            &quot;outputPath&quot;: &quot;dist&quot;,
+            &quot;index&quot;: &quot;src/index.html&quot;,
+            &quot;main&quot;: &quot;src/main.ts&quot;,
+            &quot;polyfills&quot;: [&quot;zone.js&quot;],
+            &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
+            &quot;assets&quot;: [
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
+            ],
+            &quot;styles&quot;: [
+              &quot;src/styles.css&quot;
+            ],
+            &quot;scripts&quot;: []
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;budgets&quot;: [
+                {
+                  &quot;type&quot;: &quot;initial&quot;,
+                  &quot;maximumWarning&quot;: &quot;500kb&quot;,
+                  &quot;maximumError&quot;: &quot;1mb&quot;
+                },
+                {
+                  &quot;type&quot;: &quot;anyComponentStyle&quot;,
+                  &quot;maximumWarning&quot;: &quot;2kb&quot;,
+                  &quot;maximumError&quot;: &quot;4kb&quot;
+                }
+              ],
+              &quot;outputHashing&quot;: &quot;all&quot;
+            },
+            &quot;development&quot;: {
+              &quot;buildOptimizer&quot;: false,
+              &quot;optimization&quot;: false,
+              &quot;vendorChunk&quot;: true,
+              &quot;extractLicenses&quot;: false,
+              &quot;sourceMap&quot;: true,
+              &quot;namedChunks&quot;: true
+            }
+          },
+          &quot;defaultConfiguration&quot;: &quot;production&quot;
+        },
+        &quot;serve&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
+            },
+            &quot;development&quot;: {
+              &quot;browserTarget&quot;: &quot;angular.io-example:build:development&quot;
+            }
+          },
+          &quot;defaultConfiguration&quot;: &quot;development&quot;
+        },
+        &quot;extract-i18n&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
+          &quot;options&quot;: {
+            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
+          }
+        },
+        &quot;test&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:karma&quot;,
+          &quot;options&quot;: {
+            &quot;polyfills&quot;: [&quot;zone.js&quot;, &quot;zone.js/testing&quot;],
+            &quot;tsConfig&quot;: &quot;tsconfig.spec.json&quot;,
+            &quot;assets&quot;: [
+              &quot;src/favicon.ico&quot;,
+              &quot;src/assets&quot;
+            ],
+            &quot;styles&quot;: [
+              &quot;src/styles.css&quot;
+            ],
+            &quot;scripts&quot;: []
+          }
+        },
+        &quot;e2e&quot;: {
+          &quot;builder&quot;: &quot;@angular-devkit/build-angular:protractor&quot;,
+          &quot;options&quot;: {
+            &quot;protractorConfig&quot;: &quot;e2e/protractor.conf.js&quot;,
+            &quot;devServerTarget&quot;: &quot;angular.io-example:serve&quot;
+          },
+          &quot;configurations&quot;: {
+            &quot;production&quot;: {
+              &quot;devServerTarget&quot;: &quot;angular.io-example:serve:production&quot;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+"><input type="hidden" name="project[files][package.json]" value="{
+  &quot;name&quot;: &quot;angular.io-example&quot;,
+  &quot;version&quot;: &quot;0.0.0&quot;,
+  &quot;description&quot;: &quot;Example project from an angular.io guide.&quot;,
+  &quot;license&quot;: &quot;MIT&quot;,
+  &quot;scripts&quot;: {
+    &quot;ng&quot;: &quot;ng&quot;,
+    &quot;start&quot;: &quot;ng serve&quot;,
+    &quot;build&quot;: &quot;ng build&quot;,
+    &quot;watch&quot;: &quot;ng build --watch --configuration development&quot;,
+    &quot;test&quot;: &quot;ng test&quot;,
+    &quot;e2e&quot;: &quot;ng e2e&quot;
+  },
+  &quot;private&quot;: true,
+  &quot;dependencies&quot;: {
+    &quot;@angular/animations&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/common&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/compiler&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/core&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/forms&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/platform-browser&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/platform-browser-dynamic&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/router&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;angular-in-memory-web-api&quot;: &quot;~0.14.0&quot;,
+    &quot;rxjs&quot;: &quot;~7.5.0&quot;,
+    &quot;tslib&quot;: &quot;^2.3.0&quot;,
+    &quot;zone.js&quot;: &quot;~0.11.4&quot;
+  },
+  &quot;devDependencies&quot;: {
+    &quot;@angular-devkit/build-angular&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/cli&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@angular/compiler-cli&quot;: &quot;^15.0.0-rc.1&quot;,
+    &quot;@types/jasmine&quot;: &quot;~4.3.0&quot;,
+    &quot;@types/node&quot;: &quot;^16.11.35&quot;,
+    &quot;copyfiles&quot;: &quot;^2.4.1&quot;,
+    &quot;jasmine-core&quot;: &quot;~4.4.0&quot;,
+    &quot;jasmine-marbles&quot;: &quot;~0.9.2&quot;,
+    &quot;jasmine-spec-reporter&quot;: &quot;~7.0.0&quot;,
+    &quot;karma&quot;: &quot;~6.4.0&quot;,
+    &quot;karma-chrome-launcher&quot;: &quot;~3.1.0&quot;,
+    &quot;karma-coverage&quot;: &quot;~2.2.0&quot;,
+    &quot;karma-jasmine&quot;: &quot;~5.1.0&quot;,
+    &quot;karma-jasmine-html-reporter&quot;: &quot;~2.0.0&quot;,
+    &quot;protractor&quot;: &quot;~7.0.0&quot;,
+    &quot;ts-node&quot;: &quot;~10.9.0&quot;,
+    &quot;typescript&quot;: &quot;~4.8.0&quot;
+  }
+}
+"><input type="hidden" name="project[files][tsconfig.app.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  &quot;extends&quot;: &quot;./tsconfig.json&quot;,
+  &quot;compilerOptions&quot;: {
+    &quot;outDir&quot;: &quot;./out-tsc/app&quot;,
+    &quot;types&quot;: []
+  },
+  &quot;files&quot;: [
+    &quot;src/main.ts&quot;
+  ],
+  &quot;include&quot;: [
+    &quot;src/**/*.d.ts&quot;
+  ],
+  &quot;exclude&quot;: [
+    &quot;src/test.ts&quot;,
+    &quot;src/**/*.spec.ts&quot;,
+    &quot;src/**/*-specs.ts&quot;,
+    &quot;src/**/*.avoid.ts&quot;,
+    &quot;src/**/*.0.ts&quot;,
+    &quot;src/**/*.1.ts&quot;,
+    &quot;src/**/*.1b.ts&quot;,
+    &quot;src/**/*.2.ts&quot;,
+    &quot;src/**/*.3.ts&quot;,
+    &quot;src/**/*.4.ts&quot;,
+    &quot;src/**/*.5.ts&quot;,
+    &quot;src/**/*.6.ts&quot;,
+    &quot;src/**/*.7.ts&quot;,
+    &quot;src/**/testing&quot;
+  ]
+}
+"><input type="hidden" name="project[files][tsconfig.json]" value="/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  &quot;compileOnSave&quot;: false,
+  &quot;compilerOptions&quot;: {
+    &quot;baseUrl&quot;: &quot;./&quot;,
+    &quot;outDir&quot;: &quot;./dist/out-tsc&quot;,
+    &quot;forceConsistentCasingInFileNames&quot;: true,
+    &quot;strict&quot;: true,
+    &quot;noImplicitOverride&quot;: true,
+    &quot;noPropertyAccessFromIndexSignature&quot;: true,
+    &quot;noImplicitReturns&quot;: true,
+    &quot;noFallthroughCasesInSwitch&quot;: true,
+    &quot;sourceMap&quot;: true,
+    &quot;declaration&quot;: false,
+    &quot;downlevelIteration&quot;: true,
+    &quot;experimentalDecorators&quot;: true,
+    &quot;moduleResolution&quot;: &quot;node&quot;,
+    &quot;importHelpers&quot;: true,
+    &quot;useDefineForClassFields&quot;: false,
+    &quot;target&quot;: &quot;ES2022&quot;,
+    &quot;module&quot;: &quot;ES2022&quot;,
+    &quot;lib&quot;: [
+      &quot;ES2022&quot;,
+      &quot;dom&quot;
+    ]
+  },
+  &quot;angularCompilerOptions&quot;: {
+    &quot;enableI18nLegacyMessageIdFormat&quot;: false,
+    &quot;strictInjectionParameters&quot;: true,
+    &quot;strictInputAccessModifiers&quot;: true,
+    &quot;strictTemplates&quot;: true
+  }
+}
+"><input type="hidden" name="project[files][src/index.html]" value="<!doctype html>
+<html>
+<head>
+  <meta charset=&quot;utf-8&quot;>
+  <title>NgmoduleDemo</title>
+  <base href=&quot;/&quot;>
+  <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  <link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;>
+</head>
+<body>
+  <app-root>Loading...</app-root>
+</body>
+</html>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/main.ts]" value="import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app/app.module';
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/styles.css]" value="/* Global Styles */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  color: #264D73;
+  font-size: 2.5rem;
+}
+h2, h3 {
+  color: #444;
+  font-weight: lighter;
+}
+h3 {
+  font-size: 1.3rem;
+}
+body {
+  padding: .5rem;
+  max-width: 1000px;
+  margin: auto;
+}
+@media (min-width: 600px) {
+  body {
+    padding: 2rem;
+  }
+}
+body, input[text] {
+  color: #333;
+  font-family: Cambria, Georgia, serif;
+}
+a {
+  cursor: pointer;
+}
+button {
+  background-color: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: black;
+  font-size: 1.2rem;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #e8e8e8;
+  color: #3d3d3d;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  color: white;
+  background-color:  #42545C;
+}
+nav a.active {
+  background-color: black;
+  color: white;
+}
+hr {
+  margin: 1.5rem 0;
+}
+input[type=&quot;text&quot;] {
+  box-sizing: border-box;
+  width: 100%;
+  padding: .5rem;
+}
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/app.component.css]" value="
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/app.component.html]" value="<h1>
+  {{title}}
+</h1>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->"><input type="hidden" name="project[files][src/app/app.component.ts]" value="import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -14,9 +363,8 @@ export class AppComponent {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/app.module.ts]" value="
-// imports
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/app.module.ts]" value="// imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -43,12 +391,11 @@ import { ItemDirective } from './item.directive';
 export class AppModule { }
 
 
-
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/item.directive.ts]" value="
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][src/app/item.directive.ts]" value="
 
 import { Directive } from '@angular/core';
 
@@ -65,356 +412,16 @@ export class ItemDirective {
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/environments/environment.prod.ts]" value="export const environment = {
-  production: true
-};
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/environments/environment.ts]" value="// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
-export const environment = {
-  production: false
-};
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/main.ts]" value="import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
-
-if (environment.production) {
-  enableProdMode();
-}
-
-platformBrowserDynamic().bootstrapModule(AppModule);
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/polyfills.ts]" value="/**
- * This file includes polyfills needed by Angular and is loaded before the app.
- * You can add your own extra polyfills to this file.
- *
- * This file is divided into 2 sections:
- *   1. Browser polyfills. These are applied before loading ZoneJS and are sorted by browsers.
- *   2. Application imports. Files imported after ZoneJS that should be loaded before your main
- *      file.
- *
- * The current setup is for so-called &quot;evergreen&quot; browsers; the last versions of browsers that
- * automatically update themselves. This includes Safari >= 10, Chrome >= 55 (including Opera),
- * Edge >= 13 on the desktop, and iOS 10 and Chrome on mobile.
- *
- * Learn more in https://angular.io/guide/browser-support
- */
-
-/***************************************************************************************************
- * BROWSER POLYFILLS
- */
-
-/** IE10 and IE11 requires the following for NgClass support on SVG elements */
-// import 'classlist.js';  // Run `npm install --save classlist.js`.
-
-/**
- * Web Animations `@angular/platform-browser/animations`
- * Only required if AnimationBuilder is used within the application and using IE/Edge or Safari.
- * Standard animation support in Angular DOES NOT require any polyfills (as of Angular 6.0).
- */
-// import 'web-animations-js';  // Run `npm install --save web-animations-js`.
-
-/**
- * By default, zone.js will patch all possible macroTask and DomEvents
- * user can disable parts of macroTask/DomEvents patch by setting following flags
- * because those flags need to be set before `zone.js` being loaded, and webpack
- * will put import in the top of bundle, so user need to create a separate file
- * in this directory (for example: zone-flags.ts), and put the following flags
- * into that file, and then add the following code before importing zone.js.
- * import './zone-flags';
- *
- * The flags allowed in zone-flags.ts are listed here.
- *
- * The following flags will work for all browsers.
- *
- * (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch
- * requestAnimationFrame
- * (window as any).__Zone_disable_on_property = true; // disable patch onProperty such as onclick
- * (window as any).__zone_symbol__UNPATCHED_EVENTS = ['scroll', 'mousemove']; // disable patch
- * specified eventNames
- *
- *  in IE/Edge developer tools, the addEventListener will also be wrapped by zone.js
- *  with the following flag, it will bypass `zone.js` patch for IE/Edge
- *
- *  (window as any).__Zone_enable_cross_context_check = true;
- *
- */
-
-/***************************************************************************************************
- * Zone JS is required by default for Angular itself.
- */
-import 'zone.js/dist/zone'; // Included with Angular CLI.
-
-/***************************************************************************************************
- * APPLICATION IMPORTS
- */
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/app.component.css]" value="
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/styles.css]" value="/* Global Styles */
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
-}
-h2, h3 {
-  color: #444;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
-}
-body {
-  margin: 2em;
-}
-body, input[text], button {
-  color: #333;
-  font-family: Cambria, Georgia;
-}
-a {
-  cursor: pointer;
-  cursor: hand;
-}
-button {
-  font-family: Arial;
-  background-color: #eee;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  cursor: hand;
-}
-button:hover {
-  background-color: #cfd8dc;
-}
-button:disabled {
-  background-color: #eee;
-  color: #aaa;
-  cursor: auto;
-}
-
-/* Navigation link styles */
-nav a {
-  padding: 5px 10px;
-  text-decoration: none;
-  margin-right: 10px;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #eee;
-  border-radius: 4px;
-}
-nav a:visited, a:link {
-  color: #607D8B;
-}
-nav a:hover {
-  color: #039be5;
-  background-color: #CFD8DC;
-}
-nav a.active {
-  color: #039be5;
-}
-
-/* everywhere else */
-* {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/"><input type="hidden" name="files[src/app/app.component.html]" value="<h1>
-  {{title}}
-</h1>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->"><input type="hidden" name="files[src/index.html]" value="<!doctype html>
-<html>
-<head>
-  <meta charset=&quot;utf-8&quot;>
-  <title>NgmoduleDemo</title>
-  <base href=&quot;/&quot;>
-  <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
-  <link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;>
-</head>
-<body>
-  <app-root>Loading...</app-root>
-</body>
-</html>
-
-
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->"><input type="hidden" name="files[angular.json]" value="{
-  &quot;$schema&quot;: &quot;./node_modules/@angular/cli/lib/config/schema.json&quot;,
-  &quot;version&quot;: 1,
-  &quot;newProjectRoot&quot;: &quot;projects&quot;,
-  &quot;projects&quot;: {
-    &quot;angular.io-example&quot;: {
-      &quot;projectType&quot;: &quot;application&quot;,
-      &quot;schematics&quot;: {},
-      &quot;root&quot;: &quot;&quot;,
-      &quot;sourceRoot&quot;: &quot;src&quot;,
-      &quot;prefix&quot;: &quot;app&quot;,
-      &quot;architect&quot;: {
-        &quot;build&quot;: {
-          &quot;builder&quot;: &quot;@angular-devkit/build-angular:browser&quot;,
-          &quot;options&quot;: {
-            &quot;outputPath&quot;: &quot;dist&quot;,
-            &quot;index&quot;: &quot;src/index.html&quot;,
-            &quot;main&quot;: &quot;src/main.ts&quot;,
-            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
-            &quot;tsConfig&quot;: &quot;tsconfig.app.json&quot;,
-            &quot;assets&quot;: [
-              &quot;src/favicon.ico&quot;,
-              &quot;src/assets&quot;
-            ],
-            &quot;styles&quot;: [
-              &quot;src/styles.css&quot;
-            ],
-            &quot;scripts&quot;: []
-          },
-          &quot;configurations&quot;: {
-            &quot;production&quot;: {
-              &quot;fileReplacements&quot;: [
-                {
-                  &quot;replace&quot;: &quot;src/environments/environment.ts&quot;,
-                  &quot;with&quot;: &quot;src/environments/environment.prod.ts&quot;
-                }
-              ],
-              &quot;optimization&quot;: true,
-              &quot;outputHashing&quot;: &quot;all&quot;,
-              &quot;sourceMap&quot;: false,
-              &quot;extractCss&quot;: true,
-              &quot;namedChunks&quot;: false,
-              &quot;aot&quot;: true,
-              &quot;extractLicenses&quot;: true,
-              &quot;vendorChunk&quot;: false,
-              &quot;buildOptimizer&quot;: true,
-              &quot;budgets&quot;: [
-                {
-                  &quot;type&quot;: &quot;initial&quot;,
-                  &quot;maximumWarning&quot;: &quot;2mb&quot;,
-                  &quot;maximumError&quot;: &quot;5mb&quot;
-                },
-                {
-                  &quot;type&quot;: &quot;anyComponentStyle&quot;,
-                  &quot;maximumWarning&quot;: &quot;6kb&quot;,
-                  &quot;maximumError&quot;: &quot;10kb&quot;
-                }
-              ]
-            }
-          }
-        },
-        &quot;serve&quot;: {
-          &quot;builder&quot;: &quot;@angular-devkit/build-angular:dev-server&quot;,
-          &quot;options&quot;: {
-            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
-          },
-          &quot;configurations&quot;: {
-            &quot;production&quot;: {
-              &quot;browserTarget&quot;: &quot;angular.io-example:build:production&quot;
-            }
-          }
-        },
-        &quot;extract-i18n&quot;: {
-          &quot;builder&quot;: &quot;@angular-devkit/build-angular:extract-i18n&quot;,
-          &quot;options&quot;: {
-            &quot;browserTarget&quot;: &quot;angular.io-example:build&quot;
-          }
-        },
-        &quot;test&quot;: {
-          &quot;builder&quot;: &quot;@angular-devkit/build-angular:karma&quot;,
-          &quot;options&quot;: {
-            &quot;main&quot;: &quot;src/test.ts&quot;,
-            &quot;polyfills&quot;: &quot;src/polyfills.ts&quot;,
-            &quot;tsConfig&quot;: &quot;tsconfig.spec.json&quot;,
-            &quot;karmaConfig&quot;: &quot;karma.conf.js&quot;,
-            &quot;assets&quot;: [
-              &quot;src/favicon.ico&quot;,
-              &quot;src/assets&quot;
-            ],
-            &quot;styles&quot;: [
-              &quot;src/styles.css&quot;
-            ],
-            &quot;scripts&quot;: []
-          }
-        },
-        &quot;lint&quot;: {
-          &quot;builder&quot;: &quot;@angular-devkit/build-angular:tslint&quot;,
-          &quot;options&quot;: {
-            &quot;tsConfig&quot;: [
-              &quot;tsconfig.app.json&quot;,
-              &quot;tsconfig.spec.json&quot;,
-              &quot;e2e/tsconfig.json&quot;
-            ],
-            &quot;exclude&quot;: [
-              &quot;**/node_modules/**&quot;
-            ]
-          }
-        },
-        &quot;e2e&quot;: {
-          &quot;builder&quot;: &quot;@angular-devkit/build-angular:protractor&quot;,
-          &quot;options&quot;: {
-            &quot;protractorConfig&quot;: &quot;e2e/protractor.conf.js&quot;,
-            &quot;devServerTarget&quot;: &quot;angular.io-example:serve&quot;
-          },
-          &quot;configurations&quot;: {
-            &quot;production&quot;: {
-              &quot;devServerTarget&quot;: &quot;angular.io-example:serve:production&quot;
-            }
-          }
-        }
-      }
+can be found in the LICENSE file at https://angular.io/license
+*/"><input type="hidden" name="project[files][bs-config.1.json]" value="{
+  &quot;server&quot;: {
+    &quot;baseDir&quot;: &quot;src&quot;,
+    &quot;routes&quot;: {
+      &quot;/node_modules&quot;: &quot;node_modules&quot;
     }
-  },
-  &quot;defaultProject&quot;: &quot;angular.io-example&quot;
+  }
 }
-"><input type="hidden" name="tags[0]" value="angular"><input type="hidden" name="tags[1]" value="example"><input type="hidden" name="tags[2]" value="ngmodules"><input type="hidden" name="description" value="Angular Example - Bootstrapping"><input type="hidden" name="dependencies" value="{&quot;@angular/animations&quot;:&quot;~9.1.4&quot;,&quot;@angular/common&quot;:&quot;~9.1.4&quot;,&quot;@angular/compiler&quot;:&quot;~9.1.4&quot;,&quot;@angular/core&quot;:&quot;~9.1.4&quot;,&quot;@angular/forms&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser&quot;:&quot;~9.1.4&quot;,&quot;@angular/platform-browser-dynamic&quot;:&quot;~9.1.4&quot;,&quot;@angular/router&quot;:&quot;~9.1.4&quot;,&quot;angular-in-memory-web-api&quot;:&quot;~0.11.0&quot;,&quot;rxjs&quot;:&quot;~6.5.4&quot;,&quot;tslib&quot;:&quot;^1.10.0&quot;,&quot;zone.js&quot;:&quot;~0.10.3&quot;,&quot;jasmine-core&quot;:&quot;~3.5.0&quot;,&quot;jasmine-marbles&quot;:&quot;~0.6.0&quot;}"></form>
+"><input type="hidden" name="project[tags][0]" value="angular"><input type="hidden" name="project[tags][1]" value="example"><input type="hidden" name="project[tags][2]" value="ngmodules"><input type="hidden" name="project[description]" value="Angular Example - Bootstrapping"><input type="hidden" name="project[template]" value="node"><input type="hidden" name="project[files][.stackblitzrc]" value="{&quot;installDependencies&quot;:true,&quot;startCommand&quot;:&quot;turbo start&quot;,&quot;env&quot;:{&quot;ENABLE_CJS_IMPORTS&quot;:true}}"></form>
         <script>
           var embedded = 'ctl=1';
           var isEmbedded = window.location.search.indexOf(embedded) > -1;
