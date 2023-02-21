@@ -1,4 +1,4 @@
-name: cn.vuejs.org
+name: v3.cn.vuejs.org
 on:
   push:
     paths:
@@ -17,8 +17,8 @@ jobs:
       - name: Get Static (Vue 3)
         run: |
           git clone https://github.com/vuejs-translations/docs-zh-cn.git -b main --single-branch v3.cn.vuejs.org --depth 1
-          npm i
-          npm run build
+      - run: npm i
+      - run: npm run build
 
       - name: Deploy (vue3) v3.cn.vuejs.org
         uses: peaceiris/actions-gh-pages@v3

@@ -1,4 +1,4 @@
-name: cn.vuejs.org
+name: v2.cn.vuejs.org
 on:
   push:
     paths:
