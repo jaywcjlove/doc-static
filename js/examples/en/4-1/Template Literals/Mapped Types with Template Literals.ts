@@ -1,4 +1,4 @@
-//// { compiler: { ts: "4.1.0-dev.20201028" } }
+//// { "compiler": { "ts": "4.1.0-dev.20201028" } }
 
 // TypeScript 4.1 added support for template literals, you can
 // understand some of the basics in example:intro-to-template-literals
@@ -11,10 +11,10 @@
 // type into four functions which correspond to traditional REST calls.
 
 // Template strings literals to describe each API endpoint:
-type GET<T extends string> =  `get${Capitalize<T>}`
-type POST<T extends string> =  `post${Capitalize<T>}`
-type PUT<T extends string> =  `put${Capitalize<T>}`
-type DELETE<T extends string> =  `delete${Capitalize<T>}`
+type GET<T extends string> = `get${Capitalize<T>}`
+type POST<T extends string> = `post${Capitalize<T>}`
+type PUT<T extends string> = `put${Capitalize<T>}`
+type DELETE<T extends string> = `delete${Capitalize<T>}`
 
 // A union of the above literal types
 type REST<T extends string> = GET<T> | POST<T> | PUT<T> | DELETE<T>
@@ -33,8 +33,8 @@ type RESTify<Type> = {
 // Now we have a list of objects available through the API:
 
 interface APIs {
-  artwork: { id: string, title: string};
-  artist: { id: string, name: string};
+  artwork: { id: string, title: string };
+  artist: { id: string, name: string };
   location: { id: string, address: string, country: string }
 }
 

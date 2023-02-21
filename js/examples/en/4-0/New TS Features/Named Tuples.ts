@@ -1,8 +1,8 @@
-//// { compiler: { ts: "4.0.2" } }
+//// { "compiler": { "ts": "4.0.2" } }
 // Tuples are arrays where the order is important to the type system,
 // you can learn more about them in example:tuples
 
-// In TypeScript 3.9, the type of a Tuple's gained the ability to give
+// In TypeScript 4.0, the type of a Tuple's gained the ability to give
 // a name to the different parts of the array.
 
 // For example, you used to write a Lat Long location via a tuple:
@@ -37,7 +37,7 @@ const firstLong = newLocations[0][1]
 // parameters from a function using the Parameter 
 // utility type:
 
-function centerMap(lng: number, lat: number) {}
+function centerMap(lng: number, lat: number) { }
 
 // In 4.0, this keeps lng and lat
 type CenterMapParams = Parameters<typeof centerMap>

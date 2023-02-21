@@ -5,7 +5,7 @@ export interface UI {
         [text: string]: string;
     }, event?: React.MouseEvent) => void;
     /** A quick flash of some text */
-    flashInfo: (message: string) => void;
+    flashInfo: (message: string, time?: number) => void;
     /** Creates a modal container which you can put your own DOM elements inside */
     createModalOverlay: (postFocalElement: HTMLElement, classes?: string) => HTMLDivElement;
 }

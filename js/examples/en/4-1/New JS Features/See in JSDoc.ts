@@ -1,4 +1,4 @@
-//// { compiler: { ts: "4.1.0-beta" } }
+//// { "compiler": { "ts": "4.1.0-beta" } }
 
 // With 4.1 the JSDoc parser in TypeScript
 // used in both JavaScript and TypeScript files
@@ -17,5 +17,5 @@ const goodbye = "Good";
  * You say hi, I say low
  *
  * @see goodbye
- * */
+ */
 const hello = "Hello, hello";

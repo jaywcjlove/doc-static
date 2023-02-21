@@ -1,4 +1,4 @@
-//// { compiler: { ts: "4.1.0-dev.20201028" } }
+//// { "compiler": { "ts": "4.1.0-dev.20201028" } }
 
 // TypeScript already supports treating an exact string/number 
 // as a literal, for example this function only allows two
@@ -11,7 +11,7 @@ enableFeature("newPaymentSystem");
 
 // String literals supports all the way you can write a 
 // string in ES2020, with TypeScript 4.1 we've extended 
-//  support for interpolation inside a template string literal.
+// support for interpolation inside a template string literal.
 
 type Features = "Redesign" | "newArtistPage";
 
