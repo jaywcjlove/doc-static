@@ -16,7 +16,8 @@ jobs:
 
       - uses: pnpm/action-setup@v2
         with:
-          version: 6
+          version: 7
+
       - run: pnpm -v
       - run: node -v
       - run: npm -v
