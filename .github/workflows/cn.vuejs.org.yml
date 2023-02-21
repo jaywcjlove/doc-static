@@ -21,7 +21,7 @@ jobs:
       - name: Deploy (vue2) v2.cn.vuejs.org
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: v2.cn.vuejs.org
           publish_dir: ./v2.cn.vuejs.org
 
@@ -34,6 +34,6 @@ jobs:
       - name: Deploy (vue3) v3.cn.vuejs.org
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: v3.cn.vuejs.org
           publish_dir: ./v3.cn.vuejs.org
