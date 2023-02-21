@@ -22,7 +22,10 @@ jobs:
         run: |
           git clone https://github.com/vuejs-translations/docs-zh-cn.git -b main --single-branch v3.cn.vuejs.org --depth 1
       - run: pnpm i
+        working-directory: v3.cn.vuejs.org
+        
       - run: npm run build
+        working-directory: v3.cn.vuejs.org
 
       - name: Deploy (vue3) v3.cn.vuejs.org
         uses: peaceiris/actions-gh-pages@v3
