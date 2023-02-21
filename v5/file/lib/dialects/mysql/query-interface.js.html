@@ -22,11 +22,11 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style href="https://github.com/sequelize/sequelize"><img width="30px" src="./image/github.png" style="width: 30px;"></a>
+<a style="" href="https://github.com/sequelize/sequelize"><img width="30px" src="./image/github.png" style="width: 30px;"></a>
       <a href="http://sequelize-slack.herokuapp.com/">
         <img src="manual/asset/slack.svg" style="width: 60px; margin-left: -15px;">
       </a>
-    </header>
+    <div id="version-picker">Docs v5<ul><li><a href="/v7">Switch to v7</a></li><li><a href="/v6">Switch to v6</a></li><li><a href="/v5">Switch to v5</a></li><li><a href="/v4">Switch to v4</a></li><li><a href="/v3">Switch to v3</a></li></ul></div><style>#version-picker {cursor: pointer;}#version-picker:hover ul {display: block;}#version-picker ul {display: none;z-index: 100;background: white;padding: 0;list-style-type: none;border: 1px solid #ddd;}#version-picker ul li {list-style-type: none;padding: 0 10px;}#version-picker ul li:hover {background: #eee;}</style></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -112,21 +112,21 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">lib/dialects/mysql/query-interface.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">&apos;use strict&apos;;
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">'use strict';
 
 /**
- Returns an object that treats MySQL&apos;s inabilities to do certain queries.
+ Returns an object that treats MySQL's inabilities to do certain queries.
 
  @class QueryInterface
  @static
  @private
  */
 
-const Promise = require(&apos;../../promise&apos;);
-const sequelizeErrors = require(&apos;../../errors&apos;);
+const Promise = require('../../promise');
+const sequelizeErrors = require('../../errors');
 
 /**
- A wrapper that fixes MySQL&apos;s inability to cleanly remove columns from existing tables if they have a foreign key constraint.
+ A wrapper that fixes MySQL's inability to cleanly remove columns from existing tables if they have a foreign key constraint.
 
  @param  {QueryInterface} qi
  @param  {string} tableName     The name of the table.
@@ -147,7 +147,7 @@ function removeColumn(qi, tableName, columnName, options) {
   )
     .then(([results]) =&gt; {
       //Exclude primary key constraint
-      if (!results.length || results[0].constraint_name === &apos;PRIMARY&apos;) {
+      if (!results.length || results[0].constraint_name === 'PRIMARY') {
         // No foreign key constraints found, so we can remove the column
         return;
       }
@@ -191,7 +191,7 @@ function removeConstraint(qi, tableName, constraintName, options) {
           });
       }
 
-      if (constraint.constraintType === &apos;FOREIGN KEY&apos;) {
+      if (constraint.constraintType === 'FOREIGN KEY') {
         query = qi.QueryGenerator.dropForeignKeyQuery(tableName, constraintName);
       } else {
         query = qi.QueryGenerator.removeIndexQuery(constraint.tableName, constraint.constraintName);

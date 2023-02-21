@@ -1,24 +1,33 @@
 CLONE_URL=https://github.com/sequelize/sequelize.git
 REPO_NAME=sequelize
 BUILD_DIR=site
+VERSIONS=("v7" "v6" "v5" "v4" "v3")
+VERSIONS_JOINED=$(IFS=,; echo "${VERSIONS[*]}")
 
 build_branch () {
-    git checkout $1
+    VERSION=$1
 
+    git checkout $VERSION
     npm install
     npm run docs
     git stash
+    rm -rf ../$VERSION
 
-    rm -rf ../$1
-    if [ $1 == "v3" ];then
+    if [ $VERSION == "v3" ];then
         mkdocs build --clean
-        mv ./site ../$BUILD_DIR/$1
+        mv ./site ../$BUILD_DIR/$VERSION
     else
-        if [ $1 == "v6" ]; then
-          mv ./esdoc ../$BUILD_DIR/master
-        else
-          mv ./esdoc ../$BUILD_DIR/$1
+        node ../build/inject-version-picker.js \
+            --current=$VERSION \
+            --versions=$VERSIONS_JOINED \
+            --path=./esdoc
+
+        if [ $VERSION == "main" ]; then
+            mkdir ../$BUILD_DIR/master
+            cp -r ./esdoc/* ../$BUILD_DIR/master/
         fi
+        
+        mv ./esdoc ../$BUILD_DIR/$VERSION
     fi
 }
 
@@ -27,7 +36,7 @@ git clone $CLONE_URL
 
 cd $REPO_NAME
 
-build_branch v6
-build_branch v5
-build_branch v4
-build_branch v3
+build_branch main
+for version in ${VERSIONS[@]}; do
+    build_branch $version
+done
