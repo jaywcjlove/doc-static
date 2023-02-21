@@ -1,8 +1,10 @@
 name: sequelize.org
 on:
   push:
-    branches:
-      - master
+    # branches:
+    #   - master
+    paths:
+      - '.github/workflows/sequelize.org.yml'
 
 jobs:
   build:

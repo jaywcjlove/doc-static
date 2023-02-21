@@ -1,8 +1,10 @@
 name: jestjs.io
 on:
   push:
-    branches:
-      - master
+    # branches:
+    #   - master
+    paths:
+      - '.github/workflows/jestjs.io.yml'
 
 jobs:
   build:

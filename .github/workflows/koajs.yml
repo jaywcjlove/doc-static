@@ -1,8 +1,10 @@
 name: koajs
 on:
   push:
-    branches:
-      - master
+    # branches:
+    #   - master
+    paths:
+      - '.github/workflows/koajs.yml'
 
 jobs:
   build:

@@ -1,8 +1,10 @@
 name: typeorm.github.io
 on:
   push:
-    branches:
-      - master
+    # branches:
+    #   - master
+    paths:
+      - '.github/workflows/typeorm.github.io.yml'
 
 jobs:
   build:

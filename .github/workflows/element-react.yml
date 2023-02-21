@@ -1,8 +1,10 @@
 name: element-react
 on:
   push:
-    branches:
-      - master
+    # branches:
+    #   - master
+    paths:
+      - '.github/workflows/element-react.yml'
 
 jobs:
   build:

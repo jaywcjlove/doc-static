@@ -1,8 +1,8 @@
 name: deno-manual-cn
 on:
   push:
-    branches:
-      - master
+    paths:
+      - '.github/workflows/deno-manual-cn.yml'
 
 jobs:
   build:

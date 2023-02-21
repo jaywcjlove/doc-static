@@ -1,8 +1,10 @@
 name: element.eleme.io
 on:
   push:
-    branches:
-      - master
+    # branches:
+    #   - master
+    paths:
+      - '.github/workflows/element.eleme.io.yml'
 
 jobs:
   build:

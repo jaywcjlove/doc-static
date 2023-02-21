@@ -1,8 +1,10 @@
 name: ant.design
 on:
   push:
-    branches:
-      - master
+    # branches:
+    #   - master
+    paths:
+      - '.github/workflows/ant.design.yml'
 
 jobs:
   build:

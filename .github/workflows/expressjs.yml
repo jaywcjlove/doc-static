@@ -1,8 +1,10 @@
 name: expressjs
 on:
   push:
-    branches:
-      - master
+    # branches:
+    #   - master
+    paths:
+      - '.github/workflows/expressjs.yml'
 
 jobs:
   build:

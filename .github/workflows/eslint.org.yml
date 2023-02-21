@@ -1,8 +1,10 @@
 name: eslint.org
 on:
   push:
-    branches:
-      - master
+    # branches:
+    #   - master
+    paths:
+      - '.github/workflows/eslint.org.yml'
 
 jobs:
   build:

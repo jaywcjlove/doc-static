@@ -1,8 +1,10 @@
 name: angular.cn
 on:
   push:
-    branches:
-      - master
+    # branches:
+    #   - master
+    paths:
+      - '.github/workflows/angular.cn.yml'
 
 jobs:
   build:
