@@ -9,22 +9,17 @@ redirect_from: "/guide/migrating-5.html"
 
 <h2 id="overview">Overview</h2>
 
-Express 5.0 is still in the alpha release stage, but here is a preview of the changes that will be in the release and how to migrate your Express 4 app to Express 5.
+Express 5.0 is still in the beta release stage, but here is a preview of the changes that will be in the release and how to migrate your Express 4 app to Express 5.
 
-Express 5 is not very different from Express 4: The changes to the API are not as significant as from 3.0 to 4.0.  Although the basic API remains the same, there are still breaking changes; in other words an existing Express 4 program might not work if you update it to use Express 5.
+To install the latest beta and to preview Express 5, enter the following command in your application root directory:
 
-To install the latest alpha and to preview Express 5, enter the following command in your application root directory:
-
-```sh
-$ npm install express@>=5.0.0-alpha.8 --save
+```console
+$ npm install "express@>=5.0.0-beta.1" --save
 ```
 
 You can then run your automated tests to see what fails, and fix problems according to the updates listed below. After addressing test failures, run your app to see what errors occur. You'll find out right away if the app uses any methods or properties that are not supported.
 
 <h2 id="changes">Changes in Express 5</h2>
-
-Here is the list of changes (as of the alpha 2 release ) that will affect you as a user of Express.
-See the [pull request](https://github.com/expressjs/express/pull/2237) for a list of all the planned features.
 
 **Removed methods and properties**
 
@@ -44,6 +39,8 @@ See the [pull request](https://github.com/expressjs/express/pull/2237) for a lis
 **Changed**
 
 <ul class="doclist">
+  <li><a href="#path-syntax">Path route matching syntax</a></li>
+  <li><a href="#rejected-promises">Rejected promises handled from middleware and handlers</a></li>
   <li><a href="#app.router">app.router</a></li>
   <li><a href="#req.host">req.host</a></li>
   <li><a href="#req.query">req.query</a></li>
@@ -112,6 +109,26 @@ The `res.sendfile()` function has been replaced by a camel-cased version `res.se
 
 <h3>Changed</h3>
 
+<h4 id="path-syntax">Path route matching syntax</h4>
+
+Path route matching syntax is when a string is supplied as the first parameter to the `app.all()`, `app.use()`, `app.METHOD()`, `router.all()`, `router.METHOD()`, and `router.use()` APIs. The following changes have been made to how the path string is matched to an incoming request:
+
+- Add new `?`, `*`, and `+` parameter modifiers.
+- Matching group expressions are only RegExp syntax.
+  * `(*)` is no longer valid and must be written as `(.*)`, for example.
+- Named matching groups no longer available by position in `req.params`.
+  * `/:foo(.*)` only captures as `req.params.foo` and not available as `req.params[0]`.
+- Regular expressions can only be used in a matching group.
+  * `/\\d+` is no longer valid and must be written as `/(\\d+)`.
+- Special `*` path segment behavior removed.
+  * `/foo/*/bar` will match a literal `*` as the middle segment.
+
+<h4 id="rejected-promises">Rejected promises handled from middleware and handlers</h4>
+
+Request middleware and handlers that return rejected promises are now handled by forwarding the rejected value as an `Error` to the error handling middleware. This means that using `async` functions as middleware and handlers are easier than ever. When an error is thrown in an `async` function or a rejected promise is `await`ed inside an async function, those errors will be passed to the error handler as if calling `next(err)`.
+
+Details of how Express handles errors is covered in the [error handling documentation](/en/guide/error-handling.html).
+
 <h4 id="app.router">app.router</h4>
 
 The `app.router` object, which was removed in Express 4, has made a comeback in Express 5. In the new version, this object is a just a reference to the base Express router, unlike in Express 3, where an app had to explicitly load it.
@@ -122,7 +139,7 @@ In Express 4, the `req.host` function incorrectly stripped off the port number i
 
 <h4 id="req.query">req.query</h4>
 
-In Express 4.7 and Express 5 onwards, the query parser option can accept `false` to disable query string parsing when you want to use your own function for query string parsing logic.
+The `req.query` property is no longer a writable property and is instead a getter. The default query parser has been changed from "extended" to "simple".
 
 <h3>Improvements</h3>
 

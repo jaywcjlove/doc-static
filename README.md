@@ -13,11 +13,15 @@ To preview the website locally:
    ```
    $ gem install jekyll-redirect-from
    ```
+   
+1. clone this repository by running the following command:
+   ```
+   $ git clone https://github.com/expressjs/expressjs.com.git
+   ```
 
-1. `cd` to the repository directory and run the following command:
+1. navigate to the cloned repository directory and run the following command:
 
    ```
-   $ cd expressjs.com
    $ bundle install
    ```
 
@@ -50,8 +54,8 @@ app.listen(3000)
 The result looks like this:
 
 ```js
-var express = require('express')
-var app = express()
+const express = require('express')
+const app = express()
 app.listen(3000)
 ```
 

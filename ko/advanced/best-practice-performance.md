@@ -45,9 +45,9 @@ lang: ko
 Gzip 압축을 사용하면 응답 본문의 크기를 크게 줄일 수 있으며, 따라서 웹 앱의 속도를 높일 수 있습니다. Express 앱에서 gzip 압축을 사용하려면 [compression](https://www.npmjs.com/package/compression) 미들웨어를 사용하십시오. 예를 들면 다음과 같습니다.
 
 ```js
-var compression = require('compression')
-var express = require('express')
-var app = express()
+const compression = require('compression')
+const express = require('express')
+const app = express()
 app.use(compression())
 ```
 
@@ -114,12 +114,12 @@ Try-catch는 동기식 코드에서 예외를 처리하는 데 사용할 수 있
 이 미들웨어 함수는 JSON 오브젝트이자 "params"라는 이름을 갖는 조회 필드를 수락합니다.
 
 ```js
-app.get('/search', function (req, res) {
+app.get('/search', (req, res) => {
   // Simulating async operation
-  setImmediate(function () {
-    var jsonStr = req.query.params
+  setImmediate(() => {
+    const jsonStr = req.query.params
     try {
-      var jsonObj = JSON.parse(jsonStr)
+      const jsonObj = JSON.parse(jsonStr)
       res.send('Success')
     } catch (e) {
       res.status(400).send('Invalid JSON string')
@@ -137,20 +137,15 @@ app.get('/search', function (req, res) {
 `then()`을 사용하는 비동기식 코드 블록 내에서는 프로미스를 통해 모든 예외(명시적 예외 및 암시적 예외 모두)를 처리할 수 있습니다. 프로미스 체인의 끝에 `.catch(next)`만 추가하면 됩니다. 예를 들면 다음과 같습니다.
 
 ```js
-app.get('/', function (req, res, next) {
+app.get('/', (req, res, next) => {
   // do some sync stuff
   queryDb()
-    .then(function (data) {
-      // handle data
-      return makeCsv(data)
-    })
-    .then(function (csv) {
-      // handle csv
-    })
+    .then((data) => makeCsv(data)) // handle data
+    .then((csv) => { /* handle csv */ })
     .catch(next)
 })
 
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   // handle error
 })
 ```
@@ -323,15 +318,13 @@ StrongLoop Process Manager는 쉽게 systemd의 서비스로서 설치할 수 �
 
 StrongLoop PM을 systemd의 서비스로서 설치하는 방법은 다음과 같습니다.
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ sudo sl-pm-install --systemd
-</code>
-</pre>
+```
 
 이후 다음과 같이 서비스를 시작하십시오.
 
-```sh
+```console
 $ sudo sl-pm-install --systemd
 ```
 
@@ -394,14 +387,14 @@ StrongLoop Process Manager는 쉽게 Upstart의 서비스로 설치할 수 있�
 StrongLoop PM을 Upstart 1.4의 서비스로서 설치하는 방법은 다음과 같습니다.
 
 
-```sh
+```console
 $ sudo sl-pm-install
 ```
 
 이후 다음과 같이 서비스를 실행하십시오.
 
 
-```sh
+```console
 $ sudo /sbin/initctl start strong-pm
 ```
 
@@ -431,7 +424,7 @@ StrongLoop Process Manager(PM)가 애플리케이션으로서 실행되면, Stro
 
 예를 들어 prod.foo.com에 앱을 배치했으며 StrongLoop PM이 포트 8701(기본값)에서 청취하는 경우를 가정하면, 다음과 같이 slc를 이용해 클러스터의 크기를 8로 설정할 수 있습니다.
 
-```sh
+```console
 $ slc ctl -C http://prod.foo.com:8701 set-size my-app 8
 ```
 
@@ -445,7 +438,7 @@ PM2로 애플리케이션을 실행하고 있을 때, 특정한 수의 인스턴
 
 아래와 같은 방법으로 클러스터 모드를 킵니다.
 
-```sh
+```console
 # Start 4 worker processes
 $ pm2 start app.js -i 4
 # Auto-detect number of available CPUs and start that many worker processes
@@ -456,7 +449,7 @@ $ pm2 start app.js -i max
 
 실행이 시작되면, `app`으로 이름지어진 애플리케이션을 아래와 같은 방법으로 스케일링 할 수 있습니다.
 
-```sh
+```console
 # Add 3 more workers
 $ pm2 scale app +3
 # Scale to a specific number of workers
@@ -480,7 +473,7 @@ PM2의 클러스터링에 관한 추가 정보는 PM2 문서의 [Cluster Mode](h
 
 로드 밸런서는 일반적으로 여러 애플리케이션 인스턴스 및 서버에 대한 트래픽을 오케스트레이션하는 역방향 프록시입니다. [Nginx](http://nginx.org/en/docs/http/load_balancing.html) 또는 [HAProxy](https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts)를 이용하면 앱에 대한 로드 밸런서를 쉽게 설정할 수 있습니다.
 
-로드 밸런싱을 이용하는 경우, 특정한 세션 ID와 연관된 요청이 해당 요청을 발생시킨 프로세스에 연결되도록 해야 할 수도 있습니다. 이러한 경우는 *세션 선호도(session affinity)* 또는 *스티키 세션(sticky session)*으로 알려져 있으며, 세션 데이터를 위해 Redis와 같은 데이터 저장소를 사용하는 위의 제안을 통해 처리할 수도 있습니다(애플리케이션에 따라 다름). 토론을 위해서는 [Using multiple nodes](http://socket.io/docs/using-multiple-nodes/)를 참조하십시오.
+로드 밸런싱을 이용하는 경우, 특정한 세션 ID와 연관된 요청이 해당 요청을 발생시킨 프로세스에 연결되도록 해야 할 수도 있습니다. 이러한 경우는 *세션 선호도(session affinity)* 또는 *스티키 세션(sticky session)*으로 알려져 있으며, 세션 데이터를 위해 Redis와 같은 데이터 저장소를 사용하는 위의 제안을 통해 처리할 수도 있습니다(애플리케이션에 따라 다름). 토론을 위해서는 [Using multiple nodes](https://socket.io/docs/using-multiple-nodes)를 참조하십시오.
 
 #### Nginx 로드 밸런서와 함께 StrongLoop PM 사용
 

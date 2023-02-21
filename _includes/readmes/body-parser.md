@@ -2,7 +2,7 @@
 
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
-[![Build Status][travis-image]][travis-url]
+[![Build Status][github-actions-ci-image]][github-actions-ci-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
 
 Node.js body parsing middleware.
@@ -48,8 +48,6 @@ $ npm install body-parser
 ```
 
 ## API
-
-<!-- eslint-disable no-unused-vars -->
 
 ```js
 var bodyParser = require('body-parser')
@@ -344,6 +342,14 @@ to this middleware. This module operates directly on bytes only and you cannot
 call `req.setEncoding` when using this module. The `status` property is set to
 `500` and the `type` property is set to `'stream.encoding.set'`.
 
+### stream is not readable
+
+This error will occur when the request is no longer readable when this middleware
+attempts to read it. This typically means something other than a middleware from
+this module read the reqest body already and the middleware was also configured to
+read the same request. The `status` property is set to `500` and the `type`
+property is set to `'stream.not.readable'`.
+
 ### too many parameters
 
 This error will occur when the content of the request exceeds the configured
@@ -450,9 +456,9 @@ app.use(bodyParser.text({ type: 'text/html' }))
 
 [npm-image]: https://img.shields.io/npm/v/body-parser.svg
 [npm-url]: https://npmjs.org/package/body-parser
-[travis-image]: https://img.shields.io/travis/expressjs/body-parser/master.svg
-[travis-url]: https://travis-ci.org/expressjs/body-parser
 [coveralls-image]: https://img.shields.io/coveralls/expressjs/body-parser/master.svg
 [coveralls-url]: https://coveralls.io/r/expressjs/body-parser?branch=master
 [downloads-image]: https://img.shields.io/npm/dm/body-parser.svg
 [downloads-url]: https://npmjs.org/package/body-parser
+[github-actions-ci-image]: https://img.shields.io/github/workflow/status/expressjs/body-parser/ci/master?label=ci
+[github-actions-ci-url]: https://github.com/expressjs/body-parser/actions/workflows/ci.yml

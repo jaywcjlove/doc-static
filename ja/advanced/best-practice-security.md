@@ -56,7 +56,7 @@ Helmet は、実際には、セキュリティー関連の HTTP ヘッダーを�
 
 その他のモジュールと同様に Helmet をインストールします。
 
-```sh
+```console
 $ npm install --save helmet
 ```
 
@@ -65,7 +65,7 @@ $ npm install --save helmet
 ```js
 // ...
 
-var helmet = require('helmet')
+const helmet = require('helmet')
 app.use(helmet())
 
 // ...
@@ -105,7 +105,7 @@ Cookie を介してアプリケーションが悪用されないように、デ�
 この問題を回避するには、汎用な Cookie 名を使用します。例えば、[express-session](https://www.npmjs.com/package/express-session) ミドルウェアを使用します。
 
 ```js
-var session = require('express-session')
+const session = require('express-session')
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
   secret: 's3Cur3',
@@ -126,11 +126,11 @@ app.use(session({
 次に、[cookie-session](https://www.npmjs.com/package/cookie-session) ミドルウェアの使用例を示します。
 
 ```js
-var session = require('cookie-session')
-var express = require('express')
-var app = express()
+const session = require('cookie-session')
+const express = require('express')
+const app = express()
 
-var expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
+const expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
 app.use(session({
   name: 'session',
   keys: ['key1', 'key2'],
@@ -150,7 +150,7 @@ npm を使用したアプリケーションの依存関係の管理は、強力�
 
 npm@6以降、npmはすべてのインストール要求を自動的に確認します。また、'npm audit'を使用して依存関係ツリーを分析することもできます。
 
-```sh
+```console
 $ npm audit
 ```
 
@@ -158,35 +158,34 @@ $ npm audit
 
 Snykは、[Snykのオープンソース脆弱性データベース](https://snyk.io/vuln/)に対して、依存関係の既知の脆弱性に対するアプリケーションをチェックする[コマンドラインツール](https://www.npmjs.com/package/snyk)と[Github integration](https://snyk.io/docs/github)を提供しています。 次のようにCLIをインストールします。
 
-```sh
+```console
 $ npm install -g snyk
 $ cd your-app
 ```
 
 このコマンドを使用して、アプリケーションの脆弱性をテストします。
 
-```sh
+```console
 $ snyk test
 ```
 
 このコマンドを使用して、検出された脆弱性を修正するための更新プログラムやパッチを適用するプロセスを案内するウィザードを開きます。
 
-```sh
+```console
 $ snyk wizard
 ```
 
 ## その他の既知の脆弱性を回避する
 
-アプリケーションで使用する Express やその他のモジュールに影響を与える可能性がある [Node Security Project](https://nodesecurity.io/advisories) のアドバイザリーに常に注意してください。一般に、Node Security Project は、Node のセキュリティーに関する知識とツールの優れたリソースです。
+アプリケーションで使用する Express やその他のモジュールに影響を与える可能性がある [Node Security Project](https://npmjs.com/advisories) のアドバイザリーに常に注意してください。一般に、Node Security Project は、Node のセキュリティーに関する知識とツールの優れたリソースです。
 
-最後に、Express アプリケーションは、その他の Web アプリケーションと同様、さまざまな Web ベースの攻撃に対して脆弱になりえます。既知の [Web の脆弱性](https://www.owasp.org/index.php/Top_10_2013-Top_10)をよく理解して、それらを回避するための予防措置を取ってください。
+最後に、Express アプリケーションは、その他の Web アプリケーションと同様、さまざまな Web ベースの攻撃に対して脆弱になりえます。既知の [Web の脆弱性](https://www.owasp.org/www-project-top-ten/)をよく理解して、それらを回避するための予防措置を取ってください。
 
 ## その他の考慮事項
 
 次に、優れた [Node.js セキュリティー・チェックリスト](https://blog.risingstack.com/node-js-security-checklist/)に記載されているその他の推奨事項をリストします。これらの推奨事項の詳細については、ブログの投稿を参照してください。
 
 * 認証に対する総当たり攻撃を防止するために、回数制限を実装してください。そのための 1 つの方法では、[StrongLoop API Gateway](https://strongloop.com/node-js/api-gateway/) を使用して回数制限ポリシーを適用します。あるいは、[express-limiter](https://www.npmjs.com/package/express-limiter) などのミドルウェアを使用できますが、そのためにはコードを若干変更する必要があります。
-* クロスサイト・リクエスト・フォージェリー (CSRF) から保護するために、[csurf](https://www.npmjs.com/package/csurf) ミドルウェアを使用してください。
 * クロスサイト・スクリプティング (XSS) とコマンド・インジェクション攻撃から保護するために、必ず、ユーザー入力のフィルタリングとサニタイズを実行してください。
 * パラメーター化照会または作成済みステートメントを使用して、SQL インジェクション攻撃に対して防衛してください。
 * オープン・ソースの [sqlmap](http://sqlmap.org/) ツールを使用して、アプリケーションの SQL インジェクションに対する脆弱性を検出してください。

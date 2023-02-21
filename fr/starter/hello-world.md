@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening on port ${port}`)
 })
 </code>
 </pre>
@@ -43,11 +43,9 @@ Les objets `req` (demande) et `res` (réponse) sont exactement les mêmes que ce
 
 Exécutez l'application avec la commande suivante :
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ node app.js
-</code>
-</pre>
+```
 
 Puis chargez [http://localhost:3000/](http://localhost:3000/) dans un navigateur pour consulter le résultat.
 

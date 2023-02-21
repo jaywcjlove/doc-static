@@ -12,13 +12,13 @@ lang: ko
 다음의 코드는 `.ntl` 파일을 렌더링하기 위한 매우 간단한 템플릿 엔진을 구현하는 예입니다.
 
 ```js
-var fs = require('fs') // this engine requires the fs module
-app.engine('ntl', function (filePath, options, callback) { // define the template engine
-  fs.readFile(filePath, function (err, content) {
+const fs = require('fs') // this engine requires the fs module
+app.engine('ntl', (filePath, options, callback) => { // define the template engine
+  fs.readFile(filePath, (err, content) => {
     if (err) return callback(err)
     // this is an extremely simple template engine
-    var rendered = content.toString().replace('#title#', '<title>' + options.title + '</title>')
-      .replace('#message#', '<h1>' + options.message + '</h1>')
+    const rendered = content.toString().replace('#title#', `<title>${options.title}</title>`)
+      .replace('#message#', `<h1>${options.message}</h1>`)
     return callback(null, rendered)
   })
 })
@@ -35,7 +35,7 @@ app.set('view engine', 'ntl') // register the template engine
 이후 앱에 다음과 같은 라우트를 작성하십시오.
 
 ```js
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.render('index', { title: 'Hey', message: 'Hello there!' })
 })
 ```

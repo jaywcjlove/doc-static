@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening on port ${port}`)
 })
 </code></pre></div>
 
@@ -47,7 +47,7 @@ RunKit เป็นบริการของบริษัทอื่นท�
 
 รัน app ด้วยคำสั่งนี้:
 
-```sh
+```console
 $ node app.js
 ```
 

@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening on port ${port}`)
 })
 </code>
 </pre>
@@ -39,11 +39,9 @@ app.listen(port, () => {
 
 Запустите приложение с помощью следующей команды:
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ node app.js
-</code>
-</pre>
+```
 
 После этого откройте в браузере страницу [http://localhost:3000/](http://localhost:3000/), чтобы просмотреть результат.
 

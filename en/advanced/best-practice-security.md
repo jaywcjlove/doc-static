@@ -46,22 +46,19 @@ Also, a handy tool to get a free TLS certificate is [Let's Encrypt](https://lets
 
 ## Use Helmet
 
-[Helmet](https://www.npmjs.com/package/helmet) can help protect your app from some well-known web vulnerabilities by setting HTTP headers appropriately.
+[Helmet][helmet] can help protect your app from some well-known web vulnerabilities by setting HTTP headers appropriately.
 
-Helmet is actually just a collection of smaller middleware functions that set security-related HTTP response headers:
+Helmet is a collection of several smaller middleware functions that set security-related HTTP response headers. Some examples include:
 
-* [csp](https://github.com/helmetjs/csp) sets the `Content-Security-Policy` header to help prevent cross-site scripting attacks and other cross-site injections.
-* [hidePoweredBy](https://github.com/helmetjs/hide-powered-by) removes the `X-Powered-By` header.
-* [hsts](https://github.com/helmetjs/hsts) sets `Strict-Transport-Security` header that enforces secure (HTTP over SSL/TLS) connections to the server.
-* [ieNoOpen](https://github.com/helmetjs/ienoopen) sets `X-Download-Options` for IE8+.
-* [noCache](https://github.com/helmetjs/nocache) sets `Cache-Control` and Pragma headers to disable client-side caching.
-* [noSniff](https://github.com/helmetjs/dont-sniff-mimetype) sets `X-Content-Type-Options` to prevent browsers from MIME-sniffing a response away from the declared content-type.
-* [frameguard](https://github.com/helmetjs/frameguard) sets the `X-Frame-Options` header to provide [clickjacking](https://www.owasp.org/index.php/Clickjacking) protection.
-* [xssFilter](https://github.com/helmetjs/x-xss-protection) sets `X-XSS-Protection` to enable the Cross-site scripting (XSS) filter in most recent web browsers.
+* `helmet.contentSecurityPolicy` which sets the `Content-Security-Policy` header. This helps prevent cross-site scripting attacks among many other things.
+* `helmet.hsts` which sets the `Strict-Transport-Security` header. This helps enforce secure (HTTPS) connections to the server.
+* `helmet.frameguard` which sets the `X-Frame-Options` header. This provides [clickjacking](https://www.owasp.org/index.php/Clickjacking) protection.
+
+Helmet includes several other middleware functions which you can read about [at its documentation website][helmet].
 
 Install Helmet like any other module:
 
-```sh
+```console
 $ npm install --save helmet
 ```
 
@@ -70,28 +67,52 @@ Then to use it in your code:
 ```js
 // ...
 
-var helmet = require('helmet')
+const helmet = require('helmet')
 app.use(helmet())
 
 // ...
 ```
 
-### At a minimum, disable X-Powered-By header
+### Reduce Fingerprinting
 
-If you don't want to use Helmet, then at least disable the `X-Powered-By` header.  Attackers can use this header (which is enabled by default) to detect apps running Express and then launch specifically-targeted attacks.
+It can help to provide an extra layer of obsecurity to reduce server fingerprinting.
+Though not a security issue itself, a method to improve the overall posture of a web
+server is to take measures to reduce the ability to fingerprint the software being
+used on the server. Server software can be fingerprinted by kwirks in how they
+respond to specific requests.
 
-So, best practice is to turn off the header with the `app.disable()` method:
+By default, Express.js sends the `X-Powered-By` response header banner. This can be
+disabled using the `app.disable()` method:
 
 ```js
 app.disable('x-powered-by')
 ```
 
-If you use `helmet.js`, it takes care of this for you.
-
 {% include note.html content="Disabling the `X-Powered-By header` does not prevent
 a sophisticated attacker from determining that an app is running Express.  It may
 discourage a casual exploit, but there are other ways to determine an app is running
 Express. "%}
+
+Express.js also sends it's own formatted 404 Not Found messages and own formatter error
+response messages. These can be changed by
+[adding your own not found handler](/en/starter/faq.html#how-do-i-handle-404-responses)
+and
+[writing your own error handler](/en/guide/error-handling.html#writing-error-handlers):
+
+```js
+// last app.use calls right before app.listen():
+
+// custom 404
+app.use((req, res, next) => {
+  res.status(404).send("Sorry can't find that!")
+})
+
+// custom error handler
+app.use((err, req, res, next) => {
+  console.error(err.stack)
+  res.status(500).send('Something broke!')
+})
+```
 
 ## Use cookies securely
 
@@ -113,7 +134,7 @@ Using the default session cookie name can open your app to attacks.  The securit
 To avoid this problem, use generic cookie names; for example using [express-session](https://www.npmjs.com/package/express-session) middleware:
 
 ```js
-var session = require('express-session')
+const session = require('express-session')
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
   secret: 's3Cur3',
@@ -134,11 +155,11 @@ Set the following cookie options to enhance security:
 Here is an example using [cookie-session](https://www.npmjs.com/package/cookie-session) middleware:
 
 ```js
-var session = require('cookie-session')
-var express = require('express')
-var app = express()
+const session = require('cookie-session')
+const express = require('express')
+const app = express()
 
-var expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
+const expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
 app.use(session({
   name: 'session',
   keys: ['key1', 'key2'],
@@ -168,7 +189,7 @@ Using npm to manage your application's dependencies is powerful and convenient. 
 
 Since npm@6, npm automatically reviews every install request. Also you can use 'npm audit' to analyze your dependency tree.
 
-```sh
+```console
 $ npm audit
 ```
 
@@ -176,36 +197,37 @@ If you want to stay more secure, consider [Snyk](https://snyk.io/).
 
 Snyk offers both a [command-line tool](https://www.npmjs.com/package/snyk) and a [Github integration](https://snyk.io/docs/github) that checks your application against [Snyk's open source vulnerability database](https://snyk.io/vuln/) for any known vulnerabilities in your dependencies. Install the CLI as follows:
 
-```sh
+```console
 $ npm install -g snyk
 $ cd your-app
 ```
 
 Use this command to test your application for vulnerabilities:
 
-```sh
+```console
 $ snyk test
 ```
 
 Use this command to open a wizard that walks you through the process of applying updates or patches to fix the vulnerabilities that were found:
 
-```sh
+```console
 $ snyk wizard
 ```
 
 ## Avoid other known vulnerabilities
 
-Keep an eye out for [Node Security Project](https://nodesecurity.io/advisories) or [Snyk](https://snyk.io/vuln/) advisories that may affect Express or other modules that your app uses.  In general, these databases are excellent resources for knowledge and tools about Node security.
+Keep an eye out for [Node Security Project](https://npmjs.com/advisories) or [Snyk](https://snyk.io/vuln/) advisories that may affect Express or other modules that your app uses.  In general, these databases are excellent resources for knowledge and tools about Node security.
 
-Finally, Express apps - like any other web apps - can be vulnerable to a variety of web-based attacks. Familiarize yourself with known [web vulnerabilities](https://www.owasp.org/index.php/Top_10-2017_Top_10) and take precautions to avoid them.
+Finally, Express apps - like any other web apps - can be vulnerable to a variety of web-based attacks. Familiarize yourself with known [web vulnerabilities](https://www.owasp.org/www-project-top-ten/) and take precautions to avoid them.
 
 ## Additional considerations
 
 Here are some further recommendations from the excellent [Node.js Security Checklist](https://blog.risingstack.com/node-js-security-checklist/).  Refer to that blog post for all the details on these recommendations:
 
-* Use [csurf](https://www.npmjs.com/package/csurf) middleware to protect against cross-site request forgery (CSRF).
 * Always filter and sanitize user input to protect against cross-site scripting (XSS) and command injection attacks.
 * Defend against SQL injection attacks by using parameterized queries or prepared statements.
 * Use the open-source [sqlmap](http://sqlmap.org/) tool to detect SQL injection vulnerabilities in your app.
 * Use the [nmap](https://nmap.org/) and [sslyze](https://github.com/nabla-c0d3/sslyze) tools to test the configuration of your SSL ciphers, keys, and renegotiation as well as the validity of your certificate.
 * Use [safe-regex](https://www.npmjs.com/package/safe-regex) to ensure your regular expressions are not susceptible to [regular expression denial of service](https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS) attacks.
+
+[helmet]: https://helmetjs.github.io/

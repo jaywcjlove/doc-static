@@ -91,11 +91,9 @@ de Cross-site scripting (XSS) nos navegadores da web mais recentes.
 
 Instale o Helmet como qualquer outro módulo:
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ npm install --save helmet
-</code>
-</pre>
+```
 
 Em seguida use-o no seu código:
 
@@ -215,57 +213,6 @@ app.use(session({
 </code>
 </pre>
 
-## Assegure que suas dependências sejam seguras
-
-Usar o npm para gerenciar as dependências do aplicativo é
-poderoso e conveniente.  Mas os pacotes utilizados podem conter
-vulnerabilidades críticas de segurança que poderiam afetar também o
-seu aplicativo.  A segurança do seu aplicativo é tão forte quanto o
-"elo mais fraco" em suas dependências.
-
-Use uma ou ambas das duas seguintes ferramentas para auxiliá-lo
-a assegurar a segurança de pacotes de terceiros utilizados por você:
-[nsp](https://www.npmjs.com/package/nsp) e [requireSafe](https://requiresafe.com/).  Essas
-duas ferramentas fazem em grande parte a mesma coisa.
-
-[nsp](https://www.npmjs.com/package/nsp) é uma
-ferramenta de linha de comandos que verifica o banco de dados de
-vulnerabilidades do  [Node
-Security Project](https://nodesecurity.io/) para determinar se o seu aplicativo utiliza
-pacotes com vulnerabilidades conhecidas. Instale-a como segue:
-
-<pre>
-<code class="language-sh" translate="no">
-$ npm i nsp -g
-</code>
-</pre>
-
-Use este comando para enviar o arquivo `npm-shrinkwrap.json` para validação para o [nodesecurity.io](https://nodesecurity.io/):
-
-<pre>
-<code class="language-sh" translate="no">
-$ nsp audit-shrinkwrap
-</code>
-</pre>
-
-Use este comando para enviar o arquivo `package.json` para validação para o [nodesecurity.io](https://nodesecurity.io/):
-
-<pre>
-<code class="language-sh" translate="no">
-$ nsp audit-package
-</code>
-</pre>
-
-Aqui está como usar o [requireSafe](https://requiresafe.com/) para auditar seus módulos Node:
-
-<pre>
-<code class="language-sh" translate="no">
-$ npm install -g requiresafe
-$ cd your-app
-$ requiresafe check
-</code>
-</pre>
-
 ## Considerações adicionais
 
 Aqui estão algumas recomendações adicionais da excelente [Lista
@@ -276,7 +223,6 @@ bruta contra a autenticação.  Uma forma de fazer isso é usar o [Gateway
 da API do StrongLoop](https://strongloop.com/node-js/api-gateway/) para impingir políticas de limitação de tráfego.  Alternativamente,
 é possível usar um middleware como o [express-limiter](https://www.npmjs.com/package/express-limiter),
 mas fazer isso  irá requerer que você modifique seu código de alguma forma.
-* Use o middleware [csurf](https://www.npmjs.com/package/csurf) para se proteger contra falsificações de solicitação cross-site (CSRF).
 * Sempre filtrar e limpar a entrada do usuário para se proteger de ataques de cross-site scripting (XSS) e injeção de comando.
 * Proteja-se contra ataques de injeção de SQLs usando consultas parametrizadas ou instruções preparadas.
 * Use a ferramenta de software livre [sqlmap](http://sqlmap.org/) para detectar
@@ -290,9 +236,9 @@ a ataques [negação de serviço de expressões regulares](https://www.owasp.org
 
 Fique atento às recomendações do
 [Node Security
-Project](https://nodesecurity.io/advisories) que podem afetar o Express ou outros módulos usados
+Project](https://npmjs.com/advisories) que podem afetar o Express ou outros módulos usados
 pelo seu aplicativo.  Em geral, o Node Security Project é um excelente
 recurso para conhecimento e ferramentas sobre segurança do Node.
 
 Finalmente, os aplicativos do Express - como outros aplicativos web - podem estar vulneráveis a uma variedade de ataques baseados na
-web. Familiarize-se com [vulnerabilidades web](https://www.owasp.org/index.php/Top_10_2013-Top_10) conhecidas e tome precauções para evitá-las.
+web. Familiarize-se com [vulnerabilidades web](https://www.owasp.org/www-project-top-ten/) conhecidas e tome precauções para evitá-las.

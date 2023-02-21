@@ -100,7 +100,7 @@ In version 4 you can use a variable parameter to define the path where middlewar
 For example:
 
 ```js
-app.use('/book/:id', function (req, res, next) {
+app.use('/book/:id', (req, res, next) => {
   console.log('ID:', req.params.id)
   next()
 })
@@ -130,13 +130,13 @@ Here is an example of chained route handlers that are defined by using the `app.
 
 ```js
 app.route('/book')
-  .get(function (req, res) {
+  .get((req, res) => {
     res.send('Get a random book')
   })
-  .post(function (req, res) {
+  .post((req, res) => {
     res.send('Add a book')
   })
-  .put(function (req, res) {
+  .put((req, res) => {
     res.send('Update the book')
   })
 ```
@@ -159,16 +159,16 @@ var express = require('express')
 var router = express.Router()
 
 // middleware specific to this router
-router.use(function timeLog (req, res, next) {
+router.use((req, res, next) => {
   console.log('Time: ', Date.now())
   next()
 })
 // define the home page route
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
   res.send('Birds home page')
 })
 // define the about route
-router.get('/about', function (req, res) {
+router.get('/about', (req, res) => {
   res.send('About birds')
 })
 
@@ -350,7 +350,7 @@ if (app.get('env') === 'development') {
 app.get('/', routes.index)
 app.get('/users', user.list)
 
-http.createServer(app).listen(app.get('port'), function () {
+http.createServer(app).listen(app.get('port'), () => {
   console.log('Express server listening on port ' + app.get('port'))
 })
 ```
@@ -383,7 +383,7 @@ Begin the migration process by installing the required middleware for the
 Express 4 app and updating Express and Pug to their respective latest
 version with the following command:
 
-```sh
+```console
 $ npm install serve-favicon morgan method-override express-session body-parser multer errorhandler express@latest pug@latest --save
 ```
 
@@ -478,7 +478,7 @@ if (app.get('env') === 'development') {
 }
 
 var server = http.createServer(app)
-server.listen(app.get('port'), function () {
+server.listen(app.get('port'), () => {
   console.log('Express server listening on port ' + app.get('port'))
 })
 ```
@@ -487,7 +487,7 @@ server.listen(app.get('port'), function () {
 Unless you need to work directly with the `http` module (socket.io/SPDY/HTTPS), loading it is not required, and the app can be simply started this way:
 
 ```js
-app.listen(app.get('port'), function () {
+app.listen(app.get('port'), () => {
   console.log('Express server listening on port ' + app.get('port'))
 })
 ```
@@ -498,7 +498,7 @@ app.listen(app.get('port'), function () {
 The migration process is complete, and the app is now an
 Express 4 app. To confirm, start the app by using the following command:
 
-```sh
+```console
 $ node .
 ```
 
@@ -517,7 +517,7 @@ The command-line tool to generate an Express app is still
 If you already have the Express 3 app generator installed on your system,
 you must uninstall it:
 
-```sh
+```console
 $ npm uninstall -g express
 ```
 Depending on how your file and directory privileges are configured,
@@ -525,7 +525,7 @@ you might need to run this command with `sudo`.
 
 Now install the new generator:
 
-```sh
+```console
 $ npm install -g express-generator
 ```
 
@@ -548,7 +548,7 @@ Command options and use largely remain the same, with the following exceptions:
 
 Execute the following command to create an Express 4 app:
 
-```sh
+```console
 $ express app4
 ```
 
@@ -561,7 +561,7 @@ You will also notice that the `app.js` file is now a Node.js module, in contrast
 
 After installing the dependencies, start the app by using the following command:
 
-```sh
+```console
 $ npm start
 ```
 
@@ -588,7 +588,7 @@ delete the line that says `module.exports = app;` at the end of the
 ```js
 app.set('port', process.env.PORT || 3000)
 
-var server = app.listen(app.get('port'), function () {
+var server = app.listen(app.get('port'), () => {
   debug('Express server listening on port ' + server.address().port)
 })
 ```

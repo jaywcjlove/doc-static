@@ -58,11 +58,9 @@ Helmet es realmente una colección de nueve funciones de middleware más paquete
 
 Instale Helmet como cualquier otro módulo:
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ npm install --save helmet
-</code>
-</pre>
+```
 
 A continuación, utilícelo en el código:
 
@@ -170,7 +168,7 @@ El uso de npm para gestionar las dependencias de la aplicación es muy útil y c
 
 Desde npm@6, npm revisa automáticamente cada solicitud de instalación. También puedes utilizar 'npm audit' para analizar tu árbol de dependencias.
 
-```sh
+```console
 $ npm audit
 ```
 
@@ -178,35 +176,34 @@ Si quieres mantener más seguro, considera [Snyk](https://snyk.io/).
 
 Snyk ofrece tanto [herramienta de línea de comandos](https://www.npmjs.com/package/snyk) como una [integración de Github](https://snyk.io/docs/github) que comprueba tu aplicación contra [la base de datos de código abierto sobre vulnerabilidades de Snyk](https://snyk.io/vuln/) por cualquier vulnerabilidad conocida en tus dependencias. Instala la interfaz de línea de comandos:
 
-```sh
+```console
 $ npm install -g snyk
 $ cd your-app
 ```
 
 Usa este comando para comprobar tu aplicación contra vulnerabilidades:
 
-```sh
+```console
 $ snyk test
 ```
 
 Usa este comando para abrir un asistente que te guiará mediante el proceso de aplicar actualizaciones o parches para arreglar las vulnerabilidades que hayan sido encontradas:
 
-```sh
+```console
 $ snyk wizard
 ```
 
 ## Evitar otras vulnerabilidades conocidas
 
-Esté atento a las advertencias de [Node Security Project](https://nodesecurity.io/advisories) que puedan afectar a Express u otros módulos que utilice la aplicación.  En general, Node Security Project es un excelente recurso de herramientas e información sobre la seguridad de Node.
+Esté atento a las advertencias de [Node Security Project](https://npmjs.com/advisories) que puedan afectar a Express u otros módulos que utilice la aplicación.  En general, Node Security Project es un excelente recurso de herramientas e información sobre la seguridad de Node.
 
-Por último, las aplicaciones de Express, como cualquier otra aplicación web, son vulnerables a una amplia variedad de ataques basados en web. Familiarícese con las [vulnerabilidades web](https://www.owasp.org/index.php/Top_10_2013-Top_10) conocidas y tome precauciones para evitarlas.
+Por último, las aplicaciones de Express, como cualquier otra aplicación web, son vulnerables a una amplia variedad de ataques basados en web. Familiarícese con las [vulnerabilidades web](https://www.owasp.org/www-project-top-ten/) conocidas y tome precauciones para evitarlas.
 
 ## Consideraciones adicionales
 
 A continuación, se muestran algunas recomendaciones para la excelente lista de comprobación [Node.js Security Checklist](https://blog.risingstack.com/node-js-security-checklist/).  Consulte el post de este blog para ver todos los detalles de estas recomendaciones:
 
 * Implemente el límite de velocidad para evitar ataques de fuerza bruta contra la autenticación.  Una forma de hacerlo es utilizar [StrongLoop API Gateway](https://strongloop.com/node-js/api-gateway/) para forzar una política de limitación de velocidad.  También puede utilizar middleware como [express-limiter](https://www.npmjs.com/package/express-limiter), aunque para ello deberá modificar el código de alguna forma.
-* Utilice el middleware [csurf](https://www.npmjs.com/package/csurf) para protegerse contra la falsificación de solicitudes entre sitios (CSRF).
 * Filtre y sanee siempre la entrada de usuario para protegerse contra los ataques de scripts entre sitios (XSS) e inyección de mandatos.
 * Defiéndase contra los ataques de inyección de SQL utilizando consultas parametrizadas o sentencias preparadas.
 * Utilice la herramienta [sqlmap](http://sqlmap.org/) de código abierto para detectar vulnerabilidades de inyección de SQL en la aplicación.

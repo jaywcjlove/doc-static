@@ -40,9 +40,9 @@ lang: ja
 Gzip 圧縮により、応答本体のサイズを大幅に縮小できるため、Web アプリケーションの速度が高くなります。Express アプリケーションで gzip 圧縮として [compression](https://www.npmjs.com/package/compression) ミドルウェアを使用してください。次に例を示します。
 
 ```js
-var compression = require('compression')
-var express = require('express')
-var app = express()
+const compression = require('compression')
+const express = require('express')
+const app = express()
 app.use(compression())
 ```
 
@@ -102,12 +102,12 @@ Try-catch は、同期コードで例外をキャッチするために使用で�
 このミドルウェア関数は、JSON オブジェクトである「params」という照会フィールド・パラメーターを受け入れます。
 
 ```js
-app.get('/search', function (req, res) {
+app.get('/search', (req, res) => {
   // Simulating async operation
-  setImmediate(function () {
-    var jsonStr = req.query.params
+  setImmediate(() => {
+    const jsonStr = req.query.params
     try {
-      var jsonObj = JSON.parse(jsonStr)
+      const jsonObj = JSON.parse(jsonStr)
       res.send('Success')
     } catch (e) {
       res.status(400).send('Invalid JSON string')
@@ -123,20 +123,15 @@ app.get('/search', function (req, res) {
 Promise は、`then()` を使用する非同期コード・ブロックのすべての例外 (明示的と暗黙的の両方) を処理します。単に、Promise チェーンの最後に `.catch(next)` を追加してください。次に例を示します。
 
 ```js
-app.get('/', function (req, res, next) {
+app.get('/', (req, res, next) => {
   // do some sync stuff
   queryDb()
-    .then(function (data) {
-      // handle data
-      return makeCsv(data)
-    })
-    .then(function (csv) {
-      // handle csv
-    })
+    .then((data) => makeCsv(data)) // handle data
+    .then((csv) => { /* handle csv */ })
     .catch(next)
 })
 
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   // handle error
 })
 ```
@@ -301,13 +296,13 @@ StrongLoop Process Manager を Systemd サービスとして簡単にインス�
 
 StrongLoop PM を Systemd サービスとしてインストールするには、次のようにします。
 
-```sh
+```console
 $ sudo sl-pm-install --systemd
 ```
 
 次に、サービスを開始します。
 
-```sh
+```console
 $ sudo /usr/bin/systemctl start strong-pm
 ```
 
@@ -369,13 +364,13 @@ StrongLoop Process Manager を Upstart サービスとして簡単にインス�
 
 StrongLoop PM を Upstart 1.4 サービスとしてインストールするには、次のようにします。
 
-```sh
+```console
 $ sudo sl-pm-install
 ```
 
 次に、サービスを実行します。
 
-```sh
+```console
 $ sudo /sbin/initctl start strong-pm
 ```
 
@@ -403,7 +398,7 @@ StrongLoop Process Manager (PM) は、アプリケーションを実行する際
 
 例えば、アプリケーションを prod.foo.com にデプロイして、StrongLoop PM がポート 8701 (デフォルト) で listen している場合は、slc を使用してクラスター・サイズを 8 に設定します。
 
-```sh
+```console
 $ slc ctl -C http://prod.foo.com:8701 set-size my-app 8
 ```
 
@@ -417,7 +412,7 @@ When running an application with PM2, you can enable **cluster mode** to run it 
 
 To enable cluster mode, start your application like so:
 
-```sh
+```console
 # Start 4 worker processes
 $ pm2 start app.js -i 4
 # Auto-detect number of available CPUs and start that many worker processes
@@ -428,7 +423,7 @@ This can also be configured within a PM2 process file (`ecosystem.config.js` or 
 
 Once running, a given application with the name `app` can be scaled like so:
 
-```sh
+```console
 # Add 3 more workers
 $ pm2 scale app +3
 # Scale to a specific number of workers
@@ -449,7 +444,7 @@ For more information on clustering with PM2, see [Cluster Mode](https://pm2.keym
 
 ロード・バランサーは通常、複数のアプリケーション・インスタンスやサーバーとの間のトラフィックを調整するリバース・プロキシーです。[Nginx](http://nginx.org/en/docs/http/load_balancing.html) や [HAProxy](https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts) を使用して、アプリケーション用にロード・バランサーを簡単にセットアップできます。
 
-ロード・バランシングでは、特定のセッション ID に関連する要求が発信元のプロセスに接続することを確認する必要があります。これは、*セッション・アフィニティー* または*スティッキー・セッション* と呼ばれ、セッション・データに Redis などのデータ・ストアを使用する上記の提案によって対応できます (ご使用のアプリケーションによって異なります)。説明については、[Using multiple nodes](http://socket.io/docs/using-multiple-nodes/) を参照してください。
+ロード・バランシングでは、特定のセッション ID に関連する要求が発信元のプロセスに接続することを確認する必要があります。これは、*セッション・アフィニティー* または*スティッキー・セッション* と呼ばれ、セッション・データに Redis などのデータ・ストアを使用する上記の提案によって対応できます (ご使用のアプリケーションによって異なります)。説明については、[Using multiple nodes](https://socket.io/docs/using-multiple-nodes) を参照してください。
 
 ### リバース・プロキシーを使用する
 

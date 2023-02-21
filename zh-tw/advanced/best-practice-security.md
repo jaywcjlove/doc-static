@@ -46,11 +46,9 @@ Helmet 實際上只由 9 個小型中介軟體函數組成，這些函數會設�
 
 安裝 Helmet 等之類的其他任何模組：
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ npm install --save helmet
-</code>
-</pre>
+```
 
 然後在您的程式碼中使用它：
 
@@ -145,52 +143,11 @@ app.use(session({
 </code>
 </pre>
 
-## 確定您的相依關係是安全的
-
-使用 npm 來管理您應用程式的相依關係，不但效用大又很方便。但是您使用的套件可能含有重大的安全漏洞，可能也會影響您的應用程式。在您的相依關係中，您應用程式的安全強度如同「最弱的環節」。
-
-請使用下列兩種工具（任一或併用），以協助您確保您所用協力廠商套件的安全：[nsp](https://www.npmjs.com/package/nsp) 和 [requireSafe](https://requiresafe.com/)。這兩個工具的功用大致相同。
-
-[nsp](https://www.npmjs.com/package/nsp) 是指令行工具，會檢查 [Node Security Project](https://nodesecurity.io/) 漏洞資料庫，以判斷您的應用程式所使用的套件是否含有已知的漏洞。請依如下所示來安裝它：
-
-<pre>
-<code class="language-sh" translate="no">
-$ npm i nsp -g
-</code>
-</pre>
-
-使用這個指令來提交 `npm-shrinkwrap.json` 檔，以便向 [nodesecurity.io](https://nodesecurity.io/) 驗證：
-
-<pre>
-<code class="language-sh" translate="no">
-$ nsp audit-shrinkwrap
-</code>
-</pre>
-
-使用這個指令來提交 `package.json` 檔，以便向 [nodesecurity.io](https://nodesecurity.io/) 驗證：
-
-<pre>
-<code class="language-sh" translate="no">
-$ nsp audit-package
-</code>
-</pre>
-
-以下說明如何使用 [requireSafe](https://requiresafe.com/)，來審核您的 Node 模組：
-
-<pre>
-<code class="language-sh" translate="no">
-$ npm install -g requiresafe
-$ cd your-app
-$ requiresafe check
-</code>
-</pre>
-
 ## 其他注意事項
 
 以下是優異的 [Node.js Security Checklist](https://blog.risingstack.com/node-js-security-checklist/) 所提供的進一步建議。如需這些建議的所有詳細資料，請參閱該部落格文章：
 
 * 實作速率限制，以防對鑑別發動強制入侵攻擊。其中一個作法是使用 [StrongLoop API Gateway](https://strongloop.com/node-js/api-gateway/) 來施行速率限制原則。或者，您可以使用 [express-limiter](https://www.npmjs.com/package/express-limiter) 之類的中介軟體，但是如果這樣做，您需要稍微修改程式碼。
-* 使用 [csurf](https://www.npmjs.com/package/csurf) 中介軟體，來防範偽造跨網站要求 (CSRF)。
 * 一律對使用者輸入進行過濾和消毒，來防範跨網站 Scripting (XSS) 和指令注入攻擊。
 * 使用參數化查詢或備妥陳述式，來防禦 SQL 注入攻擊。
 * 使用開放程式碼 [sqlmap](http://sqlmap.org/) 工具，來偵測您應用程式中的 SQL 注入漏洞。
@@ -199,6 +156,6 @@ $ requiresafe check
 
 ## 避免其他已知的漏洞
 
-關注 [Node Security Project](https://nodesecurity.io/advisories) 中有關可能影響您應用程式所用之 Express 或其他模組的公告。一般而言，Node Security Project 是一個絕佳的資源，它提供 Node 安全的相關知識和工具。
+關注 [Node Security Project](https://npmjs.com/advisories) 中有關可能影響您應用程式所用之 Express 或其他模組的公告。一般而言，Node Security Project 是一個絕佳的資源，它提供 Node 安全的相關知識和工具。
 
-最後，如同其他任何的 Web 應用程式，Express 應用程式仍可能遭到各種 Web 型攻擊。請多加熟悉已知的 [Web 漏洞](https://www.owasp.org/index.php/Top_10_2013-Top_10)，並採取預防措施，來避免這些攻擊。
+最後，如同其他任何的 Web 應用程式，Express 應用程式仍可能遭到各種 Web 型攻擊。請多加熟悉已知的 [Web 漏洞](https://www.owasp.org/www-project-top-ten/)，並採取預防措施，來避免這些攻擊。

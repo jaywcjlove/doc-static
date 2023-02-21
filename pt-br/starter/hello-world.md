@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening on port ${port}`)
 })
 </code>
 </pre>
@@ -51,11 +51,9 @@ que desejaria fazer sem o envolvimento do Express.
 
 Execute o aplicativo com o seguinte comando:
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ node app.js
-</code>
-</pre>
+```
 
 Em seguida, carregue [http://localhost:3000/](http://localhost:3000/) em
 um navegador para visualizar a saída

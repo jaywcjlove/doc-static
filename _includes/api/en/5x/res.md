@@ -9,16 +9,16 @@ by the parameters to the callback function in which you're working.
 For example:
 
 ```js
-app.get('/user/:id', function (req, res) {
-  res.send('user ' + req.params.id)
+app.get('/user/:id', (req, res) => {
+  res.send(`user ${req.params.id}`)
 })
 ```
 
 But you could just as well have:
 
 ```js
-app.get('/user/:id', function (request, response) {
-  response.send('user ' + request.params.id)
+app.get('/user/:id', (request, response) => {
+  response.send(`user ${request.params.id}`)
 })
 ```
 
@@ -37,6 +37,10 @@ and supports all [built-in fields and methods](https://nodejs.org/api/http.html#
 
 <section markdown="1">
   {% include api/en/5x/res-locals.md %}
+</section>
+
+<section markdown="1">
+  {% include api/en/5x/res-req.md %}
 </section>
 
 <h3 id='res.methods'>Methods</h3>

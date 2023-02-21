@@ -8,16 +8,16 @@ by the parameters to the callback function in which you're working.
 For example:
 
 ```js
-app.get('/user/:id', function (req, res) {
-  res.send('user ' + req.params.id)
+app.get('/user/:id', (req, res) => {
+  res.send(`user ${req.params.id}`)
 })
 ```
 
 But you could just as well have:
 
 ```js
-app.get('/user/:id', function (request, response) {
-  response.send('user ' + request.params.id)
+app.get('/user/:id', (request, response) => {
+  response.send(`user ${request.params.id}`)
 })
 ```
 
@@ -94,6 +94,10 @@ or [pez](https://www.npmjs.com/package/pez).
 
 <section markdown="1">
   {% include api/en/5x/req-query.md %}
+</section>
+
+<section markdown="1">
+  {% include api/en/5x/req-res.md %}
 </section>
 
 <section markdown="1">

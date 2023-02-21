@@ -29,8 +29,8 @@ A load balancer uses health checks to determine if an application instance is he
 
 아래 명령을 사용해 Terminus를 설치합니다.
 
-```sh
-npm i @godaddy/terminus --save
+```console
+$ npm i @godaddy/terminus --save
 ```
 
 다음은 Terminus를 사용하는 쉬운 예제입니다. 자세한 정보는 <https://github.com/godaddy/terminus> 를 참고하세요.
@@ -75,9 +75,8 @@ server.listen(3000)
 
 아래 명령을 사용해 Lightship을 설치합니다.
 
-```sh
-npm install lightship
-
+```console
+$ npm install lightship
 ```
 
 Lightship을 사용하는 쉬운 예제입니다.
@@ -103,7 +102,6 @@ app.listen(3000, () => {
 })
 
 // You can signal that the service is not ready using `lightship.signalNotReady()`.
-
 ```
 
 [Lightship 문서](https://github.com/gajus/lightship)에서 [Kubernetes 설정](https://github.com/gajus/lightship#lightship-usage-kubernetes-container-probe-configuration)에 대한 예시와 [Express.js](https://github.com/gajus/lightship#using-with-expressjs)와의 통합 절차에 대한 완전한 예시를 제공합니다.

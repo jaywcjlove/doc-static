@@ -32,14 +32,12 @@ Di seguito sono elencate alcune operazioni che è possibile effettuare nel codic
 
 La compressione gzip è in grado di ridurre notevolmente la dimensione del contenuto della risposta e di conseguenza aumentare la velocità di un'applicazione web. Utilizzare il middleware di [compressione](https://www.npmjs.com/package/compression) per la compressione gzip nell'applicazione Express. Ad esempio:
 
-<pre>
-<code class="language-javascript" translate="no">
-var compression = require('compression');
-var express = require('express');
-var app = express();
-app.use(compression());
-</code>
-</pre>
+```js
+const compression = require('compression')
+const express = require('express')
+const app = express()
+app.use(compression())
+```
 
 Per un sito web ad elevato traffico nella produzione, il miglior modo per utilizzare la compressione è quello di implementarla ad un livello di proxy inverso (consultare [Utilizzare un proxy inverso](#proxy)). In questo caso, non è necessario utilizzare il middleware di compressione. Per dettagli su come abilitare la compressione gzip in Nginx, consultare [Modulo ngx_http_gzip_module](http://nginx.org/en/docs/http/ngx_http_gzip_module.html) nella documentazione Nginx.
 
@@ -108,22 +106,20 @@ Utilizzare uno strumento come [JSHint](http://jshint.com/) o [JSLint](http://www
 Di seguito viene riportato un esempio di utilizzo di try-catch per la gestione di un'eccezione che dà origine a un arresto anomalo del processo.
 Questa funzione middleware accetta un parametro del campo query denominato "params" che è un oggetto JSON.
 
-<pre>
-<code class="language-javascript" translate="no">
-app.get('/search', function (req, res) {
+```js
+app.get('/search', (req, res) => {
   // Simulating async operation
-  setImmediate(function () {
-    var jsonStr = req.query.params;
+  setImmediate(() => {
+    const jsonStr = req.query.params
     try {
-      var jsonObj = JSON.parse(jsonStr);
-      res.send('Success');
+      const jsonObj = JSON.parse(jsonStr)
+      res.send('Success')
     } catch (e) {
-      res.status(400).send('Invalid JSON string');
+      res.status(400).send('Invalid JSON string')
     }
-  });
-});
-</code>
-</pre>
+  })
+})
+```
 
 Tuttavia, try-catch funziona solo per il codice sincrono. Poiché la piattaforma Node è principalmente asincrona (nello specifico in un ambiente di produzione), try-catch non sarà in grado di rilevare molte eccezioni.
 
@@ -133,26 +129,19 @@ Tuttavia, try-catch funziona solo per il codice sincrono. Poiché la piattaforma
 
 Promises gestirà qualsiasi eccezione (sia implicita che esplicita) in blocchi di codice asincrono che utilizzano `then()`. Aggiungere `.catch(next)` alla fine della catena promise. Ad esempio:
 
-<pre>
-<code class="language-javascript" translate="no">
-app.get('/', function (req, res, next) {
+```js
+app.get('/', (req, res, next) => {
   // do some sync stuff
   queryDb()
-    .then(function (data) {
-      // handle data
-      return makeCsv(data)
-    })
-    .then(function (csv) {
-      // handle csv
-    })
-    .catch(next);
-});
+    .then((data) => makeCsv(data)) // handle data
+    .then((csv) => { /* handle csv */ })
+    .catch(next)
+})
 
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   // handle error
-});
-</code>
-</pre>
+})
+```
 
 Ora, tutti gli errori asincroni e sincroni vengono inoltrati al middleware degli errori.
 
@@ -161,15 +150,15 @@ Tuttavia, esistono due punti a cui prestare attenzione:
 1.  Tutto il codice asincrono deve restituire promises (ad eccezione di emettitori). Se una libreria particolare non restituire promises, convertire l'oggetto base utilizzando una funzione di supporto come [Bluebird.promisifyAll()](http://bluebirdjs.com/docs/api/promise.promisifyall.html).
 2.  Emettitori evento (come flussi) possono ancora dare origine ad eccezioni non rilevate. Quindi, assicurarsi di gestire l'evento di errore in modo appropriato, ad esempio:
 
-<pre>
-<code class="language-javascript" translate="no">
+```js
+const wrap = fn => (...args) => fn(...args).catch(args[2])
+
 app.get('/', wrap(async (req, res, next) => {
-  let company = await getCompanyById(req.query.id)
-  let stream = getLogoStreamById(company.id)
+  const company = await getCompanyById(req.query.id)
+  const stream = getLogoStreamById(company.id)
   stream.on('error', next).pipe(res)
 }))
-</code>
-</pre>
+```
 
 Per ulteriori informazioni sulla gestione degli errori mediante l'utilizzo di promises, consultare:
 
@@ -323,19 +312,15 @@ Per ulteriori informazioni su systemd, consultare [systemd reference (man page)]
 
 Per installare StrongLoop PM in qualità di servizio systemd:
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ sudo sl-pm-install --systemd
-</code>
-</pre>
+```
 
 Successivamente, avviare il servizio con:
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ sudo /usr/bin/systemctl start strong-pm
-</code>
-</pre>
+```
 
 Per ulteriori informazioni, consultare [Configurazione di un host di produzione (documentazione StrongLoop)](https://docs.strongloop.com/display/SLC/Setting+up+a+production+host#Settingupaproductionhost-RHEL7+,Ubuntu15.04or15.10).
 
@@ -397,19 +382,15 @@ Per ulteriori informazioni su Upstart, consultare [Upstart Intro, Cookbook and B
 
 Per installare StrongLoop PM in qualità di servizio Upstart 1.4:
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ sudo sl-pm-install
-</code>
-</pre>
+```
 
 Successivamente, eseguire il servizio con:
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ sudo /sbin/initctl start strong-pm
-</code>
-</pre>
+```
 
 NOTA: su sistemi che non supportano Upstart 1.4, i comandi sono leggermente differenti. Consultare [Configurazione di un host di produzione (documentazione StrongLoop)](https://docs.strongloop.com/display/SLC/Setting+up+a+production+host#Settingupaproductionhost-RHELLinux5and6,Ubuntu10.04-.10,11.04-.10) per ulteriori informazioni.
 
@@ -435,11 +416,9 @@ Quando StrongLoop Process Manager (PM) esegue un'applicazione, la esegue automat
 
 Ad esempio, se l'applicazione è stata implementata su prod.foo.com e StrongLoop PM è in ascolto sulla porta 8701 (quella predefinita), per impostare la dimensione del cluster a otto utilizzando slc:
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ slc ctl -C http://prod.foo.com:8701 set-size my-app 8
-</code>
-</pre>
+```
 
 Per ulteriori informazioni sul processo di clustering con StrongLoop PM, consultare [Processo di clustering](https://docs.strongloop.com/display/SLC/Clustering) nella documentazione StrongLoop.
 
@@ -455,7 +434,7 @@ A prescindere da quanto sia ottimizzata un'applicazione, una singola istanza è 
 
 Un servizio di bilanciamento del carico è solitamente un proxy inverso che gestisce il traffico a e d più istanze di applicazione e server. È possibile impostare facilmente un servizio di bilanciamento del carico per l'applicazione utilizzando [Nginx](http://nginx.org/en/docs/http/load_balancing.html) or [HAProxy](https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts).
 
-Con il servizio di bilanciamento del carico, è possibile che sia necessario garantire che le richieste associate a un ID sessione particolare si connettano al processo che le ha originate. Questo processo è noto come *affinità sessione* o *sessioni delicate*. Si consiglia di utilizzare un data store, ad esempio Redis, per i dati sessione (a seconda dell'applicazione). Per informazioni, consultare [Utilizzo di più nodi](http://socket.io/docs/using-multiple-nodes/).
+Con il servizio di bilanciamento del carico, è possibile che sia necessario garantire che le richieste associate a un ID sessione particolare si connettano al processo che le ha originate. Questo processo è noto come *affinità sessione* o *sessioni delicate*. Si consiglia di utilizzare un data store, ad esempio Redis, per i dati sessione (a seconda dell'applicazione). Per informazioni, consultare [Utilizzo di più nodi](https://socket.io/docs/using-multiple-nodes).
 
 #### Utilizzo di StrongLoop PM con un servizio di bilanciamento del carico Nginx
 

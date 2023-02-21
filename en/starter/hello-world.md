@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening on port ${port}`)
 })
 </code></pre></div>
 
@@ -50,7 +50,7 @@ The `req` (request) and `res` (response) are the exact same objects that Node pr
 
 Run the app with the following command:
 
-```sh
+```console
 $ node app.js
 ```
 

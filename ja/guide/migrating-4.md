@@ -93,7 +93,7 @@ Express 4 のミドルウェアの完全なリストは、[ここ](https://githu
 次に例を示します。
 
 ```js
-app.use('/book/:id', function (req, res, next) {
+app.use('/book/:id', (req, res, next) => {
   console.log('ID:', req.params.id)
   next()
 })
@@ -118,13 +118,13 @@ app.use('/book/:id', function (req, res, next) {
 
 ```js
 app.route('/book')
-  .get(function (req, res) {
+  .get((req, res) => {
     res.send('Get a random book')
   })
-  .post(function (req, res) {
+  .post((req, res) => {
     res.send('Add a book')
   })
-  .put(function (req, res) {
+  .put((req, res) => {
     res.send('Update the book')
   })
 ```
@@ -142,16 +142,16 @@ var express = require('express')
 var router = express.Router()
 
 // middleware specific to this router
-router.use(function timeLog (req, res, next) {
+router.use((req, res, next) => {
   console.log('Time: ', Date.now())
   next()
 })
 // define the home page route
-router.get('/', function (req, res) {
+router.get('/', (req, res) => {
   res.send('Birds home page')
 })
 // define the about route
-router.get('/about', function (req, res) {
+router.get('/about', (req, res) => {
   res.send('About birds')
 })
 
@@ -325,7 +325,7 @@ if (app.get('env') === 'development') {
 app.get('/', routes.index)
 app.get('/users', user.list)
 
-http.createServer(app).listen(app.get('port'), function () {
+http.createServer(app).listen(app.get('port'), () => {
   console.log('Express server listening on port ' + app.get('port'))
 })
 ```
@@ -355,7 +355,7 @@ http.createServer(app).listen(app.get('port'), function () {
 
 移行プロセスを開始するには、次のコマンドを使用して、Express 4 アプリケーションに必要なミドルウェアをインストールし、Express と Pug をそれぞれの最新バージョンに更新します。
 
-```sh
+```console
 $ npm install serve-favicon morgan method-override express-session body-parser multer errorhandler express@latest pug@latest --save
 ```
 
@@ -442,7 +442,7 @@ if (app.get('env') === 'development') {
 }
 
 var server = http.createServer(app)
-server.listen(app.get('port'), function () {
+server.listen(app.get('port'), () => {
   console.log('Express server listening on port ' + app.get('port'))
 })
 ```
@@ -452,7 +452,7 @@ server.listen(app.get('port'), function () {
 `http` モジュール (socket.io/SPDY/HTTPS) を直接処理する必要がある場合を除き、このモジュールをロードする必要はありません。次のようにして、アプリケーションを簡単に開始できます。
 
 ```js
-app.listen(app.get('port'), function () {
+app.listen(app.get('port'), () => {
   console.log('Express server listening on port ' + app.get('port'))
 })
 ```
@@ -461,7 +461,7 @@ app.listen(app.get('port'), function () {
 
 これで移行プロセスは完了して、アプリケーションは Express 4 アプリケーションになりました。確認するには、次のコマンドを使用してアプリケーションを開始します。
 
-```sh
+```console
 $ node .
 ```
 
@@ -475,7 +475,7 @@ Express アプリケーションを生成するためのコマンド・ライン
 
 システムに Express 3 アプリケーション・ジェネレーターがインストールされている場合は、次のようにしてアンインストールする必要があります。
 
-```sh
+```console
 $ npm uninstall -g express
 ```
 
@@ -483,7 +483,7 @@ $ npm uninstall -g express
 
 次に、新しいジェネレーターをインストールします。
 
-```sh
+```console
 $ npm install -g express-generator
 ```
 
@@ -504,7 +504,7 @@ $ npm install -g express-generator
 
 次のコマンドを実行して、Express 4 アプリケーションを作成します。
 
-```sh
+```console
 $ express app4
 ```
 
@@ -514,7 +514,7 @@ $ express app4
 
 依存関係をインストールした後、次のコマンドを使用してアプリケーションを開始します。
 
-```sh
+```console
 $ npm start
 ```
 
@@ -529,7 +529,7 @@ Express アプリケーションの作成またはアプリケーションの開
 ```js
 app.set('port', process.env.PORT || 3000)
 
-var server = app.listen(app.get('port'), function () {
+var server = app.listen(app.get('port'), () => {
   debug('Express server listening on port ' + server.address().port)
 })
 ```

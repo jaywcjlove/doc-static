@@ -32,14 +32,12 @@ Dies sind einige Beispiele für Maßnahmen, die Sie an Ihrem Code vornehmen kön
 
 Mit der GZIP-Komprimierung lässt sich die Größe des Antworthauptteils deutlich verringern und somit die Geschwindigkeit der Webanwendung erhöhen. Verwenden Sie die Middleware [compression](https://www.npmjs.com/package/compression) für die GZIP-Komprimierung in Ihrer Express-Anwendung. Beispiel:
 
-<pre>
-<code class="language-javascript" translate="no">
-var compression = require('compression');
-var express = require('express');
-var app = express();
-app.use(compression());
-</code>
-</pre>
+```js
+const compression = require('compression')
+const express = require('express')
+const app = express()
+app.use(compression())
+```
 
 Bei Websites mit hohem Datenverkehr in Produktionsumgebungen lässt sich die Komprimierung am besten installieren, indem sie auf Reverse Proxy-Ebene implementiert wird (siehe [Reverse Proxy verwenden](#proxy)). In diesem Fall wird die Middleware "compression" nicht benötigt. Details zur Aktivierung der GZIP-Komprimierung in Nginx siehe [Modul ngx_http_gzip_module](http://nginx.org/en/docs/http/ngx_http_gzip_module.html) in der Nginx-Dokumentation.
 
@@ -107,22 +105,20 @@ Verwenden Sie ein Tool wie [JSHint](http://jshint.com/) oder [JSLint](http://www
 
 Dies ist ein Beispiel zur Verwendung von "try-catch", um eine potenzielle "process-crashing"-Ausnahmebedingung zu handhaben. Diese Middlewarefunktion akzeptiert einen Abfragefeldparameter mit dem Namen "params", der ein JSON-Objekt ist.
 
-<pre>
-<code class="language-javascript" translate="no">
-app.get('/search', function (req, res) {
+```js
+app.get('/search', (req, res) => {
   // Simulating async operation
-  setImmediate(function () {
-    var jsonStr = req.query.params;
+  setImmediate(() => {
+    const jsonStr = req.query.params
     try {
-      var jsonObj = JSON.parse(jsonStr);
-      res.send('Success');
+      const jsonObj = JSON.parse(jsonStr)
+      res.send('Success')
     } catch (e) {
-      res.status(400).send('Invalid JSON string');
+      res.status(400).send('Invalid JSON string')
     }
-  });
-});
-</code>
-</pre>
+  })
+})
+```
 
 "try-catch" funktioniert jedoch nur in synchronem Code. Da die Node-Plattform primär asynchron ist (insbesondere in einer Produktionsumgebung), lassen sich mit "try-catch" nicht besonders viele Ausnahmebedingungen abfangen.
 
@@ -132,26 +128,19 @@ app.get('/search', function (req, res) {
 
 Mit "Promises" werden alle Ausnahmebedingungen (explizite und implizite) in asynchronen Codeblöcken gehandhabt, die `then()` verwenden. Sie müssen nur `.catch(next)` am Ende der Promises-Ketten hinzufügen. Beispiel:
 
-<pre>
-<code class="language-javascript" translate="no">
-app.get('/', function (req, res, next) {
+```js
+app.get('/', (req, res, next) => {
   // do some sync stuff
   queryDb()
-    .then(function (data) {
-      // handle data
-      return makeCsv(data)
-    })
-    .then(function (csv) {
-      // handle csv
-    })
-    .catch(next);
-});
+    .then((data) => makeCsv(data)) // handle data
+    .then((csv) => { /* handle csv */ })
+    .catch(next)
+})
 
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   // handle error
-});
-</code>
-</pre>
+})
+```
 
 Jetzt werden alle asynchronen und synchronen Fehler zur Middleware "error" propagiert.
 
@@ -160,15 +149,15 @@ Es gibt jedoch zwei Vorbehalte:
 1.  Der gesamte asynchrone Code muss "Promises" zurückgeben (außer Emitter). Wenn eine bestimmte Bibliothek keine "Promises" zurückgibt, müssen Sie das Basisobjekt mit einer Helper-Funktion wie [Bluebird.promisifyAll()](http://bluebirdjs.com/docs/api/promise.promisifyall.html) konvertieren.
 2.  Ereignisemitter (wie Streams) können nach wie vor nicht abgefangene Ausnahmebedingungen verursachen. Sie müssen also sicherstellen, dass Sie das Fehlerereignis ordnungsgemäß handhaben. Beispiel:
 
-<pre>
-<code class="language-javascript" translate="no">
+```js
+const wrap = fn => (...args) => fn(...args).catch(args[2])
+
 app.get('/', wrap(async (req, res, next) => {
-  let company = await getCompanyById(req.query.id)
-  let stream = getLogoStreamById(company.id)
+  const company = await getCompanyById(req.query.id)
+  const stream = getLogoStreamById(company.id)
   stream.on('error', next).pipe(res)
-}));
-</code>
-</pre>
+}))
+```
 
 Weitere Informationen zur Fehlerbehandlung mithilfe von "Promises" siehe:
 
@@ -321,19 +310,15 @@ Sie können StrongLoop Process Manager problemlos als "systemd"-Service installi
 
 So installieren Sie StrongLoop Process Manager als "systemd"-Service:
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ sudo sl-pm-install --systemd
-</code>
-</pre>
+```
 
 Starten Sie dann den Service mit:
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ sudo /usr/bin/systemctl start strong-pm
-</code>
-</pre>
+```
 
 Weitere Informationen hierzu finden Sie im Thema [Produktionshost einrichten (in der StrongLoop-Dokumentation)](https://docs.strongloop.com/display/SLC/Setting+up+a+production+host#Settingupaproductionhost-RHEL7+,Ubuntu15.04or15.10).
 
@@ -395,19 +380,15 @@ Sie können StrongLoop Process Manager problemlos als "Upstart"-Service installi
 
 So installieren Sie StrongLoop Process Manager als "Upstart 1.4"-Service:
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ sudo sl-pm-install
-</code>
-</pre>
+```
 
 Fühen Sie dann den Service aus mit:
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ sudo /sbin/initctl start strong-pm
-</code>
-</pre>
+```
 
 Hinweis: Auf Systemen, die Upstart 1.4 nicht unterstützen, sind die Befehle leicht unterschiedlich. Weitere Informationen hierzu siehe das
 Thema [Einrichtung eines Produktionshosts (in der StrongLoop-Dokumentation)](https://docs.strongloop.com/display/SLC/Setting+up+a+production+host#Settingupaproductionhost-RHELLinux5and6,Ubuntu10.04-.10,11.04-.10).
@@ -434,11 +415,9 @@ Wenn StrongLoop Process Manager (PM) eine Anwendung ausführt, wird diese automa
 
 Beispiel: Angenommen, Sie haben Ihre Anwendung auf prod.foo.com bereitgestellt, und StrongLoop PM ist auf Port 8701 (Standardport) empfangsbereit. Dann müssen Sie die Clustergröße mithilfe von "slc" auf "8" einstellen.
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ slc ctl -C http://prod.foo.com:8701 set-size my-app 8
-</code>
-</pre>
+```
 
 Weitere Informationen zum Clustering mit StrongLoop PM finden Sie im Thema [Clustering](https://docs.strongloop.com/display/SLC/Clustering) in der StrongLoop-Dokumentation.
 
@@ -454,7 +433,7 @@ Unabhängig davon, wie gut eine Anwendung optimiert wurde, kann eine Einzelinsta
 
 Ein Load Balancer ist in der Regel ein Reverse Proxy, der den Datenverkehr zu und von mehreren Anwendungsinstanzen und Servern koordiniert. Sie können ohne großen Aufwand einen Load Balancer für Ihre Anwendung einrichten. Verwenden Sie hierzu [Nginx](http://nginx.org/en/docs/http/load_balancing.html) oder [HAProxy](https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts).
 
-Bei einer solchen Lastverteilung müssen Sie sicherstellen, dass Anforderungen, die einer bestimmten Sitzungs-ID zugeordnet sind, mit dem Prozess verbunden sind, von dem sie ursprünglich stammen. Dies wird auch als *Sitzungsaffinität* oder *Affine Sitzungen* bezeichnet und kann durch den obigen Vorschlag, einen Datenspeicher wie Redis für Sitzungsdaten zu verwenden (je nach Anwendung), umgesetzt werden. Eine Beschreibung hierzu siehe [Mehrere Knoten verwenden](http://socket.io/docs/using-multiple-nodes/).
+Bei einer solchen Lastverteilung müssen Sie sicherstellen, dass Anforderungen, die einer bestimmten Sitzungs-ID zugeordnet sind, mit dem Prozess verbunden sind, von dem sie ursprünglich stammen. Dies wird auch als *Sitzungsaffinität* oder *Affine Sitzungen* bezeichnet und kann durch den obigen Vorschlag, einen Datenspeicher wie Redis für Sitzungsdaten zu verwenden (je nach Anwendung), umgesetzt werden. Eine Beschreibung hierzu siehe [Mehrere Knoten verwenden](https://socket.io/docs/using-multiple-nodes).
 
 #### StrongLoop Process Manager mit einem Nginx Load Balancer verwenden
 

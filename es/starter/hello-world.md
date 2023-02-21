@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening on port ${port}`)
 })
 </code>
 </pre>
@@ -39,11 +39,9 @@ La aplicación inicia un servidor y escucha las conexiones en el puerto 3000. La
 
 Ejecute la aplicación con el siguiente mandato:
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ node app.js
-</code>
-</pre>
+```
 
 A continuación, cargue [http://localhost:3000/](http://localhost:3000/) en un navegador para ver la salida.
 

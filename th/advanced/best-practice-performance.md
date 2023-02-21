@@ -40,9 +40,9 @@ Here are some things you can do in your code to improve your application's perfo
 Gzip compressing can greatly decrease the size of the response body and hence increase the speed of a web app. Use the [compression](https://www.npmjs.com/package/compression) middleware for gzip compression in your Express app. For example:
 
 ```js
-var compression = require('compression')
-var express = require('express')
-var app = express()
+const compression = require('compression')
+const express = require('express')
+const app = express()
 app.use(compression())
 ```
 
@@ -102,12 +102,12 @@ Here is an example of using try-catch to handle a potential process-crashing exc
 This middleware function accepts a query field parameter named "params" that is a JSON object.
 
 ```js
-app.get('/search', function (req, res) {
+app.get('/search', (req, res) => {
   // Simulating async operation
-  setImmediate(function () {
-    var jsonStr = req.query.params
+  setImmediate(() => {
+    const jsonStr = req.query.params
     try {
-      var jsonObj = JSON.parse(jsonStr)
+      const jsonObj = JSON.parse(jsonStr)
       res.send('Success')
     } catch (e) {
       res.status(400).send('Invalid JSON string')
@@ -123,20 +123,15 @@ However, try-catch works only for synchronous code. Because the Node platform is
 Promises will handle any exceptions (both explicit and implicit) in asynchronous code blocks that use `then()`. Just add `.catch(next)` to the end of promise chains. For example:
 
 ```js
-app.get('/', function (req, res, next) {
+app.get('/', (req, res, next) => {
   // do some sync stuff
   queryDb()
-    .then(function (data) {
-      // handle data
-      return makeCsv(data)
-    })
-    .then(function (csv) {
-      // handle csv
-    })
+    .then((data) => makeCsv(data)) // handle data
+    .then((csv) => { /* handle csv */ })
     .catch(next)
 })
 
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   // handle error
 })
 ```
@@ -149,6 +144,8 @@ However, there are two caveats:
 2.  Event emitters (like streams) can still cause uncaught exceptions. So make sure you are handling the error event properly; for example:
 
 ```js
+const wrap = fn => (...args) => fn(...args).catch(args[2])
+
 app.get('/', wrap(async (req, res, next) => {
   const company = await getCompanyById(req.query.id)
   const stream = getLogoStreamById(company.id)
@@ -298,13 +295,13 @@ You can easily install StrongLoop Process Manager as a systemd service. After yo
 
 To install StrongLoop PM as a systemd service:
 
-```sh
+```console
 $ sudo sl-pm-install --systemd
 ```
 
 Then start the service with:
 
-```sh
+```console
 $ sudo /usr/bin/systemctl start strong-pm
 ```
 
@@ -366,13 +363,13 @@ You can easily install StrongLoop Process Manager as an Upstart service. After y
 
 To install StrongLoop PM as an Upstart 1.4 service:
 
-```sh
+```console
 $ sudo sl-pm-install
 ```
 
 Then run the service with:
 
-```sh
+```console
 $ sudo /sbin/initctl start strong-pm
 ```
 
@@ -400,7 +397,7 @@ When StrongLoop Process Manager (PM) runs an application, it automatically runs 
 
 For example, assuming you've deployed your app to prod.foo.com and StrongLoop PM is listening on port 8701 (the default), then to set the cluster size to eight using slc:
 
-```sh
+```console
 $ slc ctl -C http://prod.foo.com:8701 set-size my-app 8
 ```
 
@@ -418,7 +415,7 @@ No matter how optimized an app is, a single instance can handle only a limited a
 
 A load balancer is usually a reverse proxy that orchestrates traffic to and from multiple application instances and servers. You can easily set up a load balancer for your app by using [Nginx](http://nginx.org/en/docs/http/load_balancing.html) or [HAProxy](https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts).
 
-With load balancing, you might have to ensure that requests that are associated with a particular session ID connect to the process that originated them. This is known as _session affinity_, or _sticky sessions_, and may be addressed by the suggestion above to use a data store such as Redis for session data (depending on your application). For a discussion, see [Using multiple nodes](http://socket.io/docs/using-multiple-nodes/).
+With load balancing, you might have to ensure that requests that are associated with a particular session ID connect to the process that originated them. This is known as _session affinity_, or _sticky sessions_, and may be addressed by the suggestion above to use a data store such as Redis for session data (depending on your application). For a discussion, see [Using multiple nodes](https://socket.io/docs/using-multiple-nodes).
 
 ### Use a reverse proxy
 

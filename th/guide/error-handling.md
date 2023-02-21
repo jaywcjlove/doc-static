@@ -11,7 +11,7 @@ except error-handling functions have four arguments instead of three:
 `(err, req, res, next)`. For example:
 
 ```js
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   console.error(err.stack)
   res.status(500).send('Something broke!')
 })
@@ -20,15 +20,15 @@ app.use(function (err, req, res, next) {
 You define error-handling middleware last, after other `app.use()` and routes calls; for example:
 
 ```js
-var bodyParser = require('body-parser')
-var methodOverride = require('method-override')
+const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
 
 app.use(bodyParser.urlencoded({
   extended: true
 }))
 app.use(bodyParser.json())
 app.use(methodOverride())
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   // logic
 })
 ```
@@ -41,8 +41,8 @@ regular middleware functions. For example, if you wanted to define an error-hand
 for requests made by using `XHR`, and those without, you might use the following commands:
 
 ```js
-var bodyParser = require('body-parser')
-var methodOverride = require('method-override')
+const bodyParser = require('body-parser')
+const methodOverride = require('method-override')
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -93,15 +93,15 @@ If you have a route handler with multiple callback functions you can use the `ro
 
 ```js
 app.get('/a_route_behind_paywall',
-  function checkIfPaidSubscriber (req, res, next) {
+  (req, res, next) => {
     if (!req.user.hasPaid) {
       // continue handling this request
       next('route')
     } else {
       next()
     }
-  }, function getPaidContent (req, res, next) {
-    PaidContent.find(function (err, doc) {
+  }, (req, res, next) => {
+    PaidContent.find((err, doc) => {
       if (err) return next(err)
       res.json(doc)
     })

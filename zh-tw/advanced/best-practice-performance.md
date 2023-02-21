@@ -32,15 +32,12 @@ lang: zh-tw
 
 Gzip 壓縮可以大幅減少回應內文的大小，從而提高 Web 應用程式的速度。請使用 [compression](https://www.npmjs.com/package/compression) 中介軟體，在您的 Express 應用程式中進行 gzip 壓縮。例如：
 
-
-<pre>
-<code class="language-javascript" translate="no">
-var compression = require('compression');
-var express = require('express');
-var app = express();
-app.use(compression());
-</code>
-</pre>
+```js
+const compression = require('compression')
+const express = require('express')
+const app = express()
+app.use(compression())
+```
 
 在正式作業中，如果網站的資料流量極高，落實執行壓縮最好的作法是在反向 Proxy 層次實作它（請參閱[使用反向 Proxy](#proxy)）。在該情況下，就不需使用壓縮中介軟體。如需在 Nginx 中啟用 gzip 壓縮的詳細資料，請參閱 Nginx 說明文件中的 [ngx_http_gzip_module 模組](http://nginx.org/en/docs/http/ngx_http_gzip_module.html)。
 
@@ -109,22 +106,20 @@ try-catch 是一種 JavaScript 語言建構，可用來捕捉同步程式碼中�
 
 下列範例顯示如何使用 try-catch 來處理潛在的程序當機異常狀況。此中介軟體函數接受名稱是 "params" 的查詢欄位參數，它是一個 JSON 物件。
 
-<pre>
-<code class="language-javascript" translate="no">
-app.get('/search', function (req, res) {
+```js
+app.get('/search', (req, res) => {
   // Simulating async operation
-  setImmediate(function () {
-    var jsonStr = req.query.params;
+  setImmediate(() => {
+    const jsonStr = req.query.params
     try {
-      var jsonObj = JSON.parse(jsonStr);
-      res.send('Success');
+      const jsonObj = JSON.parse(jsonStr)
+      res.send('Success')
     } catch (e) {
-      res.status(400).send('Invalid JSON string');
+      res.status(400).send('Invalid JSON string')
     }
-  });
-});
-</code>
-</pre>
+  })
+})
+```
 
 不過，try-catch 只適用於同步程式碼。由於 Node 平台主要是非同步（尤其是在正式作業環境），try-catch 不會捕捉大量的異常狀況。
 
@@ -134,27 +129,19 @@ app.get('/search', function (req, res) {
 
 只要非同步程式碼區塊使用 `then()`，promise 就會處理其中的任何異常狀況（包括明確和隱含）。只需在 promise 鏈尾端新增 `.catch(next)` 即可。例如：
 
-
-<pre>
-<code class="language-javascript" translate="no">
-app.get('/', function (req, res, next) {
+```js
+app.get('/', (req, res, next) => {
   // do some sync stuff
   queryDb()
-    .then(function (data) {
-      // handle data
-      return makeCsv(data)
-    })
-    .then(function (csv) {
-      // handle csv
-    })
-    .catch(next);
-});
+    .then((data) => makeCsv(data)) // handle data
+    .then((csv) => { /* handle csv */ })
+    .catch(next)
+})
 
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   // handle error
-});
-</code>
-</pre>
+})
+```
 
 現在，所有非同步與同步錯誤都會傳播到錯誤中介軟體。
 
@@ -163,15 +150,15 @@ app.use(function (err, req, res, next) {
 1.  您所有的非同步程式碼都必須傳回 promise（不包括發射程式）。如果特定程式庫沒有傳回 promise，請使用 [Bluebird.promisifyAll()](http://bluebirdjs.com/docs/api/promise.promisifyall.html) 等之類的 helper 函數來轉換基本物件。
 2.  事件發射程式（例如：串流）仍可能造成未捕捉到的異常狀況。因此，請確定錯誤事件的處理適當；例如：
 
-<pre>
-<code class="language-javascript" translate="no">
+```js
+const wrap = fn => (...args) => fn(...args).catch(args[2])
+
 app.get('/', wrap(async (req, res, next) => {
-  let company = await getCompanyById(req.query.id)
-  let stream = getLogoStreamById(company.id)
+  const company = await getCompanyById(req.query.id)
+  const stream = getLogoStreamById(company.id)
   stream.on('error', next).pipe(res)
 }))
-</code>
-</pre>
+```
 
 如需使用 promise 來處理錯誤的相關資訊，請參閱：
 
@@ -329,19 +316,15 @@ WantedBy=multi-user.target
 
 將 StrongLoop PM 安裝成 systemd 服務：
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ sudo sl-pm-install --systemd
-</code>
-</pre>
+```
 
 然後使用下列指令來啟動服務：
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ sudo /usr/bin/systemctl start strong-pm
-</code>
-</pre>
+```
 
 如需相關資訊，請參閱 [Setting up a production host（StrongLoop 說明文件）](https://docs.strongloop.com/display/SLC/Setting+up+a+production+host#Settingupaproductionhost-RHEL7+,Ubuntu15.04or15.10)。
 
@@ -403,19 +386,15 @@ respawn limit 10 10
 
 將 StrongLoop PM 安裝成 Upstart 1.4 服務：
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ sudo sl-pm-install
-</code>
-</pre>
+```
 
 然後使用下列指令來執行服務：
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ sudo /sbin/initctl start strong-pm
-</code>
-</pre>
+```
 
 附註：在不支援 Upstart 1.4 的系統上，指令略有不同。如需相關資訊，請參閱 [Setting up a production host（StrongLoop 說明文件）](https://docs.strongloop.com/display/SLC/Setting+up+a+production+host#Settingupaproductionhost-RHELLinux5and6,Ubuntu10.04-.10,11.04-.10)。
 
@@ -442,11 +421,9 @@ $ sudo /sbin/initctl start strong-pm
 
 舉例來說，假設您將應用程式部署至 prod.foo.com，且 StrongLoop PM 是在埠 8701（預設值）接聽，請使用 slc 將叢集大小設為 8：
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ slc ctl -C http://prod.foo.com:8701 set-size my-app 8
-</code>
-</pre>
+```
 
 如需利用 StrongLoop PM 執行叢集作業的相關資訊，請參閱 StrongLoop 說明文件中的[叢集作業](https://docs.strongloop.com/display/SLC/Clustering)。
 
@@ -462,7 +439,7 @@ $ slc ctl -C http://prod.foo.com:8701 set-size my-app 8
 
 負載平衡器通常是一個反向 Proxy，負責協調與多個應用程式實例和伺服器之間的資料流量。利用 [Nginx](http://nginx.org/en/docs/http/load_balancing.html) 或 [HAProxy](https://www.digitalocean.com/community/tutorials/an-introduction-to-haproxy-and-load-balancing-concepts)，就能輕鬆設定您應用程式的負載平衡器。
 
-如果進行負載平衡，您可能得確定與特定階段作業 ID 相關聯的要求，會連接至發出該要求的程序。這就是所謂的*階段作業親緣性*或*組合階段作業*，如果要解決此情況，可按照上述建議，使用 Redis 等之類的資料儲存庫來儲存階段作業資料（視您的應用程式而定）。相關討論請參閱[使用多個節點](http://socket.io/docs/using-multiple-nodes/)。
+如果進行負載平衡，您可能得確定與特定階段作業 ID 相關聯的要求，會連接至發出該要求的程序。這就是所謂的*階段作業親緣性*或*組合階段作業*，如果要解決此情況，可按照上述建議，使用 Redis 等之類的資料儲存庫來儲存階段作業資料（視您的應用程式而定）。相關討論請參閱[使用多個節點](https://socket.io/docs/using-multiple-nodes)。
 
 #### StrongLoop PM 與 Nginx 負載平衡器搭配使用
 

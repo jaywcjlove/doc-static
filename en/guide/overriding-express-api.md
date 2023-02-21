@@ -10,7 +10,7 @@ lang: en
 
 The Express API consists of various methods and properties on the request and response objects. These are inherited by prototype. There are two extension points for the Express API:
 
-1. The global protoypes at `express.request` and `express.response`.
+1. The global prototypes at `express.request` and `express.response`.
 2. App-specific prototypes at `app.request` and `app.response`.
 
 Altering the global prototypes will affect all loaded Express apps in the same process. If desired, alterations can be made app-specific by only altering the app-specific prototypes after creating a new app.
@@ -45,7 +45,7 @@ Properties in the Express API are either:
 1. Assigned properties (ex: `req.baseUrl`, `req.originalUrl`)
 2. Defined as getters (ex: `req.secure`, `req.ip`)
 
-Since properties under category 1 are dynamically assigned on the `request` and `response` objects in the context of the current request-response cycle, their behavior cannot be overriden.
+Since properties under category 1 are dynamically assigned on the `request` and `response` objects in the context of the current request-response cycle, their behavior cannot be overridden.
 
 Properties under category 2 can be overwritten using the Express API extensions API.
 
@@ -55,7 +55,20 @@ The following code rewrites how the value of `req.ip` is to be derived. Now, it 
 Object.defineProperty(app.request, 'ip', {
   configurable: true,
   enumerable: true,
-  get: function () { return this.get('Client-IP') }
+  get () { return this.get('Client-IP') }
 })
+```
+
+## Prototype
+
+In order to provide the Express.js API, the request/response obects passed to Express.js (via `app(req, res)`, for example) need to inherit from the same prototype chain. By default this is `http.IncomingRequest.prototype` for the request and `http.ServerResponse.prototype` for the response.
+
+Unless necessary, it is recommended that this be done only at the application level, rather than globally. Also, take care that the prototype that is being used matches the functionality as closely as possible to the default prototypes.
+
+```js
+// Use FakeRequest and FakeResponse in place of http.IncomingRequest and http.ServerResponse
+// for the given app reference
+Object.setPrototypeOf(Object.getPrototypeOf(app.request), FakeRequest.prototype)
+Object.setPrototypeOf(Object.getPrototypeOf(app.response), FakeResponse.prototype)
 ```
 </div>

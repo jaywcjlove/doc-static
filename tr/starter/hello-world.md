@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening on port ${port}`)
 })
 </code></pre></div>
 
@@ -48,7 +48,7 @@ RunKit bir üçüncü parti uygulamasıdır ve Express projesi ile bir bağı yo
 
 Uygulamayı aşağıdaki komutla çalıştırın:
 
-```sh
+```console
 $ node app.js
 ```
 

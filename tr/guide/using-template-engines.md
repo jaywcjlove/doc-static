@@ -27,7 +27,7 @@ Bu varsayılan olarak uygulamanın kök dizindeki `views` dizinine denk gelir.
 
 Daha sonra ise, ilgili şablon motorunun npm paketini yükleyin; örneğin Pug yüklemek için:
 
-```sh
+```console
 $ npm install pug --save
 ```
 
@@ -56,7 +56,7 @@ html
 Ardından, `index.pug` dosyasını işlemek için bir rota yaratın. `view engine` özelliği ayarlanmadıysa, `view` dosyasının uzantısını belirtmelisiniz. Aksi takdirde belirtmenize gerek yok.
 
 ```js
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.render('index', { title: 'Hey', message: 'Hello there!' })
 })
 ```

@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening on port ${port}`)
 })
 </code>
 </pre>
@@ -41,11 +41,9 @@ I valori `req` (richiesta) e `res` (risposta) sono esattamente gli stessi oggett
 
 Eseguire l'applicazione con il seguente comando:
 
-<pre>
-<code class="language-sh" translate="no">
+```console
 $ node app.js
-</code>
-</pre>
+```
 
 Successivamente, caricare [http://localhost:3000/](http://localhost:3000/) su un browser per visualizzare l'output.
 
