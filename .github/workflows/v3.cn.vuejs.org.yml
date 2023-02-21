@@ -17,13 +17,16 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 6
+      - run: pnpm -v
+      - run: node -v
+      - run: npm -v
 
       - name: Get Static (Vue 3)
         run: |
           git clone https://github.com/vuejs-translations/docs-zh-cn.git -b main --single-branch v3.cn.vuejs.org --depth 1
       - run: pnpm i
         working-directory: v3.cn.vuejs.org
-        
+
       - run: npm run build
         working-directory: v3.cn.vuejs.org
 
