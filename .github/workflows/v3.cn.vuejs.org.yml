@@ -14,10 +14,14 @@ jobs:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 6
+
       - name: Get Static (Vue 3)
         run: |
           git clone https://github.com/vuejs-translations/docs-zh-cn.git -b main --single-branch v3.cn.vuejs.org --depth 1
-      - run: npm i
+      - run: pnpm i
       - run: npm run build
 
       - name: Deploy (vue3) v3.cn.vuejs.org
