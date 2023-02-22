@@ -30,7 +30,7 @@ jobs:
 
       - run: npm run build
         working-directory: v3.cn.vuejs.org
-      - run: tree
+      - run: tree -I 'node_modules' -L 2
 
       - name: Deploy (vue3) v3.cn.vuejs.org
         uses: peaceiris/actions-gh-pages@v3
