@@ -23,14 +23,15 @@ jobs:
       - run: npm -v
 
       - name: Get Static (Vue 3)
-        run: |
-          git clone https://github.com/vuejs-translations/docs-zh-cn.git -b main --single-branch v3.cn.vuejs.org --depth 1
+        run: git clone https://github.com/vuejs-translations/docs-zh-cn.git -b main --single-branch v3.cn.vuejs.org --depth 1
+
       - run: pnpm i
         working-directory: v3.cn.vuejs.org
 
       - run: npm run build
         working-directory: v3.cn.vuejs.org
-      - run: tree -I 'node_modules' -L 2
+
+      - run: tree -I 'node_modules' -L 4
 
       - name: Deploy (vue3) v3.cn.vuejs.org
         uses: peaceiris/actions-gh-pages@v3
